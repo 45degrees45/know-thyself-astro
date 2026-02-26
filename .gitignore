@@ -1,0 +1,12 @@
+credentials.json
+*.json
+reports/
+monthly/
+daily/
+weekly/
+__pycache__/
+venv/
+.env
+*.png
+*.pdf
+.DS_Store

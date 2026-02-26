@@ -1,0 +1,7 @@
+gspread
+google-auth
+anthropic
+playwright
+requests
+sendgrid
+fpdf2
