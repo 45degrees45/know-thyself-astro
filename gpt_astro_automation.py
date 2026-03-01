@@ -62,6 +62,182 @@ DELAY_BETWEEN_REQUESTS = 60  # seconds between ChatGPT requests
 DEFAULT_RECIPIENT_EMAIL = os.getenv("DEFAULT_RECIPIENT_EMAIL", "45degreesolutions@gmail.com")
 
 
+# ── WhatsApp (Twilio) ────────────────────────────────────────────────────────
+
+def _upload_pdf_to_litterbox(pdf_path):
+    """Upload a PDF to litterbox.catbox.moe (72h) and return the public URL, or None."""
+    try:
+        with open(pdf_path, "rb") as f:
+            resp = requests.post(
+                "https://litterbox.catbox.moe/resources/internals/api.php",
+                data={"reqtype": "fileupload", "time": "72h"},
+                files={"fileToUpload": (os.path.basename(pdf_path), f, "application/pdf")},
+                timeout=30,
+            )
+        if resp.ok and resp.text.startswith("https://"):
+            return resp.text.strip()
+    except Exception as e:
+        print(f"  PDF upload error: {e}")
+    return None
+
+
+def send_whatsapp(notification, to_number, account_sid, auth_token, from_number, pdf_path=None):
+    """Send a WhatsApp notification via Twilio, with optional PDF attachment."""
+    from twilio.rest import Client
+    client = Client(account_sid, auth_token)
+    try:
+        kwargs = dict(
+            body=notification,
+            from_=f"whatsapp:{from_number}",
+            to=f"whatsapp:{to_number}",
+        )
+        if pdf_path and os.path.exists(pdf_path):
+            pdf_url = _upload_pdf_to_litterbox(pdf_path)
+            if pdf_url:
+                kwargs["media_url"] = [pdf_url]
+                print(f"  PDF uploaded: {pdf_url}")
+            else:
+                print(f"  PDF upload failed — sending notification only")
+        client.messages.create(**kwargs)
+        return True
+    except Exception as e:
+        print(f"  WhatsApp error: {e}")
+        return False
+
+
+# ── WhatsApp (Direct — Meta Cloud API) ──────────────────────────────────────
+
+def _upload_pdf_to_meta(pdf_path, api_token, app_id):
+    """Upload a PDF to Meta's servers for use in WhatsApp templates. Returns handle or None."""
+    file_size = os.path.getsize(pdf_path)
+    try:
+        # Initiate upload session
+        resp = requests.post(
+            f"https://graph.facebook.com/v22.0/{app_id}/uploads",
+            params={
+                "file_name": os.path.basename(pdf_path),
+                "file_length": file_size,
+                "file_type": "application/pdf",
+                "access_token": api_token,
+            },
+            timeout=15,
+        )
+        if not resp.ok:
+            print(f"  Meta upload init error: {resp.text}")
+            return None
+        session_id = resp.json()["id"]
+
+        # Upload file bytes
+        with open(pdf_path, "rb") as f:
+            resp2 = requests.post(
+                f"https://graph.facebook.com/v22.0/{session_id}",
+                headers={"Authorization": f"OAuth {api_token}", "file_offset": "0"},
+                data=f,
+                timeout=60,
+            )
+        if resp2.ok:
+            return resp2.json().get("h")
+        print(f"  Meta upload error: {resp2.text}")
+    except Exception as e:
+        print(f"  Meta upload error: {e}")
+    return None
+
+
+def send_whatsapp_direct(notification, to_number, api_token, phone_number_id,
+                         pdf_path=None, name=None, report_type=None, period=None):
+    """Send a WhatsApp message directly via Meta's WhatsApp Business Cloud API.
+
+    When pdf_path + name/report_type are provided, uses the approved
+    'astrowise_report' template. Otherwise sends free-form text.
+    """
+    import re
+    to_clean = re.sub(r"[^\d]", "", to_number)
+
+    headers = {
+        "Authorization": f"Bearer {api_token}",
+        "Content-Type": "application/json",
+    }
+    url = f"https://graph.facebook.com/v22.0/{phone_number_id}/messages"
+
+    try:
+        use_template = pdf_path and os.path.exists(pdf_path) and name and report_type
+
+        if use_template:
+            app_id = os.getenv("WA_APP_ID", "1281688460492103")
+            handle = _upload_pdf_to_meta(pdf_path, api_token, app_id)
+            if not handle:
+                # Fallback: upload to litterbox and send as free-form document
+                print(f"  Meta upload failed — trying litterbox fallback")
+                pdf_url = _upload_pdf_to_litterbox(pdf_path)
+                if pdf_url:
+                    payload = {
+                        "messaging_product": "whatsapp",
+                        "to": to_clean,
+                        "type": "document",
+                        "document": {
+                            "link": pdf_url,
+                            "filename": os.path.basename(pdf_path),
+                            "caption": notification,
+                        },
+                    }
+                else:
+                    payload = {
+                        "messaging_product": "whatsapp",
+                        "to": to_clean,
+                        "type": "text",
+                        "text": {"body": notification},
+                    }
+            else:
+                period_text = f" for {period}" if period else ""
+                payload = {
+                    "messaging_product": "whatsapp",
+                    "to": to_clean,
+                    "type": "template",
+                    "template": {
+                        "name": "astrowise_report",
+                        "language": {"code": "en_US"},
+                        "components": [
+                            {
+                                "type": "header",
+                                "parameters": [
+                                    {
+                                        "type": "document",
+                                        "document": {
+                                            "id": handle,
+                                            "filename": os.path.basename(pdf_path),
+                                        },
+                                    }
+                                ],
+                            },
+                            {
+                                "type": "body",
+                                "parameters": [
+                                    {"type": "text", "text": name},
+                                    {"type": "text", "text": report_type.title()},
+                                    {"type": "text", "text": period_text},
+                                ],
+                            },
+                        ],
+                    },
+                }
+        else:
+            payload = {
+                "messaging_product": "whatsapp",
+                "to": to_clean,
+                "type": "text",
+                "text": {"body": notification},
+            }
+
+        resp = requests.post(url, headers=headers, json=payload, timeout=30)
+        if resp.ok:
+            return True
+        print(f"  WhatsApp Direct error: {resp.status_code} {resp.text}")
+        return False
+    except Exception as e:
+        print(f"  WhatsApp Direct error: {e}")
+        return False
+
+
 # ── Telegram ────────────────────────────────────────────────────────────────
 
 def send_telegram(text, bot_token, chat_id):
@@ -291,6 +467,7 @@ _TAIL_TRIGGERS = re.compile(
     r'Did the|Did you|'
     r'Please reflect|Your feedback will help|'
     r'Over the last|Have you experienced|'
+    r'If this prediction matches|Based on your feedback|'
     r'Error in message stream|Retry'
     r')',
     re.IGNORECASE,
@@ -1176,7 +1353,40 @@ def save_and_send(filepath, header_lines, body, bot_token, chat_id,
             telegram_sent = True
             print(f"  Sent to Telegram")
 
-    # 5. Log delivery to tracking sheet
+    # 5. WhatsApp delivery (direct Meta API, or Twilio as fallback)
+    phone = friend.get("Phone", "").strip()
+    if phone:
+        name = friend.get("Name", "Friend")
+        period = header_lines[0].split(":")[-1].strip().title() if header_lines and ":" in header_lines[0] else ""
+        wa_notification = f"Namaste {name}, your Astrowise {report_type.title()} report{' for ' + period if period else ''} is ready. Please find your PDF attached. 🌟"
+
+        # Try direct Meta Cloud API first
+        wa_api_token = os.getenv("WA_API_TOKEN")
+        wa_phone_number_id = os.getenv("WA_PHONE_NUMBER_ID")
+        wa_sent = False
+        if wa_api_token and wa_phone_number_id:
+            print(f"  Trying WhatsApp Direct (Meta API)…")
+            wa_sent = send_whatsapp_direct(
+                wa_notification, phone, wa_api_token, wa_phone_number_id,
+                pdf_path=pdf_path, name=name, report_type=report_type, period=period,
+            )
+            if wa_sent:
+                print(f"  Sent to WhatsApp (Direct): {phone}")
+
+        # Fall back to Twilio if direct failed or not configured
+        if not wa_sent:
+            twilio_sid = os.getenv("TWILIO_ACCOUNT_SID")
+            twilio_token = os.getenv("TWILIO_AUTH_TOKEN")
+            twilio_from = os.getenv("TWILIO_WHATSAPP_FROM", "+14155238886")
+            if twilio_sid and twilio_token:
+                print(f"  Trying WhatsApp via Twilio…")
+                wa_sent = send_whatsapp(wa_notification, phone, twilio_sid, twilio_token, twilio_from, pdf_path=pdf_path)
+                if wa_sent:
+                    print(f"  Sent to WhatsApp (Twilio): {phone}")
+                else:
+                    print(f"  WhatsApp delivery failed for {phone}")
+
+    # 6. Log delivery to tracking sheet
     if log_tracking:
         name = friend.get("Name", "Unknown")
         type_labels = {
