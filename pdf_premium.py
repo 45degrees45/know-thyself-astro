@@ -255,12 +255,13 @@ def _color_for_title(title):
 
 # ── Content parser ────────────────────────────────────────────────────────────
 
-# Regex for main section markers: "1️⃣ CAREER & WEALTH" or "🔮 REMEDIES" or "🔷 CAREER"
+# Regex for main section markers: "1️⃣ CAREER & WEALTH" or "1. Career & Wealth" or "🔮 REMEDIES"
 _RE_MAIN_SECTION = re.compile(
     r'^(?:'
     r'[1-9]\uFE0F?\u20E3\s*'       # 1️⃣ keycap digit
     r'|[🔮🌟]\s*'                    # 🔮 or 🌟 prefix
     r'|[🔷]\s*'                      # 🔷 prefix (birth chart sections)
+    r'|[1-9]\d*\.\s+(?=[A-Z])'      # 1. 2. plain numbered (Title/ALL CAPS heading)
     r')'
     r'(.+)',
     re.UNICODE,
@@ -274,21 +275,34 @@ _RE_BRIEF_HEADER = re.compile(
     r'^[\U0001F300-\U0001FAFF\u2600-\u27BF]\s*(.+)', re.UNICODE
 )
 
-# Date patterns in auspicious-dates lines
+# Date patterns in auspicious-dates lines: "March 5–7 → ..." or "5–7 → ..."
 _RE_DATE_LINE = re.compile(
-    r'^(?:Feb(?:ruary)?\s+)?\d{1,2}(?:st|nd|rd|th)?'
+    r'^(?:(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?'
+    r'|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?)\s+)?'
+    r'\d{1,2}(?:st|nd|rd|th)?'
     r'(?:\s*[-–]\s*\d{1,2}(?:st|nd|rd|th)?)?'
-    r'(?:\s*Feb(?:ruary)?)?'
-    r'\s*[-–→>]\s*(.+)',
+    r'(?:\s*(?:Jan(?:uary)?|Feb(?:ruary)?|Mar(?:ch)?|Apr(?:il)?|May|Jun(?:e)?'
+    r'|Jul(?:y)?|Aug(?:ust)?|Sep(?:tember)?|Oct(?:ober)?|Nov(?:ember)?|Dec(?:ember)?))?'
+    r'\s*[-–→>:]\s*(.+)',
     re.IGNORECASE,
 )
 
 # Rating pattern
 _RE_RATING = re.compile(r'(\d+\.?\d*)\s*/\s*10')
 
-# Dasha / current period
+# Dasha / current period — matches multiple GPT output styles:
+#   "Current Period: Shukra Mahadasha – Shukra Bhukti"
+#   "Mahadasha / Bhukti: Shani / Shani"
+#   "Mahadasha: Ketu"
+#   "You are currently running the Budha Mahadasha – Guru Bhukti"
 _RE_DASHA = re.compile(
-    r'(?:Current\s+(?:Major\s+)?Period\s+(?:Influence)?|Current\s+Period)\s*:\s*(.+)',
+    r'(?:'
+    r'(?:Current\s+(?:Major\s+)?Period\s+(?:Influence)?|Current\s+Period)\s*:\s*'
+    r'|Mahadasha\s*(?:/\s*Bhukti\s*)?\s*:\s*'
+    r'|You\s+are\s+(?:currently\s+)?running\s+(?:the\s+)?'
+    r'|Running\s+(?=\w+\s+Mahadasha)'
+    r')'
+    r'(.+)',
     re.IGNORECASE,
 )
 
@@ -574,8 +588,14 @@ def parse_report(body, report_type="monthly"):
         re.compile(r'^Monthly Vedic Astrology Prediction', re.IGNORECASE),
         re.compile(r'^Vedic Birth Chart', re.IGNORECASE),
         re.compile(r'^Below is your detailed', re.IGNORECASE),
+        re.compile(r'^Here is your detailed', re.IGNORECASE),
+        re.compile(r'^Here is a detailed', re.IGNORECASE),
+        re.compile(r'^Below is a detailed', re.IGNORECASE),
         re.compile(r'^(Date|Time|Place)\s*:', re.IGNORECASE),
         re.compile(r'^Ascendant\s*:', re.IGNORECASE),
+        re.compile(r'^Lagna\s*\(', re.IGNORECASE),
+        re.compile(r'^Mahadasha\s*/\s*Bhukti\s*:', re.IGNORECASE),
+        re.compile(r'^You are currently running', re.IGNORECASE),
         # Birth chart decorative title (may have emoji prefix like 🌺)
         re.compile(r'^.*vedic birth chart report', re.IGNORECASE),
         # Birth date/time/place summary line: "29 October 1985 | 11:30 AM | Muscat"
