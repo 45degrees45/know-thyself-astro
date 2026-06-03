@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Zerin — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♐</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1>Zerin</h1>
+    <p class="lagna-line">♐ Sagittarius Lagna 5.1°</p>
+    <p class="tagline">Zerin's chart embodies a dynamic interplay of creativity, intellect, and spiritual exploration, with a profound potential for personal growth and leadership.</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value">2000-11-09</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value">09:25 AM · Cherpulassery, Kerala, India</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Venus / Sun / Mercury</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Expansive Wisdom</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Lib H11</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Pis H4</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Vir H10</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Lib H11</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Tau H6</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Sag H1</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Tau H6</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Gem H7</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Sag H1</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>Zerin is a naturally charismatic and adventurous individual with a strong inclination towards intellectual pursuits and spiritual exploration. Her dominant energy is rooted in a quest for knowledge, wisdom, and personal growth. She approaches life with a philosophical and expansive outlook, often seeking to understand the deeper meaning behind everyday experiences. This innate curiosity and thirst for wisdom are foundational to her personality. She is driven by a desire to learn, grow, and explore the mysteries of life, which in turn shapes her emotional style and life approach.</p>
+      <div class="trait-chips">
+        <span class="chip">Intellectually curious</span><span class="chip">Spiritually inclined</span><span class="chip">Charismatic leader</span><span class="chip">Philosophical outlook</span><span class="chip">Adventurous spirit</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>Zerin's relationship style is characterized by a deep-seated need for intellectual connection, mutual respect, and a sense of adventure. As the 7th house lord is Mercury, she values communication and intellectual compatibility in her partnerships. Venus, being in the 1st house, suggests that she also seeks beauty, harmony, and possibly a romantic connection in her relationships. Her attachment pattern may lean towards independence and a desire for personal space, but she is also drawn to meaningful, profound connections.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>The ideal partner for Zerin would be someone who is intellectually stimulating, respects her independence, and shares her sense of adventure and spirituality. This partner should be able to engage in deep, meaningful conversations and support her personal growth and aspirations.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">Intellectual compatibility</span><span class="chip chip-green">Mutual respect</span><span class="chip chip-green">Emotional depth</span>
+        <span class="chip chip-neg">Independence vs. intimacy</span><span class="chip chip-neg">Communication barriers</span><span class="chip chip-neg">Different intellectual interests</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>Zerin's career nature is heavily influenced by her Budha-Aditya yoga and Raja Yoga, indicating a strong potential for leadership, intellectual pursuits, and recognition in her field. Her best working style involves independence, creativity, and the freedom to explore new ideas and approaches. The Dharma Karma Adhipati Yoga suggests exceptional career success, particularly in fields related to her spiritual or philosophical interests.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>The conjunction of Sun and Mercury in Libra, forming a Raja Yoga, is the most potent career yoga, indicating natural leadership and intellectual brilliance.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">Academia</span><span class="chip">Spiritual leadership</span><span class="chip">Creative industries</span><span class="chip">Philosophy</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Inspirational Visionary</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>Zerin's Venus in Mula nakshatra indicates a potential for artistic or creative expression, possibly tied to themes of transformation or spiritual growth.</li><li>Her Moon in Revati nakshatra suggests a strong emotional connection to her family and possibly a nurturing or protective role within her family dynamics.</li><li>The presence of Ketu in Purva Ashadha nakshatra in the 1st house may indicate a life path that involves spiritual exploration, sudden changes, or unconventional approaches to personal growth.</li><li>Mars in Uttara Phalguni nakshatra in the 10th house could suggest a career or public image that involves action, energy, and possibly a sense of adventure or risk-taking.</li><li>Jupiter's retrogression in Rohini nakshatra in the 6th house might indicate a need to revisit or relearn certain skills or knowledge areas, particularly those related to health, daily routines, or work environments.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>Zerin's overall career arc is marked by periods of significant growth, recognition, and leadership opportunities, particularly during the Venus and Sun mahadashas. Her career trajectory is likely to involve phases of intense focus on personal development, followed by periods of outward success and recognition.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2022–2042</div>
+          <div class="period-dasha">Venus Mahadasha</div>
+          <div class="period-theme">Establishing a strong foundation in her chosen career path, with potential for creative expression and leadership.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2042–2048</div>
+          <div class="period-dasha">Sun Mahadasha</div>
+          <div class="period-theme">Rising to positions of authority and recognition, with a focus on intellectual pursuits and spiritual growth.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2065–2083</div>
+          <div class="period-dasha">Rahu Mahadasha</div>
+          <div class="period-theme">Exploring unconventional or innovative paths in her career, possibly involving spirituality, technology, or unexpected opportunities.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>During the current Venus Mahadasha, Zerin should focus on building a strong professional network, developing her creative skills, and seeking opportunities for leadership and recognition.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>The timing and karmic flavor of Zerin's relationships are influenced by her Venus in the 1st house and the overall planetary positions, suggesting a potential for romantic connections that are intense, transformative, and possibly unconventional. Her relationships may involve themes of personal growth, spiritual exploration, and a deep desire for connection and understanding.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2025–2026</div>
+          <div class="period-dasha">Venus/Sun Bhukti</div>
+          <div class="period-theme">A period of heightened attraction and potential for romantic relationships, with a focus on intellectual connection and mutual respect.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2028–2029</div>
+          <div class="period-dasha">Venus/Mars Bhukti</div>
+          <div class="period-theme">A time of passion and energy in relationships, possibly marked by conflicts or intense emotional experiences that prompt growth and understanding.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2032–2035</div>
+          <div class="period-dasha">Venus/Jupiter Bhukti</div>
+          <div class="period-theme">A period favorable for commitment or deepening of relationships, with a focus on spiritual growth, mutual support, and a sense of togetherness.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>Zerin's relationships are likely to involve a deep karmic component, with themes of transformation, growth, and possibly past life connections that influence her current relationships and marital prospects.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>The current Venus Mahadasha, with its ongoing Sun Bhukti, signifies a period of personal growth, creative expression, and potential for romantic relationships. Venus in the 1st house indicates a strong focus on self-love, personal beauty, and harmony in relationships. However, with Ketu in the 1st house, there may be a tendency towards spiritual detachment or an unconventional approach to relationships and personal growth.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Sun Bhukti (Oct 2025 – Oct 2026)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">Potential for self-doubt or confusion about personal identity and relationships.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Moon Bhukti (Oct 2026 – Jun 2028)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">Emotional sensitivity and a need for nurturing relationships, with possible ups and downs in emotional stability.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Mars Bhukti (Jun 2028 – Aug 2029)</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">Increased energy and passion in relationships and personal pursuits, with opportunities for adventure and growth.</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>The upcoming Rahu Mahadasha may bring unexpected changes or unconventional opportunities in relationships and career, requiring adaptability and openness to new experiences.</li><li>The Saturn Bhukti within the Venus Mahadasha could introduce a period of responsibility, hard work, and possibly a sense of isolation or seriousness in relationships and personal life.</li></ul>
+      <div class="golden-box">The Jupiter Bhukti within the Venus Mahadasha (Aug 2032 – Apr 2035) is likely to be a highly auspicious period for relationships, career, and personal growth, marked by expansion, wisdom, and a sense of fulfillment.</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>The upcoming Sun Mahadasha, starting in 2042, will bring a focus on personal recognition, authority, and possibly a more intense spiritual or philosophical journey, transforming Zerin's career and personal themes with its radiant energy.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Mula nakshatra</span>
+          </div>
+          <div class="ref-quote">"The primary deity is Nirritti, the Goddess of Destruction."</div>
+          <div class="ref-application">This applies to Zerin's Venus in Mula, indicating a potential for transformative relationships or creative expression tied to themes of change and growth.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">BPHS Vol 2 (Parashara)</span>
+            <span class="ref-placement">Planetary significations</span>
+          </div>
+          <div class="ref-quote">"The Sun-The soul, nature, physical strength, joy, sorrows, and father."</div>
+          <div class="ref-application">This classical teaching highlights the importance of the Sun in Zerin's chart, particularly in relation to her father, personal strength, and overall sense of purpose and joy.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Purva Ashadha nakshatra</span>
+          </div>
+          <div class="ref-quote">"The power of worship, with the ruling planet being Saturn."</div>
+          <div class="ref-application">Ketu in Purva Ashadha nakshatra in Zerin's 1st house suggests a life path involving spiritual practices, discipline, and possibly a role in guiding others towards their spiritual growth.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>Zerin's core shadow pattern involves a tendency towards emotional detachment or a fear of intimacy, stemming from a deep-seated need for independence and self-protection. This can sometimes manifest as a difficulty in forming close, meaningful relationships or an inclination to prioritize personal growth over interpersonal connections.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>Emotional detachment</strong><p>A tendency to pull back or disconnect emotionally as a defense mechanism, which can hinder deep relationships.</p></div><div class="shadow-card"><strong>Fear of intimacy</strong><p>A subconscious fear of getting too close to others, possibly due to past experiences or a general distrust of vulnerability.</p></div><div class="shadow-card"><strong>Overemphasis on independence</strong><p>Prioritizing personal freedom and independence to the point of neglecting the importance of interpersonal connections and mutual support.</p></div><div class="shadow-card"><strong>Self-protection</strong><p>Using various strategies to protect oneself from potential emotional harm, which can sometimes come across as aloofness or unapproachability.</p></div>
+    </div>
+    <div class="antidote-box">Engaging in self-reflection, acknowledging the value of vulnerability, and consciously working on building trust and intimacy in relationships can help Zerin integrate her shadow and foster more profound connections with others.</div>
+  </div>
+
+  <div class="footer">
+    Generated 03 Jun 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>

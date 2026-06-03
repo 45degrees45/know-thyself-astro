@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Ruhi CH — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♐</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1>Ruhi CH</h1>
+    <p class="lagna-line">♐ Sagittarius Lagna 6.5°</p>
+    <p class="tagline">A spiritual and creative soul with a strong desire for independence and self-expression</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value">2002-03-03</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value">02:00 AM · Alleppey, Kerala, India</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Jupiter / Mercury / Saturn</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Spiritual Explorer</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Aqu H3</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Lib H11</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Ari H5</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Cap H2</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Gem H7</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Aqu H3</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Tau H6</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Tau H6</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Sco H12</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>Ruhi is a free-spirited individual with a strong connection to her intuition and creativity. She has a natural flair for drama and a desire to explore the depths of human nature. Her emotional style is complex, and she may struggle with mood swings, but she is also capable of great empathy and compassion. She approaches life with a sense of adventure and a willingness to take risks.</p>
+      <div class="trait-chips">
+        <span class="chip">intuitive</span><span class="chip">creative</span><span class="chip">independent</span><span class="chip">empathetic</span><span class="chip">adventurous</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>Ruhi values her independence and may struggle with commitment, but she is also deeply romantic and longs for a meaningful connection with a partner. Her 7th house lord, Jupiter, suggests that she is drawn to partners who are intelligent, philosophical, and expansive. Venus in Aquarius indicates that she values uniqueness and unconventionality in her relationships.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>Ruhi is best suited to a partner who is independent, spontaneous, and open-minded. Her ideal partner is someone who can appreciate her quirky nature and support her creative pursuits.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">empathetic</span><span class="chip chip-green">loyal</span><span class="chip chip-green">spontaneous</span><span class="chip chip-green">romantic</span>
+        <span class="chip chip-neg">commitment issues</span><span class="chip chip-neg">emotional unpredictability</span><span class="chip chip-neg">independence struggles</span><span class="chip chip-neg">trust issues</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>Ruhi's career is likely to be a reflection of her creative and spiritual nature. The presence of Kemadruma Yoga suggests that she may face challenges and setbacks, but she is also capable of great resilience and determination. Her best working style is likely to be independent and self-directed, with a focus on creative expression and personal fulfillment.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>The Vosi Yoga indicates a strong connection to her spiritual nature and a potential for great success in careers related to personal growth and development.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">arts</span><span class="chip">humanities</span><span class="chip">spirituality</span><span class="chip">education</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Inspirational Guide</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>Ruhi's Moon in Libra suggests a strong appreciation for beauty and harmony, and a natural talent for creating balance and equilibrium in her relationships and environment.</li><li>Her Saturn in Rohini indicates a strong connection to her spiritual practice and a potential for great discipline and self-control.</li><li>The presence of Rahu in Taurus suggests a strong desire for material security and a potential for great wealth and prosperity.</li><li>Ruhi's Jupiter in Gemini indicates a curious and adaptable nature, with a love of learning and a talent for communication.</li><li>Her Ketu in Scorpio suggests a strong connection to her intuition and a potential for great insight and perception.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>Ruhi's career is likely to be a long-term journey of self-discovery and personal growth, with a focus on creative expression and spiritual fulfillment. The current dasha of Jupiter suggests a period of expansion and growth, with opportunities for education and personal development.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2019-2021</div>
+          <div class="period-dasha">Jupiter / Jupiter</div>
+          <div class="period-theme">Expansion and growth in career, with opportunities for education and personal development.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2021-2024</div>
+          <div class="period-dasha">Jupiter / Saturn</div>
+          <div class="period-theme">Consolidation and discipline in career, with a focus on building stability and security.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2024-2026</div>
+          <div class="period-dasha">Jupiter / Mercury</div>
+          <div class="period-theme">Communication and creativity in career, with opportunities for self-expression and innovation.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>Ruhi should focus on developing her creative skills and pursuing opportunities for personal growth and development, while also being mindful of her financial security and stability.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>Ruhi's relationship timeline is likely to be complex and unpredictable, with a focus on personal growth and spiritual fulfillment. The current dasha of Jupiter suggests a period of expansion and growth in relationships, with opportunities for deepening connections and personal intimacy.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2021-2024</div>
+          <div class="period-dasha">Jupiter / Saturn</div>
+          <div class="period-theme">Consolidation and discipline in relationships, with a focus on building stability and commitment.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2024-2026</div>
+          <div class="period-dasha">Jupiter / Mercury</div>
+          <div class="period-theme">Communication and creativity in relationships, with opportunities for self-expression and innovation.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2026-2027</div>
+          <div class="period-dasha">Jupiter / Ketu</div>
+          <div class="period-theme">Spiritual growth and introspection in relationships, with a focus on personal fulfillment and self-awareness.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>Ruhi's relationships are likely to be influenced by her past life karma, with a focus on personal growth and spiritual fulfillment, and a potential for great challenges and opportunities for healing and transformation.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>The current Mahadasha of Jupiter is a period of expansion and growth for Ruhi, with opportunities for education, personal development, and creative expression. However, the presence of Ketu in the 12th house suggests a potential for spiritual growth and introspection, and a need to focus on her inner world and personal fulfillment.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Saturn Bhukti (2021-2024)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">Ruhi may face challenges and setbacks in her career and relationships, but she is also capable of great resilience and determination.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Mercury Bhukti (2024-2026)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">Ruhi may experience a mix of positive and negative events, with opportunities for creative expression and self-expression, but also potential challenges and setbacks.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Ketu Bhukti (2026-2027)</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">Ruhi may experience a period of spiritual growth and introspection, with opportunities for personal fulfillment and self-awareness.</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>The upcoming Saturn Mahadasha (2035-2054) may bring challenges and setbacks in Ruhi's career and relationships, but it also offers opportunities for growth and transformation.</li><li>The Rahu Mahadasha (2121-2139) may bring unpredictable and chaotic events, but it also offers opportunities for personal growth and spiritual fulfillment.</li></ul>
+      <div class="golden-box">The Jupiter / Mercury Bhukti (2024-2026) is a golden window for Ruhi, with opportunities for creative expression, self-expression, and personal growth.</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>The next Mahadasha of Saturn (2035-2054) will bring a focus on discipline, responsibility, and spiritual growth, with opportunities for personal transformation and self-awareness.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">BPHS Vol 2 (Parashara)</span>
+            <span class="ref-placement">The Sun and its relationship to the other planets</span>
+          </div>
+          <div class="ref-quote">"The Sun-The soul (wrcrr), nature' physicalctrength joy iovs and sorrowsand father."</div>
+          <div class="ref-application">This quote applies to Ruhi's chart as it highlights the importance of her spiritual nature and her connection to her father figure.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">The Nakshatra of Rohini and its relationship to Saturn</span>
+          </div>
+          <div class="ref-quote">"Rohini provides movement toward the divine as well as a place of worship."</div>
+          <div class="ref-application">This quote applies to Ruhi's chart as it highlights the importance of her spiritual practice and her connection to her inner world.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">The Nakshatra of Jyeshtha and its relationship to the Scorpion</span>
+          </div>
+          <div class="ref-quote">"The symbols for Jyeshtha are an earring and an umbrella."</div>
+          <div class="ref-application">This quote applies to Ruhi's chart as it highlights the importance of her intuition and her connection to her emotional nature.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>Ruhi's shadow side is characterized by a tendency to be overly critical and perfectionistic, with a fear of not meeting her high standards. She may also struggle with emotional unpredictability and mood swings, which can impact her relationships and overall well-being.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>perfectionism</strong><p>Ruhi may have high standards for herself and others, which can lead to frustration and disappointment.</p></div><div class="shadow-card"><strong>emotional unpredictability</strong><p>Ruhi may struggle with mood swings and emotional instability, which can impact her relationships and overall well-being.</p></div><div class="shadow-card"><strong>fear of intimacy</strong><p>Ruhi may have a fear of getting too close to others, which can lead to difficulties in forming and maintaining intimate relationships.</p></div><div class="shadow-card"><strong>self-doubt</strong><p>Ruhi may struggle with self-doubt and insecurity, which can impact her confidence and self-esteem.</p></div>
+    </div>
+    <div class="antidote-box">Ruhi can work with her shadow by practicing self-compassion and self-acceptance, and by learning to let go of her need for perfection and control.</div>
+  </div>
+
+  <div class="footer">
+    Generated 02 Jun 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>

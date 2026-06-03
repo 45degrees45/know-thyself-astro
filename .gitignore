@@ -10,3 +10,7 @@ venv/
 *.png
 *.pdf
 .DS_Store
+.venv/
+.playwright-mcp/
+astro_engine/output/
+# docs/ is intentionally tracked — GitHub Pages
