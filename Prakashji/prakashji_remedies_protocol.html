@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prakashji — Remedies & Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:      #0A0E12;
+  --bg2:     #121821;
+  --bg3:     #1A2028;
+  --bg4:     #202830;
+  --gold:    #FFB259;
+  --gold-lt: #FFCA85;
+  --gold-bg: rgba(255,178,89,0.07);
+  --gold-bd: rgba(255,178,89,0.22);
+  --u:       #7CFFC4;
+  --u-bg:    rgba(124,255,196,0.06);
+  --u-bd:    rgba(124,255,196,0.25);
+  --u-text:  #7CFFC4;
+  --sci:     #5BC0EB;
+  --sci-bg:  rgba(91,192,235,0.07);
+  --sci-bd:  rgba(91,192,235,0.25);
+  --sci-text:#5BC0EB;
+  --v:       #FF4D9D;
+  --v-bg:    rgba(255,77,157,0.06);
+  --v-bd:    rgba(255,77,157,0.22);
+  --v-text:  #FF4D9D;
+  --text:    #E6EBF1;
+  --text2:   rgba(230,235,241,0.68);
+  --text3:   rgba(230,235,241,0.38);
+  --rule:    rgba(255,178,89,0.12);
+  --moon:  #5BC0EB;
+  --mars:  #FF4D9D;
+  --merc:  #7CFFC4;
+  --jup:   #FFB259;
+  --sat:   #7A8290;
+  --sun:   #FFB259;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { font-size: 22px; background: var(--bg); }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  line-height: 1.65;
+  padding: 0;
+}
+
+/* ── NOISE TEXTURE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+/* ── ANIMATED RADIAL GLOW ── */
+body::after {
+  content: '';
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(90,196,138,0.04) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  animation: glowDrift 18s ease-in-out infinite alternate;
+}
+
+@keyframes glowDrift {
+  0%   { transform: translate(0,0) scale(1);    opacity: 0.7; }
+  50%  { transform: translate(8vw,5vh) scale(1.15); opacity: 1; }
+  100% { transform: translate(-4vw,10vh) scale(0.9); opacity: 0.6; }
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 56px 40px 80px;
+}
+
+/* ═══════════════════════════
+   HEADER
+═══════════════════════════ */
+.header {
+  border-bottom: 1px solid var(--gold-bd);
+  padding-bottom: 36px;
+  margin-bottom: 36px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  align-items: end;
+}
+
+.header-left {}
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--u);
+  margin-bottom: 14px;
+}
+
+.name {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: clamp(36px, 5vw, 68px);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.doc-title {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: clamp(16px, 1.6vw, 22px);
+  font-weight: 400;
+  color: var(--gold);
+  margin-top: 6px;
+  letter-spacing: 0.02em;
+}
+
+.header-meta {
+  font-size: 15px;
+  color: var(--text3);
+  letter-spacing: 0.06em;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.header-meta span { color: var(--text2); }
+
+.dasha-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  border: 1px solid var(--gold-bd);
+  background: var(--gold-bg);
+  color: var(--gold-lt);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  padding: 6px 18px;
+  border-radius: 40px;
+}
+
+.header-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+}
+
+.yoga-chip {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+  border: 1px solid var(--rule);
+  padding: 4px 12px;
+  border-radius: 2px;
+  background: var(--bg2);
+}
+
+/* ═══════════════════════════
+   TIER LEGEND
+═══════════════════════════ */
+.tier-legend {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 44px;
+}
+
+.legend-panel {
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.legend-panel.u   { background: var(--u-bg); }
+.legend-panel.v   { background: var(--v-bg); }
+.legend-panel.sci { background: var(--sci-bg); }
+.legend-panel.sci .legend-symbol { color: var(--sci); }
+.legend-panel.sci .legend-name   { color: var(--text); }
+
+.legend-symbol {
+  font-size: 22px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  line-height: 1;
+}
+
+.legend-panel.u .legend-symbol { color: var(--u); }
+.legend-panel.v .legend-symbol { color: var(--v); }
+
+.legend-name {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+  letter-spacing: 0.03em;
+}
+
+.legend-desc {
+  font-size: 15px;
+  color: var(--text2);
+  line-height: 1.55;
+}
+
+/* ═══════════════════════════
+   SECTION LABELS
+═══════════════════════════ */
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  margin-top: 48px;
+}
+
+.section-head:first-of-type { margin-top: 0; }
+
+.sh-line { flex:1; height:1px; background: var(--rule); }
+
+.sh-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+/* ═══════════════════════════
+   BLOCK CARDS
+═══════════════════════════ */
+.blocks { display: flex; flex-direction: column; gap: 18px; }
+
+.block-card {
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 0.25s;
+}
+
+.block-card:hover { border-color: var(--gold-bd); }
+
+/* planet left accent */
+.block-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 4px;
+}
+.bc-sat::before  { background: var(--sat);  }
+.bc-mars::before { background: var(--mars); }
+.bc-merc::before { background: var(--merc); }
+.bc-jup::before  { background: var(--jup);  }
+.bc-moon::before { background: var(--moon); }
+.bc-ketu::before { background: rgba(200,160,220,0.8); }
+.bc-leo::before  { background: var(--sun);  }
+
+/* large watermark symbol */
+.block-card::after {
+  content: attr(data-sym);
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 80px;
+  opacity: 0.04;
+  line-height: 1;
+  pointer-events: none;
+  font-family: serif;
+}
+
+.block-top {
+  padding: 18px 24px 14px 28px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.block-name {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+.block-source {
+  font-size: 16px;
+  color: var(--text3);
+  letter-spacing: 0.03em;
+  margin-top: 5px;
+}
+
+.block-tags {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.ptag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 3px 11px;
+  border-radius: 20px;
+}
+.ptag.sat  { background: rgba(106,144,184,0.12); color: var(--sat);  border: 1px solid rgba(106,144,184,0.3); }
+.ptag.mars { background: rgba(200,80,56,0.12);   color: var(--mars); border: 1px solid rgba(200,80,56,0.3);  }
+.ptag.merc { background: rgba(90,196,138,0.10);  color: var(--merc); border: 1px solid rgba(90,196,138,0.3); }
+.ptag.jup  { background: rgba(201,168,76,0.10);  color: var(--jup);  border: 1px solid rgba(201,168,76,0.3); }
+.ptag.moon { background: rgba(123,168,196,0.10); color: var(--moon); border: 1px solid rgba(123,168,196,0.3);}
+.ptag.sun  { background: rgba(212,136,58,0.10);  color: var(--sun);  border: 1px solid rgba(212,136,58,0.3); }
+.ptag.ketu { background: rgba(200,160,220,0.10); color: #C8A0DC;     border: 1px solid rgba(200,160,220,0.3);}
+
+.block-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+}
+
+.block-body.no-vedic { grid-template-columns: 1fr; }
+
+.tier-col {
+  padding: 18px 24px 20px 28px;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tier-col:last-child { border-right: none; }
+.tier-col.u-col { background: rgba(90,196,138,0.03); }
+.tier-col.v-col { background: rgba(201,168,76,0.03); }
+
+.tier-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+}
+
+.tier-label.u { color: var(--u-text); border-color: var(--u-bd); }
+.tier-label.v { color: var(--v-text); border-color: var(--v-bd); }
+
+.tier-dot { font-size: 14px; }
+
+.remedy-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.remedy-list li {
+  font-size: 20px;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 24px;
+  position: relative;
+}
+
+.remedy-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--text3);
+  font-size: 12px;
+  top: 2px;
+}
+
+.remedy-list li strong { color: var(--u-text); font-weight: 400; }
+.remedy-list li em     { color: var(--text2); font-style: normal; }
+
+.mantra-item {
+  color: var(--v-text) !important;
+}
+
+.u-note {
+  font-size: 16px;
+  color: var(--text2);
+  margin-top: 4px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  background: rgba(90,196,138,0.05);
+  border-left: 2px solid var(--u-bd);
+  line-height: 1.6;
+}
+
+.vedic-note {
+  font-size: 16px;
+  color: var(--text3);
+  padding: 14px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* ═══════════════════════════
+   SCIENCE TIER ROW
+═══════════════════════════ */
+.tier-row-science {
+  border-top: 1px solid rgba(91,143,212,0.15);
+  padding: 20px 28px 22px;
+  background: rgba(91,143,212,0.025);
+}
+
+.sci-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--sci-text);
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--sci-bd);
+}
+
+.sci-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.sci-subcol {}
+
+.sci-subcol-name {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--sci-text);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(91,143,212,0.2);
+}
+
+.sci-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.sci-list li {
+  font-size: 20px;
+  color: var(--text);
+  line-height: 1.7;
+  padding-left: 24px;
+  position: relative;
+}
+
+.sci-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--sci);
+  font-size: 12px;
+  top: 3px;
+  opacity: 0.7;
+}
+
+.sci-list li strong { color: var(--sci-text); font-weight: 400; }
+.sci-list li em     { color: var(--text2); font-style: normal; }
+
+/* ═══════════════════════════
+   GEMSTONES
+═══════════════════════════ */
+.gem-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.gem-card {
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 18px 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  transition: border-color 0.2s;
+}
+.gem-card:hover { border-color: var(--u-bd); }
+
+.gem-icon {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.gem-icon.coral   { background: rgba(200,80,56,0.1);  color: var(--mars); border: 1.5px solid rgba(200,80,56,0.3);  }
+.gem-icon.emerald { background: rgba(90,196,138,0.1); color: var(--merc); border: 1.5px solid rgba(90,196,138,0.3); }
+.gem-icon.avoid   { background: rgba(255,255,255,0.04); color: var(--text3); border: 1.5px solid rgba(255,255,255,0.1); }
+
+.gem-body {}
+.gem-name {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+
+.gem-name.avoid-name { color: var(--text3); text-decoration: line-through; font-style: italic; }
+
+.gem-detail {
+  font-size: 17px;
+  color: var(--text2);
+  line-height: 1.6;
+}
+
+.gem-detail strong { color: var(--text); font-weight: 400; }
+
+.universal-badge-sm {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--u-text);
+  font-family: 'JetBrains Mono', monospace;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* ═══════════════════════════
+   GIVING CALENDAR
+═══════════════════════════ */
+.giving-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 800px) {
+  .giving-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.give-card {
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 12px 14px;
+  border-top: 3px solid;
+}
+
+.give-card.c-mon { border-top-color: var(--moon); }
+.give-card.c-tue { border-top-color: var(--mars); }
+.give-card.c-wed { border-top-color: var(--merc); }
+.give-card.c-thu { border-top-color: var(--jup);  }
+.give-card.c-fri { border-top-color: var(--ven, #C478A8); }
+.give-card.c-sat { border-top-color: var(--sat);  }
+.give-card.c-sun { border-top-color: var(--sun);  }
+
+.give-day {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text2);
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.give-what {
+  font-size: 15px;
+  color: var(--text2);
+  line-height: 1.55;
+}
+
+/* ═══════════════════════════
+   VEDIC SUMMARY
+═══════════════════════════ */
+.vedic-summary {
+  background: var(--v-bg);
+  border: 1px solid var(--v-bd);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.vs-header {
+  background: rgba(201,168,76,0.1);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--v-bd);
+}
+
+.vs-symbol { font-size: 20px; color: var(--gold); }
+
+.vs-title {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--gold-lt);
+  letter-spacing: 0.05em;
+}
+
+.vs-note {
+  font-size: 15px;
+  color: var(--text2);
+  margin-top: 2px;
+}
+
+.vs-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  background: var(--v-bd);
+}
+
+.vs-col {
+  background: var(--bg2);
+  padding: 16px 20px;
+}
+
+.vs-day {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.vs-mantras {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vs-mantras li {
+  font-size: 18px;
+  color: var(--text2);
+  line-height: 1.6;
+  padding-left: 16px;
+  position: relative;
+}
+
+.vs-mantras li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  font-size: 7px;
+  color: var(--gold);
+  top: 5px;
+}
+
+/* ═══════════════════════════
+   DASHA FOCUS BOX
+═══════════════════════════ */
+.dasha-box {
+  background: linear-gradient(135deg, rgba(201,168,76,0.07), rgba(90,196,138,0.05));
+  border: 1px solid var(--gold-bd);
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.db-symbol {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--gold-bd);
+  line-height: 1;
+}
+
+.db-title {
+  font-family: 'Inter Tight', system-ui, sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--gold-lt);
+  margin-bottom: 8px;
+}
+
+.db-text {
+  font-size: 17px;
+  color: var(--text2);
+  line-height: 1.65;
+}
+
+.db-text strong { color: var(--text); }
+
+/* ═══════════════════════════
+   FOOTER
+═══════════════════════════ */
+.page-footer {
+  margin-top: 48px;
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pf-name {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: var(--text3);
+}
+
+.pf-dots { display:flex; gap:6px; }
+.pf-dot  { width:8px; height:8px; border-radius:50%; opacity:0.5; }
+
+/* ═══════════════════════════
+   RESPONSIVE
+═══════════════════════════ */
+@media (max-width: 800px) {
+  .page { padding: 32px 20px 60px; }
+  .header { grid-template-columns: 1fr; }
+  .header-right { align-items: flex-start; }
+  .tier-legend { grid-template-columns: 1fr; }
+  .sci-grid { grid-template-columns: 1fr; }
+  .block-body { grid-template-columns: 1fr; }
+  .block-body.no-vedic { grid-template-columns: 1fr; }
+  .tier-col { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
+}
+
+/* ═══════════════════════════
+   ANIMATIONS
+═══════════════════════════ */
+.block-card {
+  animation: fadeUp 0.5s ease both;
+}
+.block-card:nth-child(1) { animation-delay: 0.05s; }
+.block-card:nth-child(2) { animation-delay: 0.10s; }
+.block-card:nth-child(3) { animation-delay: 0.15s; }
+.block-card:nth-child(4) { animation-delay: 0.20s; }
+.block-card:nth-child(5) { animation-delay: 0.25s; }
+.block-card:nth-child(6) { animation-delay: 0.30s; }
+.block-card:nth-child(7) { animation-delay: 0.35s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* print */
+@media print {
+  body::before, body::after { display:none; }
+  .page { padding: 10mm; max-width:100%; }
+  .block-body { grid-template-columns: 1fr 1fr; }
+  .sci-grid { grid-template-columns: repeat(3, 1fr); }
+  .giving-grid { grid-template-columns: repeat(7,1fr); }
+  @page { size: A3 landscape; margin: 10mm; }
+}
+
+
+/* ════════════════════════════════════
+   TAB BAR
+════════════════════════════════════ */
+.tab-bar {
+  display: flex;
+  gap: 3px;
+  margin-bottom: 44px;
+  background: var(--bg2);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 7px;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.18s, color 0.18s;
+}
+
+.tab-btn-label {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text3);
+  transition: color 0.18s;
+}
+
+.tab-btn-sub {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--text3);
+  margin-top: 3px;
+  letter-spacing: 0.06em;
+  transition: color 0.18s;
+}
+
+.tab-btn:hover .tab-btn-label { color: var(--text2); }
+
+.tab-btn.active { background: var(--bg3); }
+.tab-btn.tab-u.active .tab-btn-label { color: var(--u-text); }
+.tab-btn.tab-u.active .tab-btn-sub   { color: var(--u); opacity: 0.7; }
+.tab-btn.tab-s.active .tab-btn-label { color: var(--sci-text); }
+.tab-btn.tab-s.active .tab-btn-sub   { color: var(--sci); opacity: 0.7; }
+.tab-btn.tab-v.active .tab-btn-label { color: var(--v-text); }
+.tab-btn.tab-v.active .tab-btn-sub   { color: var(--v); opacity: 0.7; }
+
+/* ════════════════════════════════════
+   TAB VISIBILITY RULES
+════════════════════════════════════ */
+
+/* ── Universal tab ── */
+[data-tab="u"] .tier-col.v-col    { display: none !important; }
+[data-tab="u"] .block-body        { grid-template-columns: 1fr !important; }
+[data-tab="u"] .tier-row-science  { display: none !important; }
+[data-tab="u"] #panel-vedic       { display: none !important; }
+
+/* ── Neuroscience tab ── */
+[data-tab="s"] .block-body        { display: none !important; }
+[data-tab="s"] .tier-row-science  { display: block !important; }
+[data-tab="s"] #panel-u-extras    { display: none !important; }
+[data-tab="s"] #panel-vedic       { display: none !important; }
+
+/* ── Vedic tab ── */
+[data-tab="v"] .tier-col.u-col    { display: none !important; }
+[data-tab="v"] .block-body        { grid-template-columns: 1fr !important; }
+[data-tab="v"] .tier-row-science  { display: none !important; }
+[data-tab="v"] #panel-u-extras    { display: none !important; }
+/* blocks with no-vedic: hide body, show note */
+[data-tab="v"] .block-body.no-vedic { display: none !important; }
+[data-tab="v"] .no-vedic-note     { display: block !important; }
+
+.no-vedic-note {
+  display: none;
+  padding: 18px 28px;
+  font-size: 16px;
+  color: var(--text3);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ── Always-visible tier labels ── */
+[data-tab="u"] .tier-label.v, [data-tab="u"] .tier-label.s { display: none; }
+[data-tab="s"] .tier-label.u, [data-tab="s"] .tier-label.v { display: none; }
+[data-tab="v"] .tier-label.u, [data-tab="v"] .tier-label.s { display: none; }
+
+body::after { background: radial-gradient(ellipse, rgba(124,255,196,0.05) 0%, transparent 65%); } .block-name, .name, .legend-name, .db-title { font-weight: 600; letter-spacing: -0.01em; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══════════════ HEADER ══════════════ -->
+<div class="header">
+  <div class="header-left">
+    <div class="eyebrow">Astrological Remedies & Solutions</div>
+    <div class="name">Prakashji</div>
+    <div class="doc-title">Psychological Blocks, Remedies & Practices</div>
+    <div class="header-meta">
+      Leo Lagna 4.1° &nbsp;·&nbsp; <span>Palakkad, Kerala</span> &nbsp;·&nbsp; 04 November 1973, 1:22 AM<br>
+      Yoga Karaka Mars · H9 Aries &nbsp;·&nbsp; Lagna Lord: Sun H3 Libra
+    </div>
+    <div class="dasha-pill">⊙ Current Dasha: Saturn / Moon / Mercury · 2025–2027</div>
+  </div>
+  <div class="header-right">
+    <span class="yoga-chip">Gajakesari Yoga</span>
+    <span class="yoga-chip">Yoga Karaka (Mars)</span>
+    <span class="yoga-chip">Viparita Raja Yoga — Jupiter</span>
+    <span class="yoga-chip">Viparita Raja Yoga — Moon</span>
+    <span class="yoga-chip">Vesi Yoga (Mercury)</span>
+  </div>
+</div>
+
+
+<!-- ══════════════ TAB BAR ══════════════ -->
+<div class="tab-bar">
+  <button class="tab-btn tab-u active" data-tab="u">
+    <span class="tab-btn-label">● Universal</span>
+    <span class="tab-btn-sub">Behavioral · Gemstones · Giving</span>
+  </button>
+  <button class="tab-btn tab-s" data-tab="s">
+    <span class="tab-btn-label">◈ Neuroscience</span>
+    <span class="tab-btn-sub">CBT · NLP · Biohacking</span>
+  </button>
+  <button class="tab-btn tab-v" data-tab="v">
+    <span class="tab-btn-label">◆ Vedic</span>
+    <span class="tab-btn-sub">Mantras · Deities · Puja</span>
+  </button>
+</div>
+
+
+<!-- ══════════════ PSYCHOLOGICAL BLOCKS ══════════════ -->
+<div class="section-head">
+  <div class="sh-line"></div>
+  <div class="sh-text">Identified Blocks & Remedies</div>
+  <div class="sh-line"></div>
+</div>
+
+<div class="blocks">
+
+  <!-- 1. PROCRASTINATION -->
+  <div class="block-card bc-sat bc-mars" data-sym="♄">
+    <div class="block-top">
+      <div>
+        <div class="block-name">Procrastination</div>
+        <div class="block-source">Saturn retrograde H11 / Ardra &nbsp;·&nbsp; Mars retrograde H9 / Ashwini</div>
+      </div>
+      <div class="block-tags">
+        <span class="ptag sat">♄ Saturn</span>
+        <span class="ptag mars">♂ Mars</span>
+      </div>
+    </div>
+    <div class="block-body">
+      <div class="tier-col u-col">
+        <div class="tier-label u"><span class="tier-dot">●</span> Universal</div>
+        <ul class="remedy-list">
+          <li><strong>Body before task</strong> — 10 min physical movement before any important work. Retrograde Mars must be activated in the body first or initiative stays locked.</li>
+          <li><strong>Two-minute rule</strong> — commit only to starting for 2 minutes. The retrograde Mars stalls on the beginning, not on the work itself.</li>
+          <li><strong>Three-day deadlines</strong> — break all goals into 3-day chunks. Saturn retrograde H11 fears large goals; near-term visible targets bypass the fear mechanism.</li>
+          <li><strong>Hard task first on Tuesdays</strong> — Mars energy peaks Tuesday morning. Use the peak, not after it fades.</li>
+        </ul>
+        <div class="u-note">Root: Protection through postponement — Saturn retrograde avoids the goal to avoid confirming the fear of failure. Small completions rebuild the signal that completion is safe.</div>
+      </div>
+      <div class="tier-col v-col">
+        <div class="tier-label v"><span class="tier-dot">◆</span> Vedic Tradition</div>
+        <ul class="remedy-list">
+          <li class="mantra-item">Hanuman Chalisa — Tuesday morning before the avoided task</li>
+          <li class="mantra-item"><em>Om Kum Kujaya Namah</em> × 108 during morning walk (Mars mantra)</li>
+          <li class="mantra-item"><em>Om Gam Ganapataye Namah</em> × 108 before beginning any new project (Ganesha removes the Ketu-type obstacle at initiation)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tier-row-science">
+      <div class="sci-header"><span style="color:var(--sci);">◈</span> Neuroscience — CBT · NLP · Biohacking</div>
+      <div class="sci-grid">
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">CBT</div>
+          <ul class="sci-list">
+            <li><strong>Behavioral activation</strong> — schedule the avoided task as a timed appointment, not an intention. Intention relies on motivation; appointments bypass it.</li>
+            <li><strong>Implementation intention</strong> — "When I sit at my desk at 8am, I will open the document immediately." Pre-decided action removes in-the-moment resistance.</li>
+            <li><strong>Cognitive defusion</strong> — "I notice I'm having the thought that I'm not ready." Distance from the thought removes its command authority.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">NLP</div>
+          <ul class="sci-list">
+            <li><strong>Peak state anchor</strong> — recall a past moment of energized action, amplify it fully, press thumb+finger together to anchor. Fire the anchor before avoided tasks.</li>
+            <li><strong>Future pacing</strong> — vividly imagine the task complete: what you see, hear, feel. The brain begins neurologically preparing for a state it has already visited.</li>
+            <li><strong>Chunk down</strong> — ask "What is the very next physical action?" until the step is so small it cannot be avoided.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">Biohacking</div>
+          <ul class="sci-list">
+            <li><strong>Cold exposure 2 min</strong> before work session — spikes dopamine and norepinephrine, creating the neurochemical state of motivated action before willpower is needed.</li>
+            <li><strong>Pomodoro 25/5</strong> — 25 min work, 5 min rest. The retrograde Mars energy stalls on the idea of working; the 25-min container makes starting feel safe.</li>
+            <li><strong>Body doubling</strong> — work alongside another person (physically or virtually). Dopamine regulation improves markedly with a witnessed presence.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MEMORY / COGNITIVE RETRIEVAL -->
+  <div class="block-card bc-merc" data-sym="☿">
+    <div class="block-top">
+      <div>
+        <div class="block-name">Memory & Cognitive Retrieval</div>
+        <div class="block-source">Mercury retrograde H4 / Scorpio / Vishakha pada 4</div>
+      </div>
+      <div class="block-tags">
+        <span class="ptag merc">☿ Mercury</span>
+      </div>
+    </div>
+    <div class="block-body">
+      <div class="tier-col u-col">
+        <div class="tier-label u"><span class="tier-dot">●</span> Universal</div>
+        <ul class="remedy-list">
+          <li><strong>Write before speaking</strong> — Mercury retrograde in Scorpio H4 retrieves through pen, not voice. Information surfaces on paper that won't come in real-time conversation.</li>
+          <li><strong>Teach to remember</strong> — explaining a concept to someone anchors it more durably than re-reading. Best retention mechanism for this Mercury placement.</li>
+          <li><strong>Monday review cycle</strong> — retrograde Mercury learns by revisiting, not just absorbing. One day per week dedicated to consolidating prior learning.</li>
+          <li><strong>Environmental cues</strong> — same physical location for the same type of thinking. Scorpio H4 (home, foundation) encodes memory to place.</li>
+        </ul>
+        <div class="u-note">Note: This is non-linear memory — strong for emotionally significant events, weaker for sequential recall under pressure. Not a deficit; a different architecture.</div>
+      </div>
+      <div class="tier-col v-col">
+        <div class="tier-label v"><span class="tier-dot">◆</span> Vedic Tradition</div>
+        <ul class="remedy-list">
+          <li class="mantra-item"><em>Om Aim Saraswatyai Namah</em> × 108 — Wednesday mornings at dawn</li>
+          <li class="mantra-item">Vishnu Sahasranama — recited or listened to weekly (Vishakha nakshatra has Vishnu/Indra resonance)</li>
+          <li class="mantra-item">Donate books or educational materials on Wednesdays — activates Mercury's H11 (gains) channel</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tier-row-science">
+      <div class="sci-header"><span style="color:var(--sci);">◈</span> Neuroscience — CBT · NLP · Biohacking</div>
+      <div class="sci-grid">
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">CBT</div>
+          <ul class="sci-list">
+            <li><strong>Worry postponement</strong> — if anxiety fragments recall, schedule a 15-min "worry slot" daily. Cognitive intrusions compete for working memory; postponement clears them.</li>
+            <li><strong>Attention training</strong> — 10 min daily focused attention on a single object (candle, breath). Mercury retrograde in H4 scatters; deliberate single-point focus rebuilds retrieval pathways.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">NLP</div>
+          <ul class="sci-list">
+            <li><strong>Memory palace</strong> — associate information with vivid spatial locations in a familiar place. Scorpio H4 (home, foundation) encodes to physical place naturally — leverage this.</li>
+            <li><strong>Sub-modality amplification</strong> — make important memories brighter, larger, more colourful. The brain stores emphasis through sensory intensity, not repetition alone.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">Biohacking</div>
+          <ul class="sci-list">
+            <li><strong>Omega-3 DHA 1–2g daily</strong> — DHA is the primary structural fat in neuron membranes; directly improves synaptic transmission and memory consolidation.</li>
+            <li><strong>Sleep 7–8 hrs strictly</strong> — hippocampal memory replay occurs in deep sleep. Retrograde Mercury's already-weak retrieval collapses with even mild sleep debt.</li>
+            <li><strong>Spaced repetition (Anki)</strong> — review material at increasing intervals. This is the single most evidence-based memory tool, aligned with Mercury's revisiting strength.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. ANALYSIS PARALYSIS -->
+  <div class="block-card bc-merc" data-sym="☿">
+    <div class="block-top">
+      <div>
+        <div class="block-name">Analysis Paralysis</div>
+        <div class="block-source">Mercury retrograde Scorpio — depth without release &nbsp;·&nbsp; Leo Lagna perfectionism</div>
+      </div>
+      <div class="block-tags">
+        <span class="ptag merc">☿ Mercury</span>
+        <span class="ptag sun">☉ Leo</span>
+      </div>
+    </div>
+    <div class="block-body no-vedic"><div class="no-vedic-note">No Vedic practice specifically addresses this block — it is best served by behavioral and cognitive tools.</div>
+      <div class="tier-col u-col" style="border-right:none;">
+        <div class="tier-label u"><span class="tier-dot">●</span> Universal</div>
+        <ul class="remedy-list">
+          <li><strong>Time-box decisions explicitly</strong> — 15 min for minor, 60 min maximum for major. Scorpio Mercury has no natural exit from depth; the timer creates one.</li>
+          <li><strong>Interrupt the loop physically</strong> — stand up, walk 5 min when cycling on the same thought. Mercury in H4 (the mind itself) responds to body-state change.</li>
+          <li><strong>Name the "good enough" threshold before starting</strong> — "This draft is done when it covers X, Y, Z" set in writing before the task begins. Leo Lagna perfectionism needs a pre-set ceiling.</li>
+          <li><strong>Externalise to paper to complete the loop</strong> — the thought that goes on paper stops looping internally. Mercury in Scorpio recycles internally until discharged into writing.</li>
+          <li><strong>Use AI as first draft</strong> — removes the blank-page paralysis that triggers perfectionism. Leo Lagna can then edit rather than originate.</li>
+        </ul>
+        <div class="u-note">No Vedic-specific mantra addresses analysis paralysis directly — this block is best served by behavioral and cognitive tools.</div>
+      </div>
+    </div>
+    <div class="tier-row-science">
+      <div class="sci-header"><span style="color:var(--sci);">◈</span> Neuroscience — CBT · NLP · Biohacking</div>
+      <div class="sci-grid">
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">CBT</div>
+          <ul class="sci-list">
+            <li><strong>Decision matrix</strong> — list options as columns, criteria as rows, score 1–5. Moves the decision out of working memory into a visible structure where it can be completed.</li>
+            <li><strong>Good-enough threshold</strong> — define "70% confidence = proceed." Research shows decision quality does not improve significantly beyond the 70% information mark.</li>
+            <li><strong>Behavioral experiment</strong> — make one small fast decision this week and log the actual outcome vs feared outcome. Builds an evidence base that counters catastrophising.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">NLP</div>
+          <ul class="sci-list">
+            <li><strong>Pattern interrupt</strong> — when the loop begins: clap hands sharply, change rooms, say "STOP" aloud. Breaks the neural firing pattern before it completes.</li>
+            <li><strong>Swish pattern</strong> — visualise the stuck, overwhelmed image, then rapidly replace it with a vivid image of decisive action. Repeat 5–7 times until the stuck image no longer holds.</li>
+            <li><strong>Chunk down</strong> — "What is the single next physical action?" Keep asking until the answer is a 2-min task. Paralysis exists at the macro level, not the micro.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">Biohacking</div>
+          <ul class="sci-list">
+            <li><strong>Box breathing before decisions</strong> — 4-in, 4-hold, 4-out, 4-hold. Activates the parasympathetic nervous system, reducing the prefrontal overwhelm that creates the paralysis.</li>
+            <li><strong>10-min walk before big decisions</strong> — normalises blood glucose and increases BDNF. Decision fatigue is partly metabolic; movement resets executive function.</li>
+            <li><strong>Time-restrict decisions to mornings</strong> — cortisol peaks 30–45 min after waking, creating optimal prefrontal function. Schedule analysis tasks in this window only.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SELF-DOUBT CYCLES -->
+  <div class="block-card bc-jup" data-sym="♃">
+    <div class="block-top">
+      <div>
+        <div class="block-name">Self-Doubt Cycles</div>
+        <div class="block-source">Jupiter debilitated H6 / Capricorn / Shravana — wisdom that turns against itself</div>
+      </div>
+      <div class="block-tags">
+        <span class="ptag jup">♃ Jupiter</span>
+      </div>
+    </div>
+    <div class="block-body">
+      <div class="tier-col u-col">
+        <div class="tier-label u"><span class="tier-dot">●</span> Universal</div>
+        <ul class="remedy-list">
+          <li><strong>Thursday teaching hour</strong> — the act of teaching rewires self-authority faster than any affirmation. Jupiter in H6 heals through the service of sharing knowledge.</li>
+          <li><strong>Name the doubt in writing</strong> — cognitive defusion: write the exact doubt ("I don't know enough to teach this") then examine it as an object. Named doubts lose grip.</li>
+          <li><strong>Evidence log</strong> — keep a running list of moments when Prakashji's knowledge visibly helped someone. Debilitated Jupiter forgets its own wins; the log prevents this.</li>
+          <li><em>"Would I accept this doubt from a student?"</em> — the self-compassion pivot. Jupiter in H6 applies standards inward that it would reject outward.</li>
+        </ul>
+      </div>
+      <div class="tier-col v-col">
+        <div class="tier-label v"><span class="tier-dot">◆</span> Vedic Tradition</div>
+        <ul class="remedy-list">
+          <li class="mantra-item"><em>Om Brim Brihaspataye Namah</em> × 108 on Thursday mornings</li>
+          <li class="mantra-item">Guru acknowledgment ritual — conscious gratitude to one's teachers, living or departed</li>
+          <li class="mantra-item">Donate to teachers, educational institutions on Thursdays — Jupiter's H5 (teaching) activated</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tier-row-science">
+      <div class="sci-header"><span style="color:var(--sci);">◈</span> Neuroscience — CBT · NLP · Biohacking</div>
+      <div class="sci-grid">
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">CBT</div>
+          <ul class="sci-list">
+            <li><strong>Thought record</strong> — write the automatic doubt → identify the distortion (mind-reading, fortune-telling, discounting positives) → write a balanced replacement thought. Interrupts the loop with evidence.</li>
+            <li><strong>Evidence log</strong> — keep a running list of moments when Prakashji's knowledge or action produced a visible positive result. The debilitated Jupiter forgets wins; the log prevents this.</li>
+            <li><strong>Self-compassion pivot</strong> — "Would I accept this criticism of a student I respect?" If no, apply the same standard inward.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">NLP</div>
+          <ul class="sci-list">
+            <li><strong>Parts integration</strong> — identify the inner critic as a part with positive intent (protection, maintaining standards). Acknowledge its intent, negotiate a less limiting expression.</li>
+            <li><strong>Self-belief anchor</strong> — recall a peak competence moment, step fully into it sensorially, anchor it to a gesture. Fire before entering situations that trigger doubt.</li>
+            <li><strong>"As if" frame</strong> — act as if already confident for one full hour per day. The nervous system learns through doing, not convincing.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">Biohacking</div>
+          <ul class="sci-list">
+            <li><strong>HRV coherence training</strong> — 5 min daily at 5–6 breaths/min (HeartMath or Elite HRV app). Reduces amygdala reactivity, the neurological source of self-doubt spirals.</li>
+            <li><strong>Resistance training 3×/week</strong> — increases testosterone and reduces cortisol, neurochemically countering the low-confidence state that self-doubt creates.</li>
+            <li><strong>Power posing 2 min</strong> before high-stakes situations — expansive posture for 2 min shifts cortisol down and testosterone up, providing a measurable confidence baseline.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. EMOTIONAL REPRESSION / HEAVINESS -->
+  <div class="block-card bc-moon" data-sym="☽">
+    <div class="block-top">
+      <div>
+        <div class="block-name">Emotional Repression & Background Heaviness</div>
+        <div class="block-source">Moon (H12 lord) in H6 / Capricorn / Dhanishtha — subconscious loss-pattern expressing as daily obstacle</div>
+      </div>
+      <div class="block-tags">
+        <span class="ptag moon">☽ Moon</span>
+      </div>
+    </div>
+    <div class="block-body">
+      <div class="tier-col u-col">
+        <div class="tier-label u"><span class="tier-dot">●</span> Universal</div>
+        <ul class="remedy-list">
+          <li><strong>Music therapy 20 min — Mondays</strong> — rhythmic entrainment directly regulates the nervous system. Dhanishtha Moon discharges what Capricorn won't allow in words.</li>
+          <li><strong>Emotional check-in practice</strong> — name what is present without judgment. Capricorn Moon cannot release what it cannot name. One sentence, no analysis.</li>
+          <li><strong>Physical service 20 min weekly</strong> — H6 Moon resets through concrete giving. Not digital — physical: cooking, carrying, visiting someone in need.</li>
+          <li><strong>Box breathing</strong> — 4-count inhale, hold, exhale, hold. Discharges suppressed autonomic arousal that Capricorn Moon stores somatically.</li>
+        </ul>
+      </div>
+      <div class="tier-col v-col">
+        <div class="tier-label v"><span class="tier-dot">◆</span> Vedic Tradition</div>
+        <ul class="remedy-list">
+          <li class="mantra-item"><em>Om Namah Shivaya</em> × 108 on Monday mornings</li>
+          <li class="mantra-item">Shiva worship — Shiva holds the intensity Capricorn Moon cannot express. Rudra (Ardra) also addressed here.</li>
+          <li class="mantra-item">White foods offering on Mondays — milk, rice, coconut</li>
+          <li class="mantra-item">Purnima (full moon) extended Shiva or Hanuman worship — monthly emotional clearing</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tier-row-science">
+      <div class="sci-header"><span style="color:var(--sci);">◈</span> Neuroscience — CBT · NLP · Biohacking</div>
+      <div class="sci-grid">
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">CBT</div>
+          <ul class="sci-list">
+            <li><strong>Affect labeling</strong> — simply naming an emotion ("I feel heavy, closed, frustrated") reduces amygdala activation by 30–50% (fMRI-confirmed). The Capricorn Moon suppresses; naming bypasses the suppression.</li>
+            <li><strong>Emotion diary</strong> — write 3 emotions per day, rated 1–10. Builds emotional granularity. The more precise the labeling vocabulary, the less the body has to hold.</li>
+            <li><strong>Graduated exposure</strong> — schedule one emotionally uncomfortable but low-stakes conversation per week. Avoidance maintains the repression pattern; small exposures retrain the response.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">NLP</div>
+          <ul class="sci-list">
+            <li><strong>Body location technique</strong> — find where the suppressed emotion lives physically (chest, stomach, throat), give it a colour and shape, then consciously change its size and intensity. Releases what language alone cannot reach.</li>
+            <li><strong>Timeline therapy</strong> — float above the personal timeline to a formative event, bring an adult resource (compassion, perspective) into it, and return. Rewires the charge without re-traumatising.</li>
+            <li><strong>VAK anchoring for release</strong> — build a specific kinesthetic anchor for emotional release. Firing it in the moment the emotion builds creates a conscious discharge channel.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">Biohacking</div>
+          <ul class="sci-list">
+            <li><strong>Vagus nerve activation</strong> — cold water on face and neck, humming for 5 min, gargling. These directly stimulate the vagus nerve, shifting from sympathetic (suppression) to parasympathetic (release).</li>
+            <li><strong>HRV biofeedback</strong> — track HRV daily. Emotional repression chronically lowers HRV; watching it improve with breathing practice creates a feedback loop that motivates continued emotional work.</li>
+            <li><strong>Somatic shake/movement</strong> — 5 min of uninhibited body movement or shaking (Dhanishtha is rhythm-ruled). The body stores what the mind avoids; rhythmic movement is the exit.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. GOAL DETACHMENT (KETU H11) -->
+  <div class="block-card bc-ketu" data-sym="☊">
+    <div class="block-top">
+      <div>
+        <div class="block-name">Goal Detachment — "Why Does It Matter?"</div>
+        <div class="block-source">Ketu in H11 / Gemini / Mrigashira — spiritual dissolution of worldly commitment mid-pursuit</div>
+      </div>
+      <div class="block-tags">
+        <span class="ptag ketu">☊ Ketu H11</span>
+      </div>
+    </div>
+    <div class="block-body">
+      <div class="tier-col u-col">
+        <div class="tier-label u"><span class="tier-dot">●</span> Universal</div>
+        <ul class="remedy-list">
+          <li><strong>Connect the worldly goal to the inner purpose</strong> — "Why does reaching this goal serve something larger?" Ketu H11 detaches from goals that feel only material. Anchoring to meaning sustains momentum.</li>
+          <li><strong>Celebrate micro-completions consciously</strong> — Ketu in H11 causes completions to go unregistered. A physical acknowledgment (write it, say it) makes the brain record the win.</li>
+          <li><strong>Accountability witness</strong> — Ketu dissolves what is unwitnessed. An external person who sees the commitment prevents Ketu's silent evaporation.</li>
+          <li><strong>Wins log</strong> — running written record of completed goals. Ketu's detachment resets; the log provides continuity of evidence that goals do get completed.</li>
+        </ul>
+      </div>
+      <div class="tier-col v-col">
+        <div class="tier-label v"><span class="tier-dot">◆</span> Vedic Tradition</div>
+        <ul class="remedy-list">
+          <li class="mantra-item"><em>Om Gam Ganapataye Namah</em> × 108 before starting any significant project — Ganesha governs Ketu and removes initiation obstacles</li>
+          <li class="mantra-item">Amavasya (new moon) ancestral acknowledgment — Ketu is ancestral; honoring the lineage quiets its pull toward dissolution</li>
+          <li class="mantra-item">Peepal (Ashwatha) tree circumambulation or offering — classical Ketu H11 remedy</li>
+        </ul>
+      </div>
+    </div>
+    <div class="tier-row-science">
+      <div class="sci-header"><span style="color:var(--sci);">◈</span> Neuroscience — CBT · NLP · Biohacking</div>
+      <div class="sci-grid">
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">CBT</div>
+          <ul class="sci-list">
+            <li><strong>Values clarification</strong> — write the top 5 core values, then test each goal against them. Ketu H11 detaches from goals that feel merely material; connecting goals to values sustains commitment.</li>
+            <li><strong>Behavioral activation</strong> — schedule goal-related micro-actions as calendar appointments. Ketu dissolves what is left as intention; the calendar transforms intention into structure.</li>
+            <li><strong>Implementation intention</strong> — "If I notice the 'what's the point' feeling, I will immediately re-read my why-statement." Pre-decided response prevents Ketu from silently evaporating the momentum.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">NLP</div>
+          <ul class="sci-list">
+            <li><strong>Compelling future creation</strong> — construct a vivid 5-sensory image of the achieved goal and step inside it. What you see, hear, feel, smell in that future state. The richer the image, the stronger the pull.</li>
+            <li><strong>Well-formed outcome process</strong> — state the goal positively, identify what you'll see/hear/feel when you have it, and define the first action step. Ketu's dissolution cannot dissolve a well-formed, embodied target.</li>
+            <li><strong>Towards motivation</strong> — identify what moving toward the goal gives you (not what avoiding failure saves you). Towards-motivated goals resist Ketu's detachment; away-from goals collapse under it.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">Biohacking</div>
+          <ul class="sci-list">
+            <li><strong>Dopamine detox 1 day/week</strong> — no social media, minimal stimulation. Resets the baseline dopamine threshold so ordinary goals feel meaningful again. Ketu's detachment worsens on a desensitised dopamine system.</li>
+            <li><strong>Track process not outcomes</strong> — monitor leading indicators (hours worked, calls made) not lag indicators (results). Ketu detaches from distant outcomes; proximity metrics keep the reward circuit engaged.</li>
+            <li><strong>Habit stacking</strong> — attach the goal action to an existing strong habit. Ketu dissolves isolated intentions; habits anchored to established routines survive the detachment.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. PERFECTIONISM -->
+  <div class="block-card bc-leo" data-sym="☉">
+    <div class="block-top">
+      <div>
+        <div class="block-name">Perfectionism — The Invisible Wall</div>
+        <div class="block-source">Leo Lagna + Saturn retrograde + Mercury Scorpio — internal standards too high to act from</div>
+      </div>
+      <div class="block-tags">
+        <span class="ptag sun">☉ Leo</span>
+        <span class="ptag sat">♄ Saturn R</span>
+      </div>
+    </div>
+    <div class="block-body no-vedic"><div class="no-vedic-note">No Vedic practice specifically addresses this block — it is best served by behavioral and cognitive tools.</div>
+      <div class="tier-col u-col" style="border-right:none;">
+        <div class="tier-label u"><span class="tier-dot">●</span> Universal</div>
+        <ul class="remedy-list">
+          <li><strong>Set release threshold before starting</strong> — write "This is done when it covers X, Y, Z" before touching the work. Leo Lagna perfectionism inflates scope mid-creation; the pre-set ceiling prevents this.</li>
+          <li><strong>"Ship it" Friday rule</strong> — Venus is 10th lord (career) and Friday is her day. One thing must go out — published, sent, shared — every Friday. The 10th lord blesses career output made on her day.</li>
+          <li><strong>Separate creation from editing by hours</strong> — write or build first, evaluate later. Scorpio Mercury editing the Scorpio Mercury creation in real time creates an impossible loop.</li>
+          <li><strong>AI as first draft</strong> — removes blank-page paralysis that triggers perfectionism. Editing generated content bypasses the Leo standard for origination.</li>
+          <li><strong>Time-cap the "perfect version"</strong> — 80% quality in the allocated time ships. Saturn retrograde delays indefinitely if the perfect condition is the condition for release.</li>
+        </ul>
+        <div class="u-note">No Vedic-specific remedy for perfectionism — this is a behavioral and cognitive pattern best addressed through structural constraints and timed commitments.</div>
+      </div>
+    </div>
+    <div class="tier-row-science">
+      <div class="sci-header"><span style="color:var(--sci);">◈</span> Neuroscience — CBT · NLP · Biohacking</div>
+      <div class="sci-grid">
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">CBT</div>
+          <ul class="sci-list">
+            <li><strong>Identify the distortion</strong> — perfectionism is all-or-nothing thinking: "If it's not excellent, it's a failure." Label it explicitly. Named distortions lose their invisible authority.</li>
+            <li><strong>Behavioral experiment</strong> — ship one thing at 75% quality and document the actual response. Compare it to the feared response. Most perfectionists find the gap between feared and actual consequence is vast.</li>
+            <li><strong>Cost-benefit analysis</strong> — write the real costs of perfectionism (delayed shipping, missed opportunities, relationships strained) against its actual benefits. The list clarifies that the strategy is misfiring.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">NLP</div>
+          <ul class="sci-list">
+            <li><strong>Reframe failure as feedback</strong> — change the internal meaning of imperfection from "I failed" to "I have data." Iterate the reframe until it holds under pressure, not just in calm moments.</li>
+            <li><strong>Perceptual positions</strong> — step outside the work and view it from the position of a helpful, competent peer. The Leo Lagna evaluates from inside; the third-person view breaks the internal standards loop.</li>
+            <li><strong>Dissociation technique</strong> — mentally step back from the work and view it as a separate object. The perfectionism is attached to the creator-identity; dissociation severs the identity charge.</li>
+          </ul>
+        </div>
+        <div class="sci-subcol">
+          <div class="sci-subcol-name">Biohacking</div>
+          <ul class="sci-list">
+            <li><strong>Cold shower 2 min</strong> before creative work — breaks the anxiety-perfectionism loop. The norepinephrine spike resets state; perfectionism has a much weaker grip in a calm, slightly alert nervous system.</li>
+            <li><strong>Visible timer (time-boxing)</strong> — work with a physical countdown timer visible on the desk. External constraint bypasses internal standard inflation; the timer provides the authority the Leo Lagna seeks internally.</li>
+            <li><strong>Micro-commitment protocol</strong> — commit to 25 min of "good enough" work, not a "productive session." Narrowing the commitment removes the perfectionism trigger at the moment of starting.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="panel-u-extras">
+<!-- ══════════════ GEMSTONES ══════════════ -->
+<div class="section-head">
+  <div class="sh-line"></div>
+  <div class="sh-text">Gemstones · Universal — Mineral Therapy, No Belief Required</div>
+  <div class="sh-line"></div>
+</div>
+
+<div class="universal-badge-sm"><span style="color:var(--u);">●</span> Universal practice — agnostic, no faith required</div>
+
+<div class="gem-row">
+  <div class="gem-card">
+    <div class="gem-icon coral">♂</div>
+    <div class="gem-body">
+      <div class="gem-name">Red Coral</div>
+      <div class="gem-detail">
+        Mars is Yoga Karaka for Leo Lagna — rules H4 + H9. Most powerful stone for this chart. Directly addresses retrograde Mars procrastination and initiation block.<br><br>
+        <strong>Metal:</strong> Gold or copper &nbsp;·&nbsp; <strong>Finger:</strong> Ring finger, right hand<br>
+        <strong>Day:</strong> Tuesday morning after sunrise &nbsp;·&nbsp; <strong>Weight:</strong> Min 6 ratti<br>
+        <strong>Mantra at wearing (optional):</strong> Om Kum Kujaya Namah × 108
+      </div>
+    </div>
+  </div>
+  <div class="gem-card">
+    <div class="gem-icon emerald">☿</div>
+    <div class="gem-body">
+      <div class="gem-name">Emerald</div>
+      <div class="gem-detail">
+        Mercury rules H2 (wealth, speech) and H11 (gains, future) for Leo — both auspicious. Supports retrograde Mercury's memory, cognition, and learning capacity.<br><br>
+        <strong>Metal:</strong> Gold &nbsp;·&nbsp; <strong>Finger:</strong> Little finger, right hand<br>
+        <strong>Day:</strong> Wednesday morning &nbsp;·&nbsp; <strong>Weight:</strong> Min 4 ratti<br>
+        <strong>Mantra at wearing (optional):</strong> Om Bum Buddhaya Namah × 108
+      </div>
+    </div>
+  </div>
+  <div class="gem-card">
+    <div class="gem-icon avoid">✕</div>
+    <div class="gem-body">
+      <div class="gem-name avoid-name">Blue Sapphire — Avoid</div>
+      <div class="gem-detail">Saturn rules H7 (maraka) and H8 for Leo Lagna. Blue sapphire activates these difficult houses. Contraindicated.</div>
+    </div>
+  </div>
+  <div class="gem-card">
+    <div class="gem-icon avoid">✕</div>
+    <div class="gem-body">
+      <div class="gem-name avoid-name">Pearl — Avoid</div>
+      <div class="gem-detail">Moon rules H12 (loss, isolation) for Leo Lagna. Pearl strengthens the 12th lord — increases withdrawal and expenditure patterns.</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ CONSCIOUS GIVING ══════════════ -->
+<div class="section-head">
+  <div class="sh-line"></div>
+  <div class="sh-text">Conscious Giving Calendar · Universal — Philanthropy, Not Religious Offering</div>
+  <div class="sh-line"></div>
+</div>
+
+<div class="universal-badge-sm" style="margin-bottom:12px;"><span style="color:var(--u);">●</span> Universal — give to those in need on the day that activates the relevant planetary channel</div>
+
+<div class="giving-grid">
+  <div class="give-card c-mon">
+    <div class="give-day">Monday</div>
+    <div class="give-what">White foods — milk, rice — to families in need</div>
+  </div>
+  <div class="give-card c-tue">
+    <div class="give-day">Tuesday</div>
+    <div class="give-what">Red lentils, cooked food — to workers, laborers</div>
+  </div>
+  <div class="give-card c-wed">
+    <div class="give-day">Wednesday</div>
+    <div class="give-what">Books, stationery — to students or schools</div>
+  </div>
+  <div class="give-card c-thu">
+    <div class="give-day">Thursday</div>
+    <div class="give-what">Nourishing foods — banana, wholesome meal — to teachers or mentors</div>
+  </div>
+  <div class="give-card c-fri">
+    <div class="give-day">Friday</div>
+    <div class="give-what">Self-investment — courses, tools, books for career growth</div>
+  </div>
+  <div class="give-card c-sat">
+    <div class="give-day">Saturday</div>
+    <div class="give-what">Food, clothing or time — to elderly, disabled, or isolated people</div>
+  </div>
+  <div class="give-card c-sun">
+    <div class="give-day">Sunday</div>
+    <div class="give-what">Protected rest — give yourself the recovery Moon in H6 requires</div>
+  </div>
+</div>
+
+
+</div><!-- /panel-u-extras -->
+
+<div id="panel-vedic">
+<!-- ══════════════ VEDIC SUMMARY ══════════════ -->
+<div class="section-head">
+  <div class="sh-line"></div>
+  <div class="sh-text">Vedic Practice Summary · For Believers Only</div>
+  <div class="sh-line"></div>
+</div>
+
+<div class="vedic-summary">
+  <div class="vs-header">
+    <div class="vs-symbol">◆</div>
+    <div>
+      <div class="vs-title">Vedic Tradition — Complete Mantra & Worship Schedule</div>
+      <div class="vs-note">For practitioners of Hindu / Vedic path. Entirely optional — Universal practices above provide a complete system without these.</div>
+    </div>
+  </div>
+  <div class="vs-body">
+    <div class="vs-col">
+      <div class="vs-day">☽ Monday</div>
+      <ul class="vs-mantras">
+        <li>Om Namah Shivaya × 108</li>
+        <li>Shiva worship — Rudra puja optional</li>
+        <li>Purnima: extended Shiva or Hanuman</li>
+      </ul>
+    </div>
+    <div class="vs-col">
+      <div class="vs-day">♂ Tuesday</div>
+      <ul class="vs-mantras">
+        <li>Hanuman Chalisa — full recitation</li>
+        <li>Om Kum Kujaya Namah × 108</li>
+        <li>Om Gam Ganapataye Namah (new projects)</li>
+      </ul>
+    </div>
+    <div class="vs-col">
+      <div class="vs-day">☿ Wednesday</div>
+      <ul class="vs-mantras">
+        <li>Om Aim Saraswatyai Namah × 108</li>
+        <li>Vishnu Sahasranama — recite or listen</li>
+      </ul>
+    </div>
+    <div class="vs-col">
+      <div class="vs-day">♃ Thursday</div>
+      <ul class="vs-mantras">
+        <li>Om Brim Brihaspataye Namah × 108</li>
+        <li>Guru acknowledgment ritual</li>
+      </ul>
+    </div>
+    <div class="vs-col">
+      <div class="vs-day">♄ Saturday</div>
+      <ul class="vs-mantras">
+        <li>Hanuman Chalisa (second recitation)</li>
+        <li>Om Sham Shanaishcharaya Namah × 108 at dusk</li>
+        <li>Amavasya: ancestral acknowledgment</li>
+      </ul>
+    </div>
+    <div class="vs-col">
+      <div class="vs-day">☉ Sunday</div>
+      <ul class="vs-mantras">
+        <li>Om Suryaya Namah × 108 facing east</li>
+        <li>Surya Namaskar with Sanskrit count (optional)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ DASHA FOCUS ══════════════ -->
+<div class="dasha-box">
+  <div class="db-symbol">◑</div>
+  <div>
+    <div class="db-title">Current Period Focus — Saturn / Moon / Mercury (2025–2027)</div>
+    <div class="db-text">
+      Three of the most psychologically active planets are running simultaneously. <strong>Saturn</strong> (procrastination, fear, deep work) as mahadasha; <strong>Moon</strong> (emotional repression, subconscious blocks, H12 lord) as bhukti; <strong>Mercury</strong> (memory, cognition, AI learning) as antardasha. This is peak activation for all the blocks identified above — which means it is also the <strong>ideal remedial window</strong>. What gets worked on in 2025–2027 clears the path directly into the <strong>Saturn/Jupiter golden window (2030–2033)</strong>. The blocks that surface now are not obstacles — they are the curriculum.
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<div class="page-footer">
+  <div class="pf-name">Prakashji · Leo Lagna · Saturn Mahadasha 2014–2033 · Golden Window: Jupiter Bhukti 2030–2033</div>
+  <div class="pf-dots">
+    <div class="pf-dot" style="background:var(--sun);"></div>
+    <div class="pf-dot" style="background:var(--moon);"></div>
+    <div class="pf-dot" style="background:var(--mars);"></div>
+    <div class="pf-dot" style="background:var(--merc);"></div>
+    <div class="pf-dot" style="background:var(--jup);"></div>
+    <div class="pf-dot" style="background:#C478A8;"></div>
+    <div class="pf-dot" style="background:var(--sat);"></div>
+  </div>
+</div>
+
+</div>
+
+<script>
+(function() {
+  document.body.setAttribute('data-tab', 'u');
+  document.querySelectorAll('.tab-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      document.body.setAttribute('data-tab', this.dataset.tab);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  });
+})();
+</script>
+</body>
+</html>
