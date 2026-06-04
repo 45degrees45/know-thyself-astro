@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Isolda — Full Vedic Astrology Reading</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d1a; font-family: Georgia, serif; color: #e8e8f0; }
+  .page { max-width: 900px; margin: 0 auto; padding: 0 0 80px; }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #1a0a2e 0%, #1b1464 55%, #0d0a3a 100%);
+    padding: 52px 40px 40px; text-align: center;
+    border-bottom: 2px solid #c9a84c;
+  }
+  .eyebrow { color: #c9a84c; font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .header h1 { color: #fff; font-size: 36px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .header-sub { color: #9090cc; font-size: 14px; margin-top: 6px; }
+
+  .chart-strip {
+    display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+    margin-top: 26px; padding-top: 22px; border-top: 1px solid #2a246a;
+  }
+  .ci .val { color: #c9a84c; font-size: 15px; font-weight: 700; }
+  .ci .lbl { color: #7070a0; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
+
+  /* ── Planet table ── */
+  .planet-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 6px; }
+  .planet-table th {
+    color: #7070a0; font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
+    padding: 8px 12px; border-bottom: 1px solid #1e1e4a; text-align: left; font-weight: 400;
+  }
+  .planet-table td { padding: 9px 12px; border-bottom: 1px solid #13132e; color: #c0c0e0; vertical-align: middle; }
+  .planet-table tr:last-child td { border-bottom: none; }
+  .planet-table tr:hover td { background: #111128; }
+  .retro { color: #c04060; font-size: 10px; margin-left: 4px; }
+  .house-badge {
+    display: inline-block; background: #1e1e40; color: #6070b0;
+    font-size: 10px; padding: 2px 7px; border-radius: 10px;
+  }
+  .exalt-badge {
+    display: inline-block; background: #1a2e0a; color: #60a040;
+    font-size: 10px; padding: 2px 7px; border-radius: 10px; margin-left: 4px;
+  }
+  .own-badge {
+    display: inline-block; background: #2a200a; color: #c9a84c;
+    font-size: 10px; padding: 2px 7px; border-radius: 10px; margin-left: 4px;
+  }
+
+  /* ── Section ── */
+  .sec { padding: 36px 40px 0; }
+  .sec-title {
+    color: #c9a84c; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 2.5px; margin-bottom: 22px;
+    padding-bottom: 10px; border-bottom: 1px solid #1e1e4a;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sec-title::before { content: ''; display: block; width: 3px; height: 14px; background: #c9a84c; border-radius: 2px; }
+
+  /* ── Yoga strip ── */
+  .yoga-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .yoga-card {
+    background: #111128; border: 1px solid #1e1e4a; border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .yoga-card.gold { border-color: #c9a84c44; }
+  .yoga-name { color: #c9a84c; font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .yoga-card p { color: #7070a0; font-size: 12px; line-height: 1.65; }
+
+  /* ── Prose ── */
+  .prose { color: #9090b8; font-size: 14px; line-height: 1.85; margin-bottom: 20px; }
+  .prose strong { color: #c9a84c; font-weight: 700; }
+  .prose em { color: #c0c0e0; font-style: italic; }
+
+  /* ── Cards grid ── */
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+  .card {
+    background: #111128; border: 1px solid #1e1e4a; border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .card h3 { color: #c9a84c; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .card p, .card li { color: #7070a0; font-size: 13px; line-height: 1.75; }
+  .card ul { padding-left: 0; list-style: none; }
+  .card li { padding-left: 14px; position: relative; margin-bottom: 6px; }
+  .card li::before { content: '→'; position: absolute; left: 0; color: #c9a84c; font-size: 11px; top: 2px; }
+
+  /* ── Fun facts ── */
+  .fun-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+  .fun-card {
+    background: #111128; border: 1px solid #1e1e4a; border-radius: 10px;
+    padding: 16px 18px; text-align: center;
+  }
+  .fun-icon { font-size: 22px; margin-bottom: 8px; }
+  .fun-card h4 { color: #c9a84c; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .fun-card p { color: #7070a0; font-size: 12px; line-height: 1.6; }
+
+  /* ── Timeline ── */
+  .timeline { margin-bottom: 24px; }
+  .tl-row {
+    display: flex; align-items: flex-start; gap: 0;
+    padding: 0; position: relative;
+  }
+  .tl-row::before {
+    content: ''; position: absolute; left: 119px; top: 0; bottom: 0;
+    width: 1px; background: #1e1e4a;
+  }
+  .tl-dot {
+    width: 120px; flex-shrink: 0; text-align: right; padding: 14px 16px 14px 0;
+    color: #7070a0; font-size: 11px; position: relative;
+  }
+  .tl-dot::after {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: #c9a84c; position: absolute; right: -4px; top: 18px;
+  }
+  .tl-active .tl-dot::after { background: #40c080; box-shadow: 0 0 8px #40c08066; }
+  .tl-body { padding: 10px 0 10px 24px; flex: 1; }
+  .tl-planet { color: #c9a84c; font-size: 14px; font-weight: 700; }
+  .tl-period { color: #5050a0; font-size: 11px; margin-top: 1px; }
+  .tl-desc { color: #7070a0; font-size: 13px; margin-top: 6px; line-height: 1.65; }
+  .now-badge {
+    display: inline-block; background: #0e2e1a; color: #40c080;
+    font-size: 10px; padding: 2px 8px; border-radius: 10px; margin-left: 8px;
+    letter-spacing: 0.5px; vertical-align: middle;
+  }
+
+  /* ── Dasha bhukti table ── */
+  .bhukti-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 6px; }
+  .bhukti-table th {
+    color: #7070a0; font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
+    padding: 8px 12px; border-bottom: 1px solid #1e1e4a; text-align: left; font-weight: 400;
+  }
+  .bhukti-table td { padding: 10px 12px; border-bottom: 1px solid #13132e; color: #c0c0e0; vertical-align: top; }
+  .bhukti-table tr:last-child td { border-bottom: none; }
+  .bhukti-table tr.active-row td { background: #0e1e0e; }
+  .bhukti-table tr.active-row .b-planet { color: #40c080; }
+  .b-planet { color: #c9a84c; font-weight: 700; }
+  .b-period { color: #5050a0; font-size: 11px; }
+  .b-note { color: #7070a0; font-size: 12px; }
+
+  /* ── Highlight box ── */
+  .highlight-box {
+    background: linear-gradient(135deg, #0e1e2e, #111128);
+    border: 1px solid #c9a84c44; border-left: 3px solid #c9a84c;
+    border-radius: 8px; padding: 18px 20px; margin-bottom: 24px;
+  }
+  .highlight-box p { color: #9090b8; font-size: 14px; line-height: 1.8; }
+  .highlight-box strong { color: #c9a84c; }
+
+  /* ── Window cards ── */
+  .window-card {
+    background: #111128; border: 1px solid #1e1e4a; border-radius: 10px;
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .window-card.best { border-color: #c9a84c44; background: linear-gradient(135deg, #111128, #141428); }
+  .window-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .window-label { color: #c9a84c; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .window-period { color: #5050a0; font-size: 12px; }
+  .window-age { color: #7070a0; font-size: 11px; }
+  .stars { color: #c9a84c; font-size: 13px; letter-spacing: 2px; }
+  .window-card p { color: #7070a0; font-size: 13px; line-height: 1.75; }
+
+  /* ── Shadow / negative traits ── */
+  .shadow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+  .shadow-card {
+    background: #1a0e10; border: 1px solid #3a1a20; border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .shadow-card h4 { color: #c04060; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .shadow-card p { color: #806070; font-size: 12px; line-height: 1.65; }
+
+  /* ── Income split ── */
+  .income-split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+  .drain-block { background: #1a0e10; border: 1px solid #3a1a20; border-radius: 8px; padding: 18px 20px; }
+  .gain-block  { background: #0e1e1a; border: 1px solid #1a3a2a; border-radius: 8px; padding: 18px 20px; }
+  .drain-block h3 { color: #c04060; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .gain-block  h3 { color: #40c080; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .drain-block li, .gain-block li {
+    font-size: 13px; line-height: 1.7; margin-bottom: 8px;
+    padding-left: 16px; position: relative; list-style: none;
+  }
+  .drain-block li::before { content: '↓'; position: absolute; left: 0; color: #c04060; font-size: 11px; }
+  .gain-block  li::before { content: '↑'; position: absolute; left: 0; color: #40c080; font-size: 11px; }
+  .drain-block li { color: #806060; }
+  .gain-block  li { color: #507060; }
+
+  /* ── Spiritual tags ── */
+  .tag {
+    display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 12px;
+    background: #1e1e40; color: #7080c0; margin: 3px 2px;
+  }
+  .tag.gold { background: #2a200a; color: #c9a84c; }
+
+  /* ── Summary table ── */
+  .sum-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .sum-table th {
+    color: #7070a0; font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
+    padding: 8px 12px; border-bottom: 1px solid #1e1e4a; text-align: left; font-weight: 400;
+  }
+  .sum-table td { padding: 11px 12px; border-bottom: 1px solid #13132e; color: #c0c0e0; vertical-align: top; }
+  .sum-table tr:last-child td { border-bottom: none; }
+  .sum-table strong { color: #c9a84c; }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 60px; padding: 24px 40px;
+    border-top: 1px solid #1e1e4a; text-align: center;
+    color: #3a3a6a; font-size: 11px; letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 640px) {
+    .card-grid, .income-split, .yoga-grid, .shadow-grid, .fun-grid { grid-template-columns: 1fr; }
+    .sec { padding: 28px 20px 0; }
+    .header { padding: 36px 20px 28px; }
+    .header h1 { font-size: 26px; }
+    .tl-dot { width: 80px; font-size: 10px; }
+    .tl-row::before { left: 79px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+<div class="header">
+  <div class="eyebrow">Vedic Astrology · Full Reading</div>
+  <h1>Isolda</h1>
+  <div class="header-sub">24 July 1985 · 2:04 PM · Cochin, Kerala, India</div>
+  <div class="chart-strip">
+    <div class="ci"><div class="val">Scorpio 1.9°</div><div class="lbl">Lagna</div></div>
+    <div class="ci"><div class="val">Virgo / Chitra</div><div class="lbl">Moon</div></div>
+    <div class="ci"><div class="val">Cancer</div><div class="lbl">Sun</div></div>
+    <div class="ci"><div class="val">Saturn / Mercury</div><div class="lbl">Current Dasha</div></div>
+    <div class="ci"><div class="val">3 Yogas</div><div class="lbl">Active</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PLANETS ══════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Planetary Positions</div>
+  <table class="planet-table">
+    <thead>
+      <tr><th>Planet</th><th>Sign</th><th>Degrees</th><th>House</th><th>Nakshatra</th><th>Dignity</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sun</td><td>Cancer</td><td>7.7°</td><td><span class="house-badge">9</span></td><td>Pushya pada 2</td><td style="color:#7070a0;font-size:12px">Friendly</td></tr>
+      <tr><td>Moon</td><td>Virgo</td><td>29.5°</td><td><span class="house-badge">11</span></td><td>Chitra pada 2</td><td style="color:#7070a0;font-size:12px">Friendly</td></tr>
+      <tr><td>Mars</td><td>Cancer</td><td>5.8°</td><td><span class="house-badge">9</span></td><td>Pushya pada 1</td><td style="color:#c04060;font-size:12px">Debilitated → NBRY</td></tr>
+      <tr><td>Mercury</td><td>Leo</td><td>1.1°</td><td><span class="house-badge">10</span></td><td>Magha pada 1</td><td style="color:#7070a0;font-size:12px">Neutral</td></tr>
+      <tr><td>Jupiter <span class="retro">℞</span></td><td>Capricorn</td><td>19.8°</td><td><span class="house-badge">3</span></td><td>Shravana pada 3</td><td style="color:#c04060;font-size:12px">Debilitated</td></tr>
+      <tr><td>Venus</td><td>Taurus</td><td>26.1°</td><td><span class="house-badge">7</span></td><td>Mrigashira pada 1</td><td><span class="own-badge">Own Sign</span></td></tr>
+      <tr><td>Saturn <span class="retro">℞</span></td><td>Libra</td><td>27.8°</td><td><span class="house-badge">12</span></td><td>Vishakha pada 3</td><td><span class="exalt-badge">Exalted</span></td></tr>
+      <tr><td>Rahu <span class="retro">℞</span></td><td>Aries</td><td>21.3°</td><td><span class="house-badge">6</span></td><td>Bharani pada 3</td><td style="color:#7070a0;font-size:12px">—</td></tr>
+      <tr><td>Ketu <span class="retro">℞</span></td><td>Libra</td><td>21.3°</td><td><span class="house-badge">12</span></td><td>Vishakha pada 1</td><td style="color:#7070a0;font-size:12px">—</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════ YOGAS ════════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Active Yogas</div>
+  <div class="yoga-grid">
+    <div class="yoga-card gold">
+      <div class="yoga-name">Malavya Yoga ★★ (Pancha Mahapurusha)</div>
+      <p>Venus in own sign Taurus in the 7th house (kendra). One of the five great Mahapurusha yogas. Exceptional natural beauty, charm, magnetic attraction, artistic sensibility, and grace in all relationships. A life-defining blessing.</p>
+    </div>
+    <div class="yoga-card">
+      <div class="yoga-name">Neecha Bhanga Raja Yoga (Mars) ★★</div>
+      <p>Mars is debilitated in Cancer but its debilitation is cancelled — Moon (the sign lord of Cancer) is placed in a kendra from the Moon itself. Weakness transforms into strength. She rises specifically through the struggles she was meant to be broken by.</p>
+    </div>
+    <div class="yoga-card">
+      <div class="yoga-name">Vesi Yoga ★</div>
+      <p>Mercury placed in the 2nd house from the Sun. Adds wealth, good character, helpful and trustworthy nature. Reinforces her capacity to earn through communication, knowledge, and intellectual service.</p>
+    </div>
+    <div class="yoga-card">
+      <div class="yoga-name">Saturn Exalted in H12 (Special)</div>
+      <p>Saturn at 27.8° Libra — exalted — in the house of moksha and liberation. The planet running her current 19-year Mahadasha is simultaneously her most powerful and her most spiritually oriented. This is not a conventional placement: discipline and liberation are fused.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ NATURE ═══════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Nature &amp; Personality</div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>Core Self</h3>
+      <p>Scorpio lagna ruled by Mars in the 9th — deeply philosophical, investigative, private, and fiercely purposeful. Not a surface-dweller. Every interaction has an undercurrent of searching for what is real and true. The exterior is poised and magnetic (Malavya yoga), but the interior is intense, probing, and rarely satisfied.</p>
+    </div>
+    <div class="card">
+      <h3>The Dharmic Warrior</h3>
+      <p>Sun + Mars both in H9 Cancer (Pushya nakshatra) — identity and will are bound to dharma, higher purpose, and truth-seeking. She doesn't simply choose a career; she is on a mission. Pushya is the star of nourishment — she is here to feed, protect, and sustain something meaningful. When aligned with purpose, nothing stops her.</p>
+    </div>
+    <div class="card">
+      <h3>Emotional World</h3>
+      <p>Moon in Virgo / Chitra nakshatra, H11. Chitra is ruled by the divine architect Vishwakarma — she perceives life as a creative act, building beauty and pattern from raw material. Emotionally precise and analytical, yet secretly longing for something ineffable. Moon at 29.5° (gandanta edge) brings depth but also a certain emotional restlessness — the feeling of having outgrown something but not yet knowing what comes next.</p>
+    </div>
+    <div class="card">
+      <h3>Strengths</h3>
+      <ul>
+        <li>Magnetic personal presence — Malavya yoga (rare)</li>
+        <li>Rises from every defeat — NBRY turned weakness to power</li>
+        <li>Truth-detector — Scorpio reads people effortlessly</li>
+        <li>Depth of purpose — 9th house stellium drives dharmic action</li>
+        <li>Communication that generates trust — Vesi yoga + Mercury H10</li>
+        <li>Saturn exalted — extraordinary discipline when engaged</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ FUN FACTS ════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Fun Facts from the Chart</div>
+  <div class="fun-grid">
+    <div class="fun-card">
+      <div class="fun-icon">🌹</div>
+      <h4>The Eternal Seeker</h4>
+      <p>Venus in Mrigashira — the nakshatra of the eternal search. She will always be looking for the perfect match, the perfect vision, the perfect path. It is not restlessness — it is divine discontent.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-icon">🏛️</div>
+      <h4>Magha Rising (Inside)</h4>
+      <p>Mercury in Magha pada 1 — the star of kings and ancestors. Her voice and words carry an ancestral authority. People feel she speaks with the weight of something older and wiser than her age.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-icon">⚔️</div>
+      <h4>The Phoenix Pattern</h4>
+      <p>Scorpio lagna + NBRY on Mars = the phoenix archetype is literally in her chart. She doesn't just survive difficulty — she requires it to become who she is meant to be.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-icon">🧵</div>
+      <h4>Chitra — The Weaver</h4>
+      <p>Moon in Chitra (Vishwakarma, divine architect). She likely has a strong visual or spatial intelligence — aesthetic perception that is unusually precise. Art, design, or architecture as a language.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-icon">🪐</div>
+      <h4>Saturn's Paradox</h4>
+      <p>Saturn is exalted in Libra (most powerful possible) and placed in H12 (liberation/dissolution). She has the most structured, disciplined inner life — and simultaneously the most otherworldly, released outer expression.</p>
+    </div>
+    <div class="fun-card">
+      <div class="fun-icon">🌐</div>
+      <h4>The 9th House Cluster</h4>
+      <p>Sun + Mars both in H9 Cancer — identity (Sun) and will (Mars) live in the house of dharma, philosophy, and teaching. She is most fully herself when she is in service of a larger truth or cause.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SHADOW ═══════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Shadow Traits &amp; Blind Spots</div>
+  <div class="shadow-grid">
+    <div class="shadow-card">
+      <h4>Possessiveness</h4>
+      <p>Scorpio lagna with Malavya yoga in H7 — she can become intensely attached to what she loves. The very magnetism that draws others to her also creates a possessive streak. Releasing control is the lifelong lesson.</p>
+    </div>
+    <div class="shadow-card">
+      <h4>Emotional Withholding</h4>
+      <p>Saturn (exalted, retrograde) in H12 creates a tendency to wall off vulnerability. She feels deeply but reveals little. Partners and close ones may feel they can never fully get in. The fortress protects — and isolates.</p>
+    </div>
+    <div class="shadow-card">
+      <h4>All-or-Nothing Intensity</h4>
+      <p>Mars (lagna lord) debilitated in Cancer + Scorpio lagna = cycles of extreme commitment followed by complete withdrawal. There is no moderate setting. Either fully in or completely gone.</p>
+    </div>
+    <div class="shadow-card">
+      <h4>Perfectionism That Delays</h4>
+      <p>Moon in Virgo / Chitra + Mercury in Magha creates an exacting inner critic. The desire to make something perfect can prevent her from completing or sharing work. The divine architect never finishes the temple.</p>
+    </div>
+    <div class="shadow-card">
+      <h4>Trust Slow to Build</h4>
+      <p>Scorpio + Saturn H12 retrograde — she has been hurt in ways that leave no visible scars. New relationships are assessed at a depth most people don't even know is happening. Full trust, once broken, rarely returns.</p>
+    </div>
+    <div class="shadow-card">
+      <h4>Rahu H6 — Hidden Anxiety</h4>
+      <p>Rahu in the 6th house (Aries) fuels a subtle but persistent undercurrent of anxiety — about health, about enemies or competition, about whether she is doing enough. Often manifests as overwork or hyper-vigilance.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ DASHA ════════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Dasha Timeline</div>
+
+  <div class="timeline">
+    <div class="tl-row">
+      <div class="tl-dot">~Apr 1989</div>
+      <div class="tl-body">
+        <div class="tl-planet">Rahu Mahadasha <span style="color:#5050a0;font-size:12px;font-weight:400">→ Apr 2007</span></div>
+        <div class="tl-desc">18-year formative period — restless seeking, identity formation through intensity and disruption. Foreign influences, unconventional environments, rapid change.</div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-dot">Apr 2007</div>
+      <div class="tl-body">
+        <div class="tl-planet">Jupiter Mahadasha <span style="color:#5050a0;font-size:12px;font-weight:400">→ Apr 2023</span></div>
+        <div class="tl-desc">16 years of philosophical expansion, learning, and seeking wisdom. Jupiter is debilitated in Capricorn (H3) — growth came through friction: communicating through obstacles, building knowledge despite setbacks. The philosophical foundation of her life was laid here.</div>
+      </div>
+    </div>
+    <div class="tl-row tl-active">
+      <div class="tl-dot">Apr 2023</div>
+      <div class="tl-body">
+        <div class="tl-planet">Saturn Mahadasha <span style="color:#5050a0;font-size:12px;font-weight:400">→ Apr 2042</span> <span class="now-badge">ACTIVE</span></div>
+        <div class="tl-desc">19 years — the most consequential period of her life. Saturn is <em>exalted</em> in Libra (H12): the most powerful Saturn possible, channelled through liberation and spiritual depth. Not a conventional career peak — this is a period of profound discipline, karmic reckoning, and inner crystallisation. External structures are built slowly, but what is built lasts permanently.</div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-dot">Apr 2042</div>
+      <div class="tl-body">
+        <div class="tl-planet">Mercury Mahadasha <span style="color:#5050a0;font-size:12px;font-weight:400">→ Apr 2059</span></div>
+        <div class="tl-desc">Mercury is in H10 Leo (Magha) — the career and public authority house. Age 57–74: the period of maximum intellectual legacy, teaching, and public communication. The work of Saturn MD gets voiced and transmitted here.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:28px">Saturn Mahadasha — All Bhuktis</div>
+  <table class="bhukti-table">
+    <thead>
+      <tr><th>Bhukti</th><th>Period</th><th>Life Quality</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="b-planet">Sat / Saturn</span></td><td><span class="b-period">Apr 2023 → Apr 2026</span></td><td class="b-note">Karmic opening — foundations laid, structures built, discipline imposed. The most austere and formative 3 years of the period.</td></tr>
+      <tr class="active-row"><td><span class="b-planet">Sat / Mercury ★</span></td><td><span class="b-period">Apr 2026 → Dec 2028</span></td><td class="b-note"><strong style="color:#40c080">NOW</strong> — Mercury (Darakaraka + 10th house) activates. Career communication sharpens. Partnership conversations crystallise. Mercury as DK makes this a marriage-timing window. Strategic clarity and professional articulation at peak.</td></tr>
+      <tr><td><span class="b-planet">Sat / Ketu</span></td><td><span class="b-period">Dec 2028 → Jan 2030</span></td><td class="b-note">Detachment, spiritual acceleration, releasing what no longer fits. A pivotal transition — ends one chapter.</td></tr>
+      <tr><td><span class="b-planet">Sat / Venus</span></td><td><span class="b-period">Jan 2030 → Mar 2033</span></td><td class="b-note">Venus = 7th lord in own sign. The most powerful relationship period of the entire life. Marriage and major partnership highly indicated. Malavya yoga fully activated.</td></tr>
+      <tr><td><span class="b-planet">Sat / Sun</span></td><td><span class="b-period">Mar 2033 → Feb 2034</span></td><td class="b-note">Identity clarity — who she is and what she stands for becomes undeniable.</td></tr>
+      <tr><td><span class="b-planet">Sat / Moon</span></td><td><span class="b-period">Feb 2034 → Sep 2035</span></td><td class="b-note">Public-facing, emotionally open period — connection with people and community.</td></tr>
+      <tr><td><span class="b-planet">Sat / Mars</span></td><td><span class="b-period">Sep 2035 → Oct 2036</span></td><td class="b-note">Action, initiative, drive. NBRY activated — rises from challenge with full force.</td></tr>
+      <tr><td><span class="b-planet">Sat / Rahu</span></td><td><span class="b-period">Oct 2036 → Aug 2039</span></td><td class="b-note">Ambitious, unconventional moves — bold expansion phase. Rahu amplifies ambition.</td></tr>
+      <tr><td><span class="b-planet">Sat / Jupiter</span></td><td><span class="b-period">Aug 2039 → Apr 2042</span></td><td class="b-note">Wisdom + structure — the closing chapter of Saturn MD. Teaching, philosophical authority, lasting legacy work.</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════ CAREER ═══════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Natural Career Domains</div>
+
+  <div class="highlight-box">
+    <p>The career must involve <strong>depth, purpose, and truth</strong>. Sun + Mars in H9 (dharma house) mean she is not simply building a career — she is following a calling. Mercury in H10 Leo (Magha) gives her a regal voice of authority in any field she enters. <strong>She is most powerful when she is teaching, healing, investigating, or transmitting something that matters.</strong></p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>Astrology / Metaphysical Sciences ★★★★★</h3>
+      <p>The entire chart speaks this language. Sun+Mars in H9 (dharma/philosophy), Saturn exalted H12 (hidden realms), Scorpio lagna (depth and occult). She doesn't just study these systems — she embodies them. Mercury in Magha gives her the authority to transmit esoteric knowledge to others.</p>
+    </div>
+    <div class="card">
+      <h3>Psychology &amp; Deep Healing ★★★★★</h3>
+      <p>Scorpio rules the unconscious, trauma, and transformation. Venus in H7 (relationships) + Malavya yoga + Ketu H12 (past-life gifts of spiritual perception). Natural depth therapist, trauma coach, or somatic healer. People feel safe enough with her to go where they don't go elsewhere.</p>
+    </div>
+    <div class="card">
+      <h3>Teaching &amp; Wisdom Transmission ★★★★</h3>
+      <p>Mercury in Magha H10 — the teacher with ancestral authority. Magha carries the energy of royal lineages and sacred knowledge passed down. She teaches not information but orientation. A natural guide for people at life crossroads.</p>
+    </div>
+    <div class="card">
+      <h3>Writing &amp; Intellectual Depth ★★★★</h3>
+      <p>Vesi yoga + Mercury H10 + Saturn (discipline) exalted — the conditions for serious, significant writing. Not content creation but depth writing: books, essays, reports that carry weight. Moon in Chitra adds aesthetic precision to her prose.</p>
+    </div>
+    <div class="card">
+      <h3>Arts, Design &amp; Aesthetics ★★★★</h3>
+      <p>Malavya yoga (Venus in own sign H7) is among the strongest aesthetic placements in astrology. Moon in Chitra (divine architect) amplifies visual and spatial intelligence. She does not just appreciate beauty — she generates it with an almost mathematical precision.</p>
+    </div>
+    <div class="card">
+      <h3>Investigation &amp; Research ★★★★</h3>
+      <p>Scorpio lagna's native territory is uncovering what is hidden. Sun in Pushya (satya — truth) drives her toward factual integrity. Saturn exalted gives extraordinary patience and methodological rigour. Ideal for deep research roles, journalism, investigative consulting.</p>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:8px">Career Windows</div>
+  <div class="window-card">
+    <div class="window-header">
+      <span class="window-label">Now → Dec 2028</span>
+      <span class="window-period">Sat / Mercury Bhukti</span>
+      <span class="window-age">Age 40–43</span>
+      <span class="stars">★★★★</span>
+    </div>
+    <p><strong style="color:#c9a84c">Mercury in H10 Leo (Magha)</strong> — the planet of career and communication is running as bhukti lord. This is a window for articulating her professional identity, building authority in a field, and taking visible positions. Strategic communications, public-facing work, launching anything that involves her voice or pen. The work done here is seen.</p>
+  </div>
+  <div class="window-card best">
+    <div class="window-header">
+      <span class="window-label">Primary Career Peak</span>
+      <span class="window-period">Jan 2030 → Mar 2033</span>
+      <span class="window-age">Age 44–47</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <p><strong style="color:#c9a84c">Saturn / Venus Bhukti</strong> — Venus as 7th lord in own sign (Malavya yoga) activated inside the already-powerful Saturn MD. For career: Venus rules H7 (partnerships) — this is when the right collaborators, business partners, or institutional connections arrive. Malavya yoga in full expression: reputation, beauty, magnetism, and professional charm all converge. <strong style="color:#c9a84c">Peak earnings and career influence.</strong></p>
+  </div>
+  <div class="window-card">
+    <div class="window-header">
+      <span class="window-label">Mercury MD Peak</span>
+      <span class="window-period">Apr 2042 → 2059</span>
+      <span class="window-age">Age 57+</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <p><strong style="color:#c9a84c">Mercury Mahadasha</strong> — Mercury is placed in H10 Leo in Magha (the royal nakshatra). The entire Mercury period is a career period. This is when the depth of Saturn MD crystallises into public legacy: books, teachings, institutions, reputation that outlasts the individual. Age 57–74 is her most publicly impactful phase.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ RELATIONSHIPS ════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Relationship &amp; Marriage</div>
+
+  <div class="card-grid" style="margin-bottom:22px">
+    <div class="card">
+      <h3>7th House — Venus Own Sign</h3>
+      <p><strong>7th house = Taurus, lord = Venus in own sign.</strong> The Malavya yoga is in the house of partnership itself. This is an extraordinarily strong 7th house — she is built for deep, significant partnership. The quality of relationship she is capable of is rare. The question is not whether — it is when and with whom.</p>
+    </div>
+    <div class="card">
+      <h3>Darakaraka — Mercury (1.1°)</h3>
+      <p><strong>Mercury is the Darakaraka</strong> (lowest degree planet = spouse significator). Mercury in Leo H10 / Magha — the partner is intellectually dynamic, commanding, publicly visible, possibly associated with creative authority, medicine, or ancestral knowledge. Met through professional or knowledge-sharing contexts.</p>
+    </div>
+    <div class="card">
+      <h3>Venus in Mrigashira</h3>
+      <p>Mrigashira — the eternal seeker — means she will search, compare, and circle back before settling. This is not flaw; it is how she arrives at the right choice. When she does choose, the choice is made with full eyes, and it is lasting. <em>The search is part of the path.</em></p>
+    </div>
+    <div class="card">
+      <h3>Jupiter (Relationship Karaka)</h3>
+      <p><strong>Jupiter in Capricorn H3 (debilitated, retrograde).</strong> The natural significator of husband is weakened — suggesting the relationship journey involves significant inner growth and recalibration before a stable, wise partnership forms. The debilitation is not a denial; it is a delay and deepening.</p>
+    </div>
+  </div>
+
+  <div class="window-card">
+    <div class="window-header">
+      <span class="window-label">Window 1 — Active Now</span>
+      <span class="window-period">Apr 2026 → Dec 2028</span>
+      <span class="window-age">Age 40–43</span>
+      <span class="stars">★★★★</span>
+    </div>
+    <p><strong style="color:#c9a84c">Saturn / Mercury Bhukti.</strong> Mercury is the Darakaraka — the very planet that signifies the spouse. When Mercury runs as bhukti during Saturn MD, the DK becomes activated. Partnership conversations, significant deepening of existing connections, or the arrival of someone who matches the Mercury archetype (intellectual, dynamic, professional). A window worth paying attention to.</p>
+  </div>
+
+  <div class="window-card best">
+    <div class="window-header">
+      <span class="window-label">Window 2 — Primary</span>
+      <span class="window-period">Jan 2030 → Mar 2033</span>
+      <span class="window-age">Age 44–47</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <p><strong style="color:#c9a84c">Saturn / Venus Bhukti.</strong> Venus is the 7th lord in its own sign forming Malavya yoga in the house of marriage. When Venus runs as bhukti, the most powerful marriage indicator in the chart is fully activated. This is the single highest-probability marriage window of her life. Saturn's grounding energy combined with Venus's magnetic draw — commitment, depth, beauty, and permanence all converge here.</p>
+  </div>
+
+  <div class="window-card">
+    <div class="window-header">
+      <span class="window-label">Window 3</span>
+      <span class="window-period">Sep 2035 → Oct 2036</span>
+      <span class="window-age">Age 50</span>
+      <span class="stars">★★★</span>
+    </div>
+    <p><strong style="color:#c9a84c">Saturn / Mars Bhukti.</strong> Mars is the lagna lord — self fully expressed. NBRY means any struggle in this period resolves upward. If earlier windows have not produced commitment, this one activates a different energy: decisiveness, breakthrough, claiming what she wants.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SPIRITUAL ════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Spiritual Style &amp; Path</div>
+
+  <div class="card-grid" style="margin-bottom:22px">
+    <div class="card">
+      <h3>Core Type</h3>
+      <p><strong>The Mystic Investigator.</strong> Not devotional, not renunciant. A Scorpio who must experience truth directly — no dogma, no borrowed belief. Goes into the depths of any tradition or practice and extracts what is real. The seeker who dismantles the map while walking the territory.</p>
+    </div>
+    <div class="card">
+      <h3>Saturn Exalted H12 (Moksha)</h3>
+      <p>The single most spiritually significant placement in this chart. Saturn exalted in the 12th house (liberation) during Saturn Mahadasha — this 19-year period is a spiritual crucible. Discipline, solitude, and the gradual dissolution of ego structures. She is being prepared for something through sustained inner work.</p>
+    </div>
+    <div class="card">
+      <h3>Ketu H12 (Vishakha)</h3>
+      <p>Past-life gifts of persistence, goal-orientation, and penetrating spiritual insight (Vishakha = two-branched — the tension of two paths resolved into one). She has already done the seeking in prior lives. Now the task is integration and surrender rather than accumulation.</p>
+    </div>
+    <div class="card">
+      <h3>Sun + Mars H9 (Pushya)</h3>
+      <p>Pushya is the "nourishing star" — spirituality expressed through service, protection, and feeding others. Her dharma is not passive contemplation but active dharmic service. She is most spiritually alive when she is transmitting, teaching, or protecting something sacred.</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Why now matters spiritually:</strong> Saturn (exalted) running Saturn MD (2023–2042) while placed in H12 — this is a once-in-a-lifetime alignment of the planet of karma and discipline with the house of liberation and surrender. Every outer structure she builds during this period is secretly a spiritual practice. The career, the relationships, the creative work — all are vehicles for something more fundamental being worked out beneath the surface.</p>
+  </div>
+
+  <div style="margin-bottom:10px">
+    <span class="tag gold">Vedanta / Non-duality</span>
+    <span class="tag gold">Tantric Yoga</span>
+    <span class="tag">Vipassana</span>
+    <span class="tag">Jungian Shadow Work</span>
+    <span class="tag">Depth Psychology</span>
+    <span class="tag">Shamanic Practice</span>
+    <span class="tag">Ritual &amp; Ceremony</span>
+    <span class="tag">Mantra Sadhana</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ INCOME ═══════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Income — Drain vs Gain</div>
+
+  <div class="income-split">
+    <div class="drain-block">
+      <h3>Drain Factors</h3>
+      <ul>
+        <li>Jupiter debilitated H3 — wisdom doesn't automatically translate to wealth</li>
+        <li>Saturn H12 — tendency to spend on private, unseen pursuits (spiritual, retreats, tools)</li>
+        <li>Rahu H6 — anxiety about enough-ness, compulsive spending cycles</li>
+        <li>Mars (2nd lord) debilitated — earnings can feel effortful or blocked at source</li>
+        <li>Tendency to undervalue the magnetic gifts of Malavya yoga</li>
+        <li>Moon H11 in Virgo — perfectionism delays completing income-generating work</li>
+      </ul>
+    </div>
+    <div class="gain-block">
+      <h3>Gain Factors</h3>
+      <ul>
+        <li>Malavya yoga — Venus magnetism draws wealth through relationships and reputation</li>
+        <li>Mercury H10 Leo — authority and visibility create income opportunities</li>
+        <li>Vesi yoga — character-based trust generates client and partner loyalty</li>
+        <li>NBRY on Mars — financial struggles ultimately resolve upward</li>
+        <li>Saturn exalted — long-term disciplined effort produces permanent material results</li>
+        <li>Saturn/Venus bhukti (2030–2033) — peak income period of the lifetime</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Net pattern:</strong> Inconsistent earner who has extraordinary capacity. The Malavya yoga means the potential income is high — but it flows through relationship and reputation, which require showing up publicly. Saturn's exaltation ensures effort is eventually rewarded — but Saturn rewards patience, not shortcuts. <strong>The Saturn/Venus bhukti (2030–2033) is the peak earning window — prepare by building reputation and relationships now during Saturn/Mercury.</strong></p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SUMMARY TABLE ════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Life Window Summary</div>
+  <table class="sum-table">
+    <thead>
+      <tr><th>Domain</th><th>Key Window</th><th>What to Do</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Career — Visibility</strong></td>
+        <td>Now → Dec 2028 (Sat/Mercury)</td>
+        <td>Build public professional identity, launch, communicate authority in chosen field</td>
+      </tr>
+      <tr>
+        <td><strong>Career &amp; Relationship Peak</strong></td>
+        <td>Jan 2030 → Mar 2033 (Sat/Venus)</td>
+        <td>Maximum earning, partnerships, institutional recognition, marriage window</td>
+      </tr>
+      <tr>
+        <td><strong>Marriage — Window 1</strong></td>
+        <td>Now → Dec 2028 (Sat/Mercury, DK active)</td>
+        <td>Significant partnership conversations; Mercury archetype partner</td>
+      </tr>
+      <tr>
+        <td><strong>Marriage — Primary</strong></td>
+        <td>Jan 2030 → Mar 2033 (Sat/Venus)</td>
+        <td>Venus as 7th lord in own sign — highest probability, most lasting</td>
+      </tr>
+      <tr>
+        <td><strong>Spiritual Practice</strong></td>
+        <td>Entire Saturn MD (2023–2042)</td>
+        <td>Saturn exalted H12 — sustained inner work, discipline, dissolution of ego structures</td>
+      </tr>
+      <tr>
+        <td><strong>NBRY Breakthrough</strong></td>
+        <td>Sep 2035 → Oct 2036 (Sat/Mars)</td>
+        <td>Full self-expression; rise from any accumulated obstacles with decisive force</td>
+      </tr>
+      <tr>
+        <td><strong>Legacy &amp; Transmission</strong></td>
+        <td>Apr 2042 → 2059 (Mercury MD)</td>
+        <td>Mercury H10 Magha — public teaching, writing, authoritative knowledge work</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<div class="footer">
+  Generated by Astrowise · Swiss Ephemeris · Lahiri Ayanamsha · Vimshottari Dasha System<br>
+  Isolda · 24 July 1985 · 2:04 PM · Cochin, Kerala, India · Scorpio Lagna 1.9°
+</div>
+
+</div>
+</body>
+</html>
