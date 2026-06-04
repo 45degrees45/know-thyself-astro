@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isolda — Consultation Session · 4 June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:      #0A0910;
+  --bg2:     #100E18;
+  --bg3:     #161325;
+  --bg4:     #1C1830;
+
+  --gold:    #C9A84C;
+  --gold-lt: #E8C87A;
+  --gold-bg: rgba(201,168,76,0.07);
+  --gold-bd: rgba(201,168,76,0.22);
+
+  --text:    #E4E0F0;
+  --text2:   rgba(228,224,240,0.62);
+  --text3:   rgba(228,224,240,0.36);
+  --rule:    rgba(201,168,76,0.14);
+
+  --accent:   #8B7EC8;
+  --accent-lt:#B0A4E0;
+  --accent-bg: rgba(139,126,200,0.08);
+  --accent-bd: rgba(139,126,200,0.25);
+
+  --mars:  #C85038;
+  --jup:   #C9A84C;
+  --sat:   #6A90B8;
+  --rahu:  #8B7EC8;
+  --merc:  #5AC48A;
+  --moon:  #7BA8C4;
+  --ven:   #C478A8;
+  --ketu:  #C8A0DC;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size: 20px; background: var(--bg); }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.7;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: -10%;
+  right: -10%;
+  width: 55%;
+  height: 55%;
+  background: radial-gradient(ellipse, rgba(139,126,200,0.06) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  animation: glowDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes glowDrift {
+  0%   { transform: translate(0,0) scale(1); opacity: 0.5; }
+  50%  { transform: translate(-5vw,4vh) scale(1.1); opacity: 0.9; }
+  100% { transform: translate(4vw,8vh) scale(0.92); opacity: 0.4; }
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 40px 100px;
+}
+
+/* ══ HEADER ══ */
+.header {
+  border-bottom: 1px solid var(--gold-bd);
+  padding-bottom: 32px;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--accent-lt);
+  margin-bottom: 12px;
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 62px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--text);
+}
+
+.doc-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(15px, 1.5vw, 20px);
+  color: var(--gold);
+  margin-top: 8px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.header-meta {
+  font-size: 14px;
+  color: var(--text3);
+  margin-top: 18px;
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+}
+
+.header-meta span { color: var(--text2); }
+
+.dasha-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  border: 1px solid var(--gold-bd);
+  background: var(--gold-bg);
+  color: var(--gold-lt);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  padding: 5px 16px;
+  border-radius: 40px;
+}
+
+/* ══ CHART STRIP ══ */
+.chart-strip {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 6px;
+  margin-bottom: 52px;
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.planet-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.planet-sym {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.planet-sign {
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.planet-house {
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.06em;
+}
+
+.ps-sun  { color: #D4883A; }
+.ps-moon { color: var(--moon); }
+.ps-mars { color: var(--mars); }
+.ps-merc { color: var(--merc); }
+.ps-jup  { color: var(--jup);  }
+.ps-ven  { color: var(--ven);  }
+.ps-sat  { color: var(--sat);  }
+.ps-rahu { color: var(--rahu); }
+.ps-ketu { color: var(--ketu); }
+
+/* ══ Q&A THREAD ══ */
+.qa-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.qa-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+  animation: fadeUp 0.5s ease both;
+}
+
+.qa-pair:nth-child(1) { animation-delay: 0.05s; }
+.qa-pair:nth-child(2) { animation-delay: 0.12s; }
+.qa-pair:nth-child(3) { animation-delay: 0.19s; }
+.qa-pair:nth-child(4) { animation-delay: 0.26s; }
+
+.qa-pair::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 52px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--accent-bd), transparent);
+  pointer-events: none;
+}
+
+.qa-pair:last-child::before { display: none; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── QUESTION BUBBLE ── */
+.q-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.q-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-bd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent-lt);
+  flex-shrink: 0;
+}
+
+.q-bubble {
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-bd);
+  border-radius: 0 16px 16px 16px;
+  padding: 14px 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--accent-lt);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+/* ── ANSWER BLOCK ── */
+.a-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.a-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid var(--gold-bd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.a-content {
+  flex: 1;
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 0 16px 16px 16px;
+  overflow: hidden;
+}
+
+.a-body {
+  padding: 22px 26px 24px;
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--text2);
+}
+
+.a-body p { margin-bottom: 14px; }
+.a-body p:last-child { margin-bottom: 0; }
+.a-body strong { color: var(--text); font-weight: 400; }
+.a-body em { color: var(--text3); font-style: italic; }
+
+/* inline planet tags */
+.ptag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 2px 9px;
+  border-radius: 20px;
+  vertical-align: middle;
+  line-height: 1.8;
+}
+.ptag.sat  { background: rgba(106,144,184,0.12); color: var(--sat);  border: 1px solid rgba(106,144,184,0.3);}
+.ptag.merc { background: rgba(90,196,138,0.10);  color: var(--merc); border: 1px solid rgba(90,196,138,0.3);}
+.ptag.jup  { background: rgba(201,168,76,0.10);  color: var(--jup);  border: 1px solid rgba(201,168,76,0.3);}
+.ptag.ven  { background: rgba(196,120,168,0.10); color: var(--ven);  border: 1px solid rgba(196,120,168,0.3);}
+.ptag.mars { background: rgba(200,80,56,0.12);   color: var(--mars); border: 1px solid rgba(200,80,56,0.3);}
+.ptag.rahu { background: rgba(139,126,200,0.10); color: var(--rahu); border: 1px solid rgba(139,126,200,0.3);}
+.ptag.now  { background: rgba(64,192,128,0.10);  color: #40c080;     border: 1px solid rgba(64,192,128,0.3);}
+
+/* insight box within answer */
+.insight-box {
+  background: var(--gold-bg);
+  border-top: 1px solid var(--gold-bd);
+  padding: 16px 26px;
+  font-size: 17px;
+  color: var(--text2);
+  line-height: 1.65;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.insight-icon { color: var(--gold); font-size: 15px; flex-shrink: 0; margin-top: 3px; }
+
+/* key-point list */
+.kp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.kp-list li {
+  padding-left: 22px;
+  position: relative;
+  font-size: 19px;
+  color: var(--text2);
+  line-height: 1.7;
+}
+
+.kp-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--text3);
+  font-size: 13px;
+  top: 4px;
+}
+
+.kp-list li strong { color: var(--text); font-weight: 400; }
+
+/* dasha table */
+.dasha-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 17px;
+  margin: 16px 0;
+}
+
+.dasha-table th {
+  color: var(--text3);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 8px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  text-align: left;
+  font-weight: 400;
+  font-family: 'EB Garamond', serif;
+}
+
+.dasha-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text2);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.dasha-table tr:last-child td { border-bottom: none; }
+
+.dasha-table tr.now-row td { background: rgba(64,192,128,0.04); }
+.dasha-table tr.now-row .b-planet { color: #40c080; }
+
+.b-planet { color: var(--gold); font-weight: 400; font-family: 'Playfair Display', serif; }
+.b-period { color: var(--text3); font-size: 14px; display: block; margin-top: 2px; }
+.b-note   { font-size: 16px; color: var(--text3); }
+
+/* two-col split */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.col-block {
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.col-block.same  { background: rgba(106,144,184,0.06); }
+.col-block.new   { background: rgba(139,126,200,0.06); }
+
+.col-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.col-block.same .col-head { color: var(--sat); }
+.col-block.new  .col-head { color: var(--rahu); }
+
+.col-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.col-list li {
+  font-size: 17px;
+  color: var(--text2);
+  line-height: 1.6;
+  padding-left: 18px;
+  position: relative;
+}
+
+.col-list li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: var(--text3);
+}
+
+.col-list li strong { color: var(--text); font-weight: 400; }
+
+/* section divider */
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 52px 0 32px;
+}
+
+.sh-line { flex:1; height:1px; background: var(--rule); }
+.sh-text {
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+/* ══ FOOTER ══ */
+.page-footer {
+  margin-top: 60px;
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pf-name {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--text3);
+}
+
+.pf-dots { display:flex; gap:6px; }
+.pf-dot  { width:8px; height:8px; border-radius:50%; opacity:0.45; }
+
+@media (max-width: 700px) {
+  .page { padding: 32px 20px 72px; }
+  .chart-strip { grid-template-columns: repeat(5, 1fr); }
+  .two-col { grid-template-columns: 1fr; }
+  .q-bubble { font-size: 18px; }
+  .a-body { font-size: 17px; }
+}
+
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <div class="eyebrow">Astrology Consultation · Session Record</div>
+  <div class="name">Isolda</div>
+  <div class="doc-subtitle">Session Questions &amp; Astrological Answers — 4 June 2026</div>
+  <div class="header-meta">
+    Scorpio Lagna 1.9° &nbsp;·&nbsp; <span>Cochin, Kerala, India</span> &nbsp;·&nbsp; 24 July 1985, 2:04 PM<br>
+    Lagna Lord: Mars H9 Cancer / Pushya &nbsp;·&nbsp; Venus exalted H7 Taurus (Malavya) &nbsp;·&nbsp; Saturn exalted H12 Libra
+  </div>
+  <div class="dasha-pill">⊙ Dasha: Saturn / Mercury / Mercury</div>
+</div>
+
+<!-- ══ CHART STRIP ══ -->
+<div class="chart-strip">
+  <div class="planet-cell">
+    <div class="planet-sym ps-sun">☉</div>
+    <div class="planet-sign">Cancer 7.7°</div>
+    <div class="planet-house">H9</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-moon">☽</div>
+    <div class="planet-sign">Virgo 29.5°</div>
+    <div class="planet-house">H11 Chitra</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-mars">♂</div>
+    <div class="planet-sign">Cancer 5.8°</div>
+    <div class="planet-house">H9 NBRY</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-merc">☿</div>
+    <div class="planet-sign">Leo 1.1°</div>
+    <div class="planet-house">H10 Magha</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-jup">♃</div>
+    <div class="planet-sign">Capricorn 19.8°</div>
+    <div class="planet-house">H3 (R)</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-ven">♀</div>
+    <div class="planet-sign">Taurus 26.1°</div>
+    <div class="planet-house">H7 Malavya</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-sat">♄</div>
+    <div class="planet-sign">Libra 27.8°</div>
+    <div class="planet-house">H12 exalted</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-rahu">☊</div>
+    <div class="planet-sign">Aries 21.3°</div>
+    <div class="planet-house">H6 (R)</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-ketu">☋</div>
+    <div class="planet-sign">Libra 21.3°</div>
+    <div class="planet-house">H12 (R)</div>
+  </div>
+</div>
+
+<!-- ══ Q&A THREAD ══ -->
+<div class="section-head">
+  <div class="sh-line"></div>
+  <div class="sh-text">Consultation Questions &amp; Answers</div>
+  <div class="sh-line"></div>
+</div>
+
+<div class="qa-thread">
+
+  <!-- ══════ Q1: CHART VERIFICATION ══════ -->
+  <div class="qa-pair">
+    <div class="q-row">
+      <div class="q-avatar">I</div>
+      <div class="q-bubble">Check her chart — redo as per current instruction</div>
+    </div>
+    <div class="a-row">
+      <div class="a-avatar">✦</div>
+      <div class="a-content">
+        <div class="a-body">
+          <p>Chart re-run using the astro engine (Swiss Ephemeris + Lahiri ayanamsha) from scratch. Stale output deleted and recalculated clean.</p>
+
+          <ul class="kp-list">
+            <li><strong>Lagna confirmed: Scorpio 1.9°</strong> — matches the prior file exactly. The chart is correct.</li>
+            <li><strong>Dasha: Saturn / Mercury / Mercury</strong> — triple Mercury activation as of June 2026. Saturn MD opened May 2023; Mercury Bhukti opened 8 May 2026 — barely 4 weeks in.</li>
+            <li><strong>3 active yogas:</strong> Malavya (Venus H7 own sign, Pancha Mahapurusha), Neecha Bhanga Raja Yoga on Mars (debilitation cancelled, weakness becomes strength), Vesi Yoga (Mercury 2nd from Sun — wealth and good character).</li>
+            <li><strong>Notable: Saturn is exalted in Libra H12</strong> — the planet running the 19-year Mahadasha is at its most powerful, placed in the house of liberation and spiritual dissolution. A rare and significant combination.</li>
+          </ul>
+
+          <p>All planet positions match expectations. No stale data issues. The chart is ground truth.</p>
+        </div>
+        <div class="insight-box">
+          <div class="insight-icon">◆</div>
+          <div><strong>Saturn exalted in H12</strong> during Saturn Mahadasha is a once-per-lifetime configuration: the planet of karma and discipline running the main period from the house of moksha and surrender. Every worldly effort in this 19-year chapter is simultaneously a spiritual practice, whether she frames it that way or not.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ Q2: CAREER JUNE 2026 ══════ -->
+  <div class="qa-pair">
+    <div class="q-row">
+      <div class="q-avatar">I</div>
+      <div class="q-bubble">Career in June 2026 — same path, or new developments?</div>
+    </div>
+    <div class="a-row">
+      <div class="a-avatar">✦</div>
+      <div class="a-content">
+        <div class="a-body">
+          <p>Both — <strong>same direction, but a new opening is forming within it.</strong> The transits this month create a specific combination that signals something unexpected surfacing rather than a clean pivot.</p>
+
+          <div class="two-col">
+            <div class="col-block same">
+              <div class="col-head">Same Path</div>
+              <ul class="col-list">
+                <li><strong>10th lord Sun in H9</strong> — career energy channelled through dharma, teaching, philosophy. The calling she is already following is amplified, not redirected.</li>
+                <li><strong>Saturn MD framework</strong> — this is a slow-building, disciplined 19-year chapter. The direction set in Saturn/Saturn (2023–26) continues into Mercury Bhukti with sharper articulation.</li>
+                <li>The work itself — depth, knowledge transmission, meaning-making — is exactly what the current transits reward.</li>
+              </ul>
+            </div>
+            <div class="col-block new">
+              <div class="col-head">New Development</div>
+              <ul class="col-list">
+                <li><strong>Mercury (bhukti + antara lord) in Gemini H8</strong> — own sign, very strong, but transiting the 8th house. H8 = hidden matters, sudden turns, what was below the surface arriving. An unexpected communication or invitation.</li>
+                <li><strong>Jupiter transiting Cancer H9</strong> — moving directly over her natal Sun + Mars. Jupiter activating the 9th house stellium = expansion through teaching, a mentor figure entering, or recognition from a dharmic/philosophical domain.</li>
+                <li>Jupiter rules H2 (speech/income) for Scorpio — income from knowledge work gets a genuine boost this month.</li>
+              </ul>
+            </div>
+          </div>
+
+          <p><strong>Verdict:</strong> Something that was below the surface is coming up — possibly an unexpected conversation, invitation, or project that arrives through an unconventional channel (Mercury H8). The right move is to say yes even if it looks irregular. Jupiter over the natal 9th house stellium makes it dharmic: this fits her calling, even if the packaging is unfamiliar.</p>
+        </div>
+        <div class="insight-box">
+          <div class="insight-icon">◆</div>
+          <div>Mercury transiting its own sign in H8 while simultaneously running as both bhukti and antara lord is a rare triple-Mercury moment. H8 for Scorpio is its own native terrain — the sign of transformation and the hidden. What arrives this month may look like disruption but is actually a deeper alignment.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ Q3: DASHAS SHANI ══════ -->
+  <div class="qa-pair">
+    <div class="q-row">
+      <div class="q-avatar">I</div>
+      <div class="q-bubble">Dashas — Shani (Saturn Mahadasha complete breakdown)</div>
+    </div>
+    <div class="a-row">
+      <div class="a-avatar">✦</div>
+      <div class="a-content">
+        <div class="a-body">
+          <p><strong>Saturn Mahadasha runs May 2023 → May 2042</strong> — 19 years. Saturn is <span class="ptag sat">♄ exalted Libra H12</span>. All bhukti dates calculated precisely from the engine (Swiss Ephemeris, Lahiri).</p>
+
+          <table class="dasha-table">
+            <thead>
+              <tr>
+                <th>Bhukti</th>
+                <th>Dates</th>
+                <th>Age</th>
+                <th>Theme</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="b-planet">Sat / Saturn</span></td>
+                <td><span class="b-period">06 May 2023 → 08 May 2026</span></td>
+                <td style="color:var(--text3);font-size:15px">37–40</td>
+                <td class="b-note">Karmic foundation — the most austere opening. Structures built under pressure. Discipline imposed. Just concluded.</td>
+              </tr>
+              <tr class="now-row">
+                <td><span class="b-planet">Sat / Mercury ★</span> <span class="ptag now">NOW</span></td>
+                <td><span class="b-period">08 May 2026 → 15 Jan 2029</span></td>
+                <td style="color:var(--text3);font-size:15px">40–43</td>
+                <td class="b-note">DK Mercury activated — career articulation peaks, partnership conversations crystallise, professional visibility opens. Darakaraka running as bhukti = marriage timing window.</td>
+              </tr>
+              <tr>
+                <td><span class="b-planet">Sat / Ketu</span></td>
+                <td><span class="b-period">15 Jan 2029 → 24 Feb 2030</span></td>
+                <td style="color:var(--text3);font-size:15px">43–44</td>
+                <td class="b-note">Detachment and spiritual acceleration. Endings, releasing what no longer fits. A bridge — short but pivotal.</td>
+              </tr>
+              <tr>
+                <td><span class="b-planet">Sat / Venus</span> <span class="ptag ven">7th lord</span></td>
+                <td><span class="b-period">24 Feb 2030 → 26 Apr 2033</span></td>
+                <td style="color:var(--text3);font-size:15px">44–47</td>
+                <td class="b-note">Peak — Venus as 7th lord in own sign (Malavya yoga). Highest probability marriage window. Maximum earnings and reputation. The most powerful bhukti of the entire Mahadasha.</td>
+              </tr>
+              <tr>
+                <td><span class="b-planet">Sat / Sun</span></td>
+                <td><span class="b-period">26 Apr 2033 → 08 Apr 2034</span></td>
+                <td style="color:var(--text3);font-size:15px">47–48</td>
+                <td class="b-note">Identity crystallises publicly. Who she is and what she stands for becomes undeniable to the world.</td>
+              </tr>
+              <tr>
+                <td><span class="b-planet">Sat / Moon</span></td>
+                <td><span class="b-period">08 Apr 2034 → 07 Nov 2035</span></td>
+                <td style="color:var(--text3);font-size:15px">48–50</td>
+                <td class="b-note">Public-emotional phase — deep connection with community, people, and the world. Relational richness peaks.</td>
+              </tr>
+              <tr>
+                <td><span class="b-planet">Sat / Mars</span> <span class="ptag mars">NBRY</span></td>
+                <td><span class="b-period">07 Nov 2035 → 16 Dec 2036</span></td>
+                <td style="color:var(--text3);font-size:15px">50–51</td>
+                <td class="b-note">Lagna lord fires — NBRY activated at full force. Decisiveness, breakthrough, rising from any accumulated obstacles. The phoenix moment.</td>
+              </tr>
+              <tr>
+                <td><span class="b-planet">Sat / Rahu</span></td>
+                <td><span class="b-period">16 Dec 2036 → 22 Oct 2039</span></td>
+                <td style="color:var(--text3);font-size:15px">51–54</td>
+                <td class="b-note">Bold, unconventional, ambitious expansion. Rahu amplifies reach and risk appetite. The boldest chapter of the MD.</td>
+              </tr>
+              <tr>
+                <td><span class="b-planet">Sat / Jupiter</span></td>
+                <td><span class="b-period">22 Oct 2039 → 05 May 2042</span></td>
+                <td style="color:var(--text3);font-size:15px">54–56</td>
+                <td class="b-note">Wisdom and philosophical authority — the closing chapter. Legacy, teaching, long-term institutional recognition.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p style="margin-top:16px"><strong>What follows:</strong> Mercury Mahadasha opens May 2042 — Mercury is in H10 Leo (Magha, the royal nakshatra). The entire Mercury period (age 57–74) is a career and public legacy phase: books, teachings, authoritative knowledge work built on the inner crystallisation of Saturn MD.</p>
+        </div>
+        <div class="insight-box">
+          <div class="insight-icon">◆</div>
+          <div>The most important observation across the full Saturn MD: <strong>Sat/Venus (2030–2033) is the pivot point of the entire 19-year period</strong> — Venus as 7th lord in own sign means both marriage and career peak happen simultaneously. What is seeded in the current Sat/Mercury bhukti (NOW) is exactly what blooms in Sat/Venus. The work of the next 2.5 years directly determines the harvest of 2030–2033.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /qa-thread -->
+
+<!-- ══ CLOSING NOTE ══ -->
+<div style="margin-top:52px; background:var(--bg2); border:1px solid var(--gold-bd); border-radius:10px; padding:24px 28px;">
+  <div style="font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--gold-lt); margin-bottom:12px; letter-spacing:0.03em;">A note on this Saturn period</div>
+  <div style="font-size:19px; color:var(--text2); line-height:1.75;">
+    Saturn exalted in H12 running as Mahadasha lord is not a conventional career-peak configuration — it is a spiritual-crucible configuration wearing a career-peak costume. The outer achievements that Sat/Venus will bring (2030–2033) are real, but they are the by-product of the deeper process: an inner discipline and dissolution that Saturn H12 demands regardless. The woman who arrives at Sat/Venus will have been built, slowly and sometimes painfully, in the years before. What she is doing right now in Sat/Mercury — how clearly she articulates her purpose, who she moves toward, what she says yes to — is the raw material.
+  </div>
+  <div style="margin-top:16px; font-size:16px; color:var(--text3); letter-spacing:0.08em;">Saturn Mahadasha · May 2023 → May 2042 · Saturn exalted Libra H12 · 19-year chapter</div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<div class="page-footer">
+  <div class="pf-name">ISOLDA &nbsp;·&nbsp; ASTROWISE SESSION · 4 JUNE 2026 &nbsp;·&nbsp; CONFIDENTIAL</div>
+  <div class="pf-dots">
+    <div class="pf-dot" style="background:var(--sat);"></div>
+    <div class="pf-dot" style="background:var(--merc);"></div>
+    <div class="pf-dot" style="background:var(--ven);"></div>
+    <div class="pf-dot" style="background:var(--rahu);"></div>
+  </div>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>
