@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta name="robots" content="noindex, nofollow">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Spirilla Guy — வேத ஜாதக சுயவிவரம்</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Tamil:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'Noto Sans Tamil', 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "தீர்வு — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ தங்க காலகட்டம் — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♑</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">வேத ஜாதக சுயவிவரம் · ஜ்யோதிஷ்</p>
+    <h1>Spirilla Guy</h1>
+    <p class="lagna-line">♑ மகர லக்னம் 22.6°</p>
+    <p class="tagline">ஆன்மீக வளர்ச்சி மற்றும் படைப்பாற்றல் வெளிப்பாட்டில் ஆர்வமுள்ள கவர்ச்சிகரமான தலைவர்</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">பிறந்த தேதி</span>
+        <div class="stat-value">1996-12-12</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">நேரம் · இடம்</span>
+        <div class="stat-value">10:15 · சென்னை, இந்தியா</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">தற்போதைய தசை</span>
+        <div class="stat-value">சந்திரன் / சுக்கிரன் / குரு</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">முதன்மை சக்தி</span>
+        <div class="stat-value">உத்வேகமான விரிவாக்கம்</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">சூரியன்</span><span class="pchip-val">விருச்சிகம் பா.11</span></span><span class="pchip"><span class="pchip-name">சந்திரன்</span><span class="pchip-val">தனுசு பா.12</span></span><span class="pchip"><span class="pchip-name">செவ்வாய்</span><span class="pchip-val">சிம்மம் பா.8</span></span><span class="pchip"><span class="pchip-name">புதன்</span><span class="pchip-val">தனுசு பா.12</span></span><span class="pchip"><span class="pchip-name">குரு</span><span class="pchip-val">தனுசு பா.12</span></span><span class="pchip"><span class="pchip-name">சுக்கிரன்</span><span class="pchip-val">துலாம் பா.10</span></span><span class="pchip"><span class="pchip-name">சனி</span><span class="pchip-val">மீனம் பா.3</span></span><span class="pchip"><span class="pchip-name">ராகு</span><span class="pchip-val">கன்னி பா.9</span></span><span class="pchip"><span class="pchip-name">கேது</span><span class="pchip-val">மீனம் பா.3</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: மூல இயல்பு | உறவுகள் -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>மூல இயல்பு</h2>
+      </div>
+      <p>அவர் ஒரு ஆற்றல்மிக்க மற்றும் சாகசமிக்க ஆளுமையைக் கொண்டவர். அவரது முதன்மை சக்தி உத்வேகமானது மற்றும் விரிவாக்கத்தை நோக்கி நகர்வது. அவரது உணர்ச்சி போக்கு உள்ளுணர்வு நிறைந்தது மற்றும் அனுதாபமுள்ளது — இதனோடு நாடகம் மற்றும் படைப்பாற்றலுக்கான இயல்பான திறன் இணைந்துள்ளது. அவர் வியப்பான மனநிலையுடனும் ஆய்வு செய்யும் விருப்பத்துடனும் வாழ்க்கையை அணுகுகிறார் — எப்போதும் கற்றுக்கொள்வதிலும் வளர்வதிலும் ஆர்வமாக இருக்கிறார். அவரது முதன்மை சக்தி தத்துவ மற்றும் மானவீக இயல்பாலும் வடிவமைக்கப்பட்டுள்ளது, இது உலகில் நேர்மறையான தாக்கத்தை ஏற்படுத்தும் திசையில் அவரை வழிநடத்துகிறது.</p>
+      <div class="trait-chips">
+        <span class="chip">கவர்ச்சிகரமான</span><span class="chip">சாகசமிக்க</span><span class="chip">உள்ளுணர்வு</span><span class="chip">அனுதாபமுள்ள</span><span class="chip">தத்துவ</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>உறவுகள்</h2>
+      </div>
+      <p>அவர் ஆழமான, அர்த்தமுள்ள தொடர்புகளை மதிக்கிறார். வாழ்க்கையின் மீதான தனது உத்வேகத்தையும் ஆன்மீக வளர்ச்சியின் மீதான விருப்பத்தையும் பகிர்ந்துகொள்ளும் கூட்டாளிகளை நோக்கி ஈர்க்கப்படுகிறார். அவரது உறவு பாணி காதல்மிக்கது மற்றும் சாகசமிக்கது — உணர்வு நெருக்கம் மற்றும் அறிவு தொடர்பை வலியுறுத்துகிறது. 7-ஆம் பாவத்தின் அதிபதியான சுக்கிரன் துலாம் ராசியில் அமைந்திருப்பதால், உறவுகளில் நல்லிணக்கம் மற்றும் சமநிலையை நோக்கி அவர் இயல்பாகவே சாய்கிறார். அவரது படைப்பாற்றல் மற்றும் சமூக தன்மையை மதிக்கும் கூட்டாளியை அவர் விரும்புகிறார்.</p>
+      <div class="sub-label">ஏற்ற துணை</div>
+      <p>அவரது ஏற்ற துணை — தன்னம்பிக்கையுடன், கவர்ச்சிகரமாக, அறிவு ஊக்கமளிக்கும் விதத்திலும், வலுவான சுதந்திர உணர்வுடனும், தனிப்பட்ட வளர்ச்சியின் மீதான ஆர்வத்துடனும் இருக்க வேண்டும். இந்தத் துணை, அவரது உணர்வு ஆழத்தையும் படைப்பாற்றல் வெளிப்பாட்டின் தேவையையும் புரிந்துகொள்ள வேண்டும்.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">அனுதாபமுள்ள</span><span class="chip chip-green">காதல்மிக்க</span><span class="chip chip-green">சாகசமிக்க</span><span class="chip chip-green">அறிவு ஊக்கமளிக்கும்</span><span class="chip chip-green">கவர்ச்சிகரமான</span>
+        <span class="chip chip-neg">உணர்ச்சி தீவிரம்</span><span class="chip chip-neg">சுதந்திர தேவை</span><span class="chip chip-neg">அர்ப்பணிப்பு பயம்</span><span class="chip chip-neg">நாடக போக்கு</span><span class="chip chip-neg">விமர்சன உணர்திறன்</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: தொழில் | சுவாரஸ்யமான உண்மைகள் -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>தொழில்</h2>
+      </div>
+      <p>அவரது தொழில் பாதை ஜாதகத்திலுள்ள சக்திவாய்ந்த யோகங்களால் — கஜகேசரி மற்றும் ராஜ யோகம் உட்பட — வடிவமைக்கப்படுகிறது. தலைமைத்துவத்திலும் தேர்ந்துகொண்ட துறையில் வெற்றி பெறவும் இவை வலுவான ஆற்றலை வழங்குகின்றன. படைப்பாற்றல், ஊக்கம், மற்றும் தனிப்பட்ட வளர்ச்சியை உள்ளடக்கிய தொழில்களில் அவர் இயல்பாகவே ஈர்க்கப்படுகிறார். மற்றவர்களை உந்துதல் செய்வதிலும் வழிகாட்டுவதிலும் அவருக்கு இயல்பான திறன் உள்ளது. அவரது சிறந்த பணி முறை — கூட்டு மற்றும் புதுமையானது, அணிப்பணி மற்றும் பரஸ்பர ஆதரவை மையமாகக் கொண்டது.</p>
+      <div class="sub-label">சக்தி காரணி</div>
+      <p>சந்திரனும் புதனும் இணையும் ராஜ யோகம், அவரது கருத்துகளை தெளிவாகத் தெரிவிக்கும் சக்திவாய்ந்த திறனையும் மற்றவர்களை ஊக்கப்படுத்தும் ஆற்றலையும் வழங்குகிறது — இது அவரை இயல்பான தலைவராகவும் ஆசிரியராகவும் ஆக்குகிறது.</p>
+      <div class="sub-label">சிறந்த துறைகள்</div>
+      <div class="trait-chips">
+        <span class="chip">கலை மற்றும் பொழுதுபோக்கு</span><span class="chip">கல்வி மற்றும் தனிப்பட்ட வளர்ச்சி</span><span class="chip">மானவீக சேவை</span><span class="chip">தத்துவம் மற்றும் ஆன்மீகம்</span>
+      </div>
+      <div class="sub-label">தலைமைத்துவ பாணி</div>
+      <p style="margin-top:6px">ஊக்கமளிக்கும் மற்றும் சக்தியளிக்கும்</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>சுவாரஸ்யமான உண்மைகள்</h2>
+      </div>
+      <ul class="fun-list">
+        <li>பூர்வ ஆஷாட நட்சத்திரத்தில் சந்திரன் அமைவது அவரது உணர்வு மற்றும் உள்ளுணர்வு இயல்போடு வலுவான தொடர்பை குறிக்கிறது — மற்றவர்களை அரவணைத்துக் காக்கும் திறன் கொண்டவர்.</li><li>துலாம் ராசியில் சுக்கிரன் அமைவது அழகு, நல்லிணக்கம் மற்றும் சமூக தொடர்பின் மீதான காதலை காட்டுகிறது — கலை, இசை மற்றும் படைப்பாற்றல் வெளிப்பாட்டை ஆழமாக மதிக்கும் தன்மை.</li><li>உத்தர ஆஷாட நட்சத்திரத்தில் குரு அமைவது வாழ்க்கையில் தத்துவ மற்றும் மானவீக அணுகுமுறையை குறிக்கிறது — உலகில் நேர்மறையான தாக்கத்தை ஏற்படுத்தும் விருப்பம்.</li><li>உத்தர பாத்திரபட நட்சத்திரத்தில் சனி அமைவது வலுவான ஒழுக்கம் மற்றும் பொறுப்புணர்வை குறிக்கிறது — அதிகமான பணிகளை ஏற்று அதிகமாக உழைக்கும் போக்கும் உண்டு.</li><li>ஹஸ்த நட்சத்திரத்தில் ராகு அமைவது தொழில்நுட்பம், புதுமை மற்றும் முன்னேற்றம் மீதான ஆர்வத்தை குறிக்கிறது — கண்டுபிடிக்கும் மற்றும் சிக்கல் தீர்க்கும் திறன் சிறப்பாக உள்ளது.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">காலகட்ட சாளரங்கள்</div>
+
+  <!-- ROW 3: தொழில் காலகட்டம் | திருமண காலகட்டம் -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>தொழில் காலகட்டம்</h2>
+      </div>
+      <p>அவரது தொழில் வளைவு ஜாதகத்திலுள்ள பல்வேறு தசைகள் மற்றும் கோசாரங்களால் வடிவமைக்கப்படுகிறது — தனிப்பட்ட வளர்ச்சி, படைப்பாற்றல் மற்றும் ஊக்கம் ஆகியவற்றில் வலுவான கவனம் செலுத்துகிறது. சுக்கிர மற்றும் குரு தசைகளில் குறிப்பிடத்தக்க தொழில் முன்னேற்றங்களும் வாய்ப்புகளும் ஏற்படும் — இது தனது துறையில் தலைவராகவும் வல்லுனராகவும் தன்னை நிலைநிறுத்திக்கொள்ள உதவும்.</p>
+
+        <div class="period-row">
+          <div class="period-window">2017–2027</div>
+          <div class="period-dasha">சந்திர மஹாதசை</div>
+          <div class="period-theme">படைப்பாற்றலும் ஊக்கமும் மிக்க சக்தியாக தொழிலில் தன்னை நிலைநிறுத்திக்கொள்ளும் காலம் — தனிப்பட்ட வளர்ச்சியிலும் திறன் மேம்பாட்டிலும் கவனம்.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2027–2034</div>
+          <div class="period-dasha">செவ்வாய் மஹாதசை</div>
+          <div class="period-theme">தைரியமான நடவடிக்கை எடுத்து, நம்பிக்கையுடனும் உறுதியுடனும் தனது ஆர்வங்களை நோக்கி முன்னேறும் காலம்.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2034–2052</div>
+          <div class="period-dasha">ராகு மஹாதசை</div>
+          <div class="period-theme">புதிய தொழில்நுட்பங்களையும் புதுமைகளையும் ஆராய்ந்து, படைப்பாற்றல் மற்றும் சிக்கல் தீர்க்கும் திறனை பயன்படுத்தி உலகில் நேர்மறையான மாற்றம் ஏற்படுத்தும் காலம்.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">இப்போது</div>
+      <p>தற்போதைய சந்திர மஹாதசையில், தனது படைப்பாற்றல் மற்றும் ஊக்கமளிக்கும் திறன்களை வளர்த்துக்கொள்வதிலும், தனிப்பட்ட வளர்ச்சி மற்றும் திறன் மேம்பாட்டுக்கான வாய்ப்புகளை தேடுவதிலும் கவனம் செலுத்த வேண்டும்.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>திருமண காலகட்டம்</h2>
+      </div>
+      <p>அவரது உறவு நேரம் ஜாதகத்திலுள்ள பல்வேறு தசைகள் மற்றும் கோசாரங்களால் தீர்மானிக்கப்படுகிறது — உணர்வு நெருக்கம், அறிவு தொடர்பு மற்றும் ஆன்மீக வளர்ச்சி ஆகியவற்றில் வலுவான கவனம். சுக்கிர மற்றும் குரு தசைகளில் முக்கியமான உறவு வாய்ப்புகளும் சவால்களும் ஏற்படும் — கூட்டாளியுடன் ஆழமான மற்றும் அர்த்தமுள்ள தொடர்பை கட்டி எழுப்ப உதவும்.</p>
+
+        <div class="period-row">
+          <div class="period-window">2025–2027</div>
+          <div class="period-dasha">சுக்கிர புக்தி</div>
+          <div class="period-theme">உறவுகளில் வலுவான மற்றும் இனிமையான பிணைப்பை உருவாக்குவதில் கவனம் — உணர்வு நெருக்கம் மற்றும் அறிவு தொடர்பை வலியுறுத்துவது.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2027–2034</div>
+          <div class="period-dasha">செவ்வாய் மஹாதசை</div>
+          <div class="period-theme">தைரியமான நடவடிக்கை எடுத்து ஆர்வங்களை நம்பிக்கையுடன் நோக்கி செல்லும் காலம் — புதிய கூட்டாளியை சந்திக்கவோ இருக்கும் உறவை ஆழப்படுத்தவோ வழி திறக்கும்.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2034–2052</div>
+          <div class="period-dasha">ராகு மஹாதசை</div>
+          <div class="period-theme">கூட்டாளியுடன் புதிய அனுபவங்களையும் சாகசங்களையும் ஆராயும் காலம் — எழும் சவால்களை படைப்பாற்றல் மற்றும் சிக்கல் தீர்க்கும் திறனால் கடக்கலாம்.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">கார்மிக் குறிப்பு</div>
+      <p>கூட்டாளியுடன் உணர்வு நெருக்கம் மற்றும் ஆன்மீக தொடர்பிற்கான ஆழமான ஆசை அவரில் உள்ளது. கடந்த கால உறவு வடிவங்களையும் கர்மாவையும் கடந்து செல்வதன் மூலமே உண்மையான திருப்தியான உறவை நிலைநிறுத்த முடியும்.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">தசை மற்றும் சாஸ்திரம்</div>
+
+  <!-- ROW 4: தசை பயணம் | சாஸ்திர குறிப்புகள் -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>தசை பயணம்</h2>
+      </div>
+      <p>தற்போதைய சந்திர மஹாதசை அவரது தனிப்பட்ட வளர்ச்சி மற்றும் முன்னேற்றத்திற்கு முக்கியமான காலகட்டம் — உணர்வு நெருக்கம், அறிவு தொடர்பு மற்றும் ஆன்மீக ஆய்வு ஆகியவற்றில் கவனம். சந்திரன் 12-ஆம் பாவத்தில் அமைந்திருப்பதால், தனது உணர்வு ஆழங்களை கடந்து, எந்த ஆழ்மன வடிவங்கள் அல்லது பயங்கள் தடையாக இருக்கின்றன என்பதை எதிர்கொள்ள வேண்டியிருக்கும். தற்போதைய சுக்கிர புக்தி உறவுகள் மற்றும் படைப்பு முயற்சிகளுக்கு நன்மையான காலம் — தனிப்பட்ட மற்றும் தொழில் வாழ்க்கையில் நல்லிணக்கம் மற்றும் சமநிலையை கட்டி எழுப்ப கவனம் செலுத்த வேண்டும்.</p>
+      <div class="sub-label">தற்போதைய உப-காலகட்ட விவரம்</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">சுக்கிர புக்தி (ஜூன் 2025 - பிப் 2027)</div><div><span class="badge badge-good">சாதகமான</span></div><div class="dasha-issue-note">இந்த காலகட்டத்தில் உறவுகளிலும் படைப்பு முயற்சிகளிலும் நல்லிணக்கம் மற்றும் சமநிலையை கட்டி எழுப்புவதில் கவனம் செலுத்த வேண்டும்.</div></div><div class="dasha-issue"><div class="dasha-issue-period">சூரிய புக்தி (பிப் 2027 - ஆக 2027)</div><div><span class="badge badge-hard">சவாலான</span></div><div class="dasha-issue-note">இந்த காலகட்டத்தில் உறவுகளிலும் தொழிலிலும் சில சவால்களும் பதட்டங்களும் ஏற்படலாம் — உணர்வுகள் மேலோங்காமல் கவனமாக இருக்க வேண்டும்.</div></div><div class="dasha-issue"><div class="dasha-issue-period">செவ்வாய் மஹாதசை (ஆக 2027 - ஆக 2034)</div><div><span class="badge badge-mixed">கலப்பான</span></div><div class="dasha-issue-note">இந்த காலகட்டத்தில் தைரியமான மற்றும் சாகசமிக்க இயல்பை கட்டுப்படுத்தி, தேவையற்ற ஆபத்துகளோ அலட்சியமான நடத்தையோ தவிர்க்க வேண்டும்.</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">கவனிக்க வேண்டியவை</div>
+      <ul class="warning-list"><li>சூரிய புக்தியில் (பிப் 2027 - ஆக 2027) உணர்ச்சி தீவிரம் மற்றும் நாடகத்தில் மூழ்கி விடாமல் கவனமாக இருக்க வேண்டும்</li><li>செவ்வாய் மஹாதசையில் (ஆக 2027 - ஆக 2034) அதிக உழைப்பும் சோர்வும் ஏற்படாமல் கவனமாக இருக்க வேண்டும்</li></ul>
+      <div class="golden-box">குரு புக்தி (ஜூலை 2020 - நவம் 2021) அவரது தனிப்பட்ட வளர்ச்சி, உறவுகள் மற்றும் தொழிலுக்கு மிகவும் மங்களகரமான காலமாக இருந்தது — அந்த காலத்தில் கிடைத்த பாடங்களையும் வாய்ப்புகளையும் சிந்தித்துப் பாருங்கள்.</div>
+      <div class="sub-label" style="margin-top:16px">அடுத்த அத்தியாயம்</div>
+      <p>செவ்வாய் மஹாதசை (ஆக 2027 - ஆக 2034) வாழ்க்கையில் புதிய ஆற்றலும் உந்துதலும் கொண்டுவரும் — தைரியமான நடவடிக்கை, சாகசம் மற்றும் ஆர்வங்களை நோக்கிய முன்னேற்றத்தில் கவனம். இந்த காலகட்டத்தில் ஆபத்துகளை எதிர்கொண்டு சவால்களை எதிர்நோக்கத் தயாராக இருக்க வேண்டும் — படைப்பாற்றல் மற்றும் சிக்கல் தீர்க்கும் திறனால் எந்த தடையையும் கடக்கலாம்.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>சாஸ்திர குறிப்புகள்</h2>
+      </div>
+      <div class="ref-list">
+
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">நட்சத்திரங்கள் (ஹார்னெஸ்)</span>
+            <span class="ref-placement">பூர்வ ஆஷாட</span>
+          </div>
+          <div class="ref-quote">"தெய்வம் அஜ ஏகபாத — அக்னி தேவனின் வாகனமான ஒற்றைக்கால் ஆடு."</div>
+          <div class="ref-application">இந்த மேற்கோள் பூர்வ ஆஷாட நட்சத்திரத்தில் அமைந்த அவரது சந்திரனுக்கு பொருந்துகிறது — உணர்வு மற்றும் உள்ளுணர்வு இயல்போடு வலுவான தொடர்பை குறிக்கிறது, மற்றவர்களை அரவணைத்துக் காக்கும் திறனை காட்டுகிறது.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">நட்சத்திரங்கள் (ஹார்னெஸ்)</span>
+            <span class="ref-placement">உத்தர ஆஷாட</span>
+          </div>
+          <div class="ref-quote">"இந்த நட்சத்திரம் மனுஷ்ய அல்லது மனித குணத்தைக் கொண்டது — முக்கிய இலக்கு மோக்ஷம் அல்லது ஆன்மீக விடுதலை."</div>
+          <div class="ref-application">இந்த மேற்கோள் உத்தர ஆஷாட நட்சத்திரத்தில் அமைந்த அவரது குருவுக்கு பொருந்துகிறது — வாழ்க்கையில் தத்துவ மற்றும் மானவீக அணுகுமுறையையும் உலகில் நேர்மறையான தாக்கம் ஏற்படுத்தும் விருப்பத்தையும் காட்டுகிறது.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">நட்சத்திரங்கள் (ஹார்னெஸ்)</span>
+            <span class="ref-placement">விசாகம்</span>
+          </div>
+          <div class="ref-quote">"இங்கே முக்கியமாக அனுபவிக்கப்படுவது காமம் அல்லது இன்பம்."</div>
+          <div class="ref-application">இந்த மேற்கோள் விசாகம் நட்சத்திரத்தில் அமைந்த அவரது சுக்கிரனுக்கு பொருந்துகிறது — அழகு, நல்லிணக்கம் மற்றும் சமூக தொடர்பின் மீதான காதலையும் கலை, இசை மற்றும் படைப்பாற்றல் வெளிப்பாட்டை ஆழமாக மதிக்கும் தன்மையையும் காட்டுகிறது.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- நிழல் பக்கம் (முழு அகலம்) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>நிழல் பக்கம்</h2>
+    </div>
+    <p>அவர் நாடகம் செய்யும் மற்றும் உணர்வுகளை பெரிதாக்கும் போக்கை கொண்டுள்ளார் — இது சில சமயம் மனநிலை மாற்றங்களுக்கும் உறவு சவால்களுக்கும் வழிவகுக்கும். அர்ப்பணிப்பு பயம் மற்றும் உணர்வுகளை அறிவு ரீதியில் பகுப்பாய்வு செய்யும் போக்கும் உள்ளன — இவை மற்றவர்களுடன் ஆழமான உறவை ஏற்படுத்துவதை கடினமாக்கும்.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>உணர்ச்சி தீவிரம்</strong><p>அவருக்கு வலுவான உணர்வு இயல்பு உண்டு — சில சமயம் உணர்வுகளில் மூழ்கி விடுவார், இது மனநிலை மாற்றங்களுக்கும் உறவு சவால்களுக்கும் வழிவகுக்கும்.</p></div><div class="shadow-card"><strong>அர்ப்பணிப்பு பயம்</strong><p>அர்ப்பணிப்பு மற்றும் நெருக்கத்தின் மீதான பயம் உண்டு — இது மற்றவர்களுடன் ஆழமான உறவை உருவாக்குவதை கடினமாக்கும்.</p></div><div class="shadow-card"><strong>அறிவுரீதியில் விவாதிக்கும் போக்கு</strong><p>உணர்வுகளை அறிவு ரீதியில் பகுப்பாய்வு செய்யும் போக்கு உண்டு — இது உணர்வுகளுடன் தொடர்பு கொள்வதையும் மற்றவர்களுடன் ஆழமான பிணைப்பை உருவாக்குவதையும் கடினமாக்கும்.</p></div><div class="shadow-card"><strong>கட்டுப்பாட்டு தேவை</strong><p>வாழ்க்கையில் கட்டுப்பாடு மற்றும் ஒழுங்கை விரும்பும் தேவை உண்டு — இது சில சமயம் உறவுகளில் பதட்டம் மற்றும் மோதலுக்கு வழிவகுக்கும்.</p></div>
+    </div>
+    <div class="antidote-box">உணர்வு விழிப்புணர்வையும் பாதிப்படைவதற்கான தைரியத்தையும் வளர்த்துக்கொள்வதன் மூலம் நிழல் பக்கத்தை கடக்கலாம் — மற்றவர்களுடன் ஆழமான மற்றும் அர்த்தமுள்ள தொடர்புகளை தேடுவதன் மூலம் குணமாகலாம்.</div>
+  </div>
+
+  <div class="footer">
+    உருவாக்கப்பட்டது 03 ஜூன் 2026 · வேத / லாஹிரி அயனாம்சம் · சுவிஸ் எபிமெரிஸ் · தமிழ் பதிப்பு
+  </div>
+
+</div>
+</body>
+</html>
