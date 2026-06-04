@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruhi CH — Consultation Q&A</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:      #09130D;
+  --bg2:     #0F1C14;
+  --bg3:     #152019;
+  --bg4:     #1A2820;
+
+  --gold:    #C9A84C;
+  --gold-lt: #E8C87A;
+  --gold-bg: rgba(201,168,76,0.07);
+  --gold-bd: rgba(201,168,76,0.22);
+
+  --text:    #E4DFC8;
+  --text2:   rgba(228,223,200,0.62);
+  --text3:   rgba(228,223,200,0.36);
+  --rule:    rgba(201,168,76,0.14);
+
+  --green:   #5AC48A;
+  --green-bg: rgba(90,196,138,0.07);
+  --green-bd: rgba(90,196,138,0.22);
+
+  --moon:  #7BA8C4;
+  --mars:  #C85038;
+  --jup:   #C9A84C;
+  --sat:   #6A90B8;
+  --rahu:  #8B7EC8;
+  --merc:  #5AC48A;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size: 20px; background: var(--bg); }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.7;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: -10%;
+  right: -10%;
+  width: 55%;
+  height: 55%;
+  background: radial-gradient(ellipse, rgba(139,126,200,0.04) 0%, transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  animation: glowDrift 20s ease-in-out infinite alternate;
+}
+
+@keyframes glowDrift {
+  0%   { transform: translate(0,0) scale(1); opacity: 0.6; }
+  50%  { transform: translate(-5vw,4vh) scale(1.1); opacity: 1; }
+  100% { transform: translate(4vw,8vh) scale(0.92); opacity: 0.5; }
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 56px 40px 100px;
+}
+
+/* ══ HEADER ══ */
+.header {
+  border-bottom: 1px solid var(--gold-bd);
+  padding-bottom: 32px;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(32px, 5vw, 62px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--text);
+}
+
+.doc-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(15px, 1.5vw, 20px);
+  color: var(--gold);
+  margin-top: 8px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+}
+
+.header-meta {
+  font-size: 14px;
+  color: var(--text3);
+  margin-top: 18px;
+  letter-spacing: 0.06em;
+  line-height: 1.8;
+}
+
+.header-meta span { color: var(--text2); }
+
+.dasha-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  border: 1px solid var(--gold-bd);
+  background: var(--gold-bg);
+  color: var(--gold-lt);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  padding: 5px 16px;
+  border-radius: 40px;
+}
+
+/* ══ CHART STRIP ══ */
+.chart-strip {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 6px;
+  margin-bottom: 52px;
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.planet-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.planet-sym {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.planet-sign {
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 0.04em;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.planet-house {
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.06em;
+}
+
+.ps-moon { color: var(--moon); }
+.ps-jup  { color: var(--jup);  }
+.ps-sat  { color: var(--sat);  }
+.ps-mars { color: var(--mars); }
+.ps-rahu { color: var(--rahu); }
+.ps-merc { color: var(--merc); }
+.ps-sun  { color: #D4883A; }
+.ps-ven  { color: #C478A8; }
+.ps-ketu { color: #C8A0DC; }
+
+/* ══ Q&A THREAD ══ */
+.qa-thread {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* connector line */
+.qa-pair + .qa-pair {
+  margin-top: 0;
+}
+
+.qa-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+/* vertical thread line */
+.qa-pair::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 52px;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold-bd), transparent);
+  pointer-events: none;
+}
+
+.qa-pair:last-child::before { display: none; }
+
+/* ── QUESTION BUBBLE ── */
+.q-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 0;
+}
+
+.q-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid var(--gold-bd);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gold-lt);
+  flex-shrink: 0;
+}
+
+.q-bubble {
+  background: rgba(201,168,76,0.06);
+  border: 1px solid var(--gold-bd);
+  border-radius: 0 16px 16px 16px;
+  padding: 14px 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--gold-lt);
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+  flex: 1;
+  margin-bottom: 16px;
+}
+
+/* ── ANSWER BLOCK ── */
+.a-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-left: 0;
+  margin-bottom: 48px;
+}
+
+.a-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(90,196,138,0.08);
+  border: 1px solid rgba(90,196,138,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.a-content {
+  flex: 1;
+  background: var(--bg2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 0 16px 16px 16px;
+  overflow: hidden;
+}
+
+.a-body {
+  padding: 22px 26px 24px;
+  font-size: 19px;
+  line-height: 1.75;
+  color: var(--text2);
+}
+
+.a-body p { margin-bottom: 14px; }
+.a-body p:last-child { margin-bottom: 0; }
+
+.a-body strong { color: var(--text); font-weight: 400; }
+.a-body em { color: var(--text3); font-style: italic; }
+
+/* inline planet tags */
+.ptag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  padding: 2px 9px;
+  border-radius: 20px;
+  vertical-align: middle;
+  line-height: 1.8;
+}
+.ptag.jup  { background: rgba(201,168,76,0.10);  color: var(--jup);  border: 1px solid rgba(201,168,76,0.3); }
+.ptag.moon { background: rgba(123,168,196,0.10); color: var(--moon); border: 1px solid rgba(123,168,196,0.3);}
+.ptag.rahu { background: rgba(139,126,200,0.10); color: var(--rahu); border: 1px solid rgba(139,126,200,0.3);}
+.ptag.sat  { background: rgba(106,144,184,0.12); color: var(--sat);  border: 1px solid rgba(106,144,184,0.3);}
+.ptag.mars { background: rgba(200,80,56,0.12);   color: var(--mars); border: 1px solid rgba(200,80,56,0.3); }
+.ptag.merc { background: rgba(90,196,138,0.10);  color: var(--merc); border: 1px solid rgba(90,196,138,0.3);}
+
+/* insight box within answer */
+.insight-box {
+  background: rgba(201,168,76,0.04);
+  border-top: 1px solid var(--gold-bd);
+  padding: 16px 26px;
+  font-size: 17px;
+  color: var(--text2);
+  line-height: 1.65;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.insight-icon { color: var(--gold); font-size: 15px; flex-shrink: 0; margin-top: 3px; }
+
+/* key-point list inside answer */
+.kp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.kp-list li {
+  padding-left: 22px;
+  position: relative;
+  font-size: 19px;
+  color: var(--text2);
+  line-height: 1.7;
+}
+
+.kp-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--text3);
+  font-size: 13px;
+  top: 4px;
+}
+
+.kp-list li strong { color: var(--text); font-weight: 400; }
+
+/* tension box */
+.tension-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.tension-col {
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tension-col.adhd { background: rgba(139,126,200,0.06); }
+.tension-col.focus { background: rgba(200,80,56,0.05); }
+
+.tension-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.tension-col.adhd .tension-head { color: var(--rahu); }
+.tension-col.focus .tension-head { color: var(--mars); }
+
+.tension-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.tension-list li {
+  font-size: 17px;
+  color: var(--text2);
+  line-height: 1.6;
+  padding-left: 18px;
+  position: relative;
+}
+
+.tension-list li::before {
+  content: '·';
+  position: absolute;
+  left: 4px;
+  color: var(--text3);
+}
+
+.tension-list li strong { color: var(--text); font-weight: 400; }
+
+/* remedy summary grid */
+.remedy-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.remedy-col {
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.remedy-col.u   { background: rgba(90,196,138,0.05); border: 1px solid rgba(90,196,138,0.18); }
+.remedy-col.v   { background: rgba(201,168,76,0.05); border: 1px solid rgba(201,168,76,0.18); }
+.remedy-col.sci { background: rgba(91,143,212,0.05); border: 1px solid rgba(91,143,212,0.18); }
+
+.rc-head {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.remedy-col.u   .rc-head { color: #7ADAA4; }
+.remedy-col.v   .rc-head { color: var(--gold-lt); }
+.remedy-col.sci .rc-head { color: #7BAEE8; }
+
+.rc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rc-list li {
+  font-size: 16px;
+  color: var(--text2);
+  line-height: 1.55;
+  padding-left: 14px;
+  position: relative;
+}
+
+.rc-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--text3);
+  font-size: 10px;
+  top: 3px;
+}
+
+/* section divider */
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 52px 0 32px;
+}
+
+.sh-line { flex:1; height:1px; background: var(--rule); }
+.sh-text {
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+/* ══ FOOTER ══ */
+.page-footer {
+  margin-top: 60px;
+  border-top: 1px solid var(--rule);
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pf-name {
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  color: var(--text3);
+}
+
+.pf-dots { display:flex; gap:6px; }
+.pf-dot  { width:8px; height:8px; border-radius:50%; opacity:0.45; }
+
+/* ══ RESPONSIVE ══ */
+@media (max-width: 700px) {
+  .page { padding: 32px 20px 72px; }
+  .chart-strip { grid-template-columns: repeat(5, 1fr); }
+  .tension-grid { grid-template-columns: 1fr; }
+  .remedy-grid { grid-template-columns: 1fr; }
+  .q-bubble { font-size: 18px; }
+  .a-body { font-size: 17px; }
+}
+
+/* ══ ANIMATIONS ══ */
+.qa-pair {
+  animation: fadeUp 0.5s ease both;
+}
+.qa-pair:nth-child(1) { animation-delay: 0.05s; }
+.qa-pair:nth-child(2) { animation-delay: 0.12s; }
+.qa-pair:nth-child(3) { animation-delay: 0.19s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <div class="eyebrow">Astrology Consultation · Session Record</div>
+  <div class="name">Ruhi CH</div>
+  <div class="doc-subtitle">Questions & Astrological Answers — June 2026</div>
+  <div class="header-meta">
+    Sagittarius Lagna 6.5° &nbsp;·&nbsp; <span>Alleppey, Kerala</span> &nbsp;·&nbsp; 03 March 2002, 2:00 AM<br>
+    Lagna Lord: Jupiter H7 Gemini/Ardra &nbsp;·&nbsp; Mars exalted Aries H5 &nbsp;·&nbsp; Kemadruma + Vosi Yoga
+  </div>
+  <div class="dasha-pill">⊙ Dasha: Jupiter / Mercury / Saturn</div>
+</div>
+
+<!-- ══ CHART STRIP ══ -->
+<div class="chart-strip">
+  <div class="planet-cell">
+    <div class="planet-sym ps-sun">☉</div>
+    <div class="planet-sign">Aquarius 18.2°</div>
+    <div class="planet-house">H3</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-moon">☽</div>
+    <div class="planet-sign">Libra 7.1°</div>
+    <div class="planet-house">H11</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-mars">♂</div>
+    <div class="planet-sign">Aries 7.0° ★</div>
+    <div class="planet-house">H5 exalted</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-merc">☿</div>
+    <div class="planet-sign">Capricorn 23.2°</div>
+    <div class="planet-house">H2</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-jup">♃</div>
+    <div class="planet-sign">Gemini 11.7°</div>
+    <div class="planet-house">H7 Ardra</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-ven">♀</div>
+    <div class="planet-sign">Aquarius 29.6°</div>
+    <div class="planet-house">H3</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-sat">♄</div>
+    <div class="planet-sign">Taurus 14.6°</div>
+    <div class="planet-house">H6 Rohini</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-rahu">☊</div>
+    <div class="planet-sign">Taurus 29.6°</div>
+    <div class="planet-house">H6 (R)</div>
+  </div>
+  <div class="planet-cell">
+    <div class="planet-sym ps-ketu">☋</div>
+    <div class="planet-sign">Scorpio 29.6°</div>
+    <div class="planet-house">H12</div>
+  </div>
+</div>
+
+<!-- ══ Q&A THREAD ══ -->
+<div class="section-head">
+  <div class="sh-line"></div>
+  <div class="sh-text">Consultation Questions & Answers</div>
+  <div class="sh-line"></div>
+</div>
+
+<div class="qa-thread">
+
+  <!-- ══════ Q1: RULING PLANET ══════ -->
+  <div class="qa-pair">
+    <div class="q-row">
+      <div class="q-avatar">R</div>
+      <div class="q-bubble">What is my ruling planet?</div>
+    </div>
+    <div class="a-row">
+      <div class="a-avatar">✦</div>
+      <div class="a-content">
+        <div class="a-body">
+          <p><strong>Jupiter</strong> <span class="ptag jup">♃</span> — Sagittarius Lagna makes Jupiter your chart ruler (Lagna lord).</p>
+
+          <ul class="kp-list">
+            <li><strong>Jupiter rules both H1 (Lagna) and H4 (Pisces)</strong> — it governs your self, body, home, and emotional roots simultaneously. It carries more of the chart than most ruling planets do.</li>
+            <li><strong>Jupiter sits in H7 in Gemini</strong> — your ruling planet is placed in the house of relationships and partnerships. This means your identity and life path are fundamentally shaped through other people — who you love, who you work alongside, who you argue with.</li>
+            <li><strong>You are currently in Jupiter Mahadasha</strong> — this is peak Jupiter time. Everything Jupiter signifies is amplified right now: expansion, wisdom, teaching, philosophy, the relationship axis.</li>
+            <li><strong>Jupiter is in Ardra nakshatra (Rahu-ruled)</strong> — adds intensity and transformation to an otherwise expansive planet. Ardra is the storm before growth; it gives Jupiter a restless, seeking quality that doesn't settle easily.</li>
+          </ul>
+
+          <p>The interesting tension: Jupiter is your Lagna lord and its Mahadasha is active — so it's both the most powerful planet in your life right now <em>and</em> the one under the most strain. It is simultaneously your greatest strength and your site of inner conflict: expansive optimism vs. intellectual restlessness, wisdom vs. scattered energy.</p>
+        </div>
+        <div class="insight-box">
+          <div class="insight-icon">◆</div>
+          <div>Jupiter in H7 means the mirror of relationships is where you find yourself — not a weakness, but a design. The work is to build enough inner ground that the mirror reflects rather than defines you.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ Q2: ADHD OR AMAZING FOCUS ══════ -->
+  <div class="qa-pair">
+    <div class="q-row">
+      <div class="q-avatar">R</div>
+      <div class="q-bubble">Does my chart have ADHD or amazing focus?</div>
+    </div>
+    <div class="a-row">
+      <div class="a-avatar">✦</div>
+      <div class="a-content">
+        <div class="a-body">
+          <p><strong>Both — and the tension between them is the signature of your chart.</strong> This is not an either/or; it is a chart with both a scattergun and a laser, switched by what genuinely interests you.</p>
+
+          <div class="tension-grid">
+            <div class="tension-col adhd">
+              <div class="tension-head">↝ Scattered / ADHD-type indicators</div>
+              <ul class="tension-list">
+                <li><strong>Moon in Swati</strong> <span class="ptag rahu">Rahu-ruled</span> — Swati's core quality is restlessness and independence. The mind moves fast and resists being pinned down.</li>
+                <li><strong>Jupiter in Gemini + Ardra</strong> — double Rahu influence on the ruling planet. Gemini is the "two directions at once" sign; Ardra adds storm energy. Her identity naturally pulls toward many interests simultaneously.</li>
+                <li><strong>Kemadruma Yoga</strong> — emotional instability bleeds into mental inconsistency. Focus breaks when emotions are unsettled.</li>
+                <li><strong>Rahu + Saturn in H6</strong> — anxiety-generating combination: rumination, hyperfocus on worries, then burnout.</li>
+              </ul>
+            </div>
+            <div class="tension-col focus">
+              <div class="tension-head">⊕ Laser focus indicators</div>
+              <ul class="tension-list">
+                <li><strong>Mars exalted Aries H5</strong> <span class="ptag mars">★ exalted</span> — when something genuinely captures her, she can go very deep, very fast. H5 is intelligence; exalted Mars = sharp, decisive, almost aggressive mental drive.</li>
+                <li><strong>Mercury in Capricorn / Shravana</strong> — structured, patient, methodical thinker when she chooses. Shravana is the deep listener — absorbs information thoroughly.</li>
+              </ul>
+            </div>
+          </div>
+
+          <p><strong>The real pattern is interest-based focus.</strong> What looks like ADHD in conventional settings is actually the mind being highly selective. Bored = completely scattered. Genuinely lit up = extraordinary concentration.</p>
+
+          <p>Jupiter / Mercury dasha right now is intensifying this — the mind is hungry for stimulation, processing fast, and likely jumping between ideas. The remedy is not more discipline; it is better environment design around genuine interest.</p>
+        </div>
+        <div class="insight-box">
+          <div class="insight-icon">◆</div>
+          <div>Both Moon nakshatra (Swati) and Jupiter nakshatra (Ardra) are ruled by Rahu — the planet of obsession and amplification. This is why the same person can be scattered and genius-level focused within the same day. The switch is interest, not willpower.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ Q3: REMEDIES ══════ -->
+  <div class="qa-pair">
+    <div class="q-row">
+      <div class="q-avatar">R</div>
+      <div class="q-bubble">What remedies are there for me?</div>
+    </div>
+    <div class="a-row">
+      <div class="a-avatar">✦</div>
+      <div class="a-content">
+        <div class="a-body">
+          <p>Remedies are targeted at three core challenges: <strong>scattered Rahu-influenced mind</strong>, <strong>Kemadruma isolation pattern</strong>, and <strong>Jupiter (ruling planet) needing support</strong>.</p>
+
+          <div class="remedy-grid">
+            <div class="remedy-col u">
+              <div class="rc-head">● Universal</div>
+              <ul class="rc-list">
+                <li>Morning sunlight — 10 min, no phone</li>
+                <li>Daily physical exercise to channel exalted Mars H5</li>
+                <li>One fixed anchor routine at the same time daily</li>
+                <li>No screens 45 min before sleep (Moon in Swati)</li>
+                <li>Evening mind-dump in writing before bed</li>
+                <li>One genuine daily connection ritual (Kemadruma antidote)</li>
+              </ul>
+            </div>
+            <div class="remedy-col v">
+              <div class="rc-head">◆ Vedic Tradition</div>
+              <ul class="rc-list">
+                <li><em>Om Brim Brihaspataye Namah</em> × 108 — Thursdays (ruling planet + active dasha)</li>
+                <li>Yellow clothing &amp; saffron milk on Thursdays</li>
+                <li>Donate books/stationery to students</li>
+                <li><em>Om Chandraya Namah</em> × 108 — Mondays</li>
+                <li>Water offering to Moon on Monday evenings</li>
+                <li>Hanuman Chalisa — for Saturn + Rahu H6</li>
+                <li>Black sesame offering on Saturdays</li>
+              </ul>
+            </div>
+            <div class="remedy-col sci">
+              <div class="rc-head">◈ Neuroscience</div>
+              <ul class="rc-list">
+                <li>Cold shower 30–60 sec before work (norepinephrine spike)</li>
+                <li>Body doubling for focus (café, library, Focusmate)</li>
+                <li>Magnesium glycinate 300mg at night (anxiety/sleep)</li>
+                <li>Focus anchor: gesture + song → deep work state</li>
+                <li>Omega-3 EPA 1g/day for mood regulation</li>
+                <li>Belonging evidence log (Kemadruma CBT)</li>
+              </ul>
+            </div>
+          </div>
+
+          <p><strong>Priority order for right now</strong> (Jupiter / Mercury dasha active):</p>
+          <ul class="kp-list">
+            <li><strong>Guru mantra Thursdays</strong> — most timely: ruling planet is the current Mahadasha lord</li>
+            <li><strong>Cold shower + anchor routine</strong> — fastest focus return on investment</li>
+            <li><strong>Magnesium at night</strong> — addresses the anxiety undercurrent quietly running beneath everything</li>
+          </ul>
+        </div>
+        <div class="insight-box">
+          <div class="insight-icon">◆</div>
+          <div>The Vedic and neuroscience tiers map onto the same underlying mechanisms — Thursday Jupiter mantra regulates the ruling planet's energy the same way values-clarification CBT builds identity coherence. Different languages, same architecture. Use whichever system your mind finds credible; both will work.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /qa-thread -->
+
+<!-- ══ CLOSING NOTE ══ -->
+<div style="margin-top:52px; background:var(--bg2); border:1px solid var(--gold-bd); border-radius:10px; padding:24px 28px;">
+  <div style="font-family:'Playfair Display',serif; font-size:19px; font-weight:700; color:var(--gold-lt); margin-bottom:12px; letter-spacing:0.03em;">A note on this chart</div>
+  <div style="font-size:19px; color:var(--text2); line-height:1.75;">
+    Sagittarius rising with Jupiter in H7 is a chart built for the world of other people — teaching, bridging, inspiring, connecting. The tension between the scattered mind (Rahu on Moon and Jupiter nakshatra) and the laser intelligence (Mars exalted H5, Mercury in Capricorn) is not a problem to be fixed; it is the creative friction that produces originality. The remedies are not about becoming less of what this chart is — they are about giving the existing energies a better container so they can express at their highest rather than their most chaotic.
+  </div>
+  <div style="margin-top:16px; font-size:16px; color:var(--text3); letter-spacing:0.08em;">Jupiter Mahadasha · 2024–2040 · The long chapter of expansion and wisdom</div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<div class="page-footer">
+  <div class="pf-name">RUHI CH &nbsp;·&nbsp; ASTROWISE CONSULTATION · JUNE 2026 &nbsp;·&nbsp; CONFIDENTIAL</div>
+  <div class="pf-dots">
+    <div class="pf-dot" style="background:var(--jup);"></div>
+    <div class="pf-dot" style="background:var(--moon);"></div>
+    <div class="pf-dot" style="background:var(--mars);"></div>
+    <div class="pf-dot" style="background:var(--rahu);"></div>
+  </div>
+</div>
+
+</div><!-- /page -->
+</body>
+</html>
