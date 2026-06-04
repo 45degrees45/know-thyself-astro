@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JayCH — Animal Symbols · Vedic Astrology</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d1a; font-family: Georgia, serif; color: #e8e8f0; }
+  .page { max-width: 900px; margin: 0 auto; padding: 0 0 60px; }
+
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #0a1a2c 0%, #1b1464 50%, #0d0a3a 100%);
+    padding: 48px 40px 36px; text-align: center;
+    border-bottom: 2px solid #c9a84c;
+  }
+  .eyebrow { color: #c9a84c; font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .header h1 { color: #fff; font-size: 34px; font-weight: 700; letter-spacing: 0.5px; }
+  .header-sub { color: #9090cc; font-size: 14px; margin-top: 8px; }
+  .chart-strip {
+    display: flex; justify-content: center; gap: 36px; flex-wrap: wrap;
+    margin-top: 22px; padding-top: 20px; border-top: 1px solid #2a246a;
+  }
+  .ci .val { color: #c9a84c; font-size: 15px; font-weight: 700; }
+  .ci .lbl { color: #7070a0; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
+  .sym { color: #c9a84c; font-style: normal; }
+
+  /* Symbol SVG wrapper */
+  .symbol-wrap {
+    display: flex; justify-content: center;
+    background: #060610; padding: 40px 20px;
+    border-bottom: 1px solid #181838;
+  }
+  .symbol-wrap svg { max-width: 500px; width: 100%; height: auto; }
+
+  /* Section */
+  .sec { padding: 32px 40px 0; }
+  .sec-title {
+    color: #c9a84c; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 2.5px; margin-bottom: 20px;
+    padding-bottom: 10px; border-bottom: 1px solid #1e1e4a;
+  }
+
+  /* Animal cards */
+  .animal-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+  .animal-card {
+    background: #111128; border: 1px solid #1e1e4a; border-radius: 10px;
+    padding: 22px 18px;
+  }
+  .animal-card.primary { border-color: #c9a84c; background: #110e00; }
+  .animal-rank { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+  .rank-primary { color: #c9a84c; }
+  .rank-secondary { color: #6080b0; }
+  .rank-aspect { color: #506065; }
+  .animal-name { font-size: 22px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .animal-nak { font-size: 11px; color: #505070; margin-bottom: 14px; }
+  .animal-card p { font-size: 13px; color: #707090; line-height: 1.75; }
+  .animal-card.primary p { color: #907030; }
+  .animal-card p em { color: #c9a84c; font-style: normal; }
+  .animal-card.primary p em { color: #f0c840; }
+
+  /* Yoni table */
+  .yoni-table { width: 100%; border-collapse: collapse; margin-bottom: 28px; }
+  .yoni-table th {
+    color: #c9a84c; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px;
+    padding: 8px 14px; text-align: left; border-bottom: 1px solid #1e1e4a;
+  }
+  .yoni-table td { padding: 10px 14px; border-bottom: 1px solid #141430; font-size: 13px; color: #606080; vertical-align: middle; }
+  .yoni-table tr:last-child td { border-bottom: none; }
+  .yoni-table .y-planet { color: #c0c0e0; font-weight: 700; }
+  .yoni-table .y-nak { color: #c9a84c; }
+  .yoni-table .y-animal { color: #e8e8f0; }
+  .yoni-table tr.primary-row td { background: #110e00; }
+  .yoni-table tr.lion-row td { background: #0c0e18; }
+
+  /* Callouts */
+  .callout {
+    background: #0e1020; border-left: 4px solid #c9a84c;
+    padding: 16px 20px; border-radius: 0 6px 6px 0; margin-bottom: 20px;
+  }
+  .callout p { color: #8080a0; font-size: 13px; line-height: 1.75; }
+  .callout strong { color: #c9a84c; }
+  .callout-green { border-left-color: #40a060; background: #081810; }
+  .callout-green p { color: #507060; }
+  .callout-green strong { color: #40a060; }
+
+  /* Kubera box */
+  .kubera-box {
+    background: linear-gradient(135deg, #110d00, #1e1500, #110d00);
+    border: 1px solid #c9a84c; border-radius: 10px;
+    padding: 26px 28px; margin-bottom: 28px;
+    position: relative; overflow: hidden;
+  }
+  .kubera-box::before {
+    content: "♃"; position: absolute; right: 24px; top: 8px;
+    font-size: 90px; color: rgba(201,168,76,0.07); line-height: 1;
+  }
+  .kubera-box h3 { color: #c9a84c; font-size: 17px; margin-bottom: 10px; }
+  .kubera-box p { color: #907030; font-size: 14px; line-height: 1.75; }
+  .kubera-box strong { color: #c9a84c; }
+
+  /* Convergence */
+  .convergence {
+    background: #0a0a1e; border: 1px solid #1e1e4a;
+    border-radius: 10px; padding: 28px; margin-bottom: 28px;
+  }
+  .convergence h3 { color: #e8e8f0; font-size: 15px; margin-bottom: 12px; }
+  .convergence p { color: #606080; font-size: 13px; line-height: 1.9; }
+  .convergence em { color: #c9a84c; font-style: normal; }
+
+  .footer {
+    margin-top: 40px; padding: 18px 40px;
+    border-top: 1px solid #1e1e4a;
+    text-align: center; font-size: 11px; color: #404060; letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 640px) {
+    .sec { padding: 24px 20px 0; }
+    .animal-grid { grid-template-columns: 1fr; }
+    .header { padding: 32px 20px 24px; }
+    .chart-strip { gap: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <p class="eyebrow">Astrowise · Vedic Astrology</p>
+    <h1>JayCH</h1>
+    <p class="header-sub">Animal Symbols · Nakshatra Yoni · 06 March 1986 · 14:50 · Ottapalam, Kerala</p>
+    <div class="chart-strip">
+      <div class="ci"><div class="val"><i class="sym">♊</i> Gemini 29°</div><div class="lbl">Lagna</div></div>
+      <div class="ci"><div class="val"><i class="sym">☽</i> Sagittarius H7</div><div class="lbl">Moon · Uttara Ashadha</div></div>
+      <div class="ci"><div class="val"><i class="sym">♃</i> Jupiter · Jupiter · Saturn</div><div class="lbl">Current Dasha</div></div>
+    </div>
+  </div>
+
+  <!-- SVG Symbol Art -->
+  <div class="symbol-wrap">
+    <svg viewBox="0 0 500 580" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+
+        <radialGradient id="bgGrad" cx="50%" cy="40%" r="65%">
+          <stop offset="0%"   stop-color="#14103a"/>
+          <stop offset="55%"  stop-color="#09091e"/>
+          <stop offset="100%" stop-color="#04040f"/>
+        </radialGradient>
+
+        <radialGradient id="mongooseHalo" cx="50%" cy="50%" r="55%">
+          <stop offset="0%"   stop-color="rgba(201,168,76,0.22)"/>
+          <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+        </radialGradient>
+
+        <radialGradient id="cobraHalo" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="rgba(100,20,10,0.35)"/>
+          <stop offset="100%" stop-color="rgba(0,0,0,0)"/>
+        </radialGradient>
+
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="3.5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="softglow" x="-80%" y="-80%" width="260%" height="260%">
+          <feGaussianBlur stdDeviation="10" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="gemglow" x="-120%" y="-120%" width="340%" height="340%">
+          <feGaussianBlur stdDeviation="3" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+
+        <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#8a6010"/>
+          <stop offset="35%"  stop-color="#d4981a"/>
+          <stop offset="55%"  stop-color="#f0c84a"/>
+          <stop offset="100%" stop-color="#8a6010"/>
+        </linearGradient>
+
+        <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#d4981a"/>
+          <stop offset="50%"  stop-color="#c0801a"/>
+          <stop offset="100%" stop-color="#9a6010"/>
+        </linearGradient>
+
+      </defs>
+
+      <!-- Background -->
+      <rect width="500" height="580" fill="url(#bgGrad)"/>
+
+      <!-- Outer cosmological rings -->
+      <circle cx="250" cy="270" r="235" fill="none" stroke="#c9a84c" stroke-width="0.5" opacity="0.18"/>
+      <circle cx="250" cy="270" r="222" fill="none" stroke="#c9a84c" stroke-width="0.2" opacity="0.10"/>
+
+      <!-- Star field -->
+      <g opacity="0.55">
+        <circle cx="40"  cy="28"  r="1.1" fill="#fff"/>
+        <circle cx="84"  cy="62"  r="1.5" fill="#c9a84c" opacity="0.7"/>
+        <circle cx="138" cy="42"  r="0.8" fill="#fff"/>
+        <circle cx="195" cy="18"  r="1.2" fill="#fff"/>
+        <circle cx="258" cy="35"  r="0.7" fill="#c9a84c" opacity="0.5"/>
+        <circle cx="315" cy="12"  r="1.0" fill="#fff"/>
+        <circle cx="376" cy="52"  r="1.3" fill="#fff"/>
+        <circle cx="432" cy="24"  r="0.9" fill="#c9a84c" opacity="0.6"/>
+        <circle cx="472" cy="68"  r="1.1" fill="#fff"/>
+        <circle cx="22"  cy="128" r="1.1" fill="#fff"/>
+        <circle cx="52"  cy="168" r="0.8" fill="#c9a84c" opacity="0.4"/>
+        <circle cx="30"  cy="230" r="1.0" fill="#fff"/>
+        <circle cx="14"  cy="320" r="0.9" fill="#fff"/>
+        <circle cx="38"  cy="395" r="1.2" fill="#c9a84c" opacity="0.3"/>
+        <circle cx="472" cy="140" r="1.0" fill="#fff"/>
+        <circle cx="488" cy="205" r="1.2" fill="#c9a84c" opacity="0.4"/>
+        <circle cx="462" cy="270" r="0.8" fill="#fff"/>
+        <circle cx="485" cy="355" r="1.0" fill="#fff"/>
+        <circle cx="96"  cy="540" r="0.8" fill="#fff"/>
+        <circle cx="160" cy="558" r="0.9" fill="#c9a84c" opacity="0.3"/>
+        <circle cx="350" cy="555" r="0.9" fill="#fff"/>
+        <circle cx="418" cy="538" r="0.8" fill="#c9a84c" opacity="0.3"/>
+      </g>
+
+      <!-- Uttara Ashadha constellation (top-right, decorative) -->
+      <g opacity="0.45">
+        <circle cx="418" cy="96"  r="2.4" fill="#c9a84c"/>
+        <circle cx="438" cy="84"  r="1.9" fill="#c9a84c"/>
+        <circle cx="448" cy="104" r="1.7" fill="#c9a84c"/>
+        <circle cx="434" cy="116" r="1.9" fill="#c9a84c"/>
+        <circle cx="414" cy="112" r="1.5" fill="#c9a84c"/>
+        <line x1="418" y1="96"  x2="438" y2="84"  stroke="#c9a84c" stroke-width="0.4"/>
+        <line x1="438" y1="84"  x2="448" y2="104" stroke="#c9a84c" stroke-width="0.4"/>
+        <line x1="448" y1="104" x2="434" y2="116" stroke="#c9a84c" stroke-width="0.4"/>
+        <line x1="434" y1="116" x2="414" y2="112" stroke="#c9a84c" stroke-width="0.4"/>
+        <line x1="414" y1="112" x2="418" y2="96"  stroke="#c9a84c" stroke-width="0.4"/>
+      </g>
+      <text x="431" y="132" text-anchor="middle" fill="#c9a84c" font-family="Georgia,serif" font-size="7" letter-spacing="1" opacity="0.4">UTTARA ASHADHA</text>
+
+      <!-- "PRIMARY ANIMAL" eyebrow label -->
+      <text x="250" y="126" text-anchor="middle" fill="#c9a84c" font-family="Georgia,serif" font-size="8.5" letter-spacing="4" opacity="0.7">PRIMARY ANIMAL</text>
+
+      <!-- ─── COBRA (beneath mongoose — the defeated adversity) ─── -->
+      <ellipse cx="250" cy="340" rx="58" ry="38" fill="url(#cobraHalo)"/>
+
+      <!-- Cobra hood (spread) -->
+      <path d="M208,330 Q218,298 250,293 Q282,298 292,330 Q282,344 250,348 Q218,344 208,330 Z"
+            fill="#193815" opacity="0.92"/>
+      <!-- Hood spectacle pattern -->
+      <ellipse cx="234" cy="322" rx="9"  ry="6"   fill="none" stroke="#286020" stroke-width="1.5" opacity="0.65"/>
+      <ellipse cx="266" cy="322" rx="9"  ry="6"   fill="none" stroke="#286020" stroke-width="1.5" opacity="0.65"/>
+      <path d="M243,322 Q250,326 257,322" fill="none" stroke="#286020" stroke-width="1" opacity="0.6"/>
+      <!-- Cobra head -->
+      <ellipse cx="250" cy="312" rx="16" ry="13" fill="#1a4815"/>
+      <!-- Cobra eye -->
+      <circle cx="244" cy="310" r="3.2" fill="#bb3010"/>
+      <circle cx="244" cy="310" r="1.6" fill="#200"/>
+      <!-- Cobra tongue -->
+      <path d="M250,301 L248,292 L246,288 M248,292 L252,288"
+            stroke="#cc1a10" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+      <!-- Cobra body (lower S-curve, beneath mongoose feet) -->
+      <path d="M250,348 Q272,365 248,383 Q224,399 250,415"
+            stroke="#1a4215" stroke-width="18" fill="none" stroke-linecap="round" opacity="0.85"/>
+      <path d="M250,348 Q272,365 248,383 Q224,399 250,415"
+            stroke="#1e4818" stroke-width="13" fill="none" stroke-linecap="round" opacity="0.55"/>
+
+      <!-- ─── MONGOOSE HALO ─── -->
+      <ellipse cx="252" cy="240" rx="135" ry="85"
+               fill="url(#mongooseHalo)" filter="url(#softglow)"/>
+
+      <!-- ─── MONGOOSE (dominant, central) ─── -->
+
+      <!-- Tail (sweeps up and back, drawn before body) -->
+      <path d="M154,252 Q133,243 122,220 Q112,197 124,184 Q136,170 150,179"
+            stroke="url(#bodyGrad)" stroke-width="16" fill="none" stroke-linecap="round"/>
+      <!-- Bushy tail tip -->
+      <ellipse cx="151" cy="178" rx="13" ry="9" fill="#c8861a" transform="rotate(-28,151,178)"/>
+      <ellipse cx="151" cy="178" rx="9"  ry="6" fill="#d49a28" opacity="0.7" transform="rotate(-28,151,178)"/>
+
+      <!-- Body (elongated closed shape) -->
+      <path d="M157,234
+               Q182,221 252,218 Q312,217 335,230
+               Q346,237 344,250 Q342,262 328,266
+               Q284,272 234,272 Q188,272 163,262
+               Q150,255 152,246 Q153,239 157,234 Z"
+            fill="url(#bodyGrad)" filter="url(#glow)"/>
+      <!-- Belly shading (slightly lighter strip) -->
+      <path d="M168,259 Q210,266 264,266 Q310,266 330,258
+               Q325,268 304,272 Q264,276 218,274 Q178,272 165,266 Z"
+            fill="#a07018" opacity="0.5"/>
+
+      <!-- Head -->
+      <circle cx="322" cy="234" r="29" fill="url(#bodyGrad)" filter="url(#glow)"/>
+
+      <!-- Ear -->
+      <path d="M318,206 Q323,194 331,201 Q328,211 323,210 Z" fill="#b07015"/>
+      <path d="M319,207 Q323,197 330,202 Q328,210 324,210 Z" fill="#d4a040" opacity="0.45"/>
+
+      <!-- Snout -->
+      <path d="M347,231 Q362,230 368,235 Q362,244 347,242 Q338,239 338,236 Q338,232 347,231 Z"
+            fill="#b06812"/>
+      <!-- Nose tip -->
+      <ellipse cx="368" cy="235" rx="6.5" ry="5" fill="#3a1e08"/>
+      <!-- Nostril highlights -->
+      <ellipse cx="366" cy="233" rx="2" ry="1.2" fill="#5a3010" opacity="0.6"/>
+
+      <!-- Eye -->
+      <circle cx="330" cy="224" r="7.5" fill="#fff" opacity="0.95"/>
+      <circle cx="332" cy="225" r="5.2" fill="#1a0a00"/>
+      <circle cx="334" cy="223" r="1.8" fill="#fff" opacity="0.8"/>
+
+      <!-- Whiskers -->
+      <g stroke="#e8d4a0" stroke-width="0.7" opacity="0.45">
+        <line x1="347" y1="234" x2="382" y2="228"/>
+        <line x1="347" y1="236" x2="382" y2="236"/>
+        <line x1="347" y1="238" x2="382" y2="244"/>
+      </g>
+
+      <!-- Four legs (short, rounded) -->
+      <path d="M310,266 Q312,276 310,288 Q308,294 312,295 Q316,295 318,288 Q320,276 316,266 Z" fill="#b07015"/>
+      <path d="M292,267 Q294,278 292,290 Q290,296 294,297 Q298,297 300,289 Q302,277 297,266 Z" fill="#c8861a"/>
+      <path d="M208,268 Q210,278 208,290 Q206,296 210,297 Q214,297 216,289 Q218,278 213,267 Z" fill="#b07015"/>
+      <path d="M190,267 Q192,277 190,289 Q188,295 192,296 Q196,296 198,288 Q200,278 195,267 Z" fill="#c8861a"/>
+
+      <!-- ─── KUBERA GEMS (spilling from mongoose, near snout) ─── -->
+      <!-- Gem 1: sapphire/blue -->
+      <g filter="url(#gemglow)">
+        <polygon points="390,205 380,219 390,233 400,219" fill="#3a8ad8" opacity="0.9"/>
+        <polygon points="380,219 390,233 400,219" fill="#1a5a9a" opacity="0.75"/>
+        <polygon points="390,205 380,219 400,219" fill="#72b8f8" opacity="0.55"/>
+        <circle cx="390" cy="219" r="3" fill="#b0daff" opacity="0.55"/>
+      </g>
+      <!-- Gem 2: topaz/gold -->
+      <g filter="url(#gemglow)">
+        <polygon points="413,220 403,234 413,248 423,234" fill="#d4a020" opacity="0.95"/>
+        <polygon points="403,234 413,248 423,234" fill="#8a6010" opacity="0.8"/>
+        <polygon points="413,220 403,234 423,234" fill="#f0d060" opacity="0.6"/>
+        <circle cx="413" cy="234" r="3" fill="#fff8c0" opacity="0.6"/>
+      </g>
+      <!-- Gem 3: ruby -->
+      <g filter="url(#gemglow)" opacity="0.85">
+        <polygon points="386,250 377,263 386,276 395,263" fill="#c82020" opacity="0.9"/>
+        <polygon points="377,263 386,276 395,263" fill="#801010" opacity="0.75"/>
+        <polygon points="386,250 377,263 395,263" fill="#f04040" opacity="0.55"/>
+        <circle cx="386" cy="263" r="2.5" fill="#ffb0b0" opacity="0.5"/>
+      </g>
+      <!-- Gem sparkles -->
+      <g stroke="#f0e080" stroke-width="0.7" opacity="0.4">
+        <line x1="390" y1="197" x2="390" y2="189"/>
+        <line x1="386" y1="201" x2="378" y2="197"/>
+        <line x1="394" y1="201" x2="402" y2="197"/>
+      </g>
+      <g stroke="#f0d060" stroke-width="0.7" opacity="0.4">
+        <line x1="413" y1="212" x2="413" y2="204"/>
+        <line x1="409" y1="216" x2="401" y2="212"/>
+        <line x1="417" y1="216" x2="425" y2="212"/>
+      </g>
+
+      <!-- "MONGOOSE" title label -->
+      <text x="250" y="400" text-anchor="middle" font-family="Georgia,serif"
+            font-size="23" font-weight="700" letter-spacing="3.5"
+            fill="url(#goldText)" filter="url(#glow)">MONGOOSE</text>
+      <text x="250" y="418" text-anchor="middle" fill="#505070" font-family="Georgia,serif"
+            font-size="10" letter-spacing="1.5">Moon · Uttara Ashadha · H7</text>
+      <text x="250" y="433" text-anchor="middle" fill="#3a3a5a" font-family="Georgia,serif"
+            font-size="8.5" letter-spacing="3">THE INVINCIBLE ONE</text>
+
+      <!-- Dividing line -->
+      <line x1="55" y1="452" x2="445" y2="452" stroke="#1a1a3a" stroke-width="1"/>
+
+      <!-- ─── LION (bottom-left, secondary) ─── -->
+      <!-- Mane -->
+      <circle cx="132" cy="508" r="44" fill="#5a3508" opacity="0.92"/>
+      <!-- Mane texture spikes -->
+      <g fill="#7a4a10" opacity="0.6">
+        <path d="M92,495 Q88,479 99,487 Z"/>
+        <path d="M170,495 Q174,479 163,487 Z"/>
+        <path d="M96,515 Q84,512 97,505 Z"/>
+        <path d="M168,515 Q180,512 167,505 Z"/>
+        <path d="M103,529 Q90,530 102,520 Z"/>
+        <path d="M161,529 Q174,530 162,520 Z"/>
+        <path d="M120,533 Q112,544 118,526 Z"/>
+        <path d="M144,533 Q152,544 146,526 Z"/>
+      </g>
+      <!-- Face -->
+      <circle cx="132" cy="506" r="31" fill="#c8861a"/>
+      <!-- Forehead light -->
+      <ellipse cx="132" cy="495" rx="18" ry="12" fill="#d4981a" opacity="0.45"/>
+      <!-- Ears -->
+      <path d="M110,485 Q114,472 122,479 Z" fill="#5a3508"/>
+      <path d="M154,485 Q150,472 142,479 Z" fill="#5a3508"/>
+      <path d="M111,485 Q115,475 122,480 Z" fill="#c8861a" opacity="0.55"/>
+      <path d="M153,485 Q149,475 142,480 Z" fill="#c8861a" opacity="0.55"/>
+      <!-- Eyes -->
+      <ellipse cx="121" cy="503" rx="7.5" ry="5.5" fill="#f0d060"/>
+      <ellipse cx="143" cy="503" rx="7.5" ry="5.5" fill="#f0d060"/>
+      <circle cx="122" cy="504" r="3.8" fill="#1a1000"/>
+      <circle cx="144" cy="504" r="3.8" fill="#1a1000"/>
+      <circle cx="123" cy="502" r="1.3" fill="#fff" opacity="0.7"/>
+      <circle cx="145" cy="502" r="1.3" fill="#fff" opacity="0.7"/>
+      <!-- Nose -->
+      <path d="M126,513 Q132,516 138,513 Q135,519 132,520 Q129,519 126,513 Z" fill="#8a3010"/>
+      <!-- Mouth -->
+      <path d="M126,519 Q132,523 138,519" stroke="#5a2010" stroke-width="1.2" fill="none"/>
+      <!-- Lion label -->
+      <text x="132" y="562" text-anchor="middle" fill="#b08030" font-family="Georgia,serif" font-size="11.5" font-weight="700" letter-spacing="2">LION</text>
+      <text x="132" y="575" text-anchor="middle" fill="#484858" font-family="Georgia,serif" font-size="8.5" letter-spacing="1">Purva Bhadrapada · Sun + Venus</text>
+
+      <!-- ─── CAT (bottom-right, tertiary/personality) ─── -->
+      <!-- Body (seated oval) -->
+      <ellipse cx="372" cy="520" rx="26" ry="20" fill="#3a3860"/>
+      <!-- Head -->
+      <circle cx="372" cy="490" r="25" fill="#48467a"/>
+      <!-- Ears (triangular, pointed — very cat) -->
+      <path d="M352,476 Q356,459 365,468 Z" fill="#48467a"/>
+      <path d="M392,476 Q388,459 379,468 Z" fill="#48467a"/>
+      <!-- Ear inner -->
+      <path d="M354,476 Q358,463 365,469 Z" fill="#6a68a0" opacity="0.55"/>
+      <path d="M390,476 Q386,463 379,469 Z" fill="#6a68a0" opacity="0.55"/>
+      <!-- Eyes (amber, vertical slit pupils — iconic cat) -->
+      <ellipse cx="362" cy="488" rx="7.5" ry="6" fill="#c9a84c" filter="url(#gemglow)"/>
+      <ellipse cx="382" cy="488" rx="7.5" ry="6" fill="#c9a84c" filter="url(#gemglow)"/>
+      <ellipse cx="362" cy="488" rx="2.2" ry="5.2" fill="#0a0a18"/>
+      <ellipse cx="382" cy="488" rx="2.2" ry="5.2" fill="#0a0a18"/>
+      <circle cx="364" cy="486" r="1.5" fill="#fff" opacity="0.7"/>
+      <circle cx="384" cy="486" r="1.5" fill="#fff" opacity="0.7"/>
+      <!-- Nose -->
+      <path d="M368,497 Q372,499 376,497 Q374,502 372,503 Q370,502 368,497 Z" fill="#8060a0" opacity="0.85"/>
+      <!-- Mouth -->
+      <path d="M368,502 Q372,505 376,502" stroke="#685080" stroke-width="1" fill="none"/>
+      <!-- Whiskers -->
+      <g stroke="#8888b0" stroke-width="0.65" opacity="0.45">
+        <line x1="360" y1="498" x2="340" y2="494"/>
+        <line x1="360" y1="500" x2="340" y2="501"/>
+        <line x1="384" y1="498" x2="404" y2="494"/>
+        <line x1="384" y1="500" x2="404" y2="501"/>
+      </g>
+      <!-- Tail (curled) -->
+      <path d="M396,518 Q422,512 428,493 Q432,474 418,470 Q406,468 406,480"
+            stroke="#48467a" stroke-width="9.5" fill="none" stroke-linecap="round"/>
+      <!-- Cat label -->
+      <text x="372" y="562" text-anchor="middle" fill="#8888b8" font-family="Georgia,serif" font-size="11.5" font-weight="700" letter-spacing="2">CAT</text>
+      <text x="372" y="575" text-anchor="middle" fill="#484858" font-family="Georgia,serif" font-size="8.5" letter-spacing="1">Punarvasu · Lagna</text>
+
+      <!-- Hierarchy lines connecting animals to mongoose -->
+      <line x1="132" y1="464" x2="212" y2="452" stroke="#1e1e3a" stroke-width="0.8" opacity="0.5"/>
+      <line x1="372" y1="464" x2="292" y2="452" stroke="#1e1e3a" stroke-width="0.8" opacity="0.5"/>
+      <circle cx="252" cy="452" r="2.5" fill="#2a2a4a"/>
+      <circle cx="132" cy="464" r="2"   fill="#c9941a" opacity="0.35"/>
+      <circle cx="372" cy="464" r="2"   fill="#8888c0" opacity="0.35"/>
+
+    </svg>
+  </div><!-- end symbol-wrap -->
+
+
+  <!-- ══════════════════════════════════════
+       WRITTEN ANALYSIS
+       ══════════════════════════════════════ -->
+
+  <!-- Three Animals Overview -->
+  <div class="sec">
+    <p class="sec-title">The Three Animals — How This Chart Speaks</p>
+    <div class="animal-grid">
+
+      <div class="animal-card primary">
+        <p class="animal-rank rank-primary">Primary · Moon Nakshatra</p>
+        <p class="animal-name">Mongoose</p>
+        <p class="animal-nak">Moon · Uttara Ashadha · Sagittarius H7</p>
+        <p>The Moon nakshatra is the deepest self — the soul's animal, not the persona. Uttara Ashadha means <em>"the latter invincible one."</em> The mongoose kills cobras routinely, not through size or venom, but through speed, recovery, and the refusal to stay down. What Jay earns stays earned. Permanent victory — not flashy wins.</p>
+      </div>
+
+      <div class="animal-card">
+        <p class="animal-rank rank-secondary">Secondary · Sun + Venus</p>
+        <p class="animal-name">Lion</p>
+        <p class="animal-nak">Sun · Venus · Purva Bhadrapada · Pisces H10</p>
+        <p>Both Sun (identity) and Venus (the most powerful planet in this chart — exalted, Malavya Yoga, Raja Yoga) land in Purva Bhadrapada — the Lion's nakshatra. The lion appears in the <em>public-facing life.</em> Career carries leonine authority, grace, and reputation. Amala Yoga adds: spotless. What Jay does professionally will be remembered well.</p>
+      </div>
+
+      <div class="animal-card">
+        <p class="animal-rank rank-aspect">Personality Mask · Lagna</p>
+        <p class="animal-name">Cat</p>
+        <p class="animal-nak">Lagna · Punarvasu · Gemini H1</p>
+        <p>The face shown to the world is a cat: curious, mercurial, multi-lived, hard to pin down. Punarvasu means <em>"return of the light."</em> Nine lives. Whatever setback arrives, the personality lands on its feet and reorients. Close people see the cat. They rarely get past it to the mongoose beneath.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Yoni Table -->
+  <div class="sec">
+    <p class="sec-title">Full Nakshatra Yoni — Every Planet's Animal</p>
+    <table class="yoni-table">
+      <thead>
+        <tr>
+          <th>Planet</th>
+          <th>Nakshatra</th>
+          <th>Animal (Yoni)</th>
+          <th>Role in Chart</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="primary-row">
+          <td><span class="y-planet">Moon</span></td>
+          <td><span class="y-nak">Uttara Ashadha</span></td>
+          <td><span class="y-animal">🦡 Mongoose ★★★</span></td>
+          <td>Primary self. The only nakshatra with no yoni pair — solitary, self-complete, invincible through ordeal</td>
+        </tr>
+        <tr class="lion-row">
+          <td><span class="y-planet">Sun</span></td>
+          <td><span class="y-nak">Purva Bhadrapada</span></td>
+          <td><span class="y-animal">🦁 Lion ★★</span></td>
+          <td>Solar identity — ego, dharma, H9 philosophical authority</td>
+        </tr>
+        <tr class="lion-row">
+          <td><span class="y-planet">Venus</span></td>
+          <td><span class="y-nak">Purva Bhadrapada</span></td>
+          <td><span class="y-animal">🦁 Lion ★★</span></td>
+          <td>Most powerful planet (exalted H10) — doubles the lion in career and public life</td>
+        </tr>
+        <tr>
+          <td><span class="y-planet">Lagna</span></td>
+          <td><span class="y-nak">Punarvasu</span></td>
+          <td><span class="y-animal">🐱 Cat</span></td>
+          <td>Personality mask — the outward character; curious, multi-lived, always returning to light</td>
+        </tr>
+        <tr>
+          <td><span class="y-planet">Jupiter</span></td>
+          <td><span class="y-nak">Shatabhisha</span></td>
+          <td><span class="y-animal">🐴 Horse ♀</span></td>
+          <td>Current Mahadasha ruler (H9 Aquarius) — swift, free-ranging, wide philosophical reach</td>
+        </tr>
+        <tr>
+          <td><span class="y-planet">Mercury</span></td>
+          <td><span class="y-nak">Uttara Bhadrapada</span></td>
+          <td><span class="y-animal">🐄 Cow ♀</span></td>
+          <td>Lagna lord in H10 — nourishing, patient, sustaining career output over time</td>
+        </tr>
+        <tr>
+          <td><span class="y-planet">Mars</span></td>
+          <td><span class="y-nak">Jyeshtha</span></td>
+          <td><span class="y-animal">🦌 Deer ♂</span></td>
+          <td>H6 adversary — fast, alert; Viparita Raja Yoga source; the cobra energy the mongoose defeats</td>
+        </tr>
+        <tr>
+          <td><span class="y-planet">Saturn</span></td>
+          <td><span class="y-nak">Anuradha</span></td>
+          <td><span class="y-animal">🦌 Deer ♀</span></td>
+          <td>H6 with Mars — paired deer; both adversities alchemised into strength</td>
+        </tr>
+        <tr>
+          <td><span class="y-planet">Rahu</span></td>
+          <td><span class="y-nak">Ashwini</span></td>
+          <td><span class="y-animal">🐎 Horse ♂</span></td>
+          <td>H11 gains axis — charging toward worldly ambition and social reach</td>
+        </tr>
+        <tr>
+          <td><span class="y-planet">Ketu</span></td>
+          <td><span class="y-nak">Swati</span></td>
+          <td><span class="y-animal">🐃 Buffalo ♂</span></td>
+          <td>H5 — past-life weight; slow, grounded spiritual accumulation across time</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- The Mongoose Anomaly -->
+  <div class="sec">
+    <p class="sec-title">The Mongoose Anomaly</p>
+
+    <div class="callout">
+      <p>Every other nakshatra in the yoni table has a pair — a male and female counterpart that form a compatibility axis. <strong>Uttara Ashadha has no pair.</strong> The mongoose stands alone. This is not a flaw; it encodes something precise: this soul does not operate through conventional relatedness. The emotional nature (Moon) is self-completing. Jay does not need a mirror to know who he is.</p>
+    </div>
+
+    <div class="callout callout-green">
+      <p>The cobra in the SVG above is <strong>Mars + Saturn in Scorpio (H6)</strong> — two malefics in the house of enemies and disease, forming 2× Viparita Raja Yoga. In mythology the cobra represents what should be lethal. The mongoose defeats it anyway. The yoga literally says: Jay rises through exactly what would break others. The chart and the animal tell the same story in different languages.</p>
+    </div>
+  </div>
+
+  <!-- Kubera connection -->
+  <div class="sec">
+    <div class="kubera-box">
+      <h3>The Kubera Connection</h3>
+      <p>In Hindu iconography, <strong>Kubera — god of wealth</strong> — is depicted holding a mongoose that spits jewels from its mouth. The mongoose is not merely a fighter; it is the vessel of hidden treasure. Jay's Jupiter mahadasha opened in January 2026 — and Jupiter rules Pisces, where <strong>Mercury + Venus (Raja Yoga) sit in the 10th house</strong>. The three gems in the SVG are not decorative. They represent what this mahadasha unlocks: career and reputation jewels that the mongoose has been carrying all along, waiting for the right dasha to release them.</p>
+    </div>
+  </div>
+
+  <!-- Integrated Symbol -->
+  <div class="sec">
+    <p class="sec-title">Reading the Three Layers Together</p>
+    <div class="convergence">
+      <h3>What the World Sees vs. What Is Actually There</h3>
+      <p>The <em>outer world sees the lion</em> — Venus exalted in Pisces in the 10th, Amala Yoga, a career that carries beauty and ethical authority. That is what a public biography captures. Close people see the <em>cat</em> — the curious, mercurial, multi-lived Gemini personality that lands on its feet, adapts, restarts. But the real story is the <em>mongoose</em>: the one the world rarely witnesses. Patient, watching, and then — when the cobra appears — decisive, fast, and permanent. What Jay earns, stays earned. What Jay survives, becomes fuel. The Jupiter mahadasha (2026–2042) is when all three layers converge: the mongoose's jewels reach the lion's stage, carried there by a cat that kept landing on its feet.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Astrowise · Vedic Astrology · JayCH · Nakshatra Yoni &amp; Animal Symbols · June 2026
+  </div>
+
+</div>
+</body>
+</html>
