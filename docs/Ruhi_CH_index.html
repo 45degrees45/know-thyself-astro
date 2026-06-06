@@ -462,13 +462,27 @@ body {
 <script>
 const UPLOAD_SERVER = 'http://192.168.1.102:8768';
 
+// Static portraits committed to GitHub — always visible on GitHub Pages
+const STATIC_IMAGES = [
+  { name: 'ruhi_portrait_1.jpeg', url: 'ruhi_portrait_1.jpeg', static: true },
+  { name: 'ruhi_portrait_2.jpeg', url: 'ruhi_portrait_2.jpeg', static: true },
+  { name: 'ruhi_portrait_3.jpeg', url: 'ruhi_portrait_3.jpeg', static: true },
+];
+
 async function loadGallery() {
+  // Always render static images first
+  renderGallery(STATIC_IMAGES);
+
+  // Then try local server for any additional uploaded images
   try {
     const res = await fetch(UPLOAD_SERVER + '/images', { signal: AbortSignal.timeout(2000) });
     if (!res.ok) return;
-    const images = await res.json();
-    renderGallery(images);
-  } catch (_) { /* not on local WiFi */ }
+    const serverImages = await res.json();
+    // Merge: server images that aren't already in static list
+    const staticNames = new Set(STATIC_IMAGES.map(i => i.name));
+    const extra = serverImages.filter(i => !staticNames.has(i.name));
+    if (extra.length) renderGallery([...STATIC_IMAGES, ...extra]);
+  } catch (_) { /* not on local WiFi — static images already shown */ }
 }
 
 function renderGallery(images) {
@@ -480,12 +494,12 @@ function renderGallery(images) {
   // remove existing image tiles (keep placeholder)
   gallery.querySelectorAll('.gallery-item').forEach(el => el.remove());
 
-  images.forEach(({ name, url }) => {
+  images.forEach(({ name, url, static: isStatic }) => {
     const item = document.createElement('div');
     item.className = 'gallery-item';
 
     const img = document.createElement('img');
-    img.src = UPLOAD_SERVER + url + '?t=' + Date.now();
+    img.src = isStatic ? url : (UPLOAD_SERVER + url + '?t=' + Date.now());
     img.alt = name;
     img.addEventListener('click', () => openLightbox(img.src));
 
@@ -493,6 +507,7 @@ function renderGallery(images) {
     del.className = 'del-btn';
     del.title = 'Delete';
     del.textContent = '×';
+    if (isStatic) { del.style.display = 'none'; } // can't delete GitHub-hosted images here
     del.addEventListener('click', async (e) => {
       e.stopPropagation();
       if (!confirm('Delete this portrait?')) return;
