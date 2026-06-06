@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Vi CH — Session Notes · June 6 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --sky:     #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background-color: #0b0b18; }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+    }
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 640px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+    .stat-value { font-size: 1rem; color: #fff8f0; line-height: 1.4; }
+
+    /* PANEL */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+    .panel-icon {
+      font-size: 1.3rem;
+      width: 38px; height: 38px;
+      display: grid; place-items: center;
+      border-radius: 10px;
+      background: rgba(196,158,64,0.1);
+      flex-shrink: 0;
+    }
+    .panel-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: #fff8f0;
+    }
+    .panel-sub {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 2px;
+    }
+
+    /* TWO COL */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 720px) { .sym-grid { grid-template-columns: 1fr; } }
+
+    /* SECTION HEADING */
+    .sh {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold2);
+      margin: 18px 0 10px;
+      letter-spacing: 0.04em;
+    }
+    .sh:first-child { margin-top: 0; }
+
+    /* BODY TEXT */
+    p { font-size: 0.92rem; line-height: 1.78; color: rgba(240,232,216,0.85); margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* TABLE */
+    .tbl { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .tbl th {
+      text-align: left;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      padding: 8px 12px;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+    }
+    .tbl td {
+      padding: 9px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      color: rgba(240,232,216,0.82);
+      vertical-align: top;
+    }
+    .tbl tr:last-child td { border-bottom: none; }
+    .tbl td:first-child { color: #fff8f0; font-weight: 500; white-space: nowrap; }
+
+    /* VERDICT BADGE */
+    .verdict {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(90,143,114,0.15);
+      border: 1px solid rgba(90,143,114,0.35);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      color: #7ecfa2;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    /* CALLOUT */
+    .callout {
+      background: rgba(196,158,64,0.07);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      padding: 14px 18px;
+      margin: 14px 0;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.9);
+      font-style: italic;
+    }
+    .callout:last-child { margin-bottom: 0; }
+
+    /* PILL TAGS */
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tag {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 999px;
+      padding: 4px 13px;
+      font-size: 0.78rem;
+      color: rgba(240,232,216,0.75);
+    }
+    .tag.gold { border-color: rgba(196,158,64,0.4); color: var(--gold2); }
+    .tag.sage { border-color: rgba(90,143,114,0.4); color: #7ecfa2; }
+    .tag.plum { border-color: rgba(124,92,191,0.4); color: #b49fe8; }
+    .tag.rose { border-color: rgba(196,96,122,0.4); color: #e89aaa; }
+    .tag.sky  { border-color: rgba(91,143,212,0.4); color: #8ab8f0; }
+
+    /* FLOW DIAGRAM */
+    .flow {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      margin: 14px 0;
+      font-size: 0.82rem;
+    }
+    .flow-box {
+      flex: 1;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-align: center;
+    }
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      padding: 0 8px;
+      color: var(--gold);
+      font-size: 1.2rem;
+    }
+    .flow-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .flow-val { color: rgba(240,232,216,0.85); line-height: 1.5; }
+
+    /* REMEDY TIERS */
+    .tier {
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+    }
+    .tier:last-child { margin-bottom: 0; }
+    .tier-1 { background: rgba(90,196,138,0.07); border: 1px solid rgba(90,196,138,0.22); }
+    .tier-2 { background: rgba(201,168,76,0.07); border: 1px solid rgba(201,168,76,0.22); }
+    .tier-3 { background: rgba(91,143,212,0.07); border: 1px solid rgba(91,143,212,0.22); }
+    .tier-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .tier-1 .tier-badge { background: rgba(90,196,138,0.2); color: #5ac48a; }
+    .tier-2 .tier-badge { background: rgba(201,168,76,0.2); color: #c9a84c; }
+    .tier-3 .tier-badge { background: rgba(91,143,212,0.2); color: #5b8fd4; }
+    .tier ul { list-style: none; padding: 0; }
+    .tier li {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.85);
+      padding: 3px 0 3px 16px;
+      position: relative;
+    }
+    .tier li::before {
+      content: '·';
+      position: absolute;
+      left: 4px;
+      color: var(--gold);
+    }
+
+    /* WEEK CALENDAR */
+    .week-cal {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin: 14px 0;
+    }
+    @media (max-width: 600px) { .week-cal { grid-template-columns: repeat(4, 1fr); } }
+    .wday {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 12px;
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 0.78rem;
+    }
+    .wday-name {
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .wday-planet { font-size: 1.2rem; margin-bottom: 6px; }
+    .wday-task { color: rgba(240,232,216,0.75); line-height: 1.4; }
+
+    /* PHASE FLOW */
+    .phase-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+    }
+    @media (max-width: 600px) { .phase-flow { grid-template-columns: repeat(2, 1fr); } }
+    .phase {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 12px;
+      padding: 14px 12px;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+    .phase-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: rgba(196,158,64,0.3);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .phase-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .phase-desc { color: rgba(240,232,216,0.75); line-height: 1.5; }
+
+    /* DATE BADGE */
+    .date-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(124,92,191,0.12);
+      border: 1px solid rgba(124,92,191,0.28);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      color: #b49fe8;
+      margin-bottom: 20px;
+    }
+
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.22);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-size: 0.8rem;
+      color: var(--gold2);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-link:hover { background: rgba(196,158,64,0.15); }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid rgba(196,158,64,0.1); margin: 4px 0; }
+
+    /* FULL WIDTH */
+    .full { grid-column: 1 / -1; }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-symbol">♏</div>
+    <div class="hero-glow"></div>
+    <div class="eyebrow">Session Notes · Jyotish Consultation</div>
+    <h1>Vi CH</h1>
+    <div class="lagna-line">Scorpio Ascendant 0.2° · Phoenix 🦅</div>
+    <p class="tagline">Deep-dive session covering finance, career direction, communication, conflict, relationships, and remedies — with specific analysis for the active Mars MD / Rahu Bhukti period.</p>
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Session Date</span>
+        <span class="stat-value">6 June 2026</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Active Dasha</span>
+        <span class="stat-value">Mars / Rahu / Venus</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Bhukti Ends</span>
+        <span class="stat-value">August 2026</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Topics Covered</span>
+        <span class="stat-value">8 areas</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINANCE -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">💰</div>
+      <div>
+        <div class="panel-title">Finance & Fund Flow</div>
+        <div class="panel-sub">Wealth lords · Cash flow stress · Fund leak pattern</div>
+      </div>
+    </div>
+
+    <div class="verdict">★ Core finding: income exists — it doesn't stick</div>
+
+    <div class="sh">The Structural Problem</div>
+    <p>Both wealth lords are retrograde — Jupiter (2L, accumulated wealth) in H5 Pisces (R), and Mercury (11L, income/gains) in H9 Cancer (R). When both lords are retrograde, the pattern is: money arrives off-schedule and escapes before it accumulates. Saturn in H6 Aries (R) adds chronic debt/obligation cycles that absorb income at the base.</p>
+
+    <div class="flow" style="margin:16px 0;">
+      <div class="flow-box">
+        <div class="flow-label">Inflow</div>
+        <div class="flow-val">Mercury (11L)<br>H9 Cancer (R)<br><span style="color:#e89aaa;font-size:0.78rem;">Reverses at last moment</span></div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">
+        <div class="flow-label">Blockage</div>
+        <div class="flow-val">Jupiter (2L) R<br>H5 Pisces (R)<br><span style="color:#e89aaa;font-size:0.78rem;">Can't hold what comes in</span></div>
+      </div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-box">
+        <div class="flow-label">Outflow</div>
+        <div class="flow-val">Saturn H6<br>Aries — debts<br><span style="color:#e89aaa;font-size:0.78rem;">Chronic fixed drains</span></div>
+      </div>
+    </div>
+
+    <div class="sh">June 2026 Acute Stress</div>
+    <table class="tbl">
+      <thead><tr><th>Transit</th><th>House</th><th>Effect</th></tr></thead>
+      <tbody>
+        <tr><td>Mercury (11L) in Gemini</td><td>H8</td><td>Income lord in hidden loss house — gains delayed or inaccessible</td></tr>
+        <tr><td>Saturn in Pisces</td><td>H5</td><td>Sitting on Jupiter's natal seat — squeezing the wealth lord</td></tr>
+        <tr><td>Mars in Aries</td><td>H6</td><td>Activating chronic debt zone — obligations feel heavier</td></tr>
+        <tr><td>Jupiter in Cancer</td><td>H9</td><td>Only protective factor — prevents full crisis</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">"Not low income — income that doesn't stick. The behavioral loop: emotional discomfort → spending for relief → Saturn H6 presents bill → anxiety → repeat."</div>
+  </div>
+
+  <!-- FOREIGN vs LOCAL -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">✈️</div>
+      <div>
+        <div class="panel-title">Foreign vs Local Income</div>
+        <div class="panel-sub">H9 stellium · Rahu H10 · Ketu H4</div>
+      </div>
+    </div>
+
+    <div class="verdict" style="background:rgba(91,143,212,0.1);border-color:rgba(91,143,212,0.35);color:#8ab8f0;">★ Verdict: Foreign income — clearly and strongly indicated</div>
+
+    <div class="sym-grid">
+      <div>
+        <div class="sh">Foreign Indicators</div>
+        <table class="tbl">
+          <thead><tr><th>Placement</th><th>Signal</th></tr></thead>
+          <tbody>
+            <tr><td>Rahu H10</td><td>Career through overseas/unconventional channels</td></tr>
+            <tr><td>Mercury (11L) H9</td><td>Gains literally come through foreign/distant sources</td></tr>
+            <tr><td>Venus (7L) H9</td><td>Partnerships with foreign/cross-cultural flavor</td></tr>
+            <tr><td>Ketu H4</td><td>Detachment from homeland — thrives away from roots</td></tr>
+            <tr><td>Jupiter H5 Pisces</td><td>Pisces = 12th sign, foreign-energy wealth house</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="sh">Best Foreign Sectors</div>
+        <p>The H9 Cancer stellium (Mars + Mercury + Venus) defines the style:</p>
+        <div class="tags" style="margin-top:10px;">
+          <span class="tag sky">Cyber Security</span>
+          <span class="tag sky">Threat Intelligence</span>
+          <span class="tag gold">Tech Consulting</span>
+          <span class="tag gold">Remote Work</span>
+          <span class="tag sage">International Clients</span>
+          <span class="tag sage">Digital Services</span>
+        </div>
+        <p style="margin-top:14px;">Local gives visibility. Foreign gives money. The chart is built for cross-border income — preferably digital/remote rather than physical relocation, given the Cancer H9 need for emotional security.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAREER -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">🔐</div>
+      <div>
+        <div class="panel-title">Cyber Security vs Business Analyst</div>
+        <div class="panel-sub">Career path · Dasha timing · Scorpio signature</div>
+      </div>
+    </div>
+
+    <div class="verdict">★ Verdict: Cyber Security — written into the Lagna itself</div>
+
+    <div class="sym-grid">
+      <div>
+        <div class="sh">Why Cyber Security</div>
+        <table class="tbl">
+          <thead><tr><th>Placement</th><th>Signal</th></tr></thead>
+          <tbody>
+            <tr><td>Scorpio Lagna</td><td>Natural investigator — secrecy, penetration, uncovering hidden systems</td></tr>
+            <tr><td>Mars (Lagna lord)</td><td>Technical aggressor, penetration testing mindset</td></tr>
+            <tr><td>Rahu H10</td><td>Technology disruption, unconventional methods, foreign threat landscapes</td></tr>
+            <tr><td>Mercury H9 (R)</td><td>Retrograde = goes back into systems, forensic analysis mind</td></tr>
+            <tr><td>Ketu H4</td><td>Instinctive grasp of hidden/occult systems</td></tr>
+            <tr><td>Saturn H6</td><td>Systematic threat monitoring — vigilance as chronic function</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="sh">Specific Niche</div>
+        <table class="tbl">
+          <thead><tr><th>Planet H9</th><th>Cyber Niche</th></tr></thead>
+          <tbody>
+            <tr><td>Mars H9</td><td>Offensive security, penetration testing, red team</td></tr>
+            <tr><td>Mercury H9 (R)</td><td>Threat intelligence, forensics, vulnerability research</td></tr>
+            <tr><td>Venus H9</td><td>GRC, compliance, security consulting</td></tr>
+          </tbody>
+        </table>
+        <div class="sh" style="margin-top:18px;">Dasha Entry Point</div>
+        <p>Mars MD (warrior, technical) + Rahu Bhukti (unconventional entry) = ideal for certifications (OSCP, CEH), bug bounty, CTF competitions, and foreign remote contracts.</p>
+        <div class="callout">"BA wastes the chart. The sharper the technical + investigative path, the more the chart rewards it."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMUNICATION + CONFLICT -->
+  <div class="sym-grid">
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">🗣️</div>
+        <div>
+          <div class="panel-title">Communication Style</div>
+          <div class="panel-sub">Mercury H9 (R) · Leo H10 · Scorpio filter</div>
+        </div>
+      </div>
+
+      <div class="sh">Core Signature</div>
+      <p><strong>Intense · Selective · Deeply Perceptive.</strong> Everything passes through a Scorpio filter — observes far more than speaks. What's not said carries as much weight as what is.</p>
+
+      <div class="sh">The Private–Public Gap</div>
+      <table class="tbl">
+        <thead><tr><th>Private</th><th>Public</th></tr></thead>
+        <tbody>
+          <tr><td>Quiet, watchful, guarded</td><td>Articulate, magnetic, commanding</td></tr>
+          <tr><td>Processes alone</td><td>Presents with confidence</td></tr>
+          <tr><td>Speaks in half-sentences</td><td>Speaks in complete visions</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sh" style="margin-top:16px;">Mercury Retrograde H9</div>
+      <p>Long internal pause before response — but the response is precise. Thrives in writing over verbal. Brings up old points and re-argues settled things. Hard to counter because nothing is said impulsively.</p>
+
+      <div class="callout">"Scorpio silence on the outside, Leo fire when the moment demands it — with a Cancer core that feels everything and a retrograde Mercury that never stops processing underneath."</div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">⚔️</div>
+        <div>
+          <div class="panel-title">Conflict Style</div>
+          <div class="panel-sub">Scorpio accumulation · Mars debilitated · Rahu eruption</div>
+        </div>
+      </div>
+
+      <div class="sh">The Core Pattern</div>
+      <div class="phase-flow">
+        <div class="phase">
+          <div class="phase-num">1</div>
+          <div class="phase-label">Silence</div>
+          <div class="phase-desc">Absorbs the conflict. Says nothing. Watches.</div>
+        </div>
+        <div class="phase">
+          <div class="phase-num">2</div>
+          <div class="phase-label">Storage</div>
+          <div class="phase-desc">Files every grievance. Remembers everything.</div>
+        </div>
+        <div class="phase">
+          <div class="phase-num">3</div>
+          <div class="phase-label">Threshold</div>
+          <div class="phase-desc">One small thing breaks the dam.</div>
+        </div>
+        <div class="phase">
+          <div class="phase-num">4</div>
+          <div class="phase-label">Release</div>
+          <div class="phase-desc">Everything stored comes out at once.</div>
+        </div>
+      </div>
+
+      <div class="sh">Key Triggers</div>
+      <div class="tags">
+        <span class="tag rose">Public embarrassment (Rahu H10)</span>
+        <span class="tag rose">Feeling manipulated (Scorpio)</span>
+        <span class="tag rose">Being dismissed (Leo H10)</span>
+        <span class="tag rose">Rushed to respond (Mercury R)</span>
+      </div>
+
+      <div class="sh" style="margin-top:16px;">De-escalation</div>
+      <p>Space first. One-on-one, always private. Acknowledge the emotional layer even when conflict appears practical. Don't chase — pursuing a withdrawn Scorpio accelerates the shutdown.</p>
+
+      <div class="callout">"Scorpio stores it, Cancer feels it, Leo eventually explodes it — Mercury R makes sure every detail is remembered perfectly, for years."</div>
+    </div>
+  </div>
+
+  <!-- RELATIONSHIPS -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">❤️</div>
+      <div>
+        <div class="panel-title">Relationships & Love Affairs</div>
+        <div class="panel-sub">7H Taurus · Venus 7L H9 · Jupiter R H5 · Rahu H10</div>
+      </div>
+    </div>
+
+    <div class="verdict" style="background:rgba(196,96,122,0.1);border-color:rgba(196,96,122,0.35);color:#e89aaa;">★ Deeply loyal, intensely guarded, secretly romantic</div>
+
+    <div class="sym-grid">
+      <div>
+        <div class="sh">Partner Blueprint (7H Taurus)</div>
+        <p>Venus rules the 7th — needs a partner who is grounded, dependable, physically present, aesthetically aligned. Venus (7L) in Cancer H9 = partner connected to philosophy, education, or foreign culture. Relationship must feel like <em>home</em> — emotionally nurturing, protective.</p>
+
+        <div class="sh">Attraction Pattern</div>
+        <table class="tbl">
+          <thead><tr><th>Pulls In</th><th>Kills Attraction</th></tr></thead>
+          <tbody>
+            <tr><td>Intelligence first</td><td>Dishonesty (detected instantly)</td></tr>
+            <tr><td>Emotional availability without neediness</td><td>Emotional manipulation</td></tr>
+            <tr><td>Someone slightly mysterious</td><td>Public disrespect</td></tr>
+            <tr><td>Foreign or culturally different</td><td>Neediness demanding constant reassurance</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <div class="sh">Shadow Patterns</div>
+        <table class="tbl">
+          <thead><tr><th>Pattern</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td>Possessiveness</td><td>Scorpio Lagna + Mars H9</td></tr>
+            <tr><td>Silent testing of partner</td><td>Mercury R — tests without announcing</td></tr>
+            <tr><td>Emotional withholding as punishment</td><td>Mars debilitated Cancer</td></tr>
+            <tr><td>Idealizes then devastates</td><td>Jupiter R H5 Pisces</td></tr>
+            <tr><td>Stays in painful relationships</td><td>Scorpio fears dissolution</td></tr>
+          </tbody>
+        </table>
+
+        <div class="sh" style="margin-top:16px;">Current Dasha (Rahu Bhukti)</div>
+        <p>Karmic, unconventional, obsessive romantic energy. Attractions feel fated but unstable. Venus Antara softens this slightly. <strong>Warning:</strong> Rahu amplifies the fantasy layer that Jupiter R H5 already creates — reality-test before committing.</p>
+      </div>
+    </div>
+
+    <div class="callout">"Scorpio guards the door, Cancer falls in love through it, Leo wants to be adored on the other side — Jupiter retrograde keeps looking for the one that feels like it was written before this lifetime."</div>
+  </div>
+
+  <!-- REMEDIES -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">🙏</div>
+      <div>
+        <div class="panel-title">Remedies — Karungali Mala + Hanuman Chalisa</div>
+        <div class="panel-sub">Rahu Bhukti · Mars MD · Saturn H6</div>
+      </div>
+    </div>
+
+    <div class="verdict" style="background:rgba(201,168,76,0.1);border-color:rgba(201,168,76,0.35);color:#e8c96a;">★ Exceptionally well matched — directly addresses both active dasha layers</div>
+
+    <table class="tbl" style="margin-bottom:18px;">
+      <thead><tr><th>Remedy</th><th>Planet</th><th>Dasha Layer</th><th>Why It Fits</th></tr></thead>
+      <tbody>
+        <tr><td>Hanuman Chalisa</td><td>Mars</td><td>Mahadasha lord (debilitated)</td><td>Hanuman = Mars deity; lifts debilitated Lagna lord from weakness to strength</td></tr>
+        <tr><td>Karungali Mala</td><td>Saturn / Rahu</td><td>Bhukti lord + H6 Saturn</td><td>Black ebony grounds Rahu chaos; neutralizes chronic debt pattern</td></tr>
+      </tbody>
+    </table>
+
+    <div class="week-cal">
+      <div class="wday">
+        <div class="wday-name">Mon</div>
+        <div class="wday-planet">🌙</div>
+        <div class="wday-task">Mala wear (continuous)</div>
+      </div>
+      <div class="wday" style="border-color:rgba(196,96,122,0.35);">
+        <div class="wday-name">Tue</div>
+        <div class="wday-planet">🔴</div>
+        <div class="wday-task">Hanuman Chalisa at sunrise · Red lamp</div>
+      </div>
+      <div class="wday">
+        <div class="wday-name">Wed</div>
+        <div class="wday-planet">🟢</div>
+        <div class="wday-task">Mala japa 108× Mercury mantra (optional)</div>
+      </div>
+      <div class="wday">
+        <div class="wday-name">Thu</div>
+        <div class="wday-planet">🟡</div>
+        <div class="wday-task">Mala wear (continuous)</div>
+      </div>
+      <div class="wday">
+        <div class="wday-name">Fri</div>
+        <div class="wday-planet">🟠</div>
+        <div class="wday-task">Mala wear (continuous)</div>
+      </div>
+      <div class="wday" style="border-color:rgba(91,143,212,0.35);">
+        <div class="wday-name">Sat</div>
+        <div class="wday-planet">🪐</div>
+        <div class="wday-task">Karungali japa 108× Om Rahave Namaha · Sesame oil lamp</div>
+      </div>
+      <div class="wday">
+        <div class="wday-name">Sun</div>
+        <div class="wday-planet">🌞</div>
+        <div class="wday-task">Surya Namaskar · Rest</div>
+      </div>
+    </div>
+
+    <div class="sym-grid" style="margin-top:18px;">
+      <div>
+        <div class="sh">Karungali Mala — Best Practices</div>
+        <div class="tier tier-2">
+          <span class="tier-badge">◆ Vedic Tradition</span>
+          <ul>
+            <li>Authentic black ebony heartwood only — not stained imitations</li>
+            <li>Source from Kerala/Tamil Nadu temple shops (Guruvayur, Suchindram)</li>
+            <li>Consecrate on a Saturday during Rahu kalam — soak overnight in raw cow's milk first</li>
+            <li>Wear on left wrist daily; remove at bathroom, funeral grounds, during eating meat</li>
+            <li>Japa: hold between thumb + middle finger (never index finger)</li>
+            <li>Don't cross the Meru bead — reverse direction</li>
+            <li>Clean monthly with sandalwood paste; oil with sesame oil to prevent cracking</li>
+            <li>Re-energize if wood lightens significantly or mala breaks</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="sh">Hanuman Chalisa — Protocol</div>
+        <div class="tier tier-2">
+          <span class="tier-badge">◆ Vedic Tradition</span>
+          <ul>
+            <li>Tuesday mornings at sunrise, facing east — Mars day, most potent</li>
+            <li>Minimum 1 recitation; 3 or 7 on Tuesdays for full effect</li>
+            <li>Red flowers, red cloth, sesame oil lamp for full ritual</li>
+            <li>Can recite mentally during commute — sound frequency is the medicine</li>
+            <li>Also neutralizes Rahu and Saturn negative effects simultaneously</li>
+            <li>Activates the Neecha Bhanga Raja Yoga — converts debilitation to strength</li>
+          </ul>
+        </div>
+        <div class="sh" style="margin-top:16px;">Window</div>
+        <p>Rahu Bhukti ends August 2026. Starting now captures the full remaining window. Both practices are most potent during this exact dasha combination.</p>
+      </div>
+    </div>
+
+    <div class="tier tier-1" style="margin-top:18px;">
+      <span class="tier-badge">● Universal</span>
+      <ul>
+        <li>Surya Namaskar daily — balances Mars energy, improves vitality</li>
+        <li>Structured sleep rhythm (10pm–6am) — counters Rahu sleep disturbance</li>
+        <li>Cold exposure (cold shower morning) — Mars activation without emotional inflammation</li>
+        <li>Fasting on Tuesdays (even partial) — reduces Mars negative expression</li>
+      </ul>
+    </div>
+
+    <div class="tier tier-3" style="margin-top:14px;">
+      <span class="tier-badge">◈ Neuroscience / CBT / Biohacking</span>
+      <ul>
+        <li><strong>CBT:</strong> Identify the emotional trigger → spending loop. Track and interrupt before the financial decision, not after.</li>
+        <li><strong>NLP:</strong> Anchor state for professional confidence before high-stakes meetings (replaces Rahu H10 chaos energy with grounded Leo expression)</li>
+        <li><strong>Biohacking:</strong> Blue-light blocking after 8pm, magnesium glycinate at night — Rahu rules nervous system dysregulation and sleep fragmentation</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- KEY INSIGHTS SUMMARY -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">✦</div>
+      <div>
+        <div class="panel-title">Session Key Insights</div>
+        <div class="panel-sub">Core takeaways · Action points</div>
+      </div>
+    </div>
+
+    <table class="tbl">
+      <thead><tr><th>Area</th><th>Finding</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Finance</td>
+          <td>Both wealth lords retrograde — income doesn't stick; Saturn H6 creates chronic obligation cycles</td>
+          <td>Address behavioral loop first; foreign income structure over local</td>
+        </tr>
+        <tr>
+          <td>Fund Flow</td>
+          <td>Mercury (11L) currently transiting H8 — acute delay window, something is stuck right now</td>
+          <td>Don't force. Jupiter H9 transit is protective — wait for Mercury to clear H8</td>
+        </tr>
+        <tr>
+          <td>Career</td>
+          <td>Scorpio Lagna = cybersecurity signature; BA wastes the chart</td>
+          <td>Pursue OSCP/CEH, bug bounty, international remote contracts this Mars MD</td>
+        </tr>
+        <tr>
+          <td>Income Source</td>
+          <td>Foreign clearly indicated — H9 stellium + Rahu H10 + Ketu H4</td>
+          <td>Prioritize international clients; remote digital work is the natural expression</td>
+        </tr>
+        <tr>
+          <td>Communication</td>
+          <td>Private–public gap is wide; Mercury R = processing lag but precise output</td>
+          <td>Written communication over verbal for high-stakes situations</td>
+        </tr>
+        <tr>
+          <td>Conflict</td>
+          <td>Silence → accumulation → threshold → eruption; emotional wound beneath every conflict</td>
+          <td>Address the emotional layer, not just the surface issue</td>
+        </tr>
+        <tr>
+          <td>Relationships</td>
+          <td>Rahu Bhukti = fated-feeling but unstable attractions; reality-test before committing</td>
+          <td>Cross-cultural, intellectually aligned partner who gives space</td>
+        </tr>
+        <tr>
+          <td>Remedies</td>
+          <td>Karungali (Rahu) + Hanuman Chalisa (Mars) = most targeted combination for this dasha</td>
+          <td>Begin immediately — window closes August 2026</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- NAV -->
+  <div class="panel" style="padding:20px 28px;">
+    <div class="nav-links">
+      <a class="nav-link" href="Vi_CH_profile.html">← Full Natal Profile</a>
+      <a class="nav-link" href="Vi_CH_anon.html">Anonymous Version</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
