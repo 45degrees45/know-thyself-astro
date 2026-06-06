@@ -366,24 +366,24 @@ body {
     </a>
   </div>
 
-  <!-- Chart image -->
-  <div class="section-title">Birth Chart</div>
+  <!-- Portrait image -->
+  <div class="section-title">Portrait</div>
   <div class="chart-section">
-    <h2>Chart Image</h2>
-    <p class="sub">Upload a screenshot from your astrology app — stored locally, not on GitHub.</p>
+    <h2>Meta AI Portrait</h2>
+    <p class="sub">Upload your Meta AI-generated portrait — stored locally on this device, not on GitHub.</p>
 
     <div class="chart-img-wrap" id="chartWrap">
       <div class="chart-placeholder" id="placeholder">
         <div class="icon">⊕</div>
-        <div class="label">No chart image yet — upload one below</div>
+        <div class="label">No portrait yet — upload one below</div>
       </div>
-      <img id="chartImg" src="" alt="Birth chart" style="display:none;">
+      <img id="chartImg" src="" alt="Meta AI portrait" style="display:none;">
     </div>
 
     <div class="upload-row">
       <label class="upload-label">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
-        Upload chart image
+        Upload portrait
         <input type="file" id="fileInput" accept="image/*">
       </label>
       <span class="upload-status" id="uploadStatus"></span>
@@ -433,7 +433,7 @@ document.getElementById('fileInput').addEventListener('change', async (e) => {
       throw new Error('Server error');
     }
   } catch (err) {
-    status.textContent = 'Upload failed — make sure you\'re on local WiFi';
+    status.textContent = 'Upload failed — must be on local WiFi (192.168.1.102)';
     status.className = 'upload-status err';
   }
 });
