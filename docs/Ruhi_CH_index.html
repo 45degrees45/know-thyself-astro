@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ruhi CH — Astrowise Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --bg2:     #11112a;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.52);
+  --plum:    #7c5cbf;
+  --plum2:   #a07ee0;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --teal:    #3EC9C4;
+  --r:       18px;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { background-color: var(--bg); }
+
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 32px 16px 80px;
+}
+
+.shell {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  padding: 48px 0 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.astrowise-label {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-bottom: 18px;
+}
+
+.name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.lagna-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(124,92,191,0.12);
+  border: 1px solid rgba(124,92,191,0.3);
+  border-radius: 999px;
+  padding: 6px 18px;
+  margin: 16px 0;
+  font-size: 13px;
+  color: var(--plum2);
+  letter-spacing: 0.05em;
+}
+
+.birth-meta {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-top: 8px;
+}
+
+.dasha-strip {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 16px;
+  background: rgba(196,158,64,0.07);
+  border: 1px solid rgba(196,158,64,0.18);
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.dasha-strip span { opacity: 0.5; }
+
+/* ── Section title ── */
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* ── Page cards ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px 22px;
+  text-decoration: none;
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: rgba(196,158,64,0.4);
+  background: rgba(255,255,255,0.055);
+  transform: translateY(-2px);
+}
+
+.card-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--gold2);
+}
+
+.card-desc {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.card-arrow {
+  margin-top: auto;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+/* ── Chart image section ── */
+.chart-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 32px;
+  margin-bottom: 48px;
+}
+
+.chart-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--gold2);
+  margin-bottom: 6px;
+}
+
+.chart-section .sub {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.chart-img-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(196,158,64,0.1);
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.chart-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.chart-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.chart-placeholder .icon { font-size: 2.5rem; opacity: 0.3; }
+.chart-placeholder .label { font-size: 13px; color: var(--muted); }
+
+/* ── Upload controls ── */
+.upload-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(124,92,191,0.15);
+  border: 1px solid rgba(124,92,191,0.35);
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: var(--plum2);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.upload-label:hover { background: rgba(124,92,191,0.25); }
+
+.upload-label input[type="file"] { display: none; }
+
+.upload-status {
+  font-size: 12px;
+  color: var(--muted);
+  min-height: 18px;
+}
+
+.upload-status.ok  { color: #5a8f72; }
+.upload-status.err { color: #c4607a; }
+
+/* ── Local-only badge ── */
+.local-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(62,201,196,0.07);
+  border: 1px solid rgba(62,201,196,0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: var(--teal);
+  letter-spacing: 0.04em;
+  margin-left: auto;
+}
+
+/* ── Key facts strip ── */
+.facts-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.fact {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.fact strong { color: var(--cream); display: block; font-size: 13px; margin-bottom: 2px; }
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  opacity: 0.5;
+  margin-top: 40px;
+  letter-spacing: 0.08em;
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="astrowise-label">Astrowise · Vedic Natal Hub</div>
+    <h1 class="name">Ruhi CH</h1>
+    <div class="lagna-badge">♐ Sagittarius Lagna 6.5°</div>
+    <div class="birth-meta">03 March 2002 · 02:00 AM · Alleppey, Kerala</div>
+    <div class="dasha-strip">
+      Jupiter <span>/</span> Mercury <span>/</span> Saturn
+      <span style="margin-left:4px;opacity:0.4">· Jun 2026</span>
+    </div>
+  </header>
+
+  <!-- Key facts -->
+  <div class="facts-strip">
+    <div class="fact"><strong>Animal</strong>Horse (triple signature)</div>
+    <div class="fact"><strong>Mars</strong>Exalted · Aries H5 · Ashwini</div>
+    <div class="fact"><strong>Moon</strong>Libra H11 · Swati</div>
+    <div class="fact"><strong>Jupiter</strong>Gemini H7 · Ardra (Lagna lord)</div>
+    <div class="fact"><strong>Yogas</strong>Kemadruma · Vosi</div>
+    <div class="fact"><strong>Career window</strong>2025 – 2028</div>
+  </div>
+
+  <!-- Page cards -->
+  <div class="section-title">Readings</div>
+  <div class="cards">
+    <a class="card" href="Ruhi_CH.html">
+      <div class="card-icon">✦</div>
+      <div class="card-title">Natal Profile</div>
+      <div class="card-desc">Full birth chart reading — nature, career, relationships, yogas, dasha forecast</div>
+      <div class="card-arrow">Open →</div>
+    </a>
+    <a class="card" href="ruhi_ch_health.html">
+      <div class="card-icon">◈</div>
+      <div class="card-title">Health Analysis</div>
+      <div class="card-desc">Vedic medical astrology — body constitution, vulnerable areas, seasonal guidance</div>
+      <div class="card-arrow">Open →</div>
+    </a>
+    <a class="card" href="ruhi_ch_qa.html">
+      <div class="card-icon">◇</div>
+      <div class="card-title">Q &amp; A</div>
+      <div class="card-desc">Chart-specific questions answered — deep dives on placements and timing</div>
+      <div class="card-arrow">Open →</div>
+    </a>
+    <a class="card" href="ruhi_ch_remedies.html">
+      <div class="card-icon">●</div>
+      <div class="card-title">Remedies</div>
+      <div class="card-desc">Tiered remedies — Vedic tradition, neuroscience/CBT, universal practices</div>
+      <div class="card-arrow">Open →</div>
+    </a>
+  </div>
+
+  <!-- Chart image -->
+  <div class="section-title">Birth Chart</div>
+  <div class="chart-section">
+    <h2>Chart Image</h2>
+    <p class="sub">Upload a screenshot from your astrology app — stored locally, not on GitHub.</p>
+
+    <div class="chart-img-wrap" id="chartWrap">
+      <div class="chart-placeholder" id="placeholder">
+        <div class="icon">⊕</div>
+        <div class="label">No chart image yet — upload one below</div>
+      </div>
+      <img id="chartImg" src="" alt="Birth chart" style="display:none;">
+    </div>
+
+    <div class="upload-row">
+      <label class="upload-label">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        Upload chart image
+        <input type="file" id="fileInput" accept="image/*">
+      </label>
+      <span class="upload-status" id="uploadStatus"></span>
+      <span class="local-badge">⚡ WiFi only</span>
+    </div>
+  </div>
+
+  <div class="footer">Astrowise · Swiss Ephemeris · Lahiri Ayanamsha · noindex</div>
+</div>
+
+<script>
+const UPLOAD_SERVER = 'http://192.168.1.102:8768';
+
+async function loadChartImage() {
+  try {
+    const res = await fetch(UPLOAD_SERVER + '/status', { signal: AbortSignal.timeout(2000) });
+    if (!res.ok) return;
+    const { exists } = await res.json();
+    if (exists) showImage(UPLOAD_SERVER + '/chart?t=' + Date.now());
+  } catch (_) { /* server not reachable — local WiFi only */ }
+}
+
+function showImage(src) {
+  const img = document.getElementById('chartImg');
+  const ph  = document.getElementById('placeholder');
+  img.src = src;
+  img.style.display = 'block';
+  ph.style.display  = 'none';
+}
+
+document.getElementById('fileInput').addEventListener('change', async (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const status = document.getElementById('uploadStatus');
+  status.textContent = 'Uploading…';
+  status.className = 'upload-status';
+
+  try {
+    const form = new FormData();
+    form.append('chart', file, file.name);
+    const res = await fetch(UPLOAD_SERVER + '/upload', { method: 'POST', body: form });
+    if (res.ok) {
+      status.textContent = 'Chart uploaded ✓';
+      status.className = 'upload-status ok';
+      showImage(UPLOAD_SERVER + '/chart?t=' + Date.now());
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    status.textContent = 'Upload failed — make sure you\'re on local WiFi';
+    status.className = 'upload-status err';
+  }
+});
+
+loadChartImage();
+</script>
+</body>
+</html>
