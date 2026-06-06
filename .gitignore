@@ -14,3 +14,5 @@ venv/
 .playwright-mcp/
 astro_engine/output/
 # docs/ is intentionally tracked — GitHub Pages
+!docs/**/*.png
+!docs/**/*.jpg
