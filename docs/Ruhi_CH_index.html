@@ -232,6 +232,67 @@ body {
 .chart-placeholder .icon { font-size: 2.5rem; opacity: 0.3; }
 .chart-placeholder .label { font-size: 13px; color: var(--muted); }
 
+/* ── Gallery grid ── */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(196,158,64,0.15);
+  aspect-ratio: 1;
+  background: rgba(255,255,255,0.02);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+}
+
+.gallery-item .del-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.65);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.gallery-item:hover .del-btn { opacity: 1; }
+
+/* lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 92vw; max-height: 92vh; border-radius: 12px; }
+
 /* ── Upload controls ── */
 .upload-row {
   display: flex;
@@ -366,29 +427,33 @@ body {
     </a>
   </div>
 
-  <!-- Portrait image -->
-  <div class="section-title">Portrait</div>
+  <!-- Portrait images -->
+  <div class="section-title">Portraits</div>
   <div class="chart-section">
-    <h2>Meta AI Portrait</h2>
-    <p class="sub">Upload your Meta AI-generated portrait — stored locally on this device, not on GitHub.</p>
+    <h2>Meta AI Portraits</h2>
+    <p class="sub">Upload any number of Meta AI-generated images — stored locally on this device, not on GitHub.</p>
 
-    <div class="chart-img-wrap" id="chartWrap">
+    <div class="gallery" id="gallery">
       <div class="chart-placeholder" id="placeholder">
         <div class="icon">⊕</div>
-        <div class="label">No portrait yet — upload one below</div>
+        <div class="label">No portraits yet — upload below</div>
       </div>
-      <img id="chartImg" src="" alt="Meta AI portrait" style="display:none;">
     </div>
 
     <div class="upload-row">
       <label class="upload-label">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
-        Upload portrait
-        <input type="file" id="fileInput" accept="image/*">
+        Upload portraits
+        <input type="file" id="fileInput" accept="image/*" multiple>
       </label>
       <span class="upload-status" id="uploadStatus"></span>
       <span class="local-badge">⚡ WiFi only</span>
     </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
   </div>
 
   <div class="footer">Astrowise · Swiss Ephemeris · Lahiri Ayanamsha · noindex</div>
@@ -397,48 +462,90 @@ body {
 <script>
 const UPLOAD_SERVER = 'http://192.168.1.102:8768';
 
-async function loadChartImage() {
+async function loadGallery() {
   try {
-    const res = await fetch(UPLOAD_SERVER + '/status', { signal: AbortSignal.timeout(2000) });
+    const res = await fetch(UPLOAD_SERVER + '/images', { signal: AbortSignal.timeout(2000) });
     if (!res.ok) return;
-    const { exists } = await res.json();
-    if (exists) showImage(UPLOAD_SERVER + '/chart?t=' + Date.now());
-  } catch (_) { /* server not reachable — local WiFi only */ }
+    const images = await res.json();
+    renderGallery(images);
+  } catch (_) { /* not on local WiFi */ }
 }
 
-function showImage(src) {
-  const img = document.getElementById('chartImg');
-  const ph  = document.getElementById('placeholder');
-  img.src = src;
-  img.style.display = 'block';
-  ph.style.display  = 'none';
+function renderGallery(images) {
+  const gallery = document.getElementById('gallery');
+  const ph      = document.getElementById('placeholder');
+  if (!images.length) { ph.style.display = 'flex'; return; }
+  ph.style.display = 'none';
+
+  // remove existing image tiles (keep placeholder)
+  gallery.querySelectorAll('.gallery-item').forEach(el => el.remove());
+
+  images.forEach(({ name, url }) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+
+    const img = document.createElement('img');
+    img.src = UPLOAD_SERVER + url + '?t=' + Date.now();
+    img.alt = name;
+    img.addEventListener('click', () => openLightbox(img.src));
+
+    const del = document.createElement('button');
+    del.className = 'del-btn';
+    del.title = 'Delete';
+    del.textContent = '×';
+    del.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      if (!confirm('Delete this portrait?')) return;
+      await fetch(UPLOAD_SERVER + '/image/' + encodeURIComponent(name), { method: 'DELETE' });
+      item.remove();
+      if (!gallery.querySelectorAll('.gallery-item').length) {
+        ph.style.display = 'flex';
+      }
+    });
+
+    item.append(img, del);
+    gallery.appendChild(item);
+  });
 }
+
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lightboxImg').src = src;
+  lb.classList.add('open');
+}
+
+document.getElementById('lightbox').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('open');
+});
 
 document.getElementById('fileInput').addEventListener('change', async (e) => {
-  const file = e.target.files[0];
-  if (!file) return;
+  const files = [...e.target.files];
+  if (!files.length) return;
   const status = document.getElementById('uploadStatus');
-  status.textContent = 'Uploading…';
+  status.textContent = `Uploading ${files.length} file${files.length > 1 ? 's' : ''}…`;
   status.className = 'upload-status';
 
   try {
     const form = new FormData();
-    form.append('chart', file, file.name);
+    files.forEach(f => form.append('portrait', f, f.name));
     const res = await fetch(UPLOAD_SERVER + '/upload', { method: 'POST', body: form });
     if (res.ok) {
-      status.textContent = 'Chart uploaded ✓';
+      const { images } = await res.json();
+      status.textContent = `${files.length} portrait${files.length > 1 ? 's' : ''} uploaded ✓`;
       status.className = 'upload-status ok';
-      showImage(UPLOAD_SERVER + '/chart?t=' + Date.now());
+      renderGallery(images);
     } else {
       throw new Error('Server error');
     }
-  } catch (err) {
+  } catch (_) {
     status.textContent = 'Upload failed — must be on local WiFi (192.168.1.102)';
     status.className = 'upload-status err';
   }
+
+  e.target.value = '';
 });
 
-loadChartImage();
+loadGallery();
 </script>
 </body>
 </html>
