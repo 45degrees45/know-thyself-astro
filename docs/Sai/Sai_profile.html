@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>Sai — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♑</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1>Sai</h1>
+    <p class="lagna-line">♑ Capricorn Lagna 8.7°</p>
+    <p class="tagline">Spiritual seeker with a flair for intellectual pursuits and a heart for justice</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value">1991-02-24</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value">04:40 AM · Trivandrum, Kerala, India</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Saturn / Saturn / Rahu</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Spiritual Humanitarian</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Aqu H2</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Gem H6</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Tau H5</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Aqu H2</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Can H7</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Pis H3</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Cap H1</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Cap H1</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Can H7</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>Sai is a deeply introspective and spiritual individual with a strong sense of justice, driven by a desire to make a meaningful impact in the world. Her dominant energy is rooted in her humanitarian pursuits, and she is naturally drawn to intellectual and philosophical discussions. With her Moon in Ardra, she has a strong ability to penetrate to the heart of any matter, and her sharp mind allows her to cut through illusions. She is a truth-seeker, always striving to uncover the deeper meaning and purpose in life.</p>
+      <div class="trait-chips">
+        <span class="chip">Introspective</span><span class="chip">Spiritual</span><span class="chip">Intellectually curious</span><span class="chip">Justice-oriented</span><span class="chip">Philosophical</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>Sai values deep, meaningful connections with others, and her relationships are often characterized by a strong sense of mutual respect and intellectual curiosity. As the 7th house lord, Jupiter, is in Cancer, she craves emotional nourishment and security in her partnerships. With Venus as her Yoga Karaka, she is naturally drawn to relationships that foster growth, beauty, and harmony. She needs a partner who can engage her on an intellectual and spiritual level, and who values honesty and authenticity.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>Her ideal partner is someone who is emotionally intelligent, supportive, and shares her passion for personal growth and intellectual exploration. This person should be able to provide a sense of stability and security, while also encouraging Sai's independence and individuality.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">Emotional depth</span><span class="chip chip-green">Intellectual curiosity</span><span class="chip chip-green">Authenticity</span><span class="chip chip-green">Empathy</span>
+        <span class="chip chip-neg">Introspection</span><span class="chip chip-neg">Emotional turbulence</span><span class="chip chip-neg">Fear of vulnerability</span><span class="chip chip-neg">Tendency to overanalyze</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>Sai's career is likely to be marked by a strong sense of purpose and a desire to make a positive impact in the world. With the presence of Hamsa, Sasa, and Budha-Aditya yogas, she has a natural talent for intellectual pursuits, communication, and leadership. Her best career domains are likely to be in fields related to education, philosophy, law, or social justice. She excels in environments that value critical thinking, creativity, and innovation.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>The Budha-Aditya yoga gives her exceptional intellectual and communication abilities, making her a compelling writer, speaker, or teacher.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">Education</span><span class="chip">Philosophy</span><span class="chip">Law</span><span class="chip">Social Justice</span><span class="chip">Writing</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Visionary and Inspirational</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>Sai's Sun in Aquarius indicates a strong desire for independence and a need to pursue unconventional interests.</li><li>Her Moon in Ardra gives her a natural ability to penetrate to the heart of any matter and uncover hidden truths.</li><li>The presence of the Hamsa yoga in her chart suggests a strong potential for spiritual growth and self-realization.</li><li>With Venus in Pisces, Sai has a natural talent for creative expression and a deep appreciation for beauty and harmony.</li><li>The Sasa yoga in her chart indicates a strong sense of discipline and responsibility, which can help her achieve her goals and ambitions.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>Sai's career is likely to undergo significant transformations across different dashas, with each period bringing new opportunities and challenges. The current Saturn Mahadasha is a critical period for establishing her professional foundation and building her reputation.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2023-2026</div>
+          <div class="period-dasha">Saturn / Saturn</div>
+          <div class="period-theme">Establishing a strong professional foundation and building her reputation</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2026-2029</div>
+          <div class="period-dasha">Saturn / Mercury</div>
+          <div class="period-theme">Developing her communication skills and networking abilities</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2030-2033</div>
+          <div class="period-dasha">Saturn / Venus</div>
+          <div class="period-theme">Focusing on creative expression and building her personal brand</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>Sai should focus on building her professional network, developing her skills, and establishing a strong online presence to increase her visibility and credibility in her chosen field.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>Sai's relationship timeline is influenced by the positions of her 7th house lord, Jupiter, and her Venus, which is her Yoga Karaka. The current Saturn Mahadasha may bring a sense of seriousness and commitment to her relationships. With the presence of the Sasa yoga, she may attract a partner who values discipline, responsibility, and long-term commitment.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2023-2026</div>
+          <div class="period-dasha">Saturn / Saturn</div>
+          <div class="period-theme">Focusing on building a strong emotional foundation and establishing a sense of commitment</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2026-2029</div>
+          <div class="period-dasha">Saturn / Mercury</div>
+          <div class="period-theme">Developing her communication skills and intellectual connection with her partner</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2030-2033</div>
+          <div class="period-dasha">Saturn / Venus</div>
+          <div class="period-theme">Emphasizing creative expression, harmony, and beauty in her relationships</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>Sai's relationships are likely to be influenced by a deep-seated desire for emotional security and a fear of vulnerability, which may lead to patterns of attraction to partners who embody a sense of stability and responsibility.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>The current Saturn Mahadasha is a critical period for Sai's personal and professional growth, as it brings a sense of discipline, responsibility, and seriousness to her life. With Ketu in Cancer, she may experience a strong desire for emotional nourishment and security, which can influence her relationships and career choices. The presence of the Sasa yoga in her chart suggests that she may attract a partner who values discipline and responsibility.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Saturn / Saturn (2023-2026)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">Sai may face challenges in establishing her professional identity and building her reputation</div></div><div class="dasha-issue"><div class="dasha-issue-period">Saturn / Mercury (2026-2029)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">She may experience a mix of intellectual curiosity and communication challenges</div></div><div class="dasha-issue"><div class="dasha-issue-period">Saturn / Venus (2029-2033)</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">This period can bring a sense of creative fulfillment and harmony in her relationships</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>The Saturn / Rahu period (2037-2040) may bring unexpected challenges and tensions in her relationships and career</li></ul>
+      <div class="golden-box">The Saturn / Jupiter period (2040-2042) is likely to be a highly auspicious time for Sai's career and personal growth, as it brings a sense of expansion, wisdom, and spiritual growth</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>The upcoming Mercury Mahadasha (2042-2059) will bring a strong focus on communication, intellectual pursuits, and networking, which can help Sai establish herself as a respected authority in her field.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Uttara Ashadha</span>
+          </div>
+          <div class="ref-quote">"This asterism has a manushya or human temperament with a primary motivation toward moksha or spiritual liberation"</div>
+          <div class="ref-application">This teaching applies to Sai's chart as she has a strong desire for spiritual growth and self-realization, which is reflected in her Sun and Saturn placements</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Ardra</span>
+          </div>
+          <div class="ref-quote">"The shakti of Ardra is the power to make gains in life thru greater effort"</div>
+          <div class="ref-application">This teaching applies to Sai's chart as she has a natural ability to penetrate to the heart of any matter and uncover hidden truths, which can help her achieve her goals and ambitions</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Punarvasu</span>
+          </div>
+          <div class="ref-quote">"Punarvasu means the return of the light and has the divine ability to bring spiritual light into darkness"</div>
+          <div class="ref-application">This teaching does not directly apply to Sai's chart, but it can be seen as a reflection of her overall desire for spiritual growth and self-realization</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ANIMAL CONNECTION (full width) -->
+  <div class="panel shadow-panel" style="background: linear-gradient(135deg, rgba(11,11,30,0.97) 0%, rgba(25,18,55,0.97) 100%); border: 1px solid rgba(196,158,64,0.32);">
+    <div class="panel-header">
+      <div class="panel-icon">🦅</div>
+      <h2>Spirit Animal — The Eagle</h2>
+    </div>
+    <div style="font-size:4.5rem; text-align:center; margin:18px 0 10px; line-height:1;">🦅</div>
+    <p>The Eagle is Sai's spirit animal — the living symbol of her rare union of Saturnian discipline (Sasa Yoga) and Jupiterian wisdom (Hamsa Yoga). Like an eagle that rises above storms to gain panoramic vision, her Ardra Moon gives her Rudra's fierce clarity that cuts through illusion precisely when others are overwhelmed. Saturn's Sasa Yoga in Capricorn H1 grants her the eagle's solitary strength — she climbs alone to peaks others cannot reach, commanding the sky with quiet authority. And with Jupiter exalted in Cancer forming the Hamsa Yoga, she bonds deeply once she chooses — fiercely loyal, like the eagle who mates for life.</p>
+    <div class="shadow-grid" style="margin-top:20px;">
+      <div class="shadow-card"><strong>♑ Sasa Yoga → Solitary Peak</strong><p>Saturn in own sign H1 — the eagle nests on unreachable cliffs, commanding her domain with self-sufficiency and natural authority few can challenge</p></div>
+      <div class="shadow-card"><strong>♊ Ardra Moon → Storm Vision</strong><p>Eagles hunt best in the calm after a storm — Rudra's energy gives her penetrating clarity exactly when others are scattered and overwhelmed</p></div>
+      <div class="shadow-card"><strong>♋ Hamsa Yoga → Sky Wisdom</strong><p>Jupiter exalted in Cancer H7 — the eagle's vast wingspan mirrors her expansive emotional intelligence and capacity for profound, life-defining relationships</p></div>
+      <div class="shadow-card"><strong>♒ Budha-Aditya → Precision Strike</strong><p>Sun + Mercury in Aquarius H2 — the eagle's pinpoint dive reflects her swift, innovative intelligence that rarely misses its mark</p></div>
+    </div>
+    <div class="antidote-box" style="margin-top:22px; font-style:normal; font-size:0.82rem; letter-spacing:0.04em; color:rgba(240,232,216,0.6);">META AI IMAGE PROMPT — copy-paste ready</div>
+    <div style="background:#09091a; border:1px solid rgba(196,158,64,0.35); border-radius:10px; padding:18px 20px; margin-top:10px; font-family:monospace; font-size:0.81rem; color:#e8c96a; white-space:pre-wrap; line-height:1.65;">A majestic golden eagle perched on a snow-dusted mountain peak at twilight, feathers glowing with cosmic stardust and celestial gold fire. Mystical dark navy cosmos background filled with distant nebulae. The Capricorn glyph ♑ and Gemini glyph ♊ float as glowing constellations near the wings. Saturn's rings form a luminous halo behind the eagle's head, casting soft gold light. Jupiter's symbol ♃ blazes like a star in the upper sky. The eagle's eyes carry Ardra's storm energy — fierce, piercing, ancient and knowing. Subtle lightning illuminates the mountain peaks below. Painterly surreal digital art, ultra detailed, cinematic atmosphere --ar 3:4</div>
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>Sai's shadow side is characterized by a tendency to overanalyze and intellectualize her emotions, which can lead to feelings of disconnection and isolation. She may also struggle with a fear of vulnerability and a tendency to attract partners who embody a sense of stability and responsibility, but may not necessarily provide emotional nourishment.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>Overanalysis</strong><p>Sai may get caught up in her thoughts and struggle to connect with her emotions, leading to feelings of disconnection and isolation</p></div><div class="shadow-card"><strong>Fear of vulnerability</strong><p>She may have a deep-seated fear of being hurt or rejected, which can cause her to attract partners who are emotionally unavailable or unsupportive</p></div><div class="shadow-card"><strong>Attraction to unavailable partners</strong><p>Sai may be drawn to partners who are emotionally unavailable or unsupportive, which can perpetuate patterns of attraction and rejection</p></div><div class="shadow-card"><strong>Tendency to people-please</strong><p>She may struggle with setting healthy boundaries and prioritizing her own needs, leading to feelings of burnout and resentment</p></div>
+    </div>
+    <div class="antidote-box">To work with her shadow consciously, Sai can practice self-compassion, prioritize her emotional needs, and develop healthy boundaries in her relationships.</div>
+  </div>
+
+  <div class="footer">
+    Generated 06 Jun 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>
