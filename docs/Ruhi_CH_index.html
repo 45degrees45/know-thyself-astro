@@ -464,9 +464,9 @@ const UPLOAD_SERVER = 'http://192.168.1.102:8768';
 
 // Static portraits committed to GitHub — always visible on GitHub Pages
 const STATIC_IMAGES = [
-  { name: 'ruhi_portrait_1.jpeg', url: 'ruhi_portrait_1.jpeg', static: true },
-  { name: 'ruhi_portrait_2.jpeg', url: 'ruhi_portrait_2.jpeg', static: true },
-  { name: 'ruhi_portrait_3.jpeg', url: 'ruhi_portrait_3.jpeg', static: true },
+  { name: 'ruhi_portrait_1.jpeg', url: 'ruhi_portrait_1.jpeg', hosted: true },
+  { name: 'ruhi_portrait_2.jpeg', url: 'ruhi_portrait_2.jpeg', hosted: true },
+  { name: 'ruhi_portrait_3.jpeg', url: 'ruhi_portrait_3.jpeg', hosted: true },
 ];
 
 async function loadGallery() {
@@ -494,12 +494,12 @@ function renderGallery(images) {
   // remove existing image tiles (keep placeholder)
   gallery.querySelectorAll('.gallery-item').forEach(el => el.remove());
 
-  images.forEach(({ name, url, static: isStatic }) => {
+  images.forEach(({ name, url, hosted }) => {
     const item = document.createElement('div');
     item.className = 'gallery-item';
 
     const img = document.createElement('img');
-    img.src = isStatic ? url : (UPLOAD_SERVER + url + '?t=' + Date.now());
+    img.src = hosted ? url : (UPLOAD_SERVER + url + '?t=' + Date.now());
     img.alt = name;
     img.addEventListener('click', () => openLightbox(img.src));
 
@@ -507,7 +507,7 @@ function renderGallery(images) {
     del.className = 'del-btn';
     del.title = 'Delete';
     del.textContent = '×';
-    if (isStatic) { del.style.display = 'none'; } // can't delete GitHub-hosted images here
+    if (hosted) { del.style.display = 'none'; } // can't delete GitHub-hosted images here
     del.addEventListener('click', async (e) => {
       e.stopPropagation();
       if (!confirm('Delete this portrait?')) return;
