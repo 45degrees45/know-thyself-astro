@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark">
+  <title>Zerin — Marriage Timing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { background-color: #0b0b18; }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(196,96,122,0.14), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(960px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,12,40,0.98) 0%,
+        rgba(52,20,52,0.96) 45%,
+        rgba(80,30,50,0.92) 100%);
+      border: 1px solid rgba(196,96,122,0.28);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 18px;
+      font-size: 200px;
+      line-height: 1;
+      color: rgba(196,96,122,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,96,122,0.14), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.6rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .sub-headline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: rgba(232,144,159,0.85);
+      margin-bottom: 18px;
+    }
+
+    .tagline {
+      font-size: 0.97rem;
+      line-height: 1.78;
+      color: rgba(240,232,216,0.78);
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,96,122,0.18);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #e8909f;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 0.97rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px 32px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      width: 34px; height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.82;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── WINDOW CARD ── */
+    .window-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .window-card {
+      border-radius: 18px;
+      padding: 22px 24px;
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .window-card.primary {
+      background: linear-gradient(135deg, rgba(196,96,122,0.12), rgba(124,92,191,0.10));
+      border-color: rgba(196,96,122,0.3);
+    }
+
+    .window-card.secondary {
+      background: rgba(196,158,64,0.06);
+      border-color: rgba(196,158,64,0.2);
+    }
+
+    .window-card.now {
+      background: rgba(90,143,114,0.06);
+      border-color: rgba(90,143,114,0.2);
+    }
+
+    .window-badge {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+
+    .badge-primary { background: rgba(196,96,122,0.2); color: #e8909f; }
+    .badge-secondary { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-now { background: rgba(90,143,114,0.15); color: #80c4a0; }
+
+    .window-dates {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 300;
+      color: #fff8f0;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .window-dasha {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(196,158,64,0.7);
+      margin-bottom: 14px;
+    }
+
+    .window-body {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+    }
+
+    .window-body strong {
+      color: #fff8f0;
+    }
+
+    /* ── RAHU BOX ── */
+    .rahu-insight {
+      margin-top: 20px;
+      padding: 18px 22px;
+      background: rgba(124,92,191,0.08);
+      border: 1px solid rgba(124,92,191,0.25);
+      border-radius: 16px;
+    }
+
+    .rahu-insight-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #b49edf;
+      margin-bottom: 8px;
+    }
+
+    .rahu-insight p {
+      font-size: 0.9rem;
+      color: rgba(220,210,240,0.82);
+      margin-bottom: 0;
+      line-height: 1.72;
+    }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 4px;
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px; top: 12px; bottom: 12px;
+      width: 2px;
+      background: linear-gradient(to bottom, rgba(196,96,122,0.5), rgba(196,158,64,0.3), rgba(90,143,114,0.2));
+    }
+
+    .tl-item {
+      position: relative;
+      padding: 0 0 20px 20px;
+    }
+
+    .tl-item:last-child { padding-bottom: 0; }
+
+    .tl-dot {
+      position: absolute;
+      left: -24px;
+      top: 4px;
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      background: #0b0b18;
+    }
+
+    .tl-dot.active {
+      background: #e8909f;
+      border-color: #e8909f;
+      box-shadow: 0 0 10px rgba(232,144,159,0.5);
+    }
+
+    .tl-window {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--gold2);
+      margin-bottom: 2px;
+    }
+
+    .tl-name {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(196,158,64,0.6);
+      margin-bottom: 6px;
+    }
+
+    .tl-note {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.72);
+      line-height: 1.6;
+    }
+
+    /* ── BOTTOM ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,96,122,0.35);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(196,96,122,0.15);
+    }
+
+    .back-link {
+      text-align: center;
+      padding-top: 4px;
+    }
+
+    .back-link a {
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.5);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+    }
+
+    .back-link a:hover { color: var(--gold); }
+
+    .footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.3);
+      letter-spacing: 0.1em;
+      padding-top: 4px;
+    }
+
+    @media (max-width: 640px) {
+      .hero { padding: 32px 22px 28px; }
+      .panel { padding: 22px 20px; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .window-dates { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">◇</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Timing · Jyotish · 7th House Analysis</p>
+    <h1>Marriage Timing</h1>
+    <p class="sub-headline">Zerin · ♐ Sagittarius Lagna · Rahu in H7</p>
+    <p class="tagline">With Venus as Mahadasha lord through 2042 and Rahu placed directly in the 7th house, Zerin's chart carries a clear, defined arc for partnership — intense, fated, and unconventional in flavour.</p>
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Mahadasha (now–2042)</span>
+        <div class="stat-value">Venus</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Bhukti</span>
+        <div class="stat-value">Sun · Oct 2025 – Oct 2026</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">H7 Occupant</span>
+        <div class="stat-value">Rahu (Gemini)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIMARY + SECONDARY WINDOWS -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">◇</div>
+      <h2>The Windows</h2>
+    </div>
+
+    <div class="window-stack">
+
+      <!-- Primary -->
+      <div class="window-card primary">
+        <span class="window-badge badge-primary">Primary Window</span>
+        <div class="window-dates">Aug 2029 – Aug 2032</div>
+        <div class="window-dasha">Venus Mahadasha · Rahu Bhukti · Ages 28–31</div>
+        <div class="window-body">
+          <strong>Why this window is the strongest:</strong> Rahu physically occupies the 7th house (Gemini). When the bhukti lord is the planet sitting in the 7th, it directly activates the house of marriage. Venus as the Mahadasha lord is the natural karaka of love and relationships — this pairing is the most potent marriage indicator in the entire Venus MD. The timing is precise and purposeful. Something significant in partnerships <em>will</em> be set in motion here.
+        </div>
+        <div class="rahu-insight">
+          <div class="rahu-insight-label">Rahu H7 — The Karmic Partner</div>
+          <p>Rahu in the 7th rarely brings a conventional match. Expect someone unexpected — a different background, culture, or field. The attraction will feel fated or magnetic. The gift is a relationship that expands worldview; the challenge is Rahu's tendency to create illusion around partners. <strong>She must see them clearly, not through projection.</strong></p>
+        </div>
+      </div>
+
+      <!-- Secondary -->
+      <div class="window-card secondary">
+        <span class="window-badge badge-secondary">Secondary Window</span>
+        <div class="window-dates">Aug 2032 – Apr 2035</div>
+        <div class="window-dasha">Venus Mahadasha · Jupiter Bhukti · Ages 31–34</div>
+        <div class="window-body">
+          Jupiter is the natural karaka for husband in a female chart. A Jupiter bhukti inside a Venus Mahadasha is one of the classical indicators of commitment, deepening of bonds, and marriage ceremonies. If the primary window brings the relationship, this period often brings the formal commitment or settling. Jupiter's expansive wisdom here supports long-term partnership growth.
+        </div>
+      </div>
+
+      <!-- Now -->
+      <div class="window-card now">
+        <span class="window-badge badge-now">Right Now</span>
+        <div class="window-dates">Oct 2025 – Oct 2026</div>
+        <div class="window-dasha">Venus Mahadasha · Sun Bhukti · Age 25</div>
+        <div class="window-body">
+          Sun rules the 9th house (dharma, father, higher learning) — not the 7th. This period is more about social expansion, networking, identity, and possibly a significant romantic attraction that doesn't yet settle into commitment. A meeting that matters is possible, but the conditions for marriage aren't ripe until 2029. Use now to clarify what she actually wants in a partner.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="divider">Full Venus MD Relationship Arc</div>
+
+  <!-- TIMELINE PANEL -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">◑</div>
+      <h2>Venus Mahadasha — Relationship Timeline</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-window">Jun 2022 – Oct 2025</div>
+        <div class="tl-name">Venus / Venus</div>
+        <div class="tl-note">Personal identity deepening, creative self-expression, learning what she values in relationships. Foundation-setting.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot active"></div>
+        <div class="tl-window">Oct 2025 – Oct 2026 ← Now</div>
+        <div class="tl-name">Venus / Sun</div>
+        <div class="tl-note">Social expansion, visibility, possible romantic attraction. Not a marriage indicator — a meeting or awakening is more likely.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-window">Oct 2026 – Jun 2028</div>
+        <div class="tl-name">Venus / Moon</div>
+        <div class="tl-note">Emotional sensitivity heightened. Moon in H4 (home, roots) — relationships may turn inward, family dynamics come into focus. Kemadruma yoga can surface as emotional isolation; needs self-care.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-window">Jun 2028 – Aug 2029</div>
+        <div class="tl-name">Venus / Mars</div>
+        <div class="tl-note">Career peak period. Mars in H10 drives ambition and action. Passionate energy in relationships but the focus is professional. Could bring a relationship through work or shared goals.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="border-color:#e8909f;box-shadow:0 0 12px rgba(232,144,159,0.4)"></div>
+        <div class="tl-window">Aug 2029 – Aug 2032</div>
+        <div class="tl-name">Venus / Rahu ← Primary Marriage Window</div>
+        <div class="tl-note">Rahu in H7 directly activated. Venus + Rahu = magnetic, intense, potentially cross-cultural or unconventional partnership. Most likely period for marriage.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot" style="border-color:#e8c96a"></div>
+        <div class="tl-window">Aug 2032 – Apr 2035</div>
+        <div class="tl-name">Venus / Jupiter ← Secondary Window</div>
+        <div class="tl-note">Jupiter as karaka for husband activates. Favorable for commitment, ceremonies, building a home together. Expansion and wisdom in partnership.</div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-window">Apr 2035 – Feb 2041</div>
+        <div class="tl-name">Venus / Saturn · Venus / Mercury</div>
+        <div class="tl-note">Saturn bhukti brings responsibility and structure to existing relationships. Mercury bhukti (a second peak) activates the H11 Raja Yoga — gains, recognition, and intellectual partnership thrive.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a href="Zerin_profile.html">← Full Natal Profile</a>
+  </div>
+
+  <div class="footer">
+    Generated 07 Jun 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>
