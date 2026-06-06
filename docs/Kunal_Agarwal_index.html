@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunal Agarwal — Astrowise Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #080c14;
+  --bg2:     #0d1428;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.52);
+  --ocean:   #3a7abf;
+  --ocean2:  #6aa8e8;
+  --teal:    #3EC9C4;
+  --r:       18px;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { background-color: var(--bg); }
+
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(30,60,120,0.22), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.10), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 32px 16px 80px;
+}
+
+.shell {
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.header {
+  text-align: center;
+  padding: 48px 0 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 40px;
+}
+
+.astrowise-label {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-bottom: 18px;
+}
+
+.name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 7vw, 4rem);
+  font-weight: 300;
+  color: var(--cream);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.lagna-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(30,60,120,0.18);
+  border: 1px solid rgba(58,122,191,0.35);
+  border-radius: 999px;
+  padding: 6px 18px;
+  margin: 16px 0;
+  font-size: 13px;
+  color: var(--ocean2);
+  letter-spacing: 0.05em;
+}
+
+.birth-meta {
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-top: 8px;
+}
+
+.dasha-strip {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  margin-top: 16px;
+  background: rgba(196,158,64,0.07);
+  border: 1px solid rgba(196,158,64,0.18);
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.dasha-strip span { opacity: 0.5; }
+
+/* ── Section title ── */
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+/* ── Page cards ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px 22px;
+  text-decoration: none;
+  color: var(--cream);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: rgba(196,158,64,0.4);
+  background: rgba(255,255,255,0.055);
+  transform: translateY(-2px);
+}
+
+.card-icon { font-size: 1.6rem; line-height: 1; }
+
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--gold2);
+}
+
+.card-desc {
+  font-size: 12.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.card-arrow {
+  margin-top: auto;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+/* ── Key facts strip ── */
+.facts-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+
+.fact {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px 16px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.fact strong { color: var(--cream); display: block; font-size: 13px; margin-bottom: 2px; }
+
+/* ── Portrait section ── */
+.chart-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 32px;
+  margin-bottom: 48px;
+}
+
+.chart-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--gold2);
+  margin-bottom: 6px;
+}
+
+.chart-section .sub {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(196,158,64,0.15);
+  aspect-ratio: 1;
+  background: rgba(255,255,255,0.02);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  cursor: zoom-in;
+}
+
+.gallery-item .del-btn {
+  position: absolute;
+  top: 6px; right: 6px;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.65);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 13px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.gallery-item:hover .del-btn { opacity: 1; }
+
+.chart-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 24px;
+  text-align: center;
+  grid-column: 1/-1;
+}
+
+.chart-placeholder .icon { font-size: 2.5rem; opacity: 0.3; }
+.chart-placeholder .label { font-size: 13px; color: var(--muted); }
+
+.upload-row {
+  display: flex; flex-wrap: wrap; gap: 12px; align-items: center;
+}
+
+.upload-label {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(30,60,120,0.15);
+  border: 1px solid rgba(58,122,191,0.35);
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: var(--ocean2);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.upload-label:hover { background: rgba(30,60,120,0.28); }
+.upload-label input[type="file"] { display: none; }
+
+.upload-status { font-size: 12px; color: var(--muted); min-height: 18px; }
+.upload-status.ok  { color: #5a8f72; }
+.upload-status.err { color: #c4607a; }
+
+.local-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(62,201,196,0.07);
+  border: 1px solid rgba(62,201,196,0.2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 11px;
+  color: var(--teal);
+  letter-spacing: 0.04em;
+  margin-left: auto;
+}
+
+/* lightbox */
+.lightbox {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.88); z-index: 999;
+  align-items: center; justify-content: center;
+  cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 92vw; max-height: 92vh; border-radius: 12px; }
+
+/* ── Footer ── */
+.footer {
+  text-align: center;
+  font-size: 11px;
+  color: var(--muted);
+  opacity: 0.5;
+  margin-top: 40px;
+  letter-spacing: 0.08em;
+}
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="astrowise-label">Astrowise · Vedic Natal Hub</div>
+    <h1 class="name">Kunal Agarwal</h1>
+    <div class="lagna-badge">♓ Pisces Lagna 0.9°</div>
+    <div class="birth-meta">10 September 1993 · 18:50 · Alwar, Rajasthan</div>
+    <div class="dasha-strip">
+      Saturn <span>/</span> Saturn <span>/</span> Rahu
+      <span style="margin-left:4px;opacity:0.4">· Jun 2026</span>
+    </div>
+  </header>
+
+  <!-- Key facts -->
+  <div class="facts-strip">
+    <div class="fact"><strong>Animal</strong>Elephant — Gaja · Airavata</div>
+    <div class="fact"><strong>H7 Stellium</strong>Mars + Mercury + Jupiter · Virgo</div>
+    <div class="fact"><strong>Mercury</strong>Exalted · Bhadra Mahapurusha</div>
+    <div class="fact"><strong>Yogas</strong>8 active · 3 Raja Yogas · DKA</div>
+    <div class="fact"><strong>Career window</strong>2027 – 2034</div>
+    <div class="fact"><strong>Saturn MD</strong>Feb 2024 → Feb 2043</div>
+  </div>
+
+  <!-- Page cards -->
+  <div class="section-title">Readings</div>
+  <div class="cards">
+    <a class="card" href="Kunal_Agarwal.html">
+      <div class="card-icon">✦</div>
+      <div class="card-title">Full Natal Reading</div>
+      <div class="card-desc">Birth chart, nature, career, relationships, 8 yogas, dasha timeline, marriage windows, income analysis</div>
+      <div class="card-arrow">Open →</div>
+    </a>
+    <a class="card" href="Kunal_Agarwal_animals.html">
+      <div class="card-icon">🐘</div>
+      <div class="card-title">Animals of the Chart</div>
+      <div class="card-desc">9 Vedic nakshatra animals — Elephant, Tiger, Lioness, Serpent, Deer, Dog, Bull, Buffalo, Fish</div>
+      <div class="card-arrow">Open →</div>
+    </a>
+  </div>
+
+  <!-- Portraits -->
+  <div class="section-title">Portraits</div>
+  <div class="chart-section">
+    <h2>Meta AI Portraits</h2>
+    <p class="sub">Upload Meta AI-generated portrait images — stored locally on this device, not on GitHub.</p>
+
+    <div class="gallery" id="gallery">
+      <div class="chart-placeholder" id="placeholder">
+        <div class="icon">🐘</div>
+        <div class="label">No portraits yet — upload below</div>
+      </div>
+    </div>
+
+    <div class="upload-row">
+      <label class="upload-label">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+        Upload portraits
+        <input type="file" id="fileInput" accept="image/*" multiple>
+      </label>
+      <span class="upload-status" id="uploadStatus"></span>
+      <span class="local-badge">⚡ WiFi only</span>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <div class="footer">Astrowise · Swiss Ephemeris · Lahiri Ayanamsha · noindex</div>
+</div>
+
+<script>
+const UPLOAD_SERVER = 'http://192.168.1.102:8768';
+const STATIC_IMAGES = [];
+
+async function loadGallery() {
+  if (STATIC_IMAGES.length) renderGallery(STATIC_IMAGES);
+
+  try {
+    const res = await fetch(UPLOAD_SERVER + '/images/kunal', { signal: AbortSignal.timeout(2000) });
+    if (!res.ok) return;
+    const serverImages = await res.json();
+    const staticNames = new Set(STATIC_IMAGES.map(i => i.name));
+    const extra = serverImages.filter(i => !staticNames.has(i.name));
+    if (extra.length) renderGallery([...STATIC_IMAGES, ...extra]);
+  } catch (_) { /* not on local WiFi */ }
+}
+
+function renderGallery(images) {
+  const gallery = document.getElementById('gallery');
+  const ph      = document.getElementById('placeholder');
+  if (!images.length) { ph.style.display = 'flex'; return; }
+  ph.style.display = 'none';
+  gallery.querySelectorAll('.gallery-item').forEach(el => el.remove());
+
+  images.forEach(({ name, url, hosted }) => {
+    const item = document.createElement('div');
+    item.className = 'gallery-item';
+    const img = document.createElement('img');
+    img.src = hosted ? url : (UPLOAD_SERVER + url + '?t=' + Date.now());
+    img.alt = name;
+    img.addEventListener('click', () => openLightbox(img.src));
+    const del = document.createElement('button');
+    del.className = 'del-btn';
+    del.title = 'Delete';
+    del.textContent = '×';
+    if (hosted) del.style.display = 'none';
+    del.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      if (!confirm('Delete this portrait?')) return;
+      await fetch(UPLOAD_SERVER + '/image/' + encodeURIComponent(name), { method: 'DELETE' });
+      item.remove();
+      if (!gallery.querySelectorAll('.gallery-item').length) ph.style.display = 'flex';
+    });
+    item.append(img, del);
+    gallery.appendChild(item);
+  });
+}
+
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+
+document.getElementById('lightbox').addEventListener('click', () => {
+  document.getElementById('lightbox').classList.remove('open');
+});
+
+document.getElementById('fileInput').addEventListener('change', async (e) => {
+  const files = [...e.target.files];
+  if (!files.length) return;
+  const status = document.getElementById('uploadStatus');
+  status.textContent = `Uploading ${files.length} file${files.length > 1 ? 's' : ''}…`;
+  status.className = 'upload-status';
+  try {
+    const form = new FormData();
+    files.forEach(f => form.append('portrait', f, f.name));
+    const res = await fetch(UPLOAD_SERVER + '/upload', { method: 'POST', body: form });
+    if (res.ok) {
+      const { images } = await res.json();
+      status.textContent = `${files.length} portrait${files.length > 1 ? 's' : ''} uploaded ✓`;
+      status.className = 'upload-status ok';
+      renderGallery(images);
+    } else { throw new Error(); }
+  } catch (_) {
+    status.textContent = 'Upload failed — must be on local WiFi (192.168.1.102)';
+    status.className = 'upload-status err';
+  }
+  e.target.value = '';
+});
+
+loadGallery();
+</script>
+</body>
+</html>

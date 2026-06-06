@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kunal Agarwal — Full Vedic Astrology Reading</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0d0d1a; font-family: Georgia, serif; color: #e8e8f0; }
+  .page { max-width: 900px; margin: 0 auto; padding: 0 0 80px; }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(135deg, #0a1a2e 0%, #14284a 55%, #0d1a3a 100%);
+    padding: 52px 40px 40px; text-align: center;
+    border-bottom: 2px solid #c9a84c;
+  }
+  .eyebrow { color: #c9a84c; font-size: 11px; letter-spacing: 3.5px; text-transform: uppercase; margin-bottom: 12px; }
+  .header h1 { color: #fff; font-size: 36px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .header-sub { color: #7090aa; font-size: 14px; margin-top: 6px; }
+
+  .chart-strip {
+    display: flex; justify-content: center; gap: 32px; flex-wrap: wrap;
+    margin-top: 26px; padding-top: 22px; border-top: 1px solid #1a2a4a;
+  }
+  .ci .val { color: #c9a84c; font-size: 15px; font-weight: 700; }
+  .ci .lbl { color: #506070; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
+
+  /* ── Animal banner ── */
+  .animal-banner {
+    background: linear-gradient(135deg, #0a1420, #101830);
+    border-bottom: 1px solid #1a2a4a;
+    padding: 28px 40px; text-align: center;
+  }
+  .animal-glyph { font-size: 52px; margin-bottom: 8px; line-height: 1; }
+  .animal-name { color: #c9a84c; font-size: 13px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 4px; }
+  .animal-subtitle { color: #506070; font-size: 12px; line-height: 1.6; }
+
+  /* ── Planet table ── */
+  .planet-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 6px; }
+  .planet-table th {
+    color: #506070; font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
+    padding: 8px 12px; border-bottom: 1px solid #1a2a3a; text-align: left; font-weight: 400;
+  }
+  .planet-table td { padding: 9px 12px; border-bottom: 1px solid #0f1a28; color: #b0c4d8; vertical-align: middle; }
+  .planet-table tr:last-child td { border-bottom: none; }
+  .planet-table tr:hover td { background: #0f1828; }
+  .retro { color: #c04060; font-size: 10px; margin-left: 4px; }
+  .house-badge {
+    display: inline-block; background: #0e1e30; color: #4a6a90;
+    font-size: 10px; padding: 2px 7px; border-radius: 10px;
+  }
+  .exalted { color: #40c080; font-size: 10px; margin-left: 5px; font-style: italic; }
+
+  /* ── Section ── */
+  .sec { padding: 36px 40px 0; }
+  .sec-title {
+    color: #c9a84c; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 2.5px; margin-bottom: 22px;
+    padding-bottom: 10px; border-bottom: 1px solid #1a2a3a;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sec-title::before { content: ''; display: block; width: 3px; height: 14px; background: #c9a84c; border-radius: 2px; }
+
+  /* ── Yoga strip ── */
+  .yoga-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .yoga-card {
+    background: #0e1a28; border: 1px solid #1a2a3a; border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .yoga-card.major { border-color: #c9a84c44; background: linear-gradient(135deg, #0e1a28, #111828); }
+  .yoga-name { color: #c9a84c; font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .yoga-stars { color: #c9a84c; font-size: 11px; letter-spacing: 1px; margin-bottom: 6px; }
+  .yoga-card p { color: #506070; font-size: 12px; line-height: 1.65; }
+
+  /* ── Prose ── */
+  .prose { color: #7090a8; font-size: 14px; line-height: 1.85; margin-bottom: 20px; }
+  .prose strong { color: #c9a84c; font-weight: 700; }
+  .prose em { color: #a0b8c8; font-style: italic; }
+
+  /* ── Cards grid ── */
+  .card-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+  .card {
+    background: #0e1a28; border: 1px solid #1a2a3a; border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .card h3 { color: #c9a84c; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .card p, .card li { color: #506070; font-size: 13px; line-height: 1.75; }
+  .card ul { padding-left: 0; list-style: none; }
+  .card li { padding-left: 14px; position: relative; margin-bottom: 6px; }
+  .card li::before { content: '→'; position: absolute; left: 0; color: #c9a84c; font-size: 11px; top: 2px; }
+
+  /* ── Fun facts ── */
+  .funfact-list { margin-bottom: 24px; }
+  .funfact {
+    background: #0e1a28; border: 1px solid #1a2a3a; border-radius: 8px;
+    padding: 14px 18px; margin-bottom: 10px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .funfact-num { color: #c9a84c; font-size: 20px; font-weight: 700; line-height: 1; flex-shrink: 0; width: 24px; }
+  .funfact-body { color: #506070; font-size: 13px; line-height: 1.7; }
+  .funfact-body strong { color: #a0b8c8; }
+
+  /* ── Timeline ── */
+  .timeline { margin-bottom: 24px; }
+  .tl-row {
+    display: flex; align-items: flex-start; gap: 0;
+    padding: 0; position: relative;
+  }
+  .tl-row::before {
+    content: ''; position: absolute; left: 119px; top: 0; bottom: 0;
+    width: 1px; background: #1a2a3a;
+  }
+  .tl-dot {
+    width: 120px; flex-shrink: 0; text-align: right; padding: 14px 16px 14px 0;
+    color: #506070; font-size: 11px; position: relative;
+  }
+  .tl-dot::after {
+    content: ''; width: 7px; height: 7px; border-radius: 50%;
+    background: #c9a84c; position: absolute; right: -4px; top: 18px;
+  }
+  .tl-active .tl-dot::after { background: #40c080; box-shadow: 0 0 8px #40c08066; }
+  .tl-body { padding: 10px 0 10px 24px; flex: 1; }
+  .tl-planet { color: #c9a84c; font-size: 14px; font-weight: 700; }
+  .tl-period { color: #304060; font-size: 11px; margin-top: 1px; }
+  .tl-desc { color: #506070; font-size: 13px; margin-top: 6px; line-height: 1.65; }
+  .now-badge {
+    display: inline-block; background: #0e2e1a; color: #40c080;
+    font-size: 10px; padding: 2px 8px; border-radius: 10px; margin-left: 8px;
+    letter-spacing: 0.5px; vertical-align: middle;
+  }
+
+  /* ── Dasha bhukti table ── */
+  .bhukti-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 6px; }
+  .bhukti-table th {
+    color: #506070; font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
+    padding: 8px 12px; border-bottom: 1px solid #1a2a3a; text-align: left; font-weight: 400;
+  }
+  .bhukti-table td { padding: 10px 12px; border-bottom: 1px solid #0f1a28; color: #b0c4d8; vertical-align: top; }
+  .bhukti-table tr:last-child td { border-bottom: none; }
+  .bhukti-table tr.active-row td { background: #0e1e0e; }
+  .bhukti-table tr.active-row .b-planet { color: #40c080; }
+  .b-planet { color: #c9a84c; font-weight: 700; }
+  .b-period { color: #304060; font-size: 11px; }
+  .b-note { color: #506070; font-size: 12px; }
+
+  /* ── Highlight box ── */
+  .highlight-box {
+    background: linear-gradient(135deg, #0a1420, #0e1828);
+    border: 1px solid #c9a84c44; border-left: 3px solid #c9a84c;
+    border-radius: 8px; padding: 18px 20px; margin-bottom: 24px;
+  }
+  .highlight-box p { color: #7090a8; font-size: 14px; line-height: 1.8; }
+  .highlight-box strong { color: #c9a84c; }
+
+  /* ── Window cards ── */
+  .window-card {
+    background: #0e1a28; border: 1px solid #1a2a3a; border-radius: 10px;
+    padding: 20px 22px; margin-bottom: 14px;
+  }
+  .window-card.best { border-color: #c9a84c44; background: linear-gradient(135deg, #0e1a28, #121e30); }
+  .window-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 10px; }
+  .window-label { color: #c9a84c; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+  .window-period { color: #304060; font-size: 12px; }
+  .window-age { color: #506070; font-size: 11px; }
+  .stars { color: #c9a84c; font-size: 13px; letter-spacing: 2px; }
+  .window-card p { color: #506070; font-size: 13px; line-height: 1.75; }
+
+  /* ── Income split ── */
+  .income-split { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 24px; }
+  .drain-block { background: #1a0e10; border: 1px solid #3a1a20; border-radius: 8px; padding: 18px 20px; }
+  .gain-block  { background: #0e1e1a; border: 1px solid #1a3a2a; border-radius: 8px; padding: 18px 20px; }
+  .drain-block h3 { color: #c04060; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .gain-block  h3 { color: #40c080; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; }
+  .drain-block li, .gain-block li {
+    font-size: 13px; line-height: 1.7; margin-bottom: 8px;
+    padding-left: 16px; position: relative; list-style: none;
+  }
+  .drain-block li::before { content: '↓'; position: absolute; left: 0; color: #c04060; font-size: 11px; }
+  .gain-block  li::before { content: '↑'; position: absolute; left: 0; color: #40c080; font-size: 11px; }
+  .drain-block li { color: #806060; }
+  .gain-block  li { color: #507060; }
+
+  /* ── Negative traits ── */
+  .shadow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+  .shadow-card {
+    background: #1a0e0e; border: 1px solid #3a1a1a; border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .shadow-card h4 { color: #c04060; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .shadow-card p { color: #7a4a4a; font-size: 12px; line-height: 1.65; }
+
+  /* ── Spiritual tags ── */
+  .tag {
+    display: inline-block; font-size: 11px; padding: 3px 10px; border-radius: 12px;
+    background: #0e1a28; color: #4a6a90; margin: 3px 2px;
+  }
+  .tag.gold { background: #1a1408; color: #c9a84c; }
+
+  /* ── Summary table ── */
+  .sum-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .sum-table th {
+    color: #506070; font-size: 10px; text-transform: uppercase; letter-spacing: 1px;
+    padding: 8px 12px; border-bottom: 1px solid #1a2a3a; text-align: left; font-weight: 400;
+  }
+  .sum-table td { padding: 11px 12px; border-bottom: 1px solid #0f1a28; color: #b0c4d8; vertical-align: top; }
+  .sum-table tr:last-child td { border-bottom: none; }
+  .sum-table strong { color: #c9a84c; }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 60px; padding: 24px 40px;
+    border-top: 1px solid #1a2a3a; text-align: center;
+    color: #2a3a4a; font-size: 11px; letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 640px) {
+    .card-grid, .income-split, .yoga-grid, .shadow-grid { grid-template-columns: 1fr; }
+    .sec { padding: 28px 20px 0; }
+    .header { padding: 36px 20px 28px; }
+    .header h1 { font-size: 26px; }
+    .tl-dot { width: 80px; font-size: 10px; }
+    .tl-row::before { left: 79px; }
+    .animal-banner { padding: 22px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+<div class="header">
+  <div class="eyebrow">Vedic Astrology · Full Reading</div>
+  <h1>Kunal Agarwal</h1>
+  <div class="header-sub">10 September 1993 · 18:50 · Alwar, Rajasthan</div>
+  <div class="chart-strip">
+    <div class="ci"><div class="val">Pisces 0.9°</div><div class="lbl">Lagna</div></div>
+    <div class="ci"><div class="val">Gemini</div><div class="lbl">Moon</div></div>
+    <div class="ci"><div class="val">Leo</div><div class="lbl">Sun</div></div>
+    <div class="ci"><div class="val">Saturn / Saturn / Rahu</div><div class="lbl">Current Dasha</div></div>
+    <div class="ci"><div class="val">8 Yogas</div><div class="lbl">Active</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ ANIMAL ═══════════════════════════════ -->
+<div class="animal-banner">
+  <div class="animal-glyph">🐘</div>
+  <div class="animal-name">The Elephant — Gaja</div>
+  <div class="animal-subtitle">Gajakesari Yoga (Gaja = elephant) · Bhadra Mahapurusha (the noble bearing of the elephant)<br>Airavata — Indra's cosmic elephant. Unstoppable presence. Memory that spans lifetimes. Auspiciousness in motion.</div>
+</div>
+
+<!-- ═══════════════════════════════ PLANETS ══════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Planetary Positions</div>
+  <table class="planet-table">
+    <thead>
+      <tr><th>Planet</th><th>Sign</th><th>Degrees</th><th>House</th><th>Nakshatra</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Sun</td><td>Leo</td><td>24.1°</td><td><span class="house-badge">6</span></td><td>Purva Phalguni pada 4</td><td></td></tr>
+      <tr><td>Moon</td><td>Gemini</td><td>9.3°</td><td><span class="house-badge">4</span></td><td>Ardra pada 1</td><td></td></tr>
+      <tr><td>Mars</td><td>Virgo</td><td>25.2°</td><td><span class="house-badge">7</span></td><td>Chitra pada 1</td><td></td></tr>
+      <tr><td>Mercury</td><td>Virgo</td><td>4.7°</td><td><span class="house-badge">7</span></td><td>Uttara Phalguni pada 3</td><td><span class="exalted">exalted</span></td></tr>
+      <tr><td>Jupiter</td><td>Virgo</td><td>23.2°</td><td><span class="house-badge">7</span></td><td>Hasta pada 4</td><td></td></tr>
+      <tr><td>Venus</td><td>Cancer</td><td>22.9°</td><td><span class="house-badge">5</span></td><td>Ashlesha pada 2</td><td></td></tr>
+      <tr><td>Saturn <span class="retro">℞</span></td><td>Aquarius</td><td>1.6°</td><td><span class="house-badge">12</span></td><td>Dhanishtha pada 3</td><td></td></tr>
+      <tr><td>Rahu <span class="retro">℞</span></td><td>Scorpio</td><td>12.8°</td><td><span class="house-badge">9</span></td><td>Anuradha pada 3</td><td></td></tr>
+      <tr><td>Ketu</td><td>Taurus</td><td>12.8°</td><td><span class="house-badge">3</span></td><td>Rohini pada 1</td><td></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════ YOGAS ════════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Active Yogas — 8 Total</div>
+  <div class="yoga-grid">
+    <div class="yoga-card major">
+      <div class="yoga-name">Bhadra Yoga</div>
+      <div class="yoga-stars">★★★ Pancha Mahapurusha</div>
+      <p>Mercury exalted in Virgo (4.7°) in the 7th house — a kendra. One of the five classical Great Person yogas. Classical texts say the native "walks like an elephant, speaks with precision, and carries an air of auspicious authority." Exceptional analytical intelligence, persuasive communication, a natural advisor and strategist.</p>
+    </div>
+    <div class="yoga-card major">
+      <div class="yoga-name">Gajakesari Yoga</div>
+      <div class="yoga-stars">★★ Wealth / Status</div>
+      <p>Jupiter in the 7th house sits in the 4th from Moon (4th house) — a kendra from Moon. <em>Gaja</em> = elephant, <em>Kesari</em> = lion. Wisdom, high social standing, prosperity through networks, a name that outlives the person. The elephant's intelligence fused with the lion's authority.</p>
+    </div>
+    <div class="yoga-card major">
+      <div class="yoga-name">Raja Yoga — Mercury + Mars</div>
+      <div class="yoga-stars">★★★ Raja Yoga</div>
+      <p>Mercury (lord of kendra H4 &amp; H7) conjunct Mars (lord of trikona H9) in Virgo H7. Power, status, and leadership through strategic partnerships. The businessman-warrior in the house of others — turns every relationship into an asset.</p>
+    </div>
+    <div class="yoga-card major">
+      <div class="yoga-name">Raja Yoga — Jupiter + Mars</div>
+      <div class="yoga-stars">★★★ Raja Yoga</div>
+      <p>Jupiter (lord of kendra H1 &amp; H10) conjunct Mars (lord of trikona H9) in Virgo H7. The second Raja Yoga in the same house. Wisdom and dharmic authority operating together — rare. Leadership positions come through philosophical conviction, not just skill.</p>
+    </div>
+    <div class="yoga-card major">
+      <div class="yoga-name">Dharma Karma Adhipati Yoga</div>
+      <div class="yoga-stars">★★★ Raja Yoga</div>
+      <p>Lord of 9th (Mars) and lord of 10th (Jupiter) conjunct in Virgo H7. The most powerful career yoga possible — the dharma lord and karma lord meeting. Exceptional career success, but only when the work <em>means</em> something. Cannot thrive in meaningless roles.</p>
+    </div>
+    <div class="yoga-card">
+      <div class="yoga-name">Viparita Raja Yoga (Sun)</div>
+      <div class="yoga-stars">★★ Viparita Raja</div>
+      <p>Lord of house 6 (Sun) placed in house 6 — a dusthana lord in its own dusthana. Rise through adversity, resilience, unexpected gains from competition and conflict. Enemies become stepping stones.</p>
+    </div>
+    <div class="yoga-card">
+      <div class="yoga-name">Viparita Raja Yoga (Saturn)</div>
+      <div class="yoga-stars">★★ Viparita Raja</div>
+      <p>Lord of house 12 (Saturn) placed in house 12 — retrograde in own sign Aquarius. Protection from loss, gains from foreign lands or hidden sources. The private work eventually generates public recognition.</p>
+    </div>
+    <div class="yoga-card">
+      <div class="yoga-name">Ubhayachari Yoga</div>
+      <div class="yoga-stars">★★ Sun Yoga</div>
+      <p>Planets on both sides of Sun: Venus in 12th from Sun, Mars + Mercury + Jupiter in 2nd from Sun. Balanced, charismatic personality — royal bearing, the ability to command a room without trying. Both solar flanks are occupied, creating a full sun-train.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ NATURE ═══════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Nature &amp; Core Self</div>
+  <div class="card-grid">
+    <div class="card">
+      <h3>The Deep Piscean</h3>
+      <p>Pisces lagna at 0.9° — barely into the sign, touching the cusp of Aquarius. An ancient soul born into the most spiritual, boundary-dissolving energy of the zodiac. Naturally empathetic to a fault, absorbs the emotional atmosphere of the room. The outer world feels slightly too sharp, too loud.</p>
+    </div>
+    <div class="card">
+      <h3>The 7th House Powerhouse</h3>
+      <p>Mars + Mercury + Jupiter all in Virgo H7 — three planets in the house of others. Every major yoga manifests <em>through</em> partnerships, business relationships, and one-on-one encounters. The world meets Kunal not in isolation but in dialogue. His true power only reveals itself in relationship.</p>
+    </div>
+    <div class="card">
+      <h3>Emotional World</h3>
+      <p>Moon in Gemini / Ardra nakshatra (Rudra — the storm god). A restless, analytical emotional life — feelings get immediately processed into words and ideas. Ardra brings intensity: breakthrough and storm, grief and renewal. The native can intellectualise emotions so efficiently that true feeling sometimes escapes notice.</p>
+    </div>
+    <div class="card">
+      <h3>The Private Engine</h3>
+      <p>Saturn retrograde in H12 as 10th lord (career lord). The machinery of ambition runs silently, inwardly. Saturn in Dhanishtha (the cosmic drummer, rhythm of the universe) in its own sign Aquarius, retrograde — deep, structured inner work that the world eventually sees the output of, never the process.</p>
+    </div>
+    <div class="card">
+      <h3>Strengths</h3>
+      <ul>
+        <li>Extraordinary analytical precision — Bhadra yoga, Mercury exalted</li>
+        <li>Builds influence through partnership, not performance</li>
+        <li>Long-game patience: Saturn in Dhanishtha, owns its karma</li>
+        <li>Dharmic conviction — cannot stay in meaningless work</li>
+        <li>Empathy and emotional intelligence beneath the analyst exterior</li>
+        <li>Three Raja Yogas: genuine leadership capacity, not ego</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>The Sun in Leo H6</h3>
+      <p>Sun in own sign Leo, but in the 6th house — the ego finds its identity through <em>service, problem-solving, and overcoming obstacles</em>. Not the king on the throne; the king who goes into the field. Purva Phalguni pada 4 adds sensual vitality and creative pride. This person works hard and needs to be seen doing it.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ FUN FACTS ════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">5 Unusual Things About This Chart</div>
+  <div class="funfact-list">
+    <div class="funfact">
+      <div class="funfact-num">1</div>
+      <div class="funfact-body"><strong>Three planets in one house generating five separate yogas.</strong> Mars + Mercury + Jupiter in H7 creates Bhadra, two Raja Yogas, Dharma Karma Adhipati, and Gajakesari — all from a single house. This density of yoga formation from one spatial cluster is rare. The 7th house is effectively a yoga factory.</div>
+    </div>
+    <div class="funfact">
+      <div class="funfact-num">2</div>
+      <div class="funfact-body"><strong>0.9° Pisces Lagna — born on the edge.</strong> The ascendant is at the very beginning of Pisces, barely past the Aquarius boundary. Kunal exists on the liminal boundary between the world-builder (Aquarius) and the world-dissolver (Pisces). Saturn (Aquarius energy) sitting in H12 (Pisces domain) mirrors this: the rational and the mystical are always in dialogue in him.</div>
+    </div>
+    <div class="funfact">
+      <div class="funfact-num">3</div>
+      <div class="funfact-body"><strong>Saturn retrograde in its own sign in H12.</strong> Saturn in Aquarius (own sign) in the 12th house retrograde = double Viparita protection. Retrograde intensifies the inner quality: this Saturn is working out deep karmic debt internally, quietly, over decades. When it finally expresses, it comes as earned wisdom — not circumstance.</div>
+    </div>
+    <div class="funfact">
+      <div class="funfact-num">4</div>
+      <div class="funfact-body"><strong>The Rahu-Ketu axis crosses dharma (9th) and communication (3rd).</strong> Rahu in Scorpio H9 creates an obsessive, relentless spiritual seeker — one who cannot not seek. Ketu in Taurus H3 indicates past-life mastery of speech, art, and sensory craft — these come instinctively, so the soul is ready to detach from them. The result: a person compelled toward depth who communicates that depth effortlessly.</div>
+    </div>
+    <div class="funfact">
+      <div class="funfact-num">5</div>
+      <div class="funfact-body"><strong>Jupiter as lagna lord, 10th lord, and yoga karaka — all placed in H7.</strong> The lagna lord (self), the 10th lord (career), and the yoga karaka are all sitting in the house of partnerships. The self, the career, and the highest potential all <em>require the presence of another person to activate</em>. Kunal's chart structurally cannot reach its potential alone.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ DASHA ════════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Dasha Timeline</div>
+
+  <div class="timeline">
+    <div class="tl-row">
+      <div class="tl-dot">Sep 1993</div>
+      <div class="tl-body">
+        <div class="tl-planet">Rahu Mahadasha <span style="color:#304060;font-size:12px;font-weight:400">→ Mar 2008</span></div>
+        <div class="tl-desc">Childhood years — restless identity formation, Rahu's disruptive curiosity shaping the early mind. Rapid environment changes. The seeker awakens young.</div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-dot">Mar 2008</div>
+      <div class="tl-body">
+        <div class="tl-planet">Jupiter Mahadasha <span style="color:#304060;font-size:12px;font-weight:400">→ Feb 2024</span></div>
+        <div class="tl-desc">16 years of philosophical expansion — education, early career, spiritual awakening, major partnerships. Jupiter (lagna lord + 10th lord) in H7 brought significant people who shaped the trajectory. The wisdom-gathering phase. All the yogas began to simmer.</div>
+      </div>
+    </div>
+    <div class="tl-row tl-active">
+      <div class="tl-dot">Feb 2024</div>
+      <div class="tl-body">
+        <div class="tl-planet">Saturn Mahadasha <span style="color:#304060;font-size:12px;font-weight:400">→ Feb 2043</span> <span class="now-badge">ACTIVE</span></div>
+        <div class="tl-desc">19 years — the main event. Saturn rules the 11th (gains, networks) and 12th (liberation, foreign) from Pisces lagna. Retrograde in own sign — this Saturn has been building internally for decades and is now ready to manifest. Hard work becomes undeniable results. The karmic debt matures into karmic wealth. Career peak, deep relationships, spiritual grounding.</div>
+      </div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-dot">Feb 2043</div>
+      <div class="tl-body">
+        <div class="tl-planet">Mercury Mahadasha <span style="color:#304060;font-size:12px;font-weight:400">→ Feb 2060</span></div>
+        <div class="tl-desc">17 years — intellectual legacy phase. Mercury (exalted, Bhadra yoga) will activate from age 49. Writing, teaching, codifying the wisdom. The Bhadra yoga fully blooms: precise, lasting knowledge transmission.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:28px">Saturn Mahadasha — All Bhuktis</div>
+  <table class="bhukti-table">
+    <thead>
+      <tr><th>Bhukti</th><th>Period</th><th>Age</th><th>Career &amp; Life Quality</th></tr>
+    </thead>
+    <tbody>
+      <tr class="active-row">
+        <td><span class="b-planet">Sat / Saturn ★</span></td>
+        <td><span class="b-period">Feb 2024 → Feb 2027</span></td>
+        <td class="b-note">30–33</td>
+        <td class="b-note"><strong style="color:#40c080">NOW</strong> — Karmic consolidation. Deep foundations being laid — often invisible from the outside. Saturn's own bhukti demands discipline, patience, solitude. What is built here will last 19 years.</td>
+      </tr>
+      <tr>
+        <td><span class="b-planet">Sat / Mercury</span></td>
+        <td><span class="b-period">Feb 2027 → Nov 2029</span></td>
+        <td class="b-note">33–36</td>
+        <td class="b-note">Mercury is 7th lord (exalted) — this bhukti activates the Bhadra yoga + both Raja Yogas. Career breakthrough period. Partnerships, contracts, major agreements. Intelligence monetised.</td>
+      </tr>
+      <tr>
+        <td><span class="b-planet">Sat / Ketu</span></td>
+        <td><span class="b-period">Nov 2029 → Dec 2030</span></td>
+        <td class="b-note">36–37</td>
+        <td class="b-note">Ketu in Taurus H3 — detachment from old communication patterns. Spiritual consolidation. A brief, inward chapter. Can produce unexpected insights.</td>
+      </tr>
+      <tr>
+        <td><span class="b-planet">Sat / Venus</span></td>
+        <td><span class="b-period">Dec 2030 → Feb 2034</span></td>
+        <td class="b-note">37–40</td>
+        <td class="b-note">Venus in Cancer H5 — creative peak, income expansion, romantic depth. Venus is 3rd + 8th lord (mixed) but placed in the 5th. A lush, expansive period blending career peak with emotional richness.</td>
+      </tr>
+      <tr>
+        <td><span class="b-planet">Sat / Sun</span></td>
+        <td><span class="b-period">Feb 2034 → Jan 2035</span></td>
+        <td class="b-note">40–41</td>
+        <td class="b-note">Sun in Leo H6 (own sign) — Viparita Raja activates. Sudden visibility, stepping into authority. Brief but high-energy period of public recognition.</td>
+      </tr>
+      <tr>
+        <td><span class="b-planet">Sat / Moon</span></td>
+        <td><span class="b-period">Jan 2035 → Sep 2036</span></td>
+        <td class="b-note">41–43</td>
+        <td class="b-note">Moon in Gemini H4 (Ardra) — domestic stabilisation, emotional depth, public-facing work. Deep personal relationships. Home and family life prominent.</td>
+      </tr>
+      <tr>
+        <td><span class="b-planet">Sat / Mars</span></td>
+        <td><span class="b-period">Sep 2036 → Oct 2037</span></td>
+        <td class="b-note">43–44</td>
+        <td class="b-note">Mars activates three yogas simultaneously (Raja ×2, DKA). Decisive action, bold expansion, maximum drive. A short but extremely productive period.</td>
+      </tr>
+      <tr>
+        <td><span class="b-planet">Sat / Rahu</span></td>
+        <td><span class="b-period">Oct 2037 → Apr 2040</span></td>
+        <td class="b-note">44–46</td>
+        <td class="b-note">Rahu in Scorpio H9 — unconventional expansion, spiritual disruption, foreign opportunities. Pushes into new territories. High volatility, high reward.</td>
+      </tr>
+      <tr>
+        <td><span class="b-planet">Sat / Jupiter</span></td>
+        <td><span class="b-period">Apr 2040 → Feb 2043</span></td>
+        <td class="b-note">46–49</td>
+        <td class="b-note">Jupiter (lagna lord, 10th lord, Gajakesari) as final bhukti — the fruition of the entire Saturn mahadasha. Wisdom, recognition, elevation into elder/mentor status. The Dharma Karma Adhipati yoga fully matures.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="highlight-box" style="margin-top:22px">
+    <p><strong>Career Window Summary:</strong> The current Sat/Sat period (2024–2027) is foundation-laying — invisible but essential. The first breakthrough arrives with <strong>Sat/Mercury (2027–2029)</strong> when the Bhadra + Raja Yogas activate under Mercury's bhukti. Saturn/Venus (2030–2034) is the income and creative peak. The full manifestation of all eight yogas arrives with <strong>Sat/Jupiter (2040–2043)</strong> — age 46–49 is when the Dharma Karma Adhipati yoga delivers its highest form of career recognition.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ CAREER ═══════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Natural Career Domains</div>
+
+  <div class="highlight-box">
+    <p>The career must operate <strong>through partnership, analytical depth, and dharmic meaning</strong>. Saturn in H12 as 10th lord means the best work is done privately, behind the scenes, often for clients or organisations rather than in public performance. The Dharma Karma Adhipati yoga demands work that <em>means</em> something — the chart withers in hollow environments. The DKA yoga activates fully when career = calling.</p>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>Business Strategy &amp; Consulting ★★★★★</h3>
+      <p>H7 triple conjunction + Bhadra yoga = the analyst-strategist-philosopher all in one. Mercury exalted for precision, Mars for decisive action, Jupiter for seeing the larger arc. The natural advisor to founders, executives, and decision-makers. Works best as the person behind the person.</p>
+    </div>
+    <div class="card">
+      <h3>Technology / Digital Products ★★★★★</h3>
+      <p>Saturn (10th lord) in Aquarius H12 — the sign of technology, systems, and the future, placed in the house of invisible work and foreign connections. This is the chart of someone who builds significant things in digital space, often invisibly or from a distance.</p>
+    </div>
+    <div class="card">
+      <h3>Finance &amp; Investment ★★★★</h3>
+      <p>Saturn rules the 11th (gains) for Pisces, Mars rules the 2nd (wealth), Jupiter in H7 creates Gajakesari (prosperity through wisdom and networks). The analytical H7 stellium is well-suited to financial analysis, fund management, or advising capital allocation.</p>
+    </div>
+    <div class="card">
+      <h3>International / Cross-Border Work ★★★★</h3>
+      <p>Saturn in H12 (foreign lands), Rahu in H9 (foreign dharma), 10th house in Sagittarius (the explorer sign). Career has a natural pull toward international clients, global platforms, or work that transcends national boundaries.</p>
+    </div>
+    <div class="card">
+      <h3>Writing &amp; Knowledge Work ★★★★</h3>
+      <p>Bhadra yoga (Mercury exalted) + Ketu in H3 (past mastery of communication) — the pen is a natural instrument. Mercury Mahadasha (2043+) will produce the life's written work. But the voice is already there — it just needs a container.</p>
+    </div>
+    <div class="card">
+      <h3>Dharmic / Meaning-Led Ventures ★★★★</h3>
+      <p>Dharma Karma Adhipati yoga demands that career = dharma. Social impact, spiritual enterprise, ethical business, or any venture with a clear why. The chart generates friction in purely mercenary environments and flourishes in purposeful ones.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ RELATIONSHIPS ════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Relationships &amp; Marriage Windows</div>
+
+  <div class="card-grid" style="margin-bottom:22px">
+    <div class="card">
+      <h3>7th House — The Partner's Stage</h3>
+      <p><strong>Mars + Mercury + Jupiter in Virgo H7.</strong> The partner is intelligent, analytical, articulate, and has high standards. Virgo energy: discerning, service-oriented, health-conscious. The native deeply needs mental rapport in relationships — the partner must be an intellectual equal.</p>
+    </div>
+    <div class="card">
+      <h3>7th Lord Mercury (Exalted)</h3>
+      <p><strong>7th lord exalted in the 7th house</strong> — the most powerful possible placement for the lord of partnerships. Marriage is taken seriously, approached analytically, and when it occurs, it is built to last. Kunal will not settle; he will wait for the right intellectual and spiritual match.</p>
+    </div>
+    <div class="card">
+      <h3>Darakaraka — Lowest-degree Planet</h3>
+      <p><strong>Mercury at 4.7°</strong> (lowest degree) is the Darakaraka. The spouse is Mercurial: communicative, clever, detail-oriented, possibly younger or having a youthful quality. They may work in writing, technology, education, or analytical fields.</p>
+    </div>
+    <div class="card">
+      <h3>Rahu in H9 &amp; Saturn MD</h3>
+      <p>Rahu in the dharma house can indicate a partner from a different background, culture, or belief system. Saturn Mahadasha adds gravitas — relationships formed during this period tend to be serious, karmic, long-term commitments rather than casual connections.</p>
+    </div>
+  </div>
+
+  <div class="window-card">
+    <div class="window-header">
+      <span class="window-label">Window 1</span>
+      <span class="window-period">Feb 2027 → Nov 2029</span>
+      <span class="window-age">Age 33–36</span>
+      <span class="stars">★★★★</span>
+    </div>
+    <p><strong style="color:#c9a84c">Saturn / Mercury bhukti.</strong> Mercury is the 7th lord, exalted, the Darakaraka. When Mercury's bhukti runs inside Saturn Mahadasha, it directly activates the house of partnerships and the significator of the spouse. The Bhadra yoga becomes operational. This is the first strong opening for a committed partnership. Contracts, formal commitments, and serious relationships come into focus.</p>
+  </div>
+
+  <div class="window-card best">
+    <div class="window-header">
+      <span class="window-label">Window 2 — Primary</span>
+      <span class="window-period">Dec 2030 → Feb 2034</span>
+      <span class="window-age">Age 37–40</span>
+      <span class="stars">★★★★★</span>
+    </div>
+    <p><strong style="color:#c9a84c">Saturn / Venus bhukti.</strong> Venus in Cancer H5 (the house of romance, creativity, and joy). Venus activates the emotional and romantic dimension of the chart while Saturn provides commitment and stability. The combination of Saturn (structure) and Venus (beauty, love) is the classical marriage-forming pair. Jupiter will also be transiting into a powerful position during 2031–32. <strong style="color:#c9a84c">Most likely marriage window — the whole chart aligns here.</strong></p>
+  </div>
+
+  <div class="window-card">
+    <div class="window-header">
+      <span class="window-label">Window 3</span>
+      <span class="window-period">Jan 2035 → Sep 2036</span>
+      <span class="window-age">Age 41–43</span>
+      <span class="stars">★★★★</span>
+    </div>
+    <p><strong style="color:#c9a84c">Saturn / Moon bhukti.</strong> Moon in H4 (home, emotional foundations, domestic life). This bhukti brings a strong pull toward settling, creating a home, and deepening existing bonds. If commitment hasn't come before, this window strongly re-activates the domestic and emotional dimension of relationships.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ INCOME ═══════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Income — Drain vs Gain</div>
+
+  <div class="income-split">
+    <div class="drain-block">
+      <h3>Drain Factors</h3>
+      <ul>
+        <li>Saturn (11th lord for gains) in H12 — gains route through loss/expenditure house</li>
+        <li>Saturn retrograde — income effort intensifies before reward appears</li>
+        <li>Venus rules H3 + H8 — spending on self-development, experiences, transformation</li>
+        <li>Rahu in H9 — impulsive investment in learning, travel, philosophy</li>
+        <li>Ketu in H3 (Taurus) — detachment from accumulation of resources</li>
+        <li>Pisces lagna — natural generosity; may give more than keeps</li>
+      </ul>
+    </div>
+    <div class="gain-block">
+      <h3>Gain Factors</h3>
+      <ul>
+        <li>Three Raja Yogas — structural elevation into high-income roles</li>
+        <li>Bhadra yoga — premium advisory and consulting income</li>
+        <li>Jupiter (lagna lord) in H7 — gains through partnerships and networks</li>
+        <li>Gajakesari — long-term wealth accumulation through wisdom and reputation</li>
+        <li>Viparita Raja (Saturn) H12 — gains from foreign/hidden sources eventually emerge</li>
+        <li>DKA yoga — dharmic work that generates long-term, sustainable income</li>
+        <li>Saturn/Venus bhukti (2030–34) — peak earning and creative income window</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Net pattern:</strong> Income comes through partnerships, advisory work, and knowledge — not raw hustle. The 12th-house Saturn as 10th lord means the career must work through invisible or private channels before public reward. The Raja Yogas ensure the reward arrives; the Viparita Rajas ensure adversity becomes advantage. <strong>Sat/Mercury (2027–29) is the first major income breakthrough; Sat/Venus (2030–34) is the peak earning window.</strong> Passive income through intellectual property or digital assets suits this chart structurally.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SPIRITUAL ════════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Spiritual Style &amp; Path</div>
+
+  <div class="card-grid" style="margin-bottom:22px">
+    <div class="card">
+      <h3>Core Type</h3>
+      <p><strong>The Obsessive Seeker.</strong> Rahu in Scorpio H9 in Anuradha nakshatra — Anuradha is the nakshatra of devoted friendship and deep, loyal seeking. Scorpio intensifies the search into the darkest corners of philosophy and mysticism. This person cannot not seek. The seeking is the path.</p>
+    </div>
+    <div class="card">
+      <h3>Pisces Lagna + H12 Saturn</h3>
+      <p>Double dissolution energy — Pisces lagna (the boundary-less ocean) and Saturn in the 12th (the house of liberation, surrender, and moksha). Spirituality is not a hobby but an undertow. The rational mind (Saturn) doing inner work (H12) to dissolve ego structures (Pisces) — this is meditation, not mere belief.</p>
+    </div>
+    <div class="card">
+      <h3>Ketu in Taurus H3 (Rohini)</h3>
+      <p>Ketu in Rohini — the most fertile, sensory, creatively gifted nakshatra. Past mastery of sensory arts, beauty, and material eloquence. The soul has already lived the Venusian abundance. Now it detaches. Creative expression comes instinctively but the attachment to it weakens over time.</p>
+    </div>
+    <div class="card">
+      <h3>Jupiter in H7 (Hasta, Virgo)</h3>
+      <p>Wisdom and grace arrive through the other person. Spiritual teaching comes through dialogue, relationship, and partnership — not through solitary renunciation. Every significant teacher or guru in Kunal's life arrives as a partner, collaborator, or companion, not as a distant figure.</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p><strong>Why depth, not doctrine:</strong> Rahu in Scorpio H9 creates the relentless truth-seeker who goes past the surface of every tradition. Saturn in H12 gives the discipline to sit in the dark and wait. Pisces lagna means the boundary between self and the universe has always been thin. This is not the chart of a person who finds one tradition and settles — it is the chart of someone who finds what is <em>true</em> in every tradition and carries only that forward. <strong>The spiritual path is solitary, intense, and ultimately trans-doctrinal.</strong></p>
+  </div>
+
+  <div style="margin-bottom:10px">
+    <span class="tag gold">Advaita Vedanta</span>
+    <span class="tag gold">Vipassana Meditation</span>
+    <span class="tag gold">Jnana Yoga</span>
+    <span class="tag">Tantra / Shakta paths</span>
+    <span class="tag">Sufi mysticism</span>
+    <span class="tag">Zen</span>
+    <span class="tag">Philosophical inquiry</span>
+    <span class="tag">Solitary practice</span>
+    <span class="tag">Breathwork</span>
+  </div>
+
+  <div class="prose" style="margin-top:18px">
+    <strong>Current phase (Saturn/Saturn/Rahu, 2024–2027):</strong> A period of karmic reckoning and spiritual pressure. Saturn's own bhukti demands confronting what has been avoided. Rahu's antara injects restlessness and the urge to break through. This is the dark-night-of-the-soul window that precedes genuine transformation. <strong>The breakthrough comes in 2027 when Mercury's bhukti begins</strong> — analytical clarity cuts through confusion and the path becomes structured and intentional.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ NEGATIVE TRAITS ══════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Blind Spots &amp; Shadow Patterns</div>
+  <div class="shadow-grid">
+    <div class="shadow-card">
+      <h4>Over-intellectualisation of feeling</h4>
+      <p>Moon in Gemini / Ardra — emotion gets immediately converted into thought. The feeling is processed before it is felt. Can leave others sensing emotional unavailability even when the native is deeply engaged internally.</p>
+    </div>
+    <div class="shadow-card">
+      <h4>Paralysis by analysis</h4>
+      <p>Three planets in Virgo H7 + Bhadra yoga — the analytical faculty is so powerful it can outpace decision. Mercury exalted can endlessly refine without committing. The perfectionist who delays the launch.</p>
+    </div>
+    <div class="shadow-card">
+      <h4>Dependency on partnership to activate</h4>
+      <p>Jupiter (lagna lord) in H7 — the self only fully realises through others. This is a structural strength but also a vulnerability: alone, motivation can collapse. Can confuse the energising presence of another with love.</p>
+    </div>
+    <div class="shadow-card">
+      <h4>Viparita pattern — rises through chaos</h4>
+      <p>Two Viparita Raja Yogas mean that the native structurally benefits when things go wrong for others or the environment is unstable. This creates an unconscious tendency to thrive in (or even attract) chaotic circumstances.</p>
+    </div>
+    <div class="shadow-card">
+      <h4>Rahu in H9 — spiritual inflation</h4>
+      <p>Rahu amplifies whatever it touches. In the house of dharma and wisdom, it can create grandiosity around spiritual knowledge — the seeker who quietly believes they are further along than those around them. Scorpio intensifies the sense of hidden initiation.</p>
+    </div>
+    <div class="shadow-card">
+      <h4>Saturn in H12 — self-isolation as avoidance</h4>
+      <p>The private inner world (H12 Saturn) can become a retreat from responsibility rather than genuine contemplation. When external demands are difficult, the native may disappear inward or into solitude rather than engage. Retrograde deepens this tendency.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ SUMMARY TABLE ════════════════════════ -->
+<div class="sec">
+  <div class="sec-title">Life Window Summary</div>
+  <table class="sum-table">
+    <thead>
+      <tr><th>Domain</th><th>Key Window</th><th>What to Do</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Career — Foundation</strong></td>
+        <td>Now → Feb 2027 (Sat/Sat)</td>
+        <td>Build systems, relationships, and skills invisibly. This is the root-growing phase.</td>
+      </tr>
+      <tr>
+        <td><strong>Career — First Breakthrough</strong></td>
+        <td>Feb 2027 → Nov 2029 (Sat/Mercury)</td>
+        <td>Bhadra + Raja Yogas activate. Consulting, partnerships, major contracts. Leverage analytical edge.</td>
+      </tr>
+      <tr>
+        <td><strong>Career — Income Peak</strong></td>
+        <td>Dec 2030 → Feb 2034 (Sat/Venus)</td>
+        <td>Creative + financial peak. Scale the primary income stream. Build passive assets.</td>
+      </tr>
+      <tr>
+        <td><strong>Career — Full Recognition</strong></td>
+        <td>Apr 2040 → Feb 2043 (Sat/Jupiter)</td>
+        <td>DKA yoga matures. Mentor, elder, institutional authority. Legacy work begins.</td>
+      </tr>
+      <tr>
+        <td><strong>Relationship — First Window</strong></td>
+        <td>Feb 2027 → Nov 2029</td>
+        <td>Mercury bhukti activates 7th lord. Serious partnership formation possible.</td>
+      </tr>
+      <tr>
+        <td><strong>Marriage — Primary Window</strong></td>
+        <td>Dec 2030 → Feb 2034</td>
+        <td>Saturn/Venus — the chart's most auspicious marriage period. Commit here.</td>
+      </tr>
+      <tr>
+        <td><strong>Spiritual — Dark Night</strong></td>
+        <td>2024–2027 (Sat/Sat)</td>
+        <td>Do the inner work. Do not run from the silence. Saturn in H12 is a teacher.</td>
+      </tr>
+      <tr>
+        <td><strong>Spiritual — Breakthrough</strong></td>
+        <td>2027+ onwards</td>
+        <td>Clarity after karmic processing. Find the practice, not just the philosophy.</td>
+      </tr>
+      <tr>
+        <td><strong>Intellectual Legacy</strong></td>
+        <td>Feb 2043 → Feb 2060</td>
+        <td>Mercury Mahadasha — Bhadra yoga fully blooms. Write the books. Teach the students.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<div class="footer">
+  Generated by Astrowise · Swiss Ephemeris · Lahiri Ayanamsha · Vimshottari Dasha System<br>
+  Kunal Agarwal · 10 Sep 1993 · 18:50 · Alwar, Rajasthan · Pisces Lagna 0.9°
+</div>
+
+</div>
+</body>
+</html>

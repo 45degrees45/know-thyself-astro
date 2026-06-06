@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kunal Agarwal — Animals of the Chart</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #080810; font-family: Georgia, serif; color: #e8e8f0; }
+  .page { max-width: 900px; margin: 0 auto; padding: 0 0 80px; }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(160deg, #060614 0%, #0d1020 60%, #06060e 100%);
+    padding: 52px 40px 36px; text-align: center;
+    border-bottom: 1px solid #c9a84c55;
+  }
+  .eyebrow { color: #c9a84c; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px; }
+  .header h1 { color: #fff; font-size: 32px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .header-sub { color: #50607a; font-size: 13px; margin-bottom: 20px; }
+  .header-note {
+    max-width: 560px; margin: 0 auto;
+    color: #3a4a5a; font-size: 12px; line-height: 1.8;
+    border-top: 1px solid #151525; padding-top: 18px;
+  }
+  .header-note em { color: #c9a84c; font-style: normal; }
+
+  /* ── Primary animal ── */
+  .primary-animal {
+    padding: 48px 40px;
+    display: flex; gap: 36px; align-items: center;
+    border-bottom: 1px solid #0f1520;
+    background: linear-gradient(135deg, #060612, #0a1020);
+  }
+  .pa-glyph {
+    font-size: 88px; line-height: 1; flex-shrink: 0;
+    filter: drop-shadow(0 0 18px rgba(201,168,76,0.3));
+  }
+  .pa-body { flex: 1; }
+  .pa-label { color: #c9a84c; font-size: 9px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 6px; }
+  .pa-name { color: #fff; font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+  .pa-sanskrit { color: #c9a84c; font-size: 13px; font-style: italic; margin-bottom: 14px; }
+  .pa-source {
+    display: inline-block; background: #1a1408; border: 1px solid #c9a84c44;
+    color: #c9a84c; font-size: 10px; padding: 3px 10px; border-radius: 10px;
+    letter-spacing: 0.5px; margin-bottom: 14px;
+  }
+  .pa-desc { color: #50607a; font-size: 14px; line-height: 1.85; }
+  .pa-desc strong { color: #c9a84c; }
+
+  /* ── Section title ── */
+  .sec { padding: 40px 40px 0; }
+  .sec-title {
+    color: #c9a84c; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 3px; margin-bottom: 28px;
+    padding-bottom: 10px; border-bottom: 1px solid #0f1520;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sec-title::before { content: ''; display: block; width: 3px; height: 12px; background: #c9a84c; border-radius: 2px; }
+
+  /* ── Animal grid ── */
+  .animal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .animal-card {
+    background: #09090f;
+    border: 1px solid #10151e;
+    border-radius: 12px;
+    padding: 24px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .animal-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    border-radius: 12px 12px 0 0;
+  }
+  .ac-tiger::before   { background: linear-gradient(90deg, #c04020, #e06030); }
+  .ac-serpent::before { background: linear-gradient(90deg, #204020, #308040); }
+  .ac-lioness::before { background: linear-gradient(90deg, #c09820, #e8c030); }
+  .ac-deer::before    { background: linear-gradient(90deg, #602080, #9040c0); }
+  .ac-dog::before     { background: linear-gradient(90deg, #204060, #3060a0); }
+  .ac-bull::before    { background: linear-gradient(90deg, #205050, #30a080); }
+  .ac-buffalo::before { background: linear-gradient(90deg, #502020, #804040); }
+  .ac-cat::before     { background: linear-gradient(90deg, #c060a0, #e080c0); }
+  .ac-fish::before    { background: linear-gradient(90deg, #204080, #3060c0); }
+
+  .ac-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+  .ac-emoji { font-size: 40px; line-height: 1; flex-shrink: 0; }
+  .ac-header { flex: 1; }
+  .ac-name { font-size: 18px; font-weight: 700; color: #d0d8e8; margin-bottom: 2px; }
+  .ac-sanskrit { font-size: 11px; font-style: italic; margin-bottom: 6px; }
+  .ac-planet-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .ac-planet {
+    font-size: 10px; padding: 2px 8px; border-radius: 8px;
+    letter-spacing: 0.5px;
+  }
+  .planet-sun      { background: #1a1208; color: #d09820; border: 1px solid #d0982044; }
+  .planet-moon     { background: #0e1828; color: #6090c0; border: 1px solid #6090c044; }
+  .planet-mars     { background: #1a0a08; color: #c04030; border: 1px solid #c0403044; }
+  .planet-mercury  { background: #081a10; color: #30a060; border: 1px solid #30a06044; }
+  .planet-jupiter  { background: #181208; color: #c09820; border: 1px solid #c0982044; }
+  .planet-venus    { background: #1a0818; color: #c060a0; border: 1px solid #c060a044; }
+  .planet-saturn   { background: #0e0e1a; color: #7080c0; border: 1px solid #7080c044; }
+  .planet-rahu     { background: #160818; color: #9050c0; border: 1px solid #9050c044; }
+  .planet-ketu     { background: #100808; color: #a06030; border: 1px solid #a0603044; }
+  .planet-lagna    { background: #0a1428; color: #c9a84c; border: 1px solid #c9a84c44; }
+
+  .ac-what { color: #2a3a4a; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+  .ac-desc { color: #404a5a; font-size: 13px; line-height: 1.75; }
+  .ac-desc strong { color: #8090a0; }
+  .ac-quality {
+    margin-top: 12px; padding-top: 10px; border-top: 1px solid #101520;
+    display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .quality-tag {
+    font-size: 10px; padding: 2px 8px; border-radius: 8px;
+    background: #0d1018; color: #304050; border: 1px solid #151e28;
+  }
+
+  /* ── Predator-prey map ── */
+  .map-section { padding: 40px 40px 0; }
+  .map-card {
+    background: #09090f; border: 1px solid #10151e; border-radius: 12px;
+    padding: 28px 30px; margin-bottom: 16px;
+  }
+  .map-title { color: #c9a84c; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+  .map-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .map-animal {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; color: #405060;
+  }
+  .map-emoji { font-size: 20px; }
+  .map-sep { color: #1a2530; font-size: 16px; }
+  .map-arrow { color: #1e2e3e; font-size: 13px; }
+  .map-insight { color: #304050; font-size: 13px; line-height: 1.75; margin-top: 14px; padding-top: 14px; border-top: 1px solid #0f1520; }
+  .map-insight strong { color: #c9a84c; }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 60px; padding: 24px 40px;
+    border-top: 1px solid #0f1520; text-align: center;
+    color: #1e2a38; font-size: 11px; letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 640px) {
+    .animal-grid { grid-template-columns: 1fr; }
+    .primary-animal { flex-direction: column; padding: 36px 20px; }
+    .pa-glyph { font-size: 64px; }
+    .sec, .map-section, .prompt-section { padding-left: 20px; padding-right: 20px; }
+    .header { padding: 36px 20px 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+<div class="header">
+  <div class="eyebrow">Vedic Nakshatra Yoni System · Kunal Agarwal</div>
+  <h1>Animals of the Chart</h1>
+  <div class="header-sub">Pisces 0.9° · 10 September 1993 · Alwar, Rajasthan</div>
+  <div class="header-note">
+    In Vedic astrology, each of the 27 nakshatras carries a <em>yoni</em> — a sacred animal energy. Every planet placed in a nakshatra takes on that animal's qualities. Together, these animals form a living portrait far richer than any single symbol. Kunal's chart contains <em>eight distinct animal energies</em>, each illuminating a different layer of his nature.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PRIMARY ANIMAL ═══════════════════════ -->
+<div class="primary-animal">
+  <div class="pa-glyph">🐘</div>
+  <div class="pa-body">
+    <div class="pa-label">Primary Symbol</div>
+    <div class="pa-name">The Elephant</div>
+    <div class="pa-sanskrit">Gaja · Airavata</div>
+    <span class="pa-source">Gajakesari Yoga + Bhadra Mahapurusha Yoga</span>
+    <div class="pa-desc">
+      Two of Kunal's eight yogas carry the elephant directly in their names. <strong>Gajakesari</strong> (<em>Gaja</em> = elephant) means the elephant-lion combination — wisdom fused with authority. <strong>Bhadra</strong> Mahapurusha texts describe the native as having <em>"the gait and bearing of the noble elephant."</em> Airavata — Indra's white cosmic elephant — is the archetype: the being that carries the weight of the sky without noticing. Memory spanning lifetimes. Auspiciousness wherever it walks. The elephant does not hurry. It does not need to.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ FISH ════════════════════════════════ -->
+<div style="padding: 40px 40px 0;">
+  <div class="sec-title">The Lagna Animal — The Essential Soul</div>
+  <div class="animal-card ac-fish" style="border-radius:12px; background:#09090f; border:1px solid #10151e; padding:24px 22px; position:relative; overflow:hidden; margin-bottom:0;">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#204080,#3060c0);border-radius:12px 12px 0 0;"></div>
+    <div class="ac-top">
+      <div class="ac-emoji">🐟</div>
+      <div class="ac-header">
+        <div class="ac-name">The Fish</div>
+        <div class="ac-sanskrit" style="color:#5070a0">Matsya — Two fish, swimming in opposite directions</div>
+        <div class="ac-planet-row">
+          <span class="ac-planet planet-lagna">Pisces Lagna 0.9°</span>
+          <span class="ac-planet planet-jupiter">Jupiter as Lagna Lord</span>
+        </div>
+      </div>
+    </div>
+    <div class="ac-what">The soul beneath all other animals</div>
+    <div class="ac-desc">
+      The fish is the deepest truth about Kunal — the water in which all other animals swim. Pisces is the ocean of consciousness itself: boundless, absorptive, ancient. Two fish pulling in opposite directions express the fundamental Piscean paradox: simultaneous depth and drift, boundless compassion and dissolution of boundary. At 0.9° — the very first degree of Pisces — this lagna barely crossed the threshold from Aquarius. The soul is on the edge between <strong>the architect (Aquarius) and the mystic (Pisces)</strong>. The fish does not distinguish where it ends and the water begins. This is both the gift and the wound.
+    </div>
+    <div class="ac-quality">
+      <span class="quality-tag">Boundless empathy</span>
+      <span class="quality-tag">Absorbs atmosphere</span>
+      <span class="quality-tag">Ancient soul</span>
+      <span class="quality-tag">Edge of two worlds</span>
+      <span class="quality-tag">Needs the deep water</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ NAKSHATRA ANIMALS ════════════════════ -->
+<div class="sec">
+  <div class="sec-title">The Nakshatra Animals — Eight Planetary Layers</div>
+  <div class="animal-grid">
+
+    <!-- TIGER — Mars in Chitra -->
+    <div class="animal-card ac-tiger">
+      <div class="ac-top">
+        <div class="ac-emoji">🐅</div>
+        <div class="ac-header">
+          <div class="ac-name">The Tiger</div>
+          <div class="ac-sanskrit" style="color:#c06040">Vyaghra · Female Tiger</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-mars">Mars in Chitra</span>
+            <span class="ac-planet" style="background:#1a0a08;color:#805030;border:1px solid #80503044">H7 · Raja Yoga</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The warrior in partnerships</div>
+      <div class="ac-desc">
+        Mars sits in Chitra nakshatra (pada 1) — <em>the brilliant one</em>, ruled by Vishwakarma, the divine architect. Its animal is the <strong>female tiger</strong>: the hunter who provides. The she-tiger hunts with precision, never wastes a movement, and is most dangerous when protecting what she values. Mars in H7 puts this tiger energy directly into partnerships and business — Kunal's strategic aggression activates in relationships, not in isolation. <strong>The tiger creates two Raja Yogas from this position</strong>, turning every partnership into a source of power.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Strategic patience</span>
+        <span class="quality-tag">Decisive in business</span>
+        <span class="quality-tag">Hunts through alliance</span>
+        <span class="quality-tag">Protective</span>
+      </div>
+    </div>
+
+    <!-- SERPENT — Ketu in Rohini -->
+    <div class="animal-card ac-serpent">
+      <div class="ac-top">
+        <div class="ac-emoji">🐍</div>
+        <div class="ac-header">
+          <div class="ac-name">The Serpent</div>
+          <div class="ac-sanskrit" style="color:#40a060">Sarpa · Male Serpent</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-ketu">Ketu in Rohini</span>
+            <span class="ac-planet" style="background:#100808;color:#705040;border:1px solid #70504044">H3 · Past Mastery</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">Ancient knowledge — coiled and waiting</div>
+      <div class="ac-desc">
+        Ketu sits in Rohini — the most fertile, sensual, creatively abundant nakshatra (ruled by the Moon, starred by Aldebaran). Rohini's animal is the <strong>male serpent</strong>: the cobra that holds still, appears asleep, and carries in its venom lifetimes of distilled knowledge. Ketu in Rohini means <em>past-life mastery of beauty, art, sensory craft, and eloquent speech</em>. These gifts come without effort — and Ketu detaches from what it already knows. <strong>Kunal creates effortlessly in certain domains, then grows mysteriously disinterested in them.</strong> The serpent does not pursue. It knows what comes to it.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Instinctive mastery</span>
+        <span class="quality-tag">Detaches from gifts</span>
+        <span class="quality-tag">Ancient memory</span>
+        <span class="quality-tag">Still and knowing</span>
+      </div>
+    </div>
+
+    <!-- LIONESS — Saturn in Dhanishtha -->
+    <div class="animal-card ac-lioness">
+      <div class="ac-top">
+        <div class="ac-emoji">🦁</div>
+        <div class="ac-header">
+          <div class="ac-name">The Lioness</div>
+          <div class="ac-sanskrit" style="color:#c09820">Simha · Female Lion</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-saturn">Saturn℞ in Dhanishtha</span>
+            <span class="ac-planet" style="background:#0e0e1a;color:#505080;border:1px solid #50508044">H12 · Private Power</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The power that works in darkness</div>
+      <div class="ac-desc">
+        Saturn sits in Dhanishtha nakshatra — <em>the most celebrated</em>, ruled by the eight Vasus (cosmic abundance), governed by Mars. Dhanishtha's animal is the <strong>female lion</strong>: the pride's true hunter. The lioness does all the work — the lion gets the credit. Saturn retrograde in Dhanishtha in H12 is the hidden engine of the chart: <strong>enormous power operating entirely out of view</strong>, for years, before anything becomes visible. Dhanishtha also means "the drum" — Saturn in this nakshatra has perfect inner rhythm. It does not rush. It does not stop.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Works unseen</span>
+        <span class="quality-tag">Perfect inner rhythm</span>
+        <span class="quality-tag">Provides for all</span>
+        <span class="quality-tag">Never rushes</span>
+      </div>
+    </div>
+
+    <!-- DEER — Rahu in Anuradha -->
+    <div class="animal-card ac-deer">
+      <div class="ac-top">
+        <div class="ac-emoji">🦌</div>
+        <div class="ac-header">
+          <div class="ac-name">The Deer</div>
+          <div class="ac-sanskrit" style="color:#9060c0">Mriga · Female Deer</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-rahu">Rahu in Anuradha</span>
+            <span class="ac-planet" style="background:#160818;color:#704090;border:1px solid #70409044">H9 · Dharma · Seeker</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The relentless spiritual seeker</div>
+      <div class="ac-desc">
+        Rahu sits in Anuradha nakshatra — <em>following Radha</em>, the nakshatra of devoted, loyal seeking. Anuradha's animal is the <strong>female deer</strong>: alert, sensing in all directions, perpetually drawn toward what she cannot fully see. The deer is never still — always lifted toward a scent on the wind. Rahu amplifies this into obsession. In H9 (dharma, philosophy, truth), this becomes <strong>the person who cannot not seek</strong>. Scorpio intensifies the search — this deer goes into the darkest forest, not the sunlit meadow. What she seeks is always one step further in.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Cannot stop seeking</span>
+        <span class="quality-tag">Alert to subtle truth</span>
+        <span class="quality-tag">Into darkness willingly</span>
+        <span class="quality-tag">Loyal to the path</span>
+      </div>
+    </div>
+
+    <!-- DOG — Moon in Ardra -->
+    <div class="animal-card ac-dog">
+      <div class="ac-top">
+        <div class="ac-emoji">🐕</div>
+        <div class="ac-header">
+          <div class="ac-name">The Dog</div>
+          <div class="ac-sanskrit" style="color:#5080b0">Shvana · Female Dog</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-moon">Moon in Ardra</span>
+            <span class="ac-planet" style="background:#0e1828;color:#406080;border:1px solid #40608044">H4 · Emotional Self</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The emotional heart — storm-weathered, loyal</div>
+      <div class="ac-desc">
+        The Moon sits in Ardra nakshatra — <em>the moist one</em>, the star of the storm god Rudra. Ardra's animal is the <strong>female dog</strong>: Shiva's companion who follows into the cremation ground without flinching. The dog is loyal beyond reason, senses what cannot be named, and loves without conditions — even through the storm. Moon in Ardra in H4 (home, mother, emotional foundation) places this storm-sensitive, deeply loyal emotional nature at the core of Kunal's inner life. <strong>He weathers great emotional intensity quietly.</strong> The grief and the joy are both felt fully. The dog does not explain why it loves. It simply does.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Profound loyalty</span>
+        <span class="quality-tag">Weathers storms</span>
+        <span class="quality-tag">Senses the unseen</span>
+        <span class="quality-tag">Loves fully</span>
+      </div>
+    </div>
+
+    <!-- BULL — Mercury exalted in Uttara Phalguni -->
+    <div class="animal-card ac-bull">
+      <div class="ac-top">
+        <div class="ac-emoji">🐂</div>
+        <div class="ac-header">
+          <div class="ac-name">The Bull</div>
+          <div class="ac-sanskrit" style="color:#40a090">Vrisha · Male Bull</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-mercury">Mercury exalted in Uttara Phalguni</span>
+            <span class="ac-planet" style="background:#081a10;color:#305050;border:1px solid #30505044">H7 · Bhadra Yoga</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The analytical precision — steady, unstoppable</div>
+      <div class="ac-desc">
+        Mercury (exalted at 4.7°) sits in Uttara Phalguni — <em>the latter reddish one</em>, the star of Aryaman (the deity of friendship, contracts, and agreements). Uttara Phalguni's animal is the <strong>male bull</strong>: the ox that ploughs the field. Not glamorous. Unimaginably powerful. Cannot be rushed. <strong>Bhadra Mahapurusha yoga arises here</strong> — the bull's energy as a great-person yoga means Kunal's intelligence is not flashy or performative. It is load-bearing. It drags insight after insight from the soil. Aryaman's domain — contracts and honourable agreements — places this bull precisely in H7 (partnerships), where Kunal's word becomes binding law.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Carries great weight</span>
+        <span class="quality-tag">Slow and certain</span>
+        <span class="quality-tag">Honourable agreements</span>
+        <span class="quality-tag">Cannot be stopped</span>
+      </div>
+    </div>
+
+    <!-- BUFFALO — Jupiter in Hasta -->
+    <div class="animal-card ac-buffalo">
+      <div class="ac-top">
+        <div class="ac-emoji">🦬</div>
+        <div class="ac-header">
+          <div class="ac-name">The Buffalo</div>
+          <div class="ac-sanskrit" style="color:#906050">Mahisha · Female Buffalo</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-jupiter">Jupiter in Hasta</span>
+            <span class="ac-planet" style="background:#181208;color:#706040;border:1px solid #70604044">H7 · Gajakesari + DKA</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">Wisdom with weight — the provider</div>
+      <div class="ac-desc">
+        Jupiter sits in Hasta nakshatra — <em>the hand</em>, the craftsman's nakshatra, ruled by the Moon and the deity Savitar (the Sun's activating power). Hasta's animal is the <strong>female buffalo</strong>: the great provider who works the land, produces abundance from sheer endurance, and protects the herd. Jupiter in Hasta carries wisdom that is <em>practical, hands-on, and deeply generous</em>. The buffalo does not philosophise about the field — she works it. In H7, <strong>this Jupiter-Buffalo brings wisdom into every partnership Kunal forms</strong>, giving and sustaining more than it takes. The Gajakesari and Dharma Karma Adhipati yogas emerge from this placement.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Provides generously</span>
+        <span class="quality-tag">Practical wisdom</span>
+        <span class="quality-tag">Endures everything</span>
+        <span class="quality-tag">Protects the herd</span>
+      </div>
+    </div>
+
+    <!-- CAT — Venus in Ashlesha -->
+    <div class="animal-card ac-cat">
+      <div class="ac-top">
+        <div class="ac-emoji">🐈</div>
+        <div class="ac-header">
+          <div class="ac-name">The Cat</div>
+          <div class="ac-sanskrit" style="color:#c070a0">Marjara · Male Cat</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-venus">Venus in Ashlesha</span>
+            <span class="ac-planet" style="background:#1a0818;color:#805070;border:1px solid #80507044">H5 · Desire · Creativity</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The hidden desire nature — self-possessed, magnetic</div>
+      <div class="ac-desc">
+        Venus sits in Ashlesha nakshatra — <em>the clinging one</em>, the serpent goddess's star, ruled by Mercury. Ashlesha's animal is the <strong>male cat</strong>: self-possessed, magnetic, indifferent to need, yet utterly captivating. The cat receives devotion without seeking it. <strong>Venus in H5 (creativity, romance, children, speculation)</strong> places this energy in the house of pleasure and self-expression. The cat-Venus is the most emotionally complex layer of Kunal's chart — desires run deep but are rarely displayed. Ashlesha brings a serpentine quality to love: coiling, intense, capable of complete detachment without warning. People find him deeply compelling; he may not fully understand why.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Self-possessed</span>
+        <span class="quality-tag">Magnetic without effort</span>
+        <span class="quality-tag">Deep hidden desires</span>
+        <span class="quality-tag">Can detach completely</span>
+      </div>
+    </div>
+
+  </div><!-- /animal-grid -->
+</div>
+
+<!-- ═══════════════════════════════ THE PORTRAIT ═════════════════════════ -->
+<div class="map-section">
+  <div class="sec-title" style="padding: 0 0 10px; margin-bottom: 24px; border-bottom: 1px solid #0f1520; color: #c9a84c; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; display: flex; align-items: center; gap: 10px;"><span style="display:block;width:3px;height:12px;background:#c9a84c;border-radius:2px;"></span>How the Animals Work Together</div>
+
+  <div class="map-card">
+    <div class="map-title">The Surface and the Depth</div>
+    <div class="map-row">
+      <div class="map-animal"><span class="map-emoji">🐟</span> Fish (Soul)</div>
+      <div class="map-arrow">→ holds →</div>
+      <div class="map-animal"><span class="map-emoji">🐘</span> Elephant (Yogas)</div>
+      <div class="map-arrow">→ moves through →</div>
+      <div class="map-animal"><span class="map-emoji">🐅</span> Tiger (Business)</div>
+    </div>
+    <div class="map-insight">
+      The Fish is always underneath — the boundless Piscean soul that the world never fully sees. The Elephant is what the world encounters — noble, intelligent, unhurried. The Tiger is what activates in high-stakes partnership and business: precise, strategic, powerful. <strong>Most people only ever see the Elephant. The Tiger appears in negotiations. The Fish surfaces only in complete trust.</strong>
+    </div>
+  </div>
+
+  <div class="map-card">
+    <div class="map-title">The Private Architecture</div>
+    <div class="map-row">
+      <div class="map-animal"><span class="map-emoji">🦁</span> Lioness (H12 Saturn)</div>
+      <div class="map-sep">+</div>
+      <div class="map-animal"><span class="map-emoji">🐍</span> Serpent (H3 Ketu)</div>
+      <div class="map-sep">+</div>
+      <div class="map-animal"><span class="map-emoji">🦌</span> Deer (H9 Rahu)</div>
+    </div>
+    <div class="map-insight">
+      These three operate entirely out of public view. <strong>The Lioness-Saturn</strong> hunts in darkness for 19 years before the results become visible. <strong>The Serpent-Ketu</strong> carries ancestral and past-life wisdom that surfaces without explanation. <strong>The Deer-Rahu</strong> runs toward the spiritual horizon — always one truth further. Together they form the inner engine: a private system of power, memory, and seeking that the external world never directly observes.
+    </div>
+  </div>
+
+  <div class="map-card">
+    <div class="map-title">The Partnership Layer</div>
+    <div class="map-row">
+      <div class="map-animal"><span class="map-emoji">🐅</span> Tiger (Mars)</div>
+      <div class="map-sep">+</div>
+      <div class="map-animal"><span class="map-emoji">🐂</span> Bull (Mercury)</div>
+      <div class="map-sep">+</div>
+      <div class="map-animal"><span class="map-emoji">🦬</span> Buffalo (Jupiter)</div>
+    </div>
+    <div class="map-insight">
+      All three H7 animals — Tiger, Bull, and Buffalo — operate in the house of partnerships and others. This is the rarest configuration in the chart: <strong>three distinct animal energies in one house</strong>, each contributing a different quality. The Tiger brings strategic aggression. The Bull brings precision and the honouring of commitments. The Buffalo brings generous, hands-on wisdom. In any partnership or collaboration, Kunal brings all three — and generates Raja Yogas from the combination.
+    </div>
+  </div>
+
+  <div class="map-card">
+    <div class="map-title">The Emotional Pair</div>
+    <div class="map-row">
+      <div class="map-animal"><span class="map-emoji">🐕</span> Dog (Moon · Heart)</div>
+      <div class="map-sep">+</div>
+      <div class="map-animal"><span class="map-emoji">🐈</span> Cat (Venus · Desire)</div>
+    </div>
+    <div class="map-insight">
+      The Dog and the Cat are the emotional paradox of the chart. <strong>The Dog (Moon in Ardra)</strong> loves unconditionally, follows into the storm, and is transparently devoted. <strong>The Cat (Venus in Ashlesha)</strong> is self-possessed, magnetically independent, and capable of total detachment. These two animals do not naturally coexist — which is exactly how Kunal's emotional life feels from the inside: <em>deep loyalty wrestling with the need for complete independence.</em> He is most himself in relationships where both are honoured.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<div class="footer">
+  Astrowise · Vedic Nakshatra Yoni System · Swiss Ephemeris · Lahiri Ayanamsha<br>
+  Kunal Agarwal · Pisces 0.9° · 10 Sep 1993 · Alwar, Rajasthan
+</div>
+
+</div>
+</body>
+</html>
