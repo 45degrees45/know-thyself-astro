@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ruhi CH — Animals of the Chart</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #080810; font-family: Georgia, serif; color: #e8e8f0; }
+  .page { max-width: 900px; margin: 0 auto; padding: 0 0 80px; }
+
+  /* ── Header ── */
+  .header {
+    background: linear-gradient(160deg, #060614 0%, #0d1020 60%, #06060e 100%);
+    padding: 52px 40px 36px; text-align: center;
+    border-bottom: 1px solid #c9a84c55;
+  }
+  .eyebrow { color: #c9a84c; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 14px; }
+  .header h1 { color: #fff; font-size: 32px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px; }
+  .header-sub { color: #50607a; font-size: 13px; margin-bottom: 20px; }
+  .header-note {
+    max-width: 560px; margin: 0 auto;
+    color: #3a4a5a; font-size: 12px; line-height: 1.8;
+    border-top: 1px solid #151525; padding-top: 18px;
+  }
+  .header-note em { color: #c9a84c; font-style: normal; }
+
+  /* ── Primary animal ── */
+  .primary-animal {
+    padding: 48px 40px;
+    display: flex; gap: 36px; align-items: center;
+    border-bottom: 1px solid #0f1520;
+    background: linear-gradient(135deg, #060612, #0a1020);
+  }
+  .pa-glyph {
+    font-size: 88px; line-height: 1; flex-shrink: 0;
+    filter: drop-shadow(0 0 18px rgba(201,168,76,0.3));
+  }
+  .pa-body { flex: 1; }
+  .pa-label { color: #c9a84c; font-size: 9px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 6px; }
+  .pa-name { color: #fff; font-size: 28px; font-weight: 700; margin-bottom: 4px; }
+  .pa-sanskrit { color: #c9a84c; font-size: 13px; font-style: italic; margin-bottom: 14px; }
+  .pa-source {
+    display: inline-block; background: #1a1408; border: 1px solid #c9a84c44;
+    color: #c9a84c; font-size: 10px; padding: 3px 10px; border-radius: 10px;
+    letter-spacing: 0.5px; margin-bottom: 14px;
+  }
+  .pa-desc { color: #50607a; font-size: 14px; line-height: 1.85; }
+  .pa-desc strong { color: #c9a84c; }
+
+  /* ── Section title ── */
+  .sec { padding: 40px 40px 0; }
+  .sec-title {
+    color: #c9a84c; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 3px; margin-bottom: 28px;
+    padding-bottom: 10px; border-bottom: 1px solid #0f1520;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sec-title::before { content: ''; display: block; width: 3px; height: 12px; background: #c9a84c; border-radius: 2px; }
+
+  /* ── Animal grid ── */
+  .animal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .animal-card {
+    background: #09090f;
+    border: 1px solid #10151e;
+    border-radius: 12px;
+    padding: 24px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .animal-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    border-radius: 12px 12px 0 0;
+  }
+  .ac-horse::before    { background: linear-gradient(90deg, #a06020, #d08030); }
+  .ac-buffalo::before  { background: linear-gradient(90deg, #502020, #804040); }
+  .ac-monkey::before   { background: linear-gradient(90deg, #205030, #309050); }
+  .ac-dog::before      { background: linear-gradient(90deg, #204060, #3060a0); }
+  .ac-lion::before     { background: linear-gradient(90deg, #c09820, #e8c030); }
+  .ac-serpent::before  { background: linear-gradient(90deg, #204020, #308040); }
+  .ac-deer::before     { background: linear-gradient(90deg, #602080, #9040c0); }
+
+  .ac-top { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+  .ac-emoji { font-size: 40px; line-height: 1; flex-shrink: 0; }
+  .ac-header { flex: 1; }
+  .ac-name { font-size: 18px; font-weight: 700; color: #d0d8e8; margin-bottom: 2px; }
+  .ac-sanskrit { font-size: 11px; font-style: italic; margin-bottom: 6px; }
+  .ac-planet-row { display: flex; gap: 6px; flex-wrap: wrap; }
+  .ac-planet {
+    font-size: 10px; padding: 2px 8px; border-radius: 8px;
+    letter-spacing: 0.5px;
+  }
+  .planet-sun      { background: #1a1208; color: #d09820; border: 1px solid #d0982044; }
+  .planet-moon     { background: #0e1828; color: #6090c0; border: 1px solid #6090c044; }
+  .planet-mars     { background: #1a0a08; color: #c04030; border: 1px solid #c0403044; }
+  .planet-mercury  { background: #081a10; color: #30a060; border: 1px solid #30a06044; }
+  .planet-jupiter  { background: #181208; color: #c09820; border: 1px solid #c0982044; }
+  .planet-venus    { background: #1a0818; color: #c060a0; border: 1px solid #c060a044; }
+  .planet-saturn   { background: #0e0e1a; color: #7080c0; border: 1px solid #7080c044; }
+  .planet-rahu     { background: #160818; color: #9050c0; border: 1px solid #9050c044; }
+  .planet-ketu     { background: #100808; color: #a06030; border: 1px solid #a0603044; }
+  .planet-lagna    { background: #0a1428; color: #c9a84c; border: 1px solid #c9a84c44; }
+
+  .ac-what { color: #2a3a4a; font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 8px; }
+  .ac-desc { color: #404a5a; font-size: 13px; line-height: 1.75; }
+  .ac-desc strong { color: #8090a0; }
+  .ac-quality {
+    margin-top: 12px; padding-top: 10px; border-top: 1px solid #101520;
+    display: flex; gap: 6px; flex-wrap: wrap;
+  }
+  .quality-tag {
+    font-size: 10px; padding: 2px 8px; border-radius: 8px;
+    background: #0d1018; color: #304050; border: 1px solid #151e28;
+  }
+
+  /* ── Predator-prey map ── */
+  .map-section { padding: 40px 40px 0; }
+  .map-card {
+    background: #09090f; border: 1px solid #10151e; border-radius: 12px;
+    padding: 28px 30px; margin-bottom: 16px;
+  }
+  .map-title { color: #c9a84c; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+  .map-row { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  .map-animal {
+    display: flex; align-items: center; gap: 6px;
+    font-size: 12px; color: #405060;
+  }
+  .map-emoji { font-size: 20px; }
+  .map-sep { color: #1a2530; font-size: 16px; }
+  .map-arrow { color: #1e2e3e; font-size: 13px; }
+  .map-insight { color: #304050; font-size: 13px; line-height: 1.75; margin-top: 14px; padding-top: 14px; border-top: 1px solid #0f1520; }
+  .map-insight strong { color: #c9a84c; }
+
+  /* ── Footer ── */
+  .footer {
+    margin-top: 60px; padding: 24px 40px;
+    border-top: 1px solid #0f1520; text-align: center;
+    color: #1e2a38; font-size: 11px; letter-spacing: 0.5px;
+  }
+
+  @media (max-width: 640px) {
+    .animal-grid { grid-template-columns: 1fr; }
+    .primary-animal { flex-direction: column; padding: 36px 20px; }
+    .pa-glyph { font-size: 64px; }
+    .sec, .map-section { padding-left: 20px; padding-right: 20px; }
+    .header { padding: 36px 20px 28px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+<div class="header">
+  <div class="eyebrow">Vedic Nakshatra Yoni System · Ruhi CH</div>
+  <h1>Animals of the Chart</h1>
+  <div class="header-sub">Sagittarius 6.5° · 3 March 2002 · Alleppey, Kerala</div>
+  <div class="header-note">
+    In Vedic astrology, each of the 27 nakshatras carries a <em>yoni</em> — a sacred animal energy. Every planet placed in a nakshatra takes on that animal's qualities. Together, these animals form a living portrait far richer than any single symbol. Ruhi's chart holds <em>seven distinct animal energies</em>, with a striking double convergence: the <em>Horse</em> appears three times, and the <em>Dog</em> appears twice — giving this chart two unmistakable primary signatures.
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ PRIMARY ANIMAL ═══════════════════════ -->
+<div class="primary-animal">
+  <div class="pa-glyph">🐎</div>
+  <div class="pa-body">
+    <div class="pa-label">Primary Symbol</div>
+    <div class="pa-name">The Horse</div>
+    <div class="pa-sanskrit">Ashva · The Divine Twin Horses of Ashwini</div>
+    <span class="pa-source">Mars exalted Ashwini H5 · Sun in Shatabhisha H3 · Sagittarius Centaur Lagna</span>
+    <div class="pa-desc">
+      Three independent sources in Ruhi's chart all point to the same animal. <strong>Mars, exalted at 7.0° Aries</strong>, sits in Ashwini nakshatra — the nakshatra symbolised by the horse's head, named for the divine physician twins (Ashwini Kumaras) who ride horses at the speed of dawn. <strong>The Sun sits in Shatabhisha</strong>, whose yoni is the female horse — the light-bearer, the healer's companion. And <strong>Sagittarius itself is the centaur</strong> — the half-human, half-horse archer who shoots toward truth from a gallop. The Horse is not metaphor here. It is the literal architecture: a chart built for speed, forward motion, healing at full charge, and a soul that was never meant to stand still.
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ LAGNA ANIMAL ════════════════════════ -->
+<div style="padding: 40px 40px 0;">
+  <div class="sec-title">The Lagna Animal — The Essential Soul</div>
+  <div class="animal-card ac-dog" style="border-radius:12px; background:#09090f; border:1px solid #10151e; padding:24px 22px; position:relative; overflow:hidden; margin-bottom:0;">
+    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#204060,#3060a0);border-radius:12px 12px 0 0;"></div>
+    <div class="ac-top">
+      <div class="ac-emoji">🐕</div>
+      <div class="ac-header">
+        <div class="ac-name">The Dog</div>
+        <div class="ac-sanskrit" style="color:#5080b0">Shvana · Nirriti's Hound — The Root-Seeker</div>
+        <div class="ac-planet-row">
+          <span class="ac-planet planet-lagna">Sagittarius Lagna 6.5°</span>
+          <span class="ac-planet planet-ketu">Mula Nakshatra · Ketu-ruled</span>
+        </div>
+      </div>
+    </div>
+    <div class="ac-what">The soul beneath all other animals</div>
+    <div class="ac-desc">
+      Sagittarius at 6.5° places the Lagna in <strong>Mula nakshatra</strong> — the nakshatra of roots, of dissolution, of going to the very origin of things. Mula means "root." Its deity is Nirriti, the goddess of destruction and un-making. Its animal is the male dog: not the domestic companion, but the dark hound who follows a scent into the underworld without hesitation. Mula's dog cannot rest in the shallows. It digs. It must find the source — of the pain, of the truth, of the deepest why. Sagittarius wants to range philosophically and freely, but <strong>Mula's dog keeps pulling the archer back to ground</strong>, insisting on roots before distances. The remarkable fact: Jupiter (Lagna lord) also carries dog energy in Ardra nakshatra — meaning Ruhi's soul-nature and her wisdom-bearer are <em>both</em> dogs. This chart has an unshakeable loyalty to truth running all the way down.
+    </div>
+    <div class="ac-quality">
+      <span class="quality-tag">Goes to the root</span>
+      <span class="quality-tag">Loyal to truth above comfort</span>
+      <span class="quality-tag">Follows the scent underground</span>
+      <span class="quality-tag">Cannot rest in the superficial</span>
+      <span class="quality-tag">Soul of the seeker</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════ NAKSHATRA ANIMALS ════════════════════ -->
+<div class="sec">
+  <div class="sec-title">The Nakshatra Animals — Nine Planetary Layers</div>
+  <div class="animal-grid">
+
+    <!-- SUN — Female Horse — Shatabhisha -->
+    <div class="animal-card ac-horse">
+      <div class="ac-top">
+        <div class="ac-emoji">🐎</div>
+        <div class="ac-header">
+          <div class="ac-name">The Horse</div>
+          <div class="ac-sanskrit" style="color:#c08040">Ashva · Female Horse</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-sun">Sun in Shatabhisha</span>
+            <span class="ac-planet" style="background:#1a1208;color:#807040;border:1px solid #80704044">H3 · Rahu-ruled</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The healer's light — the medicine-bearing mare</div>
+      <div class="ac-desc">
+        The Sun sits in Shatabhisha nakshatra — <em>the hundred healers</em>, ruled by Rahu, governed by Varuna (the deity of cosmic law and healing waters). Its yoni is the <strong>female horse</strong>: the mare who carries the medicine lamp. Where Mars (male horse, Ashwini) is the warrior-charger, this Sun-horse is the healer. Together they form the <strong>Ashwini Kumara pair</strong> — the divine physician twins who gallop at dawn, restoring what the night broke. Sun in H3 (courage, communication, creative initiative) means this solar horse expresses through bold self-expression and courageous speech. The healer who names the wound.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Carries the healing light</span>
+        <span class="quality-tag">Courageous voice</span>
+        <span class="quality-tag">Medicine in motion</span>
+        <span class="quality-tag">Names the wound</span>
+      </div>
+    </div>
+
+    <!-- MOON — Male Buffalo — Swati -->
+    <div class="animal-card ac-buffalo">
+      <div class="ac-top">
+        <div class="ac-emoji">🦬</div>
+        <div class="ac-header">
+          <div class="ac-name">The Buffalo</div>
+          <div class="ac-sanskrit" style="color:#906050">Mahisha · Male Buffalo</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-moon">Moon in Swati</span>
+            <span class="ac-planet" style="background:#0e1828;color:#406080;border:1px solid #40608044">H11 · Rahu-ruled</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The wind-buffalo — carries weight alone</div>
+      <div class="ac-desc">
+        The Moon sits in Swati nakshatra — the nakshatra of the wind god Vayu, whose symbol is a young sapling bending without breaking. Swati's yoni is the <strong>male buffalo</strong>: the great beast who walks into the gale without flinching. Kemadruma Yoga (Moon flanked by empty houses) means this buffalo walks largely alone through the social and emotional world. But alone does not mean weak. <strong>The buffalo carries extraordinary weight across open terrain that others cannot endure.</strong> Moon in H11 (gains, aspirations, social belonging) — this wind-buffalo crosses the social plain with endurance, bending through storms of belonging and isolation, never breaking.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Walks into the gale</span>
+        <span class="quality-tag">Solitary endurance</span>
+        <span class="quality-tag">Bends without breaking</span>
+        <span class="quality-tag">Wind-born independence</span>
+      </div>
+    </div>
+
+    <!-- MARS — Male Horse — Ashwini (EXALTED) -->
+    <div class="animal-card ac-horse">
+      <div class="ac-top">
+        <div class="ac-emoji">🐎</div>
+        <div class="ac-header">
+          <div class="ac-name">The Stallion</div>
+          <div class="ac-sanskrit" style="color:#c08040">Ashva · Male Horse · Exalted</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-mars">Mars exalted Ashwini</span>
+            <span class="ac-planet" style="background:#1a0a08;color:#905040;border:1px solid #90504044">H5 · Peak Power</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The warrior-healer — the chart's most powerful force</div>
+      <div class="ac-desc">
+        Mars exalted at 7.0° Aries in Ashwini — the <strong>male horse at absolute peak</strong>. Ashwini is Mars's deepest natural home: the nakshatra named for horse-headed divine twins who travel at the speed of light and heal whatever they touch. The exalted stallion in H5 (creativity, passion, intelligence, children, risk) gallops through creative terrain at full charge. This horse does not tire. It does not stop for pain — it runs <em>through</em> it. <strong>This is the engine of the entire chart.</strong> Every other animal draws energy from this Mars-Horse's fire. The healer who charges forward first and asks questions after.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Charges before thinking</span>
+        <span class="quality-tag">Heals while moving</span>
+        <span class="quality-tag">Unstoppable momentum</span>
+        <span class="quality-tag">Runs through pain</span>
+      </div>
+    </div>
+
+    <!-- MERCURY — Male Monkey — Shravana -->
+    <div class="animal-card ac-monkey">
+      <div class="ac-top">
+        <div class="ac-emoji">🐒</div>
+        <div class="ac-header">
+          <div class="ac-name">The Monkey</div>
+          <div class="ac-sanskrit" style="color:#40a060">Markata · Male Monkey</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-mercury">Mercury in Shravana</span>
+            <span class="ac-planet" style="background:#081a10;color:#305050;border:1px solid #30505044">H2 · Moon-ruled</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The listening intelligence — hears before it speaks</div>
+      <div class="ac-desc">
+        Mercury sits in Shravana nakshatra — <em>the listener</em>, the nakshatra of Vishnu's three steps, ruled by the Moon. Shravana's deepest teaching: <em>hear before you say</em>. Its yoni is the <strong>male monkey</strong>: quick, adaptive, alert, swinging between ideas with fluid intelligence — but grounded here in Vishnu's ordered wisdom. This is not the mischievous monkey. It is the attentive student who collects everything first and speaks last. <strong>Mercury in H2 (speech, accumulated knowledge, family, the face)</strong> places this listening monkey in the house of voice itself. Ruhi absorbs far more than she reveals — and when she speaks, the precision surprises people.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Listens before speaking</span>
+        <span class="quality-tag">Absorbs everything</span>
+        <span class="quality-tag">Surprising precision</span>
+        <span class="quality-tag">Adaptive intelligence</span>
+      </div>
+    </div>
+
+    <!-- JUPITER — Female Dog — Ardra -->
+    <div class="animal-card ac-dog">
+      <div class="ac-top">
+        <div class="ac-emoji">🐕</div>
+        <div class="ac-header">
+          <div class="ac-name">The Storm-Dog</div>
+          <div class="ac-sanskrit" style="color:#5080b0">Shvana · Female Dog</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-jupiter">Jupiter in Ardra</span>
+            <span class="ac-planet" style="background:#181208;color:#706040;border:1px solid #70604044">H7 · Rahu-ruled · Lagna Lord</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">Wisdom through storms — loyal to what matters</div>
+      <div class="ac-desc">
+        Jupiter — Ruhi's Lagna lord, the planet that holds her soul — sits in Ardra nakshatra, whose deity is Rudra (the storm god) and whose animal is the <strong>female dog</strong>: Shiva's faithful companion who follows him into the cremation ground without flinching. Ardra's symbol is the teardrop — the storm that breaks something open and makes it real. <strong>Jupiter in H7 means Ruhi's deepest wisdom emerges through relationship</strong>, and specifically through relationships that go through storms. The dog teaches that love is not shown in good weather — it is shown in the willingness to stay when the sky breaks. Both Lagna and Lagna lord carry dog energy: loyalty to truth is not a style. It is the soul.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Stays through the storm</span>
+        <span class="quality-tag">Wisdom forged in grief</span>
+        <span class="quality-tag">Loyal past reason</span>
+        <span class="quality-tag">Follows into darkness</span>
+      </div>
+    </div>
+
+    <!-- VENUS — Male Lion — Purva Bhadrapada -->
+    <div class="animal-card ac-lion">
+      <div class="ac-top">
+        <div class="ac-emoji">🦁</div>
+        <div class="ac-header">
+          <div class="ac-name">The Lion</div>
+          <div class="ac-sanskrit" style="color:#c09820">Simha · Male Lion</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-venus">Venus in Purva Bhadrapada</span>
+            <span class="ac-planet" style="background:#1a0818;color:#805070;border:1px solid #80507044">H3 · Jupiter-ruled</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The philosophical fire-lion — charismatic in its domain</div>
+      <div class="ac-desc">
+        Venus sits in Purva Bhadrapada nakshatra — <em>the former lucky feet</em>, ruled by Jupiter, with the deity Aja Ekapada (the one-footed fire-serpent). Its symbol is the sword. Its animal is the <strong>male lion</strong>: not the crowd-performer, but the solitary, philosophical lion who has looked into the abyss and roared anyway. Purva Bhadrapada is the nakshatra of transformation through fire and extreme devotion. <strong>Venus in H3 (creative self-expression, courage, communication)</strong> places this lion-energy in the house of voice and creative output. When Ruhi speaks in her element — about what she knows and loves — she does so with the lion's natural authority. People listen. She may not notice how much.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Natural authority</span>
+        <span class="quality-tag">Philosophical fire</span>
+        <span class="quality-tag">Charismatic in domain</span>
+        <span class="quality-tag">Transformed by intensity</span>
+      </div>
+    </div>
+
+    <!-- SATURN — Male Serpent — Rohini -->
+    <div class="animal-card ac-serpent">
+      <div class="ac-top">
+        <div class="ac-emoji">🐍</div>
+        <div class="ac-header">
+          <div class="ac-name">The Serpent</div>
+          <div class="ac-sanskrit" style="color:#40a060">Sarpa · Male Serpent</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-saturn">Saturn in Rohini</span>
+            <span class="ac-planet" style="background:#0e0e1a;color:#505080;border:1px solid #50508044">H6 · Moon-ruled</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">Ancient patience — coiled in the house of obstacles</div>
+      <div class="ac-desc">
+        Saturn sits in Rohini nakshatra — the most fertile, abundant, and creatively rich nakshatra in the zodiac (ruled by the Moon, starring Aldebaran). Rohini's yoni is the <strong>male serpent</strong>: the cobra who holds still, appears dormant, and carries lifetimes of distilled knowledge in its stillness. Saturn (the planet of discipline and restriction) in Rohini channels this abundance through the lens of earned endurance. <strong>In H6 (obstacles, health, service, enemies),</strong> the serpent is the guardian of the threshold — patient, accumulating power quietly, striking with absolute precision only when the moment is exact. Every obstacle Ruhi faces wraps the serpent another coil tighter. The venom is wisdom, collected slowly over years.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Ancient patience</span>
+        <span class="quality-tag">Strikes precisely</span>
+        <span class="quality-tag">Wisdom as venom</span>
+        <span class="quality-tag">Obstacles as teachers</span>
+      </div>
+    </div>
+
+    <!-- RAHU — Female Serpent — Mrigashira -->
+    <div class="animal-card ac-serpent">
+      <div class="ac-top">
+        <div class="ac-emoji">🐍</div>
+        <div class="ac-header">
+          <div class="ac-name">The Searching Serpent</div>
+          <div class="ac-sanskrit" style="color:#40a060">Sarpa · Female Serpent</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-rahu">Rahu in Mrigashira</span>
+            <span class="ac-planet" style="background:#160818;color:#704090;border:1px solid #70409044">H6 · Mars-ruled · Serpent Pair</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The seeker who follows the deer into the dark forest</div>
+      <div class="ac-desc">
+        Rahu sits in Mrigashira nakshatra — <em>the deer's head</em>, the nakshatra of Soma (the Moon) and the eternal search. Mrigashira's symbol is the deer's head: always sniffing the wind, drawn forward by a scent just out of reach. Its yoni is the <strong>female serpent</strong>: the searching one who follows the deer's trail through darkness. <strong>Both Saturn and Rahu sit in H6 — two serpents together in the same house.</strong> This is the rarest pairing in Ruhi's chart. The male serpent (Saturn) holds still in patient guardianship. The female serpent (Rahu) perpetually searches — hunting for the solution, the remedy, the way through the obstacle. Together they make the sixth house a field of profound, serpentine power.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Follows the unseen scent</span>
+        <span class="quality-tag">Perpetual seeker</span>
+        <span class="quality-tag">Hunts through darkness</span>
+        <span class="quality-tag">Serpent-pair power in H6</span>
+      </div>
+    </div>
+
+    <!-- KETU — Male Deer — Jyeshtha -->
+    <div class="animal-card ac-deer">
+      <div class="ac-top">
+        <div class="ac-emoji">🦌</div>
+        <div class="ac-header">
+          <div class="ac-name">The Deer</div>
+          <div class="ac-sanskrit" style="color:#9060c0">Mriga · Male Deer</div>
+          <div class="ac-planet-row">
+            <span class="ac-planet planet-ketu">Ketu in Jyeshtha</span>
+            <span class="ac-planet" style="background:#100808;color:#705040;border:1px solid #70504044">H12 · Mercury-ruled · Past Life</span>
+          </div>
+        </div>
+      </div>
+      <div class="ac-what">The eldest — dignity dissolving into liberation</div>
+      <div class="ac-desc">
+        Ketu sits in Jyeshtha nakshatra — <em>the eldest</em>, the nakshatra of Indra (king of the gods), its symbol the circular amulet or the royal umbrella. Its yoni is the <strong>male deer</strong>: the stag who carries the amulet of authority. Ketu dissolves what it touches. In H12 (liberation, hidden realms, moksha, loss), Ketu releases the past-life memories stored in Jyeshtha. <strong>The deer of previous lives held position, sovereignty, leadership</strong> — was the eldest, the chief, the one others deferred to. That authority now feeds into the spiritual reservoir rather than the material world. Ruhi carries ancestral dignity she may sense as a vague feeling of having once known more, led more, been more. The deer remembers. Ketu lets go.
+      </div>
+      <div class="ac-quality">
+        <span class="quality-tag">Ancestral authority</span>
+        <span class="quality-tag">Past-life leadership</span>
+        <span class="quality-tag">Releases what is held</span>
+        <span class="quality-tag">Dignity dissolving to grace</span>
+      </div>
+    </div>
+
+  </div><!-- /animal-grid -->
+</div>
+
+<!-- ═══════════════════════════════ HOW THEY WORK TOGETHER ══════════════ -->
+<div class="map-section">
+  <div class="sec-title" style="padding: 0 0 10px; margin-bottom: 24px; border-bottom: 1px solid #0f1520; color: #c9a84c; font-size: 10px; text-transform: uppercase; letter-spacing: 3px; display: flex; align-items: center; gap: 10px;"><span style="display:block;width:3px;height:12px;background:#c9a84c;border-radius:2px;"></span>How the Animals Work Together</div>
+
+  <div class="map-card">
+    <div class="map-title">The Horse Pair — The Ashwini Kumara Convergence</div>
+    <div class="map-row">
+      <div class="map-animal"><span class="map-emoji">🐎</span> Stallion (Mars H5)</div>
+      <div class="map-sep">+</div>
+      <div class="map-animal"><span class="map-emoji">🐎</span> Mare (Sun H3)</div>
+      <div class="map-arrow">→ through →</div>
+      <div class="map-animal"><span class="map-emoji">🏹</span> Sagittarius Centaur (Lagna)</div>
+    </div>
+    <div class="map-insight">
+      The Ashwini Kumaras are the divine physician twin-horses of Vedic myth — the healers who gallop at the speed of dawn, restoring what the night broke. In Ruhi's chart, <strong>the male horse (Mars exalted, H5) and the female horse (Sun, H3) recreate this divine pair</strong>. The stallion charges through creative terrain, initiating and building. The mare carries the healing light of a hundred physicians. Sagittarius holds both as the centaur — the being who is already the horse-human union. This is the most powerful animal combination possible: the sacred twin-horse, reconstituted across three placements.
+    </div>
+  </div>
+
+  <div class="map-card">
+    <div class="map-title">The Double Dog — The Spine of Truth</div>
+    <div class="map-row">
+      <div class="map-animal"><span class="map-emoji">🐕</span> Mula Dog (Lagna · Soul)</div>
+      <div class="map-sep">+</div>
+      <div class="map-animal"><span class="map-emoji">🐕</span> Ardra Dog (Jupiter · Wisdom)</div>
+    </div>
+    <div class="map-insight">
+      Both the <strong>soul-nature (Lagna in Mula)</strong> and the <strong>wisdom-bearer (Jupiter, Lagna lord, in Ardra)</strong> carry dog energy. The Mula dog digs to roots, refuses the superficial, follows the truth underground. The Ardra dog endures the storm and stays loyal past the breaking point. Together they create an invisible spine running through the entire chart: <strong>an uncompromising orientation toward depth and authenticity.</strong> This is not the most visible thing about Ruhi — but it is the most load-bearing. When everything else shifts, the dog remains loyal to what it knows is true.
+    </div>
+  </div>
+
+  <div class="map-card">
+    <div class="map-title">The Serpent Pair — Two Guardians of the Sixth House</div>
+    <div class="map-row">
+      <div class="map-animal"><span class="map-emoji">🐍</span> Saturn Serpent (male · Rohini · patient)</div>
+      <div class="map-sep">+</div>
+      <div class="map-animal"><span class="map-emoji">🐍</span> Rahu Serpent (female · Mrigashira · searching)</div>
+    </div>
+    <div class="map-insight">
+      Both Saturn and Rahu sit in Taurus H6 — <strong>two serpents coiled together in the house of obstacles, health, service, and enemies.</strong> The male serpent (Saturn in Rohini) holds still: ancient patience, perfect timing, strikes only when ready. The female serpent (Rahu in Mrigashira) perpetually moves: following the scent of the solution, hunting the remedy. Together they make H6 a place of extraordinary, accumulating power. Ruhi's challenges are not random — they are the field where these two serpents slowly gather their wisdom. The obstacles are the practice. The service is the training. The venom is stored for years before it is needed.
+    </div>
+  </div>
+
+  <div class="map-card">
+    <div class="map-title">The Supporting Cast — Four Distinct Textures</div>
+    <div class="map-row">
+      <div class="map-animal"><span class="map-emoji">🦬</span> Buffalo (Moon H11)</div>
+      <div class="map-sep">·</div>
+      <div class="map-animal"><span class="map-emoji">🦁</span> Lion (Venus H3)</div>
+      <div class="map-sep">·</div>
+      <div class="map-animal"><span class="map-emoji">🐒</span> Monkey (Mercury H2)</div>
+      <div class="map-sep">·</div>
+      <div class="map-animal"><span class="map-emoji">🦌</span> Deer (Ketu H12)</div>
+    </div>
+    <div class="map-insight">
+      These four color the chart without dominating it. <strong>The Buffalo Moon</strong> endures the social world alone, bending but not breaking through wind and isolation. <strong>The Lion Venus</strong> brings quiet authority and philosophical passion to creative expression — people listen when she speaks about what she loves. <strong>The Monkey Mercury</strong> listens more than it lets on, then speaks with surprising precision in H2 (the house of voice). <strong>The Deer Ketu</strong> carries ancestral dignity in H12 — the past-life stag who held authority and now lets it dissolve into spiritual depth. Each operates in its own domain. None overwhelms. Together they add color, nuance, and texture to the Horse and Dog who run the chart.
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+<div class="footer">
+  Astrowise · Vedic Nakshatra Yoni System · Swiss Ephemeris · Lahiri Ayanamsha<br>
+  Ruhi CH · Sagittarius 6.5° · 3 Mar 2002 · Alleppey, Kerala
+</div>
+
+</div>
+</body>
+</html>
