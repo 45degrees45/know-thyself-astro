@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lalu Varghese — Vedic Health Analysis 2023–2030</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:      #090C12;
+  --bg2:     #0E1420;
+  --bg3:     #121C28;
+
+  --teal:    #3EC9C4;
+  --teal-lt: #6ADDD9;
+  --teal-bg: rgba(62,201,196,0.07);
+  --teal-bd: rgba(62,201,196,0.22);
+
+  --gold:    #C9A84C;
+  --gold-lt: #E8C87A;
+  --gold-bg: rgba(201,168,76,0.07);
+  --gold-bd: rgba(201,168,76,0.22);
+
+  --u:       #5AC48A;
+  --u-bg:    rgba(90,196,138,0.07);
+  --u-bd:    rgba(90,196,138,0.28);
+
+  --sci:     #5B8FD4;
+  --sci-bg:  rgba(91,143,212,0.07);
+  --sci-bd:  rgba(91,143,212,0.28);
+
+  --warn:    #D4883A;
+  --warn-bg: rgba(212,136,58,0.09);
+  --warn-bd: rgba(212,136,58,0.28);
+
+  --crit:    #C85038;
+  --crit-bg: rgba(200,80,56,0.10);
+  --crit-bd: rgba(200,80,56,0.32);
+
+  --text:    #E2E8EC;
+  --text2:   rgba(226,232,236,0.62);
+  --text3:   rgba(226,232,236,0.36);
+  --rule:    rgba(62,201,196,0.13);
+
+  --sat:   #6A90B8;
+  --moon:  #7BA8C4;
+  --mars:  #C85038;
+  --rahu:  #8B7EC8;
+  --jup:   #C9A84C;
+  --sun:   #D4883A;
+  --ketu:  #C8A0DC;
+  --merc:  #5AC48A;
+  --venus: #D4748C;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { font-size: 18px; background: var(--bg); }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'EB Garamond', Georgia, serif;
+  line-height: 1.65;
+}
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  background-size: 200px; pointer-events: none; z-index: 0; opacity: 0.6;
+}
+body::after {
+  content: '';
+  position: fixed; top: -20%; left: -10%;
+  width: 60%; height: 60%;
+  background: radial-gradient(ellipse, rgba(180,60,80,0.04) 0%, transparent 70%);
+  pointer-events: none; z-index: 0;
+}
+
+.page { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 48px 24px 80px; }
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 56px 32px 48px;
+  border: 1px solid rgba(180,60,80,0.25);
+  border-radius: 20px;
+  background: linear-gradient(160deg, rgba(180,60,80,0.05), rgba(9,12,18,0) 60%);
+  margin-bottom: 40px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '🐍';
+  position: absolute; top: 16px; right: 24px;
+  font-size: 3rem; opacity: 0.12; pointer-events: none;
+}
+.hero-label {
+  font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: #e87a8a; margin-bottom: 14px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 5vw, 2.9rem);
+  font-weight: 700; color: var(--text);
+  letter-spacing: 0.02em; margin-bottom: 6px;
+}
+.hero-sub {
+  font-style: italic; font-size: 1.1rem;
+  color: var(--text2); margin-bottom: 28px;
+}
+.hero-chips { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+.chip {
+  padding: 5px 14px; border-radius: 20px;
+  font-size: 0.82rem; letter-spacing: 0.06em; border: 1px solid;
+}
+.chip-scorp { background: rgba(180,60,80,0.1); border-color: rgba(180,60,80,0.3); color: #e87a8a; }
+.chip-gold  { background: var(--gold-bg); border-color: var(--gold-bd); color: var(--gold-lt); }
+.chip-warn  { background: var(--warn-bg); border-color: var(--warn-bd); color: var(--warn); }
+.chip-crit  { background: var(--crit-bg); border-color: var(--crit-bd); color: #e87a8a; }
+.chip-sat   { background: rgba(106,144,184,0.1); border-color: rgba(106,144,184,0.3); color: var(--sat); }
+
+/* SECTION HEADER */
+.sec-head {
+  display: flex; align-items: baseline; gap: 14px;
+  margin: 48px 0 20px;
+}
+.sec-num {
+  font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--teal); white-space: nowrap;
+}
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 600; color: var(--text); letter-spacing: 0.01em;
+}
+.sec-rule { flex: 1; height: 1px; background: var(--rule); }
+
+/* CONSTITUTION */
+.constitution {
+  background: var(--bg2); border: 1px solid var(--teal-bd);
+  border-radius: 16px; padding: 28px 30px; margin-bottom: 24px;
+}
+.constitution p { color: var(--text2); font-size: 1.05rem; line-height: 1.7; margin-bottom: 12px; }
+.constitution p:last-child { margin-bottom: 0; }
+.constitution strong { color: var(--teal-lt); font-weight: 500; }
+
+/* BODY SYSTEMS GRID */
+.systems-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px; margin-bottom: 8px;
+}
+.system-card {
+  background: var(--bg2); border: 1px solid;
+  border-radius: 14px; padding: 20px 22px;
+  position: relative; overflow: hidden;
+}
+.system-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%; border-radius: 14px 0 0 14px;
+}
+.system-card.ok    { border-color: rgba(90,196,138,0.25); }
+.system-card.ok::before { background: var(--u); }
+.system-card.med   { border-color: rgba(201,168,76,0.25); }
+.system-card.med::before { background: var(--gold); }
+.system-card.watch { border-color: rgba(212,136,58,0.3); }
+.system-card.watch::before { background: var(--warn); }
+.system-card.crit  { border-color: rgba(200,80,56,0.35); }
+.system-card.crit::before { background: var(--crit); }
+
+.system-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem; font-weight: 600;
+  letter-spacing: 0.03em; margin-bottom: 6px;
+}
+.system-card.ok    .system-name { color: var(--u); }
+.system-card.med   .system-name { color: var(--gold-lt); }
+.system-card.watch .system-name { color: var(--warn); }
+.system-card.crit  .system-name { color: #e87a8a; }
+
+.system-planet {
+  font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--text3); margin-bottom: 8px;
+}
+.system-desc { font-size: 0.9rem; color: var(--text2); line-height: 1.55; }
+.status-badge {
+  display: inline-block; font-size: 0.68rem; letter-spacing: 0.14em;
+  text-transform: uppercase; padding: 2px 9px; border-radius: 10px; margin-bottom: 8px;
+}
+.badge-strong   { background: rgba(90,196,138,0.15); color: var(--u); }
+.badge-moderate { background: rgba(201,168,76,0.15); color: var(--gold-lt); }
+.badge-watch    { background: rgba(212,136,58,0.15); color: var(--warn); }
+.badge-crit     { background: rgba(200,80,56,0.15); color: #e87a8a; }
+
+/* DASHA TIMELINE */
+.dasha-timeline { display: flex; flex-direction: column; gap: 0; }
+.dasha-row {
+  display: grid; grid-template-columns: 130px 1fr;
+  gap: 0; position: relative;
+}
+.dasha-row::before {
+  content: ''; position: absolute; left: 12px;
+  top: 28px; bottom: -4px; width: 1px; background: var(--rule);
+}
+.dasha-row:last-child::before { display: none; }
+.dasha-time {
+  font-size: 0.8rem; color: var(--text3);
+  padding: 18px 0 0 28px; position: relative;
+}
+.dasha-time::before {
+  content: ''; position: absolute; left: 8px; top: 24px;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--bg3); border: 2px solid var(--teal-bd);
+}
+.dasha-row.active .dasha-time::before {
+  border-color: var(--teal); background: var(--teal);
+  box-shadow: 0 0 10px rgba(62,201,196,0.4);
+}
+.dasha-row.critical .dasha-time::before {
+  border-color: #e87a8a; background: rgba(180,60,80,0.4);
+  box-shadow: 0 0 10px rgba(180,60,80,0.4);
+}
+.dasha-row.relief .dasha-time::before {
+  border-color: var(--u); background: var(--u);
+  box-shadow: 0 0 10px rgba(90,196,138,0.4);
+}
+.dasha-content { padding: 14px 0 22px 16px; }
+.dasha-period {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem; font-weight: 600; color: var(--text); margin-bottom: 5px;
+}
+.dasha-row.active   .dasha-period { color: var(--teal-lt); }
+.dasha-row.critical .dasha-period { color: #e87a8a; }
+.dasha-row.relief   .dasha-period { color: var(--u); }
+.dasha-health { font-size: 0.9rem; color: var(--text2); line-height: 1.6; }
+.dasha-health ul { padding-left: 18px; margin-top: 6px; }
+.dasha-health li { margin-bottom: 4px; }
+.dasha-tag {
+  display: inline-block; font-size: 0.7rem; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 2px 8px; border-radius: 8px;
+  margin-right: 6px; margin-bottom: 6px;
+}
+.tag-now  { background: rgba(62,201,196,0.15); color: var(--teal-lt); }
+.tag-good { background: rgba(90,196,138,0.12); color: var(--u); }
+.tag-warn { background: rgba(212,136,58,0.12); color: var(--warn); }
+.tag-crit { background: rgba(200,80,56,0.12); color: #e87a8a; }
+.tag-mid  { background: rgba(201,168,76,0.12); color: var(--gold-lt); }
+.tag-relief { background: rgba(90,196,138,0.12); color: var(--u); }
+
+/* VITALITY BARS */
+.vitality-section {
+  background: var(--bg2); border: 1px solid var(--teal-bd);
+  border-radius: 16px; padding: 28px 30px;
+}
+.vitality-row { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.vitality-row:last-child { margin-bottom: 0; }
+.vitality-label { width: 170px; flex-shrink: 0; font-size: 0.9rem; color: var(--text2); }
+.vitality-bar-wrap {
+  flex: 1; height: 8px;
+  background: rgba(255,255,255,0.07); border-radius: 8px; overflow: hidden;
+}
+.vitality-bar { height: 100%; border-radius: 8px; }
+.bar-strong { background: linear-gradient(90deg, #3EC9C4, #5AC48A); }
+.bar-good   { background: linear-gradient(90deg, #5AC48A, #C9A84C); }
+.bar-med    { background: linear-gradient(90deg, #C9A84C, #D4883A); }
+.bar-low    { background: linear-gradient(90deg, #D4883A, #C85038); }
+.vitality-pct { width: 36px; text-align: right; font-size: 0.85rem; color: var(--text3); }
+
+/* ALERT BANNER */
+.alert-banner {
+  border: 1px solid; border-radius: 12px;
+  padding: 16px 22px; display: flex; gap: 14px;
+  align-items: flex-start; margin-bottom: 18px;
+}
+.alert-banner.warn { background: var(--warn-bg); border-color: var(--warn-bd); }
+.alert-banner.crit { background: var(--crit-bg); border-color: var(--crit-bd); }
+.alert-banner.good { background: var(--u-bg); border-color: var(--u-bd); }
+.alert-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+.alert-text { font-size: 0.92rem; color: var(--text2); line-height: 1.55; }
+.alert-text strong { font-weight: 500; }
+.alert-banner.warn .alert-text strong { color: var(--warn); }
+.alert-banner.crit .alert-text strong { color: #e87a8a; }
+.alert-banner.good .alert-text strong { color: var(--u); }
+
+/* STRENGTH LIST */
+.strength-list { display: flex; flex-direction: column; gap: 12px; }
+.strength-item {
+  background: var(--bg2); border: 1px solid rgba(90,196,138,0.22);
+  border-radius: 12px; padding: 16px 20px;
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.strength-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; opacity: 0.8; }
+.strength-text { font-size: 0.92rem; color: var(--text2); line-height: 1.55; }
+.strength-text strong { color: #7ADAA4; font-weight: 500; }
+
+/* PLANET TABLE */
+.planet-table { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
+.planet-table th {
+  font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text3); padding: 10px 14px; text-align: left;
+  border-bottom: 1px solid var(--rule);
+}
+.planet-table td {
+  padding: 14px 14px; font-size: 0.92rem; color: var(--text2);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  vertical-align: top; line-height: 1.5;
+}
+.planet-table tr:last-child td { border-bottom: none; }
+.planet-name-cell { display: flex; align-items: center; font-weight: 500; color: var(--text); }
+.planet-dot {
+  display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+  margin-right: 7px; flex-shrink: 0; vertical-align: middle; position: relative; top: -1px;
+}
+
+/* REMEDY TIERS */
+.remedy-tier {
+  border: 1px solid; border-radius: 16px;
+  margin-bottom: 18px; overflow: hidden;
+}
+.remedy-tier.universal { border-color: var(--u-bd); }
+.remedy-tier.vedic     { border-color: var(--gold-bd); }
+.remedy-tier.neuro     { border-color: var(--sci-bd); }
+.tier-head { padding: 16px 22px; display: flex; align-items: center; gap: 12px; }
+.remedy-tier.universal .tier-head { background: var(--u-bg); }
+.remedy-tier.vedic     .tier-head { background: var(--gold-bg); }
+.remedy-tier.neuro     .tier-head { background: var(--sci-bg); }
+.tier-dot { font-size: 1.1rem; flex-shrink: 0; }
+.tier-label-small {
+  font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase;
+}
+.remedy-tier.universal .tier-label-small { color: var(--u); }
+.remedy-tier.vedic     .tier-label-small { color: var(--gold-lt); }
+.remedy-tier.neuro     .tier-label-small { color: var(--sci); }
+.tier-title-text {
+  font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 600;
+}
+.remedy-tier.universal .tier-title-text { color: #7ADAA4; }
+.remedy-tier.vedic     .tier-title-text { color: var(--gold-lt); }
+.remedy-tier.neuro     .tier-title-text { color: #7BAEE8; }
+.tier-body { padding: 18px 22px 20px; }
+.remedy-item { display: flex; gap: 12px; margin-bottom: 13px; align-items: flex-start; }
+.remedy-item:last-child { margin-bottom: 0; }
+.remedy-icon { font-size: 1rem; flex-shrink: 0; margin-top: 2px; opacity: 0.8; }
+.remedy-text { font-size: 0.92rem; color: var(--text2); line-height: 1.55; }
+.remedy-text strong { color: var(--text); font-weight: 500; }
+.neuro-split { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; }
+.neuro-col {
+  padding: 14px 16px;
+  border-right: 1px solid var(--sci-bd);
+}
+.neuro-col:last-child { border-right: none; }
+.neuro-col-head {
+  font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: #7BAEE8; margin-bottom: 12px; padding-bottom: 8px;
+  border-bottom: 1px solid var(--sci-bd);
+}
+.neuro-item-r {
+  font-size: 0.88rem; color: var(--text2); line-height: 1.5;
+  margin-bottom: 9px; padding-left: 10px; position: relative;
+}
+.neuro-item-r::before {
+  content: '◈'; position: absolute; left: 0; color: var(--sci);
+  font-size: 0.55rem; top: 5px;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 64px; padding-top: 24px;
+  border-top: 1px solid var(--rule);
+  text-align: center; font-size: 0.78rem;
+  color: var(--text3); letter-spacing: 0.08em; line-height: 2;
+}
+
+@media (max-width: 600px) {
+  .neuro-split { grid-template-columns: 1fr; }
+  .neuro-col { border-right: none; border-bottom: 1px solid var(--sci-bd); }
+  .neuro-col:last-child { border-bottom: none; }
+  .systems-grid { grid-template-columns: 1fr; }
+  .vitality-label { width: 130px; font-size: 0.82rem; }
+  .dasha-row { grid-template-columns: 100px 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-label">Astrowise · Vedic Health Analysis · June 2026</div>
+    <h1>Lalu Varghese</h1>
+    <div class="hero-sub">Health &amp; Vitality · 2023 to 2030</div>
+    <div class="hero-chips">
+      <span class="chip chip-scorp">♏ Scorpio Lagna 16.4° · Anuradha nakshatra</span>
+      <span class="chip chip-sat">Saturn Mahadasha · 19-year cycle</span>
+      <span class="chip chip-warn">Papa Kartari Yoga on Lagna</span>
+      <span class="chip chip-gold">Viparita Raja Yoga — resilience under pressure</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: CONSTITUTION -->
+  <div class="sec-head">
+    <span class="sec-num">01</span>
+    <span class="sec-title">Health Constitution</span>
+    <span class="sec-rule"></span>
+  </div>
+
+  <div class="constitution">
+    <p>
+      Scorpio Lagna confers a body that is <strong>resilient, regenerative, and deeply enduring</strong> — Scorpio's trademark is the capacity to withstand and survive what would break others. The Lagna lord Mars in Aquarius (H4) moves the vital fire away from the body into the chest and nervous system, making cardiovascular and respiratory health a lifelong area of attention. The most structurally significant pattern is the <strong>Papa Kartari Yoga</strong>: Saturn retrograde in H2 and Rahu retrograde in H12 form a scissors around the Lagna — a chronic, background pressure on the physical body that does not produce dramatic crises but creates a sustained undertow of fatigue, bone-joint stress, and systemic tension over time.
+    </p>
+    <p>
+      Saturn in H2 (Sagittarius, Mula nakshatra, retrograde) is the single most health-defining placement: Mula is the "uprooting" nakshatra, ruled by Ketu, associated with root-level dissolution. Saturn here governs <strong>bones, teeth, blood sugar metabolism, and right eye</strong>. Retrograde intensifies internalization — issues deepen before they surface. Mercury and Ketu conjunct in H6 (Aries) signal both past-life gifts in healing (she chose medicine) and a tendency toward <strong>nervous-system sensitivity and hard-to-diagnose conditions</strong>. Moon in Taurus H7 ties emotional health directly to <strong>thyroid function, weight, and digestion</strong> — emotional turbulence in this chart registers first in the gut and endocrine system.
+    </p>
+  </div>
+
+  <!-- BODY SYSTEMS GRID -->
+  <div class="systems-grid">
+    <div class="system-card watch">
+      <div class="status-badge badge-watch">Monitor</div>
+      <div class="system-name">Bones &amp; Joints</div>
+      <div class="system-planet">Saturn H2 · Mula nakshatra (R)</div>
+      <div class="system-desc">Saturn retrograde in the root-destructor nakshatra. Bone density loss, dental fragility, and joint calcification accumulate quietly. Age 65–72 is the highest-risk window.</div>
+    </div>
+    <div class="system-card watch">
+      <div class="status-badge badge-watch">Monitor</div>
+      <div class="system-name">Cardiovascular</div>
+      <div class="system-planet">Mars (Lagna lord) · H4 Aquarius</div>
+      <div class="system-desc">Mars rules the Lagna but sits in H4 (chest). Aquarius governs circulation. Under Saturn pressure, blocked Mars energy = blood pressure elevation, cardiac strain.</div>
+    </div>
+    <div class="system-card watch">
+      <div class="status-badge badge-watch">Monitor</div>
+      <div class="system-name">Thyroid &amp; Endocrine</div>
+      <div class="system-planet">Moon · H7 Taurus · Krittika</div>
+      <div class="system-desc">Taurus rules the throat. Moon (H7) governs hormonal rhythm. Saturn/Moon bhukti (2024–25) and age-related decline converge on thyroid function.</div>
+    </div>
+    <div class="system-card crit">
+      <div class="status-badge badge-crit">High Alert</div>
+      <div class="system-name">Kidneys &amp; Sleep</div>
+      <div class="system-planet">Rahu · H12 Libra · Swati</div>
+      <div class="system-desc">H12 = sleep, hospitals, hidden ailments. Libra rules kidneys. Rahu here intensifies during Saturn/Rahu bhukti (Oct 2026–Sep 2029) — the most medically significant window.</div>
+    </div>
+    <div class="system-card med">
+      <div class="status-badge badge-moderate">Watch</div>
+      <div class="system-name">Nervous System</div>
+      <div class="system-planet">Mercury + Ketu · H6 Aries · Ashwini</div>
+      <div class="system-desc">Ketu in H6 can produce mysterious, hard-to-pin symptoms. Mercury (H8 lord) in the disease house: anxiety, stress-related gastric issues, neurological sensitivity.</div>
+    </div>
+    <div class="system-card ok">
+      <div class="status-badge badge-strong">Protected</div>
+      <div class="system-name">Vitality Core</div>
+      <div class="system-planet">Venus exalted · H5 Pisces · Revati</div>
+      <div class="system-desc">Exalted Venus in H5 provides a deep reservoir of life force. Viparita Raja Yoga (Mercury H6) gives remarkable resilience — she bounces back when circumstances look most difficult.</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: VITALITY TIMELINE -->
+  <div class="sec-head">
+    <span class="sec-num">02</span>
+    <span class="sec-title">Vitality by Year — 2023 to 2030</span>
+    <span class="sec-rule"></span>
+  </div>
+
+  <div class="vitality-section">
+    <div class="vitality-row">
+      <div class="vitality-label">2023 · Sat/Sun</div>
+      <div class="vitality-bar-wrap"><div class="vitality-bar bar-good" style="width:62%"></div></div>
+      <div class="vitality-pct">62%</div>
+    </div>
+    <div class="vitality-row">
+      <div class="vitality-label">2024 · Sat/Moon</div>
+      <div class="vitality-bar-wrap"><div class="vitality-bar bar-med" style="width:50%"></div></div>
+      <div class="vitality-pct">50%</div>
+    </div>
+    <div class="vitality-row">
+      <div class="vitality-label">2025 · Sat/Moon → Mars</div>
+      <div class="vitality-bar-wrap"><div class="vitality-bar bar-med" style="width:48%"></div></div>
+      <div class="vitality-pct">48%</div>
+    </div>
+    <div class="vitality-row">
+      <div class="vitality-label">2026 · Sat/Mars → Rahu</div>
+      <div class="vitality-bar-wrap"><div class="vitality-bar bar-low" style="width:40%"></div></div>
+      <div class="vitality-pct">40%</div>
+    </div>
+    <div class="vitality-row">
+      <div class="vitality-label">2027 · Sat/Rahu</div>
+      <div class="vitality-bar-wrap"><div class="vitality-bar bar-low" style="width:35%"></div></div>
+      <div class="vitality-pct">35%</div>
+    </div>
+    <div class="vitality-row">
+      <div class="vitality-label">2028 · Sat/Rahu</div>
+      <div class="vitality-bar-wrap"><div class="vitality-bar bar-low" style="width:38%"></div></div>
+      <div class="vitality-pct">38%</div>
+    </div>
+    <div class="vitality-row">
+      <div class="vitality-label">2029 · Sat/Rahu → Jup</div>
+      <div class="vitality-bar-wrap"><div class="vitality-bar bar-med" style="width:52%"></div></div>
+      <div class="vitality-pct">52%</div>
+    </div>
+    <div class="vitality-row">
+      <div class="vitality-label">2030 · Sat/Jupiter</div>
+      <div class="vitality-bar-wrap"><div class="vitality-bar bar-good" style="width:65%"></div></div>
+      <div class="vitality-pct">65%</div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: PERIOD-BY-PERIOD -->
+  <div class="sec-head">
+    <span class="sec-num">03</span>
+    <span class="sec-title">Period-by-Period Analysis</span>
+    <span class="sec-rule"></span>
+  </div>
+
+  <div class="dasha-timeline">
+
+    <!-- Saturn / Sun -->
+    <div class="dasha-row">
+      <div class="dasha-time">Mar 2023<br>Feb 2024</div>
+      <div class="dasha-content">
+        <div class="dasha-period">
+          <span class="dasha-tag tag-mid">Past</span>
+          Saturn / Sun
+        </div>
+        <div class="dasha-health">
+          <strong style="color:var(--gold-lt)">Age 64–65 · Moderate stress · Fatigue &amp; Vision</strong><br>
+          Saturn (cold, restrictive) activating the Sun (vitality, heart, eyes, spine) in Taurus H7. The Sun's natural warmth is suppressed — the body runs cooler and slower than usual. Sun in Taurus rules the throat, thyroid, and reproductive area; in H7 it connects to lower back and kidneys.
+          <ul>
+            <li><strong>What likely happened:</strong> General energy depletion, reduced stamina, eye strain or dry eyes, lower back/spine discomfort. Possible throat dryness, mild voice changes. Digestive slowdown (Taurus-Moon axis activated by Saturn).</li>
+            <li><strong>Blood &amp; vitals:</strong> Possible drop in haemoglobin, mild vitamin D deficiency, blood pressure fluctuations — Saturn suppressing Sun often reduces solar minerals (magnesium, calcium).</li>
+            <li><strong>Positive:</strong> Sun is well-placed in H7 Taurus — it has good dignity. This bhukti passes in 11 months without producing crisis, more a sustained tiredness than acute illness.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saturn / Moon -->
+    <div class="dasha-row">
+      <div class="dasha-time">Feb 2024<br>Sep 2025</div>
+      <div class="dasha-content">
+        <div class="dasha-period">
+          <span class="dasha-tag tag-warn">Recent Past</span>
+          Saturn / Moon
+        </div>
+        <div class="dasha-health">
+          <strong style="color:var(--warn)">Age 65–67 · Emotional &amp; Metabolic Pressure</strong><br>
+          Saturn (cold, dry) + Moon (fluid, emotions, digestion) in Taurus H7 — a classically Vata-aggravating combination. Moon rules H9 (Cancer) in this chart, connecting health to philosophy and loss of purpose. For a lifelong doctor, this period often brings a deep questioning: "What am I still working for?" Emotional exhaustion, not physical breakdown.
+          <ul>
+            <li><strong>Primary manifestations:</strong> Sleep disturbances (insomnia or fragmented sleep), persistent emotional heaviness, mild depression or melancholy. Weight gain or fluid retention (Taurus + Saturn = sluggish metabolism). Thyroid changes (TSH fluctuation).</li>
+            <li><strong>Joint health:</strong> Vata aggravation means joint stiffness especially in cold/damp weather. Morning stiffness in fingers, knees, or lower back.</li>
+            <li><strong>Digestive:</strong> Sluggish bowel, bloating, reduced appetite. Moon in Krittika (fire deity) + Saturn cold = erratic digestive fire.</li>
+            <li><strong>Burnout risk:</strong> High. Saturn suppressing the Moon = emotional tank running empty. This period calls for rest, not more output.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saturn / Mars — CURRENT -->
+    <div class="dasha-row active">
+      <div class="dasha-time">Sep 2025<br>Oct 2026</div>
+      <div class="dasha-content">
+        <div class="dasha-period">
+          <span class="dasha-tag tag-now">Now · Active</span>
+          Saturn / Mars — Lagna Lord Under Pressure
+        </div>
+        <div class="dasha-health">
+          <strong style="color:var(--teal-lt)">Age 67–68 · Physical Peak Stress · Blood Pressure</strong><br>
+          Mars is the <em>Lagna lord</em> — it governs the physical body itself. When Saturn (restriction, delay) activates Mars (inflammation, heat, force), the body's vital energy is blocked from expressing freely. Mars sits in H4 (Aquarius/chest), making cardiac and respiratory health the primary targets. This is the most physically strained period before the Rahu bhukti.
+          <ul>
+            <li><strong>Blood pressure:</strong> The clearest risk. Mars-blocked energy creates pressure buildup — monitor BP weekly. Hypertension or high-normal readings are likely.</li>
+            <li><strong>Chest &amp; lungs:</strong> Mars in H4 Aquarius — tightness, breathlessness on exertion, possible cardiac stress. Avoid over-exertion.</li>
+            <li><strong>Inflammation:</strong> Mars governs inflammation; Saturn restricts flow. Result: chronic inflammatory markers may rise (CRP, ESR). Joint pain may intensify.</li>
+            <li><strong>Accidents &amp; falls:</strong> Agitated Mars under Saturn = impulsive movements. Extra caution on stairs, wet floors, night trips.</li>
+            <li><strong>Headaches:</strong> Blocked Mars energy rising upward = tension headaches, especially at temples.</li>
+            <li><strong>Action now:</strong> Cardiac check-up, BP monitoring, anti-inflammatory diet (less salt, less red meat), regular gentle walks.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saturn / Rahu — CRITICAL -->
+    <div class="dasha-row critical">
+      <div class="dasha-time">Oct 2026<br>Sep 2029</div>
+      <div class="dasha-content">
+        <div class="dasha-period">
+          <span class="dasha-tag tag-crit">Critical Window</span>
+          Saturn / Rahu — The Hidden-Health Period
+        </div>
+        <div class="dasha-health">
+          <strong style="color:#e87a8a">Age 68–71 · Most Medically Significant · Proactive Care Essential</strong><br>
+          This is the period requiring the most attention. Rahu sits in H12 — the house of <em>hospitalization, sleep, hidden ailments, foreign substances (medications), and endings</em>. Saturn (Mahadasha lord, H2, Mula/root-destruction) + Rahu (H12, chaos, amplification) = the most opaque and unpredictable health chapter. Rahu's nature is to amplify and distort — diseases may present unusually, be misdiagnosed initially, or appear suddenly after a quiet period.
+          <ul>
+            <li><strong>Sleep disorders:</strong> H12 is strongly activated — insomnia, fragmented sleep, night anxiety, vivid disturbing dreams. Sleep deprivation cascades into all other systems.</li>
+            <li><strong>Kidney &amp; urinary:</strong> Libra (H12) rules kidneys. Rahu here risks kidney stones, urinary tract infections, or reduced kidney function. Hydration is critical.</li>
+            <li><strong>Autoimmune / inflammatory:</strong> Rahu amplifies Scorpio's already intense immune-response tendency. Unexpected inflammatory flare-ups or autoimmune presentations.</li>
+            <li><strong>Bone density peak risk:</strong> Saturn in Mula (H2) reaches its deepest effect during its own bhukti-lord's period. DEXA scan recommended before Oct 2026.</li>
+            <li><strong>Medication sensitivity:</strong> Rahu in H12 = foreign substances + confusion. Be especially careful about drug interactions, new prescriptions, anaesthesia if any surgery occurs.</li>
+            <li><strong>Mental health:</strong> Saturn/Rahu = the two most anxiety-producing planetary energies together. Depression, paranoia, existential anxiety, feelings of isolation.</li>
+            <li><strong>Viparita Raja protection:</strong> Mercury's Viparita Raja Yoga (H6) means she has a chart-level resilience trigger — when things look worst, unexpected relief arrives. Trust this. The worst fears rarely fully materialize.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Saturn / Jupiter — RELIEF -->
+    <div class="dasha-row relief">
+      <div class="dasha-time">Sep 2029<br>Mar 2032</div>
+      <div class="dasha-content">
+        <div class="dasha-period">
+          <span class="dasha-tag tag-relief">Recovery</span>
+          Saturn / Jupiter — The Healing Return
+        </div>
+        <div class="dasha-health">
+          <strong style="color:var(--u)">Age 71–73 · Significant Improvement · Consolidation</strong><br>
+          Jupiter enters as bhukti lord — the great benefic, ruling H2 (nourishment, family) and H5 (intelligence, wisdom) for Scorpio Lagna. Jupiter sits in H11 (Virgo) — gains, networks, wishes. This is a genuine recovery and harvest period. The body stabilizes, energy returns, and medical interventions begun during Saturn/Rahu begin to show positive results.
+          <ul>
+            <li><strong>Energy returns:</strong> Jupiter's expansive warmth counters Saturn's cold restriction. Appetite improves, digestion strengthens, mood lifts noticeably.</li>
+            <li><strong>Medical resolution:</strong> Issues that surfaced during Saturn/Rahu are now properly diagnosed and treated. Jupiter rules wisdom — she may find excellent doctors or healthcare at this time.</li>
+            <li><strong>Family support:</strong> Jupiter rules H2 (family) — care and nourishment from family members increases. Less isolation, more connection.</li>
+            <li><strong>Spiritual health:</strong> Jupiter naturally draws the mind toward meaning and faith. Meditative practices started now will provide lasting benefit.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end timeline -->
+
+  <!-- SECTION 4: KEY ALERT -->
+  <div class="sec-head">
+    <span class="sec-num">04</span>
+    <span class="sec-title">Proactive Health Checklist</span>
+    <span class="sec-rule"></span>
+  </div>
+
+  <div class="alert-banner crit">
+    <div class="alert-icon">⚠</div>
+    <div class="alert-text"><strong>Before October 2026:</strong> Schedule a full health screening before the Saturn/Rahu period begins. This is the single most important preventive action. Address anything borderline now, while vitality is higher and the Rahu fog has not yet descended.</div>
+  </div>
+
+  <div class="alert-banner warn">
+    <div class="alert-icon">🩸</div>
+    <div class="alert-text"><strong>Blood Panel (now, before Oct 2026):</strong> HbA1c (blood sugar/diabetes risk — Saturn Mula), CBC (anaemia from fatigue), Thyroid panel (TSH, T3, T4 — Moon Taurus H7), Kidney function (creatinine, uric acid — Rahu H12 Libra), Bone density DEXA scan (Saturn H2 Mula R).</div>
+  </div>
+
+  <div class="alert-banner warn">
+    <div class="alert-icon">❤️</div>
+    <div class="alert-text"><strong>Cardiac Check (now, ongoing through 2026):</strong> ECG, echocardiogram if indicated (Mars Lagna lord in H4/chest). Blood pressure log — weekly readings. Lipid profile (cholesterol). Mars under Saturn = silent BP build-up.</div>
+  </div>
+
+  <div class="alert-banner warn">
+    <div class="alert-icon">🦴</div>
+    <div class="alert-text"><strong>Bone &amp; Dental (urgent):</strong> DEXA bone density scan — Saturn retrograde in H2 Mula is the strongest indicator of osteoporosis risk in this chart. Dental check-up (Saturn H2 = teeth/jaw). Calcium + Vitamin D3 supplementation.</div>
+  </div>
+
+  <div class="alert-banner good">
+    <div class="alert-icon">🛡</div>
+    <div class="alert-text"><strong>Protective factor — Viparita Raja Yoga:</strong> Mercury in H6 creates resilience precisely under pressure. This is a yogic buffer against the worst outcomes. <strong>She has survived and thrived through difficulty before</strong> — this chart gives her the capacity to do so again, especially if she acts proactively now rather than waiting for crisis.</div>
+  </div>
+
+  <!-- SECTION 5: PLANET HEALTH TABLE -->
+  <div class="sec-head">
+    <span class="sec-num">05</span>
+    <span class="sec-title">Planet–Body Mapping</span>
+    <span class="sec-rule"></span>
+  </div>
+
+  <div style="background:var(--bg2); border:1px solid var(--teal-bd); border-radius:16px; overflow:hidden; margin-bottom:8px;">
+    <table class="planet-table">
+      <thead>
+        <tr>
+          <th>Planet</th>
+          <th>House · Sign</th>
+          <th>Body Zone</th>
+          <th>Current Concern</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="planet-name-cell"><span class="planet-dot" style="background:var(--sat)"></span>Saturn (R)</div></td>
+          <td>H2 · Sagittarius · Mula</td>
+          <td>Bones, teeth, blood sugar, right eye, speech</td>
+          <td>Bone density loss, dental fragility, glycaemic fluctuation — HIGH priority</td>
+        </tr>
+        <tr>
+          <td><div class="planet-name-cell"><span class="planet-dot" style="background:var(--mars)"></span>Mars (Lagna lord)</div></td>
+          <td>H4 · Aquarius · Purva Bhadrapada</td>
+          <td>Chest, heart, lungs, blood pressure, nervous circulation</td>
+          <td>BP elevation, cardiac stress under Saturn/Mars (now) — active monitoring needed</td>
+        </tr>
+        <tr>
+          <td><div class="planet-name-cell"><span class="planet-dot" style="background:var(--rahu)"></span>Rahu (R)</div></td>
+          <td>H12 · Libra · Swati</td>
+          <td>Kidneys, sleep, right brain, lymphatic</td>
+          <td>Sleep disorders + kidney risk peak Oct 2026–Sep 2029</td>
+        </tr>
+        <tr>
+          <td><div class="planet-name-cell"><span class="planet-dot" style="background:var(--moon)"></span>Moon</div></td>
+          <td>H7 · Taurus · Krittika</td>
+          <td>Thyroid, hormones, digestion, emotional health, weight</td>
+          <td>Thyroid fluctuation, weight gain pattern from 2024–25 period</td>
+        </tr>
+        <tr>
+          <td><div class="planet-name-cell"><span class="planet-dot" style="background:var(--ketu)"></span>Ketu</div></td>
+          <td>H6 · Aries · Ashwini</td>
+          <td>Immune system, small intestine, parasitic/cryptic illness</td>
+          <td>Past-life gifts in healing but also mysterious ailments, hard to diagnose</td>
+        </tr>
+        <tr>
+          <td><div class="planet-name-cell"><span class="planet-dot" style="background:var(--merc)"></span>Mercury</div></td>
+          <td>H6 · Aries · Ashwini</td>
+          <td>Nervous system, intestine, H8 (longevity) lord</td>
+          <td>Anxiety, stress-related digestive symptoms; Viparita Raja = resilience buffer</td>
+        </tr>
+        <tr>
+          <td><div class="planet-name-cell"><span class="planet-dot" style="background:var(--venus)"></span>Venus (exalted)</div></td>
+          <td>H5 · Pisces · Revati</td>
+          <td>Reproductive, kidneys, immune joy, longevity reserve</td>
+          <td>Strong protective factor — exalted Venus in H5 is a deep life-force reservoir</td>
+        </tr>
+        <tr>
+          <td><div class="planet-name-cell"><span class="planet-dot" style="background:var(--jup)"></span>Jupiter (R)</div></td>
+          <td>H11 · Virgo · Chitra</td>
+          <td>Liver, fat metabolism, wisdom/discernment in healing</td>
+          <td>Retrograde mildly reduces effect; improves significantly after Sep 2029</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 6: REMEDIES -->
+  <div class="sec-head">
+    <span class="sec-num">06</span>
+    <span class="sec-title">Health Remedies 2026–2029</span>
+    <span class="sec-rule"></span>
+  </div>
+
+  <!-- Tier 1: Universal -->
+  <div class="remedy-tier universal">
+    <div class="tier-head">
+      <div class="tier-dot">●</div>
+      <div>
+        <div class="tier-label-small">Tier 1 — Universal</div>
+        <div class="tier-title-text">Lifestyle &amp; Physical Practices</div>
+      </div>
+    </div>
+    <div class="tier-body">
+      <div class="remedy-item">
+        <div class="remedy-icon">🚶</div>
+        <div class="remedy-text"><strong>Daily 20-minute walk at sunrise or dusk</strong> — activates Mars (Lagna lord), supports cardiovascular health, and grounds Rahu's scattered energy. Bare feet on earth when possible (Taurus Moon grounding).</div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-icon">💧</div>
+        <div class="remedy-text"><strong>Hydration protocol: 2.5 litres water daily</strong> — critical for Rahu/H12/kidney protection during 2026–2029. Warm water preferred (counters Saturn cold). Avoid ice water entirely.</div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-icon">🥛</div>
+        <div class="remedy-text"><strong>Calcium + Vitamin D3 supplementation</strong> — Saturn in H2 Mula = bone loss. Calcium 1000 mg + D3 2000 IU daily with meals. Consult doctor for DEXA baseline before adjusting dose.</div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-icon">🧂</div>
+        <div class="remedy-text"><strong>Low-sodium, anti-inflammatory diet</strong> — reduces hypertension risk (Saturn/Mars BP pattern). Turmeric, ginger, fenugreek for inflammation. Avoid red meat on Tuesdays and Saturdays specifically.</div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-icon">🌙</div>
+        <div class="remedy-text"><strong>Sleep hygiene ritual:</strong> Fixed bedtime by 10 PM, no screens 1 hour before bed. Warm sesame oil foot massage before sleep — directly addresses Rahu/H12 sleep disruption and calms Vata.</div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-icon">🔵</div>
+        <div class="remedy-text"><strong>Blue sapphire or Amethyst</strong> (Saturn remedy gem) — for Saturn H2 bone/metabolic support. Consult a Jyotishi before wearing. Alternatively, iron ring worn on middle finger of right hand on Saturday.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 2: Vedic -->
+  <div class="remedy-tier vedic">
+    <div class="tier-head">
+      <div class="tier-dot">◆</div>
+      <div>
+        <div class="tier-label-small">Tier 2 — Vedic Tradition · For Believers</div>
+        <div class="tier-title-text">Mantras, Puja &amp; Sacred Practices</div>
+      </div>
+    </div>
+    <div class="tier-body">
+      <div class="remedy-item">
+        <div class="remedy-icon">🪐</div>
+        <div class="remedy-text"><strong>Saturn mantra — Saturdays:</strong> <em>Om Shanaishcharaya Namaha</em> × 19 (Saturn's number), at dusk, facing west. Light sesame oil lamp. Donate black sesame seeds or dark lentils to the poor on Saturday. Critical for Saturn/Rahu period.</div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-icon">🔴</div>
+        <div class="remedy-text"><strong>Mars mantra — Tuesdays:</strong> <em>Om Angarakaya Namaha</em> × 108, to strengthen the Lagna lord and support blood pressure regulation. Light red lamp or ghee lamp before the deity.</div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-icon">🐍</div>
+        <div class="remedy-text"><strong>Naga puja (Serpent worship)</strong> — Scorpio Lagna's highest remedy. Visit a Naga temple (Mannarasala or similar in Kerala) during Saturn/Rahu period. Milk offering to the serpent shrine directly addresses the Rahu-snake energy in H12.</div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-icon">🌸</div>
+        <div class="remedy-text"><strong>Kali or Bhadrakali worship</strong> — Scorpio's ruling deity. Friday evening puja with red flowers and lamp. <em>Om Krim Kalikaye Namaha</em>. The fierce healer aspect of the divine mother is the correct archetype for Scorpio's health crises — she removes disease at the root.</div>
+      </div>
+      <div class="remedy-item">
+        <div class="remedy-icon">🌊</div>
+        <div class="remedy-text"><strong>Rahu remedy for H12:</strong> Feed crows on Saturday mornings (Saturn/Rahu combined remedy). Donate footwear to the needy (Rahu governs feet/H12). Avoid starting medical procedures on Rahu Kalam if possible.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 3: Neuro -->
+  <div class="remedy-tier neuro">
+    <div class="tier-head">
+      <div class="tier-dot">◈</div>
+      <div>
+        <div class="tier-label-small">Tier 3 — Neuroscience · CBT · NLP · Biohacking</div>
+        <div class="tier-title-text">Mind-Body Protocols</div>
+      </div>
+    </div>
+    <div class="tier-body">
+      <div class="neuro-split">
+        <div class="neuro-col">
+          <div class="neuro-col-head">CBT</div>
+          <div class="neuro-item-r"><strong>Health anxiety management:</strong> Saturn/Rahu amplifies health rumination. Schedule one 15-minute "worry window" daily — refuse to engage with health fears outside it.</div>
+          <div class="neuro-item-r"><strong>Pain catastrophising:</strong> For chronic joint/bone pain, CBT pain-decoupling — document pain triggers to break the Saturn fear-contraction cycle.</div>
+          <div class="neuro-item-r"><strong>Behavioural activation:</strong> Saturn/Moon depression pattern responds well to scheduled pleasurable activities — counter the withdrawal instinct with deliberate social connection.</div>
+        </div>
+        <div class="neuro-col">
+          <div class="neuro-col-head">NLP</div>
+          <div class="neuro-item-r"><strong>Body scan anchoring:</strong> Daily 5-minute body scan meditation linked to a physical anchor (pressing thumb to palm) builds a calm nervous-system baseline.</div>
+          <div class="neuro-item-r"><strong>Reframe aging:</strong> Saturn in Mula brings root-questioning. NLP timeline technique: visit the future self post-Jupiter recovery (2030) — see the vitality that is coming.</div>
+          <div class="neuro-item-r"><strong>Submodality work on pain:</strong> Drain colour, shrink size, slow movement of chronic pain images — reduces Scorpio's tendency to fixate on physical discomfort.</div>
+        </div>
+        <div class="neuro-col">
+          <div class="neuro-col-head">Biohacking</div>
+          <div class="neuro-item-r"><strong>Magnesium glycinate 400 mg nightly</strong> — the single most impactful supplement for Saturn/Rahu period: improves sleep (H12), reduces anxiety (Saturn), relaxes blood vessels (Mars BP), supports bones (H2).</div>
+          <div class="neuro-item-r"><strong>Cold face splash on waking</strong> — 30 seconds cold water on face activates the dive reflex, lowering heart rate and cortisol. Directly supports Mars cardiac health without physical exertion.</div>
+          <div class="neuro-item-r"><strong>4-7-8 breathing (Pranayama):</strong> Inhale 4 counts, hold 7, exhale 8. 4 cycles before bed and during BP spikes. Clinical evidence supports BP reduction of 5–10 mmHg in hypertension.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Lalu Varghese · ♏ Scorpio Lagna 16.4° · DOB 18 May 1958 · Aluva, Kerala<br>
+    Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Astrowise · Generated 07 Jun 2026<br>
+    <em>This report is for spiritual and self-awareness purposes. All medical decisions should be made with qualified healthcare professionals.</em>
+  </div>
+
+</div>
+</body>
+</html>
