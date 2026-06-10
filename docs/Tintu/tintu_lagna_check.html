@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which one is you? — Tintu</title>
+<style>
+  :root {
+    --bg: #0b0b18;
+    --gold: #c49e40;
+    --cream: #f0e8d8;
+    --muted: rgba(240,232,216,0.55);
+    --sag: #7c5cbf;
+    --cap: #5a8f72;
+    --aqu: #5b8fd4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    padding: 24px 16px 60px;
+    min-height: 100vh;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 6px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+  .sub { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 28px; }
+  .cards { display: flex; flex-direction: column; gap: 20px; max-width: 560px; margin: 0 auto; }
+  .card {
+    border-radius: 18px;
+    padding: 24px 22px;
+    border: 1px solid rgba(255,255,255,0.08);
+  }
+  .card.sag { background: linear-gradient(135deg, rgba(124,92,191,0.18), rgba(11,11,24,0.9)); border-color: rgba(124,92,191,0.35); }
+  .card.cap { background: linear-gradient(135deg, rgba(90,143,114,0.18), rgba(11,11,24,0.9)); border-color: rgba(90,143,114,0.35); }
+  .card.aqu { background: linear-gradient(135deg, rgba(91,143,212,0.18), rgba(11,11,24,0.9)); border-color: rgba(91,143,212,0.35); }
+
+  .card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .sign-icon { font-size: 2rem; }
+  .sign-name { font-size: 1.15rem; font-weight: 600; }
+  .sign-name span { font-size: 0.8rem; font-weight: 400; color: var(--muted); display: block; margin-top: 2px; }
+
+  .traits { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .traits li { display: flex; gap: 10px; align-items: flex-start; font-size: 0.92rem; line-height: 1.5; }
+  .traits li::before { content: "→"; opacity: 0.5; flex-shrink: 0; margin-top: 1px; }
+
+  .keyword-row { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
+  .kw {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .sag .kw { background: rgba(124,92,191,0.25); color: #c4b0f0; border: 1px solid rgba(124,92,191,0.4); }
+  .cap .kw { background: rgba(90,143,114,0.25); color: #a0d4b8; border: 1px solid rgba(90,143,114,0.4); }
+  .aqu .kw { background: rgba(91,143,212,0.25); color: #a0c4f0; border: 1px solid rgba(91,143,212,0.4); }
+
+  .shadow { margin-top: 14px; padding: 10px 14px; border-radius: 10px; font-size: 0.83rem; color: var(--muted); background: rgba(255,255,255,0.04); }
+  .shadow strong { color: var(--cream); }
+
+  .footer { text-align: center; color: var(--muted); font-size: 0.78rem; margin-top: 32px; max-width: 560px; margin-left: auto; margin-right: auto; }
+</style>
+</head>
+<body>
+
+<h1>Which one is you?</h1>
+<p class="sub">Read each description. Pick the one that makes you say <em>"that's uncomfortably accurate."</em></p>
+
+<div class="cards">
+
+  <!-- SAGITTARIUS -->
+  <div class="card sag">
+    <div class="card-header">
+      <div class="sign-icon">♐</div>
+      <div class="sign-name">Option A — Sagittarius Lagna
+        <span>Born before 8:30 AM</span>
+      </div>
+    </div>
+    <ul class="traits">
+      <li>You have a natural need to seek truth, meaning, and purpose — conversations about life, philosophy, or spirituality energise you more than small talk ever could</li>
+      <li>People sense your warmth and openness quickly. You give off a teacher or guide energy even when you're not trying to</li>
+      <li>You're restless when stuck in routine. Freedom — physical, intellectual, or emotional — matters deeply to you</li>
+      <li>You are honest to a fault. You'd rather say an uncomfortable truth than a comfortable lie</li>
+      <li>You can be inconsistent — big vision, scattered follow-through. You start more than you finish</li>
+      <li>Spirituality or philosophy isn't just an interest — it's where you feel most like yourself</li>
+    </ul>
+    <div class="keyword-row">
+      <span class="kw">Expansive</span><span class="kw">Philosophical</span><span class="kw">Warm</span><span class="kw">Seeker</span><span class="kw">Teacher</span><span class="kw">Freedom-loving</span>
+    </div>
+    <div class="shadow"><strong>Shadow:</strong> Over-promises, avoids hard emotional conversations, can seem preachy</div>
+  </div>
+
+  <!-- CAPRICORN -->
+  <div class="card cap">
+    <div class="card-header">
+      <div class="sign-icon">♑</div>
+      <div class="sign-name">Option B — Capricorn Lagna
+        <span>Born 8:30 AM – 10:30 AM</span>
+      </div>
+    </div>
+    <ul class="traits">
+      <li>You come across as serious, composed, and self-controlled — people often underestimate how much is happening beneath the surface</li>
+      <li>You set long-term goals and pursue them with quiet, patient determination. You don't need applause to keep going</li>
+      <li>Work ethic is central to your identity. You feel uncomfortable being unproductive or dependent on others</li>
+      <li>You are deeply loyal but take a long time to trust. Once that trust is broken, you rarely forget it</li>
+      <li>Your richest inner world — your emotions, your spiritual depth — stays largely private. Few people ever see all of you</li>
+      <li>You have a tendency toward pessimism or worst-case thinking under stress, even when things are going well</li>
+    </ul>
+    <div class="keyword-row">
+      <span class="kw">Disciplined</span><span class="kw">Private</span><span class="kw">Ambitious</span><span class="kw">Loyal</span><span class="kw">Stoic</span><span class="kw">Resilient</span>
+    </div>
+    <div class="shadow"><strong>Shadow:</strong> Emotionally guarded, workaholic tendencies, slow to open up, holds onto grudges</div>
+  </div>
+
+  <!-- AQUARIUS -->
+  <div class="card aqu">
+    <div class="card-header">
+      <div class="sign-icon">♒</div>
+      <div class="sign-name">Option C — Aquarius Lagna
+        <span>Born after 10:30 AM</span>
+      </div>
+    </div>
+    <ul class="traits">
+      <li>You think differently from most people around you — you've always felt slightly ahead of, or apart from, the crowd</li>
+      <li>You care about systems, ideas, and collective betterment more than personal status or recognition</li>
+      <li>You are friendly and approachable but maintain an invisible wall — people feel they know you without ever really knowing you</li>
+      <li>Conventional paths bore you. You need to do things your way, on your terms, even if it costs you socially</li>
+      <li>You can analyse emotions better than you feel them. Detachment is your default when things get intense</li>
+      <li>Your loyalty is to principles, not people — which can make close relationships feel one-sided to others</li>
+    </ul>
+    <div class="keyword-row">
+      <span class="kw">Unconventional</span><span class="kw">Detached</span><span class="kw">Visionary</span><span class="kw">Independent</span><span class="kw">Analytical</span><span class="kw">Humanitarian</span>
+    </div>
+    <div class="shadow"><strong>Shadow:</strong> Emotionally unavailable, contrarian, inconsistent in close relationships</div>
+  </div>
+
+</div>
+
+<p class="footer">Share this with Tintu — whichever option feels "uncomfortably accurate" points to the correct birth time and lagna.</p>
+
+</body>
+</html>
