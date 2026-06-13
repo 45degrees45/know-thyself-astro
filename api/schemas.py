@@ -17,7 +17,8 @@ class ChartSummary(BaseModel):
     current_dasha: str
     yogas: list[str]
     animal: str
-    animal_desc: str
+    animal_emoji: str
+    paid: bool = False
 
 
 class ChatRequest(BaseModel):
