@@ -87,6 +87,9 @@ class AstroService:
             "animal":         animal_name,
             "animal_emoji":   animal_emoji,
             "raw_chart":      chart,
+            "lat":            geo["lat"],
+            "lon":            geo["lon"],
+            "tz":             geo["timezone"],
         }
 
     def build_summary(self, chart_json: dict) -> dict:
