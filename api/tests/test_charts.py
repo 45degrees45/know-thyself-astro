@@ -5,6 +5,7 @@ Uses an in-memory async SQLite DB via dependency override so no real DB is neede
 TestClient runs the ASGI app synchronously; async fixtures handle DB lifecycle.
 """
 import pytest
+from unittest.mock import patch
 from httpx import AsyncClient, ASGITransport
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 
@@ -37,6 +38,15 @@ async def setup_db():
     app.dependency_overrides.clear()
 
 
+@pytest.fixture(autouse=True)
+def mock_geocode_for_charts(monkeypatch):
+    """Mock geocode so chart tests don't hit the real network."""
+    monkeypatch.setattr(
+        "api.services.astro_service.geocode",
+        lambda place: {"lat": 9.58, "lon": 76.54, "timezone": "Asia/Kolkata", "display_name": place},
+    )
+
+
 # ---------------------------------------------------------------------------
 # Helper: async HTTP client using ASGI transport (no real server needed)
 # ---------------------------------------------------------------------------
@@ -60,7 +70,7 @@ GOLDY_PAYLOAD = {
 
 async def test_post_chart_returns_chart_id(client):
     response = await client.post("/api/chart", json=GOLDY_PAYLOAD)
-    assert response.status_code == 200, response.text
+    assert response.status_code == 201, response.text
     data = response.json()
     assert "chart_id" in data
     assert data["lagna"] == "Pisces"
@@ -73,7 +83,7 @@ async def test_post_chart_returns_chart_id(client):
 
 async def test_get_chart_returns_summary(client):
     post = await client.post("/api/chart", json=GOLDY_PAYLOAD)
-    assert post.status_code == 200, post.text
+    assert post.status_code == 201, post.text
     chart_id = post.json()["chart_id"]
 
     get = await client.get(f"/api/chart/{chart_id}")
@@ -93,14 +103,15 @@ async def test_get_chart_not_found(client):
 async def test_post_chart_upserts_user_on_duplicate_email(client):
     """Posting the same email twice should not create duplicate users."""
     r1 = await client.post("/api/chart", json=GOLDY_PAYLOAD)
-    assert r1.status_code == 200
+    assert r1.status_code == 201
     r2 = await client.post("/api/chart", json=GOLDY_PAYLOAD)
-    assert r2.status_code == 200
+    assert r2.status_code == 201
     # Both charts exist, but same user
     assert r1.json()["chart_id"] != r2.json()["chart_id"]
 
 
 async def test_post_chart_invalid_place(client):
-    bad = {**GOLDY_PAYLOAD, "birth_place": "ZZZNOTAPLACE999"}
-    response = await client.post("/api/chart", json=bad)
+    with patch("api.services.astro_service.geocode", side_effect=ValueError("Unknown birth place")):
+        bad = {**GOLDY_PAYLOAD, "birth_place": "ZZZNOTAPLACE999"}
+        response = await client.post("/api/chart", json=bad)
     assert response.status_code == 422

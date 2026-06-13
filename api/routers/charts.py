@@ -1,21 +1,24 @@
 """
 Charts router — POST /api/chart and GET /api/chart/{id}.
 """
+import asyncio
+
 from fastapi import APIRouter, Depends, HTTPException
+from sqlalchemy.exc import IntegrityError
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from sqlalchemy.orm import selectinload
 
 from api.database import get_db
 from api.models import User, Chart
-from api.schemas import ChartRequest
+from api.schemas import ChartRequest, ChartSummary
 from api.services.astro_service import AstroService
 
 router = APIRouter(tags=["charts"])
 _astro = AstroService()
 
 
-@router.post("/chart")
+@router.post("/chart", response_model=ChartSummary, status_code=201)
 async def create_chart(req: ChartRequest, db: AsyncSession = Depends(get_db)):
     """
     Calculate a Vedic birth chart, persist it, and return a summary.
@@ -23,17 +26,26 @@ async def create_chart(req: ChartRequest, db: AsyncSession = Depends(get_db)):
     Upserts the User by email so repeat submissions from the same person
     accumulate charts under one account rather than creating duplicates.
     """
-    # Upsert user by email
+    # Upsert user by email — safe against concurrent duplicate inserts
     result = await db.execute(select(User).where(User.email == req.email))
     user = result.scalar_one_or_none()
     if not user:
         user = User(email=req.email, name=req.name)
         db.add(user)
-        await db.flush()  # get user.id before FK reference
+        try:
+            await db.flush()  # get user.id before FK reference
+        except IntegrityError:
+            await db.rollback()
+            result = await db.execute(select(User).where(User.email == req.email))
+            user = result.scalar_one()
+    else:
+        user.name = req.name  # keep name current
 
-    # Calculate chart — lat/lon/tz are now returned from calculate()
+    # Calculate chart — runs in thread to avoid blocking the event loop
     try:
-        chart_json = _astro.calculate(req.birth_date, req.birth_time, req.birth_place)
+        chart_json = await asyncio.to_thread(
+            _astro.calculate, req.birth_date, req.birth_time, req.birth_place
+        )
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc))
     except RuntimeError as exc:
@@ -54,10 +66,10 @@ async def create_chart(req: ChartRequest, db: AsyncSession = Depends(get_db)):
     await db.refresh(chart)
 
     summary = _astro.build_summary(chart_json)
-    return {"chart_id": chart.id, **summary}
+    return {"chart_id": chart.id, **summary, "paid": user.paid}
 
 
-@router.get("/chart/{chart_id}")
+@router.get("/chart/{chart_id}", response_model=ChartSummary)
 async def get_chart(chart_id: str, db: AsyncSession = Depends(get_db)):
     """
     Retrieve a previously calculated chart by ID.
