@@ -3,17 +3,12 @@ AstroService — wraps astro_engine/ calculation modules.
 
 Provides calculate() and build_summary() for chart generation and summarisation.
 """
-import sys
-import os
 from datetime import datetime, timezone
 
-# Add astro_engine/ to path so we can import its modules directly
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "astro_engine"))
-
-from geo import geocode
-from calc import calculate_chart
-from dasha import current_period
-from yoga import find_yogas
+from astro_engine.geo import geocode
+from astro_engine.calc import calculate_chart
+from astro_engine.dasha import current_period
+from astro_engine.yoga import find_yogas
 
 # Jyotish nakshatra → spirit animal mapping
 MOON_ANIMAL = {
@@ -54,7 +49,12 @@ class AstroService:
 
         Returns a dict with lagna, planets, yogas, dasha, and spirit animal.
         """
-        geo = geocode(birth_place)
+        try:
+            geo = geocode(birth_place)
+        except ValueError as exc:
+            raise ValueError(f"Unknown birth place: {birth_place!r}") from exc
+        except Exception as exc:
+            raise RuntimeError(f"Geocoding service unavailable: {exc}") from exc
         chart = calculate_chart(
             birth_date, birth_time,
             geo["lat"], geo["lon"], geo["timezone"],
