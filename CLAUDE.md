@@ -198,6 +198,318 @@ chapter-header (icon box + h2 with eyebrow small label)
 
 ---
 
+## Design System — All Astrowise HTMLs
+
+Every HTML file (profile, session readings, remedies, anonymous) uses this unified design system. Never deviate without a specific reason.
+
+### Design Tokens (CSS Variables)
+```css
+:root {
+  --bg:      #0b0b18;                     /* page background */
+  --surface: rgba(255,255,255,0.035);     /* panel fill */
+  --border:  rgba(196,158,64,0.18);       /* default gold border */
+  --gold:    #c49e40;                     /* primary accent */
+  --gold2:   #e8c96a;                     /* bright gold (highlights) */
+  --cream:   #f0e8d8;                     /* body text */
+  --muted:   rgba(240,232,216,0.55);      /* secondary text */
+  --plum:    #7c5cbf;                     /* spiritual / dasha */
+  --rose:    #c4607a;                     /* shadow / challenge / risk */
+  --sage:    #5a8f72;                     /* positive / protective */
+  --blue:    #5b8fd4;                     /* neuroscience / analytical */
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;                        /* default panel border-radius */
+}
+```
+
+### Semantic Color Usage
+| Color | Use For |
+|---|---|
+| **Gold** `#c49e40` | Accent, borders, labels, neutral sections, eyebrows |
+| **Gold2** `#e8c96a` | Bright highlights, period windows, star elements |
+| **Plum** `#7c5cbf` | Dasha, spiritual, intuition, mystery chapters |
+| **Rose** `#c4607a` | Shadow side, challenges, divorce risk, warnings |
+| **Sage** `#5a8f72` | Positive outcomes, protective yogas, antidotes |
+| **Blue** `#5b8fd4` | Neuroscience / CBT / NLP / biohacking tier |
+| **Cream** `#f0e8d8` | Primary body text, headings |
+| **Muted** `rgba(240,232,216,0.55)` | Secondary text, captions, notes |
+
+### Typography
+```css
+/* Headings, hero, serifs */
+font-family: 'Cormorant Garamond', serif;
+weights: 300 (hero/display), 400 (panel h2), 600 (emphasis)
+
+/* Body, labels, UI */
+font-family: 'DM Sans', system-ui, sans-serif;
+weights: 300, 400, 500, 600
+
+/* Google Fonts import (always both) */
+https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap
+```
+
+### Background System
+```css
+/* Always fixed, always two radial gradients: plum top-left + gold bottom-right */
+background-color: #0b0b18;
+background-image:
+  radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+  radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+background-attachment: fixed;
+```
+
+### Hero Block (profile HTML only)
+```css
+.hero {
+  border-radius: 28px;
+  padding: 48px 44px 38px;
+  background: linear-gradient(140deg,
+    rgba(28,18,56,0.98) 0%,
+    rgba(44,24,72,0.96) 45%,
+    rgba(80,38,58,0.92) 100%);
+  border: 1px solid rgba(196,158,64,0.22);
+  box-shadow: var(--shadow);
+}
+/* Watermark symbol (Lagna glyph) */
+.hero-symbol { position:absolute; right:36px; top:24px; font-size:180px; color:rgba(196,158,64,0.07); }
+/* Glow orb */
+.hero-glow { position:absolute; right:-60px; bottom:-80px; width:340px; height:340px; border-radius:50%;
+  background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%); }
+/* Name */
+.hero h1 { font-family: Cormorant Garamond; font-size: clamp(3rem,6vw,5.5rem); font-weight:300; color:#fff8f0; }
+/* Lagna line */
+.lagna-line { font-family: Cormorant Garamond; font-size:1.3rem; font-style:italic; color:rgba(196,158,64,0.85); }
+/* Eyebrow */
+.eyebrow { font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); }
+```
+
+### Stat Grid (4 columns in hero)
+```css
+.stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.stat { background:rgba(255,255,255,0.06); border:1px solid rgba(196,158,64,0.14); border-radius:16px; padding:16px 18px; }
+.stat-label { font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); }
+.stat-value { font-size:1rem; color:#fff8f0; }
+```
+
+### Panel (standard card)
+```css
+.panel {
+  background: var(--surface);         /* rgba(255,255,255,0.035) */
+  border: 1px solid var(--border);    /* rgba(196,158,64,0.18) */
+  border-radius: var(--r);            /* 22px */
+  padding: 28px;
+  box-shadow: var(--shadow);
+}
+.panel-header { display:flex; align-items:center; gap:10px; padding-bottom:14px; border-bottom:1px solid rgba(196,158,64,0.12); }
+.panel-icon { width:36px; height:36px; border-radius:50%; background:rgba(196,158,64,0.1); display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--gold); }
+.panel h2 { font-family:Cormorant Garamond; font-size:1.5rem; font-weight:400; color:var(--cream); }
+```
+
+### Panel Variants
+```css
+/* Dasha panel — plum */
+.dasha-panel { background:rgba(124,92,191,0.06); border-color:rgba(124,92,191,0.22); }
+.dasha-panel .panel-icon { background:rgba(124,92,191,0.14); color:#b49edf; }
+.dasha-panel .panel h2 { color:#d0c4f0; }
+
+/* Shadow panel — rose */
+.shadow-panel { background:rgba(140,40,70,0.06); border-color:rgba(196,96,122,0.2); }
+.shadow-panel .panel-icon { background:rgba(196,96,122,0.12); color:#e8909f; }
+.shadow-panel .panel h2 { color:#f0c8d0; }
+
+/* Ref panel — neutral with scroll */
+.ref-panel { overflow-y:auto; max-height:460px; }
+```
+
+### Planet Chip
+```css
+.pchip {
+  display:inline-flex; align-items:center; gap:6px;
+  background:rgba(255,255,255,0.05); border:1px solid rgba(196,158,64,0.12);
+  border-radius:999px; padding:5px 12px 5px 8px; font-size:0.78rem;
+}
+.pchip-name { color:var(--gold); font-weight:500; font-size:0.72rem; }
+.pchip-val  { color:rgba(240,232,216,0.75); }
+```
+
+### Trait Chips
+```css
+.chip     { background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.2); border-radius:999px; padding:6px 14px; font-size:0.82rem; color:var(--gold2); }
+.chip-neg { background:rgba(196,96,122,0.09); border-color:rgba(196,96,122,0.22); color:#e8909f; }
+.chip-green { background:rgba(90,143,114,0.1); border-color:rgba(90,143,114,0.22); color:#80c4a0; }
+```
+
+### Badges
+```css
+.badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; }
+.badge-hard  / .badge-risk   { background:rgba(196,96,122,0.18); color:#e8909f; }
+.badge-mixed                 { background:rgba(196,158,64,0.15); color:#e8c96a; }
+.badge-good  / .badge-protect { background:rgba(90,143,114,0.18); color:#80c4a0; }
+```
+
+### Callout Boxes
+```css
+/* All share: border-radius:14px; padding:14px 18px; font-size:0.9rem; line-height:1.65; */
+.golden-box   { background:rgba(196,158,64,0.08); border:1px solid rgba(196,158,64,0.25); color:#e8d89a; }
+.golden-box::before { content:"★ Golden Window — "; font-weight:600; color:var(--gold); }
+
+.antidote-box { background:rgba(90,143,114,0.08); border:1px solid rgba(90,143,114,0.2); color:#a0d4b8; }
+.antidote-box::before { content:"Antidote — "; font-weight:600; color:#80c4a0; }
+
+/* Session readings callout variants */
+.callout { border-radius:14px; padding:18px 22px; font-size:0.9rem; line-height:1.8; }
+.callout-gold { background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.28); }
+.callout-plum { background:rgba(124,92,191,0.09); border:1px solid rgba(124,92,191,0.28); }
+.callout-rose { background:rgba(196,96,122,0.09); border:1px solid rgba(196,96,122,0.28); }
+.callout-sage { background:rgba(90,143,114,0.09); border:1px solid rgba(90,143,114,0.3); }
+.callout-label { font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; font-weight:600; margin-bottom:8px; }
+```
+
+### Fun Facts List
+```css
+.fun-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; }
+.fun-list li { padding:12px 16px; background:rgba(255,255,255,0.04); border-left:3px solid var(--gold); border-radius:0 12px 12px 0; font-size:0.9rem; line-height:1.6; color:rgba(240,232,216,0.82); }
+```
+
+### Shadow Cards (2-col grid)
+```css
+.shadow-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+.shadow-card { background:rgba(196,96,122,0.06); border:1px solid rgba(196,96,122,0.15); border-radius:14px; padding:14px 16px; }
+.shadow-card strong { display:block; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; color:#e8909f; margin-bottom:6px; }
+.shadow-card p { font-size:0.88rem; color:rgba(240,232,216,0.7); line-height:1.6; }
+```
+
+### Dasha Issue Rows
+```css
+.dasha-issues { display:flex; flex-direction:column; gap:10px; margin-top:14px; }
+.dasha-issue { display:grid; grid-template-columns:130px 80px 1fr; gap:10px; align-items:center;
+  padding:10px 14px; border-radius:12px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); }
+.dasha-issue-period { font-weight:600; color:#b49edf; font-size:0.8rem; }
+.dasha-issue-note { color:rgba(240,232,216,0.72); line-height:1.5; font-size:0.86rem; }
+```
+
+### Period / Window Rows
+```css
+.period-row { display:grid; grid-template-columns:90px 140px 1fr; gap:10px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.88rem; }
+.period-window { font-weight:600; color:var(--gold2); font-size:0.82rem; }
+.period-dasha  { color:rgba(196,158,64,0.65); font-size:0.8rem; }
+.period-theme  { color:rgba(240,232,216,0.75); line-height:1.55; }
+```
+
+### Classical Reference Cards
+```css
+.ref-card { padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+.ref-meta { display:flex; justify-content:space-between; margin-bottom:6px; }
+.ref-source { font-size:0.72rem; color:var(--gold); letter-spacing:0.1em; text-transform:uppercase; }
+.ref-placement { font-size:0.72rem; color:rgba(240,232,216,0.45); }
+.ref-quote { font-family:Cormorant Garamond; font-size:1.05rem; font-style:italic; color:var(--cream); margin-bottom:6px; }
+.ref-application { font-size:0.85rem; color:rgba(240,232,216,0.72); line-height:1.6; padding-left:12px; border-left:2px solid rgba(196,158,64,0.3); }
+```
+
+### Warning List
+```css
+.warning-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:6px; margin-top:12px; }
+.warning-list li { padding:8px 14px; background:rgba(196,96,122,0.06); border-left:3px solid rgba(196,96,122,0.4); border-radius:0 10px 10px 0; font-size:0.87rem; color:rgba(240,232,216,0.75); }
+```
+
+### Sub-label
+```css
+.sub-label { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; margin-top:18px; }
+```
+
+### Section Divider
+```css
+.divider { display:flex; align-items:center; gap:16px; margin:32px 0; font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(240,232,216,0.3); }
+.divider::before, .divider::after { content:''; flex:1; height:1px; background:var(--border); }
+/* Usage: <div class="divider">Career &amp; Growth</div> or <div class="divider">✦</div> */
+```
+
+### Symmetric Grid (2-col panels)
+```css
+.sym-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+/* Mobile: grid-template-columns:1fr */
+```
+
+### Reading Table (session readings)
+```css
+.reading-table { width:100%; border-collapse:collapse; font-size:0.86rem; }
+.reading-table th { text-align:left; padding:10px 14px; background:rgba(196,158,64,0.1); color:var(--gold);
+  font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; border-bottom:1px solid rgba(196,158,64,0.2); }
+.reading-table td { padding:10px 14px; color:rgba(240,232,216,0.82); border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:top; line-height:1.6; }
+.reading-table tr:last-child td { border-bottom:none; }
+.reading-table tr:hover td { background:rgba(255,255,255,0.02); }
+```
+
+### Session Readings Layout (sidebar + main)
+```css
+.layout { display:grid; grid-template-columns:260px 1fr; min-height:100vh; max-width:1300px; margin:0 auto; }
+.sidebar { position:sticky; top:0; height:100vh; overflow-y:auto; padding:36px 20px 36px 24px;
+  border-right:1px solid var(--border); background:rgba(11,11,24,0.92); backdrop-filter:blur(12px); }
+.main { padding:48px 52px 80px; max-width:860px; }
+/* Mobile: grid-template-columns:1fr; sidebar position:relative; height:auto */
+```
+
+### Chapter Structure (session readings)
+```css
+.chapter { margin-bottom:56px; scroll-margin-top:32px; }
+.chapter-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.chapter-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
+/* Variants: .chapter-icon.gold/plum/rose/sage/blue */
+.chapter h2 { font-family:Cormorant Garamond; font-size:1.9rem; font-weight:300; color:var(--cream); }
+.chapter h2 small { display:block; font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-family:'DM Sans',sans-serif; margin-bottom:4px; }
+```
+
+### Section Card (within chapters)
+```css
+.section { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:24px 28px; margin-bottom:16px; }
+.section-title { font-family:Cormorant Garamond; font-size:1.2rem; font-weight:400; color:var(--cream); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+/* .dot-gold / .dot-plum / .dot-rose / .dot-sage / .dot-blue */
+```
+
+### Footer
+```css
+.footer { text-align:center; padding:20px 0; font-size:0.72rem; color:rgba(240,232,216,0.3); letter-spacing:0.08em; border-top:1px solid var(--border); margin-top:40px; }
+/* Content: "Generated {date} · Vedic / Lahiri Ayanamsha · Swiss Ephemeris" */
+```
+
+### Required Meta Tags (all files)
+```html
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">   <!-- ALWAYS on docs/ files -->
+```
+
+### Mobile Breakpoint
+```css
+@media (max-width: 768px) {
+  .sym-grid, .stat-grid, .shadow-grid { grid-template-columns: 1fr; }
+  .hero { padding: 32px 24px 28px; }
+  /* Session readings: sidebar becomes horizontal strip, main padding 32px 20px */
+}
+```
+
+### Spirit Animal Section (profile HTML — before footer)
+```html
+<!-- Full-width panel, text-align:center, padding 48px 40px -->
+<!-- Background: linear-gradient(135deg, rgba(28,18,56,0.98), rgba(60,30,80,0.96)) -->
+<!-- Animal emoji: font-size 96px -->
+<!-- Title: Cormorant Garamond, 2.2rem, weight 300 -->
+<!-- Subtitle: 0.7rem eyebrow in gold with placement labels -->
+<!-- 3 paragraphs, max-width 680px, centered -->
+```
+
+### Remedy HTML Layout
+```
+Weekly Calendar (full-width table, gold headers, 2-row: practice + planet label)
+  ↓
+[Tier 1 Universal (sage green)] [Tier 2 Vedic Tradition (gold)] — side by side, 1fr 1fr
+  ↓
+Tier 3 Neuroscience (blue) — full width, 3-column inner grid (CBT | NLP | Biohacking)
+```
+
+---
+
 ## Remedy Tier System (ALWAYS classify remedies into 3 tiers)
 
 **Always show a Weekly Practice Calendar FIRST** (before any remedy tiers):
