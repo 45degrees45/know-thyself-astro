@@ -21,12 +21,25 @@ async def stream_report(chart_id: str, db: AsyncSession = Depends(get_db)):
     chart = result.scalar_one_or_none()
     if not chart:
         raise HTTPException(status_code=404, detail="Chart not found")
+    if not chart.user:
+        raise HTTPException(status_code=500, detail="Chart has no associated user")
     if not chart.user.paid:
         raise HTTPException(status_code=403, detail="Payment required")
 
     async def event_stream():
-        async for chunk in _report_svc.stream_report(chart.chart_json, chart.user.name):
-            yield f"data: {json.dumps({'text': chunk})}\n\n"
-        yield "data: [DONE]\n\n"
+        try:
+            async for chunk in _report_svc.stream_report(chart.chart_json, chart.user.name):
+                yield f"data: {json.dumps({'text': chunk})}\n\n"
+            yield "data: [DONE]\n\n"
+        except Exception as exc:
+            yield f"data: {json.dumps({'error': str(exc)})}\n\n"
 
-    return StreamingResponse(event_stream(), media_type="text/event-stream")
+    return StreamingResponse(
+        event_stream(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+            "Connection": "keep-alive",
+        },
+    )

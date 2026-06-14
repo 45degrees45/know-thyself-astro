@@ -48,11 +48,11 @@ class ReportService:
 
         return REPORT_PROMPT_TEMPLATE.format(
             name=name,
-            lagna=chart_json["lagna"],
-            lagna_deg=chart_json["lagna_deg"],
-            current_dasha=chart_json["current_dasha"],
+            lagna=chart_json.get("lagna", "unknown"),
+            lagna_deg=chart_json.get("lagna_deg", 0.0),
+            current_dasha=chart_json.get("current_dasha", "unknown"),
             yogas=", ".join(chart_json.get("yogas", [])),
-            animal=chart_json["animal"],
+            animal=chart_json.get("animal", "unknown"),
             animal_emoji=chart_json.get("animal_emoji", ""),
             planets_summary=planets_summary,
         )
