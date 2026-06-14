@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="dark">
+  <title>Soniya — Deep Readings · Libra Lagna · The Peacock</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.58);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --r:       20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { background: var(--bg); scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.15), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.10), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      line-height: 1.75;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .sidebar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .sidebar-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .sidebar-animal {
+      font-size: 2.4rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .sidebar-stats {
+      background: rgba(196,158,64,0.07);
+      border: 1px solid rgba(196,158,64,0.15);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-stat {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      padding: 4px 0;
+      border-bottom: 1px solid rgba(196,158,64,0.08);
+    }
+    .sidebar-stat:last-child { border-bottom: none; }
+    .sidebar-stat-label { color: var(--gold); }
+    .sidebar-stat-val { color: var(--cream); }
+
+    .nav-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.35);
+      margin-bottom: 10px;
+    }
+
+    .nav-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+
+    .nav-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 0.82rem;
+      color: rgba(240,232,216,0.6);
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-list a:hover {
+      background: rgba(196,158,64,0.1);
+      color: var(--cream);
+    }
+    .nav-list a .icon {
+      font-size: 1rem;
+      width: 22px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 48px 52px 80px;
+      max-width: 860px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      margin-bottom: 52px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 0.95;
+      color: #fff8f0;
+      margin-bottom: 10px;
+    }
+
+    .hero-lagna {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 20px;
+    }
+
+    .hero-intro {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 620px;
+      line-height: 1.85;
+    }
+
+    /* ── CHAPTER ── */
+    .chapter {
+      margin-bottom: 56px;
+      scroll-margin-top: 32px;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .chapter-icon.gold { background: rgba(196,158,64,0.12); border: 1px solid rgba(196,158,64,0.25); }
+    .chapter-icon.plum { background: rgba(124,92,191,0.12); border: 1px solid rgba(124,92,191,0.25); }
+    .chapter-icon.rose { background: rgba(196,96,122,0.12); border: 1px solid rgba(196,96,122,0.25); }
+    .chapter-icon.sage { background: rgba(90,143,114,0.12); border: 1px solid rgba(90,143,114,0.25); }
+    .chapter-icon.blue { background: rgba(91,143,212,0.12); border: 1px solid rgba(91,143,212,0.25); }
+
+    .chapter h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.1;
+    }
+
+    .chapter h2 small {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      margin-bottom: 4px;
+    }
+
+    /* ── PROSE ── */
+    .prose p {
+      color: rgba(240,232,216,0.85);
+      margin-bottom: 16px;
+      font-size: 0.97rem;
+      line-height: 1.85;
+    }
+
+    .prose p:last-child { margin-bottom: 0; }
+
+    /* ── SECTION WITHIN CHAPTER ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-gold { background: var(--gold); }
+    .dot-plum { background: var(--plum); }
+    .dot-rose { background: var(--rose); }
+    .dot-sage { background: var(--sage); }
+    .dot-blue { background: var(--blue); }
+
+    .section p {
+      font-size: 0.9rem;
+      color: rgba(240,232,216,0.8);
+      line-height: 1.8;
+      margin-bottom: 10px;
+    }
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .section ul li {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.8);
+      line-height: 1.7;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .section ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 1.2rem;
+      line-height: 1.3;
+    }
+
+    /* ── TABLE ── */
+    .reading-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin: 16px 0;
+    }
+
+    .reading-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(196,158,64,0.1);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+    }
+
+    .reading-table td {
+      padding: 10px 14px;
+      color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .reading-table td strong { color: var(--cream); }
+
+    /* ── CALLOUT BOXES ── */
+    .callout {
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin: 16px 0;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .callout-gold {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.28);
+      color: rgba(240,232,216,0.88);
+    }
+
+    .callout-plum {
+      background: rgba(124,92,191,0.09);
+      border: 1px solid rgba(124,92,191,0.28);
+      color: rgba(240,232,216,0.88);
+    }
+
+    .callout-rose {
+      background: rgba(196,96,122,0.09);
+      border: 1px solid rgba(196,96,122,0.28);
+      color: rgba(240,232,216,0.88);
+    }
+
+    .callout-sage {
+      background: rgba(90,143,114,0.09);
+      border: 1px solid rgba(90,143,114,0.3);
+      color: rgba(240,232,216,0.88);
+    }
+
+    .callout-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+    .callout-gold .callout-label { color: var(--gold); }
+    .callout-plum .callout-label { color: #a48fe0; }
+    .callout-rose .callout-label { color: #d98098; }
+    .callout-sage .callout-label { color: #7ab898; }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+    .badge-risk { background: rgba(196,96,122,0.18); color: #d98098; border: 1px solid rgba(196,96,122,0.3); }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #7ab898; border: 1px solid rgba(90,143,114,0.3); }
+    .badge-mixed { background: rgba(196,158,64,0.18); color: var(--gold2); border: 1px solid rgba(196,158,64,0.3); }
+
+    /* ── PLANET CHIP ── */
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.15);
+      border-radius: 999px;
+      padding: 3px 10px 3px 7px;
+      font-size: 0.75rem;
+      color: rgba(240,232,216,0.8);
+      margin: 3px 3px 3px 0;
+    }
+    .pchip span { color: var(--gold); font-weight: 500; font-size: 0.7rem; }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 40px 0 32px;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.3);
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── SUMMARY BOX ── */
+    .summary-box {
+      background: linear-gradient(135deg, rgba(28,18,56,0.95), rgba(44,24,72,0.92));
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 18px;
+      padding: 28px 32px;
+      margin: 20px 0;
+    }
+
+    .summary-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--gold2);
+      margin-bottom: 16px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: rgba(240,232,216,0.3);
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar {
+        position: relative;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+        padding: 24px 20px;
+      }
+      .main { padding: 32px 20px 60px; }
+      .nav-list { flex-direction: row; flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <span class="sidebar-animal">🦚</span>
+    <div class="sidebar-name">Soniya</div>
+    <div class="sidebar-sub">Deep Readings · Jun 2026</div>
+
+    <div class="sidebar-stats">
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Lagna</span>
+        <span class="sidebar-stat-val">Libra 25.1°</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Moon</span>
+        <span class="sidebar-stat-val">Scorpio · Jyeshtha</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-val">Moon / Saturn / Venus</span>
+        <span class="sidebar-stat-label">Dasha</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Yogas</span>
+        <span class="sidebar-stat-val">8 — incl. Adhi</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Animal</span>
+        <span class="sidebar-stat-val">Peacock 🦚</span>
+      </div>
+    </div>
+
+    <div class="nav-label">Chapters</div>
+    <ul class="nav-list">
+      <li><a href="#relationships"><span class="icon">💞</span>Relationship Themes</a></li>
+      <li><a href="#intuition"><span class="icon">🔮</span>Intuition</a></li>
+      <li><a href="#husband"><span class="icon">♂</span>The Husband</a></li>
+      <li><a href="#marriage-yogas"><span class="icon">⚖️</span>Marriage Yogas</a></li>
+      <li><a href="#divorce"><span class="icon">🌪</span>Divorce</a></li>
+      <li><a href="#mother-in-law"><span class="icon">🌑</span>Mother-in-Law</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="eyebrow">Vedic Jyotish · Deep Session Readings</div>
+      <h1>Soniya</h1>
+      <div class="hero-lagna">Libra Ascendant · The Celestial Peacock</div>
+      <p class="hero-intro">
+        A deep reading of relationships, intuition, marriage, and family dynamics from the natal chart.
+        Every insight traces directly to a specific planetary placement — the chart speaks with precision.
+        Born 13 Jun 1984 · 4:15 PM · Palakkad, Kerala.
+      </p>
+    </div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- CHAPTER 1 — RELATIONSHIP THEMES           -->
+    <!-- ══════════════════════════════════════════ -->
+    <section class="chapter" id="relationships">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">💞</div>
+        <h2><small>Chapter 1</small>Why These Relationship Themes</h2>
+      </div>
+
+      <div class="prose">
+        <p>Every quality in her relationship profile — the hunger for depth, the intensity, the need for intellectual matching — maps directly to a specific placement. Nothing is interpretation without evidence.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>"Intellectual curiosity and justice" as partner traits</div>
+        <p><strong>Budha-Aditya Yoga</strong> (Sun + Mercury conjunct in H8) makes the mind her most activated faculty. She naturally seeks a mirror in a partner. <strong>Saturn as Yoga Karaka</strong> rules the chart's power centre — Saturn = justice, fairness, law. She is wired for justice at the identity level (H1 Saturn), so a partner without that value feels fundamentally incompatible.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>"Balance and harmony" in relationships</div>
+        <p><strong>Libra is the Lagna</strong> — the sign of the scales literally IS the self. Balance is not a preference; it is her identity architecture. Relational discord is experienced as an attack on who she is, not just what she prefers.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>"Sensuality and beauty" — Venus in Taurus</div>
+        <p><strong>Venus in its own sign Taurus</strong> = Venus at maximum natural expression. Taurus = earth, the body, physical pleasure, aesthetic refinement. Venus is also the <strong>Lagna lord</strong> — what Venus loves, she loves at the soul level, not superficially.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>"Intense and passionate" relationship style</div>
+        <ul>
+          <li><strong>Moon in Scorpio (H2, Jyeshtha)</strong> — Scorpio Moon is the most emotionally intense Moon placement. Jyeshtha amplifies with a "penetrate to the depths or not at all" quality. Emotions are never casual for her.</li>
+          <li><strong>Mars R in H1</strong> — The 7th lord sits in her own body house, retrograde. Relationship energy lives inside her, turned inward — it comes out as deep passion rather than casual surface engagement.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>"Depth and intimacy" as a core need</div>
+        <p><strong>Four planets in H8</strong> (Sun, Mercury, Venus, Rahu — all in Taurus). The 8th house is the house of what is hidden, transformative, merged. With Venus, Mercury, and the Sun all in H8, shallow connection is not even possible — every relationship becomes an excavation.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>"Stability and security" as the balancing need</div>
+        <p>With all that H8 intensity and Scorpio Moon depth, <strong>Taurus grounds the stellium</strong>. She craves transformation AND rootedness — passion that lasts. The <strong>Sasa Yoga</strong> adds to this: she needs a partner with backbone, not someone swept away by her emotional currents.</p>
+      </div>
+
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- CHAPTER 2 — INTUITION                     -->
+    <!-- ══════════════════════════════════════════ -->
+    <section class="chapter" id="intuition">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">🔮</div>
+        <h2><small>Chapter 2</small>Intuition in the Chart</h2>
+      </div>
+
+      <div class="prose">
+        <p>Soniya's chart is exceptionally rich for intuition — multiple placements reinforce it from different angles, creating a layered system rather than a single gift.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Moon in Scorpio · H2 · Jyeshtha pada 4 — Primary Intuition Engine</div>
+        <p>Scorpio Moon is the most psychically sensitive Moon placement in Jyotish. She picks up on what is not said, not shown, deliberately concealed. <strong>Jyeshtha nakshatra's</strong> shakti is <em>arohana shakti</em> — the power to perceive from a height. People with Jyeshtha Moon describe their intuition as "knowing from above." <strong>Pada 4</strong> (Pisces navamsha) gives the Moon a permeable, absorptive quality — she takes in the emotional field of a room without trying to.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Four-Planet H8 Stellium — Investigative, Occult-Grade Intuition</div>
+        <ul>
+          <li><strong>Budha-Aditya Yoga in H8</strong> — intellect fused with life force, operating inside the house of hidden knowledge. Her intuition has an analytical texture — she reasons through the hidden.</li>
+          <li><strong>Venus in H8</strong> — reads beauty and relationships at a depth others miss. She senses the emotional subtext of aesthetic choices.</li>
+          <li><strong>Rahu in H8 (Rohini)</strong> — hunger to decode what is hidden in physical/material reality. Sensory and obsessive.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Ketu in H2 · Anuradha — Past-Life Spiritual Access</div>
+        <p>Ketu bypasses the analytical mind and delivers direct perception. In H2 (inner resources, accumulated knowing), it suggests she carries deep spiritual knowledge from past lives that surfaces as "knowing things she shouldn't know." <strong>Anuradha</strong> = seeing through the heart.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>12th Lord (Mercury) in H8 — Dream-to-Depth Bridge</div>
+        <p>The 12th house rules the subconscious and dreams. Its lord Mercury is placed in the 8th. This creates a channel between her unconscious dream-world and her waking investigative mind. She likely receives insight through sleep-edge states, and finds answers "arrive" after rest rather than through active thinking.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Saturn R (4th Lord) in H1 — The Subconscious Made Visible</div>
+        <p>The 4th house rules the inner world and subconscious. Its lord Saturn is retrograde in H1 — meaning her inner world is perpetually present in her outer expression. She cannot separate what she privately senses from how she presents. Others read this as wisdom, gravitas, or "she always seems to know."</p>
+      </div>
+
+      <table class="reading-table" style="margin-top:20px">
+        <thead>
+          <tr><th>Placement</th><th>Type of Intuition</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Moon in Scorpio · Jyeshtha</strong></td><td>Emotional / psychic — reads the hidden in people</td></tr>
+          <tr><td><strong>H8 stellium (Sun + Mercury)</strong></td><td>Investigative — reasons through what is concealed</td></tr>
+          <tr><td><strong>Venus in H8</strong></td><td>Relational + aesthetic — feels emotional subtext</td></tr>
+          <tr><td><strong>Ketu in H2 · Anuradha</strong></td><td>Past-life knowing — arrives as certainty, not reasoning</td></tr>
+          <tr><td><strong>12th lord Mercury in H8</strong></td><td>Dream-state / subconscious downloads</td></tr>
+          <tr><td><strong>Saturn R (4th lord) in H1</strong></td><td>Inner world bleeds into presence — others sense she "knows"</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-plum" style="margin-top:16px">
+        <div class="callout-label">Core Signature</div>
+        She has a layered system — emotional sensitivity, deep investigation, past-life access, and subconscious integration all reinforcing each other. The result: very difficult to deceive, and often understands a situation fully before she can articulate how she knows.
+      </div>
+
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- CHAPTER 3 — THE HUSBAND                   -->
+    <!-- ══════════════════════════════════════════ -->
+    <section class="chapter" id="husband">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">♂</div>
+        <h2><small>Chapter 3</small>The Husband</h2>
+      </div>
+
+      <div class="prose">
+        <p>In Jyotish, for a female chart, the husband is read from three sources simultaneously: the 7th house (the marriage house), the 7th lord (Mars), and Jupiter — the natural karaka of husband for women.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>7th House — Aries · Empty</div>
+        <p>The 7th house falls in <strong>Aries</strong> — ruled by Mars. Aries in H7 describes the husband's outer nature: energetic, direct, action-oriented, pioneering. He leads with initiative, not diplomacy. The house is <strong>empty</strong> — the husband's character is read entirely through the 7th lord and Jupiter.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>7th Lord — Mars Retrograde in H1 · Libra · Swati</div>
+        <p><strong>7th lord in 1st</strong> = the husband's energy lives inside her identity. The relationship is deeply self-defining — she cannot think of herself separately from the partnership.</p>
+        <ul>
+          <li><strong>Mars in Libra</strong> — a man balancing natural drive with a need for harmony. Capable of force but frequently holds it back.</li>
+          <li><strong>Swati nakshatra</strong> (Rahu-ruled) — highly independent, self-sufficient, does not like to be tied down. He has his own direction.</li>
+          <li><strong>Retrograde</strong> — his Mars energy is internalized. He processes conflict inwardly rather than confronting directly. This reads as either quiet strength or emotional unavailability.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Jupiter — Husband Karaka · H3 · Sagittarius · Purva Ashadha R</div>
+        <p><strong>Jupiter in Sagittarius (own sign)</strong> = exceptional dignity. The husband is principled, philosophical, has a strong belief system. Likely educated or self-educated; drawn to knowledge, law, religion, or teaching. Has a moral code he takes seriously.</p>
+        <p><strong>Jupiter Retrograde</strong> = this wisdom is turned inward. He is more of a private philosopher than a public teacher. He may have had disappointments with institutions that caused him to develop his worldview independently.</p>
+        <p><strong>Purva Ashadha</strong> ("the undefeated one") = extraordinary inner resilience. Once he decides something, he does not reverse it. His greatest strength and also what makes him occasionally inflexible.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Darakaraka — Jupiter (16.4° — lowest degree)</div>
+        <p>In Jaimini astrology, the Darakaraka (planet with the lowest degree) is the soul-level significator of the spouse. <strong>Jupiter at 16.4°</strong> confirms everything above — the husband is fundamentally a Jupiterian person. Wise, principled, philosophical, independently-minded.</p>
+      </div>
+
+      <table class="reading-table" style="margin-top:4px">
+        <thead>
+          <tr><th>Quality</th><th>Source</th><th>Reading</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Type of man</strong></td><td>Jupiter in Sagittarius</td><td>Educated, principled, philosophical, morally driven</td></tr>
+          <tr><td><strong>Inner nature</strong></td><td>Jupiter R · Darakaraka</td><td>Inward wisdom, private thinker, independently-minded</td></tr>
+          <tr><td><strong>Outer style</strong></td><td>Mars R in H1 · Swati</td><td>Independent, quietly strong, not openly demonstrative</td></tr>
+          <tr><td><strong>Resilience</strong></td><td>Purva Ashadha</td><td>Unbreakable once decided — stubborn or steadfast</td></tr>
+          <tr><td><strong>Relationship dynamic</strong></td><td>7th lord in H1</td><td>The marriage defines her sense of self deeply</td></tr>
+          <tr><td><strong>Current phase</strong></td><td>Saturn bhukti → Mar 2027</td><td>Structuring, demanding but ultimately solidifying period</td></tr>
+        </tbody>
+      </table>
+
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- CHAPTER 4 — MARRIAGE YOGAS                -->
+    <!-- ══════════════════════════════════════════ -->
+    <section class="chapter" id="marriage-yogas">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">⚖️</div>
+        <h2><small>Chapter 4</small>Marriage &amp; Relationship Yogas</h2>
+      </div>
+
+      <div class="prose">
+        <p>Multiple yogas and planetary combinations describe marriage — several creating tension, several providing deep protection. The full picture is complex and must be read as a whole.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Venus in H8 Own Sign — Viparita Raja Yoga <span class="badge badge-protect" style="margin-left:8px">KEY YOGA</span></div>
+        <p>Venus rules both Libra (Lagna) AND Taurus (H8). Venus in H8 Taurus = lord of the 8th in the 8th = <strong>Viparita Raja Yoga</strong>. Love and relationships go through intense difficulty — but the final outcome is elevation, not destruction. The very things that appear to damage the relationship become the source of its ultimate strength. Her most significant relationships are those that transform her completely.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Mars R (7th Lord) in H1 — Identity-Marriage Fusion</div>
+        <p><strong>Mangal Dosha</strong> is technically present (Mars in H1) but substantially modified — Mars itself rules H7 (Aries). When the 7th lord creates Mangal Dosha, it is self-correcting in structure. The husband values independence (Swati), creating recurring tension with her desire for deep merger (Scorpio Moon, H8 stellium).</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Jupiter Aspecting H7 — Dharmic Blessing <span class="badge badge-protect" style="margin-left:8px">PROTECTIVE</span></div>
+        <p>Jupiter in H3 (Sagittarius) casts its 7th aspect directly onto H7 (Aries). Jupiter as the natural karaka of husband AND the Darakaraka directly blessing the marriage house = the marriage has a dharmic quality. Even through difficulty, it is held by something larger. Jupiter's aspect on H7 is the counterweight to all tension indicators — it says the marriage is not meant to fail.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Saturn (5th Lord) R in H1 — Karma in Love</div>
+        <p>Love is never casual for her. Every romantic involvement carries weight and seriousness. Past-life karma in romance (Saturn R = karmic revisiting). Saturn also aspects H7 — marriage may come later than expected OR is tested structurally before stabilising. As Yoga Karaka, what Saturn builds, it builds to last.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Rahu in H8 (Rohini) + Venus — Obsessive, Karmic Love</div>
+        <p>Attraction is powerful, magnetic, sometimes larger-than-rational. Rohini = sensory, creative, deeply desirous — Rahu amplifies desire. She may be drawn to relationships with an intensely karmic quality. Love connects to themes of power, secrets, transformation — not surface pleasantness.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Rahu-Ketu Axis H2-H8 — The Karmic Relationship Axis</div>
+        <ul>
+          <li><strong>Ketu in H2</strong> — detachment from family patterns; emotional independence from family conditioning. She sees family patterns clearly but does not carry them blindly.</li>
+          <li><strong>Rahu in H8</strong> — the soul's hunger is for transformation and depth. Relationships are the primary vehicle for this transformation.</li>
+          <li>The relationship itself IS the spiritual path.</li>
+        </ul>
+      </div>
+
+      <div class="callout callout-gold" style="margin-top:20px">
+        <div class="callout-label">Core Signature</div>
+        This is a chart where relationships are the forge, not the comfort zone. The H8 stellium, Viparita Raja Yogas, Scorpio Moon, and the Rahu-Ketu axis all point to the same truth: love in Soniya's life is always transformative, always going somewhere, always asking something of her at a deep level. The raw material is intense, but what is produced is genuine and lasting.
+      </div>
+
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- CHAPTER 5 — DIVORCE                       -->
+    <!-- ══════════════════════════════════════════ -->
+    <section class="chapter" id="divorce">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">🌪</div>
+        <h2><small>Chapter 5</small>Divorce — What the Chart Says</h2>
+      </div>
+
+      <div class="prose">
+        <p>The chart has both significant separation indicators AND strong protective factors. Both must be read with equal honesty.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Separation Indicators</div>
+        <ul>
+          <li><strong>Venus + Rahu in H8</strong> — Venus (Lagna lord + love karaka) with Rahu in H8 = disruptive, obsessive, unconventional relationship endings. This is the strongest separation signal in the chart.</li>
+          <li><strong>Mars R (7th lord) in Swati</strong> — the husband's energy turns inward and away from marriage. Emotional unavailability or withdrawal over time creates irreconcilable distance.</li>
+          <li><strong>Both Mars R + Saturn R in H1, both aspecting H7</strong> — two retrograde malefics casting their gaze simultaneously on the marriage house = chronic pressure, restriction, and recurring conflict in the marriage sector.</li>
+          <li><strong>Saturn aspecting H7</strong> — emotional coldness, duty-without-warmth. Over time creates conditions for separation — not dramatic breaks but slow emotional withdrawal.</li>
+          <li><strong>Ketu in H2</strong> — Ketu dissolves what it touches. The conventional family unit may not hold in its traditional form.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Protective Factors <span class="badge badge-protect" style="margin-left:8px">Counter-Indicators</span></div>
+        <ul>
+          <li><strong>Jupiter directly aspecting H7 from own sign (Sagittarius)</strong> — the most important counter-indicator. Jupiter's aspect on the 7th house generally prevents permanent, irrecoverable separation. This is maximum-strength Jupiter — it holds something together even when everything appears broken.</li>
+          <li><strong>Viparita Raja Yoga on Venus</strong> — what looks like complete failure at its worst point is not the final state. The worst phase is not the final destination.</li>
+          <li><strong>Venus in own sign (Taurus)</strong> — a strong Lagna lord in H8 means she survives and rises from relationship transformation. The damage does not break her core self.</li>
+        </ul>
+      </div>
+
+      <table class="reading-table">
+        <thead>
+          <tr><th>Factor</th><th>Direction</th><th>Strength</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Venus + Rahu in H8</td><td><span class="badge badge-risk">Separation risk</span></td><td>Strong</td></tr>
+          <tr><td>Mars R + Saturn R both aspecting H7</td><td><span class="badge badge-risk">Chronic marital stress</span></td><td>Strong</td></tr>
+          <tr><td>Ketu in H2</td><td><span class="badge badge-risk">Dissolving family bond</span></td><td>Moderate</td></tr>
+          <tr><td>Jupiter aspecting H7 (own sign)</td><td><span class="badge badge-protect">Protection</span></td><td>Very Strong</td></tr>
+          <tr><td>Viparita Raja Yoga on Venus</td><td><span class="badge badge-protect">Transformation → elevation</span></td><td>Strong</td></tr>
+          <tr><td>Venus in own sign</td><td><span class="badge badge-protect">Resilience in love</span></td><td>Moderate</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-rose" style="margin-top:20px">
+        <div class="callout-label">Honest Assessment</div>
+        This is not a smooth conventional marriage chart. But it does not read as a clean permanent divorce chart either — because Jupiter's direct aspect on H7 from its own sign is too powerful to ignore. The most probable pattern: the marriage undergoes one or more profound crises — possibly including a period of actual separation. But the Viparita Raja Yoga on Venus means the resolution of that crisis becomes a source of personal power. Whether resolution is reconciliation or a divorce that leads to a better life — elevation is the promised end state either way.
+      </div>
+
+      <div class="section" style="margin-top:20px">
+        <div class="section-title"><span class="dot dot-rose"></span>Current Critical Period — Moon / Saturn Bhukti · Now → March 2027</div>
+        <p>Saturn transits its own position (H1) and simultaneously aspects H7. This is the most structurally pressured period for the marriage in the current dasha cycle. Whatever marital issues exist are being forced to a resolution — one way or another — before March 2027.</p>
+        <p>The <strong>Mercury Bhukti (Mar 2027 → Aug 2028)</strong> that follows is generally better for communication and finding intellectual common ground — if the marriage survives Saturn bhukti, Mercury bhukti gives tools to rebuild.</p>
+      </div>
+
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!-- CHAPTER 6 — MOTHER-IN-LAW                 -->
+    <!-- ══════════════════════════════════════════ -->
+    <section class="chapter" id="mother-in-law">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">🌑</div>
+        <h2><small>Chapter 6</small>The Mother-in-Law</h2>
+      </div>
+
+      <div class="prose">
+        <p>In Jyotish, the mother-in-law is read from H10 (4th from the 7th = the husband's mother's house) and H8 (house of in-laws, husband's family). For Libra Lagna, H10 is Cancer — ruled by Moon.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>H10 Lord — Moon in Scorpio · H2 · Jyeshtha pada 4</div>
+        <p>The mother-in-law's entire nature is described by the Moon's position. <strong>Scorpio Moon</strong> = emotionally complex, privately powerful, deeply territorial. She feels everything at maximum intensity but rarely shows it. She is protective of what she considers "hers" — especially her son.</p>
+        <p><strong>Jyeshtha nakshatra</strong> = "the eldest, the chief." Her entire energy is about being the primary authority — the one who must be acknowledged as first. The shadow of Jyeshtha is jealousy and the need to dominate. She sees herself as the chief woman of the household. A daughter-in-law who is strong, intelligent, and has depth is unconsciously perceived as a threat to that position.</p>
+        <p>The Jyeshtha mother-in-law does not attack directly — she works through emotional pressure, silence, comparison, and subtle assertion of her primacy. She uses <strong>speech (H2 = house of speech)</strong> as her primary tool of influence.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Ketu Conjunct Moon in H2 — Karmic Complexity</div>
+        <ul>
+          <li>The mother-in-law brings past-life karmic weight into Soniya's life — this is not an ordinary in-law relationship, it is charged with karmic significance.</li>
+          <li>Ketu + Moon = the mother-in-law has a spiritually detached or world-weary quality. She may have genuine spiritual depth, or use detachment as a defence mechanism.</li>
+          <li>Ketu in H2 = the family unit carries dissolution energy — the mother-in-law's presence is connected to this dissolving quality in the family structure.</li>
+          <li>There is a sense that the two women are working through something unresolved from a previous lifetime.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Saturn Aspecting H10 — The Restrictive Gaze</div>
+        <p>Saturn in H1 casts its 10th aspect directly onto H10 (Cancer). Soniya experiences the mother-in-law relationship as: cold or formal — warmth is not the primary quality of this bond. Heavy judgment and expectations. A sense of duty without affection. The relationship is maintained out of obligation more than genuine closeness.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>H8 — Rahu + Venus · The In-Law Environment</div>
+        <ul>
+          <li><strong>Rahu in H8</strong> — the in-law family is unconventional, intense, or from a very different background. Hidden dynamics she only gradually becomes aware of.</li>
+          <li><strong>Venus in H8 (Viparita Raja Yoga)</strong> — her sense of love and beauty is directly challenged by the in-law environment. But the Viparita Raja Yoga = she ultimately gains power through navigating this difficult dynamic, not loses it.</li>
+        </ul>
+      </div>
+
+      <table class="reading-table">
+        <thead>
+          <tr><th>Factor</th><th>Reading</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Moon (H10 lord) in Scorpio · Jyeshtha</strong></td><td>Emotionally intense, territorial, needs to be the chief authority</td></tr>
+          <tr><td><strong>Moon in H2 (speech house)</strong></td><td>Uses words — comparisons, opinions, subtle criticism — as influence</td></tr>
+          <tr><td><strong>Ketu with Moon</strong></td><td>Karmic relationship; detached or spiritually complex personality</td></tr>
+          <tr><td><strong>Saturn aspecting H10</strong></td><td>Cold, judgmental dynamic; heavy expectations placed on Soniya</td></tr>
+          <tr><td><strong>Rahu in H8</strong></td><td>In-law family has hidden undercurrents; disruptive environment</td></tr>
+          <tr><td><strong>Neecha Bhanga on Moon</strong></td><td>Mother-in-law herself has risen from genuine difficulty — not purely an antagonist</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-plum" style="margin-top:20px">
+        <div class="callout-label">The Deeper Picture</div>
+        The Neecha Bhanga on Moon is important — the mother-in-law is not a villain. She is a woman who has herself endured emotional difficulty and risen from it. The Jyeshtha matriarchal control is likely a response to her own insecurities and losses. This does not make the dynamic easy — but Soniya's intuition will sense the genuine pain beneath the controlling behaviour, making simple detachment difficult. The Viparita Raja Yoga on Venus in H8 gives the final word: the in-law dynamic, however difficult, is ultimately one of the primary sources of Soniya's personal power. She does not emerge diminished. She emerges forged.
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      Session Readings · 14 Jun 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris<br>
+      For personal use only · Not for redistribution
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
