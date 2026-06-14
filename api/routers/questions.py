@@ -28,14 +28,14 @@ async def get_last_question(db: AsyncSession = Depends(get_db)):
 
 
 @router.get("/questions/{tab}")
-async def get_questions(tab: str, lagna: str = None, db: AsyncSession = Depends(get_db)):
+async def get_questions(tab: str, lagna: str | None = None, db: AsyncSession = Depends(get_db)):
     q = select(QuestionBank).where(
         QuestionBank.tab == tab,
         QuestionBank.active == True,
     )
     if lagna:
         q = q.where(
-            (QuestionBank.lagna_filter == lagna) | (QuestionBank.lagna_filter == None)
+            (QuestionBank.lagna_filter == lagna) | (QuestionBank.lagna_filter.is_(None))
         )
     result = await db.execute(q.order_by(QuestionBank.click_count.desc()).limit(12))
     rows = result.scalars().all()

@@ -1,5 +1,5 @@
-from pydantic import BaseModel, EmailStr
-from typing import Any
+from pydantic import BaseModel, EmailStr, Field
+from typing import Any, Literal
 
 
 class ChartRequest(BaseModel):
@@ -23,8 +23,8 @@ class ChartSummary(BaseModel):
 
 class ChatRequest(BaseModel):
     chart_id: str
-    tab: str
-    message: str
+    tab: Literal["know_thyself", "trending", "spiritual", "career", "relationship", "last_question"]
+    message: str = Field(..., max_length=2000)
 
 
 class PaymentOrderRequest(BaseModel):

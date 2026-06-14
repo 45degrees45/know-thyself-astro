@@ -1,4 +1,5 @@
 import json
+import logging
 from datetime import datetime, timedelta, timezone
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -26,10 +27,13 @@ Keep answers under 200 words unless depth is truly needed.
 
 
 def _build_chart_context(chart_json: dict) -> str:
+    if not isinstance(chart_json, dict):
+        chart_json = {}
+    yogas = chart_json.get('yogas') or []
     return (
         f"Lagna: {chart_json.get('lagna', 'unknown')} {chart_json.get('lagna_deg', '')}° | "
         f"Dasha: {chart_json.get('current_dasha', 'unknown')} | "
-        f"Yogas: {', '.join(chart_json.get('yogas', []))} | "
+        f"Yogas: {', '.join(yogas)} | "
         f"Animal: {chart_json.get('animal', 'unknown')} | "
         f"Moon Nakshatra: {chart_json.get('moon_nakshatra', 'unknown')}"
     )
@@ -92,7 +96,7 @@ async def chat(req: ChatRequest, db: AsyncSession = Depends(get_db)):
                 ))
                 await save_db.commit()
         except Exception:
-            pass  # Non-critical — response already sent
+            logging.exception("Failed to save assistant reply for chart_id=%s", chart_id)
 
     return StreamingResponse(
         event_stream(),
