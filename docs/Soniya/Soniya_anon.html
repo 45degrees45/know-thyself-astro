@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Celestial Peacock, 42 — Vedic Chart Reading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♎</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:0.9;color:#fff8f0;margin-bottom:6px;">The Celestial Peacock</h1>
+    <p class="lagna-line">♎ Libra Lagna 25.1°</p>
+    <p class="tagline">A charismatic leader with a sharp intellect and a flair for justice, navigating life's challenges with discipline and tenacity.</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value">Confidential</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value">Confidential</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Moon / Saturn / Venus</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Disciplined Charisma</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Tau H8</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Sco H2</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Lib H1</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Tau H8</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Sag H3</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Tau H8</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Lib H1</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Tau H8</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Sco H2</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>The native is a charismatic and disciplined individual with a strong sense of justice, driven by a desire for intellectual pursuits and a need for positive change. Her dominant energy is rooted in her Libra ascendant and Saturn's influence, making her a natural peacemaker with a strong sense of fairness. She has a sharp intellect and excellent communication skills, which she uses to navigate life's challenges. With her Moon in Scorpio, she is deeply emotional and intensely private, with a strong connection to her intuition.</p>
+      <div class="trait-chips">
+        <span class="chip">charismatic</span><span class="chip">disciplined</span><span class="chip">intellectually curious</span><span class="chip">emotionally intense</span><span class="chip">private</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>The native values deep, meaningful relationships and is drawn to partners who share her intellectual curiosity and sense of justice. As a Libra ascendant, she is naturally inclined towards balance and harmony in her relationships, and with Venus in Taurus, she appreciates sensuality and beauty. Her relationship style is intense and passionate, with a strong desire for intimacy and connection.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>The native's ideal partner is someone who is intellectually stimulating, emotionally intelligent, and values depth and intimacy in their relationships. This person should be able to appreciate her intensity and passion, while also providing a sense of stability and security.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">intense emotional connection</span><span class="chip chip-green">deep intellectual understanding</span><span class="chip chip-green">strong sense of loyalty</span>
+        <span class="chip chip-neg">emotional intensity can be overwhelming</span><span class="chip chip-neg">high expectations for partners</span><span class="chip chip-neg">tendency to prioritize others' needs over her own</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>The native's career is marked by a strong desire for intellectual pursuits, a need for positive change, and a natural talent for leadership. With her Budha-Aditya yoga, she has a sharp intellect and excellent communication skills, making her well-suited for careers in education, law, or social justice. Her Raja Yoga and Yoga Karaka indicate a strong potential for power, status, and leadership, and she is likely to excel in roles that require strategic thinking, discipline, and tenacity.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>The Sasa yoga, with Saturn exalted in Libra, gives her the power to create positive change and bring balance to her community.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">education</span><span class="chip">law</span><span class="chip">social justice</span><span class="chip">leadership</span><span class="chip">public policy</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Disciplined and Strategic</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>The native's Moon in Jyeshtha indicates a strong connection to her emotional intuition and a natural talent for nurturing others.</li><li>Her Venus in Mrigashira suggests a love of beauty, sensuality, and luxury, and a strong appreciation for the finer things in life.</li><li>The native's Saturn in Swati gives her a strong sense of discipline and responsibility, and a natural ability to create positive change in her community.</li><li>Her Rahu in Rohini indicates a strong desire for spiritual growth and self-awareness, and a natural talent for healing and teaching.</li><li>The native's Ketu in Anuradha suggests a strong connection to her past life experiences and a natural ability to tap into her subconscious mind.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>The native's career is likely to unfold in a series of stages, with each dasha bringing new opportunities and challenges. Her current Moon Mahadasha is a time of emotional growth and self-awareness, and she may be drawn to careers that allow her to nurture and support others.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2021-2031</div>
+          <div class="period-dasha">Moon Mahadasha</div>
+          <div class="period-theme">Emotional growth and self-awareness, with a focus on nurturing and supporting others.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2031-2038</div>
+          <div class="period-dasha">Mars Mahadasha</div>
+          <div class="period-theme">Action, adventure, and competition, with a focus on taking bold steps and pursuing her passions.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2038-2056</div>
+          <div class="period-dasha">Rahu Mahadasha</div>
+          <div class="period-theme">Spiritual growth and self-discovery, with a focus on exploring her subconscious mind and tapping into her creative potential.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>The native should focus on developing her emotional intelligence and self-awareness, and explore careers that allow her to nurture and support others.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>The native's relationship timeline is marked by a series of intense and passionate connections, with a strong desire for intimacy and depth. Her current Moon Mahadasha is a time of emotional growth and self-awareness, and she may be drawn to partners who share her intellectual curiosity and sense of justice.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2025-2027</div>
+          <div class="period-dasha">Saturn Bhukti</div>
+          <div class="period-theme">Disciplined and responsible, with a focus on building a strong foundation for her relationships.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2027-2028</div>
+          <div class="period-dasha">Mercury Bhukti</div>
+          <div class="period-theme">Intellectually stimulating, with a focus on communication and mutual understanding.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2028-2029</div>
+          <div class="period-dasha">Ketu Bhukti</div>
+          <div class="period-theme">Spiritually growth-oriented, with a focus on exploring her subconscious mind and tapping into her creative potential.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>The native's relationships are deeply connected to her past life experiences, and she may attract partners who help her work through her karmic patterns.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>The native's current Moon Mahadasha is a time of emotional growth and self-awareness, with a focus on nurturing and supporting others. With Ketu in her 2nd house, she may experience a sense of emotional detachment or disconnection from her family and roots, but this can also be a time of spiritual growth and self-discovery.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Saturn Bhukti (Aug 2025 - Mar 2027)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">Discipline and responsibility may be required to navigate relationship challenges and build a strong foundation for her career.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Mercury Bhukti (Mar 2027 - Aug 2028)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">Intellectual pursuits and communication may be highlighted, but The native should be careful not to overthink or analyze her relationships too much.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Ketu Bhukti (Aug 2028 - Mar 2029)</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">Spiritual growth and self-discovery may be emphasized, and The native may experience a sense of freedom and liberation in her relationships and career.</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>Rahu Mahadasha (2038-2056) may bring unexpected changes and challenges in her relationships and career.</li><li>Mars Mahadasha (2031-2038) may bring a sense of restlessness and discontent, and The native should be careful not to act impulsively.</li></ul>
+      <div class="golden-box">The Jupiter Bhukti (Apr 2024 - Aug 2025) is a highly auspicious period for The Celestial Peacock, marked by spiritual growth, self-awareness, and positive relationships.</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>The Mars Mahadasha (2031-2038) will bring a sense of action, adventure, and competition to The native's life, and she should be prepared to take bold steps and pursue her passions.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Swati Nakshatra</span>
+          </div>
+          <div class="ref-quote">"The power to scatter like the wind"</div>
+          <div class="ref-application">The native's Saturn in Swati gives her the power to create positive change and bring balance to her community, but she should be careful not to scatter her energies too much.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">BPHS Vol 2 (Parashara)</span>
+            <span class="ref-placement">Moon in Scorpio</span>
+          </div>
+          <div class="ref-quote">"Mind, wisdom, land, and qualities"</div>
+          <div class="ref-application">The native's Moon in Scorpio indicates a strong connection to her emotional intuition and a natural talent for nurturing others, but she should be careful not to become too intense or overwhelming.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Jyeshtha Nakshatra</span>
+          </div>
+          <div class="ref-quote">"The power of worship"</div>
+          <div class="ref-application">The native's Moon in Jyeshtha gives her a strong sense of devotion and spirituality, and she may be drawn to careers or relationships that allow her to nurture and support others.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>The native's shadow side is marked by a tendency to prioritize others' needs over her own, and a fear of being overwhelmed by her emotions. She may also struggle with a sense of emotional detachment or disconnection from her family and roots.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>Emotional Intensity</strong><p>The native's emotions can be overwhelming, and she may struggle to express herself in a way that feels authentic and healthy.</p></div><div class="shadow-card"><strong>People-Pleasing</strong><p>The native has a strong desire to please others, and may prioritize their needs over her own, leading to feelings of burnout and resentment.</p></div><div class="shadow-card"><strong>Emotional Detachment</strong><p>The native may struggle with a sense of emotional detachment or disconnection from her family and roots, and may need to work on building a stronger sense of connection and community.</p></div><div class="shadow-card"><strong>Fear of Abandonment</strong><p>The native may have a deep-seated fear of abandonment or rejection, and may need to work on building a stronger sense of self-worth and self-love.</p></div>
+    </div>
+    <div class="antidote-box">The native can work on developing a stronger sense of self-awareness and self-love, and prioritize her own needs and desires in a way that feels authentic and healthy.</div>
+  </div>
+
+  <!-- SPIRIT ANIMAL -->
+  <div class="panel" style="background:linear-gradient(135deg,rgba(28,18,56,0.98),rgba(60,30,80,0.96));border:1px solid rgba(196,158,64,0.28);text-align:center;padding:48px 40px;">
+    <div style="font-size:96px;line-height:1;margin-bottom:16px;">🦚</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:#fff8f0;margin-bottom:8px;">The Peacock</h2>
+    <div style="font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;">Spirit Animal · Moon in Jyeshtha · Libra Lagna · Adhi Yoga</div>
+    <p style="max-width:680px;margin:0 auto 20px;line-height:1.85;color:rgba(240,232,216,0.85);font-size:1rem;">
+      Your Moon in Jyeshtha — the nakshatra of Indra, king of the gods — places the royal peacock at the heart of your nature. Like the peacock's legendary dance in the monsoon, your Viparita Raja Yogas gift you the rare ability to transform life's deepest storms into moments of breathtaking radiance. Where others see only adversity, you open your plumage.
+    </p>
+    <p style="max-width:680px;margin:0 auto 20px;line-height:1.85;color:rgba(240,232,216,0.85);font-size:1rem;">
+      Venus, your Lagna lord, rules beauty, art, and grace — mirrored in every iridescent feather. Your four-planet H8 stellium creates the peacock's "thousand eyes" in its tail: you see and feel dimensions others cannot access, a hidden depth beneath the gorgeous surface. Saturn's Sasa Yoga and Adhi Yoga give the peacock its dignified authority — commanding without force, regal without arrogance.
+    </p>
+    <p style="max-width:680px;margin:0 auto;line-height:1.85;color:rgba(240,232,216,0.85);font-size:1rem;">
+      The peacock eats serpents — it transmutes poison into power. This is your deepest gift: taking what is dark, complex, or transformative (H8 themes) and converting it into luminous wisdom and leadership. You are not just beautiful; you are powerful because of what you have survived.
+    </p>
+  </div>
+
+  <!-- META AI IMAGE PROMPT -->
+  <div class="panel" style="border:1px solid rgba(91,143,212,0.3);background:rgba(16,24,48,0.85);">
+    <div class="panel-header">
+      <div class="panel-icon">🎨</div>
+      <h2 style="color:#8cb4e8;">Meta AI Portrait Prompt</h2>
+    </div>
+    <p style="color:rgba(240,232,216,0.7);margin-bottom:16px;font-size:0.9rem;">Copy-paste ready for meta.ai — generate your spirit animal portrait:</p>
+    <pre style="background:rgba(0,0,0,0.35);border:1px solid rgba(91,143,212,0.25);border-radius:14px;padding:20px;font-size:0.8rem;line-height:1.7;color:#c8d8f0;white-space:pre-wrap;font-family:'DM Mono',monospace;">A majestic peacock radiating cosmic light, mystical dark deep-space background with nebula in shades of deep violet and gold. The peacock's tail feathers are fully spread, each eye-spot glowing with sacred symbols: the Libra ♎ scales, the Venus ♀ glyph, the Saturn ♄ sigil, and Jyeshtha's coiled serpent constellation. A crown of golden stars sits atop its crest. Four brilliant planets orbit the peacock in Taurus constellation — Sun, Mercury, Venus and Rahu — forming a celestial H8 formation. The feathers blend iridescent teal-gold-violet light with cosmic star-dust. Painterly surreal digital art, ultra detailed, cinematic lighting, baroque mythological style --ar 3:4</pre>
+  </div>
+
+  <!-- REMEDY TIERS -->
+  <div class="panel" style="border:1px solid rgba(196,158,64,0.22);">
+    <div class="panel-header">
+      <div class="panel-icon">◈</div>
+      <h2>Weekly Practice & Remedies</h2>
+    </div>
+
+    <!-- Weekly Calendar -->
+    <div style="overflow-x:auto;margin-bottom:28px;">
+      <table style="width:100%;border-collapse:collapse;font-size:0.82rem;text-align:center;">
+        <thead>
+          <tr style="background:rgba(196,158,64,0.12);">
+            <th style="padding:10px 6px;color:var(--gold);border-bottom:1px solid rgba(196,158,64,0.2);">🌙 Mon</th>
+            <th style="padding:10px 6px;color:var(--gold);border-bottom:1px solid rgba(196,158,64,0.2);">🔴 Tue</th>
+            <th style="padding:10px 6px;color:var(--gold);border-bottom:1px solid rgba(196,158,64,0.2);">🟢 Wed</th>
+            <th style="padding:10px 6px;color:var(--gold);border-bottom:1px solid rgba(196,158,64,0.2);">🟡 Thu</th>
+            <th style="padding:10px 6px;color:var(--gold);border-bottom:1px solid rgba(196,158,64,0.2);">🟠 Fri</th>
+            <th style="padding:10px 6px;color:var(--gold);border-bottom:1px solid rgba(196,158,64,0.2);">🪐 Sat</th>
+            <th style="padding:10px 6px;color:var(--gold);border-bottom:1px solid rgba(196,158,64,0.2);">🌞 Sun</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="background:rgba(255,255,255,0.03);">
+            <td style="padding:12px 6px;color:rgba(240,232,216,0.8);border-bottom:1px solid rgba(255,255,255,0.06);">Moon milk / journaling before bed</td>
+            <td style="padding:12px 6px;color:rgba(240,232,216,0.8);border-bottom:1px solid rgba(255,255,255,0.06);">Strength training or brisk walk</td>
+            <td style="padding:12px 6px;color:rgba(240,232,216,0.8);border-bottom:1px solid rgba(255,255,255,0.06);">Learning / reading / writing</td>
+            <td style="padding:12px 6px;color:rgba(240,232,216,0.8);border-bottom:1px solid rgba(255,255,255,0.06);">Acts of generosity / teach someone</td>
+            <td style="padding:12px 6px;color:rgba(240,232,216,0.8);border-bottom:1px solid rgba(255,255,255,0.06);">Beauty ritual / art / music</td>
+            <td style="padding:12px 6px;color:rgba(240,232,216,0.8);border-bottom:1px solid rgba(255,255,255,0.06);">Structured planning / discipline practice</td>
+            <td style="padding:12px 6px;color:rgba(240,232,216,0.8);border-bottom:1px solid rgba(255,255,255,0.06);">Rest + sunlight + creative play</td>
+          </tr>
+          <tr>
+            <td style="padding:10px 6px;color:rgba(240,232,216,0.6);font-size:0.75rem;">Emotional integration</td>
+            <td style="padding:10px 6px;color:rgba(240,232,216,0.6);font-size:0.75rem;">Channel Mars R energy</td>
+            <td style="padding:10px 6px;color:rgba(240,232,216,0.6);font-size:0.75rem;">Budha-Aditya activation</td>
+            <td style="padding:10px 6px;color:rgba(240,232,216,0.6);font-size:0.75rem;">Jupiter expansion (H3)</td>
+            <td style="padding:10px 6px;color:rgba(240,232,216,0.6);font-size:0.75rem;">Venus Lagna lord</td>
+            <td style="padding:10px 6px;color:rgba(240,232,216,0.6);font-size:0.75rem;">Sasa + Yoga Karaka Saturn</td>
+            <td style="padding:10px 6px;color:rgba(240,232,216,0.6);font-size:0.75rem;">Recharge for the week</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tier 1 + 2 side by side -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px;">
+
+      <!-- Tier 1: Universal -->
+      <div style="background:rgba(90,196,138,0.07);border:1px solid rgba(90,196,138,0.25);border-radius:16px;padding:24px;">
+        <div style="color:#5AC48A;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:14px;">● Universal — For Everyone</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+          <li style="color:rgba(240,232,216,0.85);font-size:0.88rem;line-height:1.6;"><strong style="color:#5AC48A;">Blue sapphire / Amethyst</strong> — Saturn Yoga Karaka strengthened; wear on middle finger, right hand Saturday morning</li>
+          <li style="color:rgba(240,232,216,0.85);font-size:0.88rem;line-height:1.6;"><strong style="color:#5AC48A;">Diamond / Opal</strong> — Venus Lagna lord; supports beauty, harmony, and Viparita Raja activation</li>
+          <li style="color:rgba(240,232,216,0.85);font-size:0.88rem;line-height:1.6;"><strong style="color:#5AC48A;">Dana: feed peacocks or blue/green birds</strong> — Jyeshtha Moon karma; also donate to elderly / orphaned women on Mondays</li>
+          <li style="color:rgba(240,232,216,0.85);font-size:0.88rem;line-height:1.6;"><strong style="color:#5AC48A;">Music therapy</strong> — Ragas in Bhairavi or Yaman at dawn; calms Scorpio Moon intensity and Venus-Sun H8 overactivation</li>
+          <li style="color:rgba(240,232,216,0.85);font-size:0.88rem;line-height:1.6;"><strong style="color:#5AC48A;">Aromatic water ritual</strong> — Rose or jasmine water bath Friday evenings; activates Venus Lagna lord and restores emotional balance</li>
+        </ul>
+      </div>
+
+      <!-- Tier 2: Vedic Tradition -->
+      <div style="background:rgba(201,168,76,0.07);border:1px solid rgba(201,168,76,0.3);border-radius:16px;padding:24px;">
+        <div style="color:#C9A84C;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:14px;">◆ Vedic Tradition — For Believers</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:12px;">
+          <li style="color:rgba(240,232,216,0.85);font-size:0.88rem;line-height:1.6;"><strong style="color:#C9A84C;">Chandra Mantra</strong> — <em>"Om Shram Shrim Shraum Sah Chandramase Namah"</em> × 108 on Mondays; stabilizes Scorpio Moon emotional tides</li>
+          <li style="color:rgba(240,232,216,0.85);font-size:0.88rem;line-height:1.6;"><strong style="color:#C9A84C;">Shani Mantra</strong> — <em>"Om Shram Shrim Shraum Sah Shanaischaraya Namah"</em> × 108 on Saturdays; activates Yoga Karaka Saturn + Sasa Yoga</li>
+          <li style="color:rgba(240,232,216,0.85);font-size:0.88rem;line-height:1.6;"><strong style="color:#C9A84C;">Lakshmi Yantra</strong> — placed northeast of home; honors Venus Lagna lord and supports H8 transformation into abundance</li>
+          <li style="color:rgba(240,232,216,0.85);font-size:0.88rem;line-height:1.6;"><strong style="color:#C9A84C;">Jyeshtha Nakshatra deity — Indra puja</strong> — Thursday evening; connects to Moon's core nakshatra power, unlocks leadership qualities</li>
+          <li style="color:rgba(240,232,216,0.85);font-size:0.88rem;line-height:1.6;"><strong style="color:#C9A84C;">Peacock feather in home altar</strong> — sacred symbol of Indra and Saraswati; activates Adhi Yoga and Budha-Aditya wisdom</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Tier 3: Neuroscience Full Width -->
+    <div style="background:rgba(91,143,212,0.07);border:1px solid rgba(91,143,212,0.3);border-radius:16px;padding:24px;">
+      <div style="color:#5B8FD4;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;margin-bottom:16px;">◈ Neuroscience / CBT / NLP / Biohacking</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;">
+        <div>
+          <div style="color:#8cb4e8;font-weight:500;margin-bottom:10px;font-size:0.88rem;">CBT — Cognitive Reframes</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="color:rgba(240,232,216,0.8);font-size:0.85rem;line-height:1.6;">Saturn + Mars R in H1 → inner critic reframe: "I am not too intense; I am deeply focused." Identify cognitive distortions around people-pleasing (Moon Scorpio)</li>
+            <li style="color:rgba(240,232,216,0.8);font-size:0.85rem;line-height:1.6;">Viparita Raja Yoga pattern: journal weekly on "where did adversity create an unexpected opening this week?" — trains the brain to spot your natural advantage cycle</li>
+          </ul>
+        </div>
+        <div>
+          <div style="color:#8cb4e8;font-weight:500;margin-bottom:10px;font-size:0.88rem;">NLP — Language & Identity</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="color:rgba(240,232,216,0.8);font-size:0.85rem;line-height:1.6;">Adhi Yoga activation: practice "as if" state-loading — embody the leader before stepping in. Daily identity anchor: "I lead through beauty and intelligence"</li>
+            <li style="color:rgba(240,232,216,0.8);font-size:0.85rem;line-height:1.6;">H8 stellium reframe: replace "hidden/secretive" self-talk with "depth is my superpower" — NLP swish pattern to shift identity toward Budha-Aditya expressiveness</li>
+          </ul>
+        </div>
+        <div>
+          <div style="color:#8cb4e8;font-weight:500;margin-bottom:10px;font-size:0.88rem;">Biohacking — Body & Rhythm</div>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="color:rgba(240,232,216,0.8);font-size:0.85rem;line-height:1.6;">Scorpio Moon with Saturn bhukti (until Mar 2027): magnesium glycinate at night + cold shower protocol (2 min cold end) to regulate cortisol and reduce emotional flooding</li>
+            <li style="color:rgba(240,232,216,0.8);font-size:0.85rem;line-height:1.6;">Mars R + Saturn in H1: strength training 3×/week (releases internalized Mars energy) + HRV tracking on days of emotional intensity (Scorpio Moon triggers)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated 14 Jun 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>
