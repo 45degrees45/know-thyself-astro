@@ -1,3 +1,4 @@
+import asyncio
 import hmac
 import hashlib
 
@@ -25,11 +26,10 @@ async def create_order(req: PaymentOrderRequest, db: AsyncSession = Depends(get_
         raise HTTPException(status_code=404, detail="Chart not found")
 
     client = razorpay.Client(auth=(settings.razorpay_key_id, settings.razorpay_key_secret))
-    order = client.order.create({
-        "amount": AMOUNT_PAISE,
-        "currency": "INR",
-        "notes": {"chart_id": req.chart_id},
-    })
+    order = await asyncio.to_thread(
+        client.order.create,
+        {"amount": AMOUNT_PAISE, "currency": "INR", "notes": {"chart_id": req.chart_id}},
+    )
     return {
         "order_id": order["id"],
         "amount": AMOUNT_PAISE,
@@ -48,8 +48,15 @@ async def verify_payment(req: PaymentVerifyRequest, db: AsyncSession = Depends(g
     if not hmac.compare_digest(expected, req.razorpay_signature):
         raise HTTPException(status_code=400, detail="Invalid payment signature")
 
+    # Get chart_id from Razorpay order notes (not from client-supplied req.chart_id)
+    rzp_client = razorpay.Client(auth=(settings.razorpay_key_id, settings.razorpay_key_secret))
+    rzp_order = await asyncio.to_thread(rzp_client.order.fetch, req.razorpay_order_id)
+    chart_id = rzp_order.get("notes", {}).get("chart_id")
+    if not chart_id:
+        raise HTTPException(status_code=400, detail="Order has no chart_id in notes")
+
     result = await db.execute(
-        select(Chart).where(Chart.id == req.chart_id).options(selectinload(Chart.user))
+        select(Chart).where(Chart.id == chart_id).options(selectinload(Chart.user))
     )
     chart = result.scalar_one_or_none()
     if not chart:
@@ -57,6 +64,7 @@ async def verify_payment(req: PaymentVerifyRequest, db: AsyncSession = Depends(g
     if not chart.user:
         raise HTTPException(status_code=500, detail="Chart has no associated user")
 
-    chart.user.paid = True
-    await db.commit()
-    return {"paid": True, "chart_id": req.chart_id}
+    if not chart.user.paid:
+        chart.user.paid = True
+        await db.commit()
+    return {"paid": True, "chart_id": chart_id}

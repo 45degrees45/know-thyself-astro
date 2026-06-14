@@ -118,12 +118,15 @@ async def test_verify_payment_marks_user_paid(client):
         f"{order_id}|{payment_id}".encode(),
         hashlib.sha256,
     ).hexdigest()
-    resp = await client.post("/api/payments/verify", json={
-        "chart_id": chart_id,
-        "razorpay_order_id": order_id,
-        "razorpay_payment_id": payment_id,
-        "razorpay_signature": sig,
-    })
+    with patch("api.routers.payments.razorpay.Client") as MockRzp:
+        instance = MockRzp.return_value
+        instance.order.fetch.return_value = {"notes": {"chart_id": chart_id}}
+        resp = await client.post("/api/payments/verify", json={
+            "chart_id": chart_id,
+            "razorpay_order_id": order_id,
+            "razorpay_payment_id": payment_id,
+            "razorpay_signature": sig,
+        })
     assert resp.status_code == 200
     assert resp.json()["paid"] is True
 
