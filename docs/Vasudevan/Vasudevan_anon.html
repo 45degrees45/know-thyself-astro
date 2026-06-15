@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Golden Lion, 26 — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background-color: #0b0b18; }
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+    .shell { width: min(1100px, 100%); margin: 0 auto; display: flex; flex-direction: column; gap: 20px; }
+
+    .hero {
+      position: relative; overflow: hidden;
+      border-radius: 28px; padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22); box-shadow: var(--shadow);
+    }
+    .hero-symbol { position: absolute; right: 36px; top: 24px; font-size: 180px; line-height: 1; color: rgba(196,158,64,0.07); font-family: 'Cormorant Garamond', serif; pointer-events: none; user-select: none; }
+    .hero-glow { position: absolute; right: -60px; bottom: -80px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%); pointer-events: none; }
+    .eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem,6vw,5.5rem); font-weight: 300; line-height: 0.9; color: #fff8f0; margin-bottom: 6px; }
+    .lagna-line { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: rgba(196,158,64,0.85); margin-bottom: 16px; }
+    .tagline { font-size: 1rem; line-height: 1.75; color: rgba(240,232,216,0.8); max-width: 640px; margin-bottom: 28px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 14px; margin-bottom: 24px; }
+    .stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(196,158,64,0.14); border-radius: 16px; padding: 16px 18px; }
+    .stat-label { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 6px; }
+    .stat-value { font-size: 1rem; color: #fff8f0; line-height: 1.4; }
+    .planet-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pchip { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.05); border: 1px solid rgba(196,158,64,0.12); border-radius: 999px; padding: 5px 12px 5px 8px; font-size: 0.78rem; }
+    .pchip-name { color: var(--gold); font-weight: 500; font-size: 0.72rem; }
+    .pchip-val { color: rgba(240,232,216,0.75); }
+
+    .sym-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 28px; box-shadow: var(--shadow); backdrop-filter: blur(6px); }
+    .panel-header { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid rgba(196,158,64,0.12); }
+    .panel-icon { font-size: 1.1rem; color: var(--gold); width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; background: rgba(196,158,64,0.1); border-radius: 50%; flex-shrink: 0; }
+    .panel h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--cream); }
+    p { font-size: 0.95rem; line-height: 1.8; color: rgba(240,232,216,0.82); margin-bottom: 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    .dasha-panel { background: rgba(124,92,191,0.06); border-color: rgba(124,92,191,0.22); }
+    .dasha-panel .panel-icon { background: rgba(124,92,191,0.14); color: #b49edf; }
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+    .shadow-panel { background: rgba(140,40,70,0.06); border-color: rgba(196,96,122,0.2); }
+    .shadow-panel .panel-icon { background: rgba(196,96,122,0.12); color: #e8909f; }
+    .shadow-panel .panel h2 { color: #f0c8d0; }
+
+    .trait-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .chip { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.2); border-radius: 999px; padding: 6px 14px; font-size: 0.82rem; color: var(--gold2); }
+    .chip-neg { background: rgba(196,96,122,0.09); border-color: rgba(196,96,122,0.22); color: #e8909f; }
+    .chip-green { background: rgba(90,143,114,0.1); border-color: rgba(90,143,114,0.22); color: #80c4a0; }
+
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+    .badge-good { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-hard { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+    .golden-box { background: rgba(196,158,64,0.08); border: 1px solid rgba(196,158,64,0.25); color: #e8d89a; border-radius: 14px; padding: 14px 18px; font-size: 0.9rem; line-height: 1.65; margin-top: 14px; }
+    .antidote-box { background: rgba(90,143,114,0.08); border: 1px solid rgba(90,143,114,0.2); color: #a0d4b8; border-radius: 14px; padding: 14px 18px; font-size: 0.9rem; line-height: 1.65; margin-top: 14px; }
+
+    .sub-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; margin-top: 18px; display: block; }
+    .period-row { display: grid; grid-template-columns: 90px 140px 1fr; gap: 10px; align-items: start; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.88rem; }
+    .period-row:last-child { border-bottom: none; }
+    .period-window { font-weight: 600; color: var(--gold2); font-size: 0.82rem; }
+    .period-dasha { color: rgba(196,158,64,0.65); font-size: 0.8rem; }
+    .period-theme { color: rgba(240,232,216,0.75); line-height: 1.55; }
+
+    .fun-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .fun-list li { padding: 12px 16px; background: rgba(255,255,255,0.04); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; font-size: 0.9rem; line-height: 1.6; color: rgba(240,232,216,0.82); }
+
+    .shadow-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+    .shadow-card { background: rgba(196,96,122,0.06); border: 1px solid rgba(196,96,122,0.15); border-radius: 14px; padding: 14px 16px; }
+    .shadow-card strong { display: block; font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; color: #e8909f; margin-bottom: 6px; }
+    .shadow-card p { font-size: 0.88rem; color: rgba(240,232,216,0.7); line-height: 1.6; margin-bottom: 0; }
+
+    .warning-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+    .warning-list li { padding: 8px 14px; background: rgba(196,96,122,0.06); border-left: 3px solid rgba(196,96,122,0.4); border-radius: 0 10px 10px 0; font-size: 0.87rem; color: rgba(240,232,216,0.75); }
+
+    .yoga-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-top: 12px; }
+    .yoga-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+    .yoga-table td { padding: 10px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+    .yoga-table tr:last-child td { border-bottom: none; }
+    .yoga-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .animal-section { text-align: center; padding: 48px 40px; background: linear-gradient(135deg, rgba(28,18,56,0.98), rgba(60,30,80,0.96)); border: 1px solid var(--border); border-radius: var(--r); box-shadow: var(--shadow); }
+    .animal-emoji { font-size: 96px; display: block; margin-bottom: 20px; }
+    .animal-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--cream); margin-bottom: 8px; }
+    .animal-sub { font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
+    .animal-section p { max-width: 680px; margin: 0 auto 14px; font-size: 0.95rem; line-height: 1.85; color: rgba(240,232,216,0.82); text-align: left; }
+
+    .footer { text-align: center; padding: 20px 0; font-size: 0.72rem; color: rgba(240,232,216,0.3); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 8px; }
+
+    @media (max-width: 768px) {
+      .sym-grid, .stat-grid, .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .period-row { grid-template-columns: 80px 1fr; }
+      .period-dasha { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-symbol">♌</div>
+    <div class="hero-glow"></div>
+    <div class="eyebrow">Vedic Natal Profile · Jyotish · Lahiri Ayanamsha</div>
+    <h1>The Golden Lion, 26</h1>
+    <div class="lagna-line">Leo Rising · 8.3° · The Radiant Architect</div>
+    <p class="tagline">A Leo ascendant with Sun in the house of gains and a powerful 9th-house Raja Yoga — this is the chart of a natural leader who builds kingdoms of wisdom, not conquest. The Chandra-Mangala yoga in Chitra nakshatra makes this chart equal parts warrior and craftsman.</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Lagna</span>
+        <span class="stat-value">Leo 8.3°</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Moon</span>
+        <span class="stat-value">Libra · Chitra</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <span class="stat-value">Jupiter / Venus / Venus</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Age</span>
+        <span class="stat-value">26 · Male</span>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">☉ Sun</span><span class="pchip-val">Gemini H11 · Ardra p1</span></span>
+      <span class="pchip"><span class="pchip-name">☽ Moon</span><span class="pchip-val">Libra H3 · Chitra p4</span></span>
+      <span class="pchip"><span class="pchip-name">♂ Mars</span><span class="pchip-val">Libra H3 · Chitra p3</span></span>
+      <span class="pchip"><span class="pchip-name">☿ Mercury</span><span class="pchip-val">Cancer H12 · Punarvasu p4</span></span>
+      <span class="pchip"><span class="pchip-name">♃ Jupiter</span><span class="pchip-val">Aries H9 · Ashwini p2</span></span>
+      <span class="pchip"><span class="pchip-name">♀ Venus</span><span class="pchip-val">Cancer H12 · Ashlesha p2</span></span>
+      <span class="pchip"><span class="pchip-name">♄ Saturn</span><span class="pchip-val">Aries H9 · Bharani p2</span></span>
+      <span class="pchip"><span class="pchip-name">☊ Rahu</span><span class="pchip-val">Cancer H12 · Ashlesha p2</span></span>
+      <span class="pchip"><span class="pchip-name">☋ Ketu</span><span class="pchip-val">Capricorn H6 · Shravana p4</span></span>
+    </div>
+  </div>
+
+  <!-- ROW 1 -->
+  <div class="sym-grid">
+    <div class="panel">
+      <div class="panel-header"><div class="panel-icon">☀</div><h2>Core Nature</h2></div>
+      <p>Leo Lagna (8.3°) announces itself — this chart belongs to someone born to lead, to be seen, and to create. The Lagna lord Sun sits in the 11th house in Gemini (Ardra nakshatra), which is Rudra's star — the storm deity who destroys to renew. This Sun doesn't rule quietly; it sparks revolutions, stirs conversations, and thrives in networks and communities of ideas.</p>
+      <p>The Moon and Mars are conjunct in Libra (H3) in <strong>Chitra nakshatra</strong> — Vishwakarma's star, the divine architect and craftsman. This creates the <strong>Chandra-Mangala yoga</strong>: emotional force meets martial precision. The result is someone with an artist's eye and a warrior's drive — fiercely aesthetic, intensely motivated, capable of building beautiful things with both hands and mind.</p>
+      <p>Libra H3 placement means this emotional-warrior energy expresses through communication, writing, creative skills, and courage. This chart thinks in symmetries and makes decisions with both logic and gut.</p>
+      <div class="trait-chips">
+        <span class="chip">Natural Authority</span>
+        <span class="chip">Creative Precision</span>
+        <span class="chip">Intellectual Fire</span>
+        <span class="chip">Bold Communicator</span>
+        <span class="chip">Dharmic Seeker</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header"><div class="panel-icon">⚡</div><h2>Career & Calling</h2></div>
+      <p>The 9th house is exceptionally loaded: <strong>Jupiter in Ashwini (H9)</strong> and <strong>Saturn in Bharani (H9)</strong> form a <strong>Raja Yoga</strong> — the combination of the 5th lord (Jupiter) and 6th/7th lord (Saturn) in the dharma house. This gives rare capacity for leadership in philosophical, legal, educational, or spiritual domains.</p>
+      <p><strong>Yoga Karaka Mars</strong> (for Leo Lagna, Mars rules H4 and H9 — both auspicious houses) is supremely powerful. Mars placed in H3 in Chitra channels its energy into technical mastery, hands-on work, communication, and the courage to execute ambitious ideas.</p>
+      <p>Sun in Gemini H11 (Ardra) = gains from intellectual communities, social networks, and group projects. Income comes from sharing ideas, connecting people, and teaching what this chart knows.</p>
+      <div class="trait-chips">
+        <span class="chip">Teaching / Coaching</span>
+        <span class="chip">Philosophy / Law</span>
+        <span class="chip">Technical Creative</span>
+        <span class="chip">Entrepreneurship</span>
+        <span class="chip">Spiritual Work</span>
+      </div>
+      <div class="golden-box"><strong>Best domains:</strong> Higher education, design/architecture, spiritual counseling, legal research, content creation. The Raja Yoga in H9 makes this a chart suited for roles where wisdom is the product.</div>
+    </div>
+  </div>
+
+  <!-- ROW 2 -->
+  <div class="sym-grid">
+    <div class="panel">
+      <div class="panel-header"><div class="panel-icon">♀</div><h2>Relationships</h2></div>
+      <p>The 7th house is <strong>Aquarius</strong>, ruled by Saturn. Saturn sits in H9 (Aries) — the dharma house. This placement suggests the spouse arrives through higher learning, travel, philosophical circles, or spiritual communities — not through casual social settings.</p>
+      <p><strong>Darakaraka (soul-spouse significator): Mercury</strong> — the lowest-degree planet in the chart (Cancer H12, Punarvasu pada 4). Mercury as Darakaraka suggests an intellectually vivid partner: curious, communicative, emotionally intuitive. Punarvasu's deity is Aditi — the goddess of infinite possibility — giving the spouse a nurturing, expansive quality.</p>
+      <p><strong>Venus in Cancer H12 (Ashlesha)</strong> — love that is deep, private, and spiritually tinged. Relationships may feel fated or karmic. Rahu conjunct Venus in H12 amplifies the magnetic pull and can bring unconventional or transformative love experiences.</p>
+      <div class="trait-chips">
+        <span class="chip">Intellectual Partner</span>
+        <span class="chip">Dharmic Connection</span>
+        <span class="chip">Karmic Bond</span>
+        <span class="chip-neg">Slow to Commit</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header"><div class="panel-icon">✦</div><h2>Surprising Chart Details</h2></div>
+      <ul class="fun-list">
+        <li><strong>H12 Triple Stellium:</strong> Mercury, Venus, and Rahu all in Cancer (H12) — the house of moksha and the unconscious. Rare placement giving profound dream life, intuitive access to hidden truths, and a pull toward liberation.</li>
+        <li><strong>Sun in Ardra — Rudra's Storm:</strong> The Lagna lord in Ardra nakshatra means this Leo is not a still, golden sun — it's a lightning bolt. Ardra births people who transform through destruction; they rebuild stronger after upheaval.</li>
+        <li><strong>Neecha Bhanga Raja Yoga:</strong> Saturn is technically debilitated in Aries — but cancellation conditions are met. This turns a weakness into extraordinary strength: obstacles become launching pads.</li>
+        <li><strong>Kemadruma mitigated by Chandra-Mangala:</strong> The Kemadruma yoga (no flanking planets for Moon) would signal emotional isolation — but the Moon's conjunction with Mars forms the antidote. Raw emotional fire becomes productive courage.</li>
+        <li><strong>Yoga Karaka Mars in Chitra:</strong> Mars rules two auspicious houses (H4 and H9) for Leo Lagna — making it exceptionally powerful. Placed in Chitra (divine craftsmanship's nakshatra), Mars becomes a builder of beautiful, lasting things.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- CAREER WINDOW -->
+  <div class="panel">
+    <div class="panel-header"><div class="panel-icon">🪐</div><h2>Career & Life Windows</h2></div>
+    <span class="sub-label">Dasha Forecast · Jupiter Mahadasha</span>
+    <div class="period-row">
+      <span class="period-window">2026–2027</span>
+      <span class="period-dasha">Jupiter / Venus</span>
+      <span class="period-theme">Strongest window for relationships and creative income. Venus antardasha activates the H12 stellium — love, artistic output, and spiritual depth intensify. Career gains through partnerships and collaborative creative work.</span>
+    </div>
+    <div class="period-row">
+      <span class="period-window">2027</span>
+      <span class="period-dasha">Jupiter / Sun</span>
+      <span class="period-theme">Public recognition and leadership. Sun as Lagna lord activated — high-profile projects, institutional authority, or visible social roles emerge.</span>
+    </div>
+    <div class="period-row">
+      <span class="period-window">2028–2029</span>
+      <span class="period-dasha">Jupiter / Moon</span>
+      <span class="period-theme">Emotional peak and family focus. Gajakesari yoga activated fully — wisdom and social standing rise. Creative work from the heart flourishes.</span>
+    </div>
+    <div class="period-row">
+      <span class="period-window">2029–2030</span>
+      <span class="period-dasha">Jupiter / Mars</span>
+      <span class="period-theme">Maximum drive and ambition. Yoga Karaka Mars bhukti under Jupiter = the single most powerful combination in this chart. Major career breakthrough, property acquisition, spiritual leadership.</span>
+    </div>
+    <div class="period-row">
+      <span class="period-window">2034 onward</span>
+      <span class="period-dasha">Saturn Mahadasha</span>
+      <span class="period-theme">Consolidation and mastery. The Neecha Bhanga Raja Yoga ripens. Authority in teaching, law, or philosophical domains. Long-term career recognition arrives.</span>
+    </div>
+    <div class="golden-box" style="margin-top: 16px;">★ Golden Window — <strong>2029–2030 (Jupiter/Mars)</strong>: This is the peak period of this lifetime for career and material achievement. Yoga Karaka Mars in its own antardasha under Raja Yoga Jupiter = extraordinary results. Do not let this window pass without a major move.
+    </div>
+  </div>
+
+  <!-- YOGA TABLE -->
+  <div class="panel">
+    <div class="panel-header"><div class="panel-icon">⚗</div><h2>Yoga Analysis — 7 Combinations</h2></div>
+    <table class="yoga-table">
+      <thead><tr><th>Yoga</th><th>Strength</th><th>How It Manifests</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><strong>Gajakesari Yoga</strong><br><small style="color:var(--muted)">Jupiter 7th from Moon</small></td>
+          <td><span class="badge badge-good">Strong</span></td>
+          <td>Wisdom, social standing, generous character. Elephant-like patience and lion-like dignity. Moon in H3, Jupiter in H9 — 7th from Moon.</td>
+        </tr>
+        <tr>
+          <td><strong>Chandra-Mangala Yoga</strong><br><small style="color:var(--muted)">Moon + Mars · H3 Chitra</small></td>
+          <td><span class="badge badge-good">Strong</span></td>
+          <td>Emotional fire becomes productive energy. Artistic drive, fierce motivation, physical courage. The craftsman-warrior archetype.</td>
+        </tr>
+        <tr>
+          <td><strong>Raja Yoga (Saturn + Jupiter)</strong><br><small style="color:var(--muted)">H9 conjunction · 5th + 7th lords</small></td>
+          <td><span class="badge badge-good">Strong</span></td>
+          <td>Dharmic authority and leadership through philosophy, teaching, or law. Fully ripens during Saturn Mahadasha.</td>
+        </tr>
+        <tr>
+          <td><strong>Yoga Karaka (Mars)</strong><br><small style="color:var(--muted)">Mars rules H4 + H9 for Leo</small></td>
+          <td><span class="badge badge-good">Exceptional</span></td>
+          <td>Doubly auspicious planet — the most powerful in this chart. Technical mastery, bold communication, ability to build lasting structures.</td>
+        </tr>
+        <tr>
+          <td><strong>Neecha Bhanga Raja Yoga</strong><br><small style="color:var(--muted)">Saturn debilitated · cancellation active</small></td>
+          <td><span class="badge badge-mixed">Rising</span></td>
+          <td>Saturn's weakness inverts into unusual strength. Cancellation conditions met — obstacles become stepping stones rather than barriers.</td>
+        </tr>
+        <tr>
+          <td><strong>Vesi Yoga</strong><br><small style="color:var(--muted)">Mercury + Venus 2nd from Sun</small></td>
+          <td><span class="badge badge-good">Present</span></td>
+          <td>Wealth, good character, diplomacy. Strong business sense and eloquence. Social capital earned through speech and connection.</td>
+        </tr>
+        <tr>
+          <td><strong>Kemadruma Yoga</strong><br><small style="color:var(--muted)">No flanking planets from Moon · mitigated</small></td>
+          <td><span class="badge badge-hard">Mitigated</span></td>
+          <td>Tendency toward emotional self-reliance. Significantly offset by Chandra-Mangala and Gajakesari yogas. Shows as quiet resistance to receiving support.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SHADOW -->
+  <div class="panel shadow-panel">
+    <div class="panel-header"><div class="panel-icon">🌑</div><h2>Shadow Side & Challenges</h2></div>
+    <div class="shadow-grid">
+      <div class="shadow-card">
+        <strong>Leo Ego Trap</strong>
+        <p>Leo Lagna with Sun in H11 can make recognition feel necessary rather than optional. The need to be seen can quietly drive decisions — investing in image at the cost of authentic growth.</p>
+      </div>
+      <div class="shadow-card">
+        <strong>Emotional Intensity</strong>
+        <p>Moon-Mars conjunction creates emotional reactions that can feel like facts. The fire of H3 Libra can turn a creative setback into a personal wound. The warrior quality becomes combative under stress.</p>
+      </div>
+      <div class="shadow-card">
+        <strong>H12 Escape Tendency</strong>
+        <p>Three planets in H12 create a gravitational pull toward withdrawal or spiritual bypassing. When reality gets difficult, this chart may retreat into inner worlds rather than engage.</p>
+      </div>
+      <div class="shadow-card">
+        <strong>Kemadruma Isolation</strong>
+        <p>An undercurrent of emotional self-reliance resists asking for help. This chart may overfunction independently and feel quietly alone even in company.</p>
+      </div>
+    </div>
+    <ul class="warning-list" style="margin-top: 16px;">
+      <li>Saturn debilitated in Aries (H9) — before the Neecha Bhanga fully ripens, there may be periods of philosophical disillusionment or authority conflicts in the 20s and early 30s.</li>
+      <li>Ardra Sun — periods of external upheaval and forced transformation are part of the design, not signs of failure. The storm clears the path.</li>
+      <li>Rahu conjunct Venus H12 — watch for boundary dissolution in romantic contexts, or attraction to relationships that feel transcendent but carry escapism.</li>
+    </ul>
+  </div>
+
+  <!-- DASHA -->
+  <div class="panel dasha-panel">
+    <div class="panel-header"><div class="panel-icon">🔮</div><h2>Current Dasha Sequence</h2></div>
+    <p style="color: rgba(208,196,240,0.85);">Jupiter Mahadasha is the current karmic chapter — an expansive, dharmic period shaped by H9's Raja Yoga. Jupiter rules H5 (creativity, intelligence) for Leo Lagna and sits in Aries H9 in Ashwini nakshatra (Ketu-ruled, the divine physicians). This is a period of rapid expansion, teaching, and dharmic work.</p>
+    <span class="sub-label">Active Dasha: Jupiter / Venus / Venus (from ~Mar 2026)</span>
+    <p style="color: rgba(208,196,240,0.75); font-size: 0.9rem;">Venus antardasha activates the H12 stellium — the period of love, creative depth, spiritual access, and private transformation. The current pratyantardasha (Venus/Venus) doubly emphasizes Venusian themes: relationships, artistic work, and emotional healing.</p>
+  </div>
+
+  <!-- SPIRIT ANIMAL -->
+  <div class="animal-section">
+    <span class="animal-emoji">🦁</span>
+    <h2>Spirit Animal — The Crafting Lion</h2>
+    <div class="animal-sub">Leo Lagna · Moon in Chitra (Vishwakarma) · Yoga Karaka Mars · Gajakesari Yoga</div>
+
+    <p>The Lion emerges immediately from Leo Lagna — but this is no ordinary king-of-the-jungle archetype. The Moon in <strong>Chitra nakshatra</strong>, ruled by Mars and presided over by Vishwakarma (the divine craftsman and architect of the gods), gives this Lion a jeweler's precision alongside the roar. Where most Lions survey territory, this one designs it.</p>
+
+    <p>The <strong>Gajakesari yoga</strong> (Jupiter in the 7th from Moon) weaves elephant-quality wisdom into the Lion's nature: patience, memory, and the long view. The <strong>Chandra-Mangala yoga</strong> (Moon + Mars in Chitra) means emotional fire becomes creative fuel. When life presses hard, this Lion sculpts something from the pressure.</p>
+
+    <p>The Sun in <strong>Ardra nakshatra</strong> (Rudra's storm) adds the final dimension — storms are familiar terrain. Like the Lion who moves calmly through thunder, this chart processes upheaval differently than most. It doesn't flee the storm. It watches until it understands what's being dismantled — then begins building what comes after.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">Generated 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · South Kerala</div>
+</div>
+</body>
+</html>
