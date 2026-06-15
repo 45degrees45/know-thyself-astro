@@ -32,12 +32,18 @@ Write with depth and care. This person paid for insight, not platitudes.
 """
 
 
+def _make_adapter() -> LLMAdapter:
+    provider = settings.llm_provider
+    if provider == "anthropic":
+        return LLMAdapter(provider="anthropic", api_key=settings.anthropic_api_key)
+    if provider == "nim":
+        return LLMAdapter(provider="nim", api_key=settings.nim_api_key, base_url=settings.nim_base_url)
+    return LLMAdapter(provider=provider, api_key=settings.anthropic_api_key)
+
+
 class ReportService:
     def __init__(self):
-        self.adapter = LLMAdapter(
-            provider="anthropic",
-            api_key=settings.anthropic_api_key,
-        )
+        self.adapter = _make_adapter()
 
     def _build_prompt(self, chart_json: dict, name: str) -> str:
         planets = chart_json.get("planets", {})

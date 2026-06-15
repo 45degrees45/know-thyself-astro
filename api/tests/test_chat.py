@@ -146,7 +146,7 @@ async def test_chat_streams_sse_for_paid_user(client):
     mock_adapter = MagicMock()
     mock_adapter.stream = fake_stream
 
-    with patch("api.routers.chat.LLMAdapter", return_value=mock_adapter):
+    with patch("api.services.report_service._make_adapter", return_value=mock_adapter):
         # Also patch AsyncSessionLocal to avoid production DB writes
         with patch("api.routers.chat.AsyncSessionLocal") as mock_session_local:
             # Make the context manager work as a no-op

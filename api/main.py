@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from api.config import settings
-from api.routers import charts, reports, chat, questions, payments
+from api.routers import charts, reports, chat, questions, payments, demo
 
 app = FastAPI(title="AstroWise API", version="1.0.0")
 
@@ -18,6 +18,7 @@ app.include_router(reports.router, prefix="/api")
 app.include_router(chat.router, prefix="/api")
 app.include_router(questions.router, prefix="/api")
 app.include_router(payments.router, prefix="/api")
+app.include_router(demo.router, prefix="/api")
 
 @app.get("/health")
 def health():

@@ -66,3 +66,11 @@ class WeeklyQuestion(Base):
     question: Mapped[str] = mapped_column(Text)
     week_of: Mapped[str] = mapped_column(String, unique=True)
     active: Mapped[bool] = mapped_column(Boolean, default=True)
+
+
+class AccessCode(Base):
+    __tablename__ = "access_codes"
+    code: Mapped[str] = mapped_column(String, primary_key=True)
+    chart_id: Mapped[str | None] = mapped_column(ForeignKey("charts.id", ondelete="CASCADE"), nullable=True, index=True)
+    expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))

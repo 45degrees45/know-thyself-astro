@@ -9,7 +9,7 @@ from sqlalchemy import select, func
 from sqlalchemy.orm import selectinload
 
 from api.database import get_db, AsyncSessionLocal
-from api.models import Chart, ChatMessage
+from api.models import Chart, ChatMessage, AccessCode
 from api.schemas import ChatRequest
 from api.services.llm_adapter import LLMAdapter
 from api.config import settings
@@ -51,25 +51,37 @@ async def chat(req: ChatRequest, db: AsyncSession = Depends(get_db)):
         raise HTTPException(status_code=500, detail="Chart has no associated user")
 
     if not chart.user.paid:
-        since = datetime.now(timezone.utc) - timedelta(days=1)
-        count_result = await db.execute(
-            select(func.count()).where(
-                ChatMessage.chart_id == req.chart_id,
-                ChatMessage.role == "user",
-                ChatMessage.created_at >= since,
+        # Check for a valid demo access code
+        now = datetime.now(timezone.utc)
+        code_result = await db.execute(
+            select(AccessCode).where(
+                AccessCode.chart_id == req.chart_id,
+                AccessCode.expires_at > now,
             )
         )
-        if count_result.scalar() >= FREE_DAILY_LIMIT:
-            raise HTTPException(
-                status_code=403,
-                detail="Daily free limit reached. Unlock full access for ₹50.",
+        has_demo_access = code_result.scalar_one_or_none() is not None
+
+        if not has_demo_access:
+            since = now - timedelta(days=1)
+            count_result = await db.execute(
+                select(func.count()).where(
+                    ChatMessage.chart_id == req.chart_id,
+                    ChatMessage.role == "user",
+                    ChatMessage.created_at >= since,
+                )
             )
+            if count_result.scalar() >= FREE_DAILY_LIMIT:
+                raise HTTPException(
+                    status_code=403,
+                    detail="Daily free limit reached. Unlock full access for ₹50.",
+                )
 
     # Save user message
     db.add(ChatMessage(chart_id=req.chart_id, tab=req.tab, role="user", content=req.message))
     await db.commit()
 
-    adapter = LLMAdapter(provider="anthropic", api_key=settings.anthropic_api_key)
+    from api.services.report_service import _make_adapter
+    adapter = _make_adapter()
     chart_context = _build_chart_context(chart.chart_json)
     system = CHAT_SYSTEM.format(chart_context=chart_context)
     chart_id = req.chart_id

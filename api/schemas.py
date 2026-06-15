@@ -36,3 +36,13 @@ class PaymentVerifyRequest(BaseModel):
     razorpay_order_id: str
     razorpay_payment_id: str
     razorpay_signature: str
+
+
+class DemoGenerateRequest(BaseModel):
+    secret: str
+    count: int = Field(default=1, ge=1, le=50)
+
+
+class DemoRedeemRequest(BaseModel):
+    code: str
+    chart_id: str

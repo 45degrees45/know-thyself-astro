@@ -2,7 +2,6 @@ import asyncio
 import hmac
 import hashlib
 
-import razorpay
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
@@ -25,6 +24,7 @@ async def create_order(req: PaymentOrderRequest, db: AsyncSession = Depends(get_
     if not chart:
         raise HTTPException(status_code=404, detail="Chart not found")
 
+    import razorpay
     client = razorpay.Client(auth=(settings.razorpay_key_id, settings.razorpay_key_secret))
     order = await asyncio.to_thread(
         client.order.create,
@@ -49,6 +49,7 @@ async def verify_payment(req: PaymentVerifyRequest, db: AsyncSession = Depends(g
         raise HTTPException(status_code=400, detail="Invalid payment signature")
 
     # Get chart_id from Razorpay order notes (not from client-supplied req.chart_id)
+    import razorpay
     rzp_client = razorpay.Client(auth=(settings.razorpay_key_id, settings.razorpay_key_secret))
     rzp_order = await asyncio.to_thread(rzp_client.order.fetch, req.razorpay_order_id)
     chart_id = rzp_order.get("notes", {}).get("chart_id")
