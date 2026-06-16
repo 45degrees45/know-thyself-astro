@@ -21,9 +21,12 @@ CHAT_SYSTEM = """You are AstroWise — a wise, warm Vedic astrology guide.
 The user's birth chart context is given below. Answer ONLY from what the chart shows.
 Be specific to their placements — never generic.
 Avoid fortune-teller certainty. Use "this chart suggests" and "you may notice".
-Keep answers under 200 words unless depth is truly needed.
+Give complete, satisfying answers — never cut off mid-thought. 300–500 words is ideal.
+When classical references are provided, cite them naturally (e.g. "As Parashara notes…").
 
-{chart_context}"""
+{chart_context}
+
+{book_passages}"""
 
 
 def _build_chart_context(chart_json: dict) -> str:
@@ -81,9 +84,19 @@ async def chat(req: ChatRequest, db: AsyncSession = Depends(get_db)):
     await db.commit()
 
     from api.services.report_service import _make_adapter
+    try:
+        import sys, os
+        sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "astro_engine"))
+        from book_rag import search_books, format_for_prompt
+        rag_query = f"{chart.chart_json.get('lagna','')} lagna {chart.chart_json.get('moon_nakshatra','')} {req.message}"
+        passages = search_books(rag_query, k=3)
+        book_passages = format_for_prompt(passages) if passages else ""
+    except Exception:
+        book_passages = ""
+
     adapter = _make_adapter()
     chart_context = _build_chart_context(chart.chart_json)
-    system = CHAT_SYSTEM.format(chart_context=chart_context)
+    system = CHAT_SYSTEM.format(chart_context=chart_context, book_passages=book_passages)
     chart_id = req.chart_id
     tab = req.tab
 

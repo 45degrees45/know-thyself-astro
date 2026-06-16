@@ -1,5 +1,7 @@
 credentials.json
 *.json
+!books/text/_index.json
+!books/text/*.txt
 reports/
 monthly/
 daily/
