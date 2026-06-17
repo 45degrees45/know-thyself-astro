@@ -41,6 +41,14 @@ def mock_geocode(monkeypatch):
     )
 
 
+@pytest.fixture(autouse=True)
+def mock_profile_html_bg(monkeypatch):
+    """Prevent background HTML generation from using the production DB during tests."""
+    async def _noop(*args, **kwargs):
+        pass
+    monkeypatch.setattr("api.routers.charts._save_profile_html", _noop)
+
+
 # ── Sample chart data ────────────────────────────────────────────────────────
 
 SAMPLE_CHART_JSON = {
