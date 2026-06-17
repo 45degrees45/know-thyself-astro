@@ -1,5 +1,6 @@
 import csv
 import io
+import secrets as _secrets
 from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -8,8 +9,9 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, text
 
 from api.database import get_db
-from api.models import User, Chart, AccessCode, QuestionBank
+from api.models import User, Chart, AccessCode, QuestionBank, TrustedEmailWhitelist
 from api.config import settings
+from api.schemas import TrustedCodeGenerateRequest, WhitelistAddRequest
 
 router = APIRouter(tags=["admin"])
 
@@ -117,3 +119,55 @@ async def export_csv(secret: str, db: AsyncSession = Depends(get_db)):
         media_type="text/csv",
         headers={"Content-Disposition": "attachment; filename=astrowise_users.csv"},
     )
+
+
+@router.post("/admin/trusted-codes/generate")
+async def generate_trusted_codes(req: TrustedCodeGenerateRequest, db: AsyncSession = Depends(get_db)):
+    if req.secret != settings.admin_secret:
+        raise HTTPException(status_code=403, detail="Forbidden")
+    codes = []
+    for _ in range(req.count):
+        code = "TRUST-" + _secrets.token_urlsafe(6).upper()
+        db.add(AccessCode(code=code, type="trusted", note=req.note))
+        codes.append({"code": code})
+    await db.commit()
+    return {"codes": codes}
+
+
+@router.post("/admin/whitelist/add")
+async def add_to_whitelist(req: WhitelistAddRequest, db: AsyncSession = Depends(get_db)):
+    if req.secret != settings.admin_secret:
+        raise HTTPException(status_code=403, detail="Forbidden")
+    existing = await db.execute(
+        select(TrustedEmailWhitelist).where(TrustedEmailWhitelist.email == req.email)
+    )
+    if existing.scalar_one_or_none():
+        return {"ok": True, "message": "Already whitelisted"}
+    db.add(TrustedEmailWhitelist(email=req.email, note=req.note))
+    await db.commit()
+    return {"ok": True}
+
+
+@router.get("/admin/trusted-users")
+async def list_trusted_users(secret: str, db: AsyncSession = Depends(get_db)):
+    if secret != settings.admin_secret:
+        raise HTTPException(status_code=403, detail="Forbidden")
+    result = await db.execute(
+        select(AccessCode, Chart, User)
+        .join(Chart, AccessCode.chart_id == Chart.id, isouter=True)
+        .join(User, Chart.user_id == User.id, isouter=True)
+        .where(AccessCode.type == "trusted")
+        .order_by(AccessCode.created_at.desc())
+    )
+    rows = []
+    for code, chart, user in result.all():
+        rows.append({
+            "code": code.code,
+            "note": code.note,
+            "email": user.email if user else None,
+            "name": user.name if user else None,
+            "chart_id": code.chart_id,
+            "redeemed": code.chart_id is not None,
+            "created_at": code.created_at.isoformat(),
+        })
+    return rows

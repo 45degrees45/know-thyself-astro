@@ -45,17 +45,23 @@ async def redeem_code(req: DemoRedeemRequest, db: AsyncSession = Depends(get_db)
         raise HTTPException(status_code=404, detail="Chart not found")
 
     now = datetime.now(timezone.utc)
-
-    # If already redeemed for this chart, extend from now (allows top-up)
     access.chart_id = req.chart_id
-    access.expires_at = now + timedelta(minutes=WINDOW_MINUTES)
-    await db.commit()
 
-    return {
-        "ok": True,
-        "expires_at": access.expires_at.isoformat(),
-        "window_minutes": WINDOW_MINUTES,
-    }
+    if access.type == "trusted":
+        # Permanent — no expiry
+        access.expires_at = None
+        await db.commit()
+        return {"ok": True, "trusted": True, "expires_at": None}
+    else:
+        # Demo — extend 10-minute window (allows top-up)
+        access.expires_at = now + timedelta(minutes=WINDOW_MINUTES)
+        await db.commit()
+        return {
+            "ok": True,
+            "trusted": False,
+            "expires_at": access.expires_at.isoformat(),
+            "window_minutes": WINDOW_MINUTES,
+        }
 
 
 @router.get("/demo/status/{chart_id}")
