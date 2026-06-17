@@ -19,6 +19,8 @@ class ChartSummary(BaseModel):
     animal: str
     animal_emoji: str
     paid: bool = False
+    trusted: bool = False
+    profile_html_ready: bool = False
 
 
 class ChatRequest(BaseModel):
@@ -46,3 +48,15 @@ class DemoGenerateRequest(BaseModel):
 class DemoRedeemRequest(BaseModel):
     code: str
     chart_id: str
+
+
+class TrustedCodeGenerateRequest(BaseModel):
+    secret: str
+    count: int = Field(default=1, ge=1, le=20)
+    note: str | None = None
+
+
+class WhitelistAddRequest(BaseModel):
+    secret: str
+    email: EmailStr
+    note: str | None = None

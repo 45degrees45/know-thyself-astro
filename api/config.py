@@ -20,5 +20,6 @@ class Settings(BaseSettings):
     jwt_secret: str
     frontend_url: str = "http://localhost:3000"
     demo_secret: str = "demo-dev-secret"  # override in prod
+    admin_secret: str = "admin-dev-secret"  # override in prod via ADMIN_SECRET env var
 
 settings = Settings()
