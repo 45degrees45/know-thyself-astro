@@ -31,6 +31,7 @@ class Chart(Base):
     tz: Mapped[str] = mapped_column(String)
     chart_json: Mapped[dict] = mapped_column(JSON)
     anon_slug: Mapped[str | None] = mapped_column(String, unique=True, nullable=True)
+    profile_html: Mapped[str | None] = mapped_column(Text, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
     user: Mapped["User"] = relationship(back_populates="charts")
     messages: Mapped[list["ChatMessage"]] = relationship(back_populates="chart", cascade="all, delete-orphan")
@@ -73,4 +74,13 @@ class AccessCode(Base):
     code: Mapped[str] = mapped_column(String, primary_key=True)
     chart_id: Mapped[str | None] = mapped_column(ForeignKey("charts.id", ondelete="CASCADE"), nullable=True, index=True)
     expires_at: Mapped[datetime | None] = mapped_column(DateTime(timezone=True), nullable=True)
+    type: Mapped[str] = mapped_column(String, default="demo")
+    note: Mapped[str | None] = mapped_column(String, nullable=True)
+    created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
+
+
+class TrustedEmailWhitelist(Base):
+    __tablename__ = "trusted_email_whitelist"
+    email: Mapped[str] = mapped_column(String, primary_key=True)
+    note: Mapped[str | None] = mapped_column(String, nullable=True)
     created_at: Mapped[datetime] = mapped_column(DateTime(timezone=True), default=lambda: datetime.now(timezone.utc))
