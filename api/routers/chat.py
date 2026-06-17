@@ -5,7 +5,7 @@ from datetime import datetime, timedelta, timezone
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func
+from sqlalchemy import select, func, or_, and_
 from sqlalchemy.orm import selectinload
 
 from api.database import get_db, AsyncSessionLocal
@@ -53,18 +53,23 @@ async def chat(req: ChatRequest, db: AsyncSession = Depends(get_db)):
     if not chart.user:
         raise HTTPException(status_code=500, detail="Chart has no associated user")
 
+    is_trusted = False
     if not chart.user.paid:
-        # Check for a valid demo access code
         now = datetime.now(timezone.utc)
         code_result = await db.execute(
             select(AccessCode).where(
                 AccessCode.chart_id == req.chart_id,
-                AccessCode.expires_at > now,
+                or_(
+                    and_(AccessCode.type == "demo", AccessCode.expires_at > now),
+                    and_(AccessCode.type == "trusted", AccessCode.expires_at.is_(None)),
+                ),
             )
         )
-        has_demo_access = code_result.scalar_one_or_none() is not None
+        access = code_result.scalar_one_or_none()
+        is_trusted = access is not None and access.type == "trusted"
+        has_access = access is not None
 
-        if not has_demo_access:
+        if not has_access:
             since = now - timedelta(days=1)
             count_result = await db.execute(
                 select(func.count()).where(
@@ -97,6 +102,14 @@ async def chat(req: ChatRequest, db: AsyncSession = Depends(get_db)):
     adapter = _make_adapter()
     chart_context = _build_chart_context(chart.chart_json)
     system = CHAT_SYSTEM.format(chart_context=chart_context, book_passages=book_passages)
+    if is_trusted:
+        system += (
+            "\n\nThis user has access to their own natal chart only. "
+            "If they reference another person's birth details (date, time, place) "
+            "in the context of compatibility or relationship matching, you may provide "
+            "a brief synastry analysis only. Do not provide a full standalone natal "
+            "reading for any other person."
+        )
     chart_id = req.chart_id
     tab = req.tab
 
