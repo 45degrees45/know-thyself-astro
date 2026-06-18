@@ -47,7 +47,13 @@ class DemoGenerateRequest(BaseModel):
 
 class DemoRedeemRequest(BaseModel):
     code: str
+    chart_id: str | None = None  # optional when code is pre-linked to a chart
+
+
+class DemoCodeCreateRequest(BaseModel):
+    secret: str
     chart_id: str
+    note: str | None = None
 
 
 class TrustedCodeGenerateRequest(BaseModel):

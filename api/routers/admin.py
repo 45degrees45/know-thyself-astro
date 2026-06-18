@@ -11,7 +11,7 @@ from sqlalchemy import select, text
 from api.database import get_db
 from api.models import User, Chart, AccessCode, QuestionBank, TrustedEmailWhitelist
 from api.config import settings
-from api.schemas import TrustedCodeGenerateRequest, WhitelistAddRequest
+from api.schemas import TrustedCodeGenerateRequest, WhitelistAddRequest, DemoCodeCreateRequest
 
 router = APIRouter(tags=["admin"])
 
@@ -119,6 +119,19 @@ async def export_csv(secret: str, db: AsyncSession = Depends(get_db)):
         media_type="text/csv",
         headers={"Content-Disposition": "attachment; filename=astrowise_users.csv"},
     )
+
+
+@router.post("/admin/demo-codes/create")
+async def create_demo_code(req: DemoCodeCreateRequest, db: AsyncSession = Depends(get_db)):
+    if req.secret != settings.demo_secret:
+        raise HTTPException(status_code=403, detail="Forbidden")
+    chart_result = await db.execute(select(Chart).where(Chart.id == req.chart_id))
+    if not chart_result.scalar_one_or_none():
+        raise HTTPException(status_code=404, detail="Chart not found")
+    code = "DEMO-" + _secrets.token_urlsafe(6).upper()
+    db.add(AccessCode(code=code, chart_id=req.chart_id, note=req.note))
+    await db.commit()
+    return {"code": code, "chart_id": req.chart_id}
 
 
 @router.post("/admin/trusted-codes/generate")

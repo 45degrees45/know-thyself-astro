@@ -12,7 +12,7 @@ from api.config import settings
 
 router = APIRouter(tags=["demo"])
 
-WINDOW_MINUTES = 10
+WINDOW_MINUTES = 1
 
 
 @router.post("/demo/generate")
@@ -30,6 +30,20 @@ async def generate_codes(req: DemoGenerateRequest, db: AsyncSession = Depends(ge
     return {"codes": codes, "window_minutes": WINDOW_MINUTES}
 
 
+@router.get("/demo/lookup/{code}")
+async def lookup_code(code: str, db: AsyncSession = Depends(get_db)):
+    result = await db.execute(select(AccessCode).where(AccessCode.code == code))
+    access = result.scalar_one_or_none()
+    if not access:
+        return {"ok": False, "error": "not_found"}
+    return {
+        "ok": True,
+        "type": access.type,
+        "chart_id": access.chart_id,
+        "pre_linked": access.chart_id is not None,
+    }
+
+
 @router.post("/demo/redeem")
 async def redeem_code(req: DemoRedeemRequest, db: AsyncSession = Depends(get_db)):
     result = await db.execute(select(AccessCode).where(AccessCode.code == req.code))
@@ -37,15 +51,20 @@ async def redeem_code(req: DemoRedeemRequest, db: AsyncSession = Depends(get_db)
 
     if not access:
         raise HTTPException(status_code=404, detail="Code not found")
-    if access.chart_id and access.chart_id != req.chart_id:
+
+    # Resolve chart_id: prefer request value, fall back to pre-linked
+    chart_id = req.chart_id or access.chart_id
+    if not chart_id:
+        raise HTTPException(status_code=400, detail="chart_id required for this code")
+    if access.chart_id and access.chart_id != chart_id:
         raise HTTPException(status_code=409, detail="Code already used for a different chart")
 
-    chart_result = await db.execute(select(Chart).where(Chart.id == req.chart_id))
+    chart_result = await db.execute(select(Chart).where(Chart.id == chart_id))
     if not chart_result.scalar_one_or_none():
         raise HTTPException(status_code=404, detail="Chart not found")
 
     now = datetime.now(timezone.utc)
-    access.chart_id = req.chart_id
+    access.chart_id = chart_id
 
     if access.type == "trusted":
         # Permanent — no expiry
@@ -53,7 +72,7 @@ async def redeem_code(req: DemoRedeemRequest, db: AsyncSession = Depends(get_db)
         await db.commit()
         return {"ok": True, "trusted": True, "expires_at": None}
     else:
-        # Demo — extend 10-minute window (allows top-up)
+        # Demo — 1-minute window (streaming pauses the timer)
         access.expires_at = now + timedelta(minutes=WINDOW_MINUTES)
         await db.commit()
         return {
