@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Joseph T C — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♐</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1>Joseph T C</h1>
+    <p class="lagna-line">♐ Sagittarius Lagna 2.8°</p>
+    <p class="tagline">A transformative journey of self-discovery and spiritual growth</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value">1984-08-05</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value">03:30 PM · Alwaye, Kerala, India</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Venus / Venus / Mercury</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Fiery Passion</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Can H8</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Sco H12</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Sco H12</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Leo H9</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Sag H1</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Leo H9</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Lib H11</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Tau H6</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Sco H12</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>Joseph T C is a deeply emotional and intuitive individual with a strong connection to his inner world. He has a complex personality, with a mix of introverted and extroverted traits, and is often drawn to exploring the mysteries of life. His dominant energy is fiery and passionate, with a strong desire to learn and grow. He approaches life with a sense of curiosity and wonder, always seeking to uncover new truths and insights.</p>
+      <div class="trait-chips">
+        <span class="chip">emotional</span><span class="chip">intuitive</span><span class="chip">complex</span><span class="chip">passionate</span><span class="chip">curious</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>Joseph T C has a deep need for connection and intimacy in his relationships, and values honesty and trust above all else. His 7th house lord, Saturn, indicates a tendency to attract partners who are disciplined and responsible, but may also struggle with emotional expression. Venus, the planet of love and relationships, is placed in the 9th house, suggesting a desire for spiritual and philosophical connection with his partner.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>He is drawn to partners who are intelligent, independent, and share his love for learning and personal growth. His ideal partner is someone who can engage in deep, meaningful conversations and support his spiritual aspirations.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">empathetic</span><span class="chip chip-green">loyal</span><span class="chip chip-green">intelligent</span><span class="chip chip-green">passionate</span><span class="chip chip-green">spiritual</span>
+        <span class="chip chip-neg">emotional intensity</span><span class="chip chip-neg">trust issues</span><span class="chip chip-neg">fear of intimacy</span><span class="chip chip-neg">need for control</span><span class="chip chip-neg">self-doubt</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>Joseph T C has a natural talent for leadership and is drawn to careers that involve teaching, mentoring, or guiding others. The Hamsa yoga in his chart indicates a strong potential for success and recognition in his chosen field. His working style is independent and self-motivated, with a strong desire for autonomy and creative freedom.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>The Hamsa yoga, which brings success and recognition through his natural charisma and leadership abilities.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">education</span><span class="chip">philosophy</span><span class="chip">spirituality</span><span class="chip">leadership</span><span class="chip">writing</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Inspiring Visionary</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>His Sun is placed in the 8th house in Ashlesha nakshatra, indicating a strong connection to the mysterious and the unknown.</li><li>His Moon is conjunct Mars in the 12th house, suggesting a intense emotional nature and a strong desire for spiritual growth.</li><li>His Jupiter is placed in the 1st house, indicating a natural talent for leadership and a strong sense of confidence.</li><li>His Venus is placed in the 9th house, suggesting a love for learning and a desire for spiritual connection.</li><li>His Saturn is placed in the 11th house, indicating a tendency to attract unusual or unconventional friends and acquaintances.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>Joseph T C's career is likely to unfold in a series of stages, with each stage building on the previous one. The current Venus Mahadasha is a period of creative expression and spiritual growth, and he may find opportunities to pursue his passions and interests.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2023-2027</div>
+          <div class="period-dasha">Venus/Venus</div>
+          <div class="period-theme">Creative expression and spiritual growth</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2027-2030</div>
+          <div class="period-dasha">Venus/Sun</div>
+          <div class="period-theme">Increased recognition and success</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2030-2033</div>
+          <div class="period-dasha">Venus/Rahu</div>
+          <div class="period-theme">Unconventional opportunities and sudden changes</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>Focus on developing your creative skills and pursuing your spiritual interests, as these areas are likely to bring you the most fulfillment and success during this period.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>Joseph T C's marriage and relationships are likely to be a significant focus for him, and he may attract partners who are intense, passionate, and spiritually inclined. The current Venus Mahadasha is a period of romantic and emotional growth, and he may find opportunities to deepen his connections with others.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2023-2027</div>
+          <div class="period-dasha">Venus/Venus</div>
+          <div class="period-theme">Romantic and emotional growth</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2027-2030</div>
+          <div class="period-dasha">Venus/Sun</div>
+          <div class="period-theme">Increased confidence and self-expression in relationships</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2030-2033</div>
+          <div class="period-dasha">Venus/Rahu</div>
+          <div class="period-theme">Unconventional relationships or unexpected romantic opportunities</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>Joseph T C's relationships are likely to be intense and passionate, but may also involve a degree of drama or unpredictability, as indicated by the placement of Mars and Rahu in his chart.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>The current Venus/Venus dasha is a period of creative expression and spiritual growth for Joseph T C, and he may find opportunities to pursue his passions and interests. However, he may also struggle with self-doubt and emotional intensity, as indicated by the placement of Venus in the 9th house.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Venus/Venus (2023-2027)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">Self-doubt and emotional intensity may arise, but can be overcome through creative expression and spiritual practice.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Venus/Sun (2027-2028)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">Increased recognition and success may bring new challenges and responsibilities.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Venus/Moon (2028-2029)</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">Emotional growth and deepening connections with others are possible during this period.</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>The Venus/Rahu period (2030-2033) may bring unexpected changes or unconventional relationships.</li><li>The Venus/Saturn period (2036-2039) may involve increased responsibility and discipline in his personal and professional life.</li></ul>
+      <div class="golden-box">The Venus/Jupiter period (2033-2036) is likely to be a particularly auspicious time for Joseph T C, bringing opportunities for spiritual growth, creative expression, and increased success.</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>The next Mahadasha, Sun, begins in 2043 and is likely to bring a focus on personal growth, self-expression, and increased recognition, but may also involve challenges related to ego and self-identity.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Ashlesha nakshatra</span>
+          </div>
+          <div class="ref-quote">"Ashlesha means 'the entwiner' and denotes the challenge of our 4 addictions to sensory attachments."</div>
+          <div class="ref-application">This teaching applies to Joseph T C's chart, as his Sun is placed in Ashlesha nakshatra, indicating a strong connection to the mysterious and the unknown, and a tendency to struggle with emotional intensity and attachments.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">BPHS Vol 2 (Parashara)</span>
+            <span class="ref-placement">Venus in the 9th house</span>
+          </div>
+          <div class="ref-quote">"Venus-Marriage, enjoyments, sexual intercourse with women."</div>
+          <div class="ref-application">This teaching applies to Joseph T C's chart, as his Venus is placed in the 9th house, indicating a strong desire for spiritual connection and romantic growth, and a tendency to attract partners who are intelligent and independent.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Swati nakshatra</span>
+          </div>
+          <div class="ref-quote">"Swati is of deva temperament with a primary motivation of artha or attainment of wealth."</div>
+          <div class="ref-application">This teaching applies to Joseph T C's chart, as his Saturn is placed in Swati nakshatra, indicating a tendency to attract unconventional friends and acquaintances, and a desire for financial security and stability.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>Joseph T C's shadow side is characterized by a tendency to struggle with emotional intensity, self-doubt, and a fear of intimacy. He may also have a tendency to attract partners who are unavailable or emotionally distant, as a way of avoiding his own emotional vulnerability.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>Emotional intensity</strong><p>He may struggle with intense emotional ups and downs, and may have a tendency to become overly attached to his emotions.</p></div><div class="shadow-card"><strong>Self-doubt</strong><p>He may struggle with feelings of inadequacy and self-doubt, particularly in his creative and professional pursuits.</p></div><div class="shadow-card"><strong>Fear of intimacy</strong><p>He may have a tendency to push away partners or avoid emotional closeness, due to a fear of being hurt or rejected.</p></div><div class="shadow-card"><strong>Attraction to unavailable partners</strong><p>He may be drawn to partners who are emotionally unavailable or distant, as a way of avoiding his own emotional vulnerability and intimacy issues.</p></div>
+    </div>
+    <div class="antidote-box">To work with his shadow side, Joseph T C can practice self-compassion, emotional awareness, and vulnerability in his relationships, and can work to develop a greater sense of trust and intimacy with his partners.</div>
+  </div>
+
+  <!-- Spirit Animal -->
+  <div style="border-radius:22px;padding:48px 40px;text-align:center;background:linear-gradient(135deg,rgba(28,18,56,0.98),rgba(60,30,80,0.96));border:1px solid rgba(196,158,64,0.18);box-shadow:0 20px 60px rgba(0,0,0,0.45);margin-bottom:24px;">
+    <div style="font-size:96px;margin-bottom:16px;">🦢</div>
+    <div style="font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:#c49e40;margin-bottom:10px;">Spirit Animal · Sagittarius Lagna · Hamsa Yoga · Moon in Anuradha</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:#f0e8d8;margin-bottom:24px;">The Sacred Swan (Hamsa)</h2>
+    <div style="max-width:680px;margin:0 auto;text-align:left;">
+      <p style="font-size:0.95rem;line-height:1.85;color:rgba(240,232,216,0.82);margin-bottom:14px;">The Hamsa — the mythic swan of Vedic wisdom — is born directly from Jupiter's exaltation in Sagittarius in the first house. Hamsa yoga in Sanskrit literally translates to "the swan": a being said to drink pure milk from a mixture of milk and water, symbolising the discriminating intellect that can separate truth from illusion. This is Joseph's defining gift — the philosophical eye that sees through surface to essence.</p>
+      <p style="font-size:0.95rem;line-height:1.85;color:rgba(240,232,216,0.82);margin-bottom:14px;">His Moon in Anuradha nakshatra deepens this: Anuradha's deity is Mitra, the cosmic friend, and its shakti is <em>radhana</em> — the power of devotion and worship. The swan glides with supreme grace but its intensity lives beneath the surface. Moon conjunct Mars in the hidden 12th house means this swan does not merely float — it carries fire within, a silent warrior robed in grace.</p>
+      <p style="font-size:0.95rem;line-height:1.85;color:rgba(240,232,216,0.82);">The Viparita Raja yoga from H12 confirms it: this swan has known the dark waters and risen. Chandra-Mangala yoga gives it teeth — the capacity to earn, to drive, to build wealth through emotional fire transformed. Joseph's life path is that of the Hamsa: discriminating, noble, free, crossing the waters between spirit and matter with serene power.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated 19 Jun 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>
