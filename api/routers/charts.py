@@ -106,6 +106,9 @@ async def create_chart(
     return {
         "chart_id": chart.id,
         "name": req.name,
+        "birth_date": req.birth_date,
+        "birth_time": req.birth_time,
+        "birth_place": req.birth_place,
         **summary,
         "paid": user.paid,
         "trusted": trusted,
@@ -154,6 +157,9 @@ async def get_chart(chart_id: str, db: AsyncSession = Depends(get_db)):
     return {
         "chart_id": chart.id,
         "name": chart.user.name or "",
+        "birth_date": chart.birth_date or "",
+        "birth_time": chart.birth_time or "",
+        "birth_place": chart.birth_place or "",
         **summary,
         "paid": chart.user.paid,
         "trusted": trusted,

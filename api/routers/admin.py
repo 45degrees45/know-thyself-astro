@@ -161,6 +161,23 @@ async def add_to_whitelist(req: WhitelistAddRequest, db: AsyncSession = Depends(
     return {"ok": True}
 
 
+@router.post("/admin/patch-name")
+async def patch_user_name(secret: str, chart_id: str, name: str, db: AsyncSession = Depends(get_db)):
+    if secret != settings.admin_secret:
+        raise HTTPException(status_code=403, detail="Forbidden")
+    result = await db.execute(select(Chart).where(Chart.id == chart_id))
+    chart = result.scalar_one_or_none()
+    if not chart:
+        raise HTTPException(status_code=404, detail="Chart not found")
+    user_result = await db.execute(select(User).where(User.id == chart.user_id))
+    user = user_result.scalar_one_or_none()
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    user.name = name
+    await db.commit()
+    return {"ok": True, "name": name}
+
+
 @router.get("/admin/trusted-users")
 async def list_trusted_users(secret: str, db: AsyncSession = Depends(get_db)):
     if secret != settings.admin_secret:
