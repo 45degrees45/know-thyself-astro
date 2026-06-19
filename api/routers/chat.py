@@ -15,7 +15,7 @@ from api.services.llm_adapter import LLMAdapter
 from api.config import settings
 
 router = APIRouter(tags=["chat"])
-FREE_DAILY_LIMIT = 5
+FREE_DAILY_LIMIT = 9999  # all users get unlimited access
 
 CHAT_SYSTEM = """You are AstroWise — a wise, warm Vedic astrology guide.
 The user's birth chart context is given below. Answer ONLY from what the chart shows.
