@@ -12,6 +12,7 @@ class ChartRequest(BaseModel):
 
 class ChartSummary(BaseModel):
     chart_id: str
+    name: str = ""
     lagna: str
     lagna_deg: float
     current_dasha: str

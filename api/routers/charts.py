@@ -105,6 +105,7 @@ async def create_chart(
     summary = _astro.build_summary(chart_json)
     return {
         "chart_id": chart.id,
+        "name": req.name,
         **summary,
         "paid": user.paid,
         "trusted": trusted,
@@ -152,6 +153,7 @@ async def get_chart(chart_id: str, db: AsyncSession = Depends(get_db)):
     summary = _astro.build_summary(chart.chart_json)
     return {
         "chart_id": chart.id,
+        "name": chart.user.name or "",
         **summary,
         "paid": chart.user.paid,
         "trusted": trusted,
