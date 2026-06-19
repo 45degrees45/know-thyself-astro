@@ -6,8 +6,9 @@ from api.routers import charts, reports, chat, questions, payments, demo, admin
 app = FastAPI(title="AstroWise API", version="1.0.0")
 
 _origins = [o.strip() for o in settings.frontend_url.split(",") if o.strip()]
-if "http://localhost:3000" not in _origins:
-    _origins.append("http://localhost:3000")
+for _extra in ["http://localhost:3000", "https://astrowyze.netlify.app", "https://astrowyze-staging.netlify.app"]:
+    if _extra not in _origins:
+        _origins.append(_extra)
 
 app.add_middleware(
     CORSMiddleware,
