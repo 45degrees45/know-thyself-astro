@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     razorpay_key_id: str
     razorpay_key_secret: str
     jwt_secret: str
-    frontend_url: str = "http://localhost:3000"
+    frontend_url: str = "http://localhost:3000"  # comma-separated for multiple origins
     demo_secret: str = "demo-dev-secret"  # override in prod
     admin_secret: str = "admin-dev-secret"  # override in prod via ADMIN_SECRET env var
 
