@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Remya — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♊</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1>Remya</h1>
+    <p class="lagna-line">♊ Gemini Lagna 7.7°</p>
+    <p class="tagline">A dynamic and intellectually curious individual with a flair for communication and a deep desire for spiritual growth.</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value">1987-06-18</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value">06:30 · Aluva, Kerala, India</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Mercury / Jupiter / Mercury</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Mercurial Expressiveness</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Gem H1</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Aqu H9</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Gem H1</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Gem H1</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Ari H11</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Tau H12</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Sco H6</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Pis H10</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Vir H4</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>Remya is a vivacious and expressive individual with a natural flair for communication and a quick wit. Her Gemini ascendant and Mercury in the first house make her highly adaptable and intellectually curious. She has a strong desire for spiritual growth and self-awareness, which is reflected in her Moon in Aquarius and her Venus in Taurus. She approaches life with a sense of wonder and a need for freedom and independence.</p>
+      <div class="trait-chips">
+        <span class="chip">Expressive</span><span class="chip">Intellectually Curious</span><span class="chip">Adaptable</span><span class="chip">Spiritually Inclined</span><span class="chip">Independent</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>Remya values intellectual connection and independence in her relationships. Her Venus in the 12th house suggests that she may have a tendency to idealize her partners or seek spiritual connection through her relationships. She needs a partner who can match her wit and curiosity and provide her with the freedom to pursue her own interests.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>Remya's ideal partner is someone who is intelligent, adventurous, and independent. They should be able to engage in deep conversations and appreciate her unique perspective on life.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">Intellectual Connection</span><span class="chip chip-green">Independence</span><span class="chip chip-green">Emotional Depth</span>
+        <span class="chip chip-neg">Emotional Detachment</span><span class="chip chip-neg">Fear of Intimacy</span><span class="chip chip-neg">Tendency to Idealize Partners</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>Remya's career is likely to be marked by her intellectual curiosity and her desire for self-expression. She may excel in fields that require creativity, communication, and problem-solving skills. Her Budha-Aditya yoga suggests that she has a natural talent for writing, teaching, or public speaking.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>Budha-Aditya yoga, which gives her a strong ability to communicate complex ideas in a clear and concise manner.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">Writing</span><span class="chip">Teaching</span><span class="chip">Public Speaking</span><span class="chip">Communication</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Inspiring and Communicative</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>Remya's Sun in Mrigashira nakshatra gives her a strong sense of curiosity and a desire for exploration.</li><li>Her Moon in Purva Bhadrapada nakshatra suggests that she has a strong connection to her intuition and a desire for spiritual growth.</li><li>Her Venus in Rohini nakshatra indicates that she values beauty, harmony, and creativity in her relationships and surroundings.</li><li>Remya's Mars in Punarvasu nakshatra gives her a strong sense of adventure and a desire for freedom and independence.</li><li>Her Jupiter in Ashwini nakshatra suggests that she has a strong connection to her spiritual nature and a desire for self-awareness.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>Remya's career is likely to be marked by periods of growth and transformation. She may experience a significant increase in her professional reputation and success during her Mercury mahadasha.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2013-2030</div>
+          <div class="period-dasha">Mercury Mahadasha</div>
+          <div class="period-theme">Professional growth and recognition</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2025-2027</div>
+          <div class="period-dasha">Mercury / Jupiter Bhukti</div>
+          <div class="period-theme">Increased opportunities for career advancement</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2030-2037</div>
+          <div class="period-dasha">Ketu Mahadasha</div>
+          <div class="period-theme">Spiritual growth and self-awareness</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>Remya should focus on developing her communication skills and networking during her current Mercury / Jupiter bhukti.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>Remya's marriage and relationships are likely to be marked by a desire for intellectual connection and independence. She may experience a significant increase in her emotional awareness and intimacy during her Venus mahadasha.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2037-2057</div>
+          <div class="period-dasha">Venus Mahadasha</div>
+          <div class="period-theme">Emotional growth and intimacy</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2040-2042</div>
+          <div class="period-dasha">Venus / Jupiter Bhukti</div>
+          <div class="period-theme">Increased opportunities for romantic connection</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2050-2052</div>
+          <div class="period-dasha">Venus / Saturn Bhukti</div>
+          <div class="period-theme">Emotional maturity and commitment</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>Remya's relationships are likely to be influenced by her past life karma, and she may need to work through issues related to emotional detachment and intimacy.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>Remya is currently in her Mercury / Jupiter bhukti, which is a period of professional growth and recognition. She may experience increased opportunities for career advancement and networking during this time.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Rahu Bhukti (2023-2025)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">Remya may have experienced unexpected challenges and setbacks in her career during this period.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Jupiter Bhukti (2025-2027)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">Remya may have experienced a mix of positive and negative events in her career during this period.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Saturn Bhukti (2027-2030)</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">Remya may experience increased stability and security in her career during this period.</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>Remya should be cautious during her Saturn Bhukti (2027-2030) as she may experience increased responsibilities and challenges in her career.</li><li>Remya should also be prepared for potential health issues during her Ketu Mahadasha (2030-2037).</li></ul>
+      <div class="golden-box">Remya's Jupiter Bhukti (2025-2027) is a golden window for her career, as she may experience increased opportunities for professional growth and recognition.</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>Remya's next mahadasha is Ketu, which starts in 2030 and lasts until 2037. This period may be marked by spiritual growth, self-awareness, and potential health issues.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">BPHS Vol 2 (Parashara)</span>
+            <span class="ref-placement">Sun in Gemini</span>
+          </div>
+          <div class="ref-quote">"The Sun-The soul, nature, physical strength, joy, and sorrows and father."</div>
+          <div class="ref-application">Remya's Sun in Gemini gives her a strong sense of curiosity and a desire for self-expression, which is reflected in her natural talent for communication and writing.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Moon in Purva Bhadrapada</span>
+          </div>
+          <div class="ref-quote">"The deity is Aja Ekapada, a one-footed goat that is the vehicle for the fiery god, Agni."</div>
+          <div class="ref-application">Remya's Moon in Purva Bhadrapada gives her a strong connection to her intuition and a desire for spiritual growth, which is reflected in her interest in philosophy and spirituality.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Venus in Rohini</span>
+          </div>
+          <div class="ref-quote">"Rohini provides movement toward the divine as well as a place of worship."</div>
+          <div class="ref-application">Remya's Venus in Rohini gives her a strong appreciation for beauty, harmony, and creativity, which is reflected in her love of art and music.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>Remya's shadow side is marked by a tendency to intellectualize her emotions and a fear of intimacy. She may struggle with emotional detachment and a need for control in her relationships.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>Emotional Detachment</strong><p>Remya may have a tendency to detach from her emotions and observe them from a rational perspective, which can make it difficult for her to form deep connections with others.</p></div><div class="shadow-card"><strong>Fear of Intimacy</strong><p>Remya may have a fear of intimacy and vulnerability, which can cause her to pull away from her partners and relationships.</p></div><div class="shadow-card"><strong>Need for Control</strong><p>Remya may have a need for control in her relationships, which can cause her to become overly critical or perfectionistic.</p></div><div class="shadow-card"><strong>Tendency to Idealize</strong><p>Remya may have a tendency to idealize her partners or relationships, which can lead to disappointment and disillusionment when reality does not meet her expectations.</p></div>
+    </div>
+    <div class="antidote-box">Remya can work with her shadow by practicing emotional awareness, vulnerability, and intimacy in her relationships, and by learning to balance her need for independence with her need for connection and intimacy.</div>
+  </div>
+
+  <!-- SPIRIT ANIMAL -->
+  <div class="panel" style="text-align:center; padding:48px 40px; background:linear-gradient(135deg, rgba(28,18,56,0.98), rgba(60,30,80,0.96)); border-color:rgba(196,158,64,0.28);">
+    <div class="eyebrow" style="margin-bottom:20px;">Moon · Nakshatra · Lagna</div>
+    <div style="font-size:96px; line-height:1; margin-bottom:20px;">🐬</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:var(--cream); margin-bottom:8px;">The Dolphin</h2>
+    <div class="eyebrow" style="margin-bottom:28px; color:rgba(196,158,64,0.7);">Gemini Lagna · Purva Bhadrapada Moon · Bhadra + Budha-Aditya Yoga</div>
+    <p style="max-width:680px; margin:0 auto 16px; color:rgba(240,232,216,0.82); line-height:1.8; font-size:0.95rem;">
+      The dolphin is among Earth's most gifted communicators — and Remya's chart virtually demands this totem. With Sun, Mercury, Mars, and Lagna all locked in Gemini's first house, her mind operates like sonar: rapid, multidirectional, scanning the environment for signal and meaning. Bhadra yoga and Budha-Aditya together crown Mercury as undisputed sovereign of this chart — the dolphin who speaks seventeen languages and still has something new to say.
+    </p>
+    <p style="max-width:680px; margin:0 auto 16px; color:rgba(240,232,216,0.82); line-height:1.8; font-size:0.95rem;">
+      Yet dolphins are not just playful — they have astonishing emotional depth and fierce loyalty to their pod. Remya's Moon in Aquarius (H9, Purva Bhadrapada) mirrors this: the philosophical wanderer who lights up for community, yet swims alone in the deep when she needs truth. Purva Bhadrapada's deity — Aja Ekapada, the one-footed fire goat — hints at the burning intensity beneath her quick, sparkly surface. The dolphin dives where others refuse to go.
+    </p>
+    <p style="max-width:680px; margin:0 auto 0; color:rgba(240,232,216,0.82); line-height:1.8; font-size:0.95rem;">
+      Two Viparita Raja Yogas seal the metaphor: dolphins navigate turbulence with grace, using the very pressure of waves to leap higher. Remya's greatest breakthroughs arrive precisely through challenges — she is built to convert adversity into altitude.
+    </p>
+  </div>
+
+  <div class="footer">
+    Generated 20 Jun 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>
