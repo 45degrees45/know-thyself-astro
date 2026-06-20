@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Remya — Children &amp; Timing · Jyotish Session Reading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .sidebar-animal {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .sidebar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--cream);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .sidebar-stats {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      margin-bottom: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .stat-k {
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .stat-v {
+      font-size: 0.82rem;
+      color: var(--cream);
+      text-align: right;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 4px 0 16px;
+    }
+
+    .nav-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(196,158,64,0.5);
+      margin-bottom: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.82rem;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-link:hover {
+      background: rgba(196,158,64,0.08);
+      color: var(--cream);
+    }
+
+    .nav-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .nav-icon.gold  { background: rgba(196,158,64,0.15); }
+    .nav-icon.sage  { background: rgba(90,143,114,0.15); }
+    .nav-icon.rose  { background: rgba(196,96,122,0.15); }
+    .nav-icon.plum  { background: rgba(124,92,191,0.15); }
+    .nav-icon.blue  { background: rgba(91,143,212,0.15); }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 48px 52px 80px;
+      max-width: 860px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      padding: 40px 40px 34px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 280px; height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.14), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: #fff8f0;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 0.92rem;
+      color: rgba(240,232,216,0.72);
+      line-height: 1.75;
+      max-width: 620px;
+    }
+
+    /* ── CHAPTER ── */
+    .chapter {
+      margin-bottom: 56px;
+      scroll-margin-top: 32px;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .chapter-icon.gold { background: rgba(196,158,64,0.14); }
+    .chapter-icon.sage { background: rgba(90,143,114,0.14); }
+    .chapter-icon.rose { background: rgba(196,96,122,0.14); }
+    .chapter-icon.plum { background: rgba(124,92,191,0.14); }
+    .chapter-icon.blue { background: rgba(91,143,212,0.14); }
+
+    .chapter h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--cream);
+    }
+
+    .chapter h2 small {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 4px;
+    }
+
+    /* ── SECTION CARD ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-gold  { background: var(--gold); }
+    .dot-sage  { background: var(--sage); }
+    .dot-rose  { background: var(--rose); }
+    .dot-plum  { background: var(--plum); }
+    .dot-blue  { background: var(--blue); }
+
+    .section p {
+      font-size: 0.9rem;
+      color: rgba(240,232,216,0.82);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .section p:last-child { margin-bottom: 0; }
+
+    /* placement tag */
+    .place-tag {
+      display: inline-block;
+      background: rgba(196,158,64,0.1);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      color: var(--gold2);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    /* ── READING TABLE ── */
+    .reading-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin-top: 6px;
+    }
+
+    .reading-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(196,158,64,0.1);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+    }
+
+    .reading-table td {
+      padding: 10px 14px;
+      color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── CALLOUT ── */
+    .callout {
+      border-radius: 14px;
+      padding: 18px 22px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-top: 18px;
+    }
+
+    .callout-gold {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.28);
+    }
+
+    .callout-plum {
+      background: rgba(124,92,191,0.09);
+      border: 1px solid rgba(124,92,191,0.28);
+    }
+
+    .callout-rose {
+      background: rgba(196,96,122,0.09);
+      border: 1px solid rgba(196,96,122,0.28);
+    }
+
+    .callout-sage {
+      background: rgba(90,143,114,0.09);
+      border: 1px solid rgba(90,143,114,0.3);
+    }
+
+    .callout-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .callout-gold  .callout-label { color: var(--gold); }
+    .callout-plum  .callout-label { color: #b49edf; }
+    .callout-rose  .callout-label { color: #e8909f; }
+    .callout-sage  .callout-label { color: #80c4a0; }
+
+    .callout p { color: rgba(240,232,216,0.85); }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+    /* ── WINDOW ROW ── */
+    .window-row {
+      display: grid;
+      grid-template-columns: 100px 160px 1fr;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      align-items: start;
+    }
+
+    .window-row:last-child { border-bottom: none; }
+
+    .window-period {
+      font-weight: 600;
+      color: var(--gold2);
+      font-size: 0.82rem;
+      line-height: 1.4;
+    }
+
+    .window-dasha {
+      color: rgba(196,158,64,0.7);
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .window-theme {
+      color: rgba(240,232,216,0.78);
+      line-height: 1.6;
+      font-size: 0.87rem;
+    }
+
+    /* ── NAKSHATRA PILL ── */
+    .nak-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(124,92,191,0.1);
+      border: 1px solid rgba(124,92,191,0.2);
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      color: #c4b8e8;
+      margin: 6px 6px 6px 0;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 32px 0;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.3);
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.72rem;
+      color: rgba(240,232,216,0.3);
+      letter-spacing: 0.08em;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+      .sidebar-stats { display: grid; grid-template-columns: 1fr 1fr; }
+      .nav-links { flex-direction: row; flex-wrap: wrap; }
+      .main { padding: 32px 20px 60px; max-width: 100%; }
+      .window-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ═══════════════════════════════════════════
+       SIDEBAR
+  ══════════════════════════════════════════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-animal">🐬</div>
+    <div class="sidebar-name">Remya</div>
+    <div class="sidebar-sub">Session Reading · Jun 2026</div>
+
+    <div class="sidebar-stats">
+      <div class="stat-row">
+        <span class="stat-k">Lagna</span>
+        <span class="stat-v">Gemini 7.7°</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-k">Moon</span>
+        <span class="stat-v">Aquarius H9</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-k">Dasha</span>
+        <span class="stat-v">Merc / Jup / Merc</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-k">5th Lord</span>
+        <span class="stat-v">Venus · H12</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-k">H5 karaka</span>
+        <span class="stat-v">Jupiter · H11</span>
+      </div>
+      <div class="stat-row">
+        <span class="stat-k">Age</span>
+        <span class="stat-v">39</span>
+      </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+    <div class="nav-label">Chapters</div>
+    <nav class="nav-links">
+      <a class="nav-link" href="#house5">
+        <span class="nav-icon gold">🏠</span>
+        H5 — Children's House
+      </a>
+      <a class="nav-link" href="#venus">
+        <span class="nav-icon plum">♀</span>
+        Venus — 5th Lord
+      </a>
+      <a class="nav-link" href="#jupiter">
+        <span class="nav-icon sage">♃</span>
+        Jupiter — Karaka
+      </a>
+      <a class="nav-link" href="#support">
+        <span class="nav-icon gold">◉</span>
+        Supporting Factors
+      </a>
+      <a class="nav-link" href="#windows">
+        <span class="nav-icon plum">◑</span>
+        Timing Windows
+      </a>
+      <a class="nav-link" href="#verdict">
+        <span class="nav-icon rose">◬</span>
+        Honest Assessment
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ═══════════════════════════════════════════
+       MAIN
+  ══════════════════════════════════════════════ -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-glow"></div>
+      <div class="eyebrow">Jyotish Deep Reading · Children &amp; Timing</div>
+      <h1>Children — What the Chart Says</h1>
+      <p>A systematic, placement-by-placement examination of Remya's fifth house, its lord, and the natural karaka for children — followed by precise dasha windows for when conception and parenthood are most activated.</p>
+    </div>
+
+    <!-- ═══ CHAPTER 1: H5 ═══ -->
+    <div class="chapter" id="house5">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🏠</div>
+        <h2>
+          <small>Primary Container</small>
+          The Fifth House
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">H5 = Libra · Empty</div>
+        <div class="section-title"><span class="dot dot-gold"></span>No Malefics in the Children's House</div>
+        <p>Gemini Lagna places H5 in Libra. The house itself is <strong>empty</strong> — no planets occupy it directly. In classical Jyotish, an empty H5 is neutral to positive: there is no malefic sitting inside the house of children poisoning it from within.</p>
+        <p>The only planetary sight falling on H5 is Jupiter's 7th aspect from H11 (Aries). Jupiter is the <em>natural karaka</em> for children — the planet that signifies children by nature, not just by rulership. Having the karaka itself bless H5 with its most powerful aspect (7th drishti) is one of the most auspicious configurations for children in any chart.</p>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">H4 · Virgo · Ketu</div>
+        <div class="section-title"><span class="dot dot-plum"></span>Ketu in H4 — Past-Life Home, Not H5</div>
+        <p>Ketu sits in H4 (Virgo, Hasta nakshatra), not H5. This distinction matters: Ketu in H5 would indicate a deep past-life karmic bond with children. Ketu in H4 instead points to past-life themes around home, land, and roots — a sense that the inner home-life carries karmic weight, which can make the emotional preparation for parenthood feel heavier than it needs to be.</p>
+        <p>Hasta nakshatra (the hand of skilled craft) gives Ketu in H4 a healing, dexterous quality — Remya has latent capacity to create a very nurturing home environment, but may first need to release inherited patterns from her own childhood.</p>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">House Assessment</div>
+        <p>H5 is unafflicted. No Saturn, Mars, Rahu, or Ketu sits in it. Jupiter's protective 7th sight is the only planetary influence on H5. This is a genuinely positive foundation — the question is not whether children are karmic-ally available, but <em>when</em> the dasha alignment opens the door.</p>
+      </div>
+    </div>
+
+    <div class="divider">♀ The Fifth Lord</div>
+
+    <!-- ═══ CHAPTER 2: VENUS ═══ -->
+    <div class="chapter" id="venus">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">♀</div>
+        <h2>
+          <small>5th Lord · Significator</small>
+          Venus — Fertile but Hidden
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">Venus · Taurus 14.6° · H12 · Rohini pada 2</div>
+        <div class="section-title"><span class="dot dot-plum"></span>5th Lord in the 12th House</div>
+        <p>Venus rules Libra (H5) and Taurus (H12) for Gemini Lagna. It sits in its own sign Taurus in H12. This placement carries a classical tension: the 5th lord placed in the 12th — eight houses away from H5, in the house of loss, seclusion, foreign lands, and hidden realms.</p>
+        <p>At first glance this looks obstructive. In practice it means <strong>the path to children will not be conventional, announced, or straightforward</strong>. It may involve: medical consultation, a period of trying quietly without others knowing, circumstances linked to distance or travel, or a child coming through non-standard routes (adoption, IVF, blended family).</p>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">Venus in own sign + Viparita Raja Yoga</div>
+        <div class="section-title"><span class="dot dot-sage"></span>Own Sign Strength + the Viparita Effect</div>
+        <p>Venus is in <strong>Taurus, its own sign</strong> — fully dignified regardless of house. A planet in its own sign is operating from a position of natural authority. Venus here is not weakened; it is private, inward, and self-possessed.</p>
+        <p>The <strong>Viparita Raja Yoga</strong> from Venus (lord of H12 in H12) is the key mitigating factor. Viparita Raja Yoga produces its results by making the apparent obstacle become the source of gain. What looks like a blocked or delayed path through H12 ultimately delivers an unexpected positive outcome. The very difficulty or unconventionality of the journey becomes the gift.</p>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">Rohini nakshatra · Pada 2 · Moon-ruled</div>
+        <div class="section-title"><span class="dot dot-sage"></span>Rohini — The Most Fertile Nakshatra</div>
+        <p>Rohini spans 10°–23°20' Taurus and is ruled by the Moon. Its deity is Prajapati (Brahma), the creator-god. Its shakti is <em>rohana</em> — the power to cause growth and to make things flourish. It is the nakshatra of fertility, abundance, sensory richness, and creation of life.</p>
+        <p>Venus at Rohini pada 2 sits in one of the most propitious nakshatras for reproduction and nurturing. Classical texts consistently list Rohini as the most fertile nakshatra, and having the 5th lord placed here is a deeply positive fertility indicator despite the H12 house position. The nakshatra overrides much of the house's restrictive quality.</p>
+        <div>
+          <span class="nak-pill">Rohini</span>
+          <span class="nak-pill">Shakti: Rohana — power to grow</span>
+          <span class="nak-pill">Deity: Prajapati / Brahma</span>
+          <span class="nak-pill">Lord: Moon</span>
+        </div>
+      </div>
+
+      <table class="reading-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th>Placement</th>
+            <th>Reading</th>
+            <th>Signal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>House</td>
+            <td>H12 (loss, seclusion)</td>
+            <td>Unconventional, private, possibly delayed journey</td>
+            <td><span class="badge badge-mixed">Mixed</span></td>
+          </tr>
+          <tr>
+            <td>Sign</td>
+            <td>Taurus (own sign)</td>
+            <td>Fully dignified — Venus is strong here</td>
+            <td><span class="badge badge-protect">Positive</span></td>
+          </tr>
+          <tr>
+            <td>Nakshatra</td>
+            <td>Rohini pada 2</td>
+            <td>Most fertile nakshatra — creates life, causes growth</td>
+            <td><span class="badge badge-protect">Positive</span></td>
+          </tr>
+          <tr>
+            <td>Yoga</td>
+            <td>Viparita Raja (H12 lord in H12)</td>
+            <td>Adversity becomes source of unexpected gain</td>
+            <td><span class="badge badge-protect">Positive</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="divider">♃ The Karaka</div>
+
+    <!-- ═══ CHAPTER 3: JUPITER ═══ -->
+    <div class="chapter" id="jupiter">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">♃</div>
+        <h2>
+          <small>Natural Karaka · Darakaraka</small>
+          Jupiter — The Blesser of H5
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">Jupiter · Aries 0.2° · H11 · Ashwini pada 1</div>
+        <div class="section-title"><span class="dot dot-sage"></span>Jupiter's 7th Sight Falls Directly on H5</div>
+        <p>Jupiter in H11 (Aries) casts its 7th full drishti onto H5 (Libra). This is the most direct, unobstructed planetary blessing available on the children's house. Jupiter does not merely signify children in general — it <em>activates</em> H5 from outside, injecting its expansive, dharmic energy into the very house that governs them.</p>
+        <p>In classical texts, Jupiter's aspect on H5 is listed as one of the primary indicators for children being granted — especially when Jupiter is also a functional benefic for the Lagna. For Gemini Lagna, Jupiter rules H7 and H10, making it a powerful planet with significant house ownership. Its aspect on H5 carries both natural (karaka) and functional benefic energy simultaneously.</p>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">Jupiter at 0.2° Aries · Ashwini pada 1 · Ketu-ruled</div>
+        <div class="section-title"><span class="dot dot-gold"></span>The Zero-Degree Pioneer</div>
+        <p>Jupiter at 0.2° has barely entered Aries — it carries the quality of a new beginning, a first step, a pioneer energy. Ashwini nakshatra's ruling deity is the Ashwini Kumara twins — the celestial healers who restore what is broken and renew what has been lost. <em>Ashwini's shakti is shidhra vyapani — the power of swift, healing arrival.</em></p>
+        <p>This nakshatra energy in the children's karaka is quietly auspicious for fertility: healing, restoration, new arrivals, twins (traditionally associated with Ashwini). Ketu-ruled Ashwini also gives this Jupiter a slightly unconventional, spiritually charged quality — the child associated with this chart may carry unusual gifts or arrive in unexpected ways.</p>
+        <div>
+          <span class="nak-pill">Ashwini</span>
+          <span class="nak-pill">Shakti: Swift healing arrival</span>
+          <span class="nak-pill">Deity: Ashwini Kumaras (twin healers)</span>
+          <span class="nak-pill">Lord: Ketu</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">Darakaraka = Jupiter (0.2° — lowest degree)</div>
+        <div class="section-title"><span class="dot dot-plum"></span>Jupiter as Soul-Significator of the Spouse</div>
+        <p>Jupiter at 0.2° is the lowest-degree planet in the chart (excluding Rahu/Ketu), making it the <strong>Darakaraka</strong> — the soul-level significator of the spouse. This creates a profound double role: Jupiter simultaneously represents both the <em>husband</em> and <em>children</em> in Remya's chart.</p>
+        <p>In practice this means the spouse is intrinsically woven into the children's story. The relationship with the partner must be in good order for the children's chapter to open fully. When Jupiter is activated in a dasha period, both relationship depth and children's matters are being touched simultaneously — they rise or face challenge together.</p>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Jupiter Assessment</div>
+        <p>Jupiter is operating at full capacity for this chart's children question: natural karaka ✦ functional benefic ✦ direct 7th sight on H5 ✦ Darakaraka. It is the most important planet in the children reading. When Jupiter's dasha period activates, the children door opens widest.</p>
+      </div>
+    </div>
+
+    <div class="divider">◉ Supporting Factors</div>
+
+    <!-- ═══ CHAPTER 4: SUPPORTING FACTORS ═══ -->
+    <div class="chapter" id="support">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">◉</div>
+        <h2>
+          <small>Saturn · Moon · Kemadruma</small>
+          Supporting Factors
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">Saturn · Scorpio 23.5° · H6 · Retrograde</div>
+        <div class="section-title"><span class="dot dot-gold"></span>Saturn Does Not Afflict H5</div>
+        <p>Saturn in H6 (Scorpio, retrograde) casts its special 3rd, 7th, and 10th sights onto H8, H12, and H3 respectively. <strong>H5 is not in Saturn's line of sight</strong> — a meaningful absence. Saturn's influence does not directly obstruct the children's house.</p>
+        <p>However, Saturn in H6 retrograde (ruling H8 and H9 for Gemini Lagna) carries indirect pressure: it can manifest as chronic anxiety around health and fertility, or as an internalized fear pattern. Saturn retro in Scorpio in H6 tends to make stress about health and bodies go inward rather than outward. Conscious attention to reproductive health and stress management is wise — not because the chart predicts a problem, but because Saturn's retrograde nature in this placement can amplify worry beyond what is warranted.</p>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">Moon · Aquarius 27.3° · H9 · Purva Bhadrapada pada 3</div>
+        <div class="section-title"><span class="dot dot-plum"></span>The Moon — Emotional Readiness for Motherhood</div>
+        <p>For a female chart, the Moon's condition reflects the emotional-body readiness for children. Moon in Aquarius H9 (Purva Bhadrapada) is dignified and philosophically elevated — Remya may instinctively view motherhood through a dharmic or higher-purpose lens, less interested in conventional parenthood scripts, more interested in what it means to raise a conscious human.</p>
+        <p>Purva Bhadrapada's deity <em>Aja Ekapada</em> (one-footed fire goat, vehicle of Agni) gives this Moon an inner intensity — a burning, passionate emotional core beneath the cool Aquarian exterior. The relationship with a child, if it comes, will be deep and transformative for Remya.</p>
+      </div>
+
+      <div class="section">
+        <div class="place-tag">Kemadruma Yoga · Moon H9</div>
+        <div class="section-title"><span class="dot dot-rose"></span>Kemadruma — The Danger of Processing Alone</div>
+        <p>No planets occupy H8 or H10 (2nd and 12th from Moon in H9), creating Kemadruma yoga. Among Kemadruma's effects: emotional isolation, a tendency to carry burdens alone, and emotional self-reliance that can shade into loneliness. On the children topic this translates practically: Remya may be prone to not sharing the emotional weight of the journey — the hoping, the anxiety, the disappointment if timelines slip — with her partner or support circle.</p>
+        <p>The remedy for Kemadruma's influence is conscious, deliberate sharing. The journey to children (especially given Venus in H12's private quality) will be healthier if she actively resists the instinct to process it silently. Partner involvement is not optional — it is the counterweight to Kemadruma's isolating pull.</p>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-label">Key Watch Point</div>
+        <p>The greatest risk in this chart's children reading is not the placements — it is emotional isolation (Kemadruma) combined with a private, inward 5th lord (Venus H12) creating a situation where Remya carries the emotional weight of the journey alone. The antidote is structural: speak it, share it, bring the partner into the full emotional conversation, and seek medical support early rather than waiting.</p>
+      </div>
+    </div>
+
+    <div class="divider">◑ Timing Windows</div>
+
+    <!-- ═══ CHAPTER 5: TIMING ═══ -->
+    <div class="chapter" id="windows">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">◑</div>
+        <h2>
+          <small>Dasha Windows · Vimshottari</small>
+          When the Door Opens
+        </h2>
+      </div>
+
+      <div class="section">
+        <p style="font-size:0.85rem; color:var(--muted); line-height:1.7; margin-bottom:0;">
+          <strong style="color:var(--cream);">Mercury Mahadasha:</strong> approximately Sep 2013 → Sep 2030 (17 years). Calculated from Moon in Purva Bhadrapada — Jupiter MD at birth, Saturn MD follows, then Mercury MD began ~Sep 2013. Bhukti sequence below covers the remaining fertile-window period.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Dasha Windows Ranked</div>
+        <div class="window-row">
+          <div class="window-period">Aug 2025<br>→ Dec 2027</div>
+          <div class="window-dasha">Mercury / Jupiter<br><span class="badge badge-protect" style="margin-top:4px">Peak Window</span></div>
+          <div class="window-theme">Jupiter bhukti activates the karaka for children, Jupiter's 7th aspect on H5, and Jupiter as Darakaraka — all simultaneously. This is the chart's strongest active window in the remaining fertile years. Remya is 38–40 during this period. <strong>This is the primary window.</strong></div>
+        </div>
+        <div class="window-row">
+          <div class="window-period">Dec 2027<br>→ Sep 2030</div>
+          <div class="window-dasha">Mercury / Saturn<br><span class="badge badge-mixed" style="margin-top:4px">Possible</span></div>
+          <div class="window-theme">Saturn rules H8 (8th from Lagna) and is retrograde in H6. Less aligned for easy conception — Saturn bhuktis can bring medical scrutiny, delays, and karmic processing. Not a block, but requires medical support and intentionality. Saturn's VRY (H8 lord in H6) can still produce unexpected outcomes. Ages 40–43.</div>
+        </div>
+        <div class="window-row">
+          <div class="window-period">~2033–2035</div>
+          <div class="window-dasha">Ketu / Venus<br><span class="badge badge-mixed" style="margin-top:4px">Non-biological</span></div>
+          <div class="window-theme">After Mercury MD ends (Sep 2030), Ketu MD begins (7 years). The Ketu/Venus antardasha activates Venus (5th lord, Rohini). Ketu periods bring surrender and the unexpected — a child through unconventional means (adoption, step-parenting, fostering) is a classic Ketu-flavored outcome. Venus in Rohini's fertility is activated but through Ketu's channel of release rather than biological conception.</div>
+        </div>
+        <div class="window-row">
+          <div class="window-period">Sep 2037<br>→ Sep 2057</div>
+          <div class="window-dasha">Venus Mahadasha<br><span class="badge badge-mixed" style="margin-top:4px">Beyond biology</span></div>
+          <div class="window-theme">Venus as 5th lord becomes the Mahadasha lord — the strongest possible dasha for children matters in this chart. However this begins at age 50 and is beyond the conventional biological window. May be relevant for grandchildren, mentoring children, or creative/spiritual "children" (projects, students, communities).</div>
+        </div>
+      </div>
+
+      <div class="callout callout-plum">
+        <div class="callout-label">Dasha Insight</div>
+        <p>The current Mercury/Jupiter bhukti — running until approximately Dec 2027 — is not just a window in the sense of "conditions are favorable." It is a convergence: the MD lord (Mercury as Lagna lord) supports identity and body, the bhukti lord (Jupiter) is both karaka for children and the planet directly aspecting H5. The chart is pointing at <em>now</em> as clearly as a Vedic chart can point.</p>
+      </div>
+    </div>
+
+    <div class="divider">◬ Honest Assessment</div>
+
+    <!-- ═══ CHAPTER 6: VERDICT ═══ -->
+    <div class="chapter" id="verdict">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">◬</div>
+        <h2>
+          <small>Bottom Line</small>
+          Honest Assessment
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Summary of All Factors</div>
+        <table class="reading-table">
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>Placement</th>
+              <th>Signal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>H5 empty — no malefics inside</td>
+              <td>Libra unoccupied</td>
+              <td><span class="badge badge-protect">Positive</span></td>
+            </tr>
+            <tr>
+              <td>Jupiter (karaka) aspects H5</td>
+              <td>Jupiter H11 → 7th sight H5</td>
+              <td><span class="badge badge-protect">Strong Positive</span></td>
+            </tr>
+            <tr>
+              <td>Venus (5th lord) in own sign Taurus</td>
+              <td>Fully dignified</td>
+              <td><span class="badge badge-protect">Positive</span></td>
+            </tr>
+            <tr>
+              <td>Venus in Rohini nakshatra</td>
+              <td>Most fertile nakshatra</td>
+              <td><span class="badge badge-protect">Positive</span></td>
+            </tr>
+            <tr>
+              <td>Venus in H12</td>
+              <td>5th lord 8 houses from H5</td>
+              <td><span class="badge badge-risk">Delay / Non-conventional</span></td>
+            </tr>
+            <tr>
+              <td>Viparita Raja Yoga (Venus)</td>
+              <td>H12 lord in H12</td>
+              <td><span class="badge badge-protect">Unexpected positive outcome</span></td>
+            </tr>
+            <tr>
+              <td>Kemadruma Moon</td>
+              <td>No planets adjacent to Moon</td>
+              <td><span class="badge badge-risk">Emotional isolation risk</span></td>
+            </tr>
+            <tr>
+              <td>Saturn not aspecting H5</td>
+              <td>H6 → sights H8, H12, H3</td>
+              <td><span class="badge badge-protect">No direct obstruction</span></td>
+            </tr>
+            <tr>
+              <td>Peak dasha: Mercury/Jupiter</td>
+              <td>NOW → Dec 2027</td>
+              <td><span class="badge badge-protect">Active Window Open</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Core Signature</div>
+        <p>Children are indicated in this chart. Jupiter's direct blessing of H5 and Venus's powerful nakshatra placement (Rohini) are the two strongest positive signatures. The path will not be linear — Venus in H12 guarantees some degree of inward, private, or unconventional journey. But the Viparita Raja Yoga whispers what it always does: what appears blocked becomes the source of an unexpected gift. The active window is NOW, running through December 2027. This is the period the chart points to most clearly within the remaining fertile years.</p>
+      </div>
+
+      <div class="callout callout-rose" style="margin-top:14px;">
+        <div class="callout-label">Honest Caution</div>
+        <p>At 39, the window is open but not indefinitely. The convergence of Mercury/Jupiter bhukti with Jupiter's aspect on H5 makes 2025–2027 the clearest signal in the remaining dasha sequence. Waiting for Mercury/Saturn (2027–2030) is possible but adds biological complexity without additional astrological support. The practical recommendation: act within this Jupiter bhukti, seek medical perspective if needed, and — critically — do not carry the emotional weight of this journey alone. Kemadruma Moon's isolation tendency is the real obstacle to navigate, more than any planetary placement.</p>
+      </div>
+
+      <div class="callout callout-sage" style="margin-top:14px;">
+        <div class="callout-label">Antidote</div>
+        <p>Activate Jupiter consciously during this period: Thursday observances, yellow foods, charity to students or teachers, time in nature (Aries/fire energy). Venus in Rohini responds to beauty, flowers, music, and creative nurturing. For Kemadruma's isolation — speak the desire openly to the partner, do not let the journey become a private burden. The child Jupiter and the child of one's heart are the same energy: expansive, generous, trusting.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated 20 Jun 2026 · Topic: Children &amp; Timing · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
