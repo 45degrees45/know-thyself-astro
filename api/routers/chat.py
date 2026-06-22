@@ -60,12 +60,12 @@ async def chat(req: ChatRequest, db: AsyncSession = Depends(get_db)):
             select(AccessCode).where(
                 AccessCode.chart_id == req.chart_id,
                 or_(
-                    and_(AccessCode.type == "demo", AccessCode.expires_at > now),
+                    and_(AccessCode.type == "demo", or_(AccessCode.expires_at.is_(None), AccessCode.expires_at > now)),
                     and_(AccessCode.type == "trusted", AccessCode.expires_at.is_(None)),
                 ),
             )
         )
-        access = code_result.scalar_one_or_none()
+        access = code_result.scalars().first()
         is_trusted = access is not None and access.type == "trusted"
         has_access = access is not None
 

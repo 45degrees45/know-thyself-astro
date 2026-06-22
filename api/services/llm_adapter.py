@@ -5,7 +5,7 @@ MODELS = {
     "anthropic": "claude-sonnet-4-6",
     "gemini": "gemini-1.5-pro",
     "openai": "gpt-4o",
-    "nim": "meta/llama-3.1-70b-instruct",
+    "nim": "meta/llama-3.1-8b-instruct",
 }
 
 

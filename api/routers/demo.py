@@ -1,9 +1,9 @@
 import secrets
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select
+from sqlalchemy import select, or_
 
 from api.database import get_db
 from api.models import AccessCode, Chart
@@ -63,24 +63,10 @@ async def redeem_code(req: DemoRedeemRequest, db: AsyncSession = Depends(get_db)
     if not chart_result.scalar_one_or_none():
         raise HTTPException(status_code=404, detail="Chart not found")
 
-    now = datetime.now(timezone.utc)
     access.chart_id = chart_id
-
-    if access.type == "trusted":
-        # Permanent — no expiry
-        access.expires_at = None
-        await db.commit()
-        return {"ok": True, "trusted": True, "expires_at": None}
-    else:
-        # Demo — 1-minute window (streaming pauses the timer)
-        access.expires_at = now + timedelta(minutes=WINDOW_MINUTES)
-        await db.commit()
-        return {
-            "ok": True,
-            "trusted": False,
-            "expires_at": access.expires_at.isoformat(),
-            "window_minutes": WINDOW_MINUTES,
-        }
+    access.expires_at = None  # permanent for all code types
+    await db.commit()
+    return {"ok": True, "expires_at": None}
 
 
 @router.get("/demo/status/{chart_id}")
@@ -89,11 +75,10 @@ async def demo_status(chart_id: str, db: AsyncSession = Depends(get_db)):
     result = await db.execute(
         select(AccessCode).where(
             AccessCode.chart_id == chart_id,
-            AccessCode.expires_at > now,
+            or_(AccessCode.expires_at.is_(None), AccessCode.expires_at > now),
         )
     )
     active = result.scalar_one_or_none()
     if active:
-        remaining = int((active.expires_at - now).total_seconds())
-        return {"active": True, "expires_at": active.expires_at.isoformat(), "remaining_seconds": remaining}
+        return {"active": True, "expires_at": None, "remaining_seconds": None}
     return {"active": False}
