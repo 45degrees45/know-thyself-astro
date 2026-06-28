@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Mirjam — Income & Domain Readings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .sidebar-animal {
+      font-size: 64px;
+      line-height: 1;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .sidebar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .sidebar-sub {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .sidebar-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .sidebar-stat-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(196,158,64,0.6);
+    }
+
+    .sidebar-stat-value {
+      font-size: 0.82rem;
+      color: var(--cream);
+    }
+
+    .nav-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(196,158,64,0.5);
+      margin-bottom: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-link:hover {
+      background: rgba(196,158,64,0.08);
+      color: var(--cream);
+    }
+
+    .nav-link-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .nav-icon-gold  { background: rgba(196,158,64,0.14); }
+    .nav-icon-sage  { background: rgba(90,143,114,0.14); }
+    .nav-icon-plum  { background: rgba(124,92,191,0.14); }
+    .nav-icon-blue  { background: rgba(91,143,212,0.14); }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 48px 52px 80px;
+      max-width: 860px;
+    }
+
+    /* ── HERO ── */
+    .hero-intro {
+      margin-bottom: 44px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .hero-intro h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: #fff8f0;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .hero-intro p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 640px;
+    }
+
+    /* ── CHAPTER ── */
+    .chapter {
+      margin-bottom: 56px;
+      scroll-margin-top: 32px;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .chapter-icon.gold { background: rgba(196,158,64,0.14); }
+    .chapter-icon.sage { background: rgba(90,143,114,0.14); }
+    .chapter-icon.plum { background: rgba(124,92,191,0.14); }
+    .chapter-icon.blue { background: rgba(91,143,212,0.14); }
+    .chapter-icon.rose { background: rgba(196,96,122,0.14); }
+
+    .chapter h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--cream);
+    }
+
+    .chapter h2 small {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 4px;
+    }
+
+    /* ── SECTION CARD ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px 28px;
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-gold { background: var(--gold); }
+    .dot-sage { background: var(--sage); }
+    .dot-plum { background: var(--plum); }
+    .dot-blue { background: var(--blue); }
+    .dot-rose { background: var(--rose); }
+
+    p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── READING TABLE ── */
+    .reading-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin-top: 16px;
+    }
+
+    .reading-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(196,158,64,0.1);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+    }
+
+    .reading-table td {
+      padding: 10px 14px;
+      color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .reading-table td:first-child {
+      color: var(--gold2);
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    /* ── CALLOUTS ── */
+    .callout {
+      border-radius: 14px;
+      padding: 18px 22px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-top: 16px;
+    }
+
+    .callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+    .callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+    .callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+    .callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+
+    .callout-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .callout-gold .callout-label { color: var(--gold); }
+    .callout-plum .callout-label { color: #b49edf; }
+    .callout-rose .callout-label { color: #e8909f; }
+    .callout-sage .callout-label { color: #80c4a0; }
+
+    .callout p { font-size: 0.9rem; margin-bottom: 0; color: rgba(240,232,216,0.88); }
+
+    /* ── BADGES ── */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+    /* ── PERIOD ROWS ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 100px 160px 1fr;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+      align-items: start;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: rgba(196,158,64,0.65);
+      font-size: 0.8rem;
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── DOMAIN CARDS (3-col grid) ── */
+    .domain-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .domain-card {
+      background: rgba(90,143,114,0.06);
+      border: 1px solid rgba(90,143,114,0.18);
+      border-radius: 16px;
+      padding: 18px 20px;
+    }
+
+    .domain-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .domain-icon {
+      font-size: 1.4rem;
+    }
+
+    .domain-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--cream);
+    }
+
+    .domain-evidence {
+      font-size: 0.75rem;
+      color: rgba(90,143,114,0.9);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .domain-card p {
+      font-size: 0.86rem;
+      color: rgba(240,232,216,0.72);
+      line-height: 1.65;
+    }
+
+    /* ── PLANET PILL ── */
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 999px;
+      padding: 4px 11px 4px 8px;
+      font-size: 0.76rem;
+      margin: 2px;
+    }
+
+    .pchip-name { color: var(--gold); font-weight: 600; font-size: 0.7rem; }
+    .pchip-val  { color: rgba(240,232,216,0.7); }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 32px 0;
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.3);
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.72rem;
+      color: rgba(240,232,216,0.3);
+      letter-spacing: 0.08em;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+      .main { padding: 32px 20px 60px; }
+      .domain-grid { grid-template-columns: 1fr; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ══════════════ SIDEBAR ══════════════ -->
+  <aside class="sidebar">
+    <span class="sidebar-animal">🦢</span>
+    <div class="sidebar-name">Mirjam</div>
+    <div class="sidebar-sub">Income &amp; Domain Reading</div>
+
+    <div class="sidebar-stats">
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Lagna</span>
+        <span class="sidebar-stat-value">♐ Sagittarius 11.3°</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Current Dasha</span>
+        <span class="sidebar-stat-value">Rahu / Ketu / Jupiter</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Spirit Animal</span>
+        <span class="sidebar-stat-value">🦢 Swan — Hamsa Yoga</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Session Date</span>
+        <span class="sidebar-stat-value">28 Jun 2026</span>
+      </div>
+    </div>
+
+    <div class="nav-label">Chapters</div>
+    <nav class="nav-links">
+      <a class="nav-link" href="#income-architecture">
+        <span class="nav-link-icon nav-icon-gold">🏛️</span>
+        Income Architecture
+      </a>
+      <a class="nav-link" href="#skill-engine">
+        <span class="nav-link-icon nav-icon-gold">⚡</span>
+        H6 Skill Engine
+      </a>
+      <a class="nav-link" href="#client-model">
+        <span class="nav-link-icon nav-icon-sage">🤝</span>
+        H7 Client Model
+      </a>
+      <a class="nav-link" href="#digital-stream">
+        <span class="nav-link-icon nav-icon-plum">🌐</span>
+        H12 Digital Stream
+      </a>
+      <a class="nav-link" href="#domains">
+        <span class="nav-link-icon nav-icon-sage">🎯</span>
+        Best Domains
+      </a>
+      <a class="nav-link" href="#timing">
+        <span class="nav-link-icon nav-icon-gold">⏳</span>
+        Timing Windows
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ══════════════ MAIN ══════════════ -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero-intro">
+      <p class="hero-eyebrow">Session Reading · Jyotish Deep Dive · Jun 2026</p>
+      <h1>Side Income &amp;<br>Domain Potential</h1>
+      <p>A chart-evidence reading focused on Mirjam's financial architecture, natural skill domains, and the income model her placements are designed for. Every house lord for H2, H3, H6, and H11 converges on a single point — that convergence tells the whole story.</p>
+    </div>
+
+    <!-- ══ CHAPTER 1: INCOME ARCHITECTURE ══ -->
+    <section class="chapter" id="income-architecture">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🏛️</div>
+        <h2>
+          <small>Foundation</small>
+          Income Architecture
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>All Income Lords Point to One Place</div>
+        <p>For Sagittarius Lagna, the four houses that govern earning capacity are H2 (accumulated wealth), H3 (self-effort and skills), H6 (service and daily work), and H11 (gains and recurring income). The lords of all four land in exactly the same house — Gemini H7, the house of clients, partnerships, and one-on-one relationships.</p>
+
+        <table class="reading-table">
+          <thead>
+            <tr>
+              <th>House</th>
+              <th>Theme</th>
+              <th>Lord</th>
+              <th>Sits In</th>
+              <th>Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>H2 — Capricorn</td>
+              <td>Accumulated wealth</td>
+              <td>Saturn</td>
+              <td>Gemini H7</td>
+              <td>Wealth through partnerships</td>
+            </tr>
+            <tr>
+              <td>H3 — Aquarius</td>
+              <td>Self-effort, side hustle</td>
+              <td>Saturn</td>
+              <td>Gemini H7</td>
+              <td>Effort channeled through clients</td>
+            </tr>
+            <tr>
+              <td>H6 — Taurus</td>
+              <td>Service, skilled work</td>
+              <td>Venus</td>
+              <td>Gemini H7</td>
+              <td>Service rendered to direct clients</td>
+            </tr>
+            <tr>
+              <td>H11 — Libra</td>
+              <td>Gains, side income</td>
+              <td>Venus</td>
+              <td>Gemini H7</td>
+              <td>Income flows from relationships</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Core Signature</div>
+        <p>Mirjam is not built for passive income, mass-market products, or anonymous online sales. Her chart is structured for <strong>direct-relationship income</strong> — a small roster of clients who value her deeply, pay well, and return repeatedly. The more personal the model, the more the chart works in her favour.</p>
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- ══ CHAPTER 2: H6 SKILL ENGINE ══ -->
+    <section class="chapter" id="skill-engine">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">⚡</div>
+        <h2>
+          <small>H6 Taurus Stellium</small>
+          The Skill Engine
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Sun · Mercury · Ketu in Taurus H6</div>
+        <p>Three planets in the house of skilled work create a dense concentration of capability. These are not diluted energies — each one adds a distinct layer to what Mirjam can do and how she earns from it.</p>
+
+        <table class="reading-table">
+          <thead>
+            <tr><th>Planet</th><th>Nakshatra</th><th>Role in H6</th><th>Skill Signal</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sun 12.5°</td>
+              <td>Rohini pada 1 (Moon-ruled)</td>
+              <td>9th lord in service house</td>
+              <td>Dharmic authority through skilled work; sensory, creative, nurturing gifts</td>
+            </tr>
+            <tr>
+              <td>Mercury 30.0°</td>
+              <td>Mrigashira pada 2 (Mars-ruled)</td>
+              <td>10th lord in service house</td>
+              <td>Career built on analysis, research, communication; eternal seeker quality</td>
+            </tr>
+            <tr>
+              <td>Ketu 7.4°</td>
+              <td>Krittika pada 4 (Sun-ruled)</td>
+              <td>South Node in skills house</td>
+              <td>Past-life mastery of H6 themes — healing, troubleshooting, service</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Budha-Aditya Yoga (Sun + Mercury H6)</div>
+        <p>The conjunction of Sun and Mercury creates Budha-Aditya Yoga — one of the classical markers of intellectual excellence and clear communication. Here it forms in Taurus H6, grounding it in practical, skilled, service-oriented expression rather than abstract theorising.</p>
+        <p>Because both are also the 9th lord and 10th lord respectively, this becomes <strong>Dharma Karma Adhipati Yoga</strong> — the chart's highest career indicator. Her dharmic path runs directly through mastery of a craft or skill, not through hierarchy or status. The work itself is the calling.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Ketu in H6 — Innate Mastery</div>
+        <p>Ketu in the house of skills and healing indicates past-life fluency. Certain domains — particularly healing, analysis, troubleshooting, and service to others — come to her without a learning curve that others experience. She walks in and already knows. This is the "I don't know how I know this" phenomenon. Clients sense this depth and trust her immediately.</p>
+        <p><strong>Krittika nakshatra</strong> (Sun-ruled, fire): precise, discerning, able to cut through to what matters. Adds a quality of sharpness and editorial clarity to whatever she creates.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Bottom Line</div>
+        <p>The H6 stellium means her most lucrative skill domains are ones where she combines analytical precision (Mercury), sensory awareness and warmth (Rohini Sun), and innate past-life mastery (Ketu). She doesn't need to become an expert — in certain areas she already is one.</p>
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- ══ CHAPTER 3: H7 CLIENT MODEL ══ -->
+    <section class="chapter" id="client-model">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">🤝</div>
+        <h2>
+          <small>H7 Gemini</small>
+          The Client Income Model
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Venus + Saturn in Gemini H7 — Punarvasu</div>
+        <p>Both planets sit in <strong>Punarvasu nakshatra</strong> (Jupiter-ruled) — "the return of light," associated with sustainability, renewal, and things that come back. The income model this nakshatra describes is one of <strong>recurring clients</strong>, repeat engagements, and relationships that deepen over time. Not one-off transactions.</p>
+
+        <table class="reading-table">
+          <thead>
+            <tr><th>Planet</th><th>Roles</th><th>Nakshatra</th><th>Income Implication</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Venus 26.4°</td>
+              <td>H6 lord + H11 lord</td>
+              <td>Punarvasu pada 2</td>
+              <td>Work and gains flow together; recurring client income, return engagements</td>
+            </tr>
+            <tr>
+              <td>Saturn 23.0°</td>
+              <td>H2 lord + H3 lord</td>
+              <td>Punarvasu pada 1</td>
+              <td>Wealth builds slowly but solidly; self-effort compounds over years</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>What Gemini H7 Says About Clients</div>
+        <p>Gemini governs communication, variety, duality, and mental agility. Her clients are drawn to her mind — her ability to articulate, explain, connect ideas, and adapt. They return because the conversation continues to evolve. Ideal client profile: curious, intellectually engaged, open to process.</p>
+        <p>Saturn in H7 adds structure to partnerships — long-term contracts, trusted relationships, formal arrangements. Not casual gigs. Her best income is contractual or retainer-style, not transactional.</p>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Protective Factor</div>
+        <p>Saturn's presence in H7 (alongside Venus the 11th lord) is a long-term income protector. It means the income model, once established, becomes durable and resistant to market fluctuations. The key: build slowly, build relationships, and the structure becomes permanent.</p>
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- ══ CHAPTER 4: H12 DIGITAL STREAM ══ -->
+    <section class="chapter" id="digital-stream">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">🌐</div>
+        <h2>
+          <small>H12 Scorpio · Rahu Mahadasha</small>
+          Digital &amp; Foreign Income
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Rahu in Scorpio H12 — Active Mahadasha (2015–2033)</div>
+        <p>H12 governs: foreign income, digital and virtual income streams, work done behind the scenes, income connected to spirituality and healing, and invisible assets. Rahu in H12 amplifies every one of these channels — and Mirjam is currently in her Rahu mahadasha. This means H12 themes are not background noise. They are the primary frequency of her life right now.</p>
+        <p><strong>Anuradha nakshatra</strong> (Saturn-ruled): devotion, friendship networks, connection to distant places and cultures. She can build real income through her community — people she has genuinely connected with, not cold audiences.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>What This Opens</div>
+        <p>Foreign clients and international reach are specifically activated. Digital platforms — anything where work crosses geographic borders — carry extra momentum. This includes online consulting, digital courses, writing platforms, and remote 1-on-1 work with clients anywhere in the world.</p>
+        <p>The "invisible income" dimension of H12 also supports income from work done in solitude, behind the scenes, or from domains that aren't immediately obvious as income sources — writing, content creation, behind-the-scenes consulting.</p>
+      </div>
+
+      <div class="callout callout-plum">
+        <div class="callout-label">Rahu Mahadasha Signal</div>
+        <p>The Rahu mahadasha runs until 2033. Any income stream built with a digital or international dimension during this period carries the full force of Rahu's expansive, boundary-crossing energy. This is the window to think beyond the local and the familiar.</p>
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- ══ CHAPTER 5: BEST DOMAINS ══ -->
+    <section class="chapter" id="domains">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">🎯</div>
+        <h2>
+          <small>Chart-Matched Domains</small>
+          Where Her Skills Land
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Five Domains — Ranked by Chart Fit</div>
+        <p>Each domain below is traced to at least two specific placements. These aren't suggestions — they are where the chart architecture points.</p>
+      </div>
+
+      <div class="domain-grid">
+
+        <div class="domain-card">
+          <div class="domain-card-header">
+            <span class="domain-icon">✍️</span>
+            <span class="domain-title">Writing &amp; Teaching</span>
+          </div>
+          <div class="domain-evidence">Mercury H6 (Mrigashira) · Venus H7 Gemini (11th lord) · Budha-Aditya Yoga</div>
+          <p>Online courses, paid newsletter, coaching through writing. Mercury's Mrigashira nakshatra drives research and curiosity. Venus in Gemini (the sign of communication, as 11th lord) means income flows through words. Best format: 1-on-1 coaching or small group teaching — not mass content.</p>
+        </div>
+
+        <div class="domain-card">
+          <div class="domain-card-header">
+            <span class="domain-icon">🌿</span>
+            <span class="domain-title">Healing &amp; Wellness</span>
+          </div>
+          <div class="domain-evidence">Ketu H6 (past-life mastery) · Jupiter H4 Pisces (compassion) · Mars H4 Pisces · Sun Rohini (nurturing)</div>
+          <p>Bodywork, somatic therapy, energy healing, yoga, nutritional coaching. Ketu in H6 signals past-life fluency in healing modalities — she picks these up faster than expected and clients sense the depth immediately. Jupiter in H4 supports working from home.</p>
+        </div>
+
+        <div class="domain-card">
+          <div class="domain-card-header">
+            <span class="domain-icon">🔮</span>
+            <span class="domain-title">Spiritual Guidance</span>
+          </div>
+          <div class="domain-evidence">Sagittarius Moon H1 · Jupiter H4 Pisces Hamsa Yoga · 9th lord Sun in H6 (dharmic service)</div>
+          <p>Life coaching with spiritual or philosophical depth, facilitation, astrology, retreat work. Her Sagittarius Moon makes philosophical inquiry her emotional home — this is identity-level, not just interest-level. The Hamsa Yoga (Jupiter in own sign) adds genuine spiritual authority.</p>
+        </div>
+
+        <div class="domain-card">
+          <div class="domain-card-header">
+            <span class="domain-icon">📊</span>
+            <span class="domain-title">Consulting &amp; Analysis</span>
+          </div>
+          <div class="domain-evidence">Budha-Aditya Yoga (DKA) · Saturn H7 (structured partnerships) · Mrigashira Mercury (research)</div>
+          <p>Research consulting, editorial work, analytical services, strategy consulting. Mercury's Mrigashira drive (always seeking, always investigating) suits research-heavy client work. Saturn in H7 means she thrives with repeat clients under formal arrangements.</p>
+        </div>
+
+        <div class="domain-card" style="grid-column: span 2;">
+          <div class="domain-card-header">
+            <span class="domain-icon">🌍</span>
+            <span class="domain-title">International / Digital Services</span>
+          </div>
+          <div class="domain-evidence">Rahu H12 Scorpio (active mahadasha) · Venus H7 Gemini (digital communication) · H12 foreign income domain</div>
+          <p>Any of the above domains offered to international clients via digital platforms. Remote 1-on-1 work, digital courses sold globally, writing for international audiences. This domain is uniquely supercharged during the current Rahu mahadasha — the chart is specifically pointing toward income that crosses borders. Platforms like Teachable, Gumroad, or international coaching directories match this precisely.</p>
+        </div>
+
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Format Guidance</div>
+        <p>Whatever domain she chooses, the <em>format</em> matters as much as the domain. The H7 convergence of all income lords means the income model must be relationship-based: small client roster, high trust, recurring engagement. A retainer or ongoing coaching relationship outperforms a one-time course or product, every time.</p>
+      </div>
+    </section>
+
+    <div class="divider">✦</div>
+
+    <!-- ══ CHAPTER 6: TIMING WINDOWS ══ -->
+    <section class="chapter" id="timing">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">⏳</div>
+        <h2>
+          <small>Dasha Timing</small>
+          When to Move
+        </h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Period-by-Period Breakdown</div>
+
+        <div class="period-row">
+          <div class="period-window">Now – Jul 2026</div>
+          <div class="period-dasha">Rahu / Ketu / Jupiter antara</div>
+          <div class="period-theme"><span class="badge badge-mixed">act now</span> Jupiter antara (H4 Pisces — Hamsa yoga) opens a brief window for launching something wisdom-based or teaching-oriented from home. Short window. Seed-planting, not full harvest. Good for starting a newsletter, beginning a course outline, or positioning for the Venus bhukti ahead.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">Nov 2026 – Nov 2029</div>
+          <div class="period-dasha">Rahu / Venus bhukti</div>
+          <div class="period-theme"><span class="badge badge-protect">peak window</span> Venus is simultaneously the 6th lord (work) and 11th lord (gains). When Venus bhukti opens, both work capacity and income expand together. This is the single best three-year window in the decade for building a side income that becomes meaningful. Anything planted in the next five months will be ready to grow here.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">Nov 2029 – Nov 2030</div>
+          <div class="period-dasha">Rahu / Sun bhukti</div>
+          <div class="period-theme"><span class="badge badge-protect">recognition</span> Sun bhukti activates the 9th lord — dharmic recognition and authority. Income from teaching, guidance, and leadership roles increases. Public profile rises. Good for moving a side income into a primary income.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2033 onward</div>
+          <div class="period-dasha">Jupiter Mahadasha (18 years)</div>
+          <div class="period-theme"><span class="badge badge-protect">long-term</span> Hamsa Yoga activates fully — Jupiter in Pisces own sign becomes the mahadasha lord. Wisdom-based income becomes a primary stream. The foundation built in Rahu/Venus becomes the launchpad for full Jupiter expansion.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Strategic Bottom Line</div>
+        <p>The chart says: plant in the next five months (Jupiter antara), build through 2026–2029 (Venus bhukti, the best window), consolidate in 2029–2033 (Sun and Moon bhuktis), then expand fully in Jupiter mahadasha from 2033. The income story is already written — the question is whether she starts building now or waits until the best window has passed.</p>
+      </div>
+    </section>
+
+    <div class="footer">
+      Session reading: 28 Jun 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
