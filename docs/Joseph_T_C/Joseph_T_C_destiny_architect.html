@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Joseph T C — DESTINY ARCHITECT™ Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ─── LAYOUT ─── */
+.layout { display: grid; grid-template-columns: 270px 1fr; min-height: 100vh; max-width: 1340px; margin: 0 auto; }
+
+/* ─── SIDEBAR ─── */
+.sidebar {
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding: 36px 18px 36px 24px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.93);
+  backdrop-filter: blur(12px);
+}
+.sidebar-animal { font-size: 3rem; text-align: center; margin-bottom: 10px; }
+.sidebar-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: var(--cream); text-align: center; margin-bottom: 4px; }
+.sidebar-title { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 24px; }
+.sidebar-stat { margin-bottom: 10px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+.sidebar-stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+.sidebar-stat-val { font-size: 0.82rem; color: var(--cream); }
+.sidebar-stat-val.highlight { color: var(--gold2); font-weight: 600; }
+.nav-label { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
+.nav-link { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 10px; text-decoration: none; color: rgba(240,232,216,0.65); font-size: 0.8rem; transition: background 0.2s, color 0.2s; }
+.nav-link:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+.nav-link .nav-icon { font-size: 0.9rem; width: 20px; text-align: center; }
+
+/* ─── MAIN ─── */
+.main { padding: 52px 56px 100px; max-width: 900px; }
+
+/* ─── HERO ─── */
+.hero {
+  border-radius: 28px; padding: 52px 48px 42px; position: relative; overflow: hidden;
+  background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(20,50,40,0.92) 100%);
+  border: 1px solid rgba(196,158,64,0.22); box-shadow: var(--shadow); margin-bottom: 48px;
+}
+.hero-symbol { position: absolute; right: 36px; top: 16px; font-size: 200px; color: rgba(196,158,64,0.06); line-height: 1; pointer-events: none; }
+.hero-glow { position: absolute; right: -60px; bottom: -80px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, rgba(90,143,114,0.14), transparent 65%); pointer-events: none; }
+.eyebrow { font-size: 0.68rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem,5.5vw,4.8rem); font-weight: 300; color: #fff8f0; line-height: 1.1; margin-bottom: 8px; }
+.hero-badge { display: inline-block; background: rgba(196,158,64,0.14); border: 1px solid rgba(196,158,64,0.32); border-radius: 999px; padding: 4px 14px; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold2); margin-bottom: 18px; }
+.lagna-line { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-style: italic; color: rgba(196,158,64,0.85); margin-bottom: 32px; }
+.stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+.stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(196,158,64,0.14); border-radius: 14px; padding: 14px 16px; }
+.stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.stat-value { font-size: 0.88rem; color: #fff8f0; line-height: 1.3; }
+
+/* ─── ALERT BOX ─── */
+.peak-alert {
+  margin-bottom: 40px; padding: 20px 24px; border-radius: 16px;
+  background: rgba(90,143,114,0.1); border: 1px solid rgba(90,143,114,0.35);
+}
+.peak-alert .alert-head { font-size: 0.65rem; letter-spacing: 0.28em; text-transform: uppercase; color: #80c4a0; margin-bottom: 6px; font-weight: 600; }
+.peak-alert p { font-size: 0.92rem; color: rgba(240,232,216,0.88); line-height: 1.7; }
+.peak-alert strong { color: var(--gold2); }
+
+/* ─── CHAPTERS ─── */
+.chapter { margin-bottom: 60px; scroll-margin-top: 32px; }
+.chapter-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.chapter-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+.chapter-icon.gold  { background: rgba(196,158,64,0.12); }
+.chapter-icon.plum  { background: rgba(124,92,191,0.14); }
+.chapter-icon.rose  { background: rgba(196,96,122,0.12); }
+.chapter-icon.sage  { background: rgba(90,143,114,0.12); }
+.chapter-icon.blue  { background: rgba(91,143,212,0.12); }
+.chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.95rem; font-weight: 300; color: var(--cream); }
+.chapter h2 small { display: block; font-size: 0.65rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 5px; font-weight: 500; }
+
+/* ─── SECTIONS ─── */
+.section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 26px 30px; margin-bottom: 16px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.22rem; font-weight: 400; color: var(--cream); margin-bottom: 10px; display: flex; align-items: center; gap: 9px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-gold  { background: var(--gold); }
+.dot-plum  { background: var(--plum); }
+.dot-rose  { background: var(--rose); }
+.dot-sage  { background: var(--sage); }
+.dot-blue  { background: var(--blue); }
+.section p { font-size: 0.92rem; color: rgba(240,232,216,0.82); line-height: 1.75; margin-bottom: 10px; }
+.section p:last-child { margin-bottom: 0; }
+
+/* ─── READING TABLE ─── */
+.reading-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-bottom: 16px; }
+.reading-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); font-family: 'DM Sans', sans-serif; font-weight: 600; }
+.reading-table td { padding: 11px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+.reading-table tr:last-child td { border-bottom: none; }
+.reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+.planet-name { color: var(--gold2); font-weight: 600; font-size: 0.83rem; }
+.condition-strong { color: #80c4a0; font-size: 0.8rem; }
+.condition-neutral { color: rgba(240,232,216,0.6); font-size: 0.8rem; }
+.condition-special { color: #b49edf; font-size: 0.8rem; }
+
+/* ─── CALLOUTS ─── */
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-bottom: 16px; }
+.callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+.callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+.callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+.callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+.callout-label { font-size: 0.63rem; letter-spacing: 0.26em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+.callout-gold .callout-label { color: var(--gold); }
+.callout-plum .callout-label { color: #b49edf; }
+.callout-rose .callout-label { color: #e8909f; }
+.callout-sage .callout-label { color: #80c4a0; }
+
+/* ─── BADGES ─── */
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-right: 6px; }
+.badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+.badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+.badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+.badge-plum    { background: rgba(124,92,191,0.16); color: #c0aee8; }
+
+/* ─── CHIPS ─── */
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip     { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.2); border-radius: 999px; padding: 5px 14px; font-size: 0.8rem; color: var(--gold2); }
+.chip-neg { background: rgba(196,96,122,0.09); border-color: rgba(196,96,122,0.22); color: #e8909f; }
+.chip-plum { background: rgba(124,92,191,0.1); border-color: rgba(124,92,191,0.25); color: #c0aee8; }
+.chip-sage { background: rgba(90,143,114,0.1); border-color: rgba(90,143,114,0.22); color: #80c4a0; }
+
+/* ─── PHASE BLOCKS ─── */
+.phase-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 20px; }
+.phase-block { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 22px 20px; }
+.phase-label { font-size: 0.6rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-weight: 600; }
+.phase-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--cream); margin-bottom: 10px; }
+.phase-dates { font-size: 0.75rem; color: var(--gold2); margin-bottom: 12px; font-weight: 600; }
+.phase-items { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.phase-items li { font-size: 0.82rem; color: rgba(240,232,216,0.76); padding-left: 14px; position: relative; line-height: 1.5; }
+.phase-items li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 0.72rem; }
+
+/* ─── PERIOD ROWS ─── */
+.period-row { display: grid; grid-template-columns: 100px 150px 1fr; gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.87rem; align-items: start; }
+.period-window { font-weight: 600; color: var(--gold2); font-size: 0.8rem; }
+.period-dasha  { color: rgba(196,158,64,0.65); font-size: 0.78rem; font-style: italic; }
+.period-theme  { color: rgba(240,232,216,0.75); line-height: 1.55; }
+
+/* ─── NERVOUS SYSTEM GRID ─── */
+.ns-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+.ns-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; }
+.ns-state { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-weight: 600; }
+.ns-desc { font-size: 0.85rem; color: rgba(240,232,216,0.75); line-height: 1.6; }
+
+/* ─── LIST STYLES ─── */
+.fun-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+.fun-list li { padding: 12px 16px; background: rgba(255,255,255,0.04); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; font-size: 0.89rem; line-height: 1.65; color: rgba(240,232,216,0.82); }
+.warning-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.warning-list li { padding: 9px 14px; background: rgba(196,96,122,0.06); border-left: 3px solid rgba(196,96,122,0.4); border-radius: 0 10px 10px 0; font-size: 0.87rem; color: rgba(240,232,216,0.75); }
+
+/* ─── KOSHA GRID ─── */
+.kosha-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+.kosha-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; }
+.kosha-name { font-size: 0.73rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--plum); margin-bottom: 4px; font-weight: 600; }
+.kosha-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--cream); margin-bottom: 8px; }
+.kosha-desc { font-size: 0.82rem; color: rgba(240,232,216,0.7); line-height: 1.6; }
+
+/* ─── QUESTION BLOCKS ─── */
+.q-block { display: flex; align-items: flex-start; gap: 12px; padding: 14px 18px; background: rgba(255,255,255,0.035); border: 1px solid rgba(196,158,64,0.12); border-radius: 14px; margin-bottom: 10px; }
+.q-num { font-size: 1.4rem; font-family: 'Cormorant Garamond', serif; color: var(--gold); font-weight: 300; min-width: 24px; }
+.q-text { font-size: 0.9rem; color: rgba(240,232,216,0.82); line-height: 1.65; padding-top: 4px; }
+
+/* ─── IDENTITY SHIFT ─── */
+.identity-shift { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 20px; margin-top: 20px; }
+.identity-box { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px; text-align: center; }
+.identity-label { font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.identity-old { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: rgba(240,232,216,0.55); }
+.identity-new { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; color: var(--gold2); }
+.identity-arrow { font-size: 2rem; color: var(--gold); opacity: 0.6; }
+
+/* ─── FINAL MESSAGE ─── */
+.final-message { border-radius: 28px; padding: 52px 48px; position: relative; overflow: hidden; margin-top: 60px;
+  background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(18,44,32,0.96) 60%, rgba(44,20,60,0.94) 100%);
+  border: 1px solid rgba(196,158,64,0.22); box-shadow: var(--shadow); }
+.final-message h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--cream); margin-bottom: 28px; }
+.final-message p { font-size: 0.95rem; color: rgba(240,232,216,0.82); line-height: 1.85; margin-bottom: 18px; }
+.final-message .signature { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: var(--gold); margin-top: 32px; }
+
+/* ─── DIVIDER ─── */
+.divider { display: flex; align-items: center; gap: 16px; margin: 36px 0; font-size: 0.63rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(240,232,216,0.28); }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ─── FOOTER ─── */
+.footer { text-align: center; padding: 24px 0; font-size: 0.7rem; color: rgba(240,232,216,0.28); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 48px; }
+
+/* ─── SUB-LABEL ─── */
+.sub-label { font-size: 0.67rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; margin-top: 20px; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; }
+  .main { padding: 36px 24px 60px; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .phase-grid { grid-template-columns: 1fr; }
+  .ns-grid, .kosha-grid { grid-template-columns: 1fr; }
+  .identity-shift { grid-template-columns: 1fr; }
+  .identity-arrow { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ═══════════════════════════════ SIDEBAR ═══════════════════════════════ -->
+<aside class="sidebar">
+  <div class="sidebar-animal">♐</div>
+  <div class="sidebar-name">Joseph T C</div>
+  <div class="sidebar-title">DESTINY ARCHITECT™ — Vedic-Grounded Edition</div>
+
+  <div class="sidebar-stat">
+    <div class="sidebar-stat-label">Lagna</div>
+    <div class="sidebar-stat-val">Sagittarius 2.75° — Mula Pd 4</div>
+  </div>
+  <div class="sidebar-stat">
+    <div class="sidebar-stat-label">Moon</div>
+    <div class="sidebar-stat-val">Scorpio 6.09° — Anuradha Pd 1</div>
+  </div>
+  <div class="sidebar-stat">
+    <div class="sidebar-stat-label">Mahadasha</div>
+    <div class="sidebar-stat-val highlight">Venus (2023 – 2043)</div>
+  </div>
+  <div class="sidebar-stat">
+    <div class="sidebar-stat-label">Peak Window ACTIVE NOW</div>
+    <div class="sidebar-stat-val highlight">Venus/Venus/Mercury<br>May – Oct 2026 ★</div>
+  </div>
+  <div class="sidebar-stat">
+    <div class="sidebar-stat-label">Next Antardasha</div>
+    <div class="sidebar-stat-val">Sun (Jan 2027 – Jan 2028)</div>
+  </div>
+
+  <div class="nav-label">Report Sections</div>
+  <a href="#foundation" class="nav-link"><span class="nav-icon">⬡</span> Astrological Foundation</a>
+  <a href="#architecture" class="nav-link"><span class="nav-icon">🧠</span> Inner Architecture</a>
+  <a href="#ch0" class="nav-link"><span class="nav-icon">✦</span> The Inner Code</a>
+  <a href="#ch1" class="nav-link"><span class="nav-icon">🪞</span> Unseen Reflection</a>
+  <a href="#ch2" class="nav-link"><span class="nav-icon">🔁</span> Repeating Life Loop</a>
+  <a href="#ch3" class="nav-link"><span class="nav-icon">⚡</span> Inner Response System</a>
+  <a href="#ch4" class="nav-link"><span class="nav-icon">🌑</span> Silent Fears</a>
+  <a href="#ch5" class="nav-link"><span class="nav-icon">🗝</span> Hidden Weapon</a>
+  <a href="#ch6" class="nav-link"><span class="nav-icon">🌀</span> Current Life Phase</a>
+  <a href="#ch7" class="nav-link"><span class="nav-icon">🔥</span> Three Inner Drivers</a>
+  <a href="#ch8" class="nav-link"><span class="nav-icon">🌳</span> Inherited Patterns</a>
+  <a href="#ch9" class="nav-link"><span class="nav-icon">🚪</span> Expansion Gates</a>
+  <a href="#ch10" class="nav-link"><span class="nav-icon">🦋</span> Identity Shift</a>
+  <a href="#ch11" class="nav-link"><span class="nav-icon">🌬</span> Elemental Alignment</a>
+  <a href="#ch12" class="nav-link"><span class="nav-icon">💬</span> Unspoken Questions</a>
+  <a href="#ch13" class="nav-link"><span class="nav-icon">🎯</span> Natural Expression Tool</a>
+  <a href="#ch14" class="nav-link"><span class="nav-icon">🌿</span> Body &amp; Life Signals</a>
+  <a href="#ch15" class="nav-link"><span class="nav-icon">💎</span> The Deeper Need</a>
+  <a href="#blueprint" class="nav-link"><span class="nav-icon">🗺</span> 90-Day Blueprint</a>
+  <a href="#koshas" class="nav-link"><span class="nav-icon">🧬</span> Kosha Protocol</a>
+  <a href="#nervous" class="nav-link"><span class="nav-icon">⚖</span> Nervous System</a>
+  <a href="#final" class="nav-link"><span class="nav-icon">★</span> Final Message</a>
+</aside>
+
+<!-- ═══════════════════════════════ MAIN ═══════════════════════════════ -->
+<main class="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-symbol">♐</div>
+    <div class="hero-glow"></div>
+    <div class="eyebrow">DESTINY ARCHITECT™ — Vedic-Grounded Edition</div>
+    <h1>Joseph T C</h1>
+    <div class="hero-badge">Wisdom Architect · Depth Guide</div>
+    <div class="lagna-line">Dhanu Lagna · Mula Nakshatra · Hamsa Yoga</div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">Date of Birth</div>
+        <div class="stat-value">05 August 1984</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Time &amp; Place</div>
+        <div class="stat-value">15:30 IST · Aluva, Kerala</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Ayanamsa</div>
+        <div class="stat-value">Lahiri 23.49°</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Coordinates</div>
+        <div class="stat-value">10.10°N · 76.35°E</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PEAK WINDOW ALERT -->
+  <div class="peak-alert">
+    <div class="alert-head">⚡ Peak Career Window — Active Right Now</div>
+    <p>You are currently in <strong>Venus / Venus / Mercury</strong> (03 May – 22 Oct 2026) — the strongest career sub-period within the first four years of your 20-year Venus Mahadasha. Mercury is your 10th lord, placed in your 9th house of dharma and higher knowledge. This window closes October 22. The 90-day blueprint in this report is timed to end precisely at that threshold.</p>
+  </div>
+
+  <!-- CORE ARCHITECT PROFILE -->
+  <div id="foundation" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">⬡</div>
+      <h2><small>Core Architect Profile</small>The Wisdom Architect</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Primary Archetype</div>
+      <p><strong>The Wisdom Architect</strong> — the one who sees the larger pattern, builds frameworks of meaning that others can inhabit, and helps people navigate the deep and complicated terrain of purpose, decision, and direction. Not just an advisor. A builder of clarity in places where others only experience fog.</p>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Secondary Archetype</div>
+      <p><strong>The Depth Guide</strong> — the one who has traveled through their own emotional and experiential darkness, emerged with real understanding, and can now hold space for others who are navigating their own. Not afraid of the difficult truths. In fact, the difficult truths are precisely where your greatest gift lives.</p>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>Astrological Confirmation</div>
+      <p>Your Sagittarius Lagna is the sign of the natural seeker and guide — the archer aiming at truth, the philosopher who cannot rest until the foundational answer is found. Your Jupiter sits exactly in the 1st house in its own sign, which is the <strong>Hamsa Yoga</strong> configuration — the yoga of the noble guide whose wisdom and character lift others. Your 10th lord Mercury sits with Venus in your 9th house — the career itself is inseparable from dharma, knowledge, and higher truth. The archetype was not invented for you. It was read off your chart.</p>
+    </div>
+  </div>
+
+  <!-- ASTROLOGICAL FOUNDATION TABLE -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">⬡</div>
+      <h2><small>The Astrological Foundation</small>Birth Chart — Precise Positions</h2>
+    </div>
+
+    <div class="section">
+      <p style="margin-bottom:18px;">Every archetype, kosha block, and elemental reading in this report is a translation of your birth chart once time and place are precisely known. Here is the chart itself, stated plainly, before it is translated into coaching language.</p>
+
+      <table class="reading-table">
+        <thead>
+          <tr>
+            <th>Graha</th>
+            <th>Rashi (Sidereal)</th>
+            <th>Nakshatra / Pada</th>
+            <th>House</th>
+            <th>Condition</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="planet-name">Sun</span></td>
+            <td>Cancer 19.51°</td>
+            <td>Ashlesha, Pada 1</td>
+            <td>8th</td>
+            <td><span class="condition-neutral">H9 lord in H8 — authority through transformation and hidden depth</span></td>
+          </tr>
+          <tr>
+            <td><span class="planet-name">Moon</span></td>
+            <td>Scorpio 6.09°</td>
+            <td>Anuradha, Pada 1</td>
+            <td>12th</td>
+            <td><span class="condition-neutral">Intense, private, deeply intuitive — wisdom through solitude and inner life</span></td>
+          </tr>
+          <tr>
+            <td><span class="planet-name">Mars</span></td>
+            <td>Scorpio 0.21°</td>
+            <td>Vishakha, Pada 4</td>
+            <td>12th</td>
+            <td><span class="condition-neutral">Conjunct Moon — Chandra-Mangala Yoga; drive and ambition run deep and private</span></td>
+          </tr>
+          <tr>
+            <td><span class="planet-name">Mercury</span></td>
+            <td>Leo 16.19°</td>
+            <td>Purva Phalguni, Pada 1</td>
+            <td>9th</td>
+            <td><span class="condition-strong">10th lord in dharma house — career IS knowledge transmission, teaching, advisory</span></td>
+          </tr>
+          <tr>
+            <td><span class="planet-name">Jupiter</span></td>
+            <td>Sagittarius 10.42° ℞</td>
+            <td>Mula, Pada 4</td>
+            <td>1st</td>
+            <td><span class="condition-strong">Own sign — Hamsa Yoga. Retrograde — wisdom turns inward rather than outward</span></td>
+          </tr>
+          <tr>
+            <td><span class="planet-name">Venus</span></td>
+            <td>Leo 3.41°</td>
+            <td>Magha, Pada 2</td>
+            <td>9th</td>
+            <td><span class="condition-strong">Mahadasha lord in H9 with 10th lord — current 20-year chapter fully activated</span></td>
+          </tr>
+          <tr>
+            <td><span class="planet-name">Saturn</span></td>
+            <td>Libra 16.50°</td>
+            <td>Swati, Pada 3</td>
+            <td>11th</td>
+            <td><span class="condition-strong">Exalted — long-term gains, networks, institutional support, patient authority</span></td>
+          </tr>
+          <tr>
+            <td><span class="planet-name">Rahu</span></td>
+            <td>Taurus 10.51°</td>
+            <td>Rohini, Pada 1</td>
+            <td>6th</td>
+            <td><span class="condition-neutral">Work, service, ambition for material security — drive without direction</span></td>
+          </tr>
+          <tr>
+            <td><span class="planet-name">Ketu</span></td>
+            <td>Scorpio 10.51°</td>
+            <td>Anuradha, Pada 3</td>
+            <td>12th</td>
+            <td><span class="condition-special">Conjunct Moon+Mars — Viparita Raja Yoga; spiritual depth, detachment, rise through adversity</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-gold" style="margin-top:20px;">
+        <div class="callout-label">What the Chart Actually Says</div>
+        Your Ascendant is Dhanu (Sagittarius), ruled by Jupiter — the sign of the natural seeker, guide, and teacher. Jupiter itself is placed exactly in your 1st house in its own sign: this is one of the most dignified placements in the zodiac, called Hamsa Yoga, producing a person of genuine wisdom, philosophical depth, and natural authority. But Jupiter is <em>retrograde</em>. This is the single most technically significant fact in your chart: the wisdom turns inward rather than outward. It produces a person who accumulates real depth, real insight, real understanding — and then hesitates before the act of sharing it with the world. This is not a weakness. It is a redirectable pattern.
+      </div>
+
+      <div class="callout callout-sage" style="margin-top:12px;">
+        <div class="callout-label">The 9th House Configuration — Career as Dharma</div>
+        Your 10th lord (Mercury) and the Mahadasha lord (Venus) both sit together in your 9th house, in Leo. The 9th house governs dharma, higher knowledge, philosophy, teaching, guidance, and truth-transmission. This is an extraordinarily direct astrological signature: your career is meant to be an act of dharma. It is not a job that happens to involve knowledge. The knowledge IS the job, and the job serves a higher purpose. Leo adds visibility, self-expression, and a creative, warm teaching style that draws people to you.
+      </div>
+
+      <div class="callout callout-plum" style="margin-top:12px;">
+        <div class="callout-label">The 12th House Depth — The Source of Your Wisdom</div>
+        Moon, Mars, and Ketu together in Scorpio in your 12th house is one of the most powerful configurations for depth, intensity, and spiritual access in the zodiac. The 12th is the house of liberation, the unconscious, the inner life, the mystical, and the self-transcendent. You have three planets there — including your mind (Moon), your drive (Mars), and the node of spiritual release (Ketu). This is not a flaw in the chart. It is the reservoir. The emotional depth, the transformative experiences, the difficult interior journey — all of it has been preparing a well of wisdom that now, in your 40s, is ready to serve others.
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Why the Pressure Is Surfacing Now</div>
+      <p>You are currently in <strong>Venus Mahadasha, Venus Antardasha, Mercury Pratyantara</strong> (03 May – 22 Oct 2026). Venus is your 11th house lord (gains, networks, aspirations) placed in H9 with Mercury, your 10th lord. During this sub-period, both the career-signifying planet (Mercury) and the gains-signifying planet (Venus) are mutually activated within the 9th house of dharma and purpose. The chart is producing maximum pressure around identity, knowledge, and contribution because the most auspicious sub-period of the first cycle of your 20-year mahadasha has arrived. This is not accidental. This is the window.</p>
+      <p>When Venus/Venus/Ketu arrives on October 22, the energy shifts toward release and completion, not expansion. When Venus/Sun begins January 2, 2027, the Sun in your 8th house activates transformation and restructuring — useful for rebuilding, but more pressured and less open than the window you are in now. The 90-day blueprint in this report is deliberately timed to conclude by October 22, 2026.</p>
+    </div>
+  </div>
+
+  <!-- INNER ARCHITECTURE -->
+  <div id="architecture" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🧠</div>
+      <h2><small>The Inner Architecture</small>Self-Sabotage, Kosha Blocks &amp; Chakra Map</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-rose"></div>Primary Self-Sabotage: Retrograde Jupiter Syndrome</div>
+      <p>You have genuine wisdom — hard-won, philosophically rich, practically useful. But the loop goes inward. The wisdom circles back for another refinement instead of flowing forward into expression, teaching, and service. You may feel that you need more reading, more understanding, more preparation before the knowledge is ready to be shared.</p>
+      <p><strong>Chart root:</strong> Jupiter retrograde in H1 Sagittarius. A retrograde Jupiter in the 1st house is the astrological signature of wisdom that perfects inwardly rather than expands outwardly. The planet of teachers and guides is turned back on itself. It does not mean the wisdom is insufficient. It means the act of sharing requires a deliberate, conscious push against the retrograde pull.</p>
+      <div class="chip-row">
+        <span class="chip-neg">Wisdom that stays inside</span>
+        <span class="chip-neg">Over-refinement before sharing</span>
+        <span class="chip-neg">Waiting for the perfect platform</span>
+        <span class="chip-neg">Undervaluing accumulated depth</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-rose"></div>Secondary Self-Sabotage: Emotional Undertow</div>
+      <p>Moon, Mars, and Ketu together in Scorpio H12 create deep emotional currents that move beneath the surface. The inner life is rich, intense, and often turbulent in ways that are invisible to others. This private intensity is the source of your depth — but it can also create an undertow that holds the boat in place: 'My inner experience is too complex, too charged, to be brought into the marketplace of consulting and clients.'</p>
+      <p><strong>Chart root:</strong> H12 triple conjunction (Moon + Mars + Ketu in Scorpio). The 12th house is private by nature. Moon there = emotional intensity held within. Mars there = drive that expresses inward rather than outward. Ketu there = spiritual detachment from worldly ambition, sometimes including the ambition to be seen and valued professionally.</p>
+    </div>
+
+    <div class="sub-label">Kosha Blocks</div>
+    <div class="kosha-grid">
+      <div class="kosha-card">
+        <div class="kosha-name">Vijnanamaya Kosha</div>
+        <div class="kosha-title">The Wisdom Body — Primary Block</div>
+        <div class="kosha-desc">The intelligence layer loops inward through the Jupiter retrograde pattern. Insight, understanding, and wisdom are present and real — but the loop between knowing and expressing is disrupted. The wisdom body needs a deliberate outward channel.</div>
+      </div>
+      <div class="kosha-card">
+        <div class="kosha-name">Manomaya Kosha</div>
+        <div class="kosha-title">The Mental Body — Secondary Block</div>
+        <div class="kosha-desc">Moon+Mars+Ketu in H12 Scorpio creates a mental-emotional field that is private, intense, and often self-referential. The mind processes deeply but tends to keep processing rather than transmitting. The gap between inner knowing and outer expression lives here.</div>
+      </div>
+      <div class="kosha-card">
+        <div class="kosha-name">Pranamaya Kosha</div>
+        <div class="kosha-title">The Energy Body — Outward Flow</div>
+        <div class="kosha-desc">Pranic outward momentum — the energy that initiates, reaches out, markets, and offers — may feel hesitant or inconsistent. This mirrors the Sun in H8 (authority held in shadow) and Jupiter retrograde (expansion turned inward).</div>
+      </div>
+      <div class="kosha-card">
+        <div class="kosha-name">Annamaya Kosha</div>
+        <div class="kosha-title">The Physical Body — Sustained Capacity</div>
+        <div class="kosha-desc">Saturn exalted in H11 gives physical patience and endurance for long-term work. However, the body may carry tension from suppressed emotional material (H12) — shoulders, neck, digestive system, and sleep cycles are the likely accumulation points.</div>
+      </div>
+    </div>
+
+    <div class="sub-label" style="margin-top:28px;">Chakra Focus</div>
+    <ul class="fun-list">
+      <li><strong>Sahasrara (Crown) — Active but Inward:</strong> Jupiter H1 Sagittarius creates a natural connection to philosophical and spiritual consciousness. The crown energy is real — but like Jupiter, it turns inward rather than radiating outward as teaching and guidance.</li>
+      <li><strong>Ajna (Third Eye) — Strong:</strong> Mercury H9 gives analytical clarity and dharmic insight. You can see the path clearly. The gap is not in the seeing — it is in the speaking of what you see.</li>
+      <li><strong>Vishuddha (Throat) — Requires Activation:</strong> This is the under-activated chakra. Teaching, advising, writing, speaking, publishing — all of these require a deliberate activation of the Vishuddha that Jupiter retrograde does not naturally produce. The next 90 days must build this activation intentionally.</li>
+      <li><strong>Anahata (Heart) — Available:</strong> Venus H9 offers warmth, beauty, and genuine care for the people you serve. This is the fuel that makes your expression trustworthy rather than clinical.</li>
+      <li><strong>Manipura (Solar Plexus) — Draw from Saturn Exalted:</strong> Confident positioning, pricing, and the willingness to be known as an authority require Manipura activation. Your source is Saturn exalted H11 — patient, structured, cumulative confidence built through consistent action.</li>
+    </ul>
+
+    <div class="sub-label" style="margin-top:28px;">Meridian Themes</div>
+    <div class="chip-row">
+      <span class="chip-plum">Kidney — fear of inadequacy in the external world</span>
+      <span class="chip-plum">Bladder — difficulty releasing inward-held energy</span>
+      <span class="chip-plum">Liver — frustration of unexpressed wisdom</span>
+      <span class="chip">Gallbladder — clear courageous decisions (strengthening pathway)</span>
+      <span class="chip-sage">Heart — Venus+Jupiter activation through service</span>
+    </div>
+  </div>
+
+  <div class="divider">✦</div>
+
+  <!-- CHAPTER 0 -->
+  <div id="ch0" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">✦</div>
+      <h2><small>Chapter 0</small>The Inner Code</h2>
+    </div>
+    <div class="callout callout-gold">
+      <div class="callout-label">Core Sentence</div>
+      "If I understand the deep truth, I can illuminate the path."
+    </div>
+    <div class="section">
+      <p>Joseph, your life has been built around a deep operating sentence: <em>'Truth is not on the surface. Depth is required.'</em> You are not someone who is satisfied with explanations that don't reach the root. You seek the foundational layer — the why beneath the why — and you do not rest until you have found it. This code shows up literally in your chart: Sagittarius rising (the archer who must aim at truth), Mula nakshatra (Mula means 'root' — you are constitutionally designed to seek the foundation of things), and Jupiter in its own sign in the 1st house (wisdom is your primary identity, your first way of meeting the world).</p>
+      <p>This code has built depth, philosophical range, real understanding, and a kind of interior richness that most people never access. It has made you the person others come to when they need clarity in the confusing, when they face a decision that matters, when they cannot see the path forward. But the same code can also become a ceiling when depth-seeking turns into depth-hoarding — when the retrograde Jupiter pulls the wisdom back inward for another refinement instead of releasing it as teaching, guidance, and advisory service.</p>
+      <p>Your next identity is not merely the seeker. It is the <strong>Wisdom Architect</strong> — the one who takes the accumulated depth and builds it into frameworks, sessions, teachings, and advisory relationships that genuinely serve the people around you. The next chapter is about making visible what has been growing in the interior for decades.</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 1 -->
+  <div id="ch1" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🪞</div>
+      <h2><small>Chapter 1</small>The Unseen Reflection</h2>
+    </div>
+    <div class="section">
+      <p>Externally, people may see you as thoughtful, articulate, philosophically inclined, and genuinely wise. You are likely the person in a room who says the thing that reframes everything — the observation that lands quietly but changes how the problem is seen. You may be trusted for guidance even in environments that don't have an official label for what you do.</p>
+      <p>Internally, there is a quieter question: <em>'Is what I know truly valuable enough for others to pay for? Am I really the person who should be teaching this, or am I still a student?'</em> This is the gap between the accumulated wisdom of a genuine seeker and the packaging of that wisdom into an advisory identity that the world can find, recognize, and engage with.</p>
+      <div class="callout callout-plum">
+        <div class="callout-label">The Unseen Reflection</div>
+        You are not lacking wisdom. You are lacking a visible container for it. Your next stage demands that you stop experiencing your knowledge as private and personal, and start building the external structure — the offer, the positioning, the platform, the language — that allows the right people to receive it. Jupiter retrograde has kept the lamp burning inward. The 90 days ahead are about turning the lamp outward.
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 2 -->
+  <div id="ch2" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🔁</div>
+      <h2><small>Chapter 2</small>The Repeating Life Loop</h2>
+    </div>
+    <div class="section">
+      <p>Your repeating life loop may have looked something like this: <strong>Seek → Study → Absorb → Understand → Refine → Withhold → Seek Again.</strong> This loop has built extraordinary interior depth. It has given you a quality of insight that most advisory conversations do not reach. But the loop stops short of the final step that would make the wisdom useful to others: <strong>Transmit</strong>.</p>
+      <p>The old loop gives richness. The new loop must become: <strong>Understand → Package → Offer → Teach → Guide → Serve → Scale.</strong> This is the consulting and teaching loop. It does not remove the depth — it gives the depth a direction. It gives Jupiter retrograde a channel to move through, powered by Venus+Mercury in H9 (the dharmic career placement) rather than left to circle inward.</p>
+      <div class="callout callout-sage">
+        <div class="callout-label">The Pattern Rewrite</div>
+        The moment you begin treating your knowledge as something that belongs to the people who need it — not something you are still perfecting for an eventual share — the loop breaks. You do not need to finish seeking. You need to begin transmitting while you continue seeking. These are not mutually exclusive. They are, in fact, the definition of a living teacher.
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 3 -->
+  <div id="ch3" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon rose">⚡</div>
+      <h2><small>Chapter 3</small>The Inner Response System</h2>
+    </div>
+    <div class="section">
+      <p>Under stress or uncertainty, your nervous system likely defaults to: more reading, deeper exploration, wider context, higher standards for what it means to be 'ready.' This is the Jupiter retrograde stress pattern — the wisdom body responds to uncertainty by going deeper inward rather than reaching outward.</p>
+      <p>A second stress pattern lives in the H12 triple conjunction: when the emotional field becomes charged — when something feels too exposed or too raw — the response is withdrawal into the private interior. The 12th house is protective of inner life. Under stress, that protection can become self-enclosure.</p>
+      <p>Neither of these responses is wrong. They are protective mechanisms built from real experience. But in the domain of advisory work, consulting, and teaching, they become obstacles. The upgrade is not to eliminate depth-seeking or interior protection. It is to build a new nervous system instruction that runs alongside them:</p>
+      <div class="callout callout-gold">
+        <div class="callout-label">New Instruction to the Nervous System</div>
+        "I do not need to reach the bottom of the well before I draw water. Someone is thirsty now. I have enough to help them now. I will begin drawing while the well continues to deepen."
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 4 -->
+  <div id="ch4" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon rose">🌑</div>
+      <h2><small>Chapter 4</small>The Silent Fears</h2>
+    </div>
+    <div class="section">
+      <ul class="warning-list">
+        <li><strong>Fear 1 — "My knowledge is not yet at the level where people should pay for it."</strong> This is not an accurate assessment of your competence. It is Jupiter retrograde speaking. The loop has no final destination because wisdom by definition is always growing. The question is not 'Am I finished learning?' The question is 'Can I help someone right now with what I already know?' The answer is yes.</li>
+        <li><strong>Fear 2 — "Stepping into visibility as a guide will expose me to judgment I can't withstand."</strong> This is the H12 Moon speaking — the emotional body that has found safety in privacy. What it doesn't yet know is that the right visibility creates connection and recognition, not vulnerability and judgment. Your chart is built for dharmic expression. The Sun in Ashlesha is made for deep, subtle influence. The fear of exposure dissolves in proportion to the clarity of your offering.</li>
+        <li><strong>Fear 3 — "My emotional depth is too much — it will overwhelm clients rather than help them."</strong> This is the most understandable fear, and the most unnecessary one. The depth is precisely what makes your guidance transformative rather than formulaic. The people who need a surface-level advisor are not your clients. The people who need someone who has actually been inside the complex, dark, and difficult — those people are looking for you.</li>
+        <li><strong>Fear 4 — "If I commit to this identity now and it doesn't work, I'll have failed publicly."</strong> This fear comes from the Sun in H8 — the sense that commitment means exposure to forces beyond your control. But Venus Mahadasha in H9 for 20 years is the most protective long-term container you have ever been given. Failure here does not mean collapse. It means learning within the most dharma-aligned chapter of your chart.</li>
+      </ul>
+      <p style="margin-top:16px;">These fears are not enemies. They are the edges of your current comfort zone, and comfort zones are meant to be expanded, not destroyed. The 90-day blueprint works within them, not against them.</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 5 -->
+  <div id="ch5" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon sage">🗝</div>
+      <h2><small>Chapter 5</small>The Hidden Weapon</h2>
+    </div>
+    <div class="section">
+      <div class="callout callout-sage">
+        <div class="callout-label">Your Hidden Weapon</div>
+        Depth and transformation. While most advisors and consultants operate at the level of strategy, analysis, and planning, you can operate at the level of meaning, pattern recognition, and root causes. You have a rare capacity to hold the full complexity of a person's situation without reducing it to something simple — and then guide them to the insight that actually changes the trajectory.
+      </div>
+      <p>This weapon has a direct astrological source: the combination of Jupiter in own sign H1 (genuine wisdom, philosophical range), Venus+Mercury in H9 (dharmic, beautiful, articulate transmission of knowledge), and Moon+Mars+Ketu in Scorpio H12 (depth of experience, emotional intelligence hard-won through real interior journey, Viparita Raja — rise through adversity).</p>
+      <p>People who need a risk analyst go to someone like Prakashji. People who need a surface-level life coach go to someone with a 1-page LinkedIn framework. People who need someone who can sit inside the truly difficult, who can trace the pattern back to its root, who can hold the depth without collapsing under it — those people need you.</p>
+      <p>When this is packaged as a clear advisory offering — as a consulting identity, a course, a writing practice, a coaching programme — it becomes not just a weapon but a market position that very few people can occupy. Because very few people have actually done the interior work that your H12 triple conjunction demanded of you.</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 6 -->
+  <div id="ch6" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🌀</div>
+      <h2><small>Chapter 6</small>Current Life Phase</h2>
+    </div>
+    <div class="section">
+      <p>At 41, you are at the precise threshold that Vedic Jyotish identifies as the transition from accumulation to contribution. In the classical literature, the 40s are described as the period when the knowledge gathered in the first half of life begins to crystallize into a form that can be transmitted — when the seeker becomes the guide.</p>
+      <p>Your chart makes this specific and dated: you entered Venus Mahadasha in September 2023. Venus is placed in your 9th house of dharma and higher knowledge, with Mercury (your 10th lord). This 20-year chapter is the longest and most significant career cycle of your life, and it has one clear theme: <strong>career through dharmic knowledge transmission.</strong> Teaching, writing, advising, guiding, creating knowledge products — these are not side paths in this period. They are the highway.</p>
+      <div class="callout callout-plum">
+        <div class="callout-label">Your Decade Theme</div>
+        "From philosophical depth to embodied transmission." The question is no longer 'Do I understand enough?' It is 'How do I build the channel through which what I understand reaches the people who need it?' — and the chart gives you a 20-year channel to do it in, with the peak sub-period open right now.
+      </div>
+
+      <div class="sub-label" style="margin-top:24px;">Dasha Timeline — Key Windows</div>
+      <div class="period-row">
+        <div class="period-window">May–Oct 2026</div>
+        <div class="period-dasha">Ve/Ve/Mercury ★ NOW</div>
+        <div class="period-theme">PEAK CAREER WINDOW. Contracts, consulting, teaching offers, writing, professional moves, knowledge-based income. Act now.</div>
+      </div>
+      <div class="period-row">
+        <div class="period-window">Oct 2026–Jan 2027</div>
+        <div class="period-dasha">Ve/Ve/Ketu</div>
+        <div class="period-theme">Completion and release. Not for forcing new ventures. Simplify, close weak commitments, let go.</div>
+      </div>
+      <div class="period-row">
+        <div class="period-window">Jan 2027–Jan 2028</div>
+        <div class="period-dasha">Ve/Sun</div>
+        <div class="period-theme">Transformation and restructuring. Sun in H8 brings pressure and hidden stress. Better for rebuilding than launching.</div>
+      </div>
+      <div class="period-row">
+        <div class="period-window">2030–2033</div>
+        <div class="period-dasha">Ve/Rahu</div>
+        <div class="period-theme">Strong for unusual opportunities, technology, foreign links, competitive rise. Major career expansion possible.</div>
+      </div>
+      <div class="period-row">
+        <div class="period-window">2033–2036</div>
+        <div class="period-dasha">Ve/Jupiter</div>
+        <div class="period-theme">Excellent: Jupiter is lagna lord in own sign. Reputation, advisory roles, teaching, dharmic expansion, recognition.</div>
+      </div>
+      <div class="period-row">
+        <div class="period-window">2039–2042</div>
+        <div class="period-dasha">Ve/Mercury</div>
+        <div class="period-theme">One of the best career periods overall. 10th lord Mercury fully activated in Venus Mahadasha. Peak professional recognition.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 7 -->
+  <div id="ch7" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">🔥</div>
+      <h2><small>Chapter 7</small>The Three Inner Drivers</h2>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Driver 1 — The Seeker</div>
+      <p>Wants to understand the deep truth of how things work — the root cause, the philosophical foundation, the pattern beneath the pattern. This driver is never fully satisfied because it knows wisdom is infinite. But it has given you a breadth and depth of understanding that is genuinely rare. <strong>Chart root: Sagittarius Lagna, Mula nakshatra, Jupiter H1.</strong></p>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Driver 2 — The Guide</div>
+      <p>Wants the wisdom to matter in someone else's life. Wants to see the insight land, change a decision, relieve a confusion, illuminate a path. This driver is what makes the difference between a philosopher and an advisor. <strong>Chart root: Mercury+Venus in H9 (the dharmic transmission placement), Hamsa Yoga in H1.</strong></p>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>Driver 3 — The Alchemist</div>
+      <p>Wants to transform experience — both their own and others'. The H12 triple conjunction (Moon+Mars+Ketu in Scorpio) is the signature of someone who has been through real interior transformation and knows that the most valuable guidance is the kind that takes a person through the fire, not around it. This driver is what will make your advisory work feel different from generic coaching. <strong>Chart root: H12 triple conjunction, Viparita Raja Yoga, Scorpio depth.</strong></p>
+    </div>
+    <div class="callout callout-gold">
+      <div class="callout-label">When Integrated</div>
+      These three become the Wisdom Architect: a guide who seeks truth and transmits it beautifully — who is not afraid of the deep or the dark — and who can take a person from confusion to clarity, from surface to root, from fear to understanding. The market for this combination is not small. It is large, underserved, and willing to pay for the real thing.
+    </div>
+  </div>
+
+  <!-- CHAPTER 8 -->
+  <div id="ch8" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🌳</div>
+      <h2><small>Chapter 8</small>The Inherited Patterns</h2>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>Father-Line Belief</div>
+      <p><em>'Knowledge must be earned before it is shared. Mastery precedes teaching.'</em> The Sun in Ashlesha nakshatra in your 8th house — the house of hidden depth, inheritance, and transformation — carries a paternal line message that wisdom is a private matter, earned through internal process rather than externalized prematurely. This belief has served the accumulation phase well. In the transmission phase, it can become a veto.</p>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>Mother-Line Belief</div>
+      <p><em>'The inner world is precious. Protect it from the world's noise and judgment.'</em> Moon in H12 Scorpio — private, protective, deeply interior — carries a maternal line orientation toward inner sanctity over outer exposure. The inner life is real, valuable, and worth protecting. But no teacher, writer, or advisor can remain only in the interior. The gift must cross the threshold.</p>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Healing Reframe</div>
+      <p><em>'I can honour the depth that came before me AND build the channel that brings it forward. The knowledge was gathered for this moment. My interior richness is not at risk when I share it — it grows when I do.'</em></p>
+      <p>Your advisory or teaching practice does not need to betray the seriousness of your accumulated wisdom. It must honour it — by making it available to the people who need it. A well that is never drawn from does not stay clean indefinitely. The water is meant to flow.</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 9 -->
+  <div id="ch9" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon sage">🚪</div>
+      <h2><small>Chapter 9</small>The Expansion Gates</h2>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Gate 1 — Niche Clarity</div>
+      <p>The question is not 'What do I know?' (you know a great deal). The question is: 'What specific transformation do I create for a specific kind of person?' Move from 'I have wisdom to share' to a defined, navigable promise: <em>'I help [specific person] go from [specific confusion or challenge] to [specific clarity or outcome] through [your method and depth].'</em> This gate must be crossed first.</p>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Gate 2 — Knowledge Architecture</div>
+      <p>Convert your accumulated understanding into accessible structures: frameworks, session formats, diagnostic conversations, written content, short teaching sessions, audio or video teachings. The depth does not disappear when it is structured. Structure makes depth navigable. Frameworks are the bridge between what you know and what someone else can use.</p>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Gate 3 — Consistent Visible Presence</div>
+      <p>The retrograde Jupiter pull means visibility requires deliberate, consistent counter-effort. One clear insight shared publicly per week. One genuine outreach conversation per week. One teaching moment offered in whatever format suits you — written, spoken, visual, in-person. Visibility is not performance. For you, it is dharma. The 9th house is the house of teaching, and your career lord is there.</p>
+    </div>
+    <p style="margin-top:16px; font-size:0.9rem; color:var(--muted);">These gates are sequential. Gate 1 opens Gate 2. Gate 2 makes Gate 3 meaningful. The 90 days ahead cross all three — in this order.</p>
+  </div>
+
+  <!-- CHAPTER 10 -->
+  <div id="ch10" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">🦋</div>
+      <h2><small>Chapter 10</small>The Identity Shift</h2>
+    </div>
+    <div class="identity-shift">
+      <div class="identity-box">
+        <div class="identity-label">Old Identity</div>
+        <div class="identity-old">The Seeker — Wise, Private, Accumulating, Behind the Scene</div>
+      </div>
+      <div class="identity-arrow">→</div>
+      <div class="identity-box">
+        <div class="identity-label">New Identity</div>
+        <div class="identity-new">The Wisdom Architect — Visible Guide, Dharmic Advisor, Depth-Based Consulting Founder</div>
+      </div>
+    </div>
+    <div class="callout callout-gold" style="margin-top:20px;">
+      <div class="callout-label">Psychological Flip Sentence</div>
+      "I am not asking people to admire my wisdom. I am building the clear path through which the right people can receive the help that my years of seeking have prepared me to give."
+    </div>
+  </div>
+
+  <!-- CHAPTER 11 -->
+  <div id="ch11" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon blue">🌬</div>
+      <h2><small>Chapter 11</small>Elemental Alignment</h2>
+    </div>
+    <div class="section">
+      <p>An earlier or simplified reading of your chart might describe you as 'spiritually oriented but needing more grounded practicality.' The real chart says something more precise and more useful.</p>
+      <p><strong>Fire is strong</strong> — Sagittarius Lagna (Fire), Leo H9 with Mercury and Venus (Fire). Your philosophical drive, your desire for truth and meaning, and your natural teaching warmth are Fire expressions. Fire is not missing. It is directed inward by the retrograde Jupiter rather than outward as expressed teaching and advisory presence.</p>
+      <p><strong>Water is strong</strong> — Moon, Mars, Ketu in Scorpio H12 (Water). Emotional depth, interior intensity, transformational capacity, and the ability to navigate the unconscious landscape. This is your primary reservoir. It gives you the unusual ability to work with the complex, the hidden, and the existential.</p>
+      <p><strong>Earth is strong</strong> — Saturn exalted in Libra H11. Patient, structured, cumulative. The long-term building of networks, reputation, and stable income through consistent effort. This is your long-game anchor.</p>
+      <p><strong>Air is moderate</strong> — Saturn in Libra (Air) gives social calibration, network awareness, and the ability to build balanced, sustainable structures rather than impulsive ones.</p>
+      <div class="callout callout-sage">
+        <div class="callout-label">Elemental Activation for This Phase</div>
+        Fire activation is not about manufacturing intensity you don't have. It is about releasing the outward expression of the Fire that is already native to your chart: writing a clear teaching post, making a direct offer, showing up in a visible forum, claiming your position as someone worth listening to. The Seeker who steps into the Teacher's role is activating their own Fire, not borrowing someone else's.
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 12 -->
+  <div id="ch12" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">💬</div>
+      <h2><small>Chapter 12</small>Unspoken Conversations</h2>
+    </div>
+    <div class="section">
+      <div class="q-block">
+        <div class="q-num">1</div>
+        <div class="q-text">What is the specific transformation I am most equipped to guide someone through? Not what I know — what I can actually walk someone from and to?</div>
+      </div>
+      <div class="q-block">
+        <div class="q-num">2</div>
+        <div class="q-text">Where am I using 'more depth, more preparation, more understanding' as a reason, and where is it becoming a mechanism for staying hidden?</div>
+      </div>
+      <div class="q-block">
+        <div class="q-num">3</div>
+        <div class="q-text">What format of transmission feels both authentic to my depth AND accessible enough to be the first step for someone who doesn't yet know me?</div>
+      </div>
+      <div class="q-block">
+        <div class="q-num">4</div>
+        <div class="q-text">What would I build if I trusted that the depth I have already accumulated is sufficient to begin serving — and that serving will deepen it further, not dilute it?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 13 -->
+  <div id="ch13" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">🎯</div>
+      <h2><small>Chapter 13</small>Natural Expression Tool</h2>
+    </div>
+    <div class="section">
+      <p>Your natural expression tool is <strong>transformational depth-dialogue</strong> — the kind of conversation or teaching that doesn't just inform, but reframes, roots, and shifts. Your natural format is not the quick tip or the surface framework. It is the kind of exchange that makes someone feel, for the first time, that they are being truly understood at the level they actually operate.</p>
+      <p>This can take the form of: long-form writing (essays, letters, teachings) that people return to; one-on-one advisory conversations where you guide a person through a decision they've been unable to make; small-group sessions where the depth of the container makes people say things they have never said to a conventional advisor; and teaching content (audio, video, written) that operates at the level of meaning rather than technique.</p>
+      <div class="callout callout-gold">
+        <div class="callout-label">Your Best Marketing Form</div>
+        Help someone say: "This is the first person who has said what I have been unable to articulate about my own situation." That is the beginning of trust. That trust is what converts to clients, referrals, and long-term advisory relationships. It comes from depth, not volume.
+      </div>
+      <p style="margin-top:14px;">Mercury in Purva Phalguni H9 gives a warm, creative, expressive communication style that balances depth with accessibility. Venus in Magha H9 adds dignity, beauty, and an ancestral lineage quality — the sense that what you offer connects to something larger than a personal opinion. These are the communication gifts that distinguish your expression from generic content.</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 14 -->
+  <div id="ch14" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon rose">🌿</div>
+      <h2><small>Chapter 14</small>Body &amp; Life Signals</h2>
+    </div>
+    <div class="section">
+      <p>Stress may be stored in the shoulders, jaw, neck, solar plexus, and digestive system — the physical cost of a mind that runs deep and an emotional body that holds rather than releases. H12 triple conjunction in Scorpio suggests that the body may also carry tension in the lower back, reproductive system, and joints, particularly during periods of suppressed expression or delayed action.</p>
+      <p>The Sun in Cancer H8 in Ashlesha nakshatra suggests that fluctuating vitality — periods of high creative and intellectual output followed by genuine need for restoration — is built into your constitution. This is not a dysfunction. It is a cycle. The 8th house does not produce a steady-state energy; it produces depth-intensive bursts and genuine recovery periods.</p>
+      <div class="callout callout-plum">
+        <div class="callout-label">Daily Healing Ritual</div>
+        Each evening, write two things: the insight that moved today (one sentence), and the one action tomorrow that will bring that insight closer to the people who need it. Then do 8 minutes of slow exhale breathing — this directly releases the Bladder and Kidney meridian tension that accumulates from inward-holding.
+      </div>
+      <p style="margin-top:14px;"><strong>Once a week:</strong> Take a complete decision-light morning where you do not plan, research, or compare. This is nervous system repair for a mind that has been trained by Jupiter retrograde to process continuously. The well needs to rest before it can draw cleanly again.</p>
+    </div>
+  </div>
+
+  <!-- CHAPTER 15 -->
+  <div id="ch15" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">💎</div>
+      <h2><small>Chapter 15</small>The Deeper Need</h2>
+    </div>
+    <div class="section">
+      <p>Beneath the consulting identity, the income, and the advisory platform, your deeper need is <strong>meaningful impact through truth</strong>. You want what you understand to actually change the trajectory of someone's life. Not recognition for its own sake. Not income as a primary motivator. But the real, felt sense that the depth you have lived through has served someone else's liberation from confusion, fear, or stagnation.</p>
+      <p>There is also a need for <strong>dharmic integrity</strong> — the sense that what you do in the world is aligned with something larger than personal gain. This is the 9th house speaking. The career must feel like a calling, not merely a profession. The good news is that your chart is built for exactly this: Mercury+Venus in H9, Jupiter in own sign H1. The dharmic calling and the career are the same thing. There is no tension between integrity and income in your chart — they are the same direction.</p>
+      <div class="callout callout-sage">
+        <div class="callout-label">The Destination</div>
+        Your destiny is not merely self-employment or advisory income. It is a guided contribution — the kind where someone looks back five years later and says, 'That conversation changed how I understood my own life.' The bridge to that destination begins with one clear offer, one genuine insight shared, one person helped forward. And it begins now.
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">Destiny Activation</div>
+
+  <!-- 90 DAY BLUEPRINT -->
+  <div id="blueprint" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">🗺</div>
+      <h2><small>Destiny Activation</small>90-Day Blueprint</h2>
+    </div>
+    <div class="callout callout-gold">
+      <div class="callout-label">Timing Note — Critically Important</div>
+      This blueprint runs from <strong>1 July to 22 October 2026</strong> — the exact closing date of Venus/Venus/Mercury, your peak career sub-period. You are not in a preparation phase. You are inside the window. The 90 days ahead are not the runway. They ARE the flight. After October 22, the energy shifts toward Ketu (completion, release) and then Sun H8 (transformation, pressure). What is planted before October 22 will grow. What is planted after will need to work harder.
+    </div>
+
+    <div class="phase-grid">
+      <div class="phase-block">
+        <div class="phase-label">Phase 1</div>
+        <div class="phase-title">Crystallise the Architecture</div>
+        <div class="phase-dates">Days 1–30 · July 2026</div>
+        <ul class="phase-items">
+          <li>Define niche: who exactly, what transformation, what method</li>
+          <li>Write your core positioning sentence (one paragraph max)</li>
+          <li>Identify your 3 primary knowledge frameworks</li>
+          <li>Map 10 people who would benefit from what you offer</li>
+          <li>Create your first simple offering: a conversation, a session, a document</li>
+          <li>Begin writing — one insight post per week minimum</li>
+        </ul>
+      </div>
+      <div class="phase-block">
+        <div class="phase-label">Phase 2</div>
+        <div class="phase-title">Build the Visible Channel</div>
+        <div class="phase-dates">Days 31–60 · August 2026</div>
+        <ul class="phase-items">
+          <li>Deliver your offering to 3–5 people (paid or pilot)</li>
+          <li>Have 5+ genuine advisory conversations</li>
+          <li>Post 10+ pieces of teaching content in your natural voice</li>
+          <li>Design and run one small-group session or workshop</li>
+          <li>Collect direct feedback: what landed, what confused, what surprised</li>
+          <li>Refine your offering based on real-world response</li>
+        </ul>
+      </div>
+      <div class="phase-block">
+        <div class="phase-label">Phase 3</div>
+        <div class="phase-title">Convert to Proof Before Window Closes</div>
+        <div class="phase-dates">Days 61–90 · Sep–Oct 2026</div>
+        <ul class="phase-items">
+          <li>3+ paid or confirmed clients/engagements documented</li>
+          <li>Clear niche decision locked (test by saying it without hesitation)</li>
+          <li>Case results documented in your own language</li>
+          <li>Referral pathway built: how does one client become three?</li>
+          <li>6-month roadmap written for what comes after October 22</li>
+          <li>Identity statement solid: you can answer 'what do you do?' in one sentence</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sub-label" style="margin-top:32px;">Weekly Rhythm (All 90 Days)</div>
+    <ul class="fun-list">
+      <li><strong>2× per week:</strong> Advisory or teaching conversations — real people, real situations, your full depth deployed. These are not networking calls. They are the work.</li>
+      <li><strong>1× per week:</strong> Teaching content published. Written post, recorded insight, short essay, or session note. Something that carries your voice into the world without you being physically present.</li>
+      <li><strong>1× per week:</strong> Outreach to someone who should know you exist. Not a sales pitch — a genuine point of connection from your insight, followed by an offer if appropriate.</li>
+      <li><strong>1× per week:</strong> Review. What happened this week? What surprised you? What landed? What do you know now that you didn't know seven days ago? Write it in one page.</li>
+    </ul>
+
+    <div class="callout callout-sage" style="margin-top:24px;">
+      <div class="callout-label">90-Day Deliverables</div>
+      Clear niche articulation · 3+ engagements documented · 12+ teaching pieces published · Clear advisory offering with a price · First referrals generated · 6-month roadmap · Identity statement you can say with ease
+    </div>
+  </div>
+
+  <!-- KOSHA PROTOCOL -->
+  <div id="koshas" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🧬</div>
+      <h2><small>90-Day Alignment Protocol</small>Koshas + Chakra Integration</h2>
+    </div>
+
+    <div class="section">
+      <div class="sub-label">Phase 1 (Days 1–30) — Root the Architecture</div>
+      <p><strong>Primary Kosha: Vijnanamaya.</strong> Chakra: Ajna balanced with Manipura. Daily: 10 min slow-exhale breathing, write one clarity question, make one written decision about niche/offering. Weekly: review your positioning statement and refine until it can be said without hesitation. Meridian: Kidney, Bladder (release the inward-holding pattern).</p>
+    </div>
+    <div class="section">
+      <div class="sub-label">Phase 2 (Days 31–60) — Activate the Teaching Voice</div>
+      <p><strong>Primary Kosha: Pranamaya.</strong> Chakra: Vishuddha and Manipura. Daily: before each teaching conversation or content post, say your positioning statement aloud — then act. Weekly: one new teaching piece published, one genuine advisory conversation delivered. Meridian: Lung, Gallbladder, Liver (outward flow, courage to act, frustration released through action).</p>
+    </div>
+    <div class="section">
+      <div class="sub-label">Phase 3 (Days 61–90) — Embody the Identity</div>
+      <p><strong>Primary Kosha: Anandamaya.</strong> Chakra: Manipura and Anahata. Daily: ask 'Who can I serve today through one clear insight?' Weekly: Sunday proof review — what changed this week because of what you offered? Meridian: Heart, Kidney, Gallbladder. The joy body activates when wisdom serves. This is the deepest fuel source in your chart.</p>
+    </div>
+  </div>
+
+  <!-- NERVOUS SYSTEM -->
+  <div id="nervous" class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-icon rose">⚖</div>
+      <h2><small>Founder Nervous System</small>The Four States</h2>
+    </div>
+
+    <div class="ns-grid">
+      <div class="ns-card">
+        <div class="ns-state"><span class="badge badge-protect">●</span> Strategic Depth</div>
+        <div class="ns-desc">Clear, grounded, able to hold a person's complex situation without rushing to solve it. The wisdom flows naturally. You know what to ask next. This is your optimal advisory state.</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-state"><span class="badge badge-mixed">●</span> Infinite Refinement</div>
+        <div class="ns-desc">More reading, more research, more context, more preparation before sharing. The Jupiter retrograde loop running at maximum. Useful for deepening, destructive for timing.</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-state"><span class="badge badge-risk">●</span> Interior Withdrawal</div>
+        <div class="ns-desc">The H12 protective response: too exposed, too complex, too raw to bring into the world. Temporary withdrawal into solitude that becomes extended absence from outward action.</div>
+      </div>
+      <div class="ns-card">
+        <div class="ns-state"><span class="badge badge-risk">●</span> Meaning Fatigue</div>
+        <div class="ns-desc">The weight of depth without output. Processing continuously without transmitting creates a specific kind of fatigue — not physical tiredness, but the weariness of a full vessel with no outlet.</div>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top:20px;">
+      <div class="section-title"><div class="dot dot-sage"></div>Daily Regulation System</div>
+      <p><strong>Morning:</strong> 5 minutes of 4-6 breathing (inhale 4, exhale 6). Write the one teaching or advisory action of the day — not a to-do list, one clear act. <strong>Midday:</strong> 3-minute physical reset — walk, shake out arms, three long exhales. Ask: 'What have I put out into the world today?' <strong>Evening:</strong> Write what moved today. What surprised you. What one insight emerged. Then write tomorrow's one action on paper and put the work aside.</p>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-rose"></div>High-Stress Reset Protocol</div>
+      <p>Name the state: infinite refinement, withdrawal, fatigue, or confusion. Both feet on the ground, three long exhales. Ask: <em>'What is the smallest useful thing I can offer right now?'</em> Do not solve the architecture of the whole advisory business. Write one insight. Send one message. Offer one question in a conversation. The momentum restores when the smallest action is completed.</p>
+    </div>
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>Sleep Protocol</div>
+      <p>No teaching research or deep processing 45 minutes before sleep — the Vijnanamaya kosha needs to rest, not continue refining. Write tomorrow's one action on paper before closing the day. Practice inhale 4, exhale 8 for ten rounds. The H12 Moon in Scorpio makes sleep a genuine sanctuary; honour it rather than processing through it.</p>
+    </div>
+    <div class="callout callout-sage" style="margin-top:8px;">
+      <div class="callout-label">Optimal Consultant State Stack</div>
+      Muladhara stable (Saturn exalted H11) → Ajna clear (Mercury H9) → Vishuddha open (deliberate expression) → Anahata service-led (Venus H9) → Sahasrara connected (Jupiter H1)
+    </div>
+  </div>
+
+  <!-- FINAL MESSAGE -->
+  <div id="final" class="final-message">
+    <h2>Your Destiny, Joseph</h2>
+    <p>Your advisory and teaching practice does not need to be built from volume, performance, or manufactured authority. It needs to be built from the very thing that life has been cultivating in you through decades of genuine seeking, interior depth, philosophical inquiry, and real transformation — the ability to see the root of things and illuminate the path from confusion to clarity.</p>
+    <p>You are not starting from zero. You are starting from a well that has been filling for forty years. The Hamsa Yoga in your 1st house is not a metaphor — it is a technical Vedic configuration that identifies the person whose wisdom genuinely lifts others, whose character creates trust before a word is spoken, whose presence in a room signals that something deeper is available than what is visible on the surface.</p>
+    <p>The market does not need you to be louder. It needs you to be clearer. When what you offer is named, articulated, structured, and made findable — when the lamp is turned outward — the right people will come. Not in the hundreds initially. In the ones and the tens. The ones whose lives you actually change. And from those, through the exalted Saturn in your 11th house, the network grows slowly, steadily, and with the kind of integrity that becomes a reputation.</p>
+    <p>Your Venus Mahadasha runs until 2043. You have twenty years of the most dharma-aligned career period in your chart's history. The strongest sub-period of the opening cycle is open right now. The 90 days ahead are not a test run. They are the beginning of the chapter your chart has been pointing toward since you were born.</p>
+    <p>One clear offer. One genuine insight shared. One person helped forward. That is how it begins. And in the Mula nakshatra tradition — the nakshatra of roots, of deep foundations, of the beginning that contains the whole — the beginning IS the work. Start now.</p>
+    <div class="signature">— Generated 01 July 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris</div>
+  </div>
+
+  <div class="footer">
+    Generated 01 July 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · For Joseph T C
+  </div>
+
+</main>
+</div>
+</body>
+</html>
