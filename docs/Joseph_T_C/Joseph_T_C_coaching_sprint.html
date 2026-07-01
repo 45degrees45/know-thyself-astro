@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Joseph T C — 90-Day Coaching Sprint</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border: rgba(196,158,64,0.18);
+  --gold: #c49e40;
+  --gold2: #e8c96a;
+  --cream: #f0e8d8;
+  --muted: rgba(240,232,216,0.5);
+  --plum: #7c5cbf;
+  --rose: #c4607a;
+  --sage: #5a8f72;
+  --blue: #5b8fd4;
+  --shadow: 0 20px 60px rgba(0,0,0,0.45);
+  --r: 20px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.16), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.11), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* LAYOUT */
+.layout { display: grid; grid-template-columns: 240px 1fr; min-height: 100vh; max-width: 1280px; margin: 0 auto; }
+
+/* SIDEBAR */
+.sidebar {
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding: 32px 16px 32px 20px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.94);
+  backdrop-filter: blur(10px);
+}
+.sidebar-title { font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 400; color: var(--cream); margin-bottom: 4px; }
+.sidebar-sub { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.phase-nav { margin-bottom: 6px; }
+.phase-nav-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); padding: 10px 8px 4px; display: block; }
+.nav-week { display: flex; align-items: center; gap: 7px; padding: 5px 8px; border-radius: 8px; text-decoration: none; color: rgba(240,232,216,0.6); font-size: 0.76rem; transition: all 0.2s; }
+.nav-week:hover { background: rgba(196,158,64,0.07); color: var(--cream); }
+.nav-dot { width: 5px; height: 5px; border-radius: 50%; flex-shrink: 0; }
+.dot-1 { background: var(--gold); }
+.dot-2 { background: var(--sage); }
+.dot-3 { background: var(--plum); }
+
+/* MAIN */
+.main { padding: 48px 52px 100px; max-width: 860px; }
+
+/* HERO */
+.hero {
+  border-radius: 26px; padding: 48px 44px 38px; position: relative; overflow: hidden;
+  background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(18,44,32,0.96) 60%, rgba(44,20,60,0.94) 100%);
+  border: 1px solid rgba(196,158,64,0.22); box-shadow: var(--shadow); margin-bottom: 40px;
+}
+.hero-glow { position: absolute; right: -60px; bottom: -80px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(circle, rgba(90,143,114,0.14), transparent 65%); pointer-events: none; }
+.eyebrow { font-size: 0.66rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 300; color: #fff8f0; line-height: 1.15; margin-bottom: 12px; }
+.hero-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: rgba(196,158,64,0.8); margin-bottom: 28px; }
+.hero-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; }
+.hstat { background: rgba(255,255,255,0.06); border: 1px solid rgba(196,158,64,0.14); border-radius: 12px; padding: 12px 14px; }
+.hstat-label { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+.hstat-val { font-size: 0.83rem; color: #fff8f0; line-height: 1.3; }
+.hstat-val.bright { color: var(--gold2); font-weight: 600; }
+
+/* ALERT */
+.alert {
+  margin-bottom: 36px; padding: 18px 22px; border-radius: 14px;
+  background: rgba(90,143,114,0.1); border: 1px solid rgba(90,143,114,0.35);
+}
+.alert-head { font-size: 0.62rem; letter-spacing: 0.26em; text-transform: uppercase; color: #80c4a0; margin-bottom: 6px; font-weight: 600; }
+.alert p { font-size: 0.88rem; color: rgba(240,232,216,0.85); line-height: 1.7; }
+.alert strong { color: var(--gold2); }
+
+/* PHASE BLOCK */
+.phase-header { margin-bottom: 32px; margin-top: 48px; padding-bottom: 14px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 14px; }
+.phase-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.phase-icon.gold { background: rgba(196,158,64,0.12); }
+.phase-icon.sage { background: rgba(90,143,114,0.12); }
+.phase-icon.plum { background: rgba(124,92,191,0.14); }
+.phase-title-block h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.75rem; font-weight: 300; color: var(--cream); }
+.phase-title-block small { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; }
+
+/* WEEK CARD */
+.week-card { margin-bottom: 28px; scroll-margin-top: 30px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); overflow: hidden; }
+.week-header { display: grid; grid-template-columns: 80px 1fr; gap: 0; }
+.week-num { background: rgba(196,158,64,0.08); border-right: 1px solid var(--border); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 18px 10px; min-height: 80px; }
+.week-num-label { font-size: 0.55rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+.week-num-val { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--gold2); line-height: 1; }
+.week-num.sage { background: rgba(90,143,114,0.08); border-right-color: rgba(90,143,114,0.2); }
+.week-num.sage .week-num-label, .week-num.sage .week-num-val { color: #80c4a0; }
+.week-num.plum { background: rgba(124,92,191,0.08); border-right-color: rgba(124,92,191,0.2); }
+.week-num.plum .week-num-label, .week-num.plum .week-num-val { color: #b49edf; }
+.week-info { padding: 16px 22px 14px; }
+.week-dates { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 4px; }
+.week-theme { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--cream); }
+.week-focus { font-size: 0.8rem; color: rgba(240,232,216,0.6); margin-top: 2px; }
+
+.week-body { padding: 20px 24px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; border-top: 1px solid rgba(255,255,255,0.04); }
+.week-section-title { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; font-weight: 600; }
+.week-section-title.sage { color: #80c4a0; }
+.week-section-title.plum { color: #b49edf; }
+.week-section-title.rose { color: #e8909f; }
+
+.task-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.task-list li { font-size: 0.84rem; color: rgba(240,232,216,0.78); padding-left: 16px; position: relative; line-height: 1.55; }
+.task-list li::before { content: '→'; position: absolute; left: 0; color: var(--gold); font-size: 0.72rem; top: 1px; }
+.task-list.sage li::before { color: #80c4a0; }
+.task-list.plum li::before { color: #b49edf; }
+
+.week-full { grid-column: 1 / -1; }
+
+.callout-sm { padding: 12px 16px; border-radius: 12px; font-size: 0.83rem; line-height: 1.65; }
+.callout-sm.gold { background: rgba(196,158,64,0.08); border: 1px solid rgba(196,158,64,0.22); }
+.callout-sm.sage { background: rgba(90,143,114,0.08); border: 1px solid rgba(90,143,114,0.25); }
+.callout-sm.plum { background: rgba(124,92,191,0.08); border: 1px solid rgba(124,92,191,0.22); }
+.callout-sm.rose { background: rgba(196,96,122,0.08); border: 1px solid rgba(196,96,122,0.22); }
+.callout-label-sm { font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; margin-bottom: 5px; }
+.callout-sm.gold .callout-label-sm { color: var(--gold); }
+.callout-sm.sage .callout-label-sm { color: #80c4a0; }
+.callout-sm.plum .callout-label-sm { color: #b49edf; }
+.callout-sm.rose .callout-label-sm { color: #e8909f; }
+
+/* DAILY SYSTEM */
+.daily-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 20px; }
+.daily-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 18px; }
+.daily-time { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-weight: 600; }
+.daily-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 8px; }
+.daily-desc { font-size: 0.82rem; color: rgba(240,232,216,0.7); line-height: 1.6; }
+
+/* DIVIDER */
+.divider { display: flex; align-items: center; gap: 14px; margin: 40px 0; font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(240,232,216,0.25); }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* RESET SECTION */
+.reset-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 18px; }
+.reset-card { background: var(--surface); border: 1px solid rgba(196,96,122,0.22); border-radius: 14px; padding: 16px 18px; }
+.reset-state { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: #e8909f; margin-bottom: 6px; font-weight: 600; }
+.reset-action { font-size: 0.85rem; color: rgba(240,232,216,0.78); line-height: 1.6; }
+
+/* MILESTONE */
+.milestone-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-top: 18px; }
+.milestone-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; }
+.milestone-phase { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; font-weight: 600; }
+.milestone-list { list-style: none; display: flex; flex-direction: column; gap: 5px; margin-top: 8px; }
+.milestone-list li { font-size: 0.8rem; color: rgba(240,232,216,0.75); padding-left: 14px; position: relative; line-height: 1.5; }
+.milestone-list li::before { content: '✓'; position: absolute; left: 0; color: #80c4a0; font-size: 0.7rem; }
+
+/* FOOTER */
+.footer { text-align: center; padding: 24px 0; font-size: 0.68rem; color: rgba(240,232,216,0.26); border-top: 1px solid var(--border); margin-top: 48px; letter-spacing: 0.07em; }
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; }
+  .main { padding: 30px 22px 60px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .week-body { grid-template-columns: 1fr; }
+  .daily-grid, .milestone-grid, .reset-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-title">Joseph T C</div>
+  <div class="sidebar-sub">90-Day Coaching Sprint</div>
+
+  <div class="phase-nav">
+    <span class="phase-nav-label">Phase 1 — Crystallise (July)</span>
+    <a href="#w1" class="nav-week"><div class="nav-dot dot-1"></div>Wk 1 · Who exactly?</a>
+    <a href="#w2" class="nav-week"><div class="nav-dot dot-1"></div>Wk 2 · What transformation?</a>
+    <a href="#w3" class="nav-week"><div class="nav-dot dot-1"></div>Wk 3 · How do I offer it?</a>
+    <a href="#w4" class="nav-week"><div class="nav-dot dot-1"></div>Wk 4 · First conversations</a>
+  </div>
+  <div class="phase-nav">
+    <span class="phase-nav-label">Phase 2 — Activate (August)</span>
+    <a href="#w5" class="nav-week"><div class="nav-dot dot-2"></div>Wk 5 · First pilot offer</a>
+    <a href="#w6" class="nav-week"><div class="nav-dot dot-2"></div>Wk 6 · First session</a>
+    <a href="#w7" class="nav-week"><div class="nav-dot dot-2"></div>Wk 7 · Teaching content</a>
+    <a href="#w8" class="nav-week"><div class="nav-dot dot-2"></div>Wk 8 · 2nd &amp; 3rd pilots</a>
+  </div>
+  <div class="phase-nav">
+    <span class="phase-nav-label">Phase 3 — Validate (Sep–Oct)</span>
+    <a href="#w9" class="nav-week"><div class="nav-dot dot-3"></div>Wk 9 · Niche lock</a>
+    <a href="#w10" class="nav-week"><div class="nav-dot dot-3"></div>Wk 10 · First paid offer</a>
+    <a href="#w11" class="nav-week"><div class="nav-dot dot-3"></div>Wk 11 · Referral system</a>
+    <a href="#w12" class="nav-week"><div class="nav-dot dot-3"></div>Wk 12 · Content system</a>
+    <a href="#w13" class="nav-week"><div class="nav-dot dot-3"></div>Wk 13 · Close the window</a>
+  </div>
+  <div class="phase-nav" style="margin-top:16px;">
+    <a href="#daily" class="nav-week"><div class="nav-dot" style="background:var(--gold)"></div>Daily system</a>
+    <a href="#stuck" class="nav-week"><div class="nav-dot" style="background:var(--rose)"></div>When stuck</a>
+    <a href="#milestones" class="nav-week"><div class="nav-dot" style="background:var(--sage)"></div>Milestones</a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-glow"></div>
+    <div class="eyebrow">Life Coach Plan — Vedic-Timed Edition</div>
+    <h1>90-Day Coaching Sprint</h1>
+    <div class="hero-sub">1 July → 22 October 2026 · Venus / Venus / Mercury</div>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-label">Window Opens</div>
+        <div class="hstat-val">1 July 2026</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-label">Window Closes</div>
+        <div class="hstat-val bright">22 October 2026 ★</div>
+      </div>
+      <div class="hstat">
+        <div class="hstat-label">What Closes It</div>
+        <div class="hstat-val">Venus / Venus / Ketu — detachment &amp; release</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALERT -->
+  <div class="alert">
+    <div class="alert-head">The One Thing You Need to Know Before Week 1</div>
+    <p>This is not a preparation plan. You have been preparing. <strong>This is an activation plan.</strong> Every week has one non-negotiable output — something that exists in the world by Friday that did not exist on Monday. Jupiter retrograde will always find a reason to go back inward and refine. The plan names the output before the week begins so the retrograde pull has less room to operate.</p>
+  </div>
+
+  <!-- COACHING FRAME -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px 28px;margin-bottom:40px;">
+    <div style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;font-weight:600;">The Coaching Frame</div>
+    <p style="font-size:0.9rem;color:rgba(240,232,216,0.82);line-height:1.75;margin-bottom:12px;">You are a 41-year-old with Hamsa Yoga — Jupiter in its own sign in your 1st house. You have accumulated genuine depth. The chart confirms it. The problem is not the depth. The problem is that Jupiter is retrograde: the wisdom loops inward, finds reasons to refine rather than transmit, and the well fills but never draws.</p>
+    <p style="font-size:0.9rem;color:rgba(240,232,216,0.82);line-height:1.75;margin-bottom:12px;">Your 10th lord (Mercury) and your Mahadasha lord (Venus) both sit in your 9th house — the house of dharma, teaching, and higher knowledge. Your career is <em>meant</em> to be wisdom transmission. This is not a pivot. This is arriving.</p>
+    <p style="font-size:0.9rem;color:rgba(240,232,216,0.82);line-height:1.75;">The 90 days ahead are the most auspicious career sub-period in the opening cycle of your 20-year Venus Mahadasha. The question for each week is not <em>are you ready</em> but <em>what did you put out this week</em>.</p>
+  </div>
+
+  <!-- ═══ PHASE 1 ═══ -->
+  <div class="phase-header">
+    <div class="phase-icon gold">🔍</div>
+    <div class="phase-title-block">
+      <small>Phase 1 · July 2026</small>
+      <h2>Crystallise</h2>
+    </div>
+  </div>
+  <p style="font-size:0.88rem;color:var(--muted);margin-bottom:28px;line-height:1.7;">The work of phase 1 is not doing — it is deciding. Who, what, and how. The outputs of these four weeks become the foundation that everything else is built on. Do not rush past them. Do not linger past them.</p>
+
+  <!-- WEEK 1 -->
+  <div class="week-card" id="w1">
+    <div class="week-header">
+      <div class="week-num">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">1</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">1 – 7 July 2026</div>
+        <div class="week-theme">Who Exactly Am I Serving?</div>
+        <div class="week-focus">The most important question of the 90 days. Not what you know — who needs it and when.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title">The Three Tasks</div>
+        <ul class="task-list">
+          <li>Write 5 "pain situations" — specific moments when someone is in real need of the guidance you are most equipped to give. Make them scenes, not abstractions. ("When someone has just left a 15-year career and can't decide what to build next..." not "people in transition.")</li>
+          <li>For each scene: who is this person? Age, context, what they've already tried, what's at stake for them. Write it in second person — "you are 42, you have spent two decades..."</li>
+          <li>Pick ONE situation that feels most true to your depth AND most clear to you. Not the most noble one. The one you could navigate most confidently right now.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title sage">Daily Practice This Week</div>
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">10-minute morning write</div>
+          "The person I am most meant to help right now is ___." Start fresh each morning. Do not re-read previous days until Friday. On Friday, read all 7 and notice what stayed consistent.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "If money and recognition were equal across all five situations, which would I most want to spend the next 6 months working inside? What does that tell me?"
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm gold">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 7 July</div>
+          One paragraph, written down: the person you serve and the specific situation you help them navigate. Concrete enough that someone who reads it could identify whether they're that person.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="week-card" id="w2">
+    <div class="week-header">
+      <div class="week-num">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">2</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">8 – 14 July 2026</div>
+        <div class="week-theme">What Transformation Do I Create?</div>
+        <div class="week-focus">From "I help people with X" to "I take people FROM ___ TO ___."</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title">The Three Tasks</div>
+        <ul class="task-list">
+          <li>For your chosen person-situation: write the "before" state in full detail — what they feel, think, fear, avoid, repeat. Make it uncomfortably specific. This is the sign that you actually understand the experience, not just the category.</li>
+          <li>Write the "after" state: what can they now see, decide, feel, or do that they could not before? What decision becomes possible? What weight lifts? What becomes clear?</li>
+          <li>Write the bridge: what is the essential move — the one thing that makes the transition happen? This is the seed of your method, your framework, your way of working. One or two sentences.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title sage">Daily Practice This Week</div>
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Re-reading ritual</div>
+          Re-read your Week 1 deliverable each morning. Then add one sentence about the "before" experience of the person you serve. By Friday you'll have 7 lines that together describe the interior of the problem better than a day of planning could.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "Have I personally been in the 'before' state I'm describing? What did it cost me — time, clarity, confidence, money, relationships? What do I know now that I wish someone had helped me see then?"
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm gold">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 14 July</div>
+          A written Before → After → Bridge statement. Three sentences maximum. If you cannot write it in three sentences, you haven't decided yet. Decide.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 3 -->
+  <div class="week-card" id="w3">
+    <div class="week-header">
+      <div class="week-num">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">3</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">15 – 21 July 2026</div>
+        <div class="week-theme">How Do I Offer This?</div>
+        <div class="week-focus">Design the first container — not the perfect offer, the first real one.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title">The Three Tasks</div>
+        <ul class="task-list">
+          <li>Design a 60–90 minute "depth conversation": what would you cover, in what sequence? What 3–5 questions would you ask? What insight do you aim to deliver before the end? Write it as a loose structure, not a rigid script.</li>
+          <li>Write the three things you want someone to walk away knowing or feeling: one thing about themselves, one thing about their situation, one thing about what becomes possible next. These are the outcome promises of your offer.</li>
+          <li>Give the conversation a working name. Not a final marketing name — just what you'd call it if describing it to a trusted friend. "A roots conversation." "A decision session." "A clarity audit." Whatever is true to how you think about it.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title sage">Daily Practice This Week</div>
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Out loud, every morning</div>
+          Say your Before → After → Bridge statement aloud. 30 seconds. It will feel awkward and performative. Do it anyway. The awkwardness is Jupiter retrograde uncomfortable with external expression. The practice is training the expression muscle, not curing the feeling.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "If I had to offer this conversation to one specific person I already know — starting next week — who would it be? What would I say to invite them? Write the actual words of the invitation."
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm gold">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 21 July</div>
+          A one-page description of your first offering: who it's for, what happens in it, what they walk away with, and the working name. This does not need to be polished. It needs to exist on paper.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 4 -->
+  <div class="week-card" id="w4">
+    <div class="week-header">
+      <div class="week-num">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">4</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">22 – 28 July 2026</div>
+        <div class="week-theme">First Real Conversations</div>
+        <div class="week-focus">Reaching out — not selling. Listening to how they describe the problem in their own words.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title">The Three Tasks</div>
+        <ul class="task-list">
+          <li>Identify 5 people in your existing network who are — right now — experiencing the "before" state you described. Do not filter for likelihood of becoming clients. Just identify the ones in the situation. Write their names and one sentence about why they fit.</li>
+          <li>Reach out to 3 of them this week. A genuine check-in with one specific question connected to their situation. Not: "I'm building something, want to help?" But: "I've been thinking about people who are navigating [their situation] — how is that going for you?" Listen more than you speak.</li>
+          <li>After each conversation: write what you learned. Focus specifically on the language they used — the words they reached for, the metaphors they chose, the things they said twice.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title sage">Daily Practice This Week</div>
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">After every conversation</div>
+          Write one sentence: "What I heard them say that I couldn't have said without them." This is the most valuable research you can do — gathering the language of the problem from the inside. Your marketing will eventually be built from these sentences, not from your own description of what you do.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "During which conversation did I feel most alive and engaged — when was I leaning forward, when did time disappear? What was being discussed in that exact moment?"
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm gold">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 28 July</div>
+          3 conversations completed, notes from each written. Plus: one piece of their language you are going to borrow for your positioning — a phrase, a metaphor, a way of naming the problem that came from them, not you.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">Phase 2 — Activate</div>
+
+  <!-- ═══ PHASE 2 ═══ -->
+  <div class="phase-header">
+    <div class="phase-icon sage">⚡</div>
+    <div class="phase-title-block">
+      <small>Phase 2 · August 2026</small>
+      <h2>Activate</h2>
+    </div>
+  </div>
+  <p style="font-size:0.88rem;color:var(--muted);margin-bottom:28px;line-height:1.7;">The move from planning to delivery. The moment the wisdom stops being private. The first clients, the first content, the first real proof that the offering exists in the world. The hardest phase for Jupiter retrograde — and the most necessary one.</p>
+
+  <!-- WEEK 5 -->
+  <div class="week-card" id="w5">
+    <div class="week-header">
+      <div class="week-num sage">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">5</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">29 July – 4 August 2026</div>
+        <div class="week-theme">First Pilot Offer</div>
+        <div class="week-focus">Turning the conversation design into a real invitation to a real person.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title sage">The Three Tasks</div>
+        <ul class="task-list sage">
+          <li>From the 3 people you spoke to last week, identify the 1–2 who would benefit most from a depth session with you right now — based on where they are in the situation, not on who seems most enthusiastic or easiest to approach.</li>
+          <li>Write the actual invitation before you send it. One paragraph. Name what you observed in the conversation. Name what you'd explore in the session. Name what you're asking (time, and whether this is free/reciprocal/paid). Then send it without editing it for 3 more days.</li>
+          <li>Make the ask. One clear offer to one specific person this week. The Jupiter retrograde pattern generates endless reasons to refine before sending. Send it.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title sage">Daily Practice This Week</div>
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Morning write</div>
+          "The value I could create for someone today is ___." Not "want to create" or "hope to create." Could. Present tense, confident. This is training Manipura — the solar plexus confidence that Saturn exalted H11 can fuel when it's consciously activated.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "What felt most uncomfortable about making the offer? Where in my body did I feel it? What thought came immediately before I almost didn't send it?"
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 4 August</div>
+          First pilot session booked — date confirmed. If it did not happen: send two more invitations before Sunday. The session must be confirmed, not merely considered.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 6 -->
+  <div class="week-card" id="w6">
+    <div class="week-header">
+      <div class="week-num sage">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">6</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">5 – 11 August 2026</div>
+        <div class="week-theme">Deliver the First Session</div>
+        <div class="week-focus">The most important week of the 90 days. Where depth becomes deployed wisdom.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title sage">The Three Tasks</div>
+        <ul class="task-list sage">
+          <li>Prepare — but not over-prepare. Spend 30 minutes the day before: what is the most important insight I want to offer this person? What is the one question that could shift how they see their situation? Write those down. Then set the preparation aside.</li>
+          <li>Deliver. Let the conversation be alive. Trust the depth — it has been there for decades. Your job is not to execute a perfect framework. It is to be fully present to this specific person and what they actually need.</li>
+          <li>After the session: write a full page, same day. What worked. What surprised you. What you wish you'd said. What they said that you want to remember. What you now know about your method that you didn't know going in.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title sage">Daily Practice This Week</div>
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Identity statement — every morning</div>
+          "I am someone whose depth of understanding changes the trajectory of people's lives." Say it aloud. It will feel like an overclaim. It is not. Jupiter in own sign H1 with Hamsa Yoga is the astrological statement of exactly this. The resistance is the retrograde, not the truth.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "At what point in the session did I feel most like myself — most at home in the conversation, most certain of what I was doing? What was I saying or asking in that exact moment? That is the core of my method."
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 11 August</div>
+          First session delivered. Reflection page written and saved. And — ask the person one question after the session: "How would you describe what happened in our conversation to someone who asked you about it?" Write down their exact words.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 7 -->
+  <div class="week-card" id="w7">
+    <div class="week-header">
+      <div class="week-num sage">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">7</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">12 – 18 August 2026</div>
+        <div class="week-theme">First Teaching Content</div>
+        <div class="week-focus">Your depth, turned outward. Reaching people who haven't met you yet.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title sage">The Three Tasks</div>
+        <ul class="task-list sage">
+          <li>Write one piece of teaching content based on the most important insight from your session or from your current understanding. Make it specific and real — not "5 tips for X" but "the thing nobody says about Y when you are in the middle of Z." The specificity is the value.</li>
+          <li>Choose the format that honours your natural expression: long-form written (essay, letter, substack post), short-form audio (voice note, podcast clip), or brief video. Mercury in Purva Phalguni H9 gives you a warm, creative written voice — writing is the likely path of least friction.</li>
+          <li>Share it somewhere — one platform, even a small audience. The point is not reach. The point is that something you know now exists in a form that can exist without you being physically present to deliver it.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title sage">Daily Practice This Week</div>
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Morning reading — 20 minutes</div>
+          Read something (book, long essay, classical text) that deepens your understanding of your domain. Not scrolling. Not consumption. Deep reading that feeds the well. Note one thing that shifts or clarifies your thinking, every day.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "If I had to write one paragraph about the single most important thing I've understood in the last 10 years — the insight most people don't have access to — what would I write? Why haven't I written it publicly yet?"
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 18 August</div>
+          One piece of teaching content published or shared. Not drafted — out in the world, readable or listenable by someone other than you.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 8 -->
+  <div class="week-card" id="w8">
+    <div class="week-header">
+      <div class="week-num sage">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">8</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">19 – 25 August 2026</div>
+        <div class="week-theme">Second and Third Pilots</div>
+        <div class="week-focus">Building momentum, not perfection. Finding the signal in what people need most.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title sage">The Three Tasks</div>
+        <ul class="task-list sage">
+          <li>Deliver 2 more pilot sessions — from your earlier outreach, or from new conversations. Aim for variety: different situations within your niche if possible, so you can see what remains consistent in your approach.</li>
+          <li>After each session, ask the same question as week 6: "How would you describe what happened in our conversation to someone who asked you?" Collect these in their exact words — no paraphrasing.</li>
+          <li>Look at all three sessions. What keeps showing up? What question do you ask in every session without planning to? What insight do you deliver that lands most? This is your niche signal — pay attention to it.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title sage">Daily Practice This Week</div>
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Pattern morning write</div>
+          "The pattern I keep noticing in the people who need what I offer is ___." Write one sentence each morning. By Friday you'll have 5 lines that together describe your ideal client more accurately than any persona exercise could.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "Which of the three sessions felt most like the truest version of the work I'm here to do? What made that session different from the other two? What do I want to do more of?"
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 25 August</div>
+          3 pilot sessions total completed. A one-page written synthesis: what you're learning about the pattern, what consistent thing you deliver, and your best working hypothesis for your niche going into phase 3.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">Phase 3 — Validate</div>
+
+  <!-- ═══ PHASE 3 ═══ -->
+  <div class="phase-header">
+    <div class="phase-icon plum">💎</div>
+    <div class="phase-title-block">
+      <small>Phase 3 · September – October 2026</small>
+      <h2>Validate</h2>
+    </div>
+  </div>
+  <p style="font-size:0.88rem;color:var(--muted);margin-bottom:28px;line-height:1.7;">Convert, document, and lock. Before October 22, you need paid engagements, documented proof, a locked niche, and a 6-month roadmap. The Venus/Ketu period that follows is for completion, not creation. Build it now.</p>
+
+  <!-- WEEK 9 -->
+  <div class="week-card" id="w9">
+    <div class="week-header">
+      <div class="week-num plum">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">9</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">26 August – 1 September 2026</div>
+        <div class="week-theme">Niche Lock</div>
+        <div class="week-focus">Deciding, not discovering. The niche is not found — it is chosen and committed to.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title plum">The Three Tasks</div>
+        <ul class="task-list plum">
+          <li>Based on 3 sessions and all conversations, write your final positioning statement: "I help [specific person] who is experiencing [specific situation] go from [before state] to [after state] through [your method]." One sentence. No qualifications, no "sometimes" or "depending on the situation."</li>
+          <li>Test it: say it to 3 people this week, without explaining or defending it. Simply say it and observe their response. Do their eyes light up? Do they nod? Do they say "I know someone who needs this"? Or do they look confused? Both responses are useful data.</li>
+          <li>Commit to it. You can refine the language later. The underlying choice — this person, this situation, this transformation — is made. Chosen niches feel constraining and freeing at the same time. That dual feeling is normal and correct.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title plum">Daily Practice This Week</div>
+        <div class="callout-sm plum">
+          <div class="callout-label-sm">Repetition as installation</div>
+          Say your positioning statement aloud at the start and end of every day. Read it before every conversation. Write it at the top of every work session. The retrograde Jupiter will keep questioning whether it's right. The installation practice answers the question before it's asked.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "Where do I still feel the urge to hedge — to add 'also' or 'sometimes' or 'it depends'? What am I afraid will be lost if I commit to this one specific thing? Is what I'm afraid of losing real, or is it Jupiter retrograde protecting a comfortable ambiguity?"
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm plum">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 1 September</div>
+          Written, committed positioning statement — the niche decision is made and written in your own hand. Share it with one trusted person and ask only: "Is it clear?" (not "Is it good?" — clarity is the only test at this stage.)
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 10 -->
+  <div class="week-card" id="w10">
+    <div class="week-header">
+      <div class="week-num plum">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">10</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">2 – 8 September 2026</div>
+        <div class="week-theme">First Paid Offer</div>
+        <div class="week-focus">Moving from pilot to real. The same depth, now with a price.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title plum">The Three Tasks</div>
+        <ul class="task-list plum">
+          <li>Design your paid offering: the same depth conversation, now with three clear components — a price, a duration, and an outcome promise. Price it at the intersection of: what does this transformation save or generate for this person, and what do I need to feel that my full engagement is worth giving?</li>
+          <li>Write the offer page — even if it's just a document, not a website. One page: who it's for, what happens, what they receive, the price, how to book. This existence on paper makes it real in a way that "I'm thinking about offering this" does not.</li>
+          <li>Make the offer to 2–3 specific people this week. Not a broadcast. A direct, personal invitation based on a real conversation or a known situation. The offer from one human to another specific human.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title plum">Daily Practice This Week</div>
+        <div class="callout-sm plum">
+          <div class="callout-label-sm">Confidence writing</div>
+          "The reason I am worth paying is ___." Write one new reason each morning. Not generic ("I work hard") but specific ("I have spent 15 years inside the question of X and I understand it in ways that aren't available in books"). These sentences become the backbone of how you talk about your work.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "When I named the price, what happened in my body? What thought came immediately after? Where does that thought come from — is it a real signal or an inherited belief about whether someone like me charges for something like this?"
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm plum">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 8 September</div>
+          Paid offer written and made to at least 2 specific people. First paid booking confirmed OR two clear follow-up conversations planned for next week.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 11 -->
+  <div class="week-card" id="w11">
+    <div class="week-header">
+      <div class="week-num plum">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">11</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">9 – 15 September 2026</div>
+        <div class="week-theme">Referral System</div>
+        <div class="week-focus">Getting the first person to bring the second. The Saturn H11 network beginning to activate.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title plum">The Three Tasks</div>
+        <ul class="task-list plum">
+          <li>Contact every person you've had a meaningful conversation with over the past 10 weeks. Ask one specific question: "Is there someone in your life who is experiencing [the before state you help with]? Someone I should know about?" Make it easy to say yes by making it specific, not general.</li>
+          <li>Design a natural referral ask — one sentence you can say at the end of any session that makes it comfortable, not awkward: "If what we explored today felt useful and you know someone navigating something similar, I'd be honoured if you mentioned me." Practice saying it until it feels like yourself, not a script.</li>
+          <li>Create a simple reference document (1–2 pages) for people who are referred to you — what you do, for whom, what it feels like, how to access it. Something a warm referral can hand to someone and say "read this."</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title plum">Daily Practice This Week</div>
+        <div class="callout-sm plum">
+          <div class="callout-label-sm">Content rhythm</div>
+          Publish one more piece of teaching content this week. Keep the rhythm alive. The exalted Saturn H11 rewards consistent, patient output over time more than any single brilliant piece. The compound effect is your best long-term tool.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "Who in my network has the highest concentration of people experiencing the before state I work with? What would it mean to genuinely serve that network — not just market to it, but serve it with content and conversations that genuinely help?"
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm plum">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 15 September</div>
+          Referral ask made to all past pilot clients. Reference document created and shareable. At least one new introduction or referral conversation initiated.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 12 -->
+  <div class="week-card" id="w12">
+    <div class="week-header">
+      <div class="week-num plum">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">12</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">16 – 22 September 2026</div>
+        <div class="week-theme">Content System</div>
+        <div class="week-focus">Build the engine that works without you being physically present for every interaction.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title plum">The Three Tasks</div>
+        <ul class="task-list plum">
+          <li>Design a simple, sustainable content plan: one insight per week, one format, one platform. Choose these three things and commit: this is what you publish, in this format, in this place, every week for the next 6 months. Simplicity is the entire point — it must survive the weeks when everything else is full.</li>
+          <li>Write 4 pieces in advance (your 4-week buffer). These are your reserves — when a session runs long or a week gets complicated, the buffer means you don't disappear. Consistency over time is what Saturn exalted H11 rewards.</li>
+          <li>Update your professional description — wherever people can find you — with your locked positioning statement in 3 sentences: who you work with, what you help them do, and how to work with you.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title plum">Daily Practice This Week</div>
+        <div class="callout-sm plum">
+          <div class="callout-label-sm">Insight capture</div>
+          Every morning: write one insight you currently hold that someone else needs. Even if you don't publish it — capture it. By end of week you have 7 potential content pieces in rough form. Pick the best two for your buffer.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (Sunday Evening)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">For your journal</div>
+            "If I had to teach on one topic — just one — for the next year, what would give me the most sustained energy to keep going? Not the most impressive topic. The one I'd return to even if nobody was watching."
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm plum">
+          <div class="callout-label-sm">Non-Negotiable Deliverable by Friday 22 September</div>
+          4 content pieces written (buffer built). Profile updated. Content system written down: one sentence for each of the three choices (what, how, where).
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 13 -->
+  <div class="week-card" id="w13" style="border-color:rgba(90,143,114,0.35);">
+    <div class="week-header">
+      <div class="week-num sage">
+        <div class="week-num-label">Week</div>
+        <div class="week-num-val">13</div>
+      </div>
+      <div class="week-info">
+        <div class="week-dates">23 September – 22 October 2026</div>
+        <div class="week-theme">Close the Window with Proof</div>
+        <div class="week-focus">Before Venus/Ketu arrives: 3 clients documented, identity locked, 6-month roadmap written.</div>
+      </div>
+    </div>
+    <div class="week-body">
+      <div>
+        <div class="week-section-title sage">Final Push Tasks</div>
+        <ul class="task-list sage">
+          <li>Confirm and document 3+ paid or firmly committed clients. These are real people with real dates confirmed, or real payments received. Not "interested." Not "thinking about it." Confirmed.</li>
+          <li>Write a case note for each completed client (1 paragraph each): who they were, what situation they brought, what shifted in the session, and the exact words they used to describe the outcome. These are your proof documents. They become your future testimonials and your own reference point when doubt returns.</li>
+          <li>Write your 6-month roadmap: where do you want to be on 22 April 2027, and what does the path from October 22 look like? Name 3 milestones and the one decision you need to make in November.</li>
+          <li>Write the identity statement you can now say without flinching — in one sentence — to anyone who asks what you do. Test: can you say it to a stranger without adding qualifications, apologies, or context? If yes: the identity has landed.</li>
+        </ul>
+      </div>
+      <div>
+        <div class="week-section-title sage">Daily Practice (Final Weeks)</div>
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Proof-building morning write</div>
+          "The person I helped this week was ___ and the shift they experienced was ___." Even if it's a small shift. Even if it's in a free conversation. Naming the impact each day trains you to see it — and seeing it makes you more certain that the work is real and valuable.
+        </div>
+        <div style="margin-top:14px;">
+          <div class="week-section-title rose">Coaching Question (October 22)</div>
+          <div class="callout-sm rose">
+            <div class="callout-label-sm">The final journal entry of the sprint</div>
+            "What do I know now about what I'm building — about who I am as an advisor, about the people I serve, about how my wisdom operates in the world — that I did not know on July 1? What surprised me most about these 90 days?"
+          </div>
+        </div>
+      </div>
+      <div class="week-full">
+        <div class="callout-sm sage">
+          <div class="callout-label-sm">Non-Negotiable by October 22 — The Full Harvest</div>
+          3+ clients documented with case notes · Positioning statement you say without flinching · Content system running with buffer · 6-month roadmap written · One clear decision about what expands after October 22
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">Supporting Systems</div>
+
+  <!-- DAILY SYSTEM -->
+  <div id="daily" style="scroll-margin-top:30px;margin-bottom:40px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:var(--cream);margin-bottom:8px;">The Daily System</div>
+    <p style="font-size:0.87rem;color:var(--muted);margin-bottom:20px;line-height:1.7;">Same structure, every day, regardless of which week you're in. Simple enough to do on a difficult day. Powerful enough to compound over 90 days.</p>
+    <div class="daily-grid">
+      <div class="daily-card">
+        <div class="daily-time">Morning — 15 minutes</div>
+        <div class="daily-name">Ground + Set</div>
+        <div class="daily-desc">4 counts in, 6 counts out — 5 breaths. Write the week's morning prompt (1 sentence). Write today's one action — specific, completable, output-focused. Say your positioning statement aloud. Begin.</div>
+      </div>
+      <div class="daily-card">
+        <div class="daily-time">Midday — 3 minutes</div>
+        <div class="daily-name">Reset</div>
+        <div class="daily-desc">Stand up. Three long exhales. One question: "What have I put into the world today?" If the answer is nothing yet — what is the smallest useful thing I can do in the next 10 minutes? Do that thing first.</div>
+      </div>
+      <div class="daily-card">
+        <div class="daily-time">Evening — 10 minutes</div>
+        <div class="daily-name">Close + Forward</div>
+        <div class="daily-desc">Write three things: what moved today (one observation), what felt uncomfortable (one honest note), and tomorrow's one action (written on paper, not a screen). Then close the work. The H12 Moon needs genuine rest — not continued processing under the name of preparation.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEKLY REVIEW -->
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px 28px;margin-bottom:40px;">
+    <div style="font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:600;">Weekly Review Format — Every Sunday</div>
+    <p style="font-size:0.88rem;color:rgba(240,232,216,0.82);line-height:1.75;margin-bottom:14px;">Spend 20–30 minutes on Sunday answering these four questions in writing. This is not optional — it is the feedback loop that makes the system self-correcting rather than self-defeating.</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+      <div class="callout-sm gold"><div class="callout-label-sm">Question 1 — The Output</div>What exists now that did not exist on Monday? (Be specific — not "I made progress" but "I delivered one session, wrote one paragraph, sent two invitations.")</div>
+      <div class="callout-sm gold"><div class="callout-label-sm">Question 2 — The Signal</div>What surprised me this week — about the people I spoke to, about my own response, about what landed and what didn't?</div>
+      <div class="callout-sm plum"><div class="callout-label-sm">Question 3 — The Pattern</div>What do I now know about my work, my niche, or myself that I didn't know seven days ago? How does it change next week?</div>
+      <div class="callout-sm sage"><div class="callout-label-sm">Question 4 — The Next Move</div>What is the single most important thing to do in the coming week? Not a list — one thing. Write it down, and start the week by doing it first.</div>
+    </div>
+  </div>
+
+  <!-- WHEN STUCK -->
+  <div id="stuck" style="scroll-margin-top:30px;margin-bottom:40px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:var(--cream);margin-bottom:8px;">When You're Stuck</div>
+    <p style="font-size:0.87rem;color:var(--muted);margin-bottom:18px;line-height:1.7;">The four states that break the momentum, and the one move that restores it in each.</p>
+    <div class="reset-grid">
+      <div class="reset-card">
+        <div class="reset-state">Infinite Refinement Loop</div>
+        <div class="reset-action">You are back in Jupiter retrograde — reading one more book, refining the offer one more time, delaying the send because it isn't quite right yet. <strong>The move:</strong> Set a 25-minute timer. Before it ends, the thing must be sent, posted, or delivered. Not perfect. Sent.</div>
+      </div>
+      <div class="reset-card">
+        <div class="reset-state">Interior Withdrawal</div>
+        <div class="reset-action">H12 Moon has pulled the energy inward. Everything feels too exposed or too raw. <strong>The move:</strong> Do not fight it. Take 24 hours of genuine rest — not planning, not researching, not "getting ready." Then return to the smallest possible output: one sentence, one message, one question asked. The momentum restores from small, not from force.</div>
+      </div>
+      <div class="reset-card">
+        <div class="reset-state">Meaning Fatigue</div>
+        <div class="reset-action">You have been processing without transmitting and the well feels heavy. <strong>The move:</strong> Have one genuine conversation — not a pitch, not a coaching session, just a real exchange with someone about something you care about. The well lightens when water moves through it.</div>
+      </div>
+      <div class="reset-card">
+        <div class="reset-state">Comparison Collapse</div>
+        <div class="reset-action">You've seen someone else doing something similar and the retrograde Jupiter immediately demotes your own worth. <strong>The move:</strong> Open your journal and read the reflection from your best session. You are not competing with them. You are serving the specific people who need exactly the depth you have — which is different from what anyone else has.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MILESTONES -->
+  <div id="milestones" style="scroll-margin-top:30px;margin-bottom:40px;">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:300;color:var(--cream);margin-bottom:8px;">Milestone Map</div>
+    <p style="font-size:0.87rem;color:var(--muted);margin-bottom:18px;line-height:1.7;">What success looks like at each phase threshold. These are checkpoints, not finish lines.</p>
+    <div class="milestone-grid">
+      <div class="milestone-card">
+        <div class="milestone-phase">By July 28 — Phase 1 Complete</div>
+        <ul class="milestone-list">
+          <li>Niche person and situation decided</li>
+          <li>Before → After → Bridge written</li>
+          <li>First offering designed and named</li>
+          <li>3 real conversations completed</li>
+          <li>Language of the problem captured</li>
+        </ul>
+      </div>
+      <div class="milestone-card">
+        <div class="milestone-phase">By August 25 — Phase 2 Complete</div>
+        <ul class="milestone-list">
+          <li>3 pilot sessions delivered</li>
+          <li>Client language collected from each</li>
+          <li>2 pieces of teaching content live</li>
+          <li>Method hypothesis written</li>
+          <li>First session reflection documented</li>
+        </ul>
+      </div>
+      <div class="milestone-card">
+        <div class="milestone-phase">By October 22 — Window Closes</div>
+        <ul class="milestone-list">
+          <li>Niche decision locked</li>
+          <li>3+ paid/committed clients</li>
+          <li>Case notes written for each</li>
+          <li>Content system running</li>
+          <li>Identity statement — no flinch</li>
+          <li>6-month roadmap written</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <div style="background:linear-gradient(140deg,rgba(28,18,56,0.98),rgba(18,44,32,0.96),rgba(44,20,60,0.94));border:1px solid rgba(196,158,64,0.22);border-radius:26px;padding:44px;box-shadow:var(--shadow);">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--cream);margin-bottom:20px;">One More Thing, Joseph</div>
+    <p style="font-size:0.92rem;color:rgba(240,232,216,0.82);line-height:1.82;margin-bottom:14px;">Every week will have a moment where Jupiter retrograde makes a strong case for going back inward. More research. A better framework. Another month of preparation. The plan anticipated this. The non-negotiable weekly deliverable exists specifically to give you something to aim at that is immune to that argument.</p>
+    <p style="font-size:0.92rem;color:rgba(240,232,216,0.82);line-height:1.82;margin-bottom:14px;">You do not need to feel certain before you offer. You do not need to feel ready before you deliver. You do not need to feel authoritative before you teach. You need to know that one person needs what you have — and that one person is enough reason to begin.</p>
+    <p style="font-size:1.1rem;font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--gold);">"The lamp does not illuminate the room by burning more brightly. It illuminates the room by being turned outward."</p>
+  </div>
+
+  <div class="footer">
+    90-Day Coaching Sprint · Joseph T C · 1 July – 22 October 2026 · Vedic / Lahiri Ayanamsha
+  </div>
+
+</main>
+</div>
+</body>
+</html>
