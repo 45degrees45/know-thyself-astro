@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ammu CH — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♌</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1>Ammu CH</h1>
+    <p class="lagna-line">♌ Leo Lagna 6.7°</p>
+    <p class="tagline">Empowered creativity and radiant self-expression mark the journey of Ammu CH, as she navigates life with a blend of confidence, artistic flair, and a quest for deeper connections.</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value">1990-09-05</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value">05:30 · Trivandrum, Kerala, India</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Saturn / Jupiter / Jupiter</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Radiant Confidence</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Leo H1</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Aqu H7</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Tau H10</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Leo H1</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Can H12</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Leo H1</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Sag H5</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Cap H6</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Can H12</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>Ammu CH is naturally charismatic, with a dominant Leo energy that fuels her confidence and desire for self-expression. Her emotional style is deeply influenced by her Moon in Aquarius, making her empathetic towards the plight of others and often drawn to unconventional relationships or social causes. With Venus in Leo, she has a flair for the dramatic and a deep appreciation for beauty and creativity. Her life approach is adventurous, always seeking new experiences and ways to express her individuality.</p>
+      <div class="trait-chips">
+        <span class="chip">Charismatic</span><span class="chip">Empathetic</span><span class="chip">Adventurous</span><span class="chip">Creative</span><span class="chip">Dramatic</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>In relationships, Ammu CH values depth, honesty, and a sense of adventure. Her Venus in Leo suggests she is drawn to partners who are charismatic, confident, and passionate. The 7th house lord, Saturn, in Purva Ashadha indicates a serious and responsible approach to commitments, with a potential for delayed but enduring partnerships. Ammu seeks a partner who respects her independence and creativity.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>The ideal partner for Ammu CH would be someone who is confident, supportive of her creative endeavors, and values long-term commitment. This person should be adventurous, open-minded, and willing to grow together, navigating life's challenges as a team.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">Loyal</span><span class="chip chip-green">Supportive</span><span class="chip chip-green">Adventurous</span><span class="chip chip-green">Open-minded</span>
+        <span class="chip chip-neg">Emotional Distance</span><span class="chip chip-neg">Fear of Intimacy</span><span class="chip chip-neg">Need for Independence</span><span class="chip chip-neg">Potential for Delayed Commitment</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>Ammu CH's career is marked by her creativity, charisma, and a natural flair for leadership, influenced by her Sun, Mercury, and Venus in Leo. The presence of Budha-Aditya yoga indicates a sharp intellect and eloquence, which can serve her well in intellectual or artistic pursuits. With Yoga Karaka (Mars) in the 10th house, she has the potential for significant professional achievements and recognition.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>The Budha-Aditya yoga is particularly potent, suggesting Ammu's career will be marked by intellectual brilliance and creative expression.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">Arts</span><span class="chip">Design</span><span class="chip">Leadership</span><span class="chip">Public Speaking</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Inspirational Leader</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>Ammu CH has a unique combination of Sun and Mercury in Purva Phalguni, indicating a natural talent for creativity and intellectual pursuits.</li><li>Her Venus in Leo in the 1st house makes her a natural charmer with a flair for drama and beauty.</li><li>The placement of Jupiter in Pushya nakshatra in the 12th house suggests a spiritual inclination and a potential for unexpected spiritual or philosophical insights.</li><li>Mars in Krittika nakshatra in the 10th house indicates a strong drive for professional success and recognition.</li><li>Rahu in Shravana nakshatra in the 6th house may bring an unconventional approach to health, daily routines, and work-life balance.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>Ammu CH's career path is expected to be dynamic, with various dashas influencing different aspects of her professional life. The current Saturn Mahadasha, especially with its Bhukti of Jupiter, presents opportunities for growth, recognition, and possibly a shift towards more responsible or leadership roles.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2010–2013</div>
+          <div class="period-dasha">Saturn/Saturn</div>
+          <div class="period-theme">Laying the foundation for a stable career, possibly in a field related to her creative talents.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2013–2015</div>
+          <div class="period-dasha">Saturn/Mercury</div>
+          <div class="period-theme">Intellectual pursuits and communication skills become key factors in career advancement.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2026–2029</div>
+          <div class="period-dasha">Saturn/Jupiter</div>
+          <div class="period-theme">A period of significant professional growth, recognition, and potential for taking on more responsibilities or leadership roles.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>Focusing on developing leadership skills and embracing opportunities for professional growth during the current Jupiter Bhukti will be beneficial.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>The timing and nature of Ammu CH's relationships are influenced by the dashas and the placement of Venus and the 7th house lord. The period of Saturn Mahadasha, particularly under the influence of Jupiter Bhukti, may bring stability and seriousness to her relationships, potentially leading to long-term commitments.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2016–2019</div>
+          <div class="period-dasha">Saturn/Venus</div>
+          <div class="period-theme">A focus on emotional stability and depth in relationships, with a potential for attracting a mature and responsible partner.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2020–2022</div>
+          <div class="period-dasha">Saturn/Moon</div>
+          <div class="period-theme">Emotional connections and family ties play a significant role in relationships during this period.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2026–2029</div>
+          <div class="period-dasha">Saturn/Jupiter</div>
+          <div class="period-theme">This period is ripe for serious commitments, with a potential for marriage or deepening of existing relationships.</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>Ammu CH's relationships are part of her karmic journey towards self-discovery, requiring her to balance independence with the need for deep, meaningful connections.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>The current Saturn Mahadasha, with its ongoing Jupiter Bhukti, marks a significant period for Ammu CH, influencing her career, relationships, and personal growth. Saturn's placement in the 5th house and Jupiter's in the 12th house suggest a time for introspection, spiritual exploration, and possibly pursuing higher education or philosophical interests.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Rahu Bhukti (Aug 2023 – Jun 2026)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">This period may have brought unexpected challenges or changes in her daily life and health routines, requiring adaptability.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Jupiter Bhukti (Jun 2026 – Jan 2029)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">While this period offers opportunities for growth and recognition, it also demands responsibility and potentially poses challenges related to overconfidence or expanded duties.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Upcoming Mercury Bhukti</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">This forthcoming period is likely to bring about positive changes, particularly in intellectual pursuits and communication, offering opportunities for creative expression and networking.</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>The transition into the Mercury Mahadasha may initially bring about a sense of restlessness or uncertainty, necessitating a focus on communication skills and intellectual pursuits.</li><li>The Ketu Mahadasha, starting in 2046, could introduce a period of spiritual introspection and potential detachment from material pursuits, requiring a deeper connection with inner self.</li></ul>
+      <div class="golden-box">The Jupiter Bhukti within the Saturn Mahadasha (2026–2029) is particularly auspicious, offering a balance of growth, recognition, and spiritual exploration.</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>The upcoming Mercury Mahadasha, starting in 2029, will shift the focus towards intellectual pursuits, communication, and possibly a career in fields related to writing, teaching, or technology, transforming her professional landscape.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Ashlesha Nakshatra</span>
+          </div>
+          <div class="ref-quote">"Ashlesha means “the entwiner” and denotes the challenge of our 4 addictions to sensory attachments."</div>
+          <div class="ref-application">This teaching applies to Ammu CH as she navigates her emotional and sensory attachments, particularly in relationships, highlighting the need for awareness and balance.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Purva Ashadha Nakshatra</span>
+          </div>
+          <div class="ref-quote">"This creative nakshatra is ruled by the planet Venus denoting brilliant skills in the fine arts and a love of pleasure."</div>
+          <div class="ref-application">Given Saturn's placement in Purva Ashadha, Ammu CH may find her creative expression and sense of pleasure are influenced by a need for responsibility and seriousness, potentially balancing her artistic inclinations with practical considerations.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Pushya Nakshatra</span>
+          </div>
+          <div class="ref-quote">"The symbols associated with this asterism are a bow and a quiver of arrows, indicating prosperity and good fortune."</div>
+          <div class="ref-application">Jupiter in Pushya suggests that Ammu CH has a natural inclination towards spiritual and philosophical pursuits, and her path to prosperity may be intertwined with her spiritual growth and good fortune.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SPIRIT ANIMAL (full width) -->
+  <div class="panel" style="text-align:center; padding:48px 40px; background:linear-gradient(135deg, rgba(28,18,56,0.98), rgba(60,30,80,0.96)); border-color:rgba(196,158,64,0.22); position:relative; overflow:hidden;">
+    <div style="font-size:96px; line-height:1; margin-bottom:20px;">🦁</div>
+    <div style="font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:12px;">Spirit Animal · Leo Lagna + Magha Nakshatra + Yoga Karaka Mars</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:#fff8f0; margin-bottom:24px;">The Lioness</h2>
+    <div style="max-width:680px; margin:0 auto; text-align:left; display:flex; flex-direction:column; gap:16px; font-size:0.95rem; line-height:1.8; color:rgba(240,232,216,0.82);">
+      <p>The Lioness rules not by conquest but by presence. With Leo rising and the Sun — her Lagna lord — blazing in the first house in its own sign, Ammu's solar energy is self-contained and self-sustaining. There is nothing she needs to prove; the room simply knows when she has arrived. This is the quality of <em>Magha nakshatra</em>, the throne, the ancestral seat of power — she carries the weight of lineage and expects to be received accordingly.</p>
+      <p>But this Lioness has a secret: her Moon rests in <em>Shatabhisha</em> (the Hundred Physicians) in Aquarius, opposite the Lagna. While the world sees golden Leo radiance, her inner world is Aquarian — independent, unconventional, a healer ahead of her time. She holds the pride together with warmth, but she needs space to roam alone. Smothering her is the one sure way to lose her.</p>
+      <p>In career she moves like the Lioness stalks — with Yoga Karaka Mars precisely placed in the tenth house, she does not rush, but when she acts, she strikes with decisive precision. In relationships she is fiercely loyal but demands equal dignity. <em>Jupiter exalted in H12</em> gives her a hidden wisdom that deepens with every adversity — the Lioness grows more formidable, not less, through difficulty.</p>
+    </div>
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>Ammu CH's shadow side may include a tendency to dominate relationships or conversations with her charisma and confidence, potentially overshadowing others. There could also be a deep-seated fear of vulnerability, stemming from her Moon in Aquarius, which might make her appear aloof or distant to those who do not know her.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>Dominating Behavior</strong><p>Ammu CH might unconsciously use her charm to control the narrative in relationships or social situations.</p></div><div class="shadow-card"><strong>Fear of Vulnerability</strong><p>Her fear of being vulnerable could lead to emotional distancing or a tendency to intellectualize her feelings instead of experiencing them deeply.</p></div><div class="shadow-card"><strong>Self-Criticism</strong><p>Ammu CH may have a critical inner voice, especially regarding her creative pursuits or personal growth, which could hinder her progress if not addressed.</p></div><div class="shadow-card"><strong>Independence to a Fault</strong><p>While independence is a strength, taking it to an extreme could lead to emotional isolation or difficulty in forming and maintaining deep, meaningful relationships.</p></div>
+    </div>
+    <div class="antidote-box">Practicing self-compassion, acknowledging her fears, and slowly embracing vulnerability in trusted relationships can help Ammu CH integrate her shadow, leading to more authentic connections and personal growth.</div>
+  </div>
+
+  <div class="footer">
+    Generated 02 Jul 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>
