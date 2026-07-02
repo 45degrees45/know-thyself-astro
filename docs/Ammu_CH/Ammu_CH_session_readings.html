@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ammu CH — Jyotish Session Readings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ── Layout ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92);
+      backdrop-filter: blur(12px);
+    }
+    .sidebar-animal { font-size: 52px; line-height: 1; margin-bottom: 14px; }
+    .sidebar-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; color: var(--cream); }
+    .sidebar-sub { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-top: 2px; }
+    .sidebar-stats { margin: 20px 0; display: flex; flex-direction: column; gap: 8px; }
+    .sidebar-stat { font-size: 0.78rem; color: var(--muted); }
+    .sidebar-stat strong { color: var(--cream); font-weight: 500; }
+    .sidebar-divider { height: 1px; background: var(--border); margin: 16px 0; }
+    .sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 12px; border-radius: 10px;
+      font-size: 0.82rem; color: var(--muted);
+      text-decoration: none; transition: all 0.2s;
+    }
+    .nav-item:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+    .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+
+    /* ── Main ── */
+    .main { padding: 48px 52px 80px; max-width: 860px; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      border-radius: 28px;
+      padding: 44px 44px 36px;
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .hero-symbol { position: absolute; right: 32px; top: 20px; font-size: 160px; color: rgba(196,158,64,0.07); line-height: 1; }
+    .hero-eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; color: #fff8f0; line-height: 1.1; margin-bottom: 8px; }
+    .hero-lagna { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: rgba(196,158,64,0.85); margin-bottom: 24px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    .stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(196,158,64,0.14); border-radius: 14px; padding: 14px 16px; }
+    .stat-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .stat-value { font-size: 0.9rem; color: #fff8f0; font-weight: 500; }
+
+    /* ── Chapter ── */
+    .chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+    .chapter-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .chapter-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .chapter-icon.gold  { background: rgba(196,158,64,0.12); }
+    .chapter-icon.plum  { background: rgba(124,92,191,0.15); }
+    .chapter-icon.rose  { background: rgba(196,96,122,0.12); }
+    .chapter-icon.sage  { background: rgba(90,143,114,0.12); }
+    .chapter-icon.blue  { background: rgba(91,143,212,0.12); }
+    .chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; font-weight: 300; color: var(--cream); }
+    .chapter h2 small { display: block; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+
+    /* ── Section card ── */
+    .section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 28px; margin-bottom: 14px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--cream); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-gold { background: var(--gold); }
+    .dot-plum { background: var(--plum); }
+    .dot-rose { background: var(--rose); }
+    .dot-sage { background: var(--sage); }
+    .dot-blue { background: var(--blue); }
+    .section p { font-size: 0.9rem; color: rgba(240,232,216,0.82); line-height: 1.8; }
+    .section p + p { margin-top: 10px; }
+
+    /* ── Reading table ── */
+    .reading-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-top: 16px; }
+    .reading-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+    .reading-table td { padding: 10px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── Callouts ── */
+    .callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 16px; }
+    .callout-label { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+    .callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+    .callout-gold .callout-label { color: var(--gold); }
+    .callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+    .callout-plum .callout-label { color: #b49edf; }
+    .callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+    .callout-rose .callout-label { color: #e8909f; }
+    .callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+    .callout-sage .callout-label { color: #80c4a0; }
+
+    /* ── Badges ── */
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+    /* ── Divider ── */
+    .divider { display: flex; align-items: center; gap: 16px; margin: 36px 0; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(240,232,216,0.3); }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* ── Period rows ── */
+    .period-row { display: grid; grid-template-columns: 110px 130px 1fr; gap: 10px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.87rem; }
+    .period-row:last-child { border-bottom: none; }
+    .period-window { font-weight: 600; color: var(--gold2); font-size: 0.82rem; }
+    .period-dasha  { color: rgba(196,158,64,0.65); font-size: 0.79rem; }
+    .period-theme  { color: rgba(240,232,216,0.75); line-height: 1.55; }
+
+    /* ── Colour swatches ── */
+    .swatch-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .swatch { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 10px 16px; }
+    .swatch-dot { width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; }
+    .swatch-text { font-size: 0.85rem; color: rgba(240,232,216,0.82); }
+    .swatch-planet { font-size: 0.68rem; color: var(--gold); }
+
+    /* ── Number display ── */
+    .number-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 14px; }
+    .number-card { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 16px; padding: 20px 14px; text-align: center; }
+    .number-big { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold2); line-height: 1; }
+    .number-planet { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-top: 6px; }
+    .number-role { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── Gem cards ── */
+    .gem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .gem-card { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 16px; padding: 18px 20px; }
+    .gem-card.avoid { border-color: rgba(196,96,122,0.25); background: rgba(196,96,122,0.04); }
+    .gem-emoji { font-size: 2rem; margin-bottom: 8px; }
+    .gem-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 4px; }
+    .gem-planet { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .gem-card.avoid .gem-planet { color: #e8909f; }
+    .gem-detail { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── Animal section ── */
+    .animal-panel {
+      text-align: center; padding: 48px 36px;
+      background: linear-gradient(135deg, rgba(28,18,56,0.98), rgba(60,30,80,0.96));
+      border: 1px solid rgba(196,158,64,0.22);
+      border-radius: var(--r);
+      margin-bottom: 14px;
+    }
+    .animal-emoji { font-size: 88px; line-height: 1; margin-bottom: 16px; }
+    .animal-title { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: #fff8f0; margin-bottom: 20px; }
+    .animal-body { max-width: 640px; margin: 0 auto; text-align: left; font-size: 0.9rem; line-height: 1.85; color: rgba(240,232,216,0.82); }
+    .animal-body p + p { margin-top: 12px; }
+
+    /* ── Quick card ── */
+    .quick-card { background: rgba(196,158,64,0.06); border: 1px solid rgba(196,158,64,0.2); border-radius: 16px; padding: 22px 24px; margin-top: 14px; }
+    .quick-row { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.88rem; }
+    .quick-row:last-child { border-bottom: none; }
+    .quick-label { color: var(--gold); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .quick-value { color: var(--cream); font-weight: 500; }
+
+    /* ── Footer ── */
+    .footer { text-align: center; padding: 24px 0 8px; font-size: 0.7rem; color: rgba(240,232,216,0.28); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 48px; }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 28px 20px; }
+      .sidebar-nav { flex-direction: row; flex-wrap: wrap; }
+      .nav-item { font-size: 0.75rem; padding: 7px 10px; }
+      .main { padding: 32px 20px 60px; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .number-grid { grid-template-columns: 1fr 1fr; }
+      .gem-grid { grid-template-columns: 1fr; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-animal">🦁</div>
+    <div class="sidebar-name">Ammu CH</div>
+    <div class="sidebar-sub">Session Readings · Jul 2026</div>
+
+    <div class="sidebar-stats">
+      <div class="sidebar-stat"><strong>Lagna</strong> Leo 6.7° · Magha</div>
+      <div class="sidebar-stat"><strong>Moon</strong> Aquarius · Shatabhisha H7</div>
+      <div class="sidebar-stat"><strong>Dasha</strong> Saturn / Jupiter / Jupiter</div>
+      <div class="sidebar-stat"><strong>Born</strong> 05 Sep 1990 · Trivandrum</div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <nav class="sidebar-nav">
+      <a href="#politics" class="nav-item"><span class="nav-icon">🏛️</span>Political</a>
+      <a href="#career" class="nav-item"><span class="nav-icon">◈</span>Career</a>
+      <a href="#wealth" class="nav-item"><span class="nav-icon">◉</span>Wealth</a>
+      <a href="#family" class="nav-item"><span class="nav-icon">♡</span>Family</a>
+      <a href="#animal" class="nav-item"><span class="nav-icon">🦁</span>Spirit Animal</a>
+      <a href="#elements" class="nav-item"><span class="nav-icon">🌳</span>Tree · Colour · Day</a>
+      <a href="#numbers" class="nav-item"><span class="nav-icon">🔢</span>Lucky Numbers</a>
+      <a href="#gems" class="nav-item"><span class="nav-icon">💎</span>Gemstones</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-symbol">♌</div>
+      <div class="hero-eyebrow">Jyotish · Vedic Astrology · Session Reading</div>
+      <h1>Ammu CH</h1>
+      <div class="hero-lagna">Leo Lagna · The Radiant Lioness · Saturn / Jupiter Dasha</div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-label">Lagna</div>
+          <div class="stat-value">Leo 6.7°</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Moon</div>
+          <div class="stat-value">Shatabhisha</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Yogas</div>
+          <div class="stat-value">6 active</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Dasha</div>
+          <div class="stat-value">Sat / Jup</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── CHAPTER 1: POLITICAL ── -->
+    <div class="chapter" id="politics">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🏛️</div>
+        <h2><small>Kerala Context</small>Political Orientation</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>The Chart Tension</div>
+        <p>Two pulls working against each other: <strong>Sun in Leo H1 (Magha nakshatra)</strong> — authority, tradition, establishment; vs <strong>Moon in Aquarius H7 (Shatabhisha)</strong> — egalitarian, reformist, humanitarian. This is not a chart that surrenders to party ideology.</p>
+      </div>
+
+      <table class="reading-table">
+        <thead><tr><th>Placement</th><th>Political Pull</th></tr></thead>
+        <tbody>
+          <tr><td>Sun H1 · Magha nakshatra</td><td>Establishment, hierarchy, ancestral tradition — thinks from authority, not from mob</td></tr>
+          <tr><td>Moon H7 · Shatabhisha (Rahu-ruled)</td><td>Egalitarian, reformist, humanitarian — deeply progressive in values</td></tr>
+          <tr><td>Saturn retrograde H5</td><td>Genuine concern for educational access and child welfare — classic Kerala Left value</td></tr>
+          <tr><td>Jupiter exalted Cancer H12</td><td>Deep love for Kerala as homeland — emotional, cultural patriotism</td></tr>
+          <tr><td>Mars H10 (H9 lord)</td><td>Ideology expressed through work, not protest. She builds, not marches.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="section" style="margin-top:14px;">
+        <div class="section-title"><span class="dot dot-sage"></span>Kerala Political Map</div>
+        <table class="reading-table">
+          <thead><tr><th>Front</th><th>Alignment</th><th>Why</th></tr></thead>
+          <tbody>
+            <tr><td><strong>UDF (Congress)</strong></td><td><span class="badge badge-protect">Closest fit</span></td><td>Pluralist, moderate, Leo establishment sensibility fits UDF social milieu</td></tr>
+            <tr><td><strong>LDF (CPM)</strong></td><td><span class="badge badge-mixed">Values align</span></td><td>Respects LDF's education/health policy record; Saturn + Aquarius Moon resonate</td></tr>
+            <tr><td><strong>BJP/NDA</strong></td><td><span class="badge badge-risk">Unlikely</span></td><td>Shatabhisha Moon (egalitarian) + Jupiter exalted (nurturing) cannot sustain exclusion politics</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Verdict</div>
+        Center-left, not a cadre. Strategic voter. Likely UDF in practice, respects LDF's record. The one issue that moves her most: <strong>Kerala's schools and children</strong> (Saturn H5 + Jupiter exalted). She is the person others in her building consult before voting.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ── CHAPTER 2: CAREER ── -->
+    <div class="chapter" id="career">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">◈</div>
+        <h2><small>Future Path</small>Career</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>The Architecture</div>
+        <table class="reading-table">
+          <thead><tr><th>Placement</th><th>Career Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Mars (Yoga Karaka) in H10 Taurus · Krittika</td><td>Most auspicious planet for Leo Lagna in the career house — exceptional, once-in-a-chart placement</td></tr>
+            <tr><td>H10 lord Venus in H1 Leo</td><td>Career tied directly to personal identity and self-expression — she cannot separate who she is from what she does</td></tr>
+            <tr><td>Budha-Aditya Yoga (Sun + Mercury H1)</td><td>Intellectual brilliance, articulation, recognition in communicative fields</td></tr>
+            <tr><td>Mars rules H9 (dharma) in H10 (career)</td><td>Life purpose and career are fused — she is her work</td></tr>
+            <tr><td>Adhi Yoga</td><td>Classical formula for authority — she rises to command others</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Best Domains</div>
+        <p>Education, teaching, institutional leadership · Health / healing / wellness · Creative administration, arts, media · Government or public sector roles · Writing, counseling, communication · Any role requiring visible presence and authority.</p>
+        <p style="margin-top:10px; font-size:0.83rem; color:var(--muted);">She is not a behind-the-scenes person. If she is hidden, something is misaligned.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Dasha Career Timeline</div>
+        <div class="period-row">
+          <div class="period-window">2026 – 2029</div>
+          <div class="period-dasha">Saturn / Jupiter</div>
+          <div class="period-theme">Viparita Raja fires here — obstacles become reputation. Institutional recognition, leadership role in education, health, or creative field.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2029 – 2031</div>
+          <div class="period-dasha">Saturn / Mercury</div>
+          <div class="period-theme">Peak intellectual output — H2+H11 lord activated. Writing, speaking, teaching recognized and financially rewarded.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2029 – 2046</div>
+          <div class="period-dasha">Mercury Mahadasha</div>
+          <div class="period-theme">17-year career prime. Budha-Aditya Yoga releases fully. Public intellectual presence, name travels beyond local sphere.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2053 – 2073</div>
+          <div class="period-dasha">Venus Mahadasha</div>
+          <div class="period-theme">Legacy phase — Venus as H10 lord brings twilight prominence and late-life prosperity.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Now Window</div>
+        Saturn / Jupiter bhukti (Jul 2026 – Jan 2029) with Jupiter exalted in H12 — the Viparita Raja effect is active. Don't quit when it gets hard. This dasha rewards persistence with unexpected recognition.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ── CHAPTER 3: WEALTH ── -->
+    <div class="chapter" id="wealth">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">◉</div>
+        <h2><small>Material Life</small>Wealth</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Wealth Architecture</div>
+        <table class="reading-table">
+          <thead><tr><th>Placement</th><th>Wealth Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>H2 lord Mercury in H1</td><td>Wealth flows through personal effort and self-expression — she earns what she builds with her mind and voice</td></tr>
+            <tr><td>H11 lord Mercury in H1</td><td>Same planet rules gains — every career action generates income directly</td></tr>
+            <tr><td>H8 lord Jupiter, exalted H12</td><td>Hidden wealth, unexpected windfalls, possible inheritance or insurance gains at unpredictable timing</td></tr>
+            <tr><td>Mars Yoga Karaka in H10</td><td>Career-generated wealth is structurally strong — not luck, but earned authority</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Wealth Timeline</div>
+        <div class="period-row">
+          <div class="period-window">2026 – 2029</div>
+          <div class="period-dasha">Saturn / Jupiter</div>
+          <div class="period-theme">Moderate, growing. Jupiter exalted generates good fortune quietly. Groundwork period.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2029 – 2031</div>
+          <div class="period-dasha">Saturn / Mercury</div>
+          <div class="period-theme">H2 + H11 lord activated simultaneously — savings and gains begin to compound.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2029 – 2046</div>
+          <div class="period-dasha">Mercury Mahadasha</div>
+          <div class="period-theme">Peak accumulation. H2 + H11 lord for 17 straight years. Property, savings, professional assets built here.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-label">Watch</div>
+        Saturn retrograde H5 — tendency to over-invest emotionally or financially in creative projects or children. Avoid speculative or emotionally-driven financial decisions during Saturn Mahadasha (until 2029).
+      </div>
+
+      <div class="callout callout-plum" style="margin-top:10px;">
+        <div class="callout-label">Viparita Windfall</div>
+        Jupiter exalted as H8 lord in H12 = classical indicator for unexpected financial windfalls — inheritance, insurance, sudden gain through others' resources. Timing is unpredictable by nature, but it is written in the chart.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ── CHAPTER 4: FAMILY ── -->
+    <div class="chapter" id="family">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">♡</div>
+        <h2><small>Relationships & Home</small>Family</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Husband</div>
+        <table class="reading-table">
+          <thead><tr><th>Indicator</th><th>Reading</th></tr></thead>
+          <tbody>
+            <tr><td>H7 = Aquarius · Moon there</td><td>Deep emotional investment in partnership — she feels incomplete without a true companion</td></tr>
+            <tr><td>Darakaraka = Venus (3.4°) in Leo H1</td><td>Spouse is artistic, expressive, aesthetically aware, strong personal presence</td></tr>
+            <tr><td>H7 lord Saturn in H5 Sagittarius</td><td>Husband is philosophical, independent, values freedom — possibly older or carrying quiet gravitas</td></tr>
+            <tr><td>Jupiter exalted Cancer H12 (husband karaka)</td><td>High-quality person — educated, moral, emotionally intelligent, home-loving, spiritually open</td></tr>
+          </tbody>
+        </table>
+        <div class="callout callout-sage" style="margin-top:12px;">
+          <div class="callout-label">How many husbands</div>
+          One. No classical multiple-marriage indicators present. No Rahu in H7, H7 lord in a benefic trikona (H5), no multiple planets in H7. One good marriage — delayed but worth it. Jupiter exalted as husband karaka = genuinely good-hearted partner.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Marriage Timeline</div>
+        <div class="period-row">
+          <div class="period-window">2016 – 2020</div>
+          <div class="period-dasha">Saturn / Venus</div>
+          <div class="period-theme">First major romantic relationship — Venus is Darakaraka in H1. Identity-shaping.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2021 – 2022</div>
+          <div class="period-dasha">Saturn / Moon</div>
+          <div class="period-theme">Moon in H7 — emotional investment in relationship peaked. A connection that felt very real.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window" style="color:#80c4a0;">2026 – 2029</div>
+          <div class="period-dasha">Saturn / Jupiter</div>
+          <div class="period-theme"><strong style="color:#80c4a0;">NOW — the committed relationship window.</strong> Jupiter exalted, Jupiter rules H5 (romance) — most auspicious marriage timing in current dasha.</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Children</div>
+        <table class="reading-table">
+          <thead><tr><th>Placement</th><th>Reading</th></tr></thead>
+          <tbody>
+            <tr><td>H5 = Sagittarius · Saturn retrograde</td><td>Classical delay — Saturn in the house of children brings caution and karmic responsibility</td></tr>
+            <tr><td>H5 lord Jupiter, exalted H12</td><td>When children come, they will be gifted — philosophical, high-potential, Jupiter-quality</td></tr>
+            <tr><td>Jupiter bhukti running NOW</td><td>Jupiter rules H5 — current sub-period is a first child window</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:0.85rem; color:var(--muted); margin-top:12px;">If not now, next window: Mercury/Jupiter bhukti (~2033–2036). Late parenthood tendency. One child with deep karmic bond.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Parents & Siblings</div>
+        <p><strong>Mother</strong> (H4 lord Mars in H10) — ambitious, work-oriented, strong public presence. Career-driven woman who shaped Ammu's professional instincts.</p>
+        <p><strong>Father</strong> (H9 lord Mars in H10) — same Mars rules father and career. Father's influence is embedded in who she became professionally. Sun H1 = strong father imprint.</p>
+        <p><strong>Siblings</strong> (H3 lord Venus in H1) — siblings integrated closely into her life and identity. Likely one sister with strong, expressive personality.</p>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ── CHAPTER 5: SPIRIT ANIMAL ── -->
+    <div class="chapter" id="animal">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">🦁</div>
+        <h2><small>Soul Signature</small>Spirit Animal</h2>
+      </div>
+
+      <div class="animal-panel">
+        <div class="animal-emoji">🦁</div>
+        <div style="font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;">Leo Lagna · Magha Nakshatra · Yoga Karaka Mars · Shatabhisha Moon</div>
+        <div class="animal-title">The Lioness</div>
+        <div class="animal-body">
+          <p>The Lioness rules not by conquest but by presence. With Leo rising and the Sun — her Lagna lord — blazing in the first house in its own sign, Ammu's solar energy is self-contained and self-sustaining. There is nothing she needs to prove; the room simply knows when she has arrived. This is the quality of <em>Magha nakshatra</em>, the throne, the ancestral seat of power — she carries the weight of lineage and expects to be received accordingly.</p>
+          <p>But this Lioness has a secret: her Moon rests in <em>Shatabhisha</em> (the Hundred Physicians) in Aquarius, opposite the Lagna. While the world sees golden Leo radiance, her inner world is Aquarian — independent, unconventional, a healer ahead of her time. She holds the pride together with warmth, but she needs space to roam alone. Smothering her is the one sure way to lose her.</p>
+          <p>In career she moves like the Lioness stalks — with Yoga Karaka Mars precisely placed in the tenth house, she does not rush, but when she acts, she strikes with decisive precision. In relationships she is fiercely loyal but demands equal dignity. <em>Jupiter exalted in H12</em> gives her a hidden wisdom that deepens with every adversity — the Lioness grows more formidable, not less, through difficulty.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ── CHAPTER 6: TREE · COLOUR · DAY ── -->
+    <div class="chapter" id="elements">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">🌳</div>
+        <h2><small>Sacred Elements</small>Tree · Colour · Day</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Sacred Trees (by Nakshatra)</div>
+        <table class="reading-table">
+          <thead><tr><th>Nakshatra</th><th>Planet</th><th>Tree</th><th>Kerala Name</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Magha</strong> — Lagna</td><td>Rising point</td><td><strong>Banyan (Vata)</strong> 🌳</td><td>ആൽ (Aal)</td></tr>
+            <tr><td><strong>Shatabhisha</strong> — Moon</td><td>Moon H7</td><td><strong>Kadamba</strong> 🌸</td><td>കടമ്പ് (Kadambu)</td></tr>
+            <tr><td><strong>Purva Phalguni</strong> — Sun + Mercury</td><td>H1 stellium</td><td><strong>Palasha</strong> 🌺</td><td>പ്ലാശ് (Plaash)</td></tr>
+            <tr><td><strong>Pushya</strong> — Jupiter</td><td>Jupiter H12</td><td><strong>Peepal</strong> 🌿</td><td>അരയാൽ (Arayal)</td></tr>
+          </tbody>
+        </table>
+        <div class="callout callout-sage" style="margin-top:12px;">
+          <div class="callout-label">Primary</div>
+          <strong>Banyan</strong> for Magha Lagna (ancestral power, protection, shelter for others). <strong>Kadamba</strong> for Shatabhisha Moon — sacred to Varuna, grows near Kerala rivers. Sitting near Kadamba by water is the deepest emotional reset for this chart.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Lucky Colours</div>
+        <div class="swatch-row">
+          <div class="swatch">
+            <div class="swatch-dot" style="background: linear-gradient(135deg,#d4a017,#b8860b);"></div>
+            <div><div class="swatch-text">Gold / Saffron</div><div class="swatch-planet">Sun — Lagna lord · Primary</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-dot" style="background: linear-gradient(135deg,#f5f0e8,#e8dcc8);"></div>
+            <div><div class="swatch-text">White / Cream</div><div class="swatch-planet">Venus — Darakaraka · H10 lord</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-dot" style="background: linear-gradient(135deg,#e8c840,#c8a820);"></div>
+            <div><div class="swatch-text">Golden Yellow</div><div class="swatch-planet">Jupiter — exalted · Thursdays</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-dot" style="background: linear-gradient(135deg,#cc4444,#a83030);"></div>
+            <div><div class="swatch-text">Coral Red</div><div class="swatch-planet">Mars — Yoga Karaka · Tuesdays</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-dot" style="background: linear-gradient(135deg,#3a5f9f,#1e3a7f);"></div>
+            <div><div class="swatch-text">Deep Blue / Indigo</div><div class="swatch-planet">Shatabhisha Moon · Inner calm</div></div>
+          </div>
+        </div>
+        <p style="font-size:0.82rem; color:var(--muted); margin-top:14px;">⚠️ Avoid excess black / dark grey — Saturn is a functional malefic (H6 lord) for Leo Lagna.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Best Days</div>
+        <div class="quick-card">
+          <div class="quick-row"><span class="quick-label">Best day</span><span class="quick-value">Sunday ☀️ — Sun (Lagna lord)</span></div>
+          <div class="quick-row"><span class="quick-label">Career day</span><span class="quick-value">Tuesday 🔴 — Mars (Yoga Karaka)</span></div>
+          <div class="quick-row"><span class="quick-label">Wisdom day</span><span class="quick-value">Thursday 💛 — Jupiter (exalted)</span></div>
+          <div class="quick-row"><span class="quick-label">Inner calm</span><span class="quick-value">Saturday 💙 — Shatabhisha Moon reset</span></div>
+        </div>
+        <div class="callout callout-gold" style="margin-top:12px;">
+          <div class="callout-label">One Rule</div>
+          Sunday + gold or saffron outfit = the chart is firing on all cylinders. Start anything important on a Sunday.
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ── CHAPTER 7: NUMBERS ── -->
+    <div class="chapter" id="numbers">
+      <div class="chapter-header">
+        <div class="chapter-icon blue">🔢</div>
+        <h2><small>Numerology</small>Lucky Numbers</h2>
+      </div>
+
+      <div class="number-grid">
+        <div class="number-card">
+          <div class="number-big">1</div>
+          <div class="number-planet">Sun</div>
+          <div class="number-role">Primary · Lagna lord</div>
+        </div>
+        <div class="number-card">
+          <div class="number-big">9</div>
+          <div class="number-planet">Mars</div>
+          <div class="number-role">Power · Yoga Karaka</div>
+        </div>
+        <div class="number-card">
+          <div class="number-big">6</div>
+          <div class="number-planet">Venus</div>
+          <div class="number-role">Life path · Darakaraka</div>
+        </div>
+        <div class="number-card">
+          <div class="number-big">3</div>
+          <div class="number-planet">Jupiter</div>
+          <div class="number-role">Wisdom · Exalted</div>
+        </div>
+      </div>
+
+      <div class="section" style="margin-top:14px;">
+        <div class="section-title"><span class="dot dot-blue"></span>How the Life Path 6 was Calculated</div>
+        <p>DOB 05-09-1990 → 0+5+0+9+1+9+9+0 = 33 → 3+3 = <strong>6</strong>. Venus = 6 in Vedic numerology. Venus is also her Darakaraka and H10 lord — the numerology confirms what the chart already says about relationships and career being intertwined.</p>
+      </div>
+
+      <div class="callout callout-gold" style="margin-top:14px;">
+        <div class="callout-label">Core Three</div>
+        Remember: <strong>1 · 9 · 6</strong>. House numbers, phone last digits, important dates — combinations like 19, 91, 16, 61, 196 are naturally aligned with this chart.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ── CHAPTER 8: GEMSTONES ── -->
+    <div class="chapter" id="gems">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">💎</div>
+        <h2><small>Planetary Remedies</small>Gemstones</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Recommended Stones</div>
+        <div class="gem-grid">
+          <div class="gem-card">
+            <div class="gem-emoji">🔴</div>
+            <div class="gem-name">Ruby (Manikya)</div>
+            <div class="gem-planet">Sun — Lagna lord · Primary stone</div>
+            <div class="gem-detail">Min 3–5 carats · Gold setting · Ring finger · Sunday morning before 9am. Activates the entire chart. Sun in H1 own sign means Ruby works at full strength.</div>
+          </div>
+          <div class="gem-card">
+            <div class="gem-emoji">🪸</div>
+            <div class="gem-name">Red Coral (Moonga)</div>
+            <div class="gem-planet">Mars — Yoga Karaka · Career stone</div>
+            <div class="gem-detail">Min 6–9 carats · Gold or copper setting · Ring or index finger · Tuesday morning. Mars in H10 = career, authority, life purpose amplified.</div>
+          </div>
+          <div class="gem-card">
+            <div class="gem-emoji">💛</div>
+            <div class="gem-name">Yellow Sapphire (Pukhraj)</div>
+            <div class="gem-planet">Jupiter — Exalted H12 · Wisdom stone</div>
+            <div class="gem-detail">Min 3–5 carats · Gold setting · Index finger · Thursday morning. Jupiter exalted = good fortune, wisdom, marriage blessing. Use during Jupiter bhukti (now–2029).</div>
+          </div>
+          <div class="gem-card">
+            <div class="gem-emoji">💍</div>
+            <div class="gem-name">Diamond / White Sapphire</div>
+            <div class="gem-planet">Venus — Darakaraka + H10 lord</div>
+            <div class="gem-detail">Min 0.5 carat (diamond) · Platinum or white gold · Middle finger · Friday morning. Supports relationships and career simultaneously.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Stones to AVOID</div>
+        <div class="gem-grid">
+          <div class="gem-card avoid">
+            <div class="gem-emoji">🔵</div>
+            <div class="gem-name">Blue Sapphire</div>
+            <div class="gem-planet" style="color:#e8909f;">Saturn — H6 lord · Most dangerous</div>
+            <div class="gem-detail">Saturn rules H6 (enemy/disease house) for Leo Lagna. Blue Sapphire amplifies hidden enemies, health issues, workplace conflict. Never wear.</div>
+          </div>
+          <div class="gem-card avoid">
+            <div class="gem-emoji">🟤</div>
+            <div class="gem-name">Hessonite (Gomed)</div>
+            <div class="gem-planet" style="color:#e8909f;">Rahu — in H6 · Amplifies obstacles</div>
+            <div class="gem-detail">Rahu already sits in H6. Activating Rahu further increases enemies, service disruption, and hidden adversaries.</div>
+          </div>
+          <div class="gem-card avoid">
+            <div class="gem-emoji">🟡</div>
+            <div class="gem-name">Cat's Eye (Lehsunia)</div>
+            <div class="gem-planet" style="color:#e8909f;">Ketu — in H12 · Increases loss</div>
+            <div class="gem-detail">Ketu in H12 already carries separation and isolation energy. Activating it with Cat's Eye amplifies emotional isolation and hidden losses.</div>
+          </div>
+          <div class="gem-card avoid">
+            <div class="gem-emoji">🟢</div>
+            <div class="gem-name">Emerald (excess)</div>
+            <div class="gem-planet" style="color:#e8c96a;">Mercury — retrograde H1 · Use carefully</div>
+            <div class="gem-detail">Mercury retrograde H1 is complex. Emerald can amplify communication confusion under stress. If worn, use only during Mercury bhukti periods.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Best Combination</div>
+        <strong>Ruby + Red Coral together</strong> — Sun and Mars work as a team for Leo Lagna. Together they activate identity (H1), career (H10), dharma (H9), and home (H4) simultaneously. The classical pairing for Leo charts seeking career authority and personal power.
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      Generated 02 Jul 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · For personal use only
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
