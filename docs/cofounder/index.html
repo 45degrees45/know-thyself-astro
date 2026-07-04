@@ -302,9 +302,8 @@ body {
 // ─── Config ───────────────────────────────────────────────────────────────
 const API_BASE = (() => {
   const h = window.location.hostname;
-  if (h === 'localhost' || h.startsWith('192.168') || h.startsWith('100.')) {
-    return 'http://localhost:8000';
-  }
+  if (h === 'localhost') return 'http://localhost:8000';
+  if (h.startsWith('192.168') || h.startsWith('100.')) return `http://${h}:8000`;
   return 'https://YOUR_RAILWAY_URL.up.railway.app'; // TODO: replace with actual URL
 })();
 
