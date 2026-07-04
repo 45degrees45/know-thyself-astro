@@ -12,7 +12,7 @@ Entry point:
                               birth_dt_a, birth_dt_b,
                               time_accuracy_a, time_accuracy_b)
 """
-from datetime import datetime, timezone as _tz
+from datetime import datetime, timedelta, timezone as _tz
 
 from astro_engine.calc import SIGNS, NAKSHATRAS
 from astro_engine.yoga import SIGN_LORD, EXALT_SIGN, DEBIL_SIGN, OWN_SIGNS
@@ -231,7 +231,7 @@ def score_vision(chart_a: dict, chart_b: dict) -> dict:
 def get_startup_timing(moon_lon: float, birth_dt: datetime) -> list[dict]:
     """Return dasha/bhukti windows for the next 5 years from today."""
     today = datetime.now(_tz.utc).replace(tzinfo=None)
-    cutoff = today.replace(year=today.year + 5)
+    cutoff = today + timedelta(days=1827)
 
     dashas = calculate_dashas(moon_lon, birth_dt, periods=4)
     windows: list[dict] = []

@@ -3,6 +3,7 @@ import asyncio
 from datetime import datetime
 from typing import Literal
 
+import requests as _requests
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
@@ -50,6 +51,8 @@ async def cofounder_match(req: MatchRequest):
         )
     except ValueError as exc:
         raise HTTPException(status_code=422, detail=str(exc))
+    except _requests.exceptions.RequestException as exc:
+        raise HTTPException(status_code=503, detail=f"Geocoding failed: {exc}")
     except RuntimeError as exc:
         raise HTTPException(status_code=503, detail=str(exc))
 
