@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Cofounder Compatibility — Astrowise</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: var(--cream);
+  min-height: 100vh;
+}
+.page { max-width: 820px; margin: 0 auto; padding: 48px 24px 80px; }
+
+/* ── Form ── */
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 300;
+  color: #fff8f0;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.hero-sub {
+  font-size: 0.88rem;
+  color: var(--muted);
+  text-align: center;
+  letter-spacing: 0.06em;
+  margin-bottom: 36px;
+}
+.persons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+.person-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 24px 20px;
+}
+.person-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: block;
+}
+.field { margin-bottom: 14px; }
+.field label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+.field input {
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(196,158,64,0.22);
+  border-radius: 10px;
+  padding: 9px 12px;
+  color: var(--cream);
+  font-size: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.field input:focus { border-color: rgba(196,158,64,0.55); }
+.check-row { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; color: var(--muted); margin-top: 6px; cursor: pointer; }
+.check-row input[type=checkbox] { accent-color: var(--gold); width: 14px; height: 14px; cursor: pointer; }
+.cta-btn {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 14px 0;
+  background: linear-gradient(135deg, rgba(196,158,64,0.22), rgba(196,158,64,0.12));
+  border: 1px solid rgba(196,158,64,0.4);
+  border-radius: 14px;
+  color: var(--gold2);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.2s, transform 0.1s;
+}
+.cta-btn:hover { background: linear-gradient(135deg, rgba(196,158,64,0.32), rgba(196,158,64,0.18)); }
+.cta-btn:active { transform: scale(0.98); }
+.cta-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Loading ── */
+#loading { display: none; text-align: center; padding: 60px 0; }
+.star-pulse { font-size: 2.5rem; animation: pulse 1.5s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:0.3;transform:scale(0.9)} 50%{opacity:1;transform:scale(1.1)} }
+#loading p { margin-top: 16px; color: var(--muted); font-size: 0.9rem; letter-spacing: 0.1em; }
+
+/* ── Results ── */
+#results { display: none; }
+
+/* Score hero */
+.score-hero {
+  background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(80,38,58,0.92) 100%);
+  border: 1px solid rgba(196,158,64,0.22);
+  border-radius: 28px;
+  padding: 40px 36px 32px;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+  position: relative;
+  overflow: hidden;
+}
+.score-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-weight: 300;
+  color: #fff8f0;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.score-dial-wrap { display: flex; flex-direction: column; align-items: center; margin-bottom: 28px; }
+.score-dial { width: 140px; height: 140px; position: relative; }
+.score-dial svg { transform: rotate(-90deg); }
+.dial-bg { fill: none; stroke: rgba(255,255,255,0.06); stroke-width: 10; }
+.dial-fill { fill: none; stroke: var(--gold); stroke-width: 10; stroke-linecap: round;
+  stroke-dasharray: 339.29; stroke-dashoffset: 339.29; transition: stroke-dashoffset 1.2s ease; }
+.dial-number {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--gold2);
+}
+.dial-label {
+  font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
+  margin-top: 8px;
+}
+.dim-bars { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; margin-bottom: 20px; }
+.dim-bar { }
+.dim-bar-name { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.dim-bar-track { height: 5px; background: rgba(255,255,255,0.08); border-radius: 999px; overflow: hidden; }
+.dim-bar-fill { height: 100%; border-radius: 999px; transition: width 1s ease; }
+.dim-bar-score { font-size: 0.78rem; color: var(--cream); margin-top: 3px; }
+.accuracy-badge {
+  display: inline-block; padding: 5px 14px; border-radius: 999px; font-size: 0.72rem;
+  font-weight: 500; letter-spacing: 0.06em; margin-top: 8px; text-align: center;
+}
+.badge-amber { background: rgba(196,158,64,0.15); color: #e8c96a; border: 1px solid rgba(196,158,64,0.3); }
+.badge-rose  { background: rgba(196,96,122,0.15); color: #e8909f; border: 1px solid rgba(196,96,122,0.3); }
+
+/* Panels */
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 0;
+  box-shadow: var(--shadow);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+.panel-header {
+  display: flex; align-items: center; gap: 12px; padding: 18px 24px;
+  cursor: pointer; user-select: none;
+}
+.panel-header:hover { background: rgba(255,255,255,0.02); }
+.panel-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content:center; font-size: 1rem; flex-shrink: 0; }
+.icon-plum { background: rgba(124,92,191,0.14); color: #b49edf; }
+.icon-gold  { background: rgba(196,158,64,0.1);  color: var(--gold); }
+.icon-sage  { background: rgba(90,143,114,0.12); color: #80c4a0; }
+.icon-blue  { background: rgba(91,143,212,0.12); color: #8ab4e8; }
+.panel-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--cream); flex: 1; }
+.panel-score-badge {
+  font-size: 0.78rem; font-weight: 600; padding: 3px 10px; border-radius: 999px;
+  background: rgba(196,158,64,0.1); color: var(--gold2); border: 1px solid rgba(196,158,64,0.2);
+}
+.panel-chevron { color: var(--muted); transition: transform 0.25s; font-size: 0.8rem; }
+.panel.open .panel-chevron { transform: rotate(180deg); }
+.panel-body { display: none; padding: 0 24px 20px; border-top: 1px solid rgba(196,158,64,0.08); }
+.panel.open .panel-body { display: block; }
+.panel-detail { font-size: 0.85rem; color: var(--muted); line-height: 1.7; padding-top: 16px; }
+.panel-detail strong { color: var(--cream); font-weight: 500; }
+
+/* Timeline */
+.timeline-section { margin-bottom: 28px; }
+.tl-heading {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300;
+  color: var(--cream); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 1px solid var(--border);
+}
+.tl-row { margin-bottom: 16px; }
+.tl-name { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.tl-track { height: 28px; border-radius: 8px; overflow: hidden; display: flex; position: relative; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); }
+.tl-seg { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 0.62rem; letter-spacing: 0.05em; overflow: hidden; white-space: nowrap; transition: opacity 0.2s; }
+.tl-seg:hover { opacity: 0.8; }
+.tl-seg.favorable { background: rgba(90,143,114,0.4); color: #a0d4b8; border-right: 1px solid rgba(90,143,114,0.2); }
+.tl-seg.neutral   { background: rgba(196,158,64,0.15); color: rgba(196,158,64,0.7); border-right: 1px solid rgba(196,158,64,0.1); }
+.tl-seg.challenging { background: rgba(196,96,122,0.25); color: rgba(196,96,122,0.8); border-right: 1px solid rgba(196,96,122,0.15); }
+.tl-legend { display: flex; gap: 16px; margin-top: 8px; font-size: 0.7rem; color: var(--muted); }
+.tl-legend span { display: flex; align-items: center; gap: 5px; }
+.tl-legend-dot { width: 8px; height: 8px; border-radius: 2px; }
+.overlap-callout {
+  background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28);
+  border-radius: 14px; padding: 14px 18px; margin-top: 14px; font-size: 0.88rem; line-height: 1.7;
+}
+.overlap-callout strong { color: var(--gold2); }
+
+/* Roles */
+.roles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 28px; }
+.role-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
+  padding: 22px 20px; text-align: center;
+}
+.role-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--cream); margin-bottom: 10px; }
+.role-badge {
+  display: inline-block; padding: 5px 14px; border-radius: 999px; font-size: 0.75rem;
+  font-weight: 600; letter-spacing: 0.08em;
+  background: rgba(196,158,64,0.1); color: var(--gold2); border: 1px solid rgba(196,158,64,0.25);
+}
+.footer { text-align: center; padding: 20px 0; font-size: 0.72rem; color: rgba(240,232,216,0.3); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 40px; }
+@media (max-width: 640px) {
+  .persons-grid, .dim-bars, .roles-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ── Form ── -->
+  <section id="form-section">
+    <h1 class="hero-title">Find Your Founding Partner</h1>
+    <p class="hero-sub">Vedic astrological compatibility for cofounders &amp; startup timing</p>
+
+    <div class="persons-grid">
+      <!-- Person A -->
+      <div class="person-card">
+        <span class="person-label">Person A</span>
+        <div class="field"><label>Name</label><input id="a-name" type="text" placeholder="Alice"></div>
+        <div class="field"><label>Date of Birth</label><input id="a-date" type="text" placeholder="YYYY-MM-DD"></div>
+        <div class="field">
+          <label>Birth Time</label>
+          <input id="a-time" type="text" placeholder="HH:MM">
+          <label class="check-row"><input type="checkbox" id="a-approx"> Approximate (±2h)</label>
+          <label class="check-row"><input type="checkbox" id="a-unknown"> I don't know the birth time</label>
+        </div>
+        <div class="field"><label>Birth Place</label><input id="a-place" type="text" placeholder="Mumbai, India"></div>
+      </div>
+      <!-- Person B -->
+      <div class="person-card">
+        <span class="person-label">Person B</span>
+        <div class="field"><label>Name</label><input id="b-name" type="text" placeholder="Bob"></div>
+        <div class="field"><label>Date of Birth</label><input id="b-date" type="text" placeholder="YYYY-MM-DD"></div>
+        <div class="field">
+          <label>Birth Time</label>
+          <input id="b-time" type="text" placeholder="HH:MM">
+          <label class="check-row"><input type="checkbox" id="b-approx"> Approximate (±2h)</label>
+          <label class="check-row"><input type="checkbox" id="b-unknown"> I don't know the birth time</label>
+        </div>
+        <div class="field"><label>Birth Place</label><input id="b-place" type="text" placeholder="Bangalore, India"></div>
+      </div>
+    </div>
+
+    <button class="cta-btn" id="submit-btn" onclick="submitMatch()">★ Calculate Compatibility</button>
+  </section>
+
+  <!-- ── Loading ── -->
+  <div id="loading">
+    <div class="star-pulse">✦</div>
+    <p>Reading the stars…</p>
+  </div>
+
+  <!-- ── Results ── -->
+  <div id="results"></div>
+
+</div>
+
+<script>
+// ─── Config ───────────────────────────────────────────────────────────────
+const API_BASE = (() => {
+  const h = window.location.hostname;
+  if (h === 'localhost' || h.startsWith('192.168') || h.startsWith('100.')) {
+    return 'http://localhost:8000';
+  }
+  return 'https://YOUR_RAILWAY_URL.up.railway.app'; // TODO: replace with actual URL
+})();
+
+// ─── Toggle unknown time ───────────────────────────────────────────────────
+['a','b'].forEach(p => {
+  document.getElementById(`${p}-unknown`).addEventListener('change', e => {
+    document.getElementById(`${p}-time`).disabled = e.target.checked;
+    document.getElementById(`${p}-approx`).disabled = e.target.checked;
+    if (e.target.checked) document.getElementById(`${p}-approx`).checked = false;
+  });
+});
+
+// ─── Submit ────────────────────────────────────────────────────────────────
+async function submitMatch() {
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  document.getElementById('form-section').style.display = 'none';
+  document.getElementById('loading').style.display = 'block';
+  document.getElementById('results').style.display = 'none';
+  document.getElementById('results').innerHTML = '';
+
+  const get = id => document.getElementById(id).value.trim();
+  const checked = id => document.getElementById(id).checked;
+
+  const person = (p) => ({
+    name: get(`${p}-name`),
+    date: get(`${p}-date`),
+    time: checked(`${p}-unknown`) ? '12:00' : (get(`${p}-time`) || '12:00'),
+    time_accuracy: checked(`${p}-unknown`) ? 'unknown' : (checked(`${p}-approx`) ? 'approximate' : 'exact'),
+    place: get(`${p}-place`),
+  });
+
+  try {
+    const resp = await fetch(`${API_BASE}/api/cofounder-match`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ person_a: person('a'), person_b: person('b') }),
+    });
+    if (!resp.ok) {
+      const err = await resp.json().catch(() => ({}));
+      throw new Error(err.detail || `HTTP ${resp.status}`);
+    }
+    const data = await resp.json();
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('results').style.display = 'block';
+    renderResults(data, person('a').name, person('b').name);
+  } catch (err) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('form-section').style.display = 'block';
+    btn.disabled = false;
+    alert('Error: ' + err.message);
+  }
+}
+
+// ─── Render ────────────────────────────────────────────────────────────────
+function scoreColor(s) {
+  if (s >= 85) return '#e8c96a';
+  if (s >= 70) return '#80c4a0';
+  if (s >= 55) return '#8ab4e8';
+  if (s >= 40) return '#c49e40';
+  return '#e8909f';
+}
+
+function renderResults(d, nameA, nameB) {
+  const el = document.getElementById('results');
+  el.innerHTML = buildHTML(d, nameA, nameB);
+  // Animate score dial
+  requestAnimationFrame(() => {
+    const fill = document.querySelector('.dial-fill');
+    if (fill) {
+      const circumference = 339.29;
+      fill.style.strokeDashoffset = circumference - (circumference * d.overall_score / 100);
+    }
+    // Animate dimension bars
+    document.querySelectorAll('.dim-bar-fill[data-w]').forEach(bar => {
+      bar.style.width = bar.dataset.w + '%';
+    });
+  });
+  // Expandable panels
+  document.querySelectorAll('.panel-header').forEach(h => {
+    h.addEventListener('click', () => h.closest('.panel').classList.toggle('open'));
+  });
+}
+
+function buildHTML(d, nameA, nameB) {
+  const dims = d.dimensions;
+  const dimList = [
+    { key:'working_style', label:'Working Style',    icon:'🌙', iconClass:'icon-plum' },
+    { key:'drive',         label:'Drive & Execution', icon:'⚡', iconClass:'icon-gold' },
+    { key:'vision',        label:'Vision & Growth',  icon:'🌿', iconClass:'icon-sage' },
+    { key:'timing_sync',   label:'Timing Sync',      icon:'📅', iconClass:'icon-blue' },
+  ];
+  const dimBarColor = { working_style:'#b49edf', drive:scoreColor(dims.drive?.score), vision:'#80c4a0', timing_sync:'#8ab4e8' };
+
+  // Accuracy badge
+  let accBadge = '';
+  if (d.accuracy_warning) {
+    const unknown = d.accuracy_warning.includes('unknown');
+    const msg = unknown
+      ? '~70% accuracy — Lagna not used (birth time unknown)'
+      : '~85% accuracy — birth time approximate (±2h)';
+    accBadge = `<div style="text-align:center;margin-top:10px"><span class="accuracy-badge ${unknown?'badge-rose':'badge-amber'}">${msg}</span></div>`;
+  }
+
+  // Dimension bars HTML
+  const dimBarsHTML = dimList.map(di => {
+    const s = dims[di.key]?.score ?? 0;
+    return `<div class="dim-bar">
+      <div class="dim-bar-name">${di.label}</div>
+      <div class="dim-bar-track"><div class="dim-bar-fill" data-w="${s}" style="width:0%;background:${dimBarColor[di.key]}"></div></div>
+      <div class="dim-bar-score">${s} — ${dims[di.key]?.label ?? ''}</div>
+    </div>`;
+  }).join('');
+
+  // Expandable panels
+  const panelsHTML = dimList.map(di => {
+    const s = dims[di.key]?.score ?? 0;
+    const detail = dims[di.key]?.detail ?? '';
+    return `<div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon ${di.iconClass}">${di.icon}</div>
+        <div class="panel-title">${di.label}</div>
+        <div class="panel-score-badge">${s}</div>
+        <div class="panel-chevron">▼</div>
+      </div>
+      <div class="panel-body">
+        <div class="panel-detail"><strong>Analysis:</strong> ${detail}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Timeline
+  const timing = d.startup_timing;
+  const tl = buildTimeline(timing.person_a, timing.person_b, timing.overlap_zones, nameA, nameB);
+
+  // Roles
+  const roles = d.role_suggestion;
+  const rolesHTML = `
+    <div class="roles-grid">
+      <div class="role-card">
+        <div class="role-name">${nameA}</div>
+        <div class="role-badge">${roles.person_a}</div>
+      </div>
+      <div class="role-card">
+        <div class="role-name">${nameB}</div>
+        <div class="role-badge">${roles.person_b}</div>
+      </div>
+    </div>`;
+
+  return `
+    <div class="score-hero">
+      <div class="score-names">${nameA} ✦ ${nameB}</div>
+      <div class="score-dial-wrap">
+        <div class="score-dial">
+          <svg viewBox="0 0 120 120" width="140" height="140">
+            <circle class="dial-bg" cx="60" cy="60" r="54"/>
+            <circle class="dial-fill" cx="60" cy="60" r="54"/>
+          </svg>
+          <div class="dial-number">${d.overall_score}</div>
+        </div>
+        <div class="dial-label">${d.score_label} Founding Match</div>
+      </div>
+      <div class="dim-bars">${dimBarsHTML}</div>
+      ${accBadge}
+    </div>
+
+    ${panelsHTML}
+
+    <div class="timeline-section">
+      <div class="tl-heading">Startup Launch Windows</div>
+      ${tl}
+    </div>
+
+    ${rolesHTML}
+
+    <div class="footer">Generated ${new Date().toLocaleDateString('en-GB',{year:'numeric',month:'long',day:'numeric'})} · Vedic / Lahiri Ayanamsha · Swiss Ephemeris</div>
+  `;
+}
+
+function buildTimeline(windowsA, windowsB, overlaps, nameA, nameB) {
+  if (!windowsA.length && !windowsB.length) return '<p style="color:var(--muted);font-size:0.88rem">No timing data available.</p>';
+
+  const allDates = [...windowsA, ...windowsB].flatMap(w => [new Date(w.start), new Date(w.end)]);
+  const minDate = new Date(Math.min(...allDates));
+  const maxDate = new Date(Math.max(...allDates));
+  const totalMs = maxDate - minDate || 1;
+
+  function trackHTML(windows) {
+    return windows.map(w => {
+      const s = new Date(w.start), e = new Date(w.end);
+      const left = ((s - minDate) / totalMs * 100).toFixed(1);
+      const width = ((e - s) / totalMs * 100).toFixed(1);
+      const label = w.dasha.length < 18 ? w.dasha : w.dasha.slice(0,16)+'…';
+      return `<div class="tl-seg ${w.quality}" style="width:${width}%;margin-left:${left}%;position:absolute;left:0" title="${w.dasha}: ${w.start} → ${w.end}">${label}</div>`;
+    }).join('');
+  }
+
+  let overlapHTML = '';
+  if (overlaps.length) {
+    const zones = overlaps.map(z => `<strong>${z.start.slice(0,7)} → ${z.end.slice(0,7)}</strong>`).join(', ');
+    overlapHTML = `<div class="overlap-callout">★ Best launch windows (both favorable): ${zones}</div>`;
+  }
+
+  return `
+    <div class="tl-row">
+      <div class="tl-name">${nameA}</div>
+      <div class="tl-track" style="position:relative">${trackHTML(windowsA)}</div>
+    </div>
+    <div class="tl-row">
+      <div class="tl-name">${nameB}</div>
+      <div class="tl-track" style="position:relative">${trackHTML(windowsB)}</div>
+    </div>
+    <div class="tl-legend">
+      <span><span class="tl-legend-dot" style="background:rgba(90,143,114,0.5)"></span>Favorable</span>
+      <span><span class="tl-legend-dot" style="background:rgba(196,158,64,0.3)"></span>Neutral</span>
+      <span><span class="tl-legend-dot" style="background:rgba(196,96,122,0.4)"></span>Challenging</span>
+    </div>
+    ${overlapHTML}`;
+}
+</script>
+</body>
+</html>
