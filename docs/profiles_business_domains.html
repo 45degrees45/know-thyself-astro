@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Astrowise — Business Areas & Products by Chart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0b0b18;--surface:rgba(255,255,255,0.035);--border:rgba(196,158,64,0.18);
+      --gold:#c49e40;--gold2:#e8c96a;--cream:#f0e8d8;--muted:rgba(240,232,216,0.55);
+      --plum:#7c5cbf;--rose:#c4607a;--sage:#5a8f72;--blue:#5b8fd4;
+      --shadow:0 20px 60px rgba(0,0,0,0.45);--r:22px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'DM Sans',system-ui,sans-serif;background-color:var(--bg);
+      background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,92,191,0.18),transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%,rgba(196,158,64,0.12),transparent);
+      background-attachment:fixed;color:var(--cream);min-height:100vh;padding:48px 24px 80px}
+    .container{max-width:1360px;margin:0 auto}
+
+    .hero{text-align:center;margin-bottom:52px}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,6vw,4.2rem);font-weight:300;color:#fff8f0}
+    .hero-sub{font-size:.84rem;color:var(--muted);margin-top:10px}
+    .eyebrow{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+
+    .divider{display:flex;align-items:center;gap:16px;margin:44px 0 28px;font-size:.65rem;
+      letter-spacing:.3em;text-transform:uppercase;color:rgba(240,232,216,0.3)}
+    .divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
+
+    /* CLUSTER SUMMARY */
+    .cluster{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+      padding:22px 26px;margin-bottom:22px;box-shadow:var(--shadow)}
+    .cluster-head{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+    .ctable{width:100%;border-collapse:collapse;font-size:.84rem}
+    .ctable th{text-align:left;padding:8px 12px;background:rgba(196,158,64,0.08);color:var(--gold);
+      font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;border-bottom:1px solid rgba(196,158,64,0.15)}
+    .ctable td{padding:10px 12px;border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:top;line-height:1.55}
+    .ctable tr:last-child td{border-bottom:none}
+    .ctable tr:hover td{background:rgba(255,255,255,0.02)}
+
+    /* CARDS */
+    .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:20px}
+    .bcard{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+      overflow:hidden;box-shadow:var(--shadow);transition:.2s}
+    .bcard:hover{transform:translateY(-3px);box-shadow:0 32px 80px rgba(0,0,0,0.5)}
+    .bcard-top{padding:18px 20px 14px}
+    .bcard-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+    .bcard-animal{font-size:1.9rem;flex-shrink:0;width:38px;text-align:center}
+    .bcard-name{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:#fff8f0}
+    .bcard-meta{font-size:.7rem;color:var(--muted);margin-top:2px}
+    .bcard-domain{margin-left:auto;flex-shrink:0;padding:4px 10px;border-radius:999px;font-size:.68rem;font-weight:600;white-space:nowrap}
+    .bcard-area{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;padding-top:4px}
+
+    .bcard-body{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid rgba(255,255,255,0.06)}
+    .bcard-products{padding:14px 16px;border-right:1px solid rgba(255,255,255,0.06)}
+    .bcard-detail{padding:14px 16px}
+    .blabel{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+    .product-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px}
+    .product-list li{font-size:.8rem;color:rgba(240,232,216,0.8);line-height:1.5;
+      padding:5px 8px;background:rgba(255,255,255,0.04);border-radius:8px}
+    .bcard-why{font-size:.78rem;color:rgba(240,232,216,0.7);line-height:1.6}
+    .bcard-avoid{font-size:.76rem;color:rgba(196,96,122,0.8);line-height:1.5}
+    .bcard-window{font-size:.76rem;font-weight:500;line-height:1.5}
+    .bcard-dasha{padding:10px 16px;background:rgba(196,158,64,0.04);border-top:1px solid rgba(196,158,64,0.1);
+      font-size:.72rem;color:var(--muted)}
+
+    .footer{text-align:center;padding:24px 0;font-size:.72rem;color:rgba(240,232,216,0.3);
+      letter-spacing:.08em;border-top:1px solid var(--border);margin-top:40px}
+
+    @media(max-width:768px){
+      .cards-grid{grid-template-columns:1fr}
+      .bcard-body{grid-template-columns:1fr}
+      .bcard-products{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06)}
+      .ctable{font-size:.74rem}
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="eyebrow">Vedic Jyotish · Lagna + Domain + Dasha = Business Fit</div>
+    <h1>Business Areas & Products by Chart</h1>
+    <div class="hero-sub">31 profiles · Best startup domain · Specific product ideas · Timing windows · July 06, 2026</div>
+  </div>
+
+  <div class="divider">Summary by Tier</div>
+  
+    <div class="cluster" style="border-top:3px solid #5a8f72">
+      <div class="cluster-head">
+        <span style="font-size:1.8rem">🚀</span>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#5a8f72">Startup-Ready</div>
+          <div style="font-size:.78rem;color:var(--muted);">2 profiles</div>
+        </div>
+      </div>
+      <table class="ctable">
+        <thead><tr>
+          <th>Name</th><th>Business Area</th><th>Domain Strength</th>
+          <th>Top Products</th><th>Current Dasha</th><th>Best Window</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td>🐬 <strong>Remya</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♊ Gemini · 39y</span></td>
+          <td><strong style="color:#5a8f72">Analytics SaaS / Communication Tools</strong></td>
+          <td style="font-size:.75rem;color:#7c5cbf">🔮 Product</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Data analytics dashboard for SMEs · AI writing / content intelligence platform</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Mercury/Jupiter/Mercury</td>
+          <td style="font-size:.72rem;color:#5a8f72;font-style:italic">Now → 2028 (Mercury/Jupiter bhukti</td>
+        </tr>
+        <tr>
+          <td>🦅 <strong>Joseph TC</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♐ Sagittarius · 41y</span></td>
+          <td><strong style="color:#5a8f72">EdTech / Knowledge Consulting</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Professional coaching platform (live + async) · Corporate learning & upskilling SaaS</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Venus/Venus/Mercury</td>
+          <td style="font-size:.72rem;color:#5a8f72;font-style:italic">Now → Oct 2026 (Venus/Venus/Mercury peak)</td>
+        </tr></tbody>
+      </table>
+    </div>
+    <div class="cluster" style="border-top:3px solid #c49e40">
+      <div class="cluster-head">
+        <span style="font-size:1.8rem">🌱</span>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#c49e40">Founder-Track</div>
+          <div style="font-size:.78rem;color:var(--muted);">12 profiles</div>
+        </div>
+      </div>
+      <table class="ctable">
+        <thead><tr>
+          <th>Name</th><th>Business Area</th><th>Domain Strength</th>
+          <th>Top Products</th><th>Current Dasha</th><th>Best Window</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td>🦅 <strong>Sai</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♑ Capricorn · 35y</span></td>
+          <td><strong style="color:#c49e40">Fintech / Wealth Infrastructure</strong></td>
+          <td style="font-size:.75rem;color:#5a8f72">💰 Finance</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Wealth management platform for HNIs · Investment portfolio SaaS for advisors</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Saturn/Saturn/Rahu</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">2027–2030 (Mercury bhukti within Saturn MD</td>
+        </tr>
+        <tr>
+          <td>🦅 <strong>Gewin</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♒ Aquarius · 41y</span></td>
+          <td><strong style="color:#c49e40">Tech Infrastructure / Community Platforms</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">DevOps / FinOps SaaS for tech teams · Online community infrastructure platform</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Ketu/Moon/Saturn</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">2026 Mercury dasha starts — that's the execution window</td>
+        </tr>
+        <tr>
+          <td>🐬 <strong>Spirilla Guy</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♑ Capricorn · 29y</span></td>
+          <td><strong style="color:#c49e40">International SaaS / Wellness Tech</strong></td>
+          <td style="font-size:.75rem;color:#7c5cbf">🔮 Product</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">International market entry SaaS · Meditation / mental wellness app</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Moon/Venus/Jupiter</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">Venus bhukti (now) → Jupiter antara 2026</td>
+        </tr>
+        <tr>
+          <td>🦢 <strong>Reddit Girl</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♑ Capricorn · 23y</span></td>
+          <td><strong style="color:#c49e40">Luxury Fintech / Millennial Wealth</strong></td>
+          <td style="font-size:.75rem;color:#5a8f72">💰 Finance</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Luxury lifestyle subscription platform · Wealth planning app for Gen Z / millennials</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Venus/Venus/Rahu</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">Now (Venus/Venus)</td>
+        </tr>
+        <tr>
+          <td>🐅 <strong>Jinx</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♓ Pisces · 25y</span></td>
+          <td><strong style="color:#c49e40">Healthcare Ops / Spiritual Wellness</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Healthcare operations management tool · Spiritual wellness platform (B2C)</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Mercury/Ketu/Mercury</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">Mercury/Mercury antara 2026</td>
+        </tr>
+        <tr>
+          <td>🐘 <strong>Tintu</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♑ Capricorn · 35y</span></td>
+          <td><strong style="color:#c49e40">Real Estate Finance / PropTech</strong></td>
+          <td style="font-size:.75rem;color:#5a8f72">💰 Finance</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Real estate investment platform · Property deal structuring SaaS</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Venus/Ketu/Mercury</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">Mercury antara (late 2026) — Jupiter exalted H7</td>
+        </tr>
+        <tr>
+          <td>🐘 <strong>Bodhi CH</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♉ Taurus · 34y</span></td>
+          <td><strong style="color:#c49e40">Sustainable Food / AgriTech</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Sustainable food supply platform · Agri-operations management tool</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Jupiter/Mercury/Jupiter</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">Mercury bhukti → Jupiter antara 2026</td>
+        </tr>
+        <tr>
+          <td>🦁 <strong>Ammu CH</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♌ Leo · 35y</span></td>
+          <td><strong style="color:#c49e40">Creative Tools / Leadership Development</strong></td>
+          <td style="font-size:.75rem;color:#7c5cbf">🔮 Product</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Creative collaboration platform for teams · Leadership coaching program / app</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Saturn/Jupiter/Jupiter</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">Jupiter bhukti (current)</td>
+        </tr>
+        <tr>
+          <td>🦁 <strong>Kiran</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♑ Capricorn · 42y</span></td>
+          <td><strong style="color:#c49e40">Real Estate Tech / Supply Chain</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Construction project management SaaS · Supply chain optimization platform</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Jupiter/Venus/Sun</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">Jupiter/Venus now</td>
+        </tr>
+        <tr>
+          <td>🦌 <strong>Ruhi CH</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♐ Sagittarius · 24y</span></td>
+          <td><strong style="color:#c49e40">Sports Tech / Educational Platforms</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Sports performance tracking app · Student learning operations tool</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Jupiter/Mercury/Saturn</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">2027–2030 (Saturn bhukti</td>
+        </tr>
+        <tr>
+          <td>🦁 <strong>Khayel CH</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♍ Virgo · 25y</span></td>
+          <td><strong style="color:#c49e40">Health & Wellness Brand / Precision Marketing</strong></td>
+          <td style="font-size:.75rem;color:#c49e40">📣 Marketing</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Health/wellness D2C brand · Women's wellness app</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Saturn/Mars/Jupiter</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">Jupiter antara 2026</td>
+        </tr>
+        <tr>
+          <td>🦅 <strong>Yaqza</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♏ Scorpio · 22y</span></td>
+          <td><strong style="color:#c49e40">Research Platforms / Knowledge Analytics</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Research intelligence platform · Academic / market analytics SaaS</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Jupiter/Mercury/Sun</td>
+          <td style="font-size:.72rem;color:#c49e40;font-style:italic">Now → Oct 2027 (Jupiter/Mercury</td>
+        </tr></tbody>
+      </table>
+    </div>
+    <div class="cluster" style="border-top:3px solid #5b8fd4">
+      <div class="cluster-head">
+        <span style="font-size:1.8rem">🔄</span>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#5b8fd4">Conditional</div>
+          <div style="font-size:.78rem;color:var(--muted);">11 profiles</div>
+        </div>
+      </div>
+      <table class="ctable">
+        <thead><tr>
+          <th>Name</th><th>Business Area</th><th>Domain Strength</th>
+          <th>Top Products</th><th>Current Dasha</th><th>Best Window</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td>🦚 <strong>Soniya</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♎ Libra · 42y</span></td>
+          <td><strong style="color:#5b8fd4">Alternative Investment / Insurance Products</strong></td>
+          <td style="font-size:.75rem;color:#5a8f72">💰 Finance</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Alternative investment advisory · Insurance / wealth protection products</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Moon/Saturn/Venus</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">Saturn bhukti 2026–2028</td>
+        </tr>
+        <tr>
+          <td>🐅 <strong>Pi CH</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♈ Aries · 36y</span></td>
+          <td><strong style="color:#5b8fd4">Bold Consumer Brand / Fitness Products</strong></td>
+          <td style="font-size:.75rem;color:#5b8fd4">🤝 Sales</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Fitness / sports consumer brand · Luxury beauty / lifestyle D2C</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Saturn/Saturn/Ketu</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">Saturn/Mercury antara 2026</td>
+        </tr>
+        <tr>
+          <td>🦅 <strong>Athens CH</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♐ Sagittarius · 26y</span></td>
+          <td><strong style="color:#5b8fd4">Service Delivery / Healthcare Sales</strong></td>
+          <td style="font-size:.75rem;color:#5b8fd4">🤝 Sales</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Healthcare service delivery company · Sports/fitness brand or academy</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Sun/Mars/Jupiter</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">Mars antara (now)</td>
+        </tr>
+        <tr>
+          <td>🦢 <strong>Mirjam</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♐ Sagittarius · 51y</span></td>
+          <td><strong style="color:#5b8fd4">TBD</strong></td>
+          <td style="font-size:.75rem;color:#7c5cbf">🔮 Product</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)"></td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Rahu/Ketu/Rahu</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">—</td>
+        </tr>
+        <tr>
+          <td>🐘 <strong>Gracious George</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♋ Cancer · 40y</span></td>
+          <td><strong style="color:#5b8fd4">Real Estate / Hospitality / Care Services</strong></td>
+          <td style="font-size:.75rem;color:#5b8fd4">🤝 Sales</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Real estate development / sales · Restaurant / hospitality brand</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Saturn/Saturn/Ketu</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">2028 (Mercury bhukti)</td>
+        </tr>
+        <tr>
+          <td>🦚 <strong>Isolda</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♏ Scorpio · 40y</span></td>
+          <td><strong style="color:#5b8fd4">Luxury Brands / Financial Product Sales</strong></td>
+          <td style="font-size:.75rem;color:#5b8fd4">🤝 Sales</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Luxury goods / premium brand sales · Financial product advisory (insurance, wealth)</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Saturn/Mercury/Mercury</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">Mercury antara (current)</td>
+        </tr>
+        <tr>
+          <td>🐍 <strong>Lalu</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♏ Scorpio · 68y</span></td>
+          <td><strong style="color:#5b8fd4">Advisory / Consulting (Senior Expert)</strong></td>
+          <td style="font-size:.75rem;color:#5b8fd4">🤝 Sales</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Senior advisory / mentorship program · Healthcare consulting (as domain expert)</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Saturn/Mars/Ketu</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">Saturn/Mars active — advisory / teaching is the right mode</td>
+        </tr>
+        <tr>
+          <td>🐅 <strong>Kunal</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♓ Pisces · 32y</span></td>
+          <td><strong style="color:#5b8fd4">Creative Agency / Spiritual Marketing</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Creative operations agency · Spiritual / wellness marketing brand</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Saturn/Saturn/Rahu</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">Mercury bhukti 2028</td>
+        </tr>
+        <tr>
+          <td>🦋 <strong>Always CH</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♎ Libra · 34y</span></td>
+          <td><strong style="color:#5b8fd4">HR Tech / Legal Operations / Consulting</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">HR operations & compliance tool · Legal workflow SaaS</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Jupiter/Mercury/Sun</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">Mercury bhukti (now)</td>
+        </tr>
+        <tr>
+          <td>🦌 <strong>Zerin</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♐ Sagittarius · 25y</span></td>
+          <td><strong style="color:#5b8fd4">EdTech / Travel / Adventure (early career)</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Student travel / experiential learning platform · Educational content for Gen Z</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Venus/Sun/Mercury</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">Jupiter mahadasha (from ~2028)</td>
+        </tr>
+        <tr>
+          <td>🦁 <strong>Prakashji</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♌ Leo · 52y</span></td>
+          <td><strong style="color:#5b8fd4">Leadership Consulting / Executive Advisory</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Executive leadership advisory firm · Org design & operations consulting</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Saturn/Moon/Mercury</td>
+          <td style="font-size:.72rem;color:#5b8fd4;font-style:italic">Mercury antara (now)</td>
+        </tr></tbody>
+      </table>
+    </div>
+    <div class="cluster" style="border-top:3px solid #c4607a">
+      <div class="cluster-head">
+        <span style="font-size:1.8rem">🏢</span>
+        <div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:#c4607a">Specialist</div>
+          <div style="font-size:.78rem;color:var(--muted);">6 profiles</div>
+        </div>
+      </div>
+      <table class="ctable">
+        <thead><tr>
+          <th>Name</th><th>Business Area</th><th>Domain Strength</th>
+          <th>Top Products</th><th>Current Dasha</th><th>Best Window</th>
+        </tr></thead>
+        <tbody>
+        <tr>
+          <td>🦋 <strong>Biju Jacob</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♎ Libra · 42y</span></td>
+          <td><strong style="color:#c4607a">Operations / Project Management (Role)</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Head of Operations at a growing startup · Project / program manager (enterprise)</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Rahu/Moon/Sun</td>
+          <td style="font-size:.72rem;color:#c4607a;font-style:italic">Jupiter mahadasha (from ~2029)</td>
+        </tr>
+        <tr>
+          <td>🐬 <strong>Goldy</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♓ Pisces · 41y</span></td>
+          <td><strong style="color:#c4607a">Creative / Spiritual Sales (Role, not Founder)</strong></td>
+          <td style="font-size:.75rem;color:#5b8fd4">🤝 Sales</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Art / spiritual product sales lead · International business development</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Rahu/Venus/Venus</td>
+          <td style="font-size:.72rem;color:#c4607a;font-style:italic">Venus bhukti (now)</td>
+        </tr>
+        <tr>
+          <td>🦅 <strong>Vi CH</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♏ Scorpio · 27y</span></td>
+          <td><strong style="color:#c4607a">Research / Investigation / Back-end Product</strong></td>
+          <td style="font-size:.75rem;color:#7c5cbf">🔮 Product</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Research analyst at a fintech/product company · Deep-dive product researcher</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Mars/Rahu/Venus</td>
+          <td style="font-size:.72rem;color:#c4607a;font-style:italic">Venus antara (now)</td>
+        </tr>
+        <tr>
+          <td>🦋 <strong>Ann CH</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♏ Scorpio · 31y</span></td>
+          <td><strong style="color:#c4607a">Security / Investigation / Compliance (Role)</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Cybersecurity analyst · Legal compliance specialist</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Mars/Saturn/Ketu</td>
+          <td style="font-size:.72rem;color:#c4607a;font-style:italic">Venus mahadasha (from ~2030)</td>
+        </tr>
+        <tr>
+          <td>🦁 <strong>Vasudevan</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♌ Leo · 27y</span></td>
+          <td><strong style="color:#c4607a">Creative Lead / Visual Product (Role)</strong></td>
+          <td style="font-size:.75rem;color:#7c5cbf">🔮 Product</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Creative director at a product company · Content / media production lead</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Jupiter/Venus/Venus</td>
+          <td style="font-size:.72rem;color:#c4607a;font-style:italic">Jupiter/Venus (now)</td>
+        </tr>
+        <tr>
+          <td>🐘 <strong>Cini</strong><br>
+            <span style="font-size:.68rem;color:var(--muted)">♐ Sagittarius · 40y</span></td>
+          <td><strong style="color:#c4607a">Education / Counseling / Spiritual Teaching (Role)</strong></td>
+          <td style="font-size:.75rem;color:#c4607a">⚙️ Operations</td>
+          <td style="font-size:.75rem;color:rgba(240,232,216,0.65)">Educator / teacher / counselor · Spiritual facilitator / retreat organizer</td>
+          <td style="font-size:.72rem;color:rgba(196,158,64,0.65)">Rahu/Saturn/Saturn</td>
+          <td style="font-size:.72rem;color:#c4607a;font-style:italic">Jupiter mahadasha (from ~2033)</td>
+        </tr></tbody>
+      </table>
+    </div>
+
+  <div class="divider">Full Profile Cards</div>
+  <div class="cards-grid">
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5a8f72">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐬</div>
+          <div>
+            <div class="bcard-name">Remya</div>
+            <div class="bcard-meta">♊ Gemini · 39y · <span style="color:#5a8f72">🚀 Startup-Ready</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#7c5cbf22;color:#7c5cbf;border:1px solid #7c5cbf44">🔮 Product</div>
+        </div>
+        <div class="bcard-area" style="color:#5a8f72">Analytics SaaS / Communication Tools</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>📊 Data analytics dashboard for SMEs</li><li>✍️ AI writing / content intelligence platform</li><li>🔍 Research & insight automation tool</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Mercury exalted H1 (Bhadra Yoga) + 4-planet Gemini stellium = sharpest analyst in the group; Mercury/Jupiter dasha = product + teaching peak</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Heavy operational execution, physical manufacturing</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5a8f72">Now → 2028 (Mercury/Jupiter bhukti = analytical goldmine)</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Mercury/Jupiter/Mercury</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5a8f72">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦅</div>
+          <div>
+            <div class="bcard-name">Joseph TC</div>
+            <div class="bcard-meta">♐ Sagittarius · 41y · <span style="color:#5a8f72">🚀 Startup-Ready</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#5a8f72">EdTech / Knowledge Consulting</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>📘 Professional coaching platform (live + async)</li><li>🏫 Corporate learning & upskilling SaaS</li><li>🤝 B2B advisory marketplace for SMEs</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Jupiter own-sign H1 (wisdom identity) + Mercury H9 (teaching 10th lord) + Venus/Venus dasha = peak window for knowledge products now</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Physical products, retail, consumer mass market</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5a8f72">Now → Oct 2026 (Venus/Venus/Mercury peak)</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Venus/Venus/Mercury</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦅</div>
+          <div>
+            <div class="bcard-name">Sai</div>
+            <div class="bcard-meta">♑ Capricorn · 35y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#5a8f7222;color:#5a8f72;border:1px solid #5a8f7244">💰 Finance</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Fintech / Wealth Infrastructure</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>💰 Wealth management platform for HNIs</li><li>📈 Investment portfolio SaaS for advisors</li><li>🏦 Financial compliance / audit automation</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Sasa Yoga (Saturn) + Hamsa Yoga (Jupiter exalted Cancer) + Yoga Karaka Venus = structural financial authority; Finance score 93 is highest in the group</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Fast consumer apps, entertainment, speculative ventures</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">2027–2030 (Mercury bhukti within Saturn MD = systems + communication peak)</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Saturn/Saturn/Rahu</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦅</div>
+          <div>
+            <div class="bcard-name">Gewin</div>
+            <div class="bcard-meta">♒ Aquarius · 41y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Tech Infrastructure / Community Platforms</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>⚙️ DevOps / FinOps SaaS for tech teams</li><li>🌐 Online community infrastructure platform</li><li>🔐 Enterprise security operations tool</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Aquarius Lagna (systems + collective) + Ops 80 + Finance 80 = natural FinOps/TechOps builder; currently Ketu = plan now, launch in Mercury dasha (2026)</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Solo consumer brand (needs collective/community angle)</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">2026 Mercury dasha starts — that's the execution window</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Ketu/Moon/Saturn</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐬</div>
+          <div>
+            <div class="bcard-name">Spirilla Guy</div>
+            <div class="bcard-meta">♑ Capricorn · 29y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#7c5cbf22;color:#7c5cbf;border:1px solid #7c5cbf44">🔮 Product</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">International SaaS / Wellness Tech</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🌍 International market entry SaaS</li><li>🧘 Meditation / mental wellness app</li><li>🎯 Enterprise talent/skills platform</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Malavya Yoga (Venus exalted) + Capricorn Lagna (enterprise) + H12 stellium (international/hidden) + Product 67; Moon/Venus dasha = consumer wellness timing</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Heavy sales roles, high-street retail</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">Venus bhukti (now) → Jupiter antara 2026 = international product expansion</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Moon/Venus/Jupiter</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦢</div>
+          <div>
+            <div class="bcard-name">Reddit Girl</div>
+            <div class="bcard-meta">♑ Capricorn · 23y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#5a8f7222;color:#5a8f72;border:1px solid #5a8f7244">💰 Finance</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Luxury Fintech / Millennial Wealth</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>💎 Luxury lifestyle subscription platform</li><li>📱 Wealth planning app for Gen Z / millennials</li><li>🛍️ Premium D2C beauty / wellness brand</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Malavya Yoga (Venus exalted = luxury/beauty) + Hamsa Yoga + Finance 80; Capricorn Lagna = structured wealth instinct; Venus/Venus dasha = beauty/luxury activation</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Heavy tech infrastructure; better as design-forward consumer brand</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">Now (Venus/Venus) = launch a brand, not build infrastructure</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Venus/Venus/Rahu</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐅</div>
+          <div>
+            <div class="bcard-name">Jinx</div>
+            <div class="bcard-meta">♓ Pisces · 25y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Healthcare Ops / Spiritual Wellness</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🏥 Healthcare operations management tool</li><li>🧘 Spiritual wellness platform (B2C)</li><li>🎵 Sound healing / therapeutic content brand</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Pisces Lagna (healing/spiritual) + Adhi Yoga (prosperity through knowledge) + Ops 67 from Mercury/Saturn; Mercury/Ketu bhukti = transition — healing/research products align</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Aggressive sales, corporate enterprise</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">Mercury/Mercury antara 2026 = product definition window</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Mercury/Ketu/Mercury</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐘</div>
+          <div>
+            <div class="bcard-name">Tintu</div>
+            <div class="bcard-meta">♑ Capricorn · 35y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#5a8f7222;color:#5a8f72;border:1px solid #5a8f7244">💰 Finance</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Real Estate Finance / PropTech</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🏠 Real estate investment platform</li><li>📑 Property deal structuring SaaS</li><li>🤝 Joint venture matching for developers</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Capricorn Lagna (structure/real estate) + Jupiter exalted H7 (partner-driven wealth) + Hamsa+Sasa yogas + Finance 73; H12 stellium = international property angle</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Consumer apps, entertainment, fast-fashion</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">Mercury antara (late 2026) — Jupiter exalted H7 = ideal for JV/partner deals</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Venus/Ketu/Mercury</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐘</div>
+          <div>
+            <div class="bcard-name">Bodhi CH</div>
+            <div class="bcard-meta">♉ Taurus · 34y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Sustainable Food / AgriTech</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🌱 Sustainable food supply platform</li><li>🌾 Agri-operations management tool</li><li>🍃 Wellness / organic consumer brand</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Taurus Lagna (earth, food, sustainability) + Ops 53 + stable balanced scores; Jupiter/Mercury dasha = knowledge-based food systems; Taurus = beauty meets utility</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">High-risk speculative ventures, fast consumer apps</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">Mercury bhukti → Jupiter antara 2026 = product validation window</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Jupiter/Mercury/Jupiter</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦁</div>
+          <div>
+            <div class="bcard-name">Ammu CH</div>
+            <div class="bcard-meta">♌ Leo · 35y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#7c5cbf22;color:#7c5cbf;border:1px solid #7c5cbf44">🔮 Product</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Creative Tools / Leadership Development</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🎨 Creative collaboration platform for teams</li><li>🏆 Leadership coaching program / app</li><li>⚡ Sports performance analytics tool</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Leo Lagna (natural authority + creative) + Yoga Karaka Mars (engineering/sports) + H1 triple stellium (Sun/Mercury/Venus) + Viparita Raja Jupiter exalted H12</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Quiet back-office roles, heavy B2B enterprise</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">Jupiter bhukti (current) = expansion window for visible platforms</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Saturn/Jupiter/Jupiter</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦁</div>
+          <div>
+            <div class="bcard-name">Kiran</div>
+            <div class="bcard-meta">♑ Capricorn · 42y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Real Estate Tech / Supply Chain</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🏗️ Construction project management SaaS</li><li>📦 Supply chain optimization platform</li><li>🏘️ Real estate operations & leasing tool</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Capricorn Lagna (structure) + Sasa Yoga + Yoga Karaka + Ops 73; Saturn H10 exalted = real estate/construction authority; Sun H10 = career-defining power</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Creative/entertainment, consumer lifestyle brands</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">Jupiter/Venus now = expansion; Sun bhukti starting = authority/launch phase</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Jupiter/Venus/Sun</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦌</div>
+          <div>
+            <div class="bcard-name">Ruhi CH</div>
+            <div class="bcard-meta">♐ Sagittarius · 24y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Sports Tech / Educational Platforms</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🏅 Sports performance tracking app</li><li>📚 Student learning operations tool</li><li>🎯 Youth skill development platform</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Mars exalted H5 (creative initiative + sports) + Sagittarius Lagna (education/sports/adventure) + Jupiter/Mercury dasha; age 24 = best as co-founder or early employee</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Solo founding; complex B2B enterprise</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">2027–2030 (Saturn bhukti = discipline + structures that last)</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Jupiter/Mercury/Saturn</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦁</div>
+          <div>
+            <div class="bcard-name">Khayel CH</div>
+            <div class="bcard-meta">♍ Virgo · 25y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c49e4022;color:#c49e40;border:1px solid #c49e4044">📣 Marketing</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Health & Wellness Brand / Precision Marketing</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>💊 Health/wellness D2C brand</li><li>📱 Women's wellness app</li><li>🎯 Precision health marketing agency</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Virgo Lagna (health, detail, precision) + Budha-Aditya (intelligence) + Gajakesari (Jupiter-Moon) + Marketing 53; only Marketing-native in the group</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Heavy ops/infrastructure; abstract tech products</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">Jupiter antara 2026 = expansion of brand reach</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Saturn/Mars/Jupiter</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c49e40">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦅</div>
+          <div>
+            <div class="bcard-name">Yaqza</div>
+            <div class="bcard-meta">♏ Scorpio · 22y · <span style="color:#c49e40">🌱 Founder-Track</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#c49e40">Research Platforms / Knowledge Analytics</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🔬 Research intelligence platform</li><li>📊 Academic / market analytics SaaS</li><li>🎓 Knowledge consulting for corporates</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Jupiter+Mercury(R) H10 Leo (2 Raja Yogas = research authority) + Scorpio Lagna (deep investigation) + Jupiter/Mercury dasha = peak intellectual window</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Mass-market sales, consumer brand</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c49e40">Now → Oct 2027 (Jupiter/Mercury = analytical authority peak)</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Jupiter/Mercury/Sun</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦚</div>
+          <div>
+            <div class="bcard-name">Soniya</div>
+            <div class="bcard-meta">♎ Libra · 42y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#5a8f7222;color:#5a8f72;border:1px solid #5a8f7244">💰 Finance</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">Alternative Investment / Insurance Products</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>💰 Alternative investment advisory</li><li>🛡️ Insurance / wealth protection products</li><li>🏦 Transformation finance (distressed assets)</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">H8 stellium (Sun/Mercury/Venus/Rahu) = wealth through transformation/others' resources + 7 yogas + Finance 87; Moon MD = emotional public-facing phase — best as face of a finance brand</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Clean consumer product startup; prefers hidden-wealth structures</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">Saturn bhukti 2026–2028 = structured financial authority phase</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Moon/Saturn/Venus</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐅</div>
+          <div>
+            <div class="bcard-name">Pi CH</div>
+            <div class="bcard-meta">♈ Aries · 36y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#5b8fd422;color:#5b8fd4;border:1px solid #5b8fd444">🤝 Sales</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">Bold Consumer Brand / Fitness Products</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🏋️ Fitness / sports consumer brand</li><li>💄 Luxury beauty / lifestyle D2C</li><li>📣 Consumer tech hardware brand</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Aries Lagna (bold, pioneering) + Malavya Yoga (Venus exalted) + Sales 73 + Marketing 73; 2x Viparita Raja = rises through adversity; best solo founder if she commits</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">B2B software, heavy enterprise, slow methodical roles</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">Saturn/Mercury antara 2026 = real execution possible despite Ketu fog now</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Saturn/Saturn/Ketu</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦅</div>
+          <div>
+            <div class="bcard-name">Athens CH</div>
+            <div class="bcard-meta">♐ Sagittarius · 26y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#5b8fd422;color:#5b8fd4;border:1px solid #5b8fd444">🤝 Sales</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">Service Delivery / Healthcare Sales</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🏥 Healthcare service delivery company</li><li>⚽ Sports/fitness brand or academy</li><li>🛒 High-ticket D2C product sales</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">4-planet H6 stellium (service orientation) + Sales 73 + Sun/Mars dasha (high energy, leadership impulse); best as sales-focused co-founder, not solo CEO</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Abstract product-building; back-office operations</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">Mars antara (now) = high-action window; don't overthink, execute</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Sun/Mars/Jupiter</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦢</div>
+          <div>
+            <div class="bcard-name">Mirjam</div>
+            <div class="bcard-meta">♐ Sagittarius · 51y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#7c5cbf22;color:#7c5cbf;border:1px solid #7c5cbf44">🔮 Product</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">TBD</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">—</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">—</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">—</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Rahu/Ketu/Rahu</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐘</div>
+          <div>
+            <div class="bcard-name">Gracious George</div>
+            <div class="bcard-meta">♋ Cancer · 40y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#5b8fd422;color:#5b8fd4;border:1px solid #5b8fd444">🤝 Sales</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">Real Estate / Hospitality / Care Services</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🏘️ Real estate development / sales</li><li>🍽️ Restaurant / hospitality brand</li><li>👴 Elder care / home services platform</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Cancer Lagna (home, food, care) + Yoga Karaka Mars exalted (engineering/building) + Sasa Yoga + Sales 67 + Marketing 67; Saturn/Saturn = infrastructure phase</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Tech startups, abstract products, international ventures</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">2028 (Mercury bhukti) = communication/brand launch window</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Saturn/Saturn/Ketu</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦚</div>
+          <div>
+            <div class="bcard-name">Isolda</div>
+            <div class="bcard-meta">♏ Scorpio · 40y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#5b8fd422;color:#5b8fd4;border:1px solid #5b8fd444">🤝 Sales</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">Luxury Brands / Financial Product Sales</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>💎 Luxury goods / premium brand sales</li><li>📋 Financial product advisory (insurance, wealth)</li><li>🏡 High-end real estate sales</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Venus exalted H7 (Malavya = luxury partnerships) + Scorpio Lagna (depth, transformation) + Sales 67; Saturn/Mercury dasha = systematic, long-arc selling</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Fast consumer apps, speculative founding</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">Mercury antara (current) = best for structured financial sales roles</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Saturn/Mercury/Mercury</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐍</div>
+          <div>
+            <div class="bcard-name">Lalu</div>
+            <div class="bcard-meta">♏ Scorpio · 68y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#5b8fd422;color:#5b8fd4;border:1px solid #5b8fd444">🤝 Sales</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">Advisory / Consulting (Senior Expert)</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🏛️ Senior advisory / mentorship program</li><li>🏥 Healthcare consulting (as domain expert)</li><li>📖 Knowledge product / memoir / teaching</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Scorpio Lagna + Raja+DKA+Viparita Raja yogas + Sales 80 — but age 68 = wisdom transmission, not active founding. Saturn/Ketu = completion/legacy phase</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Active founding, scaling, fundraising</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">Saturn/Mars active — advisory / teaching is the right mode</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Saturn/Mars/Ketu</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐅</div>
+          <div>
+            <div class="bcard-name">Kunal</div>
+            <div class="bcard-meta">♓ Pisces · 32y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">Creative Agency / Spiritual Marketing</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🎨 Creative operations agency</li><li>🌐 Spiritual / wellness marketing brand</li><li>🧑‍💻 Tech consulting with creative overlay</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Pisces Lagna (visionary/creative) + Ops 67 + Marketing 67 + Saturn/Saturn = discipline in creative domain; Rahu antara = tech disruption angle works</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Pure finance, heavy enterprise sales</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">Mercury bhukti 2028 = communication platform / content product</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Saturn/Saturn/Rahu</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦋</div>
+          <div>
+            <div class="bcard-name">Always CH</div>
+            <div class="bcard-meta">♎ Libra · 34y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">HR Tech / Legal Operations / Consulting</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>👥 HR operations & compliance tool</li><li>⚖️ Legal workflow SaaS</li><li>🤝 Partnership / vendor management platform</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Libra Lagna (partnerships, law, balance) + Ops 53 + Budha-Aditya + Jupiter/Mercury dasha; best in structured collaborative environments</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Solo consumer brand, aggressive B2C sales</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">Mercury bhukti (now) = best for analytical/systematic product work</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Jupiter/Mercury/Sun</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦌</div>
+          <div>
+            <div class="bcard-name">Zerin</div>
+            <div class="bcard-meta">♐ Sagittarius · 25y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">EdTech / Travel / Adventure (early career)</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>✈️ Student travel / experiential learning platform</li><li>📚 Educational content for Gen Z</li><li>🌿 Sustainable lifestyle brand (entry-level)</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Sagittarius Lagna (travel/education/philosophy) + Venus/Sun dasha; age 25 = best as early employee or apprentice founder; Kemadruma needs to be addressed before founding solo</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Heavy B2B, complex enterprise, solo founding now</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">Jupiter mahadasha (from ~2028) = real founding window</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Venus/Sun/Mercury</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #5b8fd4">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦁</div>
+          <div>
+            <div class="bcard-name">Prakashji</div>
+            <div class="bcard-meta">♌ Leo · 52y · <span style="color:#5b8fd4">🔄 Conditional</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#5b8fd4">Leadership Consulting / Executive Advisory</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🏛️ Executive leadership advisory firm</li><li>📋 Org design & operations consulting</li><li>🎓 Corporate training & certification</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Leo Lagna (natural authority) + Ops 60 + age 52 = wisdom + experience combination; Saturn/Moon/Mercury = systematic thought + public communication; better as founder of advisory firm than tech startup</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Consumer tech, fast D2C, youth-oriented products</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#5b8fd4">Mercury antara (now) = best for publishing, teaching, speaking</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Saturn/Moon/Mercury</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c4607a">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦋</div>
+          <div>
+            <div class="bcard-name">Biju Jacob</div>
+            <div class="bcard-meta">♎ Libra · 42y · <span style="color:#c4607a">🏢 Specialist</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#c4607a">Operations / Project Management (Role)</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>⚙️ Head of Operations at a growing startup</li><li>📋 Project / program manager (enterprise)</li><li>🤝 Ops consultant for SMEs</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Libra Lagna (harmony/balance) + Sasa+Raja Yogas BUT Venus (Lagna lord) H12 = identity in loss house; Rahu/Moon/Sun dasha = emotional turbulence — best as excellent #2, not founder</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Starting own company in this dasha; will lose clarity under pressure</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c4607a">Jupiter mahadasha (from ~2029) = real authority window</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Rahu/Moon/Sun</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c4607a">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐬</div>
+          <div>
+            <div class="bcard-name">Goldy</div>
+            <div class="bcard-meta">♓ Pisces · 41y · <span style="color:#c4607a">🏢 Specialist</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#5b8fd422;color:#5b8fd4;border:1px solid #5b8fd444">🤝 Sales</div>
+        </div>
+        <div class="bcard-area" style="color:#c4607a">Creative / Spiritual Sales (Role, not Founder)</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🎨 Art / spiritual product sales lead</li><li>🌍 International business development</li><li>✍️ Creative consulting & writing</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Pisces Lagna (spiritual/creative) + Sales 53; Rahu/Venus dasha = creative obsession phase — best as sales lead in a creative/spiritual company, not founder</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Operations, finance, founding solo</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c4607a">Venus bhukti (now) = creative output, not company building</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Rahu/Venus/Venus</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c4607a">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦅</div>
+          <div>
+            <div class="bcard-name">Vi CH</div>
+            <div class="bcard-meta">♏ Scorpio · 27y · <span style="color:#c4607a">🏢 Specialist</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#7c5cbf22;color:#7c5cbf;border:1px solid #7c5cbf44">🔮 Product</div>
+        </div>
+        <div class="bcard-area" style="color:#c4607a">Research / Investigation / Back-end Product</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🔍 Research analyst at a fintech/product company</li><li>🧬 Deep-dive product researcher</li><li>🛡️ Security / investigative analyst</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Scorpio Lagna (depth, investigation) + Mars H12 (private internal drive); Ops score 7 = cannot execute publicly; best in back-office product/research role</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Customer-facing roles, sales, public leadership, founding</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c4607a">Venus antara (now) = relationship-building phase within a team</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Mars/Rahu/Venus</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c4607a">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦋</div>
+          <div>
+            <div class="bcard-name">Ann CH</div>
+            <div class="bcard-meta">♏ Scorpio · 31y · <span style="color:#c4607a">🏢 Specialist</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#c4607a">Security / Investigation / Compliance (Role)</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🔒 Cybersecurity analyst</li><li>⚖️ Legal compliance specialist</li><li>🔍 Research / audit professional</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Scorpio Lagna (depth/intensity) + Mars in own house (investigative drive) BUT Mars/Saturn/Ketu = brutal dasha combo; all scores low; best in structured security/investigation org</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Any startup founding until dasha improves; self-employment now = high stress</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c4607a">Venus mahadasha (from ~2030) = professional flowering</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Mars/Saturn/Ketu</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c4607a">
+        <div class="bcard-head">
+          <div class="bcard-animal">🦁</div>
+          <div>
+            <div class="bcard-name">Vasudevan</div>
+            <div class="bcard-meta">♌ Leo · 27y · <span style="color:#c4607a">🏢 Specialist</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#7c5cbf22;color:#7c5cbf;border:1px solid #7c5cbf44">🔮 Product</div>
+        </div>
+        <div class="bcard-area" style="color:#c4607a">Creative Lead / Visual Product (Role)</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>🎨 Creative director at a product company</li><li>🎬 Content / media production lead</li><li>🌟 Brand storytelling specialist</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Leo Lagna (creative flair + authority need) + Kemadruma Yoga (needs team to shine) + all scores ≤ 33 = chart works in a supported creative role, not solo founding</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Solo founding, operations, finance, heavy enterprise</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c4607a">Jupiter/Venus (now) = idealistic creative surge — join a company, not found one</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Jupiter/Venus/Venus</strong></div>
+    </div>
+    <div class="bcard">
+      <div class="bcard-top" style="border-left:4px solid #c4607a">
+        <div class="bcard-head">
+          <div class="bcard-animal">🐘</div>
+          <div>
+            <div class="bcard-name">Cini</div>
+            <div class="bcard-meta">♐ Sagittarius · 40y · <span style="color:#c4607a">🏢 Specialist</span></div>
+          </div>
+          <div class="bcard-domain" style="background:#c4607a22;color:#c4607a;border:1px solid #c4607a44">⚙️ Operations</div>
+        </div>
+        <div class="bcard-area" style="color:#c4607a">Education / Counseling / Spiritual Teaching (Role)</div>
+      </div>
+
+      <div class="bcard-body">
+        <div class="bcard-products">
+          <div class="blabel">Best Products / Roles</div>
+          <ul class="product-list"><li>📖 Educator / teacher / counselor</li><li>🧘 Spiritual facilitator / retreat organizer</li><li>🌍 Cross-cultural facilitator (Muscat background)</li></ul>
+        </div>
+        <div class="bcard-detail">
+          <div class="blabel">Why this fits</div>
+          <div class="bcard-why">Sagittarius Lagna (teaching/philosophy) + despite 8 yogas, planets don't fire well (all scores < 30) + Rahu/Saturn dasha = karmic heavy phase; best in service/teaching role</div>
+          <div class="blabel" style="margin-top:12px">Avoid</div>
+          <div class="bcard-avoid">Any business founding during this dasha; heavy financial risk</div>
+          <div class="blabel" style="margin-top:12px">⏱ Best Window</div>
+          <div class="bcard-window" style="color:#c4607a">Jupiter mahadasha (from ~2033) = the real window</div>
+        </div>
+      </div>
+
+      <div class="bcard-dasha">Current dasha: <strong style="color:rgba(196,158,64,0.8)">Rahu/Saturn/Saturn</strong></div>
+    </div></div>
+
+  <div class="footer">Generated July 06, 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · 31 profiles<br>
+    Business fit = Lagna archetype + skill domain strength + dasha planet themes + key yogas</div>
+</div>
+</body>
+</html>
