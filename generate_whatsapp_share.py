@@ -53,40 +53,40 @@ ANON = {
 }
 
 # ---------------------------------------------------------------------------
-# All profile data
+# All profile data — added location as last field
 # ---------------------------------------------------------------------------
 PROFILES = [
-    ("Joseph TC",     "1984-08-05","15:30", 10.10, 76.36,"Asia/Kolkata",  "Sagittarius","Venus/Venus/Mercury",    "🦅","M", "🚀",73, "EdTech / Knowledge Consulting",  ["Professional coaching platform","Corporate learning SaaS","B2B advisory marketplace"]),
-    ("Goldy",         "1985-03-07","07:15",  9.60, 76.45,"Asia/Kolkata",  "Pisces",     "Rahu/Venus/Venus",       "🐬","M", "🏢",39, "Creative / Spiritual Sales",      ["Art & spiritual product sales","International biz development","Creative consulting"]),
-    ("Prakashji",     "1973-11-04","01:22", 10.77, 76.65,"Asia/Kolkata",  "Leo",        "Saturn/Moon/Mercury",    "🦁","M", "🔄",43, "Leadership Consulting / Advisory", ["Executive advisory firm","Org design consulting","Corporate training"]),
-    ("Gewin",         "1984-12-11","11:55", 23.61, 58.59,"Asia/Muscat",   "Aquarius",   "Ketu/Moon/Saturn",       "🦅","M", "🌱",67, "Tech Infrastructure / Community",  ["DevOps / FinOps SaaS","Community infrastructure","Enterprise security ops"]),
-    ("Mirjam",        "1975-05-27","23:00", 52.63,  4.75,"Europe/Amsterdam","Sagittarius","Rahu/Ketu/Rahu",       "🦢","F", "🔄",57, "International Consulting",         ["Cross-border advisory","Spiritual wellness platform","Educational content"]),
-    ("Ruhi CH",       "2002-03-03","02:00",  9.49, 76.33,"Asia/Kolkata",  "Sagittarius","Jupiter/Mercury/Saturn", "🦌","F", "🌱",58, "Sports Tech / EdTech",            ["Sports performance app","Student learning tool","Youth skill platform"]),
-    ("Athens CH",     "2000-06-07","20:08",  9.55, 76.78,"Asia/Kolkata",  "Sagittarius","Sun/Mars/Jupiter",       "🦅","M", "🔄",54, "Healthcare / Service Delivery",    ["Healthcare service delivery","Sports / fitness brand","High-ticket D2C sales"]),
-    ("Zerin",         "2000-11-09","09:25", 10.87, 76.33,"Asia/Kolkata",  "Sagittarius","Venus/Sun/Mercury",      "🦌","F", "🔄",49, "EdTech / Travel (early career)",   ["Student travel platform","Gen Z educational content","Sustainable lifestyle brand"]),
-    ("Spirilla Guy",  "1996-12-12","10:15", 13.08, 80.27,"Asia/Kolkata",  "Capricorn",  "Moon/Venus/Jupiter",     "🐬","M", "🌱",61, "International SaaS / Wellness",    ["International market entry SaaS","Meditation / wellness app","Enterprise talent platform"]),
-    ("Gracious George","1985-07-24","07:30", 9.75, 77.08,"Asia/Kolkata",  "Cancer",     "Saturn/Saturn/Ketu",     "🐘","M", "🔄",50, "Real Estate / Hospitality",        ["Real estate development","Restaurant / hospitality brand","Elder care platform"]),
-    ("Yaqza",         "2003-09-19","12:00", 11.25, 75.77,"Asia/Kolkata",  "Scorpio",    "Jupiter/Mercury/Sun",    "🦅","M", "🌱",60, "Research Platforms / Analytics",   ["Research intelligence platform","Academic analytics SaaS","Knowledge consulting"]),
-    ("Isolda",        "1985-07-24","14:04",  9.93, 76.26,"Asia/Kolkata",  "Scorpio",    "Saturn/Mercury/Mercury", "🦚","F", "🔄",52, "Luxury Brands / Financial Sales",  ["Luxury goods / premium brand","Financial product advisory","High-end real estate sales"]),
-    ("Jinx",          "2001-07-01","23:30",  8.52, 76.94,"Asia/Kolkata",  "Pisces",     "Mercury/Ketu/Mercury",   "🐅","F", "🌱",55, "Healthcare Ops / Spiritual Wellness",["Healthcare operations tool","Spiritual wellness platform","Sound healing brand"]),
-    ("Sai",           "1991-02-24","04:40",  8.52, 76.94,"Asia/Kolkata",  "Capricorn",  "Saturn/Saturn/Rahu",     "🦅","M", "🌱",65, "Fintech / Wealth Infrastructure",  ["Wealth management platform","Investment portfolio SaaS","Financial compliance tool"]),
-    ("Vi CH",         "1998-08-23","11:55",  8.52, 76.94,"Asia/Kolkata",  "Scorpio",    "Mars/Rahu/Venus",        "🦅","F", "🏢",28, "Research / Investigation (Role)",  ["Research analyst (fintech/product)","Deep-dive product researcher","Security / investigative analyst"]),
-    ("Pi CH",         "1989-10-01","20:43", 10.52, 76.21,"Asia/Kolkata",  "Aries",      "Saturn/Saturn/Ketu",     "🐅","F", "🔄",44, "Bold Consumer Brand / Fitness",    ["Fitness / sports consumer brand","Luxury beauty D2C","Consumer tech hardware brand"]),
-    ("Lalu",          "1958-05-18","19:30", 10.10, 76.36,"Asia/Kolkata",  "Scorpio",    "Saturn/Mars/Ketu",       "🐍","F", "🔄",51, "Advisory / Consulting (Senior)",   ["Senior advisory / mentorship","Healthcare consulting","Knowledge product / teaching"]),
-    ("Reddit Girl",   "2002-11-16","11:25", 26.91, 75.79,"Asia/Kolkata",  "Capricorn",  "Venus/Venus/Rahu",       "🦢","F", "🌱",61, "Luxury Fintech / Millennial Wealth",["Luxury lifestyle subscription","Gen Z wealth planning app","Premium D2C beauty brand"]),
-    ("Tintu",         "1990-12-26","09:30", 10.10, 76.36,"Asia/Kolkata",  "Capricorn",  "Venus/Ketu/Mercury",     "🐘","M", "🌱",63, "Real Estate Finance / PropTech",   ["Real estate investment platform","Property deal structuring SaaS","JV matching for developers"]),
-    ("Cini",          "1985-10-29","11:30", 23.61, 58.59,"Asia/Muscat",   "Sagittarius","Rahu/Saturn/Saturn",     "🐘","F", "🏢", 6, "Education / Counseling (Role)",    ["Educator / teacher / counselor","Spiritual facilitator","Cross-cultural facilitator"]),
-    ("Khayel CH",     "2001-01-01","00:02", 25.20, 55.27,"Asia/Dubai",    "Virgo",      "Saturn/Mars/Jupiter",    "🦁","F", "🌱",55, "Health & Wellness Brand",          ["Health/wellness D2C brand","Women's wellness app","Precision health marketing agency"]),
-    ("Soniya",        "1984-06-13","16:15", 10.77, 76.65,"Asia/Kolkata",  "Libra",      "Moon/Saturn/Venus",      "🦚","F", "🔄",50, "Alternative Investment / Insurance",["Alternative investment advisory","Insurance / wealth protection","Transformation finance"]),
-    ("Vasudevan",     "1999-06-23","10:30", 10.02, 76.31,"Asia/Kolkata",  "Leo",        "Jupiter/Venus/Venus",    "🦁","M", "🏢",40, "Creative Lead / Visual Product (Role)",["Creative director (product co)","Content / media production lead","Brand storytelling specialist"]),
-    ("Remya",         "1987-06-18","06:30", 10.10, 76.36,"Asia/Kolkata",  "Gemini",     "Mercury/Jupiter/Mercury","🐬","F", "🚀",70, "Analytics SaaS / Comm Tools",      ["Data analytics dashboard","AI writing / content intelligence","Research & insight automation"]),
-    ("Ammu CH",       "1990-09-05","05:30",  8.52, 76.94,"Asia/Kolkata",  "Leo",        "Saturn/Jupiter/Jupiter", "🦁","F", "🌱",66, "Creative Tools / Leadership Dev",  ["Creative collaboration platform","Leadership coaching app","Sports performance analytics"]),
-    ("Biju Jacob",    "1983-11-10","05:30", 23.61, 58.59,"Asia/Muscat",   "Libra",      "Rahu/Moon/Sun",          "🦋","M", "🏢",19, "Operations / Project Mgmt (Role)", ["Head of Operations at startup","Project / program manager","Ops consultant for SMEs"]),
-    ("Kiran",         "1983-11-02","12:58", 10.77, 76.00,"Asia/Kolkata",  "Capricorn",  "Jupiter/Venus/Sun",      "🦁","M", "🌱",58, "Real Estate Tech / Supply Chain",  ["Construction project mgmt SaaS","Supply chain optimization","Real estate operations tool"]),
-    ("Ann CH",        "1994-08-09","13:30",  9.94, 76.35,"Asia/Kolkata",  "Scorpio",    "Mars/Saturn/Ketu",       "🦋","F", "🏢",21, "Security / Compliance (Role)",     ["Cybersecurity analyst","Legal compliance specialist","Research / audit professional"]),
-    ("Always CH",     "1991-09-21","08:45", 28.70, 77.10,"Asia/Kolkata",  "Libra",      "Jupiter/Mercury/Sun",    "🦋","M", "🔄",54, "HR Tech / Legal Operations",       ["HR operations & compliance tool","Legal workflow SaaS","Partnership management platform"]),
-    ("Bodhi CH",      "1991-09-05","21:50",  9.73, 76.33,"Asia/Kolkata",  "Taurus",     "Jupiter/Mercury/Jupiter","🐘","M", "🌱",60, "Sustainable Food / AgriTech",      ["Sustainable food supply platform","Agri-operations management","Wellness / organic brand"]),
-    ("Kunal",         "1993-09-10","18:50", 27.56, 76.61,"Asia/Kolkata",  "Pisces",     "Saturn/Saturn/Rahu",     "🐅","M", "🔄",51, "Creative Agency / Spiritual Mktg", ["Creative operations agency","Spiritual / wellness marketing","Tech consulting + creative overlay"]),
+    ("Joseph TC",     "1984-08-05","15:30", 10.10, 76.36,"Asia/Kolkata",  "Sagittarius","Venus/Venus/Mercury",    "🦅","M", "🚀",73, "EdTech / Knowledge Consulting",  ["Professional coaching platform","Corporate learning SaaS","B2B advisory marketplace"], "Aluva, Kerala"),
+    ("Goldy",         "1985-03-07","07:15",  9.60, 76.45,"Asia/Kolkata",  "Pisces",     "Rahu/Venus/Venus",       "🐬","M", "🏢",39, "Creative / Spiritual Sales",      ["Art & spiritual product sales","International biz development","Creative consulting"], "Kangazha, Kerala"),
+    ("Prakashji",     "1973-11-04","01:22", 10.77, 76.65,"Asia/Kolkata",  "Leo",        "Saturn/Moon/Mercury",    "🦁","M", "🔄",43, "Leadership Consulting / Advisory", ["Executive advisory firm","Org design consulting","Corporate training"], "Palakkad, Kerala"),
+    ("Gewin",         "1984-12-11","11:55", 23.61, 58.59,"Asia/Muscat",   "Aquarius",   "Ketu/Moon/Saturn",       "🦅","M", "🌱",67, "Tech Infrastructure / Community",  ["DevOps / FinOps SaaS","Community infrastructure","Enterprise security ops"], "Muscat, Oman"),
+    ("Mirjam",        "1975-05-27","23:00", 52.63,  4.75,"Europe/Amsterdam","Sagittarius","Rahu/Ketu/Rahu",       "🦢","F", "🔄",57, "International Consulting",         ["Cross-border advisory","Spiritual wellness platform","Educational content"], "Alkmaar, Netherlands"),
+    ("Ruhi CH",       "2002-03-03","02:00",  9.49, 76.33,"Asia/Kolkata",  "Sagittarius","Jupiter/Mercury/Saturn", "🦌","F", "🌱",58, "Sports Tech / EdTech",            ["Sports performance app","Student learning tool","Youth skill platform"], "Alleppey, Kerala"),
+    ("Athens CH",     "2000-06-07","20:08",  9.55, 76.78,"Asia/Kolkata",  "Sagittarius","Sun/Mars/Jupiter",       "🦅","M", "🔄",54, "Healthcare / Service Delivery",    ["Healthcare service delivery","Sports / fitness brand","High-ticket D2C sales"], "Kanjirapally, Kerala"),
+    ("Zerin",         "2000-11-09","09:25", 10.87, 76.33,"Asia/Kolkata",  "Sagittarius","Venus/Sun/Mercury",      "🦌","F", "🔄",49, "EdTech / Travel (early career)",   ["Student travel platform","Gen Z educational content","Sustainable lifestyle brand"], "Cherpulassery, Kerala"),
+    ("Spirilla Guy",  "1996-12-12","10:15", 13.08, 80.27,"Asia/Kolkata",  "Capricorn",  "Moon/Venus/Jupiter",     "🐬","M", "🌱",61, "International SaaS / Wellness",    ["International market entry SaaS","Meditation / wellness app","Enterprise talent platform"], "Chennai, India"),
+    ("Gracious George","1985-07-24","07:30", 9.75, 77.08,"Asia/Kolkata",  "Cancer",     "Saturn/Saturn/Ketu",     "🐘","M", "🔄",50, "Real Estate / Hospitality",        ["Real estate development","Restaurant / hospitality brand","Elder care platform"], "Kattappana, Kerala"),
+    ("Yaqza",         "2003-09-19","12:00", 11.25, 75.77,"Asia/Kolkata",  "Scorpio",    "Jupiter/Mercury/Sun",    "🦅","M", "🌱",60, "Research Platforms / Analytics",   ["Research intelligence platform","Academic analytics SaaS","Knowledge consulting"], "Kozhikode, Kerala"),
+    ("Isolda",        "1985-07-24","14:04",  9.93, 76.26,"Asia/Kolkata",  "Scorpio",    "Saturn/Mercury/Mercury", "🦚","F", "🔄",52, "Luxury Brands / Financial Sales",  ["Luxury goods / premium brand","Financial product advisory","High-end real estate sales"], "Cochin, Kerala"),
+    ("Jinx",          "2001-07-01","23:30",  8.52, 76.94,"Asia/Kolkata",  "Pisces",     "Mercury/Ketu/Mercury",   "🐅","F", "🌱",55, "Healthcare Ops / Spiritual Wellness",["Healthcare operations tool","Spiritual wellness platform","Sound healing brand"], "Trivandrum, Kerala"),
+    ("Sai",           "1991-02-24","04:40",  8.52, 76.94,"Asia/Kolkata",  "Capricorn",  "Saturn/Saturn/Rahu",     "🦅","M", "🌱",65, "Fintech / Wealth Infrastructure",  ["Wealth management platform","Investment portfolio SaaS","Financial compliance tool"], "Trivandrum, Kerala"),
+    ("Vi CH",         "1998-08-23","11:55",  8.52, 76.94,"Asia/Kolkata",  "Scorpio",    "Mars/Rahu/Venus",        "🦅","F", "🏢",28, "Research / Investigation (Role)",  ["Research analyst (fintech/product)","Deep-dive product researcher","Security / investigative analyst"], "Trivandrum, Kerala"),
+    ("Pi CH",         "1989-10-01","20:43", 10.52, 76.21,"Asia/Kolkata",  "Aries",      "Saturn/Saturn/Ketu",     "🐅","F", "🔄",44, "Bold Consumer Brand / Fitness",    ["Fitness / sports consumer brand","Luxury beauty D2C","Consumer tech hardware brand"], "Thrissur, Kerala"),
+    ("Lalu",          "1958-05-18","19:30", 10.10, 76.36,"Asia/Kolkata",  "Scorpio",    "Saturn/Mars/Ketu",       "🐍","F", "🔄",51, "Advisory / Consulting (Senior)",   ["Senior advisory / mentorship","Healthcare consulting","Knowledge product / teaching"], "Aluva, Kerala"),
+    ("Reddit Girl",   "2002-11-16","11:25", 26.91, 75.79,"Asia/Kolkata",  "Capricorn",  "Venus/Venus/Rahu",       "🦢","F", "🌱",61, "Luxury Fintech / Millennial Wealth",["Luxury lifestyle subscription","Gen Z wealth planning app","Premium D2C beauty brand"], "Jaipur, Rajasthan"),
+    ("Tintu",         "1990-12-26","09:30", 10.10, 76.36,"Asia/Kolkata",  "Capricorn",  "Venus/Ketu/Mercury",     "🐘","M", "🌱",63, "Real Estate Finance / PropTech",   ["Real estate investment platform","Property deal structuring SaaS","JV matching for developers"], "Aluva, Kerala"),
+    ("Cini",          "1985-10-29","11:30", 23.61, 58.59,"Asia/Muscat",   "Sagittarius","Rahu/Saturn/Saturn",     "🐘","F", "🏢", 6, "Education / Counseling (Role)",    ["Educator / teacher / counselor","Spiritual facilitator","Cross-cultural facilitator"], "Muscat, Oman"),
+    ("Khayel CH",     "2001-01-01","00:02", 25.20, 55.27,"Asia/Dubai",    "Virgo",      "Saturn/Mars/Jupiter",    "🦁","F", "🌱",55, "Health & Wellness Brand",          ["Health/wellness D2C brand","Women's wellness app","Precision health marketing agency"], "Dubai, UAE"),
+    ("Soniya",        "1984-06-13","16:15", 10.77, 76.65,"Asia/Kolkata",  "Libra",      "Moon/Saturn/Venus",      "🦚","F", "🔄",50, "Alternative Investment / Insurance",["Alternative investment advisory","Insurance / wealth protection","Transformation finance"], "Palakkad, Kerala"),
+    ("Vasudevan",     "1999-06-23","10:30", 10.02, 76.31,"Asia/Kolkata",  "Leo",        "Jupiter/Venus/Venus",    "🦁","M", "🏢",40, "Creative Lead / Visual Product (Role)",["Creative director (product co)","Content / media production lead","Brand storytelling specialist"], "Edappally, Kerala"),
+    ("Remya",         "1987-06-18","06:30", 10.10, 76.36,"Asia/Kolkata",  "Gemini",     "Mercury/Jupiter/Mercury","🐬","F", "🚀",70, "Analytics SaaS / Comm Tools",      ["Data analytics dashboard","AI writing / content intelligence","Research & insight automation"], "Aluva, Kerala"),
+    ("Ammu CH",       "1990-09-05","05:30",  8.52, 76.94,"Asia/Kolkata",  "Leo",        "Saturn/Jupiter/Jupiter", "🦁","F", "🌱",66, "Creative Tools / Leadership Dev",  ["Creative collaboration platform","Leadership coaching app","Sports performance analytics"], "Trivandrum, Kerala"),
+    ("Biju Jacob",    "1983-11-10","05:30", 23.61, 58.59,"Asia/Muscat",   "Libra",      "Rahu/Moon/Sun",          "🦋","M", "🏢",19, "Operations / Project Mgmt (Role)", ["Head of Operations at startup","Project / program manager","Ops consultant for SMEs"], "Muscat, Oman"),
+    ("Kiran",         "1983-11-02","12:58", 10.77, 76.00,"Asia/Kolkata",  "Capricorn",  "Jupiter/Venus/Sun",      "🦁","M", "🌱",58, "Real Estate Tech / Supply Chain",  ["Construction project mgmt SaaS","Supply chain optimization","Real estate operations tool"], "Ottapalam, Kerala"),
+    ("Ann CH",        "1994-08-09","13:30",  9.94, 76.35,"Asia/Kolkata",  "Scorpio",    "Mars/Saturn/Ketu",       "🦋","F", "🏢",21, "Security / Compliance (Role)",     ["Cybersecurity analyst","Legal compliance specialist","Research / audit professional"], "Tripunithura, Kerala"),
+    ("Always CH",     "1991-09-21","08:45", 28.70, 77.10,"Asia/Kolkata",  "Libra",      "Jupiter/Mercury/Sun",    "🦋","M", "🔄",54, "HR Tech / Legal Operations",       ["HR operations & compliance tool","Legal workflow SaaS","Partnership management platform"], "Delhi, India"),
+    ("Bodhi CH",      "1991-09-05","21:50",  9.73, 76.33,"Asia/Kolkata",  "Taurus",     "Jupiter/Mercury/Jupiter","🐘","M", "🌱",60, "Sustainable Food / AgriTech",      ["Sustainable food supply platform","Agri-operations management","Wellness / organic brand"], "Cherthala, Kerala"),
+    ("Kunal",         "1993-09-10","18:50", 27.56, 76.61,"Asia/Kolkata",  "Pisces",     "Saturn/Saturn/Rahu",     "🐅","M", "🔄",51, "Creative Agency / Spiritual Mktg", ["Creative operations agency","Spiritual / wellness marketing","Tech consulting + creative overlay"], "Alwar, Rajasthan"),
 ]
 
 # ---------------------------------------------------------------------------
@@ -108,21 +108,23 @@ def compute_skills(chart):
 print("Computing charts...", flush=True)
 all_data = []
 for row in PROFILES:
-    name,dob,t,lat,lon,tz,lagna,dasha,animal,gender,tier_icon,startup_sc,biz_area,products = row
+    name,dob,t,lat,lon,tz,lagna,dasha,animal,gender,tier_icon,startup_sc,biz_area,products,location = row
     try:
         chart = calculate_chart(dob, t, lat, lon, tz)
         skills = compute_skills(chart)
         best = max(skills, key=skills.get)
         age = (date.today() - datetime.strptime(dob,"%Y-%m-%d").date()).days // 365
         anon_name, anon_emoji = ANON.get(name, (name, animal))
+        gender_label = "Male" if gender == "M" else "Female"
         all_data.append({
             "real_name": name, "anon": anon_name, "emoji": anon_emoji,
             "lagna": lagna, "dasha": dasha, "age": age,
+            "gender": gender, "gender_label": gender_label, "location": location,
             "skills": skills, "best": best, "overall": round(sum(skills.values())/5),
             "tier": tier_icon, "startup_score": startup_sc,
             "biz_area": biz_area, "products": products,
         })
-        print(f"  ✓ {name} → {anon_name}")
+        print(f"  ✓ {name:18s} → {anon_name} · {age}y {gender} · {location}")
     except Exception as e:
         print(f"  ✗ {name}: {e}")
 
@@ -175,8 +177,13 @@ for r in all_data:
 
     products_html = "".join(f'<div class="prod-item">{p}</div>' for p in r["products"][:3])
 
+    gender_icon = "♂" if r["gender"] == "M" else "♀"
     me_badge = '<span class="me-badge">You</span>' if is_me else ''
-    anon_sub = f'<span style="font-size:.65rem;color:rgba(240,232,216,0.35);display:block;margin-top:1px">{ls} {r["lagna"]} · {r["age"]}y</span>'
+    anon_sub = (
+        f'<span style="font-size:.65rem;color:rgba(240,232,216,0.35);display:block;margin-top:1px">'
+        f'{ls} {r["lagna"]} &nbsp;·&nbsp; {r["age"]}y {gender_icon} &nbsp;·&nbsp; 📍{r["location"]}'
+        f'</span>'
+    )
 
     cards_html += f"""
 <div class="card" id="c-{r['real_name'].replace(' ','_')}">
@@ -235,11 +242,14 @@ for tier_icon in ["🚀","🌱","🔄","🏢"]:
         is_me = r["real_name"] == "Goldy"
         dn = r["anon"]
         me_tag = " (You)" if is_me else ""
+        gender_icon = "♂" if r["gender"] == "M" else "♀"
+        demo = f'{r["age"]}y {gender_icon} · {r["location"]}'
         items += f"""
       <div class="tier-item">
         <span class="tier-item-emoji">{r["emoji"]}</span>
         <div class="tier-item-body">
           <div class="tier-item-name">{dn}{me_tag}</div>
+          <div class="tier-item-demo">{demo}</div>
           <div class="tier-item-area">{r["biz_area"]}</div>
         </div>
         <div class="tier-item-right">
@@ -346,7 +356,8 @@ html = f"""<!DOCTYPE html>
     .tier-item-emoji{{font-size:1.4rem;flex-shrink:0;width:32px;text-align:center}}
     .tier-item-body{{flex:1;min-width:0}}
     .tier-item-name{{font-size:.85rem;font-weight:500;color:#fff8f0}}
-    .tier-item-area{{font-size:.72rem;color:var(--muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
+    .tier-item-demo{{font-size:.65rem;color:rgba(196,158,64,0.55);margin-top:1px}}
+    .tier-item-area{{font-size:.72rem;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}
     .tier-item-right{{text-align:right;flex-shrink:0}}
 
     /* PROFILE CARDS */
@@ -438,7 +449,7 @@ html = f"""<!DOCTYPE html>
         <div class="card-top">
           <div class="card-emoji">{r["emoji"]}</div>
           <div style="flex:1"><div class="card-name">{r["anon"]}{"&nbsp;<span class='me-badge'>You</span>" if r["real_name"]=="Goldy" else ""}</div>
-            <span style="font-size:.65rem;color:var(--muted)">{LAGNA_ICON.get(r["lagna"],"✦")} {r["lagna"]} · {r["age"]}y</span></div>
+            <span style="font-size:.65rem;color:var(--muted)">{LAGNA_ICON.get(r["lagna"],"✦")} {r["lagna"]} · {r["age"]}y {"♂" if r["gender"]=="M" else "♀"} · 📍{r["location"]}</span></div>
           <div style="color:#5a8f72;font-weight:700;font-size:1.3rem">{r["startup_score"]}</div>
         </div>
         <div class="card-area" style="color:#5a8f72">{r["biz_area"]}</div>
