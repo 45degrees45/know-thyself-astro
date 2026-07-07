@@ -90,6 +90,136 @@ PROFILES = [
 ]
 
 # ---------------------------------------------------------------------------
+# Planetary insights — 1–2 plain-English sentences per person
+# Written to make the domain recommendation "click"
+# ---------------------------------------------------------------------------
+PLANET_INSIGHT = {
+    "Joseph TC":
+        "Jupiter sits in its own sign right on your Ascendant — wisdom and teaching are literally your face to the world. "
+        "Saturn exalted in H11 quietly builds wealth through networks; you don't hustle, your reputation does the work.",
+
+    "Goldy":
+        "Jupiter rules Pisces but is in Gemini (H4), scattered across too many ideas — the vision is cosmic, the execution gets pulled in many directions. "
+        "Rahu in H2 creates intense desire for wealth and speech, which can either magnetise money or make promises you can't keep.",
+
+    "Prakashji":
+        "Sun rules Leo Lagna and sits in H4 Scorpio — authority is real but wielded in private, behind closed doors. "
+        "Saturn dasha is demanding patience and karmic clearing before the world gives you the recognition you've earned.",
+
+    "Gewin":
+        "Saturn exalted in H9 (Libra) — dharma, systems and higher philosophy all strengthened at once. "
+        "Your Ops 80 + Finance 80 double peak is pure Saturn: structure, discipline and long-term thinking in both domains.",
+
+    "Mirjam":
+        "Jupiter in own sign Sagittarius forms Hamsa Yoga — a rare mark of grace, wisdom and teaching ability. "
+        "Rahu mahadasha is pulling you toward foreign lands, unconventional paths and tech-enabled expansion.",
+
+    "Ruhi CH":
+        "Mars exalted in Capricorn in H5 — fierce, disciplined creative initiative. You can outwork almost anyone in a focused sprint. "
+        "Jupiter on your Lagna keeps the purpose anchored; the risk is scattered energy without a structured container.",
+
+    "Athens CH":
+        "Four planets packed into H6 — service, problem-solving and handling adversity are what you're literally built for. "
+        "Sun + Mars dasha = your highest-energy window; act now, don't overthink.",
+
+    "Zerin":
+        "Jupiter in H1 gives philosophical depth and a natural teaching instinct. "
+        "Moon stands alone without flanking planets (Kemadruma) — emotional intensity spikes under pressure; build a support system before founding solo.",
+
+    "Spirilla Guy":
+        "Venus exalted in Pisces forms Malavya Yoga — beauty of mind, aesthetic intelligence and wealth potential. "
+        "A cluster of planets in H12 (foreign lands, hidden work) means your best output often happens far from home or behind the scenes.",
+
+    "Gracious George":
+        "Mars exalted in Capricorn is Yoga Karaka for Cancer Lagna — building, engineering and real estate are your planetary dharma. "
+        "Saturn's Sasa Yoga adds structural authority; you're a builder, not a speculator.",
+
+    "Yaqza":
+        "Jupiter and Mercury both sit in Leo H10 — two Raja Yogas forming right at the top of your chart, in public visibility. "
+        "This is the classic signature of someone who becomes an authority figure through knowledge and communication.",
+
+    "Isolda":
+        "Venus exalted in Pisces in H7 forms Malavya Yoga — partnerships, beauty and luxury are divinely supported. "
+        "Saturn/Mercury dasha makes you precise and systematic; high-ticket sales or luxury advisory is where this combination shines.",
+
+    "Jinx":
+        "Three benefics in angular/trine positions form Adhi Yoga — prosperity through wisdom, not hustle. "
+        "Mercury/Ketu bhukti is a dissolution phase; old patterns are falling away to make space for the real path.",
+
+    "Sai":
+        "Saturn exalted in Libra (Sasa Yoga) + Jupiter exalted in Cancer — two Pancha Mahapurusha exaltations in one chart. "
+        "Finance score 93 is the highest in the group; this is a chart literally designed for wealth management and long-term structures.",
+
+    "Vi CH":
+        "Mars is your Lagna lord for Scorpio but sits in H12 — all that intensity and drive flows inward, not outward. "
+        "This gives extraordinary depth of focus in private research but makes public leadership feel unnatural and draining.",
+
+    "Pi CH":
+        "Venus exalted in Pisces forms Malavya Yoga — luxury, beauty and boldness as a superpower. "
+        "Two Viparita Raja Yogas mean your biggest wins come after adversity, not despite it; don't quit in the middle.",
+
+    "Lalu":
+        "Three major yogas — Raja, Dharma Karma Adhipati and Viparita Raja — all present in one chart. "
+        "Six decades of lived experience are the activating force; these yogas now speak through wisdom and authority, not ambition.",
+
+    "Reddit Girl":
+        "Hamsa Yoga (Jupiter exalted) + Malavya Yoga (Venus exalted) — two of Jyotish's five great planetary yogas in one chart. "
+        "Finance 80 and Product 73 reflect this double exaltation; Venus/Venus dasha is activating the wealth and beauty dimension right now.",
+
+    "Tintu":
+        "Jupiter exalted in Cancer in H7 — wealth and expansion come through partnerships, not solo ventures. "
+        "Ten yogas including Hamsa and Sasa; the chart is built for long arcs, not quick wins.",
+
+    "Cini":
+        "Eight yogas on paper — but the planets forming them are placed in weak positions. "
+        "Yogas are potential, not guarantee; without strong planetary fuel behind them, they stay dormant. Rahu/Saturn dasha is the heaviest double-burden period.",
+
+    "Khayel CH":
+        "Budha-Aditya Yoga (Sun + Mercury together) — intelligence that commands public respect and recognition. "
+        "Gajakesari (Jupiter trine Moon) adds social grace and public goodwill; Virgo's precision is what makes the health/wellness domain a natural fit.",
+
+    "Soniya":
+        "Four planets in H8 (Sun, Mercury, Venus, Rahu) — hidden wealth, transformation and other people's money are your arena. "
+        "Two Viparita Raja Yogas mean crises become catapults; Finance 87 comes from depth and complexity, not surface simplicity.",
+
+    "Vasudevan":
+        "Kemadruma Yoga: Moon has no planets flanking it — emotional instability under pressure is the core challenge to work through. "
+        "The creative fire is real (Leo Lagna + Yoga Karaka Mars) but the foundation needs intentional structural support.",
+
+    "Remya":
+        "Mercury exalted in its own sign Gemini in H1 — Bhadra Yoga, the Pancha Mahapurusha yoga of pure intellect. "
+        "Four planets in H1 mean you literally embody your brand; Product score 73 is the sharpest analytical chart in the group.",
+
+    "Ammu CH":
+        "Yoga Karaka Mars (rules both kendra and trikona for Leo) — career and purpose are one and the same for you. "
+        "Jupiter exalted in H12 means wisdom works quietly behind the scenes; your biggest asset is often invisible to others.",
+
+    "Biju Jacob":
+        "Sasa Yoga (Saturn exalted) + Raja Yoga (Saturn conjunct Mercury) — structural authority and intellectual precision. "
+        "But Venus, your Lagna lord, sits in H12 — your personal identity stays hidden, making you an outstanding #2 or COO rather than the face of a company.",
+
+    "Kiran":
+        "Saturn exalted in Libra in H10 — Sasa Yoga happening right at the career house, the most powerful possible placement. "
+        "Sun also in H10 adds solar authority; your career IS your dharma and it shows.",
+
+    "Ann CH":
+        "Mars in own sign Scorpio in H1 — fierce investigative intensity and deep perceptive power. "
+        "Mars/Saturn/Ketu is one of the harshest dasha sequences; this is a time to build skills in a protected environment, not take on solo risk.",
+
+    "Always CH":
+        "Budha-Aditya Yoga in Libra — intellect expressed through balance, fairness and partnership. "
+        "Jupiter/Mercury dasha activates knowledge and communication; Libra Lagna works best in collaborative structures rather than solo roles.",
+
+    "Bodhi CH":
+        "Taurus Lagna ruled by Venus — beauty meets utility, comfort meets craft. "
+        "All five skill scores cluster around 53, which is rare; no glaring weakness, no towering peak — a balanced chart that thrives in stable, quality-focused environments.",
+
+    "Kunal":
+        "Pisces Lagna ruled by Jupiter — the visionary archetype, imaginative and spiritually attuned. "
+        "Saturn/Saturn mahadasha is a 20-year karma-clearing and discipline phase; whatever you build during this period will outlast the next three decades.",
+}
+
+# ---------------------------------------------------------------------------
 # Compute skill scores
 # ---------------------------------------------------------------------------
 SKILL_PLANETS = {
@@ -123,6 +253,7 @@ for row in PROFILES:
             "skills": skills, "best": best, "overall": round(sum(skills.values())/5),
             "tier": tier_icon, "startup_score": startup_sc,
             "biz_area": biz_area, "products": products,
+            "planet_insight": PLANET_INSIGHT.get(name, ""),
         })
         print(f"  ✓ {name:18s} → {anon_name} · {age}y {gender} · {location}")
     except Exception as e:
@@ -214,8 +345,13 @@ for r in all_data:
       <span style="color:var(--muted)">· avg {r["overall"]}/100</span>
     </div>
 
+    <div class="planet-insight">
+      <div class="prod-label">🪐 Why this fits — planets</div>
+      <div class="insight-text">{r["planet_insight"]}</div>
+    </div>
+
     <div class="products-section">
-      <div class="prod-label">Top Products / Roles</div>
+      <div class="prod-label">Best Products / Roles</div>
       {products_html}
     </div>
 
@@ -386,6 +522,9 @@ html = f"""<!DOCTYPE html>
     .prod-label{{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}}
     .prod-item{{font-size:.78rem;color:rgba(240,232,216,0.75);padding:5px 8px;
       background:rgba(255,255,255,0.04);border-radius:8px;margin-bottom:4px;line-height:1.4}}
+    .planet-insight{{padding:12px 16px;background:rgba(124,92,191,0.07);
+      border-left:3px solid rgba(124,92,191,0.4);margin:0 -16px 0;padding:10px 16px}}
+    .insight-text{{font-size:.8rem;color:rgba(240,232,216,0.78);line-height:1.65;font-style:italic}}
     .dasha-line{{font-size:.7rem;color:var(--muted)}}
 
     /* FOOTER */
@@ -453,6 +592,7 @@ html = f"""<!DOCTYPE html>
           <div style="color:#5a8f72;font-weight:700;font-size:1.3rem">{r["startup_score"]}</div>
         </div>
         <div class="card-area" style="color:#5a8f72">{r["biz_area"]}</div>
+        <div class="planet-insight"><div class="prod-label">🪐 Why this fits</div><div class="insight-text">{r["planet_insight"]}</div></div>
         {"".join(f'<div class="prod-item">{p}</div>' for p in r["products"])}
         <div class="dasha-line" style="margin-top:8px">⏱ {r["dasha"]}</div>
       </div>
@@ -472,10 +612,11 @@ html = f"""<!DOCTYPE html>
         <div class="card-top">
           <div class="card-emoji">{r["emoji"]}</div>
           <div style="flex:1"><div class="card-name">{r["anon"]}{"&nbsp;<span class='me-badge'>You</span>" if r["real_name"]=="Goldy" else ""}</div>
-            <span style="font-size:.65rem;color:var(--muted)">{LAGNA_ICON.get(r["lagna"],"✦")} {r["lagna"]} · {r["age"]}y</span></div>
+            <span style="font-size:.65rem;color:var(--muted)">{LAGNA_ICON.get(r["lagna"],"✦")} {r["lagna"]} · {r["age"]}y {"♂" if r["gender"]=="M" else "♀"} · 📍{r["location"]}</span></div>
           <div style="color:#c49e40;font-weight:700;font-size:1.3rem">{r["startup_score"]}</div>
         </div>
         <div class="card-area" style="color:#c49e40">{r["biz_area"]}</div>
+        <div class="planet-insight"><div class="prod-label">🪐 Why this fits</div><div class="insight-text">{r["planet_insight"]}</div></div>
         {"".join(f'<div class="prod-item">{p}</div>' for p in r["products"][:2])}
         <div class="dasha-line" style="margin-top:8px">⏱ {r["dasha"]}</div>
       </div>
@@ -495,10 +636,11 @@ html = f"""<!DOCTYPE html>
         <div class="card-top">
           <div class="card-emoji">{r["emoji"]}</div>
           <div style="flex:1"><div class="card-name">{r["anon"]}{"&nbsp;<span class='me-badge'>You</span>" if r["real_name"]=="Goldy" else ""}</div>
-            <span style="font-size:.65rem;color:var(--muted)">{LAGNA_ICON.get(r["lagna"],"✦")} {r["lagna"]} · {r["age"]}y</span></div>
+            <span style="font-size:.65rem;color:var(--muted)">{LAGNA_ICON.get(r["lagna"],"✦")} {r["lagna"]} · {r["age"]}y {"♂" if r["gender"]=="M" else "♀"} · 📍{r["location"]}</span></div>
           <div style="color:#5b8fd4;font-weight:700;font-size:1.3rem">{r["startup_score"]}</div>
         </div>
         <div class="card-area" style="color:#5b8fd4">{r["biz_area"]}</div>
+        <div class="planet-insight"><div class="prod-label">🪐 Why this fits</div><div class="insight-text">{r["planet_insight"]}</div></div>
         {"".join(f'<div class="prod-item">{p}</div>' for p in r["products"][:2])}
         <div class="dasha-line" style="margin-top:8px">⏱ {r["dasha"]}</div>
       </div>
@@ -518,10 +660,11 @@ html = f"""<!DOCTYPE html>
         <div class="card-top">
           <div class="card-emoji">{r["emoji"]}</div>
           <div style="flex:1"><div class="card-name">{r["anon"]}{"&nbsp;<span class='me-badge'>You</span>" if r["real_name"]=="Goldy" else ""}</div>
-            <span style="font-size:.65rem;color:var(--muted)">{LAGNA_ICON.get(r["lagna"],"✦")} {r["lagna"]} · {r["age"]}y</span></div>
+            <span style="font-size:.65rem;color:var(--muted)">{LAGNA_ICON.get(r["lagna"],"✦")} {r["lagna"]} · {r["age"]}y {"♂" if r["gender"]=="M" else "♀"} · 📍{r["location"]}</span></div>
           <div style="color:#c4607a;font-weight:700;font-size:1.3rem">{r["startup_score"]}</div>
         </div>
         <div class="card-area" style="color:#c4607a">{r["biz_area"]}</div>
+        <div class="planet-insight"><div class="prod-label">🪐 Why this fits</div><div class="insight-text">{r["planet_insight"]}</div></div>
         {"".join(f'<div class="prod-item">{p}</div>' for p in r["products"][:2])}
         <div class="dasha-line" style="margin-top:8px">⏱ {r["dasha"]}</div>
       </div>
