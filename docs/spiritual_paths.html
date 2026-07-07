@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex,nofollow">
+<title>Spiritual Paths — Group Reading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b18;--surface:rgba(255,255,255,0.035);--border:rgba(196,158,64,0.18);
+  --gold:#c49e40;--gold2:#e8c96a;--cream:#f0e8d8;--muted:rgba(240,232,216,0.55);
+  --plum:#7c5cbf;--rose:#c4607a;--sage:#5a8f72;--blue:#5b8fd4;
+  --shadow:0 20px 60px rgba(0,0,0,0.45);--r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;font-size:15px;color:var(--cream);
+  background-color:var(--bg);
+  background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,92,191,0.18),transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%,rgba(196,158,64,0.12),transparent);
+  background-attachment:fixed;min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+
+/* HERO */
+.hero{
+  max-width:1100px;margin:0 auto;padding:48px 24px 0;text-align:center;
+}
+.hero-eyebrow{font-size:0.68rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:#fff8f0;line-height:1.15;margin-bottom:10px}
+.hero-sub{font-size:0.9rem;color:var(--muted);max-width:580px;margin:0 auto 32px}
+
+/* STAT PILLS */
+.stat-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:32px}
+.stat-pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;
+  padding:8px 18px;font-size:0.82rem;display:flex;align-items:center;gap:8px}
+.stat-pill-num{font-size:1.1rem;font-weight:600;font-family:'Cormorant Garamond',serif}
+
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:1100px;margin:0 auto 28px;padding:0 24px}
+.tab{
+  background:var(--surface);border:1px solid rgba(255,255,255,0.08);
+  border-radius:999px;padding:9px 18px;font-size:0.82rem;color:var(--muted);
+  cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;
+}
+.tab:hover{border-color:var(--tab-col);color:var(--tab-col)}
+.tab-active{background:rgba(255,255,255,0.06);border-color:var(--tab-col)!important;color:var(--tab-col)!important;font-weight:600}
+.tab-count{background:rgba(255,255,255,0.08);border-radius:999px;padding:1px 7px;font-size:0.72rem;margin-left:4px}
+
+/* GRID */
+.grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(480px,1fr));
+  gap:20px;max-width:1100px;margin:0 auto;padding:0 24px 80px;
+}
+
+/* CARD */
+.card{
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  display:flex;overflow:hidden;box-shadow:var(--shadow);transition:transform .2s;
+  position:relative;
+}
+.card:hover{transform:translateY(-2px)}
+.card-stripe{width:4px;flex-shrink:0}
+.card-body{padding:22px 22px 20px;flex:1;min-width:0}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:#fff8f0;margin-bottom:2px}
+.card-sub{font-size:0.76rem;color:var(--muted);margin-bottom:3px}
+.card-dasha{font-size:0.72rem;letter-spacing:0.04em}
+.path-badge{border-radius:999px;padding:5px 12px;font-size:0.72rem;font-weight:600;white-space:nowrap;text-align:center}
+.archetype-label{font-size:0.68rem;color:var(--muted);text-align:right;margin-top:5px;font-style:italic}
+.indicators{margin-bottom:12px}
+.card-desc{font-size:0.87rem;line-height:1.75;color:rgba(240,232,216,0.82);margin-bottom:14px}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.col-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;margin-bottom:7px}
+.bullet-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px}
+.bullet-list li{font-size:0.83rem;color:rgba(240,232,216,0.78);line-height:1.55;padding-left:14px;position:relative}
+.bullet-list li::before{content:"·";position:absolute;left:3px;color:var(--gold)}
+.shadow-text{font-size:0.83rem;color:rgba(196,96,122,0.85);line-height:1.6}
+.practice-box{border-radius:12px;padding:12px 14px}
+.practice-box .bullet-list li::before{content:"→"}
+
+/* HIDDEN */
+.card.hidden{display:none}
+
+/* FOOTER */
+.footer{text-align:center;padding:20px 0;font-size:0.72rem;color:rgba(240,232,216,0.3);
+  letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:0}
+
+/* MOBILE */
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr;padding:0 16px 60px}
+  .card-grid{grid-template-columns:1fr}
+  .card-top{flex-direction:column;align-items:flex-start}
+  .path-badge,.archetype-label{text-align:left}
+  .hero{padding:36px 16px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Jyotish Group Reading · 31 Charts</div>
+  <h1>Spiritual Paths &amp;<br>Inclinations</h1>
+  <p class="hero-sub">The most probable spiritual path for each chart in the pool — derived from Lagna, Ketu placement, H8/H9/H12, Moon nakshatra and current dasha activation.</p>
+  <div class="stat-row">
+    <div class="stat-pill"><span style="color:#5b8fd4">🧠</span><span class="stat-pill-num" style="color:#5b8fd4">7</span><span>Jnana — Wisdom</span></div>
+    <div class="stat-pill"><span style="color:#c4607a">💗</span><span class="stat-pill-num" style="color:#c4607a">6</span><span>Bhakti — Devotion</span></div>
+    <div class="stat-pill"><span style="color:#5a8f72">⚙️</span><span class="stat-pill-num" style="color:#5a8f72">6</span><span>Karma Yoga — Service</span></div>
+    <div class="stat-pill"><span style="color:#7c5cbf">🔮</span><span class="stat-pill-num" style="color:#7c5cbf">8</span><span>Mystic / Tantric</span></div>
+    <div class="stat-pill"><span style="color:#c49e40">🎓</span><span class="stat-pill-num" style="color:#c49e40">4</span><span>Dharmic Teacher</span></div>
+  </div>
+</div>
+
+<div class="tabs">
+<button class="tab tab-active" onclick="filterPath('All')" style="--tab-col:#e8c96a">✦ All Paths <span class="tab-count">31</span></button>
+<button class="tab" onclick="filterPath('Jnana')" style="--tab-col:#5b8fd4">🧠 Jnana <span class="tab-count">7</span></button>
+<button class="tab" onclick="filterPath('Bhakti')" style="--tab-col:#c4607a">💗 Bhakti <span class="tab-count">6</span></button>
+<button class="tab" onclick="filterPath('Karma')" style="--tab-col:#5a8f72">⚙️ Karma <span class="tab-count">6</span></button>
+<button class="tab" onclick="filterPath('Mystic')" style="--tab-col:#7c5cbf">🔮 Mystic <span class="tab-count">8</span></button>
+<button class="tab" onclick="filterPath('Dharmic')" style="--tab-col:#c49e40">🎓 Dharmic <span class="tab-count">4</span></button>
+
+</div>
+
+<div class="grid" id="grid">
+
+<div class="card" data-path="Dharmic">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Wise Eagle 🦅</div>
+        <div class="card-sub">♐ Sagittarius · 41y ♂ · 📍Aluva, Kerala</div>
+        <div class="card-dasha" style="color:#c49e40">↻ Venus/Venus/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🎓 Dharmic Teacher</div>
+        <div class="archetype-label">The Knowledge Carrier</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Jupiter H1 own sign — Hamsa Yoga</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Saturn exalted H11 — community as sangha</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">9th house (Leo) anchored by Sun</span></div>
+    <p class="card-desc">Jupiter in his own sign on the Ascendant marks a born teacher — wisdom is literally the face this soul shows the world. Spiritual growth happens through sharing knowledge, mentorship and building structures that serve others long-term. Saturn exalted in H11 means the community he builds becomes his spiritual sangha.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c49e40">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Natural philosophical depth</li><li>Inspiring clarity in transmission</li><li>Patient long-term dharmic vision</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Spiritual pride — Jupiter on Lagna can breed certainty that one is always right; the lesson is humility before the teaching itself</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="col-label" style="color:#c49e40">Recommended Practices</div>
+      <ul class="bullet-list"><li>Teaching and mentorship circles as primary sadhana</li><li>Systematic study of sacred texts</li><li>Building learning communities as seva</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Me 🐬 <span style="background:rgba(196,158,64,0.2);border:1px solid rgba(196,158,64,0.4);color:#e8c96a;font-size:0.65rem;padding:2px 8px;border-radius:999px;vertical-align:middle;">You</span></div>
+        <div class="card-sub">♓ Pisces · 41y ♂ · 📍Kangazha, Kerala</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Rahu/Venus/Venus</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 Bhakti — Devotion</div>
+        <div class="archetype-label">The Ocean Seeker</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Pisces Lagna — the moksha sign of dissolution</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Rahu H2 — intense longing between material and transcendent</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Jupiter H4 — wisdom scattered across inner world</span></div>
+    <p class="card-desc">Pisces is the most moksha-oriented sign — the soul here is meant to dissolve into the cosmic ocean rather than accumulate. Rahu in H2 creates spiritual hunger that oscillates between material desire and transcendence. True peace comes through surrender, not achievement — devotional practice, ocean, music and non-attachment are the doorways.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Deep empathy and natural non-judgment</li><li>Access to subtle emotional and spiritual dimensions</li><li>Capacity for profound surrender</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Escapism — confusing spiritual yearning with avoidance; dissolving boundaries under the guise of non-attachment</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">Recommended Practices</div>
+      <ul class="bullet-list"><li>Ocean or water meditation</li><li>Devotional music and bhajans</li><li>Dream journaling and conscious surrender practices</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Dharmic">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Royal Lion 🦁</div>
+        <div class="card-sub">♌ Leo · 52y ♂ · 📍Palakkad, Kerala</div>
+        <div class="card-dasha" style="color:#c49e40">↻ Saturn/Moon/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🎓 Dharmic Teacher</div>
+        <div class="archetype-label">The Disciplined King</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Leo Lagna — Sun as authority principle</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Sun H4 Scorpio — authority earned through depth</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Saturn dasha — karmic clearing through structured leadership</span></div>
+    <p class="card-desc">Leo Lagna with Sun in Scorpio means authority earned through depth and transformation, not appearance. Saturn dasha is a long karmic reckoning — the spiritual path is honest service and patient working through old debts. True dharmic leadership requires ego surrender; the lesson is that real authority comes from within, not from titles.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c49e40">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Natural authority earned through lived experience</li><li>Ability to face and transmit difficult truths</li><li>Disciplined long-term vision</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Ego attachment to the leadership role — difficulty acknowledging vulnerability or being wrong in front of others</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="col-label" style="color:#c49e40">Recommended Practices</div>
+      <ul class="bullet-list"><li>Seva — selfless service in the community</li><li>Shiva or transformative deity practice</li><li>Structured morning sadhana</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Mystic Eagle 🦅</div>
+        <div class="card-sub">♒ Aquarius · 41y ♂ · 📍Muscat, Oman</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Ketu/Moon/Saturn</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 Jnana — Wisdom</div>
+        <div class="archetype-label">The Systematic Detacher</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Ketu mahadasha — stripping attachments to reveal what is eternal</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Saturn exalted H9 Libra — dharma through ordered systems</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Aquarius Lagna — universal consciousness archetype</span></div>
+    <p class="card-desc">Ketu mahadasha is one of the most spiritually charged periods in Jyotish — it systematically dissolves what is non-essential. Aquarius Lagna ruled by Saturn naturally gravitates toward detachment, universal consciousness and humanitarian service. The path is inward and analytical: understanding the nature of mind and releasing identification with the personal self.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Natural detachment from ego-driven outcomes</li><li>Ability to see through conventional illusions clearly</li><li>Analytical access to philosophical truth</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Dissociation — using detachment as a shield against emotional vulnerability; spirituality as withdrawal rather than expansion</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">Recommended Practices</div>
+      <ul class="bullet-list"><li>Vipassana or silent retreat</li><li>Humanitarian service without personal agenda</li><li>Pranayama and breath awareness</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Dharmic">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The White Swan 🦢</div>
+        <div class="card-sub">♐ Sagittarius · 51y ♀ · 📍Alkmaar, Netherlands</div>
+        <div class="card-dasha" style="color:#c49e40">↻ Rahu/Ketu/Rahu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🎓 Dharmic Teacher</div>
+        <div class="archetype-label">The Wandering Philosopher</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Jupiter H1 own sign Sagittarius — Hamsa Yoga</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Rahu/Ketu axis H1–H7 — soul vs. relationship</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Rahu dasha driving cross-border expansion</span></div>
+    <p class="card-desc">Hamsa Yoga (Jupiter in own sign on the Ascendant) marks a dharma teacher carrying wisdom across lifetimes. The Rahu/Ketu axis through H1-H7 pushes this soul to stop seeking itself through others and stand as an independent beacon. The spiritual journey is becoming the teaching, not endlessly finding the next teacher.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c49e40">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Philosophical depth and cross-cultural wisdom</li><li>Natural grace and inspiration</li><li>Ability to transmit across cultural and linguistic boundaries</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Seeking external validation through relationship rather than resting in inner spiritual authority</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="col-label" style="color:#c49e40">Recommended Practices</div>
+      <ul class="bullet-list"><li>Cross-cultural spiritual study and pilgrimage</li><li>Wisdom-sharing circles and group teaching</li><li>Solitary retreats to consolidate inner authority</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Ruhi CH 🦌</div>
+        <div class="card-sub">♐ Sagittarius · 24y ♀ · 📍Alleppey, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Jupiter/Mercury/Saturn</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ Karma Yoga — Service</div>
+        <div class="archetype-label">The Sacred Athlete</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Mars exalted H5 Capricorn — fierce disciplined creative force</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Jupiter rules Lagna — purpose holds the container</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Sagittarius Lagna — philosophical archer seeking meaning through action</span></div>
+    <p class="card-desc">Mars exalted in the house of sport and creativity means the spiritual path runs through the body and disciplined action. Sacred exertion, training and competition are her forms of prayer. Jupiter provides the philosophical container to hold the meaning; Mars provides the will to actually live it.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Physical and mental discipline as genuine spiritual path</li><li>Inspiring others through action and embodied example</li><li>Kinesthetic spiritual intelligence — the body as teacher</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Spiritual bypass through constant busyness and doing; avoiding inner stillness and silence</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">Recommended Practices</div>
+      <ul class="bullet-list"><li>Athletic training as moving meditation — conscious intention before each session</li><li>Pranayama for the warrior body</li><li>Service in sports coaching or youth development</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Athens CH 🦅</div>
+        <div class="card-sub">♐ Sagittarius · 26y ♂ · 📍Kanjirapally, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Sun/Mars/Jupiter</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ Karma Yoga — Service</div>
+        <div class="archetype-label">The Sacred Servant</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">4-planet H6 stellium — service and problem-solving as dharma</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Bhadra + 2 Raja Yogas — knowledge used in service</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Sun/Mars dasha — peak action energy</span></div>
+    <p class="card-desc">A 4-planet H6 stellium is the clearest karma yogi signature in Jyotish — service, problem-solving and showing up for others is dharma, not just work. The spiritual path is to offer each act of service fully and without expectation. The divine is encountered not in retreat but in complete presence for those who need help.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Tireless service energy as spiritual fuel</li><li>Problem-solving as sacred craft</li><li>Health consciousness as offering</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Martyrdom — giving so completely that personal needs are neglected, then resenting others for not filling the void</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">Recommended Practices</div>
+      <ul class="bullet-list"><li>Healthcare or community volunteering</li><li>Energy healing study (Reiki, pranic healing)</li><li>Body-based spiritual practices — yoga, tai chi</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Golden Deer 🦌</div>
+        <div class="card-sub">♐ Sagittarius · 25y ♀ · 📍Cherpulassery, Kerala</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Venus/Sun/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 Bhakti — Devotion</div>
+        <div class="archetype-label">The Longing Heart</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Jupiter H1 — philosophical depth</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Kemadruma Moon — isolated emotional intensity as spiritual driver</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Venus dasha — heart opening now</span></div>
+    <p class="card-desc">The Kemadruma Moon creates a deep inner longing that nothing worldly satisfies — this is the mark of a soul that knows it needs more than the material can provide. Venus dasha is now opening the heart; the path is through beauty, conscious relationship and surrender to love as a divine force. Bhakti — devotion — is the key that unlocks the mystery.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Capacity for profound devotional love</li><li>Emotional depth as spiritual fuel</li><li>Aesthetic sensitivity that sees beauty as sacred</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Projecting the divine onto human relationships and collapsing them under that weight; heartbreak as spiritual crisis</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">Recommended Practices</div>
+      <ul class="bullet-list"><li>Devotional chanting and kirtan</li><li>Love as conscious spiritual practice — each relationship as teaching</li><li>Sacred music and poetry as daily offering</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Deep Dolphin 🐬</div>
+        <div class="card-sub">♑ Capricorn · 29y ♂ · 📍Chennai, India</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Moon/Venus/Jupiter</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 Mystic / Tantric</div>
+        <div class="archetype-label">The Hidden Dreamer</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Venus exalted Pisces — Malavya Yoga (beauty as divine channel)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">H12 stellium — one foot always in the invisible world</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Moon dasha — emotional depths surfacing</span></div>
+    <p class="card-desc">Multiple planets in H12 and Venus exalted in Pisces give this chart one foot perpetually in invisible realms. H12 is the house of liberation, solitude and dissolution — drawn toward mystical states and union with the unseen. The spiritual path involves embracing aloneness as sacred rather than as something to escape.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Natural access to subtle and invisible dimensions</li><li>Receptivity to inspiration beyond ordinary consciousness</li><li>Deep devotional capacity when directed toward the sacred</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Escapism — using mystical orientation as avoidance of grounded practical responsibilities</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">Recommended Practices</div>
+      <ul class="bullet-list"><li>Solitary silent retreats</li><li>Ocean or water meditation and dream work</li><li>Mantra japa in private — the hidden path suits this chart</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Steady Elephant 🐘</div>
+        <div class="card-sub">♋ Cancer · 40y ♂ · 📍Kattappana, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Saturn/Saturn/Ketu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ Karma Yoga — Service</div>
+        <div class="archetype-label">The Builder-Priest</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Mars exalted H1 Capricorn — Yoga Karaka (dharma through building)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Saturn dasha — karma clearing through patience and structure</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Cancer Lagna — the home and family are the temple</span></div>
+    <p class="card-desc">Cancer Lagna with Yoga Karaka Mars makes this chart a builder of sanctuaries — homes, communities and safe spaces are the spiritual offering. Saturn dasha is not punishment but a graduation ceremony; every structure built with integrity is an act of worship. Protecting and nurturing the family is the prayer.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Protective and nurturing instinct as spiritual expression</li><li>Building lasting physical structures as sacred act</li><li>Holding space for others through long difficult passages</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Over-identifying with home and family as the complete spiritual domain; missing the invitation to wider service</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">Recommended Practices</div>
+      <ul class="bullet-list"><li>Family ritual and home altar practice</li><li>Seva through building or maintaining community spaces</li><li>Saturn/Shani puja for karmic clarity</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Storm Eagle 🦅</div>
+        <div class="card-sub">♏ Scorpio · 22y ♂ · 📍Kozhikode, Kerala</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Jupiter/Mercury/Sun</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 Jnana — Wisdom</div>
+        <div class="archetype-label">The Truth Investigator</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Jupiter + Mercury both in Leo H10 — two Raja Yogas at the dharma peak</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Scorpio Lagna — natural occultist and depth researcher</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Jupiter/Mercury dasha — dual wisdom activation now</span></div>
+    <p class="card-desc">Scorpio Lagna is one of Jyotish's great mystery signs — drawn to what lies beneath the surface, to hidden truth and transformative knowledge. Jupiter and Mercury together in H10 Leo make the public expression of this wisdom the spiritual calling. The path is research, revelation and making esoteric knowledge accessible to others.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Fearless inquiry into deep and uncomfortable truths</li><li>Synthesising complex knowledge for practical use</li><li>Natural researcher of occult and esoteric domains</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Using knowledge to feel superior rather than to serve; obsessive thinking as substitute for embodied experience</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">Recommended Practices</div>
+      <ul class="bullet-list"><li>Jyotish or occult science study with depth</li><li>Philosophical research and investigative reading</li><li>Teaching esoteric knowledge to accessible audiences</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Dark Peacock 🦚</div>
+        <div class="card-sub">♏ Scorpio · 40y ♀ · 📍Cochin, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Saturn/Mercury/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 Mystic / Tantric</div>
+        <div class="archetype-label">The Sacred Alchemist</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Venus exalted H7 Pisces — Malavya Yoga (sacred partnership)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Scorpio Lagna — depth, transformation, occult by nature</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Saturn dasha — structure applied to the mystical dimension</span></div>
+    <p class="card-desc">Scorpio Lagna with Venus exalted in H7 Pisces is one of the most potent spiritual configurations — called toward sacred partnership, conscious union and beauty as a pathway to the divine. This is the tantric archetype: finding the eternal through deep, intentional intimacy. Saturn dasha brings discernment to what was previously purely intuitive depth.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Understanding of sacred relationship and transformative union</li><li>Ability to transmute pain into beauty</li><li>Access to hidden power through deep receptivity</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Confusing codependency with spiritual depth; using the partner as a substitute for the inner union that is the real goal</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">Recommended Practices</div>
+      <ul class="bullet-list"><li>Study of sacred relationship and conscious partnership frameworks</li><li>Beauty as devotional practice — art, music, adornment</li><li>Shadow work through depth psychology</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Midnight Tiger 🐅</div>
+        <div class="card-sub">♓ Pisces · 25y ♀ · 📍Trivandrum, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Mercury/Ketu/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 Mystic / Tantric</div>
+        <div class="archetype-label">The Dissolution Walker</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Pisces Lagna — moksha sign, dissolution of self</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Ketu bhukti — active spiritual dissolution NOW</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Adhi Yoga — three benefics in angular positions (rare grace marker)</span></div>
+    <p class="card-desc">Pisces with Ketu bhukti active is among the most purely spiritual combinations in this pool — the soul is actively dismantling old forms to reveal what is essential. Adhi Yoga (three benefics in angular positions) gives unusual clarity once the dissolution is integrated. This is not a gentle path but it is direct.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Direct channel to healing and spiritual dimensions</li><li>Capacity for profound surrender — ego is thinner here than elsewhere</li><li>Natural healing gifts that surface once the path stabilises</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Confusion between spiritual dissolution and mental health challenge — the container must be built before the walls come fully down</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">Recommended Practices</div>
+      <ul class="bullet-list"><li>Structured meditation with a teacher (not free-floating)</li><li>Energy healing training with proper grounding</li><li>Earth contact, bodywork and physical routine as anchors</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Mountain Eagle 🦅</div>
+        <div class="card-sub">♑ Capricorn · 35y ♂ · 📍Trivandrum, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Saturn/Saturn/Rahu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ Karma Yoga — Service</div>
+        <div class="archetype-label">The Cosmic Builder</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Saturn exalted — Sasa Yoga (discipline as cosmic dharma)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Jupiter exalted H2 Cancer — Hamsa Yoga (wisdom through values)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Saturn mahadasha — 20-year karmic crystallisation in progress</span></div>
+    <p class="card-desc">Two Pancha Mahapurusha Yogas (Sasa + Hamsa) means the spiritual path operates at cosmic scale — building structures that serve long-term human welfare. Saturn/Saturn dasha is the great forge; every external achievement is simultaneously an inner initiation. The Bhagavad Gita's karma yoga is the exact text for this chart.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Extraordinary patience for long-term dharmic work</li><li>Natural authority earned through discipline not status</li><li>Holding vision across decades without wavering</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Equating busyness and achievement with spiritual progress; avoiding the inner silence where the real work happens</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">Recommended Practices</div>
+      <ul class="bullet-list"><li>Bhagavad Gita study — karma yoga chapters specifically</li><li>Vipassana or structured meditation as counterweight</li><li>Building dharmic institutions: learning centres, community structures</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Vi CH 🦅</div>
+        <div class="card-sub">♏ Scorpio · 27y ♀ · 📍Trivandrum, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Mars/Rahu/Venus</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 Mystic / Tantric</div>
+        <div class="archetype-label">The Hidden Investigator</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Mars (Lagna lord) H12 — drive flows inward</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Scorpio Lagna — occult investigator by nature</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Triple Leo H10 stellium — public truth-revealing mission</span></div>
+    <p class="card-desc">Scorpio's investigative depth combined with Mars flowing into H12 creates a spiritual detective — drawn to occult research, hidden patterns and the mechanics of transformation. The triple Leo stellium in H10 carries an impulse to bring hidden knowledge into public light as service. The spiritual path is through understanding depth and using it to illuminate others.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Fearless depth into what others cannot sustain</li><li>Uncovering hidden patterns and bringing them to useful light</li><li>Transformative presence — just being present changes something</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Power shadow — using penetrating capacity to control rather than illuminate</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">Recommended Practices</div>
+      <ul class="bullet-list"><li>Esoteric study with a structured framework and teacher</li><li>Shadow work and depth psychology</li><li>Mars rituals for conscious channelling of intensity</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Pi CH 🐅</div>
+        <div class="card-sub">♈ Aries · 36y ♀ · 📍Thrissur, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Saturn/Saturn/Ketu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 Mystic / Tantric</div>
+        <div class="archetype-label">The Phoenix Forger</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Two Viparita Raja Yogas — greatest gains come after loss</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Venus exalted — Malavya Yoga (beauty through adversity)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Saturn/Ketu coming — major liberatory transition ahead</span></div>
+    <p class="card-desc">Two Viparita Raja Yogas in one chart is a rare signature: deepest breakthroughs come from loss, not success. The spiritual path runs through fire, and the fire is part of the design. Saturn is the forge; Ketu will be the liberation. The task is to stop fighting the losses and start understanding them as initiations.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Resilience forged through actual ordeal — not theoretical</li><li>Courage to walk through collapse toward what is real</li><li>Emergence after dissolution is genuinely new, not just recovery</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Spiritual bypass — rushing to the lesson without grieving the loss; intellectualising rather than feeling</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">Recommended Practices</div>
+      <ul class="bullet-list"><li>Transformational breathwork or cathartic body practices</li><li>Crisis-as-initiation framework: the shamanic view of ordeal</li><li>Shadow work: befriending the parts that look like enemies</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Ancient Cobra 🐍</div>
+        <div class="card-sub">♏ Scorpio · 68y ♀ · 📍Aluva, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Saturn/Mars/Ketu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ Karma Yoga — Service</div>
+        <div class="archetype-label">The Elder Healer</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Three major yogas (Raja, DKA, Viparita Raja) — lifetime of earned wisdom</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Scorpio Lagna — depth medicine from lived transformation</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Ketu bhukti — completing the arc, stripping to essential wisdom</span></div>
+    <p class="card-desc">Decades of transformation through Scorpio Lagna have created a healer's wisdom ready to flow outward. The Ketu bhukti is completing a major arc — stripping what no longer serves, leaving only the essential. This is the elder healer archetype: past wounds metabolised into medicine for others.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Experiential wisdom depth no book can provide</li><li>Non-judgmental compassion earned through personal transformation</li><li>Natural capacity to hold space for others in the depths</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Holding the healer identity so tightly it becomes another attachment — the medicine must flow, not accumulate</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">Recommended Practices</div>
+      <ul class="bullet-list"><li>Energy healing modalities (transmission stage)</li><li>Mentoring younger people through transformative passages</li><li>Kali or transformative deity practices — honouring the goddess of endings</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Moonlit Swan 🦢</div>
+        <div class="card-sub">♑ Capricorn · 23y ♀ · 📍Jaipur, Rajasthan</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Venus/Venus/Rahu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 Bhakti — Devotion</div>
+        <div class="archetype-label">The Awakening Swan</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Jupiter exalted — Hamsa Yoga (wisdom and grace)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Venus exalted — Malavya Yoga (beauty as divine channel)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Venus/Venus dasha — peak heart-opening at age 23</span></div>
+    <p class="card-desc">Two Pancha Mahapurusha Yogas (Hamsa + Malavya) in a 23-year-old's chart is extraordinary — spiritual gifts just beginning to awaken. The path is devotion through beauty: both Jupiter's wisdom and Venus's grace are exalted, suggesting the divine is accessible through art, aesthetics, sacred philosophy and conscious relationship.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Natural aesthetic intelligence as genuine spiritual vehicle</li><li>Philosophical depth beyond her chronological age</li><li>Inspiring others through beauty and devotion combined</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Materialism disguised as spirituality — confusing luxury and comfort with sacred beauty</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">Recommended Practices</div>
+      <ul class="bullet-list"><li>Sacred art — creating as offering rather than product</li><li>Vedanta or bhakti philosophy through relationship lenses</li><li>Beauty as conscious practice: adorning the world as an act of love</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Gentle Elephant 🐘</div>
+        <div class="card-sub">♑ Capricorn · 35y ♂ · 📍Aluva, Kerala</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Venus/Ketu/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 Jnana — Wisdom</div>
+        <div class="archetype-label">The Contemplative Seeker</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Jupiter exalted H7 Cancer — wisdom through partnership (partner as guru)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">H12 stellium — habitual access to invisible dimensions</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Ketu bhukti active NOW — spiritual awakening phase</span></div>
+    <p class="card-desc">Jupiter exalted in H7 means wisdom arrives through relationship — the partner is often a mirror or teacher. H12 stellium means the native operates partly in visible and partly in unseen dimensions. Ketu bhukti is currently active, triggering spiritual dissolution. This is a pivotal moment to go inward — the contemplative path fits this chart precisely.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Deep contemplative capacity — internal worlds are rich</li><li>Wisdom accessed through reflection and relationship</li><li>Access to the mystical through ordinary life</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Spiritual seeking as flight from practical responsibilities — the unseen world as escape</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">Recommended Practices</div>
+      <ul class="bullet-list"><li>Silent meditation retreats</li><li>Non-dual philosophy (Advaita Vedanta, Kashmir Shaivism)</li><li>Finding and working closely with a spiritual teacher</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Dharmic">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Desert Elephant 🐘</div>
+        <div class="card-sub">♐ Sagittarius · 40y ♀ · 📍Muscat, Oman</div>
+        <div class="card-dasha" style="color:#c49e40">↻ Rahu/Saturn/Saturn</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🎓 Dharmic Teacher</div>
+        <div class="archetype-label">The Dharma Carrier</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Sagittarius Lagna — the pure dharma-seeker and teacher sign</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Eight yogas with philosophical orientation</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">Rahu dasha driving cross-cultural expansion and questioning</span></div>
+    <p class="card-desc">Sagittarius is the pure dharma sign — the seeker, the teacher, the arrow pointed at truth. Though the yogas carry less concentrated planetary fuel than they could, the sincere orientation toward dharmic service is genuine. The path is beautifully simple: keep learning, keep teaching, keep pointing others toward truth.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c49e40">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Natural philosophical optimism and hope as spiritual gift</li><li>Ability to inspire faith and higher vision in others</li><li>Cross-cultural openness to diverse spiritual systems</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Spiritual restlessness — always seeking the next teacher or system, never arriving and staying long enough to deepen</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="col-label" style="color:#c49e40">Recommended Practices</div>
+      <ul class="bullet-list"><li>Consistent daily practice — same time, same method, for years</li><li>Teaching what you already know now (not waiting for more)</li><li>Pilgrimage: the journey itself as teaching</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Khayel CH 🦁</div>
+        <div class="card-sub">♍ Virgo · 25y ♀ · 📍Dubai, UAE</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Saturn/Mars/Jupiter</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 Jnana — Wisdom</div>
+        <div class="archetype-label">The Precise Healer</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Budha-Aditya Yoga — Sun + Mercury (discriminating intellect)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Gajakesari — Jupiter trine Moon (wisdom and grace together)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Virgo Lagna — discrimination between pure and impure as dharma</span></div>
+    <p class="card-desc">Virgo Lagna with Budha-Aditya creates a mind that naturally discriminates the pure from the impure — which is a fundamentally spiritual act. The capacity to see clearly what is aligned and what is not is Virgo's core dharma. Gajakesari adds wisdom and social grace. The path is through discerning service to health and healing.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Analytical spiritual intelligence — seeing what others cannot</li><li>Natural healing orientation and fine discrimination</li><li>Integrating spiritual wisdom into practical daily life</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Perfectionism in spiritual practice — self-criticism that blocks grace; the path cannot be algorithmically optimised</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">Recommended Practices</div>
+      <ul class="bullet-list"><li>Ayurveda study and daily lifestyle practice</li><li>Service in healing or health professions as sacred vocation</li><li>Discernment practices — learning to hear the inner signal beneath the noise</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Celestial Peacock 🦚</div>
+        <div class="card-sub">♎ Libra · 42y ♀ · 📍Palakkad, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Moon/Saturn/Venus</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 Mystic / Tantric</div>
+        <div class="archetype-label">The Transformation Alchemist</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">4-planet H8 stellium (Sun/Mercury/Venus/Rahu) — deepest occult signature in pool</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Two Viparita Raja Yogas — crises as catapults</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">H8 as the house of hidden wealth, death, transformation, occult</span></div>
+    <p class="card-desc">A 4-planet H8 stellium is the strongest possible alchemical, tantric signature. This soul is built to work with the hidden forces of life — money, power, death, sexuality and the unseen. The spiritual path runs through depth, not around it; every crisis is an initiation into a deeper layer. The conventional definition of 'problem' simply does not apply here.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Extraordinary access to hidden dimensions and occult knowledge</li><li>Ability to transform what others fear into something useful</li><li>Alchemical capacity: finding gold in the darkest materials</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Addiction to intensity and transformation as the only valid spiritual experience; needing crisis to feel alive</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">Recommended Practices</div>
+      <ul class="bullet-list"><li>Tantric study — the yoga of union through depth (not pop tantra)</li><li>Shadow work and depth psychology as regular practice</li><li>Esoteric traditions: Kabbalah, alchemy, Jyotish's hidden chapters</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Golden Lion 🦁</div>
+        <div class="card-sub">♌ Leo · 27y ♂ · 📍Edappally, Kerala</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Jupiter/Venus/Venus</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 Bhakti — Devotion</div>
+        <div class="archetype-label">The Radiant Devotee</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Leo Lagna + Yoga Karaka Mars — creative fire as sacred purpose</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Jupiter/Venus dasha — expansion through beauty and devotion now</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Kemadruma Moon — emotional longing as engine of spiritual seeking</span></div>
+    <p class="card-desc">Leo's creative fire combined with Jupiter/Venus dasha creates a natural bhakta — one who finds the divine through beauty, music and creative expression. The Kemadruma Moon creates a deep emotional hunger that no worldly success can satisfy, and this longing is precisely the engine of spiritual seeking. Sacred creative expression — art, music, theatre as conscious offering — is the path home.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Making the spiritual beautiful and emotionally accessible</li><li>Natural devotional performance that opens others' hearts</li><li>Heart-centred presence as spiritual transmission</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Needing spiritual experiences to be emotionally intense; quiet subtle inner practice feels empty</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">Recommended Practices</div>
+      <ul class="bullet-list"><li>Music, dance or art as deliberate devotional offering</li><li>Kirtan, bhajan or choral spiritual music</li><li>Making creative work a conscious gift rather than performance</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Swift Dolphin 🐬</div>
+        <div class="card-sub">♊ Gemini · 39y ♀ · 📍Aluva, Kerala</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Mercury/Jupiter/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 Jnana — Wisdom</div>
+        <div class="archetype-label">The Swift Mind Oracle</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Mercury exalted H1 Gemini — Bhadra Yoga (mind as spiritual instrument)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Four planets in H1 — the native embodies the teaching</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Mercury/Jupiter dasha — wisdom and intellect simultaneously activated</span></div>
+    <p class="card-desc">Bhadra Yoga — Mercury exalted in its own sign on the Ascendant — is the quintessential Jnana yogi signature. The mind itself is the spiritual instrument; studying, understanding, communicating and writing are not merely work but worship. Mercury/Jupiter dasha is the perfect window for going deep into philosophical and contemplative inquiry.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Mind as genuine spiritual vehicle — thinking itself can be meditative</li><li>Communicating complex spiritual concepts with precision</li><li>Learning and teaching as devotional practice</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Spiritual intellectualism — knowing without being; staying in the head to avoid the vulnerability of the heart</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">Recommended Practices</div>
+      <ul class="bullet-list"><li>Vedanta study — the philosophical-intellectual path par excellence</li><li>Journaling as spiritual practice: making the invisible visible</li><li>Teaching and mentoring as the practice of giving what you know</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Ammu CH 🦁</div>
+        <div class="card-sub">♌ Leo · 35y ♀ · 📍Trivandrum, Kerala</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Saturn/Jupiter/Jupiter</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 Jnana — Wisdom</div>
+        <div class="archetype-label">The Quietly Liberated</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Jupiter exalted H12 Pisces — liberation marker (moksha yoga)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">H1 triple stellium — strong identity being gradually surrendered</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Jupiter bhukti active NOW — door to genuine insight is open</span></div>
+    <p class="card-desc">Jupiter exalted in H12 is one of Jyotish's clearest liberation markers — a soul carrying earned grace. The strong H1 triple stellium means the personal identity is vivid and powerful, but the spiritual path is toward its gradual dissolution. The Jupiter bhukti currently running is an open invitation to walk through that door.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Access to genuine wisdom beyond mere book knowledge</li><li>Capacity for quiet, undramatic transformation</li><li>Spiritual grace that flows naturally rather than being performed</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Spiritual ambition — wanting to achieve liberation as another accomplishment; the path is surrender, not achievement</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">Recommended Practices</div>
+      <ul class="bullet-list"><li>Advaita Vedanta — non-dual philosophy of H12 and liberation</li><li>Silent contemplation — sitting with the vastness without agenda</li><li>Working closely with a qualified spiritual teacher</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Wandering Butterfly 🦋</div>
+        <div class="card-sub">♎ Libra · 42y ♂ · 📍Muscat, Oman</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Rahu/Moon/Sun</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 Bhakti — Devotion</div>
+        <div class="archetype-label">The Hidden Devotee</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Venus (Lagna lord) H12 — devotion hidden from the outer world</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Rahu/Moon dasha — outer expansion vs. inner pull in tension</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Libra Lagna — harmony and beauty as spiritual language</span></div>
+    <p class="card-desc">Venus hidden in H12 is the mark of a quiet, deeply private devotee — whose spiritual life is intensely real but invisible to others. Rahu/Moon dasha creates tension between outward expansion and inward longing. The spiritual life flourishes in private for this chart; forcing it outward diminishes it.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Private devotional depth that is genuine and unperformative</li><li>Finding the sacred in hidden, quiet corners</li><li>Non-attachment to spiritual recognition or audience</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Completely separating spiritual life from the outer world, causing fragmentation — inner gifts remaining forever invisible</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">Recommended Practices</div>
+      <ul class="bullet-list"><li>Private devotion — prayer, mantra, sacred reading — without performance</li><li>Mystical poetry and devotional music in solitude</li><li>Gradually integrating inner and outer life without forcing</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Stone Lion 🦁</div>
+        <div class="card-sub">♑ Capricorn · 42y ♂ · 📍Ottapalam, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Jupiter/Venus/Sun</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ Karma Yoga — Service</div>
+        <div class="archetype-label">The Dharmic Worker</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Saturn exalted H10 — Sasa Yoga at the career peak</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Sun also in H10 — solar authority through visible structured work</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">Jupiter/Venus dasha — wisdom and beauty blessing the work</span></div>
+    <p class="card-desc">Saturn exalted in H10 (Sasa Yoga at the career house) is the clearest karma yogi signature — work itself is the spiritual practice. The career and spiritual development are identical, not separate. Every project completed with integrity is a puja; every structure built carefully is an act of worship. Jupiter/Venus dasha is currently gracing the work with wisdom and harmony.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Work as worship — complete integration of spiritual and material</li><li>Discipline as a form of love and offering</li><li>Building what lasts across generations</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Using busyness as permanent avoidance of inner work — the spiritual life is always 'later'</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">Recommended Practices</div>
+      <ul class="bullet-list"><li>Bhagavad Gita study — karma yoga chapters specifically</li><li>Occasional silent retreats as counterweight to the active life</li><li>Beginning each workday with conscious intention</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Ann CH 🦋</div>
+        <div class="card-sub">♏ Scorpio · 31y ♀ · 📍Tripunithura, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Mars/Saturn/Ketu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 Mystic / Tantric</div>
+        <div class="archetype-label">The Will-Forged Seeker</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Mars H1 Scorpio — penetrating investigative intensity in the body</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Mars/Saturn dasha — hardest activation period, forging the spiritual will</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Scorpio Lagna — inherent depth and occult affinity</span></div>
+    <p class="card-desc">Scorpio with Mars in H1 gives extraordinary capacity for depth and penetrating past surfaces — all genuinely spiritual qualities. Mars/Saturn dasha is intense but is forging the spiritual will through pressure, as a blade is made. The mystical path emerges through understanding power, transformation and karma — not through softness.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Natural access to depth that most cannot sustain</li><li>Spiritual will forged through actual challenge</li><li>Fearless approach to uncomfortable truths in self and others</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Premature spiritual intensity — going too deep too fast before a stable container is in place</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">Recommended Practices</div>
+      <ul class="bullet-list"><li>Occult sciences studied slowly and with a teacher, not alone</li><li>Martial arts or physical discipline as moving spiritual practice</li><li>Shadow work with proper guidance and support</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Always CH 🦋</div>
+        <div class="card-sub">♎ Libra · 34y ♂ · 📍Delhi, India</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Jupiter/Mercury/Sun</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 Jnana — Wisdom</div>
+        <div class="archetype-label">The Balanced Philosopher</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Budha-Aditya Yoga in Libra — intellect expressed through balance</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Jupiter/Mercury dasha — dual wisdom activation simultaneously</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">Libra Lagna — dharma manifested through right relationship and harmony</span></div>
+    <p class="card-desc">Budha-Aditya Yoga with Jupiter/Mercury dasha running simultaneously is a rare alignment of philosophical and communicative energy. The spiritual path is through learning and teaching — specifically creating fair, balanced structures of knowledge. Libra's dharma is to model harmony in all domains including the spiritual; every fair act is an offering.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Teaching spiritual concepts fairly and accessibly</li><li>Balance itself as a form of spiritual mastery</li><li>Social wisdom — understanding the ethics of relationship as sacred knowledge</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Perpetually seeing all sides as a way to avoid committing to any path; wisdom without commitment leads nowhere</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">Recommended Practices</div>
+      <ul class="bullet-list"><li>Studying philosophy and ethical thought</li><li>Facilitating spiritual discussion groups — the path is through dialogue</li><li>Writing and journaling as integration of insight</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Bodhi CH 🐘</div>
+        <div class="card-sub">♉ Taurus · 34y ♂ · 📍Cherthala, Kerala</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Jupiter/Mercury/Jupiter</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 Bhakti — Devotion</div>
+        <div class="archetype-label">The Earth Temple Keeper</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Taurus Lagna — earth, body, sensory experience as divine manifestation</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Venus rules Taurus — beauty and abundance as sacred domain</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">Jupiter/Mercury dasha — stable philosophical container for embodied living</span></div>
+    <p class="card-desc">Taurus Lagna is the earth-temple archetype — the spiritual path runs through the body, through nature, through taste, touch, sound and the physical world as divine creation. This is not a path of renunciation but of full embodiment. Food we eat, land we tend, things we grow — all are sacred acts when done with awareness.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Grounded presence that makes spirituality practical and accessible</li><li>Natural connection to earth rhythms and cycles</li><li>Body as temple — physical and spiritual health as one</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Mistaking sensory comfort and pleasure for spiritual experience; physical abundance becoming the end rather than the means</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">Recommended Practices</div>
+      <ul class="bullet-list"><li>Nature practices — gardening, forest bathing, working with the land</li><li>Ayurvedic lifestyle — seasonal eating, daily rhythm</li><li>Sacred sound and chanting (music through the physical body)</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Indigo Tiger 🐅</div>
+        <div class="card-sub">♓ Pisces · 32y ♂ · 📍Alwar, Rajasthan</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Saturn/Saturn/Rahu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 Mystic / Tantric</div>
+        <div class="archetype-label">The Structured Visionary</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Pisces Lagna — moksha sign, dissolution into the cosmic</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Saturn/Saturn dasha — 20-year discipline on the most fluid Lagna</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">Bhadra + Gajakesari + 3 Raja Yogas — visionary with structural capacity</span></div>
+    <p class="card-desc">Pisces Lagna is the mystical dreamer — a soul who belongs as much to invisible worlds as visible ones. Saturn mahadasha is the productive paradox: the most structured, disciplined energy working through the most fluid, boundaryless sign. The spiritual path is creative discipline — using Saturn's focused will to channel Piscean visions into forms that serve others.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">Spiritual Strengths</div>
+        <ul class="bullet-list"><li>Access to visionary and mystical states that inform original work</li><li>Capacity to build structure around the formless (rare and valuable)</li><li>Deep empathy as natural spiritual transmission</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">Shadow / Block</div>
+        <p class="shadow-text">Dissolving into spiritual longing without ever committing to one specific daily practice</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">Recommended Practices</div>
+      <ul class="bullet-list"><li>Structured creative practice — daily writing, art-making, composing</li><li>Sacred music and mantra as spiritual anchor</li><li>Studying mystical traditions with a teacher who provides the container</li></ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="footer">Generated 07 July 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris</div>
+
+<script>
+function filterPath(p) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab-active'));
+  event.target.closest('.tab').classList.add('tab-active');
+  document.querySelectorAll('.card').forEach(c => {
+    if (p === 'All' || c.dataset.path === p) c.classList.remove('hidden');
+    else c.classList.add('hidden');
+  });
+}
+</script>
+</body>
+</html>
