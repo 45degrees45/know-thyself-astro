@@ -35,6 +35,7 @@ ANON = {
     "Always CH":      ("Always CH",             "🦋"),
     "Khayel CH":      ("Khayel CH",             "🦁"),
     "Kunal":          ("The Indigo Tiger",       "🐅"),
+    "Hari CH":        ("Hari CH",               "🦊"),
 }
 
 PATH_KEYS = {
@@ -316,6 +317,15 @@ SPIRITUAL = {
         "shadow":"Mistaking sensory comfort and pleasure for spiritual experience; physical abundance becoming the end rather than the means",
         "practices":["Nature practices — gardening, forest bathing, working with the land","Ayurvedic lifestyle — seasonal eating, daily rhythm","Sacred sound and chanting (music through the physical body)"],
     },
+    "Hari CH": {
+        "path":"Jnana",
+        "archetype":"The Watchful Fox",
+        "indicators":["Mercury exalted H1 Virgo — Bhadra Yoga (analytical mind as spiritual lens)","Ketu H1 alongside Mercury — past-life wisdom fused into present intellect","H12 stellium (Sun/Mars/Jupiter) — Viparita Raja + deep liberation orientation"],
+        "description":"Mercury exalted in H1 with Ketu as companion creates a rare pairing: analytical precision fused with past-life spiritual memory. The Bhadra Yoga marks a Jnana path — the mind itself is the spiritual instrument. H12 stellium means the deepest wisdom is accessed in solitude, retreat and inner inquiry; the outer world is simply the training ground.",
+        "strengths":["Analytical mind that naturally penetrates to the truth beneath appearances","Ketu in H1 gives access to past-life wisdom without needing to formally seek it","H12 orientation means the invisible world is not distant — it is the home base"],
+        "shadow":"Ketu H1 can create a detached, somewhat impersonal quality — the heart's warmth must be consciously cultivated alongside the mind's precision",
+        "practices":["Daily meditation — structured, consistent, analytical (Vipassana or Vedanta inquiry)","Serious study of classical texts (Yoga Sutras, Upanishads, Ashtavakra Gita)","Occasional extended solitary retreats to consolidate what the mind has gathered"],
+    },
     "Kunal": {
         "path":"Mystic",
         "archetype":"The Structured Visionary",
@@ -359,6 +369,7 @@ PROFILES = [
     ("Always CH",     "1991-09-21","08:45", "Libra",      "Jupiter/Mercury/Sun",    "🦋","M","Delhi, India"),
     ("Bodhi CH",      "1991-09-05","21:50", "Taurus",     "Jupiter/Mercury/Jupiter","🐘","M","Cherthala, Kerala"),
     ("Kunal",         "1993-09-10","18:50", "Pisces",     "Saturn/Saturn/Rahu",     "🐅","M","Alwar, Rajasthan"),
+    ("Hari CH",       "1968-09-16","07:15", "Virgo",      "Mercury/Jupiter/Sun",    "🦊","M","Trivandrum, Kerala"),
 ]
 
 LAGNA_ICON = {

@@ -50,6 +50,7 @@ ANON = {
     "Always CH":      ("Always CH",            "🦋"),
     "Khayel CH":      ("Khayel CH",            "🦁"),
     "Kunal":          ("The Indigo Tiger",      "🐅"),
+    "Hari CH":        ("Hari CH",              "🦊"),
 }
 
 # ---------------------------------------------------------------------------
@@ -87,6 +88,7 @@ PROFILES = [
     ("Always CH",     "1991-09-21","08:45", 28.70, 77.10,"Asia/Kolkata",  "Libra",      "Jupiter/Mercury/Sun",    "🦋","M", "🔄",54, "HR Tech / Legal Operations",       ["HR operations & compliance tool","Legal workflow SaaS","Partnership management platform"], "Delhi, India"),
     ("Bodhi CH",      "1991-09-05","21:50",  9.73, 76.33,"Asia/Kolkata",  "Taurus",     "Jupiter/Mercury/Jupiter","🐘","M", "🌱",60, "Sustainable Food / AgriTech",      ["Sustainable food supply platform","Agri-operations management","Wellness / organic brand"], "Cherthala, Kerala"),
     ("Kunal",         "1993-09-10","18:50", 27.56, 76.61,"Asia/Kolkata",  "Pisces",     "Saturn/Saturn/Rahu",     "🐅","M", "🔄",51, "Creative Agency / Spiritual Mktg", ["Creative operations agency","Spiritual / wellness marketing","Tech consulting + creative overlay"], "Alwar, Rajasthan"),
+    ("Hari CH",       "1968-09-16","07:15",  8.52, 76.94,"Asia/Kolkata",  "Virgo",      "Mercury/Jupiter/Sun",    "🦊","M", "🚀",69, "Strategic Comms / Thought Leadership", ["Executive communications consulting","Research & intelligence platform","Thought leadership advisory"], "Trivandrum, Kerala"),
 ]
 
 # ---------------------------------------------------------------------------
@@ -217,6 +219,10 @@ PLANET_INSIGHT = {
     "Kunal":
         "Pisces Lagna ruled by Jupiter — the visionary archetype, imaginative and spiritually attuned. "
         "Saturn/Saturn mahadasha is a 20-year karma-clearing and discipline phase; whatever you build during this period will outlast the next three decades.",
+
+    "Hari CH":
+        "Mercury exalted in its own sign Virgo in H1 forms Bhadra Yoga — the Pancha Mahapurusha yoga of analytical precision and intellectual authority. "
+        "Three planets in H12 (Sun, Mars, Jupiter) form Viparita Raja Yoga: the deepest and most impactful work often happens quietly, behind the scenes — which is exactly where this chart thrives.",
 }
 
 # ---------------------------------------------------------------------------

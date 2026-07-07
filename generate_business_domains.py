@@ -387,6 +387,18 @@ PROFILE_BUSINESS = {
         "avoid": "Any business founding during this dasha; heavy financial risk",
         "window": "Jupiter mahadasha (from ~2033) = the real window",
     },
+    "Hari CH": {
+        "tier": "🚀", "best_domain": "Marketing",
+        "primary_area": "Strategic Communications / Thought Leadership / Advisory",
+        "products": [
+            "🎙️ Executive communications consulting firm",
+            "📊 Research & strategic intelligence platform",
+            "🖊️ Thought leadership / content advisory for CEOs",
+        ],
+        "why": "Mercury exalted H1 (Bhadra Yoga) = analytical precision as brand identity; Moon in H10 Gemini = public-facing communicative authority; Jupiter bhukti activating wisdom transmission; age 57 = peak credibility window",
+        "avoid": "Finance-heavy ventures (Finance score 20 = two planetary debilitations); partnership-dependent models (Venus debilitated)",
+        "window": "Mercury/Jupiter (now) = peak for thought leadership and advisory — the exact alignment needed for this domain",
+    },
 }
 
 # ---------------------------------------------------------------------------
@@ -425,6 +437,7 @@ PROFILES = [
     ("Always CH",    "1991-09-21", "08:45", 28.70, 77.10, "Asia/Kolkata",   "Libra",       "Jupiter/Mercury/Sun",    "🦋", "M"),
     ("Bodhi CH",     "1991-09-05", "21:50",  9.73, 76.33, "Asia/Kolkata",   "Taurus",      "Jupiter/Mercury/Jupiter","🐘", "M"),
     ("Kunal",        "1993-09-10", "18:50", 27.56, 76.61, "Asia/Kolkata",   "Pisces",      "Saturn/Saturn/Rahu",     "🐅", "M"),
+    ("Hari CH",      "1968-09-16", "07:15",  8.52, 76.94, "Asia/Kolkata",   "Virgo",       "Mercury/Jupiter/Sun",    "🦊", "M"),
 ]
 
 SKILL_PLANETS = {
