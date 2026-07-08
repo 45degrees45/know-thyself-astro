@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Drish — Vedic Natal Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: #0b0b18;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+.wrapper { max-width: 1100px; margin: 0 auto; padding: 48px 28px 80px; }
+
+/* ── HERO ─────────────────────────────────────── */
+.hero {
+  position: relative; overflow: hidden;
+  border-radius: 28px; padding: 48px 44px 38px;
+  background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(80,38,58,0.92) 100%);
+  border: 1px solid rgba(196,158,64,0.22);
+  box-shadow: var(--shadow); margin-bottom: 36px;
+}
+.hero-symbol { position:absolute; right:36px; top:24px; font-size:180px; color:rgba(196,158,64,0.07); line-height:1; pointer-events:none; }
+.hero-glow   { position:absolute; right:-60px; bottom:-80px; width:340px; height:340px; border-radius:50%;
+  background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%); pointer-events:none; }
+.eyebrow { font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,6vw,5.5rem); font-weight:300; color:#fff8f0; line-height:1.05; margin-bottom:6px; }
+.lagna-line { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-style:italic; color:rgba(196,158,64,0.85); margin-bottom:24px; }
+.stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-top:28px; }
+.stat { background:rgba(255,255,255,0.06); border:1px solid rgba(196,158,64,0.14); border-radius:16px; padding:16px 18px; }
+.stat-label { font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.stat-value { font-size:1rem; color:#fff8f0; font-weight:500; }
+
+/* ── PANELS ───────────────────────────────────── */
+.panel {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 28px; box-shadow: var(--shadow); margin-bottom: 20px;
+}
+.panel-header { display:flex; align-items:center; gap:10px; padding-bottom:14px; border-bottom:1px solid rgba(196,158,64,0.12); margin-bottom:20px; }
+.panel-icon { width:36px; height:36px; border-radius:50%; background:rgba(196,158,64,0.1); display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--gold); flex-shrink:0; }
+.panel h2 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:var(--cream); }
+
+.dasha-panel { background:rgba(124,92,191,0.06); border-color:rgba(124,92,191,0.22); }
+.dasha-panel .panel-icon { background:rgba(124,92,191,0.14); color:#b49edf; }
+.dasha-panel .panel h2 { color:#d0c4f0; }
+
+.shadow-panel { background:rgba(140,40,70,0.06); border-color:rgba(196,96,122,0.2); }
+.shadow-panel .panel-icon { background:rgba(196,96,122,0.12); color:#e8909f; }
+.shadow-panel .panel h2 { color:#f0c8d0; }
+
+.animal-panel {
+  border-radius: 28px; padding: 48px 40px; text-align: center;
+  background: linear-gradient(135deg, rgba(28,18,56,0.98), rgba(60,30,80,0.96));
+  border: 1px solid rgba(196,158,64,0.22); box-shadow: var(--shadow); margin-bottom: 20px;
+}
+.animal-emoji { font-size:96px; line-height:1; margin-bottom:20px; display:block; }
+.animal-panel h2 { font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:var(--cream); margin-bottom:6px; }
+.animal-body { max-width:680px; margin:0 auto; }
+.animal-body p { font-size:0.96rem; line-height:1.8; color:rgba(240,232,216,0.82); margin-top:14px; }
+
+/* ── GRIDS ────────────────────────────────────── */
+.sym-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+
+/* ── CHIPS ────────────────────────────────────── */
+.chip-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+.chip { background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.2); border-radius:999px; padding:6px 14px; font-size:0.82rem; color:var(--gold2); }
+.chip-neg { background:rgba(196,96,122,0.09); border-color:rgba(196,96,122,0.22); color:#e8909f; }
+.chip-green { background:rgba(90,143,114,0.1); border-color:rgba(90,143,114,0.22); color:#80c4a0; }
+.chip-blue { background:rgba(91,143,212,0.1); border-color:rgba(91,143,212,0.22); color:#8bb8e8; }
+
+/* ── PLANET CHIPS ─────────────────────────────── */
+.pchip { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.05); border:1px solid rgba(196,158,64,0.12); border-radius:999px; padding:5px 12px 5px 8px; font-size:0.78rem; margin:3px; }
+.pchip-name { color:var(--gold); font-weight:500; font-size:0.72rem; }
+.pchip-val  { color:rgba(240,232,216,0.75); }
+
+/* ── BADGES ───────────────────────────────────── */
+.badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; }
+.badge-triple { background:rgba(196,158,64,0.25); color:#f0d080; }
+.badge-double { background:rgba(196,158,64,0.15); color:#e8c96a; }
+.badge-challenge { background:rgba(196,96,122,0.18); color:#e8909f; }
+.badge-protect { background:rgba(90,143,114,0.18); color:#80c4a0; }
+
+/* ── FUN FACTS ────────────────────────────────── */
+.fun-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; }
+.fun-list li { padding:12px 16px; background:rgba(255,255,255,0.04); border-left:3px solid var(--gold); border-radius:0 12px 12px 0; font-size:0.9rem; line-height:1.6; color:rgba(240,232,216,0.82); }
+
+/* ── WARNING LIST ─────────────────────────────── */
+.warning-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:6px; margin-top:12px; }
+.warning-list li { padding:8px 14px; background:rgba(196,96,122,0.06); border-left:3px solid rgba(196,96,122,0.4); border-radius:0 10px 10px 0; font-size:0.87rem; color:rgba(240,232,216,0.75); }
+
+/* ── SHADOW CARDS ─────────────────────────────── */
+.shadow-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+.shadow-card { background:rgba(196,96,122,0.06); border:1px solid rgba(196,96,122,0.15); border-radius:14px; padding:14px 16px; }
+.shadow-card strong { display:block; font-size:0.82rem; letter-spacing:0.08em; text-transform:uppercase; color:#e8909f; margin-bottom:6px; }
+.shadow-card p { font-size:0.88rem; color:rgba(240,232,216,0.7); line-height:1.6; }
+
+/* ── GOLDEN/ANTIDOTE CALLOUTS ─────────────────── */
+.golden-box { background:rgba(196,158,64,0.08); border:1px solid rgba(196,158,64,0.25); color:#e8d89a; border-radius:14px; padding:14px 18px; font-size:0.9rem; line-height:1.65; margin-top:16px; }
+.golden-box::before { content:"★ "; font-weight:600; color:var(--gold); }
+.antidote-box { background:rgba(90,143,114,0.08); border:1px solid rgba(90,143,114,0.2); color:#a0d4b8; border-radius:14px; padding:14px 18px; font-size:0.9rem; line-height:1.65; margin-top:16px; }
+.antidote-box::before { content:"Antidote — "; font-weight:600; color:#80c4a0; }
+
+/* ── PERIOD ROWS ──────────────────────────────── */
+.period-row { display:grid; grid-template-columns:100px 150px 1fr; gap:10px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.88rem; align-items:start; }
+.period-row:last-child { border-bottom:none; }
+.period-window { font-weight:600; color:var(--gold2); font-size:0.82rem; }
+.period-dasha  { color:rgba(196,158,64,0.65); font-size:0.8rem; }
+.period-theme  { color:rgba(240,232,216,0.75); line-height:1.55; }
+
+/* ── PLANET TABLE ─────────────────────────────── */
+.planet-table { width:100%; border-collapse:collapse; font-size:0.86rem; }
+.planet-table th { text-align:left; padding:10px 14px; background:rgba(196,158,64,0.1); color:var(--gold); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; border-bottom:1px solid rgba(196,158,64,0.2); }
+.planet-table td { padding:10px 14px; color:rgba(240,232,216,0.82); border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:top; line-height:1.5; }
+.planet-table tr:last-child td { border-bottom:none; }
+.planet-table tr:hover td { background:rgba(255,255,255,0.02); }
+
+/* ── YOGA ROW ─────────────────────────────────── */
+.yoga-item { padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.05); display:flex; align-items:flex-start; gap:12px; }
+.yoga-item:last-child { border-bottom:none; }
+.yoga-star { font-size:0.8rem; color:var(--gold); width:40px; flex-shrink:0; margin-top:2px; }
+.yoga-name { font-weight:600; color:var(--cream); font-size:0.92rem; margin-bottom:2px; }
+.yoga-desc { font-size:0.84rem; color:var(--muted); line-height:1.5; }
+
+/* ── REMEDY TIERS ─────────────────────────────── */
+.weekly-cal { width:100%; border-collapse:collapse; font-size:0.82rem; margin-bottom:24px; }
+.weekly-cal th { padding:10px 8px; text-align:center; background:rgba(196,158,64,0.12); color:var(--gold2); font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; border:1px solid rgba(196,158,64,0.15); }
+.weekly-cal td { padding:10px 8px; text-align:center; border:1px solid rgba(255,255,255,0.06); color:rgba(240,232,216,0.8); font-size:0.8rem; line-height:1.5; vertical-align:top; }
+.weekly-cal .planet-label { display:block; font-size:0.68rem; color:var(--gold); margin-top:4px; letter-spacing:0.08em; }
+
+.remedy-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:20px; }
+.remedy-tier { border-radius:16px; padding:22px; }
+.tier-universal { background:rgba(90,143,114,0.08); border:1px solid rgba(90,143,114,0.22); }
+.tier-vedic     { background:rgba(196,158,64,0.07); border:1px solid rgba(196,158,64,0.22); }
+.tier-neuro     { background:rgba(91,143,212,0.07); border:1px solid rgba(91,143,212,0.22); }
+.tier-label { font-size:0.68rem; letter-spacing:0.25em; text-transform:uppercase; font-weight:600; margin-bottom:14px; }
+.tier-universal .tier-label { color:#80c4a0; }
+.tier-vedic     .tier-label { color:var(--gold2); }
+.tier-neuro     .tier-label { color:#8bb8e8; }
+.tier-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; margin-bottom:12px; }
+.tier-universal .tier-title { color:#a0d4b8; }
+.tier-vedic     .tier-title { color:var(--gold); }
+.tier-neuro     .tier-title { color:#8bb8e8; }
+.remedy-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:8px; }
+.remedy-list li { font-size:0.86rem; color:rgba(240,232,216,0.78); line-height:1.6; padding-left:14px; position:relative; }
+.remedy-list li::before { content:''; position:absolute; left:0; top:10px; width:5px; height:5px; border-radius:50%; }
+.tier-universal .remedy-list li::before { background:#5a8f72; }
+.tier-vedic     .remedy-list li::before { background:var(--gold); }
+.tier-neuro     .remedy-list li::before { background:var(--blue); }
+.neuro-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px; }
+.neuro-col h4 { font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:#8bb8e8; margin-bottom:10px; }
+
+/* ── DIVIDER ──────────────────────────────────── */
+.divider { display:flex; align-items:center; gap:16px; margin:32px 0; font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(240,232,216,0.3); }
+.divider::before, .divider::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ── SUB-LABEL ────────────────────────────────── */
+.sub-label { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; margin-top:18px; }
+
+/* ── BODY TEXT ────────────────────────────────── */
+p { font-size:0.93rem; color:rgba(240,232,216,0.82); line-height:1.8; margin-bottom:12px; }
+p:last-child { margin-bottom:0; }
+
+/* ── FOOTER ───────────────────────────────────── */
+.footer { text-align:center; padding:20px 0; font-size:0.72rem; color:rgba(240,232,216,0.3); letter-spacing:0.08em; border-top:1px solid var(--border); margin-top:40px; }
+
+/* ── META AI PROMPT BOX ───────────────────────── */
+.prompt-box { background:rgba(11,11,24,0.8); border:1px solid rgba(91,143,212,0.3); border-radius:14px; padding:18px 20px; font-family:monospace; font-size:0.8rem; color:rgba(240,232,216,0.7); line-height:1.7; white-space:pre-wrap; word-break:break-word; margin-top:14px; }
+
+/* ── MOBILE ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .sym-grid, .stat-grid, .shadow-grid, .remedy-grid, .neuro-grid { grid-template-columns: 1fr; }
+  .hero { padding: 32px 24px 28px; }
+  .hero-symbol { font-size: 100px; right: 16px; top: 16px; }
+  .period-row { grid-template-columns: 1fr; gap:4px; }
+  .wrapper { padding: 32px 16px 60px; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-symbol">♋</div>
+    <div class="hero-glow"></div>
+    <div class="eyebrow">Vedic Natal Profile · Jyotish / Lahiri Ayanamsha</div>
+    <h1>Drish</h1>
+    <div class="lagna-line">Cancer Rising · The Lioness Who Holds Her Pride</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;">
+      <span class="badge badge-triple">★★★ Ruchaka Yoga</span>
+      <span class="badge badge-triple">★★★ Sasa Yoga</span>
+      <span class="badge badge-triple">★★★ Yoga Karaka Mars</span>
+      <span class="badge badge-triple">★★★ Raja Yoga</span>
+      <span class="badge badge-double">★★ Viparita Raja</span>
+      <span class="badge badge-protect">Shubha Kartari</span>
+    </div>
+    <div class="stat-grid">
+      <div class="stat"><div class="stat-label">Lagna</div><div class="stat-value">Cancer 13.2°</div></div>
+      <div class="stat"><div class="stat-label">Moon</div><div class="stat-value">Leo · Magha p3</div></div>
+      <div class="stat"><div class="stat-label">Dasha (2026)</div><div class="stat-value">Moon / Venus / Mars</div></div>
+      <div class="stat"><div class="stat-label">Yogas</div><div class="stat-value">8 · incl. 4 Mahapurusha</div></div>
+    </div>
+  </div>
+
+  <!-- PLANET TABLE -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">⭐</div>
+      <h2>Natal Placements</h2>
+    </div>
+    <table class="planet-table">
+      <thead>
+        <tr><th>Planet</th><th>Sign · Degree</th><th>House</th><th>Nakshatra · Pada</th><th>Dignity / Note</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong style="color:var(--gold)">ASC</strong></td><td>Cancer 13.2°</td><td>H1</td><td>Pushya pada 1</td><td style="color:#80c4a0">Lagna — Moon rules</td></tr>
+        <tr><td>☀ Sun</td><td>Pisces 22.6°</td><td>H9</td><td>Revati pada 2</td><td style="color:#80c4a0">H9 dharmic placement — spirituality, teaching</td></tr>
+        <tr><td>☽ Moon</td><td>Leo 9.8°</td><td>H2</td><td>Magha pada 3</td><td style="color:var(--gold2)">Lagna lord — royal Magha, ancestral throne</td></tr>
+        <tr><td>♂ Mars</td><td>Capricorn 25.4°</td><td>H7</td><td>Dhanishtha pada 1</td><td style="color:#80c4a0"><strong>Exalted · Ruchaka Yoga · Yoga Karaka</strong></td></tr>
+        <tr><td>☿ Mercury</td><td>Aries 9.7°</td><td>H10</td><td>Ashwini pada 3</td><td style="color:#80c4a0">10th house — pioneering career mind</td></tr>
+        <tr><td>♃ Jupiter</td><td>Gemini 9.6°</td><td>H12</td><td>Ardra pada 1</td><td style="color:#e8c96a">Viparita Raja — gains through adversity</td></tr>
+        <tr><td>♀ Venus</td><td>Aquarius 6.2°</td><td>H8</td><td>Dhanishtha pada 4</td><td style="color:#b49edf">H8 — transformative, hidden depth in love</td></tr>
+        <tr><td>♄ Saturn</td><td>Capricorn 0.9°</td><td>H7</td><td>Uttara Ashadha pada 2</td><td style="color:#80c4a0"><strong>Own sign · Sasa Yoga · Raja Yoga conjunct Mars</strong></td></tr>
+        <tr><td>☊ Rahu</td><td>Capricorn 21.0°</td><td>H7</td><td>Shravana pada 4 (R)</td><td style="color:#e8909f">H7 — karmic intensity in partnerships</td></tr>
+        <tr><td>☋ Ketu</td><td>Cancer 21.0°</td><td>H1</td><td>Ashlesha pada 2</td><td style="color:#b49edf">Lagna — past-life wisdom, serpentine insight</td></tr>
+      </tbody>
+    </table>
+    <div class="golden-box" style="margin-top:18px;">H7 carries THREE planets (Mars exalted + Saturn own sign + Rahu) — yielding TWO Pancha Mahapurusha Yogas simultaneously. The 7th house is the primary karma field of this chart: relationships are not just significant, they are the arena where her soul's purpose plays out.</div>
+  </div>
+
+  <div class="divider">Nature &amp; Personality</div>
+
+  <!-- CORE NATURE -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">🌙</div>
+      <h2>Core Nature</h2>
+    </div>
+    <p>Cancer Ascendant at 13.2° (Pushya nakshatra — the "nourisher") gives Drish her defining quality: she is a <em>container</em> for others. She holds people, holds memories, holds hurt longer than she reveals. The outer persona is soft-spoken, empathic, and deeply intuitive — yet this gentleness is not fragility. It is the outer coat of a woman with an iron interior. Her Lagna lord Moon sits in Leo's royal Magha nakshatra (H2), the nakshatra of the ancestral throne — she carries an inherited dignity, a sense of lineage and legacy, and a private need to be seen and respected.</p>
+    <p>The extraordinary H7 stellium (Mars exalted + Saturn in own sign + Rahu) makes her deceptively powerful in relationships. She doesn't dominate openly, but every serious partnership in her life becomes a transformative crucible. She attracts strong, karmic, intense partners — and she meets them with equal force. The Ruchaka Yoga (Mars) gives her a warrior's resolve she rarely displays; the Sasa Yoga (Saturn) gives her the patience to outlast anyone.</p>
+    <p>Sun in Pisces H9 (Revati nakshatra) adds a layer of spiritual idealism and compassion — she is drawn to philosophy, meaning, and the welfare of others. She may naturally occupy mentor or guide roles even without seeking them. Ketu in H1 (Ashlesha) suggests she carries past-life gifts of psychological penetration and intuitive healing — she reads people with serpentine precision, often without consciously understanding how she does it.</p>
+    <div class="sub-label">Strengths</div>
+    <div class="chip-row">
+      <span class="chip">Fierce protectiveness</span>
+      <span class="chip">Rare emotional intelligence</span>
+      <span class="chip">Strategic patience (Saturn)</span>
+      <span class="chip">Natural authority in partnerships</span>
+      <span class="chip">Psychic-level people-reading</span>
+      <span class="chip">Dharmic inner compass</span>
+    </div>
+    <div class="sub-label" style="margin-top:18px;">Blind Spots</div>
+    <div class="chip-row">
+      <span class="chip-neg">Needs recognition (Moon in Leo)</span>
+      <span class="chip-neg">Emotional isolation (Kemadruma)</span>
+      <span class="chip-neg">Holds pain silently too long</span>
+    </div>
+  </div>
+
+  <!-- SPIRITUAL PATH -->
+  <div class="panel dasha-panel">
+    <div class="panel-header">
+      <div class="panel-icon">🕊</div>
+      <h2>Spiritual Style &amp; Path — Bhakti with Mystic Depth</h2>
+    </div>
+    <p>Her chart places her on the <strong>Bhakti path</strong> with unmistakable Mystic undertones. Cancer Lagna is ruled by the Moon — the planet of devotion, feeling, and surrender. She experiences the divine through love, through emotional truth, through the sacred in everyday relationships. Spirituality is not a concept for her; it is a felt reality.</p>
+    <p><strong>Moon in Magha (H2)</strong> adds an ancestral spiritual dimension. Magha's ruling deity is the Pitris (departed ancestors) and it is the nakshatra of the "throne" — she may feel called to carry forward something from her lineage, to honor her family's spiritual legacy, or to communicate across the veil through prayer or ritual. There can be an unusual sensitivity to the presence of ancestors.</p>
+    <p><strong>Ketu in H1 (Ashlesha nakshatra)</strong> is the most powerful mystical indicator: past-life attainment arriving as raw intuition. Ashlesha is the serpent nakshatra — occult knowledge, psychological depth, the capacity to see hidden truths. She may be naturally drawn to healing arts, dream work, or meditative inquiry.</p>
+    <p><strong>Jupiter in H12 (Ardra nakshatra)</strong> creates the Viparita Raja Yoga and points to a spiritual life shaped by surrender. Her deepest grace arrives not through control but through release — losses that open new chambers, giving that receives more than it gives, solitude that deepens inner fullness.</p>
+    <div class="sub-label">Practices That Resonate</div>
+    <div class="chip-row">
+      <span class="chip-green">Ancestral prayer / tarpana rituals</span>
+      <span class="chip-green">Devotional chanting or bhajan</span>
+      <span class="chip-green">Ocean / water meditation (Cancer Moon)</span>
+      <span class="chip-green">Dream journaling (Ketu H1)</span>
+      <span class="chip-green">Service to the elderly or underprivileged (Jupiter H12)</span>
+    </div>
+  </div>
+
+  <div class="divider">Career &amp; Destiny</div>
+
+  <!-- CAREER -->
+  <div class="sym-grid" style="margin-bottom:20px;">
+    <div class="panel" style="margin-bottom:0">
+      <div class="panel-header">
+        <div class="panel-icon">⚡</div>
+        <h2>Career Profile</h2>
+      </div>
+      <p><strong>Mercury in Aries H10 (Ashwini nakshatra)</strong> — the career house is occupied by Mercury in its most sprinting form. Ashwini is the horse nakshatra: speed, initiative, first-mover advantage. She thinks quickly, decides boldly, and starts things others hesitate to begin. Professional environments that reward precision communication and fast execution suit her.</p>
+      <p><strong>Yoga Karaka Mars</strong> (ruling both H5 creativity and H10 career for Cancer Lagna) is exalted in Capricorn H7. This makes her a natural entrepreneur or partnership-based business person. Her best work is done <em>with</em> someone — the right co-founder, co-leader, or strategic partner unlocks her full professional power.</p>
+      <p><strong>Raja Yoga (Saturn+Mars in H7)</strong> supports authority, leadership, and recognition in structured environments. Saturn's Sasa Yoga gives long-game discipline that compounds over time.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="chip-row">
+        <span class="chip">Healthcare / healing</span>
+        <span class="chip">Psychology / counseling</span>
+        <span class="chip">Law / justice</span>
+        <span class="chip">Entrepreneurship</span>
+        <span class="chip">People management</span>
+        <span class="chip">Real estate</span>
+        <span class="chip">Education / mentoring</span>
+      </div>
+    </div>
+    <div class="panel" style="margin-bottom:0">
+      <div class="panel-header">
+        <div class="panel-icon">📅</div>
+        <h2>Career Windows</h2>
+      </div>
+      <div class="period-row">
+        <span class="period-window">2026–2027</span>
+        <span class="period-dasha">Moon / Venus</span>
+        <span class="period-theme">People-led work thrives. Creative, relational, or wellness-adjacent roles are favored. Collaborative projects bloom. Good window to build strategic alliances.</span>
+      </div>
+      <div class="period-row">
+        <span class="period-window">2028–2030</span>
+        <span class="period-dasha">Mars MD begins</span>
+        <span class="period-theme">Yoga Karaka Mars mahadasha begins — her most powerful career period. Ambitions set in motion now will define the next decade. Leadership roles, entrepreneurial ventures, and recognition accelerate sharply.</span>
+      </div>
+      <div class="period-row">
+        <span class="period-window">2030–2035</span>
+        <span class="period-dasha">Mars MD peak</span>
+        <span class="period-theme">Ruchaka Yoga fully activates. Maximum professional authority, status, and impact. This is the window where earlier foundations compound into visible achievement.</span>
+      </div>
+      <div class="period-row">
+        <span class="period-window">2035–2053</span>
+        <span class="period-dasha">Rahu MD</span>
+        <span class="period-theme">Rahu in H7 expands through partnerships, possibly international or unconventional collaborations. New domains, cross-cultural influence, and surprising elevations.</span>
+      </div>
+      <div class="golden-box">The 2028–2035 Mars Mahadasha is the single highest-magnitude career period in her chart. Mars is simultaneously exalted, Yoga Karaka, conjunct Raja Yoga, and forming Ruchaka — a once-in-a-lifetime alignment of four major factors.</div>
+    </div>
+  </div>
+
+  <div class="divider">Relationships &amp; Partnership Karma</div>
+
+  <!-- RELATIONSHIPS -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">💫</div>
+      <h2>Relationships — The 7th House Powerhouse</h2>
+    </div>
+    <p>Drish's H7 may be the most loaded 7th house in any chart in this group. Three planets — Mars (exalted, Ruchaka), Saturn (own sign, Sasa), and Rahu — sit here simultaneously, yielding two Pancha Mahapurusha Yogas and a Raja Yoga all within the house of partnership. Relationships are not just meaningful for her; they are the <em>primary arena</em> through which her soul grows, tests itself, and ultimately achieves its dharma.</p>
+    <p>She attracts powerful, karmic partners — people who challenge her, transform her, or demand everything she has. Rahu in H7 adds an element of the unconventional or unexpected: partnerships may arise through unusual circumstances, may cross cultural or social boundaries, or may feel fated. There is often a sense of having known this person before.</p>
+    <div class="sym-grid" style="margin-top:18px;">
+      <div>
+        <div class="sub-label">7th House Indicators</div>
+        <div class="yoga-item">
+          <div class="yoga-star">★★★</div>
+          <div><div class="yoga-name">Mars exalted (Ruchaka)</div><div class="yoga-desc">She meets partners with full force and commitment. Attraction is intense; she gives everything.</div></div>
+        </div>
+        <div class="yoga-item">
+          <div class="yoga-star">★★</div>
+          <div><div class="yoga-name">Saturn own sign (Sasa)</div><div class="yoga-desc">She builds enduring partnerships. Long-term commitment suits her; she respects structure in relationships.</div></div>
+        </div>
+        <div class="yoga-item">
+          <div class="yoga-star">Rahu</div>
+          <div><div class="yoga-name">Rahu in H7</div><div class="yoga-desc">Karmic intensity, unconventional dynamics, possibly a partner from a different background or life path.</div></div>
+        </div>
+        <div class="yoga-item">
+          <div class="yoga-star">Darakaraka</div>
+          <div><div class="yoga-name">Saturn 0.9° — Soul Spouse</div><div class="yoga-desc">Saturn as Darakaraka: the soul's spouse signature is disciplined, mature, responsible, possibly older or more structured. A person with authority and steadiness who grounds her.</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="sub-label">Marriage Windows</div>
+        <div class="period-row">
+          <span class="period-window">Nov 2025 – Jul 2027</span>
+          <span class="period-dasha">Moon / Venus</span>
+          <span class="period-theme">Strongest window currently. Moon MD + Venus bhukti is a classical marriage indicator. Emotional readiness and attraction are both heightened.</span>
+        </div>
+        <div class="period-row">
+          <span class="period-window">2028–2030</span>
+          <span class="period-dasha">Mars MD early</span>
+          <span class="period-theme">Mars rules H5 (romance/children) — early Mars MD is another powerful relationship activation period, especially for committed union or starting a family.</span>
+        </div>
+        <div class="antidote-box">Venus in H8 (Aquarius/Dhanishtha) means her love language is transformative depth. She is not interested in surface-level partnerships. The right relationship will feel inevitable — and will ask her to evolve profoundly.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEALTH -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">🌿</div>
+      <h2>Health Constitution</h2>
+    </div>
+    <div class="sym-grid">
+      <div>
+        <p>Cancer Lagna with Moon in Leo gives a <strong>Kapha-Pitta</strong> constitution — generally robust and warm, but sensitive to emotional stress. The physical body reflects the emotional state closely: when she is at peace, she radiates; when she carries unexpressed pain, the body speaks first.</p>
+        <p><strong>Ketu in H1 (Ashlesha)</strong> can manifest as diffuse or hard-to-diagnose sensitivities — gut sensitivity, skin responses to stress, or nervous system hypersensitivity. Ashlesha rules the digestive system and has a reptilian (kundalini) quality — energy can stagnate if not properly channeled.</p>
+        <div class="sub-label">Vulnerable Areas</div>
+        <div class="chip-row">
+          <span class="chip-neg">Digestive system (Ketu H1 / Cancer Lagna)</span>
+          <span class="chip-neg">Musculoskeletal (Saturn H7)</span>
+          <span class="chip-neg">Emotional-physical link (Moon sensitivity)</span>
+        </div>
+      </div>
+      <div>
+        <div class="sub-label">Protective Factors</div>
+        <div class="chip-row">
+          <span class="chip-green">Shubha Kartari Yoga (Lagna protected by benefics)</span>
+          <span class="chip-green">Mars exalted — strong life force</span>
+          <span class="chip-green">Saturn in own sign — endurance</span>
+        </div>
+        <div class="sub-label" style="margin-top:16px;">Lifestyle Guidance</div>
+        <ul class="remedy-list">
+          <li>Regular time near water — ocean, rivers, or swimming (Moon/Cancer restoration)</li>
+          <li>Physical movement that is strong but rhythmic: yoga, martial arts, swimming</li>
+          <li>Mindful emotional processing — what the body holds, she must also speak</li>
+          <li>Avoid: emotional suppression, irregular sleep, skipping meals under stress</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">Fun Facts &amp; Shadow</div>
+
+  <!-- FUN FACTS -->
+  <div class="sym-grid" style="margin-bottom:20px;">
+    <div class="panel" style="margin-bottom:0">
+      <div class="panel-header">
+        <div class="panel-icon">✨</div>
+        <h2>5 Surprising Chart Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li><strong>Double Pancha Mahapurusha in one house:</strong> Ruchaka (Mars) + Sasa (Saturn) both land in H7 — two of the rarest individual yogas appearing simultaneously in the same house. Statistically extraordinary.</li>
+        <li><strong>Ketu in Lagna (Ashlesha):</strong> She entered this life with the soul's memory of occult knowledge. Ashlesha is the serpent — psychological penetration, the ability to sense deception and truth in others almost supernaturally. This is not a learned skill; it is a soul memory.</li>
+        <li><strong>Moon in Magha:</strong> The nakshatra called "the throne" — ruled by Ketu, deity is the Pitris (ancestors). She may feel an inexplicable connection to specific deceased relatives, or carry a sense of mission connected to her family line.</li>
+        <li><strong>Viparita Raja Yoga (Jupiter H12):</strong> Her greatest luck is hidden in her losses. The universe literally gives her more when she surrenders than when she controls. Adversity is her secret ally.</li>
+        <li><strong>Mercury in Ashwini H10:</strong> Ashwini is the "horse nakshatra" in the career house. Her professional ideas travel faster than most people can follow — she may be chronically ahead of the market or institutional timeline.</li>
+      </ul>
+    </div>
+    <div class="panel shadow-panel" style="margin-bottom:0">
+      <div class="panel-header">
+        <div class="panel-icon">🌑</div>
+        <h2>Shadow Side</h2>
+      </div>
+      <div class="shadow-grid">
+        <div class="shadow-card">
+          <strong>Kemadruma Yoga</strong>
+          <p>No planets in the 2nd or 12th from Moon. This creates periodic emotional isolation — she can feel deeply alone even in a crowd, and may struggle to ask for the emotional reciprocity she gives so freely to others.</p>
+        </div>
+        <div class="shadow-card">
+          <strong>Silent suffering</strong>
+          <p>Cancer Lagna + Ketu H1: she absorbs pain internally and processes alone. By the time others notice she was hurting, she has already moved mountains by herself — and quietly resents that no one noticed sooner.</p>
+        </div>
+        <div class="shadow-card">
+          <strong>Recognition hunger</strong>
+          <p>Moon in Leo Magha (H2): she needs to feel seen, respected, even honored — but may rarely say so directly. When this need goes unmet in relationships, withdrawal and emotional distance follow.</p>
+        </div>
+        <div class="shadow-card">
+          <strong>Rahu H7 intensity</strong>
+          <p>Partnerships can become consuming or obsessive. Rahu in H7 attracts lessons through the other person — sometimes this means drawn to people who mirror her unresolved patterns in amplified form.</p>
+        </div>
+      </div>
+      <div class="antidote-box">The antidote to Kemadruma is intentional emotional community — not just being present for others, but specifically naming what she needs and allowing herself to receive it without guilt.</div>
+    </div>
+  </div>
+
+  <div class="divider">Spirit Animal</div>
+
+  <!-- SPIRIT ANIMAL -->
+  <div class="animal-panel">
+    <span class="animal-emoji">🦁</span>
+    <div class="eyebrow">Moon in Leo · Magha Nakshatra · Ruchaka Yoga · Cancer Lagna</div>
+    <h2>The Lioness</h2>
+    <div class="animal-body">
+      <p>Moon in Leo's Magha nakshatra — the "throne" — places her animal spirit in the regal, ancestral world of the lion. But it is specifically the <em>lioness</em> she embodies: the one who does not roar to prove her power, but whose silence carries the weight of every life she has chosen to protect. Cancer Lagna wraps this lion-soul in a mother's instinct — she will sacrifice anything for those she has claimed as her own.</p>
+      <p>Exalted Mars (Ruchaka Yoga) gives her the lioness's hunting precision: calm observation, absolute stillness, then decisive, fluid action when the moment arrives. She does not waste energy or words. She strikes when it matters. Saturn's Sasa Yoga gives her the patience of the elder lioness — she has seen cycles rise and fall, and she knows how to wait without losing her edge.</p>
+      <p>In her relationships (H7 powerhouse), she is fiercely territorial about her chosen pride. She does not share her innermost world easily — but once someone is in, she will move mountains, cross deserts, and hold vigil through the night for them. The Lioness does not explain her love. She lives it, fully and without reservation.</p>
+    </div>
+  </div>
+
+  <!-- META AI PROMPT -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">🎨</div>
+      <h2>Meta AI Image Prompt</h2>
+    </div>
+    <p style="font-size:0.84rem; color:var(--muted); margin-bottom:8px;">Copy-paste into <strong>meta.ai</strong> → Imagine to generate spirit animal portrait:</p>
+    <div class="prompt-box">A majestic lioness resting on a cosmic throne of stars, Cancer rising — her eyes carry the quiet gravity of someone who has crossed lifetimes. Her golden fur glows with subtle astrological symbols: the Cancer glyph ♋ at her heart, the Capricorn glyph ♑ etched on her powerful paws, and the Mars symbol ♂ burning like an ember in her chest. The background is deep midnight blue dissolving into violet, with twin moons — one full, one crescent — framing her head like a celestial crown. Around her, plum and gold light ripples from ancestral fire, and the Magha nakshatra star cluster glimmers above. She does not need to move. The universe waits for her. Painterly surreal digital art, ultra detailed, cinematic lighting, --ar 3:4</div>
+  </div>
+
+  <div class="divider">Yogas</div>
+
+  <!-- YOGAS -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">🔮</div>
+      <h2>All 8 Yogas</h2>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-star">★★★</div>
+      <div><div class="yoga-name">Ruchaka Yoga <span class="badge badge-triple" style="font-size:0.65rem;margin-left:8px;">Pancha Mahapurusha</span></div><div class="yoga-desc">Mars exalted in Capricorn (25.4°) in H7 (kendra). Warrior-level discipline, physical strength, strategic brilliance, a capacity to overcome obstacles that would stop ordinary people. Activates fully in Mars MD (2028–2035).</div></div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-star">★★</div>
+      <div><div class="yoga-name">Sasa Yoga <span class="badge badge-double" style="font-size:0.65rem;margin-left:8px;">Pancha Mahapurusha</span></div><div class="yoga-desc">Saturn in own sign Capricorn (0.9°) in H7 (kendra). Longevity, authority, discipline that compounds over decades. The "slow burner" that wins the long game.</div></div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-star">★★★</div>
+      <div><div class="yoga-name">Yoga Karaka Mars <span class="badge badge-triple" style="font-size:0.65rem;margin-left:8px;">Raja Yoga</span></div><div class="yoga-desc">Mars simultaneously rules H5 (creativity, children, romance) and H10 (career) for Cancer Lagna — making it a double-benefic Yoga Karaka. Every Mars dasha period (bhukti or mahadasha) triggers career and creative elevation.</div></div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-star">★★★</div>
+      <div><div class="yoga-name">Raja Yoga (Saturn + Mars) <span class="badge badge-triple" style="font-size:0.65rem;margin-left:8px;">Raja Yoga</span></div><div class="yoga-desc">Lord of a kendra (Saturn rules H7, H8 — actually wait: for Cancer Lagna, Saturn rules H7 and H8; Mars rules H5 and H10) conjunct in Capricorn H7. Leadership, power, societal recognition.</div></div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-star">★★</div>
+      <div><div class="yoga-name">Viparita Raja Yoga (Jupiter H12)</div><div class="yoga-desc">Jupiter (6th lord) in dusthana H12. Rise through adversity, unexpected gains, spiritual elevation through loss, resilience that surprises even the native. The universe rewards her surrenders.</div></div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-star">★★</div>
+      <div><div class="yoga-name">Kemadruma Yoga <span class="badge badge-challenge" style="font-size:0.65rem;margin-left:8px;">Challenging</span></div><div class="yoga-desc">No planets in the 2nd or 12th from Moon (H2). Emotional isolation, self-reliance by necessity, periodic loneliness. The shadow that sharpens the spirit — but must be consciously addressed.</div></div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-star">★★</div>
+      <div><div class="yoga-name">Shubha Kartari Yoga (Lagna) <span class="badge badge-protect" style="font-size:0.65rem;margin-left:8px;">Protective</span></div><div class="yoga-desc">Lagna flanked by benefics — Jupiter in H12 and Moon in H2. A protective envelope around the ascendant: good health, strong personality, resilience in face of challenges.</div></div>
+    </div>
+    <div class="yoga-item">
+      <div class="yoga-star">★★</div>
+      <div><div class="yoga-name">Ubhayachari Yoga (Sun)</div><div class="yoga-desc">Planets on both sides of Sun: Venus in H8 (12th from Sun) and Mercury in H10 (2nd from Sun). Charisma, balanced personality, a quiet royal bearing that others notice before she does.</div></div>
+    </div>
+  </div>
+
+  <div class="divider">Remedies</div>
+
+  <!-- REMEDIES -->
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">💎</div>
+      <h2>Remedies — 3-Tier System</h2>
+    </div>
+
+    <!-- WEEKLY CALENDAR -->
+    <div class="sub-label">Weekly Practice Calendar</div>
+    <table class="weekly-cal">
+      <thead>
+        <tr>
+          <th>🌙 Mon</th><th>🔴 Tue</th><th>🟢 Wed</th><th>🟡 Thu</th><th>🟠 Fri</th><th>🪐 Sat</th><th>🌞 Sun</th>
+        </tr>
+        <tr>
+          <td style="color:var(--muted);font-size:0.68rem;">Moon</td>
+          <td style="color:var(--muted);font-size:0.68rem;">Mars</td>
+          <td style="color:var(--muted);font-size:0.68rem;">Mercury</td>
+          <td style="color:var(--muted);font-size:0.68rem;">Jupiter</td>
+          <td style="color:var(--muted);font-size:0.68rem;">Venus</td>
+          <td style="color:var(--muted);font-size:0.68rem;">Saturn</td>
+          <td style="color:var(--muted);font-size:0.68rem;">Sun</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Water ritual<br>Journal feelings<span class="planet-label">Moon healing</span></td>
+          <td>Physical training<br>Strength practice<span class="planet-label">Mars Ruchaka</span></td>
+          <td>Career planning<br>Fast writing<span class="planet-label">Mercury H10</span></td>
+          <td>Spiritual study<br>Service / giving<span class="planet-label">Jupiter H12</span></td>
+          <td>Creative work<br>Beauty rituals<span class="planet-label">Venus H8 depth</span></td>
+          <td>Discipline task<br>Fasting (optional)<span class="planet-label">Saturn Sasa</span></td>
+          <td>Nature walk<br>Dharmic intention<span class="planet-label">Sun H9 dharma</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="remedy-grid">
+      <!-- TIER 1 -->
+      <div class="remedy-tier tier-universal">
+        <div class="tier-label">● Tier 1 — Universal Practices</div>
+        <div class="tier-title">Behavioral &amp; Wellness</div>
+        <ul class="remedy-list">
+          <li>Spend time near water weekly — ocean, lake, or river bath. Cancer Moon is restored by water.</li>
+          <li>Strength training or martial arts on Tuesdays (Mars activation — Ruchaka Yoga maintenance).</li>
+          <li>Keep a feelings journal — Kemadruma Yoga creates emotional isolation; naming feelings breaks the pattern.</li>
+          <li>Practice receiving: consciously ask for help once a week. This is the antidote to Cancer's silent-suffering tendency.</li>
+          <li>White or silver gemstone (moonstone or pearl) worn on Mondays — Moon strengthening for Lagna lord.</li>
+          <li>Charitable giving on Saturdays — strengthens Saturn (Sasa Yoga) and generates good karma for Darakaraka.</li>
+          <li>Avoid red meat on Saturdays (Saturn / Capricorn sensitivity).</li>
+        </ul>
+      </div>
+      <!-- TIER 2 -->
+      <div class="remedy-tier tier-vedic">
+        <div class="tier-label">◆ Tier 2 — Vedic Tradition</div>
+        <div class="tier-title">Mantra · Puja · Ritual</div>
+        <ul class="remedy-list">
+          <li><strong>Moon mantra:</strong> "Om Chandraya Namaha" — 108 times on Mondays. Strengthens Lagna lord and reduces Kemadruma effects.</li>
+          <li><strong>Mars mantra:</strong> "Om Angarakaya Namaha" — 108 times on Tuesdays. Activates Ruchaka Yoga and Yoga Karaka Mars.</li>
+          <li><strong>Pitri tarpana:</strong> Ancestral water offerings on Magha nakshatra days or Amavasya (new moon) — honors the Magha nakshatra deity (Pitris) and deepens ancestral connection.</li>
+          <li><strong>Ashlesha mantra / Nagaraja puja:</strong> For Ketu in Lagna in Ashlesha — serpent deity propitiation. Reduces confusion, activates intuition gifts.</li>
+          <li><strong>Chandra Puja on Purnima</strong> (full moon): Moonlight meditation with milk offerings. Especially powerful for Cancer Lagna natives.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- TIER 3 -->
+    <div class="remedy-tier tier-neuro">
+      <div class="tier-label">◈ Tier 3 — Neuroscience · CBT · NLP · Biohacking</div>
+      <div class="tier-title">Mind-Body Optimization</div>
+      <div class="neuro-grid">
+        <div class="neuro-col">
+          <h4>CBT</h4>
+          <ul class="remedy-list">
+            <li>Track the "recognition need" — when she withdraws, ask: "What did I need that I didn't say?" (Moon/Leo pattern)</li>
+            <li>Kemadruma protocol: schedule a weekly "vulnerable sharing" conversation with a trusted person. Make it a non-negotiable appointment.</li>
+            <li>Cognitive reframe for losses: journal "What did I gain from this loss?" — activates the Viparita Raja pattern consciously.</li>
+          </ul>
+        </div>
+        <div class="neuro-col">
+          <h4>NLP</h4>
+          <ul class="remedy-list">
+            <li>Anchor state: cold water on wrists + deep breath = "return to clarity" — Cancer/Moon anchor for emotional overwhelm.</li>
+            <li>Future-self visualization: vividly imagine Mars MD (2028) career peak. Run this visualization every Tuesday morning.</li>
+            <li>Voice tonality: practice lowering her speaking voice by 10% — this activates the Saturn/authority energy in H7 that partners respond to.</li>
+          </ul>
+        </div>
+        <div class="neuro-col">
+          <h4>Biohacking</h4>
+          <ul class="remedy-list">
+            <li>Circadian alignment: Moon-ruled natives do best with early sleep (before 11 PM) and early waking. Track sleep quality vs. emotional resilience.</li>
+            <li>Cold exposure 2x/week (Mars Ruchaka activation) — builds the physical discipline that the warrior yoga demands.</li>
+            <li>Omega-3 + magnesium supplementation — supports Moon/nervous system sensitivity and Saturn/joint health.</li>
+            <li>HRV tracking: correlate heart rate variability dips with Moon transits to her natal Cancer positions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">Generated July 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Kottayam, Kerala, India</div>
+</div>
+</body>
+</html>
