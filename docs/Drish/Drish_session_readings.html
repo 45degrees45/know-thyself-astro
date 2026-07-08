@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Drish — Session Readings · July 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: #0b0b18;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  line-height: 1.7;
+}
+
+/* ── LAYOUT ───────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ── SIDEBAR ──────────────────────────────────── */
+.sidebar {
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding: 36px 20px 36px 24px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.92);
+  backdrop-filter: blur(12px);
+}
+.sidebar-animal { font-size: 52px; text-align: center; margin-bottom: 6px; }
+.sidebar-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--cream); text-align: center; margin-bottom: 2px; }
+.sidebar-sub { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 20px; }
+.sidebar-stats { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 20px; }
+.sidebar-stat { display: flex; justify-content: space-between; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.78rem; }
+.sidebar-stat:last-child { border-bottom: none; }
+.sidebar-stat-label { color: var(--gold); }
+.sidebar-stat-value { color: var(--cream); }
+.sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
+.nav-label { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(240,232,216,0.3); margin: 10px 0 4px; }
+.nav-link {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: 10px; text-decoration: none;
+  font-size: 0.82rem; color: rgba(240,232,216,0.65);
+  transition: all 0.15s;
+}
+.nav-link:hover { background: rgba(255,255,255,0.06); color: var(--cream); }
+.nav-link.gold  { border-left: 2px solid var(--gold); }
+.nav-link.plum  { border-left: 2px solid var(--plum); }
+.nav-link.sage  { border-left: 2px solid var(--sage); }
+.nav-link.rose  { border-left: 2px solid var(--rose); }
+.nav-link.blue  { border-left: 2px solid var(--blue); }
+.nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+
+/* ── MAIN ─────────────────────────────────────── */
+.main { padding: 48px 52px 80px; max-width: 860px; }
+
+/* ── HERO INTRO ───────────────────────────────── */
+.session-hero {
+  background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(60,30,50,0.95) 100%);
+  border: 1px solid rgba(196,158,64,0.22);
+  border-radius: 24px; padding: 36px 40px; margin-bottom: 48px;
+  position: relative; overflow: hidden;
+}
+.session-hero-bg { position:absolute; right:-30px; bottom:-40px; width:200px; height:200px; border-radius:50%;
+  background:radial-gradient(circle, rgba(196,158,64,0.12), transparent 65%); pointer-events:none; }
+.session-eyebrow { font-size:0.68rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.session-hero h1 { font-family:'Cormorant Garamond',serif; font-size:2.4rem; font-weight:300; color:#fff8f0; margin-bottom:8px; }
+.session-hero p { font-size:0.9rem; color:rgba(240,232,216,0.72); line-height:1.75; max-width:600px; }
+.topic-pills { display:flex; flex-wrap:wrap; gap:7px; margin-top:18px; }
+.pill { padding:4px 12px; border-radius:999px; font-size:0.72rem; font-weight:500; }
+.pill-gold { background:rgba(196,158,64,0.12); border:1px solid rgba(196,158,64,0.25); color:var(--gold2); }
+.pill-plum { background:rgba(124,92,191,0.12); border:1px solid rgba(124,92,191,0.25); color:#b49edf; }
+.pill-sage { background:rgba(90,143,114,0.12); border:1px solid rgba(90,143,114,0.25); color:#80c4a0; }
+.pill-rose { background:rgba(196,96,122,0.12); border:1px solid rgba(196,96,122,0.25); color:#e8909f; }
+.pill-blue { background:rgba(91,143,212,0.12); border:1px solid rgba(91,143,212,0.25); color:#8bb8e8; }
+
+/* ── CHAPTER ──────────────────────────────────── */
+.chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+.chapter-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.chapter-icon { width:44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
+.chapter-icon.gold  { background:rgba(196,158,64,0.14); }
+.chapter-icon.plum  { background:rgba(124,92,191,0.14); }
+.chapter-icon.sage  { background:rgba(90,143,114,0.14); }
+.chapter-icon.rose  { background:rgba(196,96,122,0.14); }
+.chapter-icon.blue  { background:rgba(91,143,212,0.14); }
+.chapter h2 { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:300; color:var(--cream); }
+.chapter h2 small { display:block; font-size:0.68rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-family:'DM Sans',sans-serif; margin-bottom:4px; }
+
+/* ── SECTION CARDS ────────────────────────────── */
+.section { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:24px 28px; margin-bottom:16px; }
+.section-title { font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:400; color:var(--cream); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.dot-gold { background:var(--gold); }
+.dot-plum { background:var(--plum); }
+.dot-rose { background:var(--rose); }
+.dot-sage { background:var(--sage); }
+.dot-blue { background:var(--blue); }
+
+p { font-size:0.9rem; color:rgba(240,232,216,0.82); line-height:1.8; margin-bottom:10px; }
+p:last-child { margin-bottom:0; }
+
+/* ── READING TABLE ────────────────────────────── */
+.reading-table { width:100%; border-collapse:collapse; font-size:0.86rem; margin-top:16px; }
+.reading-table th { text-align:left; padding:10px 14px; background:rgba(196,158,64,0.1); color:var(--gold); font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; border-bottom:1px solid rgba(196,158,64,0.2); }
+.reading-table td { padding:10px 14px; color:rgba(240,232,216,0.82); border-bottom:1px solid rgba(255,255,255,0.05); vertical-align:top; line-height:1.6; }
+.reading-table tr:last-child td { border-bottom:none; }
+.reading-table tr:hover td { background:rgba(255,255,255,0.02); }
+
+/* ── CALLOUT BOXES ────────────────────────────── */
+.callout { border-radius:14px; padding:18px 22px; font-size:0.9rem; line-height:1.8; margin-top:18px; }
+.callout-gold { background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.28); }
+.callout-plum { background:rgba(124,92,191,0.09); border:1px solid rgba(124,92,191,0.28); }
+.callout-rose { background:rgba(196,96,122,0.09); border:1px solid rgba(196,96,122,0.28); }
+.callout-sage { background:rgba(90,143,114,0.09); border:1px solid rgba(90,143,114,0.3); }
+.callout-label { font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; font-weight:600; margin-bottom:8px; }
+.callout-gold .callout-label { color:var(--gold); }
+.callout-plum .callout-label { color:#b49edf; }
+.callout-rose .callout-label { color:#e8909f; }
+.callout-sage .callout-label { color:#80c4a0; }
+
+/* ── BADGES ───────────────────────────────────── */
+.badge { display:inline-block; padding:3px 10px; border-radius:999px; font-size:0.7rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; margin-right:4px; }
+.badge-risk    { background:rgba(196,96,122,0.18); color:#e8909f; }
+.badge-protect { background:rgba(90,143,114,0.18); color:#80c4a0; }
+.badge-mixed   { background:rgba(196,158,64,0.15); color:#e8c96a; }
+.badge-peak    { background:rgba(196,158,64,0.25); color:#f0d080; }
+
+/* ── DASHA TABLE ──────────────────────────────── */
+.dasha-row { display:grid; grid-template-columns:110px 160px 1fr; gap:12px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.05); align-items:start; font-size:0.88rem; }
+.dasha-row:last-child { border-bottom:none; }
+.dasha-window { font-weight:600; color:var(--gold2); font-size:0.82rem; }
+.dasha-period { color:rgba(196,158,64,0.7); font-size:0.8rem; }
+.dasha-theme  { color:rgba(240,232,216,0.78); line-height:1.55; }
+.dasha-row.current { background:rgba(196,158,64,0.05); border-radius:10px; padding:12px; margin:-2px -4px; }
+.dasha-row.current .dasha-window { color:var(--gold2); }
+.current-tag { font-size:0.62rem; background:rgba(196,158,64,0.2); color:var(--gold); padding:2px 8px; border-radius:999px; letter-spacing:0.1em; text-transform:uppercase; display:inline-block; margin-top:4px; }
+
+/* ── TWO COL GRID ─────────────────────────────── */
+.two-col { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px; }
+.mini-card { background:rgba(255,255,255,0.04); border:1px solid rgba(196,158,64,0.12); border-radius:14px; padding:14px 16px; }
+.mini-card-label { font-size:0.68rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:6px; }
+.mini-card-value { font-size:0.9rem; color:var(--cream); font-family:'Cormorant Garamond',serif; margin-bottom:4px; }
+.mini-card p { font-size:0.82rem; color:var(--muted); line-height:1.55; margin:0; }
+
+/* ── INDICATOR ROW ────────────────────────────── */
+.indicator { display:flex; align-items:flex-start; gap:12px; padding:10px 0; border-bottom:1px solid rgba(255,255,255,0.04); }
+.indicator:last-child { border-bottom:none; }
+.ind-dot { width:8px; height:8px; border-radius:50%; margin-top:6px; flex-shrink:0; }
+.ind-title { font-weight:600; color:var(--cream); font-size:0.88rem; margin-bottom:2px; }
+.ind-desc { font-size:0.83rem; color:var(--muted); line-height:1.55; }
+
+/* ── FAMILY CARD ──────────────────────────────── */
+.family-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:14px; }
+.family-card { background:rgba(255,255,255,0.04); border-radius:14px; padding:16px; }
+.family-card.mother { border:1px solid rgba(196,96,122,0.2); }
+.family-card.father { border:1px solid rgba(196,158,64,0.18); }
+.family-card.siblings { border:1px solid rgba(124,92,191,0.2); }
+.family-icon { font-size:1.6rem; margin-bottom:8px; }
+.family-title { font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; margin-bottom:8px; }
+.family-card.mother .family-title { color:#e8909f; }
+.family-card.father .family-title { color:var(--gold); }
+.family-card.siblings .family-title { color:#b49edf; }
+.family-card p { font-size:0.82rem; color:rgba(240,232,216,0.75); line-height:1.6; margin:0; }
+
+/* ── INLAW LAYOUT ─────────────────────────────── */
+.inlaw-main { background:rgba(196,96,122,0.06); border:1px solid rgba(196,96,122,0.18); border-radius:16px; padding:22px; margin-bottom:14px; }
+.inlaw-secondary { background:rgba(196,158,64,0.05); border:1px solid rgba(196,158,64,0.15); border-radius:16px; padding:18px; margin-bottom:14px; }
+.inlaw-label { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; font-weight:600; margin-bottom:10px; }
+.inlaw-main .inlaw-label { color:#e8909f; }
+.inlaw-secondary .inlaw-label { color:var(--gold); }
+.inlaw-title { font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--cream); margin-bottom:10px; }
+
+/* ── DIVIDER ──────────────────────────────────── */
+.divider { display:flex; align-items:center; gap:16px; margin:40px 0 32px; font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(240,232,216,0.25); }
+.divider::before, .divider::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ── FOOTER ───────────────────────────────────── */
+.footer { text-align:center; padding:20px 0; font-size:0.72rem; color:rgba(240,232,216,0.3); letter-spacing:0.08em; border-top:1px solid var(--border); margin-top:40px; }
+
+/* ── MOBILE ───────────────────────────────────── */
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position:relative; height:auto; border-right:none; border-bottom:1px solid var(--border); }
+  .main { padding: 32px 20px 60px; }
+  .two-col, .family-grid { grid-template-columns:1fr; }
+  .dasha-row { grid-template-columns:1fr; gap:4px; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ══ SIDEBAR ══════════════════════════════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-animal">🦁</div>
+    <div class="sidebar-name">Drish</div>
+    <div class="sidebar-sub">The Sacred Lioness</div>
+
+    <div class="sidebar-stats">
+      <div class="sidebar-stat"><span class="sidebar-stat-label">Lagna</span><span class="sidebar-stat-value">Cancer 13.2°</span></div>
+      <div class="sidebar-stat"><span class="sidebar-stat-label">Moon</span><span class="sidebar-stat-value">Leo · Magha p3</span></div>
+      <div class="sidebar-stat"><span class="sidebar-stat-label">Dasha</span><span class="sidebar-stat-value">Moon/Venus/Rahu</span></div>
+      <div class="sidebar-stat"><span class="sidebar-stat-label">Darakaraka</span><span class="sidebar-stat-value">Saturn 0.9°</span></div>
+      <div class="sidebar-stat"><span class="sidebar-stat-label">Yogas</span><span class="sidebar-stat-value">8 (4 triple ★)</span></div>
+      <div class="sidebar-stat"><span class="sidebar-stat-label">Session</span><span class="sidebar-stat-value">July 2026</span></div>
+    </div>
+
+    <div class="nav-label">Chapters</div>
+    <nav class="sidebar-nav">
+      <a href="#dasha" class="nav-link plum"><span class="nav-icon">🌀</span>Dasha Timeline</a>
+      <a href="#rajayoga" class="nav-link gold"><span class="nav-icon">♛</span>Raja Yoga Activation</a>
+      <a href="#career" class="nav-link blue"><span class="nav-icon">⚡</span>Career Domain</a>
+      <a href="#wealth" class="nav-link sage"><span class="nav-icon">💰</span>Money: Drain or Gain</a>
+      <a href="#family" class="nav-link gold"><span class="nav-icon">🌳</span>Family Relations</a>
+      <a href="#inlaws" class="nav-link rose"><span class="nav-icon">🏛</span>In-Laws</a>
+    </nav>
+  </aside>
+
+  <!-- ══ MAIN ════════════════════════════════════ -->
+  <main class="main">
+
+    <!-- HERO INTRO -->
+    <div class="session-hero">
+      <div class="session-hero-bg"></div>
+      <div class="session-eyebrow">Deep Reading Session · July 9, 2026</div>
+      <h1>Drish — Session Readings</h1>
+      <p>Cancer Lagna with an extraordinary H7 powerhouse: Mars exalted + Saturn own sign + Rahu yielding two Pancha Mahapurusha Yogas simultaneously. This session covers dasha timing, Raja Yoga activation, career domain, wealth patterns, family dynamics, and in-law relationships — all evidence-first from specific placements.</p>
+      <div class="topic-pills">
+        <span class="pill pill-plum">Dasha Timeline</span>
+        <span class="pill pill-gold">Raja Yoga Activation</span>
+        <span class="pill pill-blue">Career Domain</span>
+        <span class="pill pill-sage">Wealth</span>
+        <span class="pill pill-gold">Family</span>
+        <span class="pill pill-rose">In-Laws</span>
+      </div>
+    </div>
+
+    <!-- ══ CHAPTER 1: DASHA ══ -->
+    <div class="chapter" id="dasha">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">🌀</div>
+        <h2><small>Time &amp; Cycles</small>Dasha Timeline</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Mahadasha Sequence</div>
+        <div class="dasha-row">
+          <span class="dasha-window">Apr 1990–Feb 1992</span>
+          <span class="dasha-period">Ketu (balance)</span>
+          <span class="dasha-theme">1.8 years remaining at birth. Ketu in H1 (Ashlesha) — the soul entered with past-life gifts of serpentine insight already loaded.</span>
+        </div>
+        <div class="dasha-row">
+          <span class="dasha-window">Feb 1992–Feb 2012</span>
+          <span class="dasha-period">Venus (20 years)</span>
+          <span class="dasha-theme">Formative decades shaped by Venus — relationships, beauty, H4 (home) and H11 (gains). Venus in H8 means this period carried hidden depth and transformative experiences.</span>
+        </div>
+        <div class="dasha-row">
+          <span class="dasha-window">Feb 2012–Feb 2018</span>
+          <span class="dasha-period">Sun (6 years)</span>
+          <span class="dasha-theme">Sun in H9 Pisces (Revati) — a period of philosophical development, dharmic alignment, and identity clarity. Father's influence prominent.</span>
+        </div>
+        <div class="dasha-row current">
+          <span class="dasha-window">Feb 2018–Feb 2028<div class="current-tag">NOW</div></span>
+          <span class="dasha-period">Moon (10 years)</span>
+          <span class="dasha-theme">Moon is Lagna lord — this decade is deeply personal, emotionally charged, and relationship-defining. The entire period carries Kemadruma's complexity alongside Moon's empathic power.</span>
+        </div>
+        <div class="dasha-row">
+          <span class="dasha-window">Feb 2028–Feb 2035</span>
+          <span class="dasha-period">Mars (7 years)</span>
+          <span class="dasha-theme">The peak period. Yoga Karaka + Ruchaka + Exalted + Raja Yoga all activate. Career, authority, and life status surge. Whatever she builds in the Moon MD compounds here.</span>
+        </div>
+        <div class="dasha-row">
+          <span class="dasha-window">Feb 2035–Feb 2053</span>
+          <span class="dasha-period">Rahu (18 years)</span>
+          <span class="dasha-theme">Rahu in H7 (Capricorn) — long expansion through partnerships, cross-cultural or unconventional collaborations, international opportunities. Surprising elevations through others.</span>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Moon Mahadasha — Bhukti Breakdown (Feb 2018–Feb 2028)</div>
+        <table class="reading-table">
+          <thead><tr><th>Bhukti</th><th>Dates</th><th>Theme</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Moon/Moon</td><td>Feb–Dec 2018</td><td>Emotional reset, new chapter opens</td><td style="color:var(--muted)">Past</td></tr>
+            <tr><td>Moon/Mars</td><td>Dec 2018–Jul 2019</td><td>Action surge, Yoga Karaka Mars preview</td><td style="color:var(--muted)">Past</td></tr>
+            <tr><td>Moon/Rahu</td><td>Jul 2019–Jan 2021</td><td>Disruption, radical shifts</td><td style="color:var(--muted)">Past</td></tr>
+            <tr><td>Moon/Jupiter</td><td>Jan 2021–May 2022</td><td>Expansion, wisdom, spiritual growth</td><td style="color:var(--muted)">Past</td></tr>
+            <tr><td>Moon/Saturn</td><td>May 2022–Dec 2023</td><td>Hard structures built, duty carried</td><td style="color:var(--muted)">Past</td></tr>
+            <tr><td>Moon/Mercury</td><td>Dec 2023–May 2025</td><td>Communication, professional learning</td><td style="color:var(--muted)">Past</td></tr>
+            <tr><td>Moon/Ketu</td><td>May–Dec 2025</td><td>Withdrawal, inner clarification</td><td style="color:var(--muted)">Past</td></tr>
+            <tr style="background:rgba(196,158,64,0.05)"><td><strong style="color:var(--gold2)">Moon/Venus</strong></td><td><strong>Dec 2025–Aug 2027</strong></td><td>Romance, creativity, people — strongest relationship window</td><td><span class="badge badge-peak">NOW</span></td></tr>
+            <tr><td>Moon/Sun</td><td>Aug 2027–Feb 2028</td><td>Authority, clarity, chapter closes</td><td style="color:rgba(196,158,64,0.5)">Next</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-plum">
+        <div class="callout-label">Current Antara</div>
+        Moon / Venus / <strong>Rahu</strong> — Rahu antara runs ~Jul 5 to Oct 5, 2026. Expect karmic meetings, unconventional opportunities, intensity in relationship dynamics. The Mars antara just closed (Jun–Jul 2026); the door it opened now gets a Rahu-flavoured push.
+      </div>
+    </div>
+
+    <div class="divider">♛</div>
+
+    <!-- ══ CHAPTER 2: RAJA YOGA ══ -->
+    <div class="chapter" id="rajayoga">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">♛</div>
+        <h2><small>Power &amp; Timing</small>Raja Yoga Activation</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>The Yoga: Saturn + Mars conjunct H7</div>
+        <p>For Cancer Lagna, Saturn rules H7+H8 and Mars rules H5+H10 — making both kendra and trikona lords conjunct in H7. Their conjunction in Capricorn (Mars exalted, Saturn in own sign) creates a Raja Yoga of rare intensity. Both are simultaneously forming their own Pancha Mahapurusha Yogas in the same house. This is not a standard Raja Yoga — it is two independent Mahapurusha Yogas whose combined energy creates a third Raja Yoga above and beyond them.</p>
+
+        <table class="reading-table">
+          <thead><tr><th>Tier</th><th>Window</th><th>Period</th><th>Strength</th></tr></thead>
+          <tbody>
+            <tr><td>Partial — Saturn alone</td><td>May 2022–Dec 2023</td><td>Moon/Saturn bhukti</td><td><span class="badge badge-mixed">★★ Partial</span></td></tr>
+            <tr><td>Partial — Mars alone</td><td>Dec 2018–Jul 2019</td><td>Moon/Mars bhukti</td><td><span class="badge badge-mixed">★★ Partial</span></td></tr>
+            <tr style="background:rgba(196,158,64,0.04)"><td><strong>Preview — Saturn antara</strong></td><td><strong>Jan–Apr 2027</strong></td><td>Moon/Venus/Saturn</td><td><span class="badge badge-mixed">First taste</span></td></tr>
+            <tr style="background:rgba(196,158,64,0.07)"><td><strong>Strong — Mars as MD lord</strong></td><td><strong>Feb 2028–Feb 2035</strong></td><td>Mars Mahadasha</td><td><span class="badge badge-peak">★★★ Running</span></td></tr>
+            <tr style="background:rgba(196,158,64,0.12)"><td><strong style="color:var(--gold2)">PEAK — Both planets active</strong></td><td><strong style="color:var(--gold2)">Jul 2030–Aug 2031</strong></td><td>Mars MD / Saturn Bhukti</td><td><span class="badge badge-peak">★★★★ APEX</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="two-col">
+        <div class="mini-card">
+          <div class="mini-card-label">Jan – Apr 2027</div>
+          <div class="mini-card-value">The Preview</div>
+          <p>Moon/Venus/Saturn antara — a 3-month window where the Raja Yoga sends its first full signal. A door opens: a relationship solidifies, an authority role is offered, or a significant structure takes shape. Pay attention to what arrives in this window.</p>
+        </div>
+        <div class="mini-card">
+          <div class="mini-card-label">Jul 2030 – Aug 2031</div>
+          <div class="mini-card-value">The Apex — 13 Months</div>
+          <p>Mars MD (Raja Yoga partner 1) + Saturn bhukti (Raja Yoga partner 2) running simultaneously. Both planets of the Raja Yoga, both Mahapurusha Yogas, fully active at once. Maximum elevation in status, authority, and public recognition.</p>
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Bottom Line</div>
+        The Raja Yoga is essentially dormant right now — it previews Jan–Apr 2027, switches on fully in Feb 2028, and delivers its complete result in Jul 2030–Aug 2031. The 13 months of Mars/Saturn bhukti is when she will visibly step into the authority and power this yoga has been quietly building toward.
+      </div>
+    </div>
+
+    <div class="divider">⚡</div>
+
+    <!-- ══ CHAPTER 3: CAREER ══ -->
+    <div class="chapter" id="career">
+      <div class="chapter-header">
+        <div class="chapter-icon blue">⚡</div>
+        <h2><small>Professional Destiny</small>Career Domain</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-blue"></span>Three Layers of Career Evidence</div>
+
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--gold)"></div>
+          <div>
+            <div class="ind-title">10th Lord = Mars (exalted, Yoga Karaka)</div>
+            <div class="ind-desc">For Cancer Lagna, Aries is H10 — so Mars rules career. Mars exalted in Capricorn H7 = career built through authority, discipline, structured systems, and working WITH someone (H7 = partnership). Career is never solo.</div>
+          </div>
+        </div>
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--blue)"></div>
+          <div>
+            <div class="ind-title">Mercury in H10 · Ashwini nakshatra pada 3</div>
+            <div class="ind-desc">The planet IN the career house defines the texture of work. Mercury = analytical precision, communication. Ashwini = the divine physician nakshatra (Ashwini Kumaras). Its Shakti: shidhra vyapani — the power of swift healing. Strong pointer toward medicine, diagnosis, or any domain requiring speed + precision.</div>
+          </div>
+        </div>
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--plum)"></div>
+          <div>
+            <div class="ind-title">Ketu in H1 · Ashlesha (serpent nakshatra)</div>
+            <div class="ind-desc">Ashlesha is the healer's nakshatra — psychological penetration, seeing below the surface. Ketu in Lagna = this is a past-life gift, not a learned skill. Three indicators converge on healing: Ashwini H10 + Ketu Ashlesha H1 + Jupiter H12 (hospitals/institutions).</div>
+          </div>
+        </div>
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--sage)"></div>
+          <div>
+            <div class="ind-title">Saturn Sasa + Raja Yoga in H7</div>
+            <div class="ind-desc">Saturn's Sasa Yoga in Capricorn = law, administration, structured authority, long-game discipline. For those not in medicine, this axis points to law (especially protective law — family, criminal, justice) or organisational leadership. Authority is non-negotiable — she cannot thrive in low-authority roles.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-blue"></span>Domain Hierarchy</div>
+        <table class="reading-table">
+          <thead><tr><th>Domain</th><th>Evidence</th><th>Fit</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Healthcare / Medicine</strong></td><td>Mercury Ashwini H10 + Ketu Ashlesha H1 + Jupiter H12 (hospitals) + Mars exalted (surgical precision)</td><td><span class="badge badge-protect">Primary</span></td></tr>
+            <tr><td><strong>Law / Administration</strong></td><td>Saturn Sasa (Capricorn) + Raja Yoga + Mars 10th lord in structured authority</td><td><span class="badge badge-protect">Strong Secondary</span></td></tr>
+            <tr><td><strong>Psychology / Counseling</strong></td><td>Ketu Ashlesha H1 + Venus H8 (depth psychology) + Cancer Lagna empathy</td><td><span class="badge badge-mixed">Strong Tertiary</span></td></tr>
+            <tr><td><strong>Education / Mentoring</strong></td><td>Sun H9 Pisces (natural guru) + Mercury H10 communication</td><td><span class="badge badge-mixed">Supportive</span></td></tr>
+            <tr><td>Pure solo creative work</td><td>No H7 bypass — she needs partners. H7 emphasis is structural.</td><td><span class="badge badge-risk">Poor Fit</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Strategic Insight</div>
+        Whatever domain she is actively building in <strong>Feb 2028</strong> when Mars MD begins — that is the thing to double down on. Mars MD will not create a new path from nothing; it will massively amplify the one already in motion. The preparation window is now.
+      </div>
+    </div>
+
+    <div class="divider">💰</div>
+
+    <!-- ══ CHAPTER 4: WEALTH ══ -->
+    <div class="chapter" id="wealth">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">💰</div>
+        <h2><small>Financial Patterns</small>Money: Drain or Gain</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Gain Indicators</div>
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--sage)"></div>
+          <div><div class="ind-title">Moon (Lagna lord) in H2 — Leo</div><div class="ind-desc">Lagna lord in the wealth house = self-generated money. She builds it through her own effort and identity. Foundational wealth indicator.</div></div>
+        </div>
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--sage)"></div>
+          <div><div class="ind-title">Mars (10th + 5th lord) in Dhanishtha H7</div><div class="ind-desc">Dhanishtha literally means "most wealthy" — one of the strongest wealth nakshatras. As Yoga Karaka in H7, Mars generates income through career authority and partnerships simultaneously.</div></div>
+        </div>
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--sage)"></div>
+          <div><div class="ind-title">Venus (11th lord / income lord) in H8</div><div class="ind-desc">Income arrives through 8th house channels — joint finances, spouse's resources, inheritance, research, transformation work. Not regular salary. Irregular but potentially large flow, especially through partnerships.</div></div>
+        </div>
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--sage)"></div>
+          <div><div class="ind-title">Viparita Raja Yoga (Jupiter H12)</div><div class="ind-desc">Biggest financial gains arrive after losses or through adversity. The universe rewards her surrenders monetarily. Each setback is hiding a windfall.</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Drain Indicators</div>
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--rose)"></div>
+          <div><div class="ind-title">Jupiter in H12 — Natural Wealth Significator in Expenditure House</div><div class="ind-desc">Jupiter in H12 = ongoing expenditure on foreign travel, spirituality, education, research, hospitals, or giving to others. This leak never fully closes — but it is outpaced by income once Mars MD begins.</div></div>
+        </div>
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--rose)"></div>
+          <div><div class="ind-title">Kemadruma Yoga (partial)</div><div class="ind-desc">Partially cancelled by Venus in 7th from Moon — residual financial fluctuation pattern remains. Income is not smooth or linear; it comes in waves with gaps between peaks.</div></div>
+        </div>
+        <div class="indicator">
+          <div class="ind-dot" style="background:var(--rose)"></div>
+          <div><div class="ind-title">Rahu in H7</div><div class="ind-desc">Financial karma through partnerships — a partner or collaborator may create irregular financial situations. Unpredictability rather than outright loss.</div></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Wealth Timeline</div>
+        <table class="reading-table">
+          <thead><tr><th>Phase</th><th>Pattern</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Now – 2028 (Moon MD)</strong></td><td>Irregular but functional. Feast-or-famine texture. Income through partnerships and people. Jupiter H12 expenditure ongoing. Not the accumulation phase.</td></tr>
+            <tr style="background:rgba(90,143,114,0.05)"><td><strong>2028–2035 (Mars MD)</strong></td><td>Clear gain phase. Yoga Karaka Mars + Ruchaka + Dhanishtha fully running. Wealth accumulates with sustained momentum for the first time.</td></tr>
+            <tr style="background:rgba(196,158,64,0.07)"><td><strong>Jul 2030–Aug 2031 (Peak)</strong></td><td>Mars/Saturn bhukti = both Raja Yoga planets active. Peak earning window of the entire chart. Financial authority and recognition compound together.</td></tr>
+            <tr><td><strong>Lifelong pattern</strong></td><td>Jupiter H12 = always spends meaningfully on people and causes. The drain is real but the gain consistently outpaces it once Mars MD begins.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Bottom Line — Gain, Not Drain</div>
+        Net verdict: <strong>money gain</strong> — but through non-linear channels, building slowly until Mars MD hits, then compounding rapidly. The financial picture becomes clear only after 2028. The current Moon MD period is the preparation phase, not the harvest phase. The real wealth story of this chart begins in 4 years.
+      </div>
+    </div>
+
+    <div class="divider">🌳</div>
+
+    <!-- ══ CHAPTER 5: FAMILY ══ -->
+    <div class="chapter" id="family">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🌳</div>
+        <h2><small>Roots &amp; Lineage</small>Family Relations</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>House-by-House Evidence</div>
+        <div class="family-grid">
+          <div class="family-card mother">
+            <div class="family-icon">🌙</div>
+            <div class="family-title">Mother · H4 + Moon</div>
+            <p>H4 lord Venus in H8 — 4th lord in the transformation house. Complex, possibly health-related changes in mother's life or emotional distance. Saturn's 10th aspect lands on H4: relationship shaped by duty, discipline, expectation — more functional than openly warm. Moon (mother karaka) in Leo Magha H2: strong family pride, ancestral connection, but Kemadruma creates emotional isolation even within this bond.</p>
+          </div>
+          <div class="family-card father">
+            <div class="family-icon">☀</div>
+            <div class="family-title">Father · H9 + Sun</div>
+            <p>Sun directly in H9 (Pisces, Revati) — strong positive. Father is dignified, respected, philosophical, the gentle protector (Pushan deity). But H9 lord Jupiter is in H12 — the father's house lord sits in exile/withdrawal. Physical or emotional distance. Saturn's 3rd aspect on H9 adds duty and hardship to the father's life. She admires him but may not have felt fully close.</p>
+          </div>
+          <div class="family-card siblings">
+            <div class="family-icon">⚡</div>
+            <div class="family-title">Siblings · H3 + Mars</div>
+            <p>H3 lord Mercury in H10 — siblings are career-focused, professionally achieving. Mars (brother karaka) exalted in H7 = brothers are strong and capable. But Saturn + Rahu conjunct Mars in H7 creates coldness and karmic complexity — respect exists, emotional warmth less so. Professional connection but relational distance is the pattern.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>The Thread Running Through All Three</div>
+        <p><strong>Ketu in H1 (Ashlesha)</strong> — she sees through family dynamics with serpentine precision. She reads each family member's inner struggle with clarity that often exceeds their own self-awareness. This is simultaneously her gift and her burden: she knows too much to pretend otherwise, yet sometimes there is no one who sees into her with equal clarity in return.</p>
+        <p><strong>Kemadruma's family dimension:</strong> The emotional isolation this yoga creates often begins within the family. The pattern — being surrounded by love yet not quite reached in one's inner world — likely has its roots in early family life. This is not about absent love. It is about love that didn't know the precise emotional language she needed.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Overall Family Pattern</div>
+        Respectful relationships with both parents; deeper admiration than intimacy. Siblings: capable connection, less emotional warmth. The common thread: she was likely the one who observed most clearly but was understood least deeply. This shapes her capacity for emotional self-reliance — both her greatest strength and her recurring wound.
+      </div>
+    </div>
+
+    <div class="divider">🏛</div>
+
+    <!-- ══ CHAPTER 6: IN-LAWS ══ -->
+    <div class="chapter" id="inlaws">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">🏛</div>
+        <h2><small>Partnership Extended</small>In-Laws</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>The In-Law Environment — H8</div>
+        <p><strong>Aquarius H8 → Venus (H4+H11 lord) placed here.</strong> The in-law environment carries Aquarian energy: unconventional, socially oriented, possibly from a different cultural or social background. Venus (the native's own home/mother karaka, H4 lord) being placed here means her sense of home will be deeply intertwined — and tested — within the in-law environment. Not a seamless fit. Requires conscious adjustment and adaptation of identity.</p>
+      </div>
+
+      <div class="inlaw-main">
+        <div class="inlaw-label">⚠ Primary Relationship — Mother-in-Law</div>
+        <div class="inlaw-title">H10 (4th from H7) · H10 lord = Mars in H7</div>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.75; margin-bottom:10px;">
+          <strong>Mercury in H10 (Aries, Ashwini):</strong> The mother-in-law is intelligent, sharp, communicative, career-oriented. Mercury in Ashwini = quick mind, direct speech, possibly blunt. A capable, achieving woman in her own right.
+        </p>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.75; margin-bottom:10px;">
+          <strong>H10 lord Mars → in H7, conjunct Saturn + Rahu:</strong> This is the critical indicator. The lord of the mother-in-law's house sits directly in the marriage house flanked by Saturn (restriction, demand) and Rahu (karmic intensity, unconventional). The mother-in-law is an <em>unavoidable presence</em> in the marriage — powerful, opinionated, involved.
+        </p>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.75; margin-bottom:0;">
+          <strong>Mars aspects H10 back (4th aspect from H7):</strong> She actively shapes her domain and influences the marriage house. Saturn's shadow on Mars = traditional, demanding, expecting conformity to her standards. Rahu alongside = intensity, karmic charge, possibly from a different background.
+        </p>
+        <div class="callout callout-rose" style="margin-top:14px;">
+          <div class="callout-label">Navigation Required</div>
+          The mother-in-law is not an adversary by default — Mars exalted is ultimately a powerful potential ally. But Saturn+Rahu in H7 means the relationship requires deliberate care, patience (Saturn's own medicine), and <strong>clear boundaries established early in the marriage</strong>, before patterns calcify into something harder to change.
+        </div>
+      </div>
+
+      <div class="inlaw-secondary">
+        <div class="inlaw-label">Father-in-Law — H3 (9th from H7)</div>
+        <div class="inlaw-title">H3 lord = Mercury in H10 · H3 empty</div>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.8); line-height:1.75;">Mercury (H3 lord) in H10 = father-in-law is professional, career-focused, publicly achieving. H3 empty = he is a quieter presence in the marriage dynamic. Mercury in Ashwini = sharp, independent, entrepreneurial. He operates in his own sphere without heavy interference — significantly less friction than the mother-in-law. Possibly easier to connect with professionally or intellectually.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>The Ashlesha Advantage</div>
+        <p>Drish carries <strong>Ketu in H1 (Ashlesha nakshatra)</strong> — the serpent's eye. She will read the mother-in-law with complete precision. Every unspoken expectation, every subtle power move, every agenda beneath the warmth — she will see it all. This precise sight can go two ways: she uses this clarity to navigate relationships skillfully, or the awareness of friction becomes too sharp to carry quietly.</p>
+        <p>The antidote is not to suppress the seeing — it is to use it strategically rather than reactively. The Ashlesha gift makes her an extraordinary reader of in-law dynamics. The work is to act from that clarity with patience (Saturn's medicine) rather than from the wound of it.</p>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-label">In-Law Summary</div>
+        <table class="reading-table" style="margin-top:0;">
+          <thead><tr><th>Relationship</th><th>Dynamic</th><th>Assessment</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Mother-in-law</strong></td><td>H10 lord (Mars) conjunct Saturn+Rahu in H7 — powerful, present, demanding</td><td><span class="badge badge-risk">Navigate Carefully</span></td></tr>
+            <tr><td><strong>Father-in-law</strong></td><td>Mercury H3 lord in H10 — professional, capable, background presence</td><td><span class="badge badge-protect">Manageable</span></td></tr>
+            <tr><td><strong>In-law environment</strong></td><td>Venus H8 — requires deep personal adjustment and transformation</td><td><span class="badge badge-mixed">Adaptive</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      Session conducted July 9, 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Cancer Lagna · All readings evidence-first from specific placements
+    </div>
+  </main>
+</div>
+</body>
+</html>
