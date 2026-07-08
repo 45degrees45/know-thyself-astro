@@ -48,6 +48,7 @@ PROFILES = [
     ("Bodhi CH",     "1991-09-05", "21:50",  9.73, 76.33, "Asia/Kolkata",   "Taurus",      "Jupiter/Mercury/Jupiter","🐘", "M"),
     ("Kunal",        "1993-09-10", "18:50", 27.56, 76.61, "Asia/Kolkata",   "Pisces",      "Saturn/Saturn/Rahu",     "🐅", "M"),
     ("Hari CH",      "1968-09-16", "07:15",  8.52, 76.94, "Asia/Kolkata",   "Virgo",       "Mercury/Jupiter/Sun",    "🦊", "M"),
+    ("George Varghese","1961-12-15","22:30", 10.11, 76.36, "Asia/Kolkata",  "Leo",         "Moon/Mercury/Saturn",    "🦁", "M"),
 ]
 
 # Known yogas and risk flags from deep readings (from memory/natal files)
@@ -85,6 +86,7 @@ KNOWN_CONTEXT = {
     "Bodhi CH":      {"yogas": ["Jupiter/Mercury dasha (knowledge focus)", "Stable Taurus Lagna"], "risks": ["All scores exactly 53 (balanced but not exceptional)", "Taurus = prefers stability over risk"]},
     "Kunal":         {"yogas": ["Saturn/Saturn (discipline building phase)", "Pisces Lagna = visionary"], "risks": ["Saturn/Rahu = heavy karma, delayed rewards", "Ops-dominant but vision scattered"]},
     "Hari CH":       {"yogas": ["Bhadra Yoga (Mercury exalted H1)", "Viparita Raja (Sun+Mars+Jupiter H12)", "Ketu H1 (past-life intelligence)"], "risks": ["Venus debilitated H1 (weak partnerships/aesthetics)", "Saturn debilitated H8 (hidden structural cracks)", "Finance score lowest (two debilitations drag it)"]},
+    "George Varghese":{"yogas": ["Ruchaka (Mars own sign H4 — Pancha Mahapurusha)", "DKA Yoga (Mars+Venus)", "Triple Viparita Raja", "Yoga Karaka Mars", "Raja Yoga (Venus+Mars + Saturn+Jupiter)"], "risks": ["Age 64 — legacy builder, not startup sprinter", "Moon H8 (deep inner world, not outward)", "Kemadruma (self-reliant by necessity)"]},
 }
 
 # ---------------------------------------------------------------------------

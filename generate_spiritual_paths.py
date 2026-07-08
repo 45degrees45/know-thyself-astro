@@ -36,6 +36,7 @@ ANON = {
     "Khayel CH":      ("Khayel CH",             "🦁"),
     "Kunal":          ("The Indigo Tiger",       "🐅"),
     "Hari CH":        ("The Watchful Fox",        "🦊"),
+    "George Varghese":("The Ancient Lion",         "🦁"),
 }
 
 PATH_KEYS = {
@@ -335,6 +336,15 @@ SPIRITUAL = {
         "shadow":"Dissolving into spiritual longing without ever committing to one specific daily practice",
         "practices":["Structured creative practice — daily writing, art-making, composing","Sacred music and mantra as spiritual anchor","Studying mystical traditions with a teacher who provides the container"],
     },
+    "George Varghese": {
+        "path":"Mystic",
+        "archetype":"The Dragon Elder",
+        "indicators":["Moon in Uttara Bhadrapada H8 — Ahirbudhnya (Dragon of the Deep) deity","Triple Viparita Raja Yoga — rise through hidden, unseen paths","Rahu H12 Cancer — dissolution into the oceanic unconscious","Mars Yoga Karaka in Scorpio H4 — Ruchaka: power through hidden depths"],
+        "description":"Moon in Uttara Bhadrapada carries the deity Ahirbudhnya — the serpent that dwells at the very bottom of the cosmic ocean. This elder's soul is built for depth, not surface. The triple Viparita Raja Yogas confirm that his greatest gains have come from paths others couldn't see — turning obstacles into elevation, adversity into authority. Leo Lagna gives him the royal bearing; Uttara Bhadrapada gives him the dragon's wisdom from the deep. The spiritual path is inward, patient, and oceanic — accessing what most people never reach.",
+        "strengths":["Profound access to the subconscious and hidden patterns of life","Resilience forged across decades by Viparita Raja transformations","Quiet authority that requires no proclamation — the room already knows"],
+        "shadow":"Leo Lagna wants to be seen; Uttara Bhadrapada H8 is content to stay hidden. The shadow is the unresolved war between the performer and the mystic — and the exhaustion of trying to be both",
+        "practices":["Deep meditation, dream work, and hypnagogic exploration (Uttara Bhadrapada terrain)","Water immersion — ocean or river — as ritual purification","Ancestor and lineage healing (the Dragon of the Deep carries ancestral memory)"],
+    },
 }
 
 PROFILES = [
@@ -370,6 +380,7 @@ PROFILES = [
     ("Bodhi CH",      "1991-09-05","21:50", "Taurus",     "Jupiter/Mercury/Jupiter","🐘","M","Cherthala, Kerala"),
     ("Kunal",         "1993-09-10","18:50", "Pisces",     "Saturn/Saturn/Rahu",     "🐅","M","Alwar, Rajasthan"),
     ("Hari CH",       "1968-09-16","07:15", "Virgo",      "Mercury/Jupiter/Sun",    "🦊","M","Trivandrum, Kerala"),
+    ("George Varghese","1961-12-15","22:30","Leo",        "Moon/Mercury/Saturn",    "🦁","M","Aluva, Kerala"),
 ]
 
 LAGNA_ICON = {

@@ -58,6 +58,122 @@
 
 ---
 
+## Group Analysis Dashboards ("Startup Umbrella")
+
+Four group generators live in the project root. Run them whenever a new profile is added.
+
+### Generators & Output Files
+
+| Generator | Output | URL |
+|---|---|---|
+| `generate_profiles_dashboard.py` | `docs/profiles_skills_dashboard.html` | `/profiles_skills_dashboard.html` |
+| `generate_spiritual_paths.py` | `docs/spiritual_paths.html` | `/spiritual_paths.html` |
+| `generate_spiritual_paths_ml.py` | `docs/spiritual_paths_ml.html` | `/spiritual_paths_ml.html` |
+| `generate_human_design.py` | `docs/human_design.html` | `/human_design.html` |
+
+Base GitHub Pages URL: `https://45degrees45.github.io/know-thyself-astro/`
+
+### Regeneration Commands
+```bash
+.venv/bin/python3 generate_profiles_dashboard.py
+.venv/bin/python3 generate_spiritual_paths.py
+.venv/bin/python3 generate_human_design.py
+# ML only when needed:
+.venv/bin/python3 generate_spiritual_paths_ml.py
+```
+
+### Adding a New Profile — Touch These 4 Things
+Every generator has **two** places to update:
+1. **`PROFILES` list** — tuple with (name, dob, tob, lat, lon, tz, lagna, dasha, animal, gender) — or (name, dob, tob, lat, lon, tz, animal, gender) for HD
+2. **`ANON` dict** — `"Name": ("The Codename", "🦁")` in spiritual paths; `"Name": "The Codename"` in HD
+3. **`SPIRITUAL` dict** — full spiritual path entry (spiritual paths generator only)
+4. **`KNOWN_CONTEXT` dict** — yogas + risks (profiles dashboard only)
+
+**Key rule: `ANON` keys are the real name; values are the display name + emoji. Changing one dict entry anonymizes that person everywhere in that generator.**
+
+### Startup Fitness Tiers (profiles_dashboard)
+- 🚀 **Startup-Ready** (≥68): strong enough to found alone
+- 🌱 **Founder-Track** (55–67): needs right co-founder
+- 🔄 **Conditional** (42–54): better as early employee or co-founder #3
+- 🏢 **Specialist** (<42): thrives in structured role
+
+Scoring weights: Lagna lord (25%) + 10th lord (20%) + Mars (15%) + Sun (10%) + Dasha quality (20%) + avg skill (10%)
+
+### Skill Domains
+- **Product**: Jupiter + Venus + Mercury dignity scores
+- **Operations**: Saturn + Mars + Mercury dignity scores
+- **Sales**: Venus + Mercury + Moon dignity scores
+- **Marketing**: Venus + Mercury + Sun dignity scores
+- **Finance**: Jupiter + Saturn + Venus dignity scores
+
+---
+
+## Spiritual Paths Classification
+
+Five path types. Every new profile must be classified into exactly one.
+
+| Path | Color | Key Indicators |
+|---|---|---|
+| **Dharmic** | Gold `#c49e40` | Leo/Sagittarius/Aries Lagna, Sun in H9/H5, DKA Yoga, Jupiter as Lagna lord |
+| **Jnana** | Blue `#5b8fd4` | Mercury strong, Gemini/Virgo/Aquarius Lagna, Ketu in H1, Bhadra Yoga |
+| **Bhakti** | Rose `#c4607a` | Venus strong, Pisces/Cancer/Taurus Lagna, Moon in H4/H8, Jupiter in Lagna |
+| **Karma** | Sage `#5a8f72` | Saturn Yoga Karaka, H6 emphasis, service yogas, exalted Saturn |
+| **Mystic** | Plum `#7c5cbf` | H8/H12 emphasis, Scorpio Lagna, Ketu strong, Uttara Bhadrapada Moon |
+
+### Spiritual Entry Structure
+```python
+"Name": {
+    "path": "Dharmic",             # one of the 5 keys above
+    "archetype": "The ...",        # poetic title linking chart to essence
+    "indicators": ["H7 lord...", "..."],  # 3-4 specific placements
+    "description": "...",          # 3-4 sentences, evidence-first
+    "strengths": ["...", "..."],   # 3 items
+    "shadow": "...",               # 1 sentence, honest
+    "practices": ["...", "..."],   # 3 concrete practices
+},
+```
+
+---
+
+## Human Design (HD) Bodygraph
+
+**CRITICAL**: HD uses **tropical zodiac** (NOT sidereal Lahiri). Different system from Jyotish.
+
+### Engine Location
+- Calculation: `astro_engine/human_design.py`
+- Generator: `generate_human_design.py` → `docs/human_design.html`
+- Uses existing Swiss Ephemeris (tropical mode) — no separate library needed
+
+### HD Types & Startup Founder Roles
+| Type | % Pop | Icon | Founder Role | Strategy |
+|---|---|---|---|---|
+| **Generator** | ~37% | ⚡ | The Builder | Wait to respond |
+| **Manifesting Generator** | ~32% | 🔥 | The Catalyst | Respond then inform |
+| **Manifestor** | ~9% | 🚀 | The Pioneer | Inform before acting |
+| **Projector** | ~20% | 🎯 | The Strategist | Wait for invitation |
+| **Reflector** | ~1% | 🔮 | The Mirror | Wait 28-day lunar cycle |
+
+### Authority Hierarchy (determined by which centers are defined)
+Emotional → Sacral → Splenic → Ego-Manifested → Self-Projected → Mental → No Inner Authority
+
+### Profile Notation
+`Personality Sun line / Design Sun line` — e.g., 4/5 = line 4 (Opportunist) over line 5 (Heretic)
+
+### Design Date Calculation
+~88.736° of Sun travel BEFORE birth (binary search). This is ~3 months prior to birth. The engine computes it with 30 iterations of precision.
+
+### Adding a New Person to HD Dashboard
+Only 2 things needed:
+```python
+# In PROFILES list:
+("Name", "YYYY-MM-DD", "HH:MM", lat, lon, "Timezone/Zone", "🦁", "M/F"),
+
+# In ANON dict:
+"Name": "The Codename",
+```
+
+---
+
 ## New Profile Workflow (AUTO-GENERATE — do not wait to be asked)
 
 On every new birth profile (name + DOB + time + place), immediately generate ALL of:
