@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex,nofollow">
+<title>ആത്മീയ മാർഗ്ഗങ്ങൾ — ഗ്രൂപ്പ് വായന</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b18;--surface:rgba(255,255,255,0.035);--border:rgba(196,158,64,0.18);
+  --gold:#c49e40;--gold2:#e8c96a;--cream:#f0e8d8;--muted:rgba(240,232,216,0.55);
+  --plum:#7c5cbf;--rose:#c4607a;--sage:#5a8f72;--blue:#5b8fd4;
+  --shadow:0 20px 60px rgba(0,0,0,0.45);--r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;font-size:15px;color:var(--cream);
+  background-color:var(--bg);
+  background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,92,191,0.18),transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%,rgba(196,158,64,0.12),transparent);
+  background-attachment:fixed;min-height:100vh;
+}
+a{color:inherit;text-decoration:none}
+.hero{max-width:1100px;margin:0 auto;padding:48px 24px 0;text-align:center}
+.hero-eyebrow{font-size:0.68rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:#fff8f0;line-height:1.15;margin-bottom:10px}
+.hero-sub{font-size:0.9rem;color:var(--muted);max-width:620px;margin:0 auto 32px;line-height:1.7}
+.stat-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:32px}
+.stat-pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;
+  padding:8px 18px;font-size:0.82rem;display:flex;align-items:center;gap:8px}
+.stat-pill-num{font-size:1.1rem;font-weight:600;font-family:'Cormorant Garamond',serif}
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:1100px;margin:0 auto 28px;padding:0 24px}
+.tab{background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:999px;
+  padding:9px 18px;font-size:0.82rem;color:var(--muted);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.tab:hover{border-color:var(--tab-col);color:var(--tab-col)}
+.tab-active{background:rgba(255,255,255,0.06);border-color:var(--tab-col)!important;color:var(--tab-col)!important;font-weight:600}
+.tab-count{background:rgba(255,255,255,0.08);border-radius:999px;padding:1px 7px;font-size:0.72rem;margin-left:4px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(480px,1fr));gap:20px;max-width:1100px;margin:0 auto;padding:0 24px 80px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);display:flex;overflow:hidden;box-shadow:var(--shadow);transition:transform .2s;position:relative}
+.card:hover{transform:translateY(-2px)}
+.card-stripe{width:4px;flex-shrink:0}
+.card-body{padding:22px 22px 20px;flex:1;min-width:0}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:#fff8f0;margin-bottom:2px}
+.card-sub{font-size:0.76rem;color:var(--muted);margin-bottom:3px}
+.card-dasha{font-size:0.72rem;letter-spacing:0.04em}
+.path-badge{border-radius:999px;padding:5px 12px;font-size:0.72rem;font-weight:600;white-space:nowrap;text-align:center}
+.archetype-label{font-size:0.68rem;color:var(--muted);text-align:right;margin-top:5px;font-style:italic}
+.indicators{margin-bottom:12px}
+.card-desc{font-size:0.87rem;line-height:1.75;color:rgba(240,232,216,0.82);margin-bottom:14px}
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.col-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;font-weight:600;margin-bottom:7px}
+.bullet-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:5px}
+.bullet-list li{font-size:0.83rem;color:rgba(240,232,216,0.78);line-height:1.55;padding-left:14px;position:relative}
+.bullet-list li::before{content:"·";position:absolute;left:3px;color:var(--gold)}
+.shadow-text{font-size:0.83rem;color:rgba(196,96,122,0.85);line-height:1.6}
+.practice-box{border-radius:12px;padding:12px 14px}
+.practice-box .bullet-list li::before{content:"→"}
+.card.hidden{display:none}
+.footer{text-align:center;padding:20px 0;font-size:0.72rem;color:rgba(240,232,216,0.3);letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:0}
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr;padding:0 16px 60px}
+  .card-grid{grid-template-columns:1fr}
+  .card-top{flex-direction:column;align-items:flex-start}
+  .path-badge,.archetype-label{text-align:left}
+  .hero{padding:36px 16px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">ജ്യോതിഷ ഗ്രൂപ്പ് വായന · 32 ജാതകങ്ങൾ</div>
+  <h1>ആത്മീയ മാർഗ്ഗങ്ങൾ</h1>
+  <p class="hero-sub">32 ജ്യോതിഷ ജാതകങ്ങൾ — ലഗ്നം, കേതു, ഭാവങ്ങൾ 8/9/12, ചന്ദ്ര നക്ഷത്രം, ദശ എന്നിവ ആധാരമാക്കി ഓരോ ജാതകത്തിന്റെ ഏറ്റവും സാധ്യതയുള്ള ആത്മീയ മാർഗ്ഗം</p>
+  <div class="stat-row">
+    <div class="stat-pill"><span style="color:#5b8fd4">🧠</span><span class="stat-pill-num" style="color:#5b8fd4">8</span><span>ജ്ഞാന മാർഗ്ഗം</span></div>
+    <div class="stat-pill"><span style="color:#c4607a">💗</span><span class="stat-pill-num" style="color:#c4607a">6</span><span>ഭക്തി മാർഗ്ഗം</span></div>
+    <div class="stat-pill"><span style="color:#5a8f72">⚙️</span><span class="stat-pill-num" style="color:#5a8f72">6</span><span>കർമ്മ യോഗം</span></div>
+    <div class="stat-pill"><span style="color:#7c5cbf">🔮</span><span class="stat-pill-num" style="color:#7c5cbf">8</span><span>രഹസ്യ / തന്ത്ര</span></div>
+    <div class="stat-pill"><span style="color:#c49e40">🎓</span><span class="stat-pill-num" style="color:#c49e40">4</span><span>ധർമ്മ ഗുരു</span></div>
+  </div>
+</div>
+
+<div class="tabs">
+<button class="tab tab-active" onclick="filterPath('All')" style="--tab-col:#e8c96a">✦ എല്ലാ മാർഗ്ഗങ്ങളും <span class="tab-count">32</span></button>
+<button class="tab" onclick="filterPath('Jnana')" style="--tab-col:#5b8fd4">🧠 ജ്ഞാനം <span class="tab-count">8</span></button>
+<button class="tab" onclick="filterPath('Bhakti')" style="--tab-col:#c4607a">💗 ഭക്തി <span class="tab-count">6</span></button>
+<button class="tab" onclick="filterPath('Karma')" style="--tab-col:#5a8f72">⚙️ കർമ്മ <span class="tab-count">6</span></button>
+<button class="tab" onclick="filterPath('Mystic')" style="--tab-col:#7c5cbf">🔮 രഹസ്യ <span class="tab-count">8</span></button>
+<button class="tab" onclick="filterPath('Dharmic')" style="--tab-col:#c49e40">🎓 ധർമ്മം <span class="tab-count">4</span></button>
+
+</div>
+
+<div class="grid" id="grid">
+
+<div class="card" data-path="Dharmic">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Wise Eagle 🦅</div>
+        <div class="card-sub">♐ Sagittarius · 41y ♂ · 📍Aluva, Kerala</div>
+        <div class="card-dasha" style="color:#c49e40">↻ Venus/Venus/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🎓 ധർമ്മ ഗുരു</div>
+        <div class="archetype-label">ജ്ഞാന വാഹകൻ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">ഗുരു ലഗ്നത്തിൽ സ്വഗൃഹം — ഹംസ യോഗം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">ശനി ഉച്ചം H11 — സമൂഹം ഒരു ആത്മ സംഘം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">9-ാം ഭാവം സൂര്യനിൽ ഉറച്ചു</span></div>
+    <p class="card-desc">ലഗ്നത്തിൽ സ്വഗൃഹ ഗുരു — ഒരു ജന്മനാ ഗുരുവിന്റെ ലക്ഷണം; ജ്ഞാനം തന്നെ ഈ ആത്മാവ് ലോകത്തിനു കാണിക്കുന്ന മുഖം. ആത്മീയ വളർച്ച ജ്ഞാനം പകർന്നു നൽകൽ, ഉപദേശം, ദീർഘകാലം നിലനിൽക്കുന്ന ഘടനകൾ നിർമ്മിക്കൽ ഇവ വഴി. H11-ൽ ഉച്ചനിൽക്കുന്ന ശനി — ഇദ്ദേഹം കെട്ടിപ്പടുക്കുന്ന സമൂഹം ഒരു ആത്മ-സംഘമായി (ആത്മീയ ഗ്രൂപ്പ്) മാറുന്നു.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c49e40">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>സ്വഭാവിക ദാർശനിക ആഴം</li><li>ജ്ഞാനം പകർന്നു നൽകൽ — പ്രചോദനദായക വ്യക്തത</li><li>ക്ഷമയോടെ ദീർഘകാല ധർമ്മ ദർശനം</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ആത്മ-അഹങ്കാരം — ലഗ്നത്തിലെ ഗുരു 'ഞാൻ എപ്പോഴും ശരിയാണ്' എന്ന ഉറപ്പ് ഉണ്ടാക്കും; ഉപദേശം ഒരു ഗുരുവിന് മുൻപിൽ വിനയം ആണ് ആ ആത്മ-പാഠം</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="col-label" style="color:#c49e40">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ഉപദേശ-ഗുരു മണ്ഡലങ്ങൾ ഒരു സാധനയായി</li><li>ശാസ്ത്ര ഗ്രന്ഥ ക്രമ-ശ്രേണി പഠനം</li><li>സേവ ആയി പഠന-സമൂഹ നിർമ്മാണം</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Me 🐬 <span style="background:rgba(196,158,64,0.2);border:1px solid rgba(196,158,64,0.4);color:#e8c96a;font-size:0.65rem;padding:2px 8px;border-radius:999px;vertical-align:middle;">നിങ്ങൾ</span></div>
+        <div class="card-sub">♓ Pisces · 41y ♂ · 📍Kangazha, Kerala</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Rahu/Venus/Venus</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 ഭക്തി മാർഗ്ഗം</div>
+        <div class="archetype-label">സമുദ്രം തേടുന്നവൻ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">മീനം ലഗ്നം — മോക്ഷ രാശി, ലയനത്തിന്റേത്</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">രാഹു H2 — ഭൗതിക-അതീന്ദ്രിയ ദ്വന്ദ്വ ദാഹം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ഗുരു H4 — ജ്ഞാനം ഉൾ-ലോകത്ത് ചിതറി</span></div>
+    <p class="card-desc">മീനം ഏറ്റവും മോക്ഷോന്മുഖ രാശി — ശേഖരിക്കുകയല്ല, പ്രപഞ്ച-സമുദ്രത്തിൽ ലയിക്കുകയാണ് ഈ ആത്മ-ദൗത്യം. H2-ൽ രാഹു ഭൗതിക ദാഹവും അതീന്ദ്രിയ ദാഹവും ഇടയ്ക്കിടെ ആടിക്കൊണ്ടിരിക്കും. സമർപ്പണത്തിലൂടെ ആണ്, നേട്ടങ്ങൾ വഴിയല്ല, യഥാർഥ ശാന്തി — ഭക്തി, സമുദ്രം, സംഗീതം, അനാസക്തി ഇതൊക്കെ ആ കതകുകൾ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ആഴ്ന്ന സഹാനുഭൂതി, സ്വഭാവ-നിർണ്ണയ-ഇല്ലാ-മനോഭാവം</li><li>സൂക്ഷ്മ-ഭാവ-ആത്മ-തലങ്ങളിലേക്ക് പ്രവേശനം</li><li>ആഴ്ന്ന സമർപ്പണ ശേഷി</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ഒഴിഞ്ഞുമാറൽ — ആത്മ-ദാഹവും ഒഴിഞ്ഞുമാറലും കൂട്ടിക്കലർത്തൽ; അനാസക്തി-മേൽക്കുപ്പായം ധരിച്ചുകൊണ്ടുള്ള അതിർ-വരമ്പ് ഇല്ലാതാക്കൽ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>സമുദ്ര / ജല-ധ്യാനം</li><li>ഭക്തി-സംഗീതം, ഭജനകൾ</li><li>സ്വപ്ന-ഡയറി, ബോധ-സമർപ്പണ-സാധനകൾ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Dharmic">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Royal Lion 🦁</div>
+        <div class="card-sub">♌ Leo · 52y ♂ · 📍Palakkad, Kerala</div>
+        <div class="card-dasha" style="color:#c49e40">↻ Saturn/Moon/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🎓 ധർമ്മ ഗുരു</div>
+        <div class="archetype-label">അച്ചടക്കമുള്ള രാജൻ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">സിംഹ ലഗ്നം — സൂര്യൻ ആധികാരികതയുടെ തത്ത്വം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">സൂര്യൻ H4 വൃശ്ചികത്തിൽ — ആഴത്തിൽ നിന്ന് നേടിയ അധികാരം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">ശനി ദശ — ഘടനാ-നേതൃത്വ-കർമ്മ-ശുദ്ധി</span></div>
+    <p class="card-desc">വൃശ്ചികത്തിൽ സൂര്യനുള്ള സിംഹ ലഗ്നം — ബാഹ്യ ഭംഗിയിൽ നിന്നല്ല, ആഴത്തിൽ നിന്നും പരിവർത്തനത്തിൽ നിന്നുമുള്ള അധികാരം. ശനി ദശ ദീർഘ-കാലീന കർമ്മ-കണക്ക്-തീർക്കൽ — ആത്മ-മാർഗ്ഗം ആത്മാർഥ-സേവനം, ക്ഷമ, പഴയ കടങ്ങൾ വീട്ടൽ. യഥാർഥ ധർമ്മ-നേതൃത്വത്തിന് അഹം-ത്യാഗം ആവശ്യം — ആ അധികാരം ഉൾ-നിന്ന് വരുന്നു.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c49e40">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ജീവിതാനുഭവ ഉരുക്കിൽ നിന്ന് നേടിയ ആധികാരികത</li><li>ആഴ്ന്ന സത്യം ഒഴിവ് ഇല്ലാതെ നേരിടൽ, പകർന്നു-നൽകൽ</li><li>ദൃഢ ദീർഘ-ദൃഷ്ടി ദർശനം</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">നേതൃ-ഭൂമിക-അഹം — മറ്റരുടെ മുൻപിൽ ദൗർബ്ബല്യം അംഗീകരിക്കൽ ബുദ്ധിമുട്ട്</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="col-label" style="color:#c49e40">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>സേവ — സമൂഹ-നിഃസ്വാർഥ-സേവനം</li><li>ശിവ / പരിവർത്തക-ദേവ-ഉപാസന</li><li>ഘടനാ-പ്രഭാത-സാധന</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Mystic Eagle 🦅</div>
+        <div class="card-sub">♒ Aquarius · 41y ♂ · 📍Muscat, Oman</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Ketu/Moon/Saturn</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 ജ്ഞാന മാർഗ്ഗം</div>
+        <div class="archetype-label">ക്രമ-വൈരാഗ്യ-സാധകൻ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">കേതു മഹാദശ — അനിത്യ-ഒഴിഞ്ഞ്, ശാശ്വതം-ദർശനം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ശനി ഉച്ചം H9 തുലാം — ക്രമ-വ്യവസ്ഥ-ധർമ്മം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">കുംഭ ലഗ്നം — സർവ്വ-ചേതന-ബോധ-ആർക്കിടൈപ്പ്</span></div>
+    <p class="card-desc">കേതു മഹാദശ ജ്യോതിഷ-ആത്മ-ചാർജ്ജ് ഉള്ള കാലം — അനിത്യ ഘടകങ്ങൾ ക്രമേണ അലിഞ്ഞ് പോകുന്നു. ശനി ഭരിക്കുന്ന കുംഭ ലഗ്നം അനാസക്തി, സർവ്വ-ബോധം, മാനവ-സേവ ഇവയിൽ ആകർഷണം. മാർഗ്ഗം ഉൾ-ആഴ്ക്കൽ, വിശ്ലേഷണ-ബൗദ്ധം — മനസ്സിന്റെ സ്വഭാവം ഗ്രഹിക്കൽ, വ്യക്ത്യ-ആത്മ-ബദ്ധത-ഒഴിഞ്ഞ്-പോകൽ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>അഹം-നിർദ്ദേശ-ഫലങ്ങളോടുള്ള സ്വഭാവ-അനാസക്തി</li><li>പ്രചലിത-മിഥ്യകൾ ഭേദിക്കൽ</li><li>ദർശ-സത്യത്തിലേക്ക് വിശ്ലേഷണ-ആക്സസ്</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദൂരം-ഇടൽ — വൈകാരിക-ദൗർബ്ബല്യ-ഭീതിയിൽ നിന്ന് അനാസക്തി-കവചം; ആത്മ-വ്യാപ്തിക്ക് പകരം ആത്മ-പിൻ-വലിക്കൽ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>വിപശ്ശന / മൗന-ഏകാന്ത-ശിക്ഷണ-ശിബിരം</li><li>വ്യക്ത്യ-അജണ്ട ഇല്ലാതെ മാനവ-സേവ</li><li>പ്രാണായാമം, ശ്വാസ-ബോധ്യ-സാധന</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Dharmic">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The White Swan 🦢</div>
+        <div class="card-sub">♐ Sagittarius · 51y ♀ · 📍Alkmaar, Netherlands</div>
+        <div class="card-dasha" style="color:#c49e40">↻ Rahu/Ketu/Rahu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🎓 ധർമ്മ ഗുരു</div>
+        <div class="archetype-label">അലഞ്ഞ് നടക്കുന്ന ദർശക</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">ഗുരു H1 സ്വഗൃഹം ധനു — ഹംസ യോഗം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">രാഹു/കേതു അക്ഷം H1–H7 — ആത്മ vs. ബന്ധ-ടെൻഷൻ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">രാഹു ദശ — അന്തർദേശ-ദർശന-വ്യാപനം</span></div>
+    <p class="card-desc">ഹംസ യോഗം (ലഗ്നത്തിൽ സ്വഗൃഹ-ഗുരു) — ജന്മ-ജന്മാന്തര-ജ്ഞാനം പേറുന്ന ഒരു ധർമ്മ-ഗുരുവിന്റെ ലക്ഷണം. H1–H7 ലൂടെ രാഹു/കേതു — ഇനി ബന്ധങ്ങൾ വഴി ആത്മ-ഐഡന്റിറ്റി തേടരുത്, ഒരു സ്വതന്ത്ര-ദീപ-സ്തംഭ-ഭൂമിക ആകൂ. ആത്മ-യാത്ര — ഉപദേശം ആകൽ, ഉപദേശകനെ ഇനിയും തേടൽ അല്ല.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c49e40">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദർശ-ആഴം, അന്തർ-സാംസ്കാരിക-ജ്ഞാനം</li><li>സ്വഭാവ-കൃപ, പ്രചോദനം</li><li>സാംസ്കാര-ഭാഷ-അതിർ-ഭേദം കടന്ന് ജ്ഞാനം-പകർന്നു-നൽകൽ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ബന്ധം-വഴി-ബാഹ്യ-അംഗീകാരം — ഉൾ-ആത്മ-ആധികാരികതയിൽ വിശ്രമിക്കൽ ഒഴിഞ്ഞ്</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="col-label" style="color:#c49e40">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>അന്തർ-സാംസ്കാരിക-ആത്മ-പഠനം, തീർഥ-യാത്ര</li><li>ജ്ഞാന-ഭാഗ്യ-കൂട്ടായ്മ, ഗ്രൂപ്പ്-ഉപദേശനം</li><li>ഉൾ-ആധികാരികത-ഉറപ്പിക്കൽ — ഏകാന്ത-ശിക്ഷണ-ശിബിരം</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Ruhi CH 🦌</div>
+        <div class="card-sub">♐ Sagittarius · 24y ♀ · 📍Alleppey, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Jupiter/Mercury/Saturn</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ കർമ്മ യോഗം</div>
+        <div class="archetype-label">പവിത്ര-അഥ്ലറ്റ്</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ചൊവ്വ ഉച്ചം H5 മകരം — ദൃഢ, ശ്രേഷ്ഠ-സൃഷ്ടി-ശക്തി</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ഗുരു ലഗ്നം-ഭരിക്കുന്നു — ഉദ്ദേശ്യം-പ്രാണ-പാത്രം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ധനു ലഗ്നം — അർഥ-ക്രിയ-വഴി-ലക്ഷ്യം</span></div>
+    <p class="card-desc">ക്രീഡ-ഭാവ H5-ൽ ചൊവ്വ ഉച്ചത്തിൽ — ആത്മ-മാർഗ്ഗം ശരീരം, ദൃഢ-ക്രിയ ഇവ വഴി ഓടുന്നു. ഉദ്ദേശ്യ-ബോധത്തോടെ ചെയ്യുന്ന ശ്രമം, പരിശീലനം, മത്സരം ഇവ ഇവളുടെ പ്രാർഥനയുടെ രൂപങ്ങൾ. ഗുരു അർഥ-ബോധ്യ-പ്രാണ-പാത്രം ഒരുക്കുന്നു; ചൊവ്വ അതു ജീവിക്കാൻ ഇഛ-ശക്തി.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദൈഹ-മാനസ-അച്ചടക്കം — യഥാർഥ ആത്മ-മാർഗ്ഗം</li><li>ജീവനുള്ള ഉദാഹരണം കൊണ്ട് മറ്റരെ ഉദ്ദ്യോഗ-ദ്ദ്ദ</li><li>ശരീരം ഗുരു — ചലനൗ-ആത്മ-ബൗദ്ധം</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">തുടർ-ക്രിയ-ആത്മ-ബൈ-പാസ് — ഉൾ-ശൂന്യത, മൗനം ഒഴിഞ്ഞ്</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>അഥ്ലറ്റ്-പരിശീലനം-ചലനൗ-ധ്യാനം — ഓരോ-സെഷനും-ബോധ-ഉദ്ദേശ്യം</li><li>യോദ്ധ-ശരീര-പ്രാണായാമം</li><li>ക്രീഡ-ഉപദേശ, ഇളം-തലമുറ-സേവ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Athens CH 🦅</div>
+        <div class="card-sub">♐ Sagittarius · 26y ♂ · 📍Kanjirapally, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Sun/Mars/Jupiter</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ കർമ്മ യോഗം</div>
+        <div class="archetype-label">പവിത്ര-സേവകൻ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">4-ഗ്രഹ H6 കൂട്ടം — സേവ, പ്രശ്ന-പരിഹാരം ധർമ്മം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ഭദ്ര + 2 രാജ-യോഗ — ജ്ഞാനം സേവ-ഉപകരണം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">സൂര്യ / ചൊവ്വ ദശ — ഉൻ-ക്രിയ-ഊർജ്ജം</span></div>
+    <p class="card-desc">4-ഗ്രഹ H6 കൂട്ടം — ജ്യോതിഷ-കർമ്മ-യോഗ-ലക്ഷണം; സേവ, പ്രശ്ന-പരിഹാരം, ആവശ്യക്കാർക്കായ് ഉണ്ടാകൽ ഇതൊക്കെ ധർമ്മം, ജോലി-മാത്രം-അല്ല. ഓരോ-സേവ-ക്രിയ പൂർണ്ണമായ്, ഒരു-പ്രതീക്ഷ ഇല്ലാതെ, അർപ്പിക്കൽ. ദൈവം ഏകാന്തത്തിൽ ഇല്ല — ആവശ്യക്കാർക്ക് പൂർണ്ണ-സന്നിധ്യ-ദർശനത്തിൽ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ആത്മ-ഇന്ധനം — ക്ഷീണ-ഇല്ലാ-സേവ-ഊർജ്ജം</li><li>പ്രശ്ന-പരിഹാരം ഒരു ദൈവ-കരകൗശലം</li><li>ആരോഗ്യ-ബോധ്യം — ദൈവ-അർപ്പണം</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">രക്ത-സാക്ഷി-മനോഭാവം — ഇത്ര-പൂർണ്ണ-നൽകൽ, വ്യക്ത്യ-ആവശ്യം-അവഗണ, ഒടുക്കം-മറ്റരോട്-നീരസം</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ആരോഗ്യ / സമൂഹ-സ്വ-സേവ</li><li>Reiki, പ്രാണ-ചികിത്സ-പഠനം</li><li>ദൈഹ-ആത്മ-സാധന — യോഗ, തായ്-ചി</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Golden Deer 🦌</div>
+        <div class="card-sub">♐ Sagittarius · 25y ♀ · 📍Cherpulassery, Kerala</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Venus/Sun/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 ഭക്തി മാർഗ്ഗം</div>
+        <div class="archetype-label">ദാഹ-ഹൃദയം</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ഗുരു H1 — ദർശ-ആഴം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">കേമദ്രുമ ചന്ദ്ര — ഒറ്റ-ഭാവ-തീക്ഷ്ണത ആത്മ-ചാലകം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ശുക്ര ദശ — ഹൃദയ-ഉദ്ഘടനം ഇപ്പോൾ</span></div>
+    <p class="card-desc">കേമദ്രുമ ചന്ദ്ര ആഴ്ന്ന ഉൾ-ദാഹം ഉണ്ടാക്കുന്നു — ഭൗതിക-ലോക ഒന്നും ഇതിനെ തൃപ്തിപ്പെടുത്തുന്നില്ല; ഒരു ആത്മ-ഭൗതിക-അതീത-ആവശ്യ-ബോധ്യം. ശുക്ര ദശ ഇപ്പോൾ ഹൃദയം-തുറക്കുന്നു; ഭക്തി — ദൈവ-ശക്തി-ആയ-സ്നേഹ-സമർപ്പണം — ഇതിലെ ആ രഹസ്യ-ഭ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ആഴ്ന്ന ഭക്തി-സ്നേഹ-ശേഷി</li><li>ആത്മ-ഇന്ധനം — ഭാവ-ആഴം</li><li>ഭംഗി ദൈവ-ദർശനം — സൗന്ദര്യ-ബോദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദൈവ-ആരോ-പണം മനുഷ്യ-ബന്ധ-ഭൂമിക — ആ ഭാരം ബന്ധം ചരിക്കും; ഹൃദയ-ഭഞ്ജനം ആത്മ-പ്രതി-സന്ധി</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ഭക്തി-ഗാനം, കീർത്തനം</li><li>ഓരോ ബന്ധം ഗുരു-ദർശനം — ബോധ-സ്നേഹ-സാധന</li><li>ദൈനിക-അർപ്പണ — ദൈവ-സംഗീതം, ഭക്തി-കവിത</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Deep Dolphin 🐬</div>
+        <div class="card-sub">♑ Capricorn · 29y ♂ · 📍Chennai, India</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Moon/Venus/Jupiter</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 രഹസ്യ / തന്ത്ര മാർഗ്ഗം</div>
+        <div class="archetype-label">ഒളിഞ്ഞ-സ്വപ്നകൻ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ശുക്രൻ ഉച്ചം മീനം — മാലവ്യ-യോഗ (ഭംഗി-ദൈവ-ചാനൽ)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">H12 കൂട്ടം — ഒരു-കാൽ അദൃശ്യ-ലോകത്ത്</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ചന്ദ്ര ദശ — ഭാവ-ആഴം ഉദ്ഭ-ദ്ദ</span></div>
+    <p class="card-desc">H12-ൽ ഒന്നിലേറെ ഗ്രഹ, ഉച്ച-ശുക്ര-മീനത്തിൽ — ഒരു-കാൽ എപ്പോഴും അദൃശ്യ-ലോകത്ത്. H12 മോക്ഷ, ഏകാന്ത, ലയന-ഭാവം — ദൈവ-അവസ്ഥ, അദൃശ്യ-ഐക്യ-ആകർഷണം. ആത്മ-മാർഗ്ഗം — ഏകാന്തത ഒഴിഞ്ഞ്-ഓടേണ്ടത്-അല്ല, ദൈവ-ഒന്ന് ആണ് എന്ന് ഉൾക്കൊള്ളൽ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>സൂക്ഷ്മ-അദൃശ്യ-തലങ്ങൾ — സ്വഭാവ-ആക്സസ്</li><li>സാധ-ബോധ്യ-അതീത-പ്രചോദനം-സ്വീകരിക്കൽ</li><li>ദൈവ-ദിശ-ഭക്തി-ആഴ്ന്ന-ശേഷി</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ഒളിഞ്ഞ-ആത്മ-ദർശനം ഭൂ-ഉത്തരവാദ-ഒഴിവ്-ആകൽ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ഏകാന്ത-മൗന-ശിക്ഷണ-ശിബിരം</li><li>സമുദ്ര-ജല-ധ്യാനം, സ്വപ്ന-ഗ്രഹ-ഗ്ദ്ദ</li><li>സ്വകാര്യ-മന്ത്ര-ജപം — ഒളിഞ്ഞ-മാർഗ്ഗം ഈ ജാതകത്തിന്</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Steady Elephant 🐘</div>
+        <div class="card-sub">♋ Cancer · 40y ♂ · 📍Kattappana, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Saturn/Saturn/Ketu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ കർമ്മ യോഗം</div>
+        <div class="archetype-label">നിർമ്മ-പൂജകൻ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ചൊവ്വ ഉച്ചം H1 മകരം — യോഗ-കാരകൻ (നിർമ്മ-ധർമ്മം)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ശനി ദശ — ക്ഷമ, ഘടന-കർമ്മ-ശുദ്ധി</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">കർക്കടക ലഗ്നം — ഭവനം, കുടുംബം ക്ഷേത്രം</span></div>
+    <p class="card-desc">യോഗ-കാരക-ചൊവ്വ ഉള്ള കർക്കടക ലഗ്നം — ഭവനം, സമൂഹം, സുരക്ഷ-ഇടം നിർമ്മിക്കുന്ന ആർക്കിടൈപ്പ്. ശനി ദശ ശിക്ഷ അല്ല, ബിരുദ-ദാന-ചടങ്ങ് — ആദർശ-ഘടനയിൽ ഉൾ-ഉൾക്കൊള്ളൽ ആരാധന. കുടുംബം-സംരക്ഷ, ദൈനിക-പോഷ ആ പ്രാർഥന.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ആത്മ-ആവിഷ്കാര-സംരക്ഷ-പോഷ-സ്വഭാവം</li><li>ദൈഘ്യ-ഭൗതിക-ഘടന-നിർമ്മ — ദൈവ-ക്രിയ</li><li>ദുഷ്കരമായ സാഹചര്യത്തിൽ ക്ഷമ — ആ കരുത്ത് ആത്മ-ബലം</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ഭവനം-കുടുംബം-മാത്രം ആത്മ-ഡൊമൈൻ — വ്യാപക-സേവ-ക്ഷണം കാണാൻ ഒഴിവ് കിട്ടേണ്ടതുണ്ട്</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>കുടുംബ-ആചാരം, ഭവന-ദേവ-ഉപാസന</li><li>സമൂഹ-ഇടം-നിർമ്മ — അയൽക്കൂട്ട-സേവ-ഘടന</li><li>ശനൈശ്ചര-പൂജ — കർമ്മ-വ്യക്തത</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Storm Eagle 🦅</div>
+        <div class="card-sub">♏ Scorpio · 22y ♂ · 📍Kozhikode, Kerala</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Jupiter/Mercury/Sun</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 ജ്ഞാന മാർഗ്ഗം</div>
+        <div class="archetype-label">സത്യ-ഗവേഷകൻ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ഗുരു + ബുധൻ H10 സിംഹം — 2 രാജ-യോഗ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">വൃശ്ചിക ലഗ്നം — ഗൂഢ-ജ്ഞാനം, ആഴ-ദർശനം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ഗുരു/ബുധൻ ദശ — ജ്ഞാന-ദൗത്യ-ഉദ്ഘാടനം</span></div>
+    <p class="card-desc">വൃശ്ചിക ഒരു ഗൂഢ-ഗ്രഹണ-ചിഹ്നം — ഉപരിതലം-കടന്ന് ആഴ-സത്യം-തേടൽ ഈ ആത്മ-ദൗത്യം. H10-ൽ ഗുരു-ബുധൻ — ജ്ഞാനം ലോകത്ത് ദൗത്യ-ക്ഷേത്രം. ഗൂഢ-ദർശനം, ഒളിഞ്ഞ-സത്യം-ലഭ്യ-ദൗത്യം.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ആഴ-ഗ്രഹണ-ശേഷി, ഒളിഞ്ഞ-ഘടനകൾ-കണ്ടെത്തൽ</li><li>ബൗദ്ധ-ഗുരു-ദൗത്യ-ശക്തി — H10-ൽ ദ്വൈ-ഗ്രഹ</li><li>ഗൂഢ-ജ്ഞാനം ഗ്രഹിക്കൽ, ദർശ-ആഴം</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ഭ്രമ-ഗൂഢ-ആകർഷണം — ഉൾ-ജ്ഞാനം-ഒഴിഞ്ഞ് ബാഹ്യ-ഗൂഢ-ഗ്രന്ഥ-നേടൽ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ഗ്രന്ഥ-ഗ്രഹണ — ജ്ഞാന-ദർശ-ഗ്രന്ഥ-ക്രമ-ശ്രേണി</li><li>ധ്യാന-ആഴ — ഉൾ-ഗൂഢ-ദർശന-സ്ഥൈര്യം</li><li>ഉപദേശ-ക്ഷേത്രം — ജ്ഞാനം-ലോകം-ആക്കൽ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Dark Peacock 🦚</div>
+        <div class="card-sub">♏ Scorpio · 40y ♀ · 📍Cochin, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Saturn/Mercury/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 രഹസ്യ / തന്ത്ര മാർഗ്ഗം</div>
+        <div class="archetype-label">പവിത്ര-ദ്രവ്യ-പരിവർത്തക</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ശുക്രൻ ഉച്ചം H7 മീനം — മാലവ്യ-യോഗ (പവിത്ര-ഭാഗ്യ-ദർശനം)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">വൃശ്ചിക ലഗ്നം — ആഴം, പരിവർത്തനം, ഗൂഢ-ജ്ഞാനം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ശനി ദശ — ആത്മ-ഡൊ-ദ്ദ-ദ്ദ ഘടന</span></div>
+    <p class="card-desc">H7 മീനത്തിൽ ഉച്ച-ശുക്രനുള്ള വൃശ്ചിക ലഗ്നം — ഏറ്റവും ശക്ത ആത്മ-ക്രമീകരണങ്ങളിൽ ഒന്ന്; പവിത്ര-ഭാഗ്യ-ദർശനം, ബോധ-ഐക്യം, ദൈവ-പ്രാപ്തിയുടെ ഒരു-മാർഗ്ഗ-ഭംഗി ഇവ-ആകർഷണം. ഇത് തന്ത്ര-ആർക്കിടൈപ്പ്: ആഴ്ന്ന, ഉദ്ദേശ്യ-ഐക്യത്തിൽ ശാശ്വതം കണ്ടെത്തൽ. ശനി ദശ ആഴ്ന്ന-ജ്ഞാനത്തിന് വിവേചനം ഏർപ്പെടുത്തുന്നു.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>പവിത്ര-ബന്ധ-ജ്ഞാനം, പരിവർത്തന-ഐക്യ-അറിവ്</li><li>വേദന ഭംഗിയായി-മാറ്റ-ശേഷി</li><li>ആഴ്ന്ന-ഗ്രഹണ-ശേഷിയിൽ ഒളിഞ്ഞ-ശക്തി-ലഭ്യ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ആശ്രിതത്വം ആത്മ-ആഴ-ഭ്രമം — ഉൾ-ഐക്യം ആണ് ലക്ഷ്യം, ഭാഗ്യ-ദർശകനെ-പകരം-ആക്കൽ-അല്ല</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ബോധ-ഭാഗ്യ-ദർശന-ചട്ടക്കൂടുകൾ-പഠനം</li><li>ദേവ-ഉദ്ദേശ്യ-ക്രിയ — കല, സംഗീതം, അലങ്കാരം</li><li>ഛായ-ഗ്രഹ-കർമ്മ — ആഴ-മനഃശ്ശാസ്ത്ര</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Midnight Tiger 🐅</div>
+        <div class="card-sub">♓ Pisces · 25y ♀ · 📍Trivandrum, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Mercury/Ketu/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 രഹസ്യ / തന്ത്ര മാർഗ്ഗം</div>
+        <div class="archetype-label">ലയന-ഗാമിനി</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">മീനം ലഗ്നം — മോക്ഷ-ചിഹ്നം, ആത്മ-ലയനം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">കേതു ഭുക്തി — ഇപ്പോൾ-സജ്ജ ആത്മ-ലയനം</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ആദ്ധ്യ-യോഗം — കോണ-ഭാവ-ത്രി-ശുഭ (അപൂർവ-കൃപ-ലക്ഷണം)</span></div>
+    <p class="card-desc">മീനം + കേതു-ഭുക്തി — ഈ-പൂൾ-ഏറ്റവും-ആത്മ-ശുദ്ധ-സംഗ്രഹം; ആത്മ-ഒഴുകി-പോകുന്ന-പഴയ-രൂപങ്ങൾ-ഒടുക്കി, അനിവാര്യ-ഘടകം-കണ്ടെത്തൽ. ആദ്ധ്യ-യോഗം ലയനം-ഉൾക്കൊണ്ടാൽ അസാധാരണ-വ്യക്തത-നൽകുന്നു. ഒരു-ശക്ത-മാർഗ്ഗം, നേരിട്ടുള്ളത്.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ചികിത്സ-ആത്മ-തലങ്ങളിലേക്ക്-നേരിട്ട്-ചാനൽ</li><li>ആഴ്ന്ന-സമർപ്പണ-ശേഷി — അഹം-നേർക്കനേർ-നേർ</li><li>ഒരിക്കൽ-മാർഗ്ഗം-സ്ഥിരമായാൽ ചികിത്സ-ദാനം-ഉദ്ഭൂതം</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ആത്മ-ലയനവും-മാനസ-ആരോഗ്യ-വെല്ലുവിളിയും-ഭ്രമം — മതിലുകൾ-ഇടിഞ്ഞ്-വീഴും-മുൻ ശക്ത-ആധാര-പാത്രം-ഉണ്ടാക്കൽ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ഒരു-ഗുരുവിനൊടൊ-ഘടനാ-ധ്യാനം (ഒഴുകി-നടക്കൽ-അല്ല)</li><li>ആഴ-ഭൂമി-ഊർജ്ജ-ചികിത്സ-പരിശീലനം</li><li>ഭൗമ-ബന്ധം, ശരീര-ചികിത്സ, ദൈനന്ദിന-ചര്യ-ആഗ്ഗ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Mountain Eagle 🦅</div>
+        <div class="card-sub">♑ Capricorn · 35y ♂ · 📍Trivandrum, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Saturn/Saturn/Rahu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ കർമ്മ യോഗം</div>
+        <div class="archetype-label">പ്രാപഞ്ചിക-നിർമ്മാതൻ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ശനി ഉച്ചം — സസ-യോഗ (ദൈവ-ധർമ്മ-അച്ചടക്കം)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ഗുരു ഉച്ചം H2 കർക്കടകം — ഹംസ-യോഗ (മൂല്യ-ജ്ഞാനം)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ശനി മഹാദശ — 20 വർഷ-കർമ്മ-ക്രിസ്റ്റലൈ-സേഷൻ</span></div>
+    <p class="card-desc">2 പഞ്ച-മഹ-പുരുഷ-യോഗ (സസ + ഹംസ) — ആത്മ-മാർഗ്ഗം പ്രാപഞ്ചിക-തലത്തിൽ ദീർഘ-കാല-മാനവ-ക്ഷേമ-ഘടന-നിർമ്മ. ശനി/ശനി ദശ ഒരു-മഹ-ദ്രവ്യ-പരിവർത്തക-ശൃംഗം; ഓരോ-ബാഹ്യ-നേട്ടവും ഒരു-ഉൾ-ദീക്ഷ. ഭഗവദ്ഗീത-കർമ്മ-യോഗ ഈ ജാതകത്തിന്റെ കൃത്യ-ഗ്രന്ഥം.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദീർഘ-കാല-ധർമ്മ-കർമ്മ-ക്ഷമ</li><li>അച്ചടക്കത്തിലൂടെ-നേടിയ, സ്വഭാവ-ആധികാരികത</li><li>ദശകങ്ങൾ-കടന്ന്-ദർശനം-ദൃഢ-പിടിക്കൽ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ഉൾ-ശൂന്യത-ഒഴിഞ്ഞ് — ഉൾ-ജ്ഞാനം-ആഴ്ക്കൽ-ഒഴിഞ്ഞ്, ലക്ഷ്യ-ഉദ്ഗ-ആത്മ-ഉദ്ഗ-ആകൽ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ഭഗവദ്ഗീത — കർമ്മ-യോഗ-അർഥ-ധ്യാനം</li><li>വിപശ്ശന / ഘടനാ-ധ്യാനം — സക്രിയ-ജീവ-ബാലൻസ്</li><li>ഒരു-ധർമ്മ-ഘടന-ഭ-ദ്ദ-നിർമ്മ-ഭ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Vi CH 🦅</div>
+        <div class="card-sub">♏ Scorpio · 27y ♀ · 📍Trivandrum, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Mars/Rahu/Venus</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 രഹസ്യ / തന്ത്ര മാർഗ്ഗം</div>
+        <div class="archetype-label">ഒളിഞ്ഞ-അന്വേഷക</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ചൊവ്വ (ലഗ്ന-ഭർ) H12 — ഊർജ്ജം ഉൾ-ലോകത്തേക്ക്</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">വൃശ്ചിക ലഗ്നം — ഗൂഢ-അന്വേഷകൻ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ത്രി-സിംഹ H10 — ഒളിഞ്ഞ-സത്യ-ദർശന-ദൗത്യം</span></div>
+    <p class="card-desc">ചൊവ്വ H12-ൽ — ഊർജ്ജം ഉൾ-ലോകത്തേക്ക് ഒഴുകുന്ന ഒരു ആത്മ-ഗൂഢ-ഡിറ്റക്ടീവ്: ഗൂഢ-ഘടനകൾ, ഒളിഞ്ഞ-ആദർശ, പരിവർത്തന-ഊർജ്ജ-ഇടപഴകൽ. H10-ൽ ത്രി-സിംഹ-കൂട്ടം — ഒളിഞ്ഞ-ജ്ഞാനം പൊതു-വേദിയിൽ-സേവ-ആക്കൽ ദൗത്യം. ആത്മ-മാർഗ്ഗം ഒളിഞ്ഞ-ആഴം-ഗ്രഹിക്കൽ, അദൃശ്യ-ജ്ഞാനം-ഉദ്ഘടന-ആകൽ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>മന്ത്ര-ആഴ-ക്ഷമ — ഭ്രമ-ഇടം-ഇഷ്ടം</li><li>ഒളിഞ്ഞ-ആദർശ-കണ്ടെത്തൽ, ഉൾ-ജ്ഞാന-ആഴം</li><li>പ്രകൃതി-സ്ഥൈര്യ — ഉൾ-ആത്മ-മൗനം-ആക്സസ്</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ശക്ത-ഛായ — ദ്യോഗം-ഉണ്ടെങ്കിലും-ആ-ദ്ദ നിഴൽ-ഉൾ-ആഴ്ക്കൽ-ഒഴിഞ്ഞ്-ഗ്ര-ഹ-ഗ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ഒളിഞ്ഞ-ഘടനകൾ-ഗൂഢ-ഗ്രന്ഥ-പഠനം</li><li>ഛായ-ഗ്രഹ-ക്രിയ, ആഴ-മനഃശ്ശാസ്ത്ര</li><li>ചൊവ്വ-ആഴ-ബോധ-ഘടനാ-ധ്യാനം</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Pi CH 🐅</div>
+        <div class="card-sub">♈ Aries · 36y ♀ · 📍Thrissur, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Saturn/Saturn/Ketu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 രഹസ്യ / തന്ത്ര മാർഗ്ഗം</div>
+        <div class="archetype-label">ഫോണിക്സ്-ദ്രഷ്ട</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">2 വിപരീത-രാജ-യോഗ — നഷ്ടം-ഉൾക്കൊണ്ടുള്ള-ഉദ്ഭ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ശുക്ര-ഉച്ചം — മാലവ്യ-യോഗ (ഭൗതിക-വൈരാഗ്യ-ഭംഗി)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ശനി/കേതു ദശ — ഒഴിഞ്ഞ്-വരുന്ന-മോക്ഷ-മാർഗ്ഗ</span></div>
+    <p class="card-desc">ഒരു-ജാതകത്തിൽ 2 വിപരീത-രാജ-യോഗ — ഈ-ആത്മ-ഉദ്ഭ-നഷ്ടം-ഉൾക്കൊണ്ടു-മാത്രം. ആ-ദ്ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ഇ-ദ്ദ-ക-ദ്ദ-ഉ-ദ്ദ, ആ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ആ-ദ്ദ. ശനി-ദ-ദ്ദ-ദ-ദ്ദ; കേതു-മോക്ഷ-ദ-ദ്ദ. ഇ-ദ്ദ-ന-ദ്ദ-ദ-ദ്ദ-ഡ-ദ്ദ-ആ-ദ്ദ-ഇ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദുഃഖ-ഉൾക്കൊണ്ടു-ഉദ്ഭ-ദർശ-ശേഷി</li><li>ഭൗതിക-ത്യാഗ-ദൈവ-കൃപ-ആകർഷണം</li><li>ഉൾ-ഒഴിഞ്ഞ-ആഴ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ആ-ദ്ദ-ബ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ; ഇ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>വിപശ്ശന — നഷ്ടം-ഉൾക്കൊള്ളൽ-ആഴ-ക്രിയ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Ancient Cobra 🐍</div>
+        <div class="card-sub">♏ Scorpio · 68y ♀ · 📍Aluva, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Saturn/Mars/Ketu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ കർമ്മ യോഗം</div>
+        <div class="archetype-label">മൂപ്പ്-ചികിത്സക</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">3 മഹ-യോഗ (രാജ, ധ-ക-ആ, വ-രാ) — ജ-ജ്ഞ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">വൃ-ദ്ദ-ല-ദ്ദ — ആ-ദ്ദ-ജ-ദ്ദ-ഒ-ദ്ദ-ആ-ദ്ദ-ചി-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ക-ദ്ദ-ഭ-ദ്ദ — ഒ-ദ്ദ-ഒ-ദ്ദ-ച-ദ്ദ-പ-ദ്ദ, അ-ദ്ദ-ഒ-ദ്ദ</span></div>
+    <p class="card-desc">വൃ-ദ്ദ-ല-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ഒ-ദ്ദ-ചി-ദ്ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ഇ-ദ്ദ-ഒ-ദ്ദ-ദ-ദ്ദ. ക-ദ്ദ-ഭ-ദ്ദ-ഒ-ദ്ദ-ഒ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ആ-ദ്ദ-ഇ-ദ്ദ-ഒ-ദ്ദ, അ-ദ്ദ-ദ-ദ്ദ. ഇ-ദ്ദ-ദ-ദ്ദ-ചി-ദ്ദ-ആ-ദ്ദ: ഭ-ദ്ദ-ക-ദ്ദ-മ-ദ്ദ-ഇ-ദ്ദ-ഒ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ഒ-ദ്ദ-ഗ-ദ്ദ-ദ-ദ്ദ-ഒ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ആ-ദ്ദ-ക-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ചി-ദ്ദ-ഐ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ഒ-ദ്ദ-ആ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ; ഒ-ദ്ദ-ദ-ദ്ദ, ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ഊ-ദ്ദ-ചി-ദ്ദ — ദ-ദ്ദ-ഒ-ദ്ദ-ദ-ദ്ദ</li><li>ഇ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>കാ-ദ്ദ-ദ-ദ്ദ-ഉ-ദ്ദ-ദ-ദ്ദ-ആ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Moonlit Swan 🦢</div>
+        <div class="card-sub">♑ Capricorn · 23y ♀ · 📍Jaipur, Rajasthan</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Venus/Venus/Rahu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 ഭക്തി മാർഗ്ഗം</div>
+        <div class="archetype-label">ഉ-ദ്ദ-ഹ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ഗ-ദ്ദ-ഉ-ദ്ദ — ഹ-ദ്ദ-യോ-ദ്ദ (ജ-ദ്ദ, ക-ദ്ദ)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ശ-ദ്ദ-ഉ-ദ്ദ — മ-ദ്ദ-യോ-ദ്ദ (ഭ-ദ്ദ-ദ-ദ്ദ-ച-ദ്ദ)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ശ-ദ്ദ/ശ-ദ്ദ ദ-ദ്ദ — 23 വ-ദ്ദ-ഹ-ദ്ദ-ഉ-ദ്ദ</span></div>
+    <p class="card-desc">23 വ-ദ്ദ-പ-ദ്ദ-ജ-ദ്ദ-2 പ-ദ്ദ-മ-ദ്ദ-പ-ദ്ദ-യോ-ദ്ദ — ഉ-ദ്ദ-ത-ദ്ദ-ആ-ദ്ദ-ദ-ദ്ദ. ഭ-ദ്ദ-ഭ-ദ്ദ-ഒ-ദ്ദ: ഗ-ദ്ദ-ജ-ദ്ദ-ശ-ദ്ദ-ക-ദ്ദ-ഉ-ദ്ദ — ദ-ദ്ദ-ക-ദ്ദ, ദ-ദ്ദ, ബ-ദ്ദ-ബ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ആ-ദ്ദ-ഇ-ദ്ദ-ആ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ഭ-ദ്ദ-ഭ-ദ്ദ-ഒ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ആ-ദ്ദ-ഭ-ദ്ദ-ഭ-ദ്ദ-ആ-ദ്ദ-ദ-ദ്ദ — ആ-ദ്ദ-ആ-ദ്ദ-ഭ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ക-ദ്ദ-അ-ദ്ദ-ദ-ദ്ദ</li><li>ഭ-ദ്ദ-ബ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ഭ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Gentle Elephant 🐘</div>
+        <div class="card-sub">♑ Capricorn · 35y ♂ · 📍Aluva, Kerala</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Venus/Ketu/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 ജ്ഞാന മാർഗ്ഗം</div>
+        <div class="archetype-label">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ഗ-ദ്ദ-ഉ-ദ്ദ-H7 ക-ദ്ദ — ബ-ദ്ദ-ജ-ദ്ദ (ഭ-ദ്ദ-ഗ-ദ്ദ)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">H12 ക-ദ്ദ — അ-ദ്ദ-ദ-ദ്ദ-ആ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ക-ദ്ദ-ഭ-ദ്ദ ഇ-ദ്ദ — ആ-ദ്ദ-ഉ-ദ്ദ-ഘ-ദ്ദ</span></div>
+    <p class="card-desc">H7-ൽ ഗ-ദ്ദ-ഉ-ദ്ദ — ബ-ദ്ദ-ജ-ദ്ദ, ഭ-ദ്ദ-ദ-ദ്ദ-ഇ-ദ്ദ-ക-ദ്ദ-ഗ-ദ്ദ. H12 ക-ദ്ദ — ദ-ദ്ദ, അ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ഒ-ദ്ദ-ദ-ദ്ദ. ക-ദ്ദ-ഭ-ദ്ദ ഇ-ദ്ദ-ആ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ഈ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ആ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ബ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ഒ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Dharmic">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Desert Elephant 🐘</div>
+        <div class="card-sub">♐ Sagittarius · 40y ♀ · 📍Muscat, Oman</div>
+        <div class="card-dasha" style="color:#c49e40">↻ Rahu/Saturn/Saturn</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🎓 ധർമ്മ ഗുരു</div>
+        <div class="archetype-label">ധർ-ദ്ദ-വ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">ധ-ദ്ദ-ല-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ഗ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">8 ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c49e40;margin:3px 4px 3px 0">ര-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ധ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ, ഗ-ദ്ദ, ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ: ഇ-ദ്ദ-ഉ-ദ്ദ, ഇ-ദ്ദ-ഗ-ദ്ദ, ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c49e40">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="col-label" style="color:#c49e40">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Khayel CH 🦁</div>
+        <div class="card-sub">♍ Virgo · 25y ♀ · 📍Dubai, UAE</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Saturn/Mars/Jupiter</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 ജ്ഞാന മാർഗ്ഗം</div>
+        <div class="archetype-label">ക്രമ-ചിന്തക</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ബുധ-ആദിത്യ-യോഗ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ഗ-ദ്ദ-കേ-ദ്ദ — ഗ-ദ്ദ-ത-ദ്ദ-ജ്ഞ (ജ-ദ്ദ, ക-ദ്ദ)</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">കന്നി ലഗ്നം — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ബ-ദ്ദ-ആ-ദ്ദ-ഉ-ദ്ദ-ക-ദ്ദ-ല-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ഗ-ദ്ദ-ക-ദ്ദ-ജ-ദ്ദ, സ-ദ്ദ-ക-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ആ-ദ്ദ-ചി-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ആ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ക-ദ്ദ</li><li>ദ-ദ്ദ-ആ-ദ്ദ-ദ-ദ്ദ, ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ; ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Celestial Peacock 🦚</div>
+        <div class="card-sub">♎ Libra · 42y ♀ · 📍Palakkad, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Moon/Saturn/Venus</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 രഹസ്യ / തന്ത്ര മാർഗ്ഗം</div>
+        <div class="archetype-label">ഗൂഢ-ജ്ഞാനി</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">4-ഗ്രഹ H8-കൂട്ടം (സൂ/ബു/ശു/രാ) — ദ-ദ്ദ-ഗൂഢ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">2 വിപ-ദ്ദ-ര-ദ്ദ-യോ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">H8 — ഒ-ദ്ദ, ദ-ദ്ദ, ദ-ദ്ദ</span></div>
+    <p class="card-desc">4-ഗ്രഹ H8-കൂട്ടം-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ഈ-ദ്ദ-ആ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ, ദ-ദ്ദ, ദ-ദ്ദ, ദ-ദ്ദ — ഇ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ, ദ-ദ്ദ-ദ-ദ്ദ; ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ഗൂഢ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ; ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Golden Lion 🦁</div>
+        <div class="card-sub">♌ Leo · 27y ♂ · 📍Edappally, Kerala</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Jupiter/Venus/Venus</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 ഭക്തി മാർഗ്ഗം</div>
+        <div class="archetype-label">ദൈവ-ഭക്ത</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ഗ-ദ്ദ-ക-ദ്ദ + ഗ-ദ്ദ/ചൊ-ദ്ദ — ഗ-ദ്ദ-ക-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ഗ-ദ്ദ/ശ-ദ്ദ-ദ-ദ്ദ — ഭ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ഗ-ദ്ദ-ദ-ദ്ദ + ഗ-ദ്ദ/ഗ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ഗ-ദ്ദ-ഭ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ഗ-ദ്ദ-ക-ദ്ദ-ഭ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Swift Dolphin 🐬</div>
+        <div class="card-sub">♊ Gemini · 39y ♀ · 📍Aluva, Kerala</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Mercury/Jupiter/Mercury</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 ജ്ഞാന മാർഗ്ഗം</div>
+        <div class="archetype-label">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ദ-ദ്ദ-ഉ-ദ്ദ H1 ദ-ദ്ദ — ദ-ദ്ദ-യോ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ദ-ദ്ദ-H1 ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ദ-ദ്ദ-യോ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ; ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Ammu CH 🦁</div>
+        <div class="card-sub">♌ Leo · 35y ♀ · 📍Trivandrum, Kerala</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Saturn/Jupiter/Jupiter</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 ജ്ഞാന മാർഗ്ഗം</div>
+        <div class="archetype-label">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ദ-ദ്ദ-ഉ-ദ്ദ H12 ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">H1 ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ദ-ദ്ദ-ഭ-ദ്ദ ഇ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ദ-ദ്ദ-ഉ-ദ്ദ H12 — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. H1 ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ഭ-ദ്ദ ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Wandering Butterfly 🦋</div>
+        <div class="card-sub">♎ Libra · 42y ♂ · 📍Muscat, Oman</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Rahu/Moon/Sun</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 ഭക്തി മാർഗ്ഗം</div>
+        <div class="archetype-label">ദ-ദ്ദ-ഭ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ദ-ദ്ദ (ദ-ദ്ദ-ദ-ദ്ദ) H12 — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ദ-ദ്ദ-ല-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ദ-ദ്ദ-H12-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ, ദ-ദ്ദ, ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Karma">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Stone Lion 🦁</div>
+        <div class="card-sub">♑ Capricorn · 42y ♂ · 📍Ottapalam, Kerala</div>
+        <div class="card-dasha" style="color:#5a8f72">↻ Jupiter/Venus/Sun</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚙️ കർമ്മ യോഗം</div>
+        <div class="archetype-label">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ദ-ദ്ദ-ഉ-ദ്ദ H10 — ദ-ദ്ദ-യോ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ദ-ദ്ദ H10-ൽ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(90,143,114,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5a8f72;margin:3px 4px 3px 0">ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ദ-ദ്ദ-ഉ-ദ്ദ-H10-ദ-ദ്ദ-യോ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5a8f72">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ആ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="col-label" style="color:#5a8f72">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Ann CH 🦋</div>
+        <div class="card-sub">♏ Scorpio · 31y ♀ · 📍Tripunithura, Kerala</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Mars/Saturn/Ketu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 രഹസ്യ / തന്ത്ര മാർഗ്ഗം</div>
+        <div class="archetype-label">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ദ-ദ്ദ H1 ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ദ-ദ്ദ-ല-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ദ-ദ്ദ-H1-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Always CH 🦋</div>
+        <div class="card-sub">♎ Libra · 34y ♂ · 📍Delhi, India</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Jupiter/Mercury/Sun</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 ജ്ഞാന മാർഗ്ഗം</div>
+        <div class="archetype-label">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ദ-ദ്ദ-ആ-ദ്ദ-യോ-ദ്ദ ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ദ-ദ്ദ-ല-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ദ-ദ്ദ-ആ-ദ്ദ-യോ-ദ്ദ + ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Bhakti">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Bodhi CH 🐘</div>
+        <div class="card-sub">♉ Taurus · 34y ♂ · 📍Cherthala, Kerala</div>
+        <div class="card-dasha" style="color:#c4607a">↻ Jupiter/Mercury/Jupiter</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">💗 ഭക്തി മാർഗ്ഗം</div>
+        <div class="archetype-label">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ദ-ദ്ദ-ല-ദ്ദ — ദ-ദ്ദ, ദ-ദ്ദ, ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ദ-ദ്ദ ദ-ദ്ദ ഭ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(196,96,122,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#c4607a;margin:3px 4px 3px 0">ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ദ-ദ്ദ-ല-ദ്ദ ദ-ദ്ദ-ദ-ദ്ദ-ആ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ, ദ-ദ്ദ, ദ-ദ്ദ, ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#c4607a">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="col-label" style="color:#c4607a">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Mystic">
+  <div class="card-stripe" style="background:rgba(124,92,191,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Indigo Tiger 🐅</div>
+        <div class="card-sub">♓ Pisces · 32y ♂ · 📍Alwar, Rajasthan</div>
+        <div class="card-dasha" style="color:#7c5cbf">↻ Saturn/Saturn/Rahu</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28);color:#7c5cbf">🔮 രഹസ്യ / തന്ത്ര മാർഗ്ഗം</div>
+        <div class="archetype-label">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ദ-ദ്ദ-ല-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ദ-ദ്ദ/ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(124,92,191,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#7c5cbf;margin:3px 4px 3px 0">ദ-ദ്ദ + ദ-ദ്ദ + 3 ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ദ-ദ്ദ-ല-ദ്ദ ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#7c5cbf">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)">
+      <div class="col-label" style="color:#7c5cbf">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-path="Jnana">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Hari CH 🦊</div>
+        <div class="card-sub">♍ Virgo · 57y ♂ · 📍Trivandrum, Kerala</div>
+        <div class="card-dasha" style="color:#5b8fd4">↻ Mercury/Jupiter/Sun</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="path-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🧠 ജ്ഞാന മാർഗ്ഗം</div>
+        <div class="archetype-label">ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</div>
+      </div>
+    </div>
+    <div class="indicators"><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ദ-ദ്ദ-ഉ-ദ്ദ H1 ദ-ദ്ദ — ദ-ദ്ദ-യോ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">ദ-ദ്ദ H1-ൽ — ദ-ദ്ദ-ദ-ദ്ദ</span><span style="display:inline-block;background:rgba(255,255,255,0.05);border:1px solid rgba(91,143,212,0.28);border-radius:999px;padding:4px 12px;font-size:0.76rem;color:#5b8fd4;margin:3px 4px 3px 0">H12 ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ</span></div>
+    <p class="card-desc">ദ-ദ്ദ-ഉ-ദ്ദ H1-ൽ ദ-ദ്ദ-സ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. ദ-ദ്ദ-യോ-ദ്ദ ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. H12-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ.</p>
+    <div class="card-grid">
+      <div>
+        <div class="col-label" style="color:#5b8fd4">ആത്മീയ ശക്തികൾ</div>
+        <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ H1 — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>H12-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+      </div>
+      <div>
+        <div class="col-label" style="color:#c4607a">നിഴൽ / തടസ്സം</div>
+        <p class="shadow-text">ദ-ദ്ദ H1 — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</p>
+      </div>
+    </div>
+    <div class="practice-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="col-label" style="color:#5b8fd4">ശുപാർശ ചെയ്യുന്ന സാധനകൾ</div>
+      <ul class="bullet-list"><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li><li>ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ</li></ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="footer">ഉത്പാദിതം 08 July 2026 · വൈദിക / ലഹിരി അയനാംശം · Swiss Ephemeris</div>
+
+<script>
+function filterPath(p) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('tab-active'));
+  event.target.closest('.tab').classList.add('tab-active');
+  document.querySelectorAll('.card').forEach(c => {
+    if (p === 'All' || c.dataset.path === p) c.classList.remove('hidden');
+    else c.classList.add('hidden');
+  });
+}
+</script>
+</body>
+</html>
