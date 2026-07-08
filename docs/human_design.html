@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex,nofollow">
+<title>Human Design — Group Reading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0b18;--surface:rgba(255,255,255,0.035);--border:rgba(196,158,64,0.18);
+  --gold:#c49e40;--gold2:#e8c96a;--cream:#f0e8d8;--muted:rgba(240,232,216,0.55);
+  --shadow:0 20px 60px rgba(0,0,0,0.45);--r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;font-size:15px;color:var(--cream);
+  background-color:var(--bg);
+  background-image:radial-gradient(ellipse 80% 50% at 20% -10%,rgba(196,158,64,0.14),transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%,rgba(91,143,212,0.10),transparent);
+  background-attachment:fixed;min-height:100vh;
+}
+.hero{max-width:1100px;margin:0 auto;padding:48px 24px 0;text-align:center}
+.hero-eyebrow{font-size:0.68rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:300;color:#fff8f0;line-height:1.15;margin-bottom:10px}
+.hero-sub{font-size:0.9rem;color:var(--muted);max-width:620px;margin:0 auto 10px;line-height:1.7}
+.hero-note{font-size:0.78rem;color:rgba(240,232,216,0.35);margin-bottom:32px}
+
+.stat-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:32px}
+.stat-pill{background:var(--surface);border:1px solid var(--border);border-radius:999px;
+  padding:8px 18px;font-size:0.82rem;display:flex;align-items:center;gap:8px}
+.stat-pill-num{font-size:1.1rem;font-weight:600;font-family:'Cormorant Garamond',serif}
+
+.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:1100px;margin:0 auto 28px;padding:0 24px}
+.tab{background:var(--surface);border:1px solid rgba(255,255,255,0.08);border-radius:999px;
+  padding:9px 18px;font-size:0.82rem;color:var(--muted);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.tab:hover{border-color:var(--tc);color:var(--tc)}
+.tab-active{background:rgba(255,255,255,0.06);border-color:var(--tc)!important;color:var(--tc)!important;font-weight:600}
+.tab-count{background:rgba(255,255,255,0.08);border-radius:999px;padding:1px 7px;font-size:0.72rem;margin-left:4px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(460px,1fr));gap:20px;
+  max-width:1100px;margin:0 auto;padding:0 24px 80px}
+
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
+  display:flex;overflow:hidden;box-shadow:var(--shadow);transition:transform .2s}
+.card:hover{transform:translateY(-2px)}
+.card-stripe{width:4px;flex-shrink:0}
+.card-body{padding:20px 22px;flex:1;min-width:0}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.card-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:#fff8f0;margin-bottom:2px}
+.card-sub{font-size:0.74rem;color:var(--muted)}
+.type-badge{border-radius:999px;padding:5px 12px;font-size:0.72rem;font-weight:600;white-space:nowrap}
+.role-label{font-size:0.68rem;color:var(--muted);text-align:right;margin-top:4px;font-style:italic}
+
+.meta-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.meta-item{background:rgba(255,255,255,0.03);border-radius:10px;padding:10px 12px}
+.meta-label{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.meta-val{font-size:0.82rem;color:rgba(240,232,216,0.88);line-height:1.4}
+
+.founder-box{border-radius:12px;padding:12px 14px;margin-bottom:12px}
+
+.card.hidden{display:none}
+.footer{text-align:center;padding:20px 0;font-size:0.72rem;color:rgba(240,232,216,0.3);
+  letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:0}
+
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr;padding:0 16px 60px}
+  .meta-row{grid-template-columns:1fr 1fr}
+  .card-top{flex-direction:column;align-items:flex-start}
+  .hero{padding:36px 16px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Human Design · Group Reading · 32 Charts</div>
+  <h1>Human Design<br>Bodygraph Analysis</h1>
+  <p class="hero-sub">Energy type, decision-making strategy and authority for every chart in the pool — calculated from birth data via Swiss Ephemeris (I Ching wheel, tropical).</p>
+  <p class="hero-note">Created 1987 by Ra Uru Hu · Blends I Ching, Kabbalah, Hindu Chakra System &amp; Quantum Physics</p>
+  <div class="stat-row">
+<div class="stat-pill"><span style="color:#5a8f72">⚡</span><span class="stat-pill-num" style="color:#5a8f72">9</span><span>Generator</span></div>
+<div class="stat-pill"><span style="color:#c49e40">🔥</span><span class="stat-pill-num" style="color:#c49e40">12</span><span>Manifesting Generator</span></div>
+<div class="stat-pill"><span style="color:#c4607a">🚀</span><span class="stat-pill-num" style="color:#c4607a">4</span><span>Manifestor</span></div>
+<div class="stat-pill"><span style="color:#5b8fd4">🎯</span><span class="stat-pill-num" style="color:#5b8fd4">7</span><span>Projector</span></div>
+<div class="stat-pill"><span style="color:#7c5cbf">🔮</span><span class="stat-pill-num" style="color:#7c5cbf">0</span><span>Reflector</span></div>
+  </div>
+</div>
+
+<div class="tabs">
+<button class="tab tab-active" onclick="filterType('All')" style="--tc:#e8c96a">✦ All Types <span class="tab-count">32</span></button>
+<button class="tab" onclick="filterType('Generator')" style="--tc:#5a8f72">⚡ Generator <span class="tab-count">9</span></button>
+<button class="tab" onclick="filterType('Manifesting Generator')" style="--tc:#c49e40">🔥 Manifesting Generator <span class="tab-count">12</span></button>
+<button class="tab" onclick="filterType('Manifestor')" style="--tc:#c4607a">🚀 Manifestor <span class="tab-count">4</span></button>
+<button class="tab" onclick="filterType('Projector')" style="--tc:#5b8fd4">🎯 Projector <span class="tab-count">7</span></button>
+<button class="tab" onclick="filterType('Reflector')" style="--tc:#7c5cbf">🔮 Reflector <span class="tab-count">0</span></button>
+</div>
+
+<div class="grid" id="grid">
+
+<div class="card" data-type="Generator">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Wise Eagle 🦅</div>
+        <div class="card-sub">41y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚡ Generator</div>
+        <div class="role-label" style="color:#5a8f72">The Builder</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5a8f72">Wait to respond</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Sacral</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5a8f72;font-size:1.15rem;font-family:'Cormorant Garamond',serif">3/4</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">7·13 / 2·1</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="meta-label" style="color:#5a8f72;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sustainably deep work energy. The engine of any startup — happiest doing and mastering. Best co-founder: Projector (strategy) or Manifestor (spark).</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Generator">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Me 🐬 <span style="background:rgba(196,158,64,0.2);border:1px solid rgba(196,158,64,0.4);color:#e8c96a;font-size:0.65rem;padding:2px 8px;border-radius:999px;vertical-align:middle;">You</span></div>
+        <div class="card-sub">41y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚡ Generator</div>
+        <div class="role-label" style="color:#5a8f72">The Builder</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5a8f72">Wait to respond</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5a8f72;font-size:1.15rem;font-family:'Cormorant Garamond',serif">2/3</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">22·47 / 26·45</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="meta-label" style="color:#5a8f72;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sustainably deep work energy. The engine of any startup — happiest doing and mastering. Best co-founder: Projector (strategy) or Manifestor (spark).</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Generator">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Royal Lion 🦁</div>
+        <div class="card-sub">52y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚡ Generator</div>
+        <div class="role-label" style="color:#5a8f72">The Builder</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5a8f72">Wait to respond</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5a8f72;font-size:1.15rem;font-family:'Cormorant Garamond',serif">1/2</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">1·2 / 7·13</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="meta-label" style="color:#5a8f72;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sustainably deep work energy. The engine of any startup — happiest doing and mastering. Best co-founder: Projector (strategy) or Manifestor (spark).</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Mystic Eagle 🦅</div>
+        <div class="card-sub">41y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">5/1</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">26·45 / 6·36</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The White Swan 🦢</div>
+        <div class="card-sub">51y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">3/4</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">16·9 / 37·40</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Ruhi CH 🦌</div>
+        <div class="card-sub">24y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">3/5</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">63·64 / 5·35</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifestor">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Athens CH 🦅</div>
+        <div class="card-sub">26y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">🚀 Manifestor</div>
+        <div class="role-label" style="color:#c4607a">The Pioneer</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c4607a">Inform before acting</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c4607a;font-size:1.15rem;font-family:'Cormorant Garamond',serif">3/4</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">45·26 / 22·47</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="meta-label" style="color:#c4607a;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Initiates independently, needs to inform (not ask permission). Classic solo founder archetype. Must communicate before acting or creates resistance. Rare — ~8% of population.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Projector">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Golden Deer 🦌</div>
+        <div class="card-sub">25y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🎯 Projector</div>
+        <div class="role-label" style="color:#5b8fd4">The Strategist</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5b8fd4">Wait for invitation</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Mental</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5b8fd4;font-size:1.15rem;font-family:'Cormorant Garamond',serif">1/2</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">43·23 / 4·49</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="meta-label" style="color:#5b8fd4;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sees the system nobody else sees. The CEO-type who works through others. Must wait for invitation — unsolicited advice creates friction. Thrives as co-founder or advisor.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifestor">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Deep Dolphin 🐬</div>
+        <div class="card-sub">29y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">🚀 Manifestor</div>
+        <div class="role-label" style="color:#c4607a">The Pioneer</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c4607a">Inform before acting</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Ego-Manifested</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c4607a;font-size:1.15rem;font-family:'Cormorant Garamond',serif">6/2</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">26·45 / 6·36</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="meta-label" style="color:#c4607a;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Initiates independently, needs to inform (not ask permission). Classic solo founder archetype. Must communicate before acting or creates resistance. Rare — ~8% of population.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Steady Elephant 🐘</div>
+        <div class="card-sub">40y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Sacral</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">2/3</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">31·41 / 27·28</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Storm Eagle 🦅</div>
+        <div class="card-sub">22y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">6/1</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">6·36 / 15·10</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Dark Peacock 🦚</div>
+        <div class="card-sub">40y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Sacral</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">2/3</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">31·41 / 27·28</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Generator">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Midnight Tiger 🐅</div>
+        <div class="card-sub">25y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚡ Generator</div>
+        <div class="role-label" style="color:#5a8f72">The Builder</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5a8f72">Wait to respond</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Sacral</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5a8f72;font-size:1.15rem;font-family:'Cormorant Garamond',serif">3/4</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">39·38 / 21·48</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="meta-label" style="color:#5a8f72;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sustainably deep work energy. The engine of any startup — happiest doing and mastering. Best co-founder: Projector (strategy) or Manifestor (spark).</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Mountain Eagle 🦅</div>
+        <div class="card-sub">35y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">2/3</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">37·40 / 9·16</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Vi CH 🦅</div>
+        <div class="card-sub">27y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">2/4</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">59·55 / 20·34</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifestor">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Pi CH 🐅</div>
+        <div class="card-sub">36y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">🚀 Manifestor</div>
+        <div class="role-label" style="color:#c4607a">The Pioneer</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c4607a">Inform before acting</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Ego-Manifested</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c4607a;font-size:1.15rem;font-family:'Cormorant Garamond',serif">1/3</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">48·21 / 39·38</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="meta-label" style="color:#c4607a;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Initiates independently, needs to inform (not ask permission). Classic solo founder archetype. Must communicate before acting or creates resistance. Rare — ~8% of population.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Projector">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Ancient Cobra 🐍</div>
+        <div class="card-sub">68y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🎯 Projector</div>
+        <div class="role-label" style="color:#5b8fd4">The Strategist</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5b8fd4">Wait for invitation</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Splenic</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5b8fd4;font-size:1.15rem;font-family:'Cormorant Garamond',serif">5/1</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">8·14 / 55·59</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="meta-label" style="color:#5b8fd4;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sees the system nobody else sees. The CEO-type who works through others. Must wait for invitation — unsolicited advice creates friction. Thrives as co-founder or advisor.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Moonlit Swan 🦢</div>
+        <div class="card-sub">23y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Sacral</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">2/3</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">14·8 / 29·30</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Projector">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Gentle Elephant 🐘</div>
+        <div class="card-sub">35y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🎯 Projector</div>
+        <div class="role-label" style="color:#5b8fd4">The Strategist</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5b8fd4">Wait for invitation</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Splenic</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5b8fd4;font-size:1.15rem;font-family:'Cormorant Garamond',serif">3/4</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">58·52 / 18·17</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="meta-label" style="color:#5b8fd4;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sees the system nobody else sees. The CEO-type who works through others. Must wait for invitation — unsolicited advice creates friction. Thrives as co-founder or advisor.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Desert Elephant 🐘</div>
+        <div class="card-sub">40y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Sacral</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">1/2</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">44·24 / 33·19</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Projector">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Khayel CH 🦁</div>
+        <div class="card-sub">25y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🎯 Projector</div>
+        <div class="role-label" style="color:#5b8fd4">The Strategist</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5b8fd4">Wait for invitation</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5b8fd4;font-size:1.15rem;font-family:'Cormorant Garamond',serif">4/5</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">38·39 / 48·21</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="meta-label" style="color:#5b8fd4;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sees the system nobody else sees. The CEO-type who works through others. Must wait for invitation — unsolicited advice creates friction. Thrives as co-founder or advisor.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifestor">
+  <div class="card-stripe" style="background:rgba(196,96,122,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Celestial Peacock 🦚</div>
+        <div class="card-sub">42y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28);color:#c4607a">🚀 Manifestor</div>
+        <div class="role-label" style="color:#c4607a">The Pioneer</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c4607a">Inform before acting</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c4607a;font-size:1.15rem;font-family:'Cormorant Garamond',serif">3/4</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">12·11 / 36·6</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)">
+      <div class="meta-label" style="color:#c4607a;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Initiates independently, needs to inform (not ask permission). Classic solo founder archetype. Must communicate before acting or creates resistance. Rare — ~8% of population.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#c4607a;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Generator">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Golden Lion 🦁</div>
+        <div class="card-sub">27y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚡ Generator</div>
+        <div class="role-label" style="color:#5a8f72">The Builder</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5a8f72">Wait to respond</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Sacral</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5a8f72;font-size:1.15rem;font-family:'Cormorant Garamond',serif">6/1</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">15·10 / 17·18</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="meta-label" style="color:#5a8f72;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sustainably deep work energy. The engine of any startup — happiest doing and mastering. Best co-founder: Projector (strategy) or Manifestor (spark).</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Swift Dolphin 🐬</div>
+        <div class="card-sub">39y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Sacral</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">1/2</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">15·10 / 25·46</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Projector">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Ammu CH 🦁</div>
+        <div class="card-sub">35y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🎯 Projector</div>
+        <div class="role-label" style="color:#5b8fd4">The Strategist</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5b8fd4">Wait for invitation</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Mental</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5b8fd4;font-size:1.15rem;font-family:'Cormorant Garamond',serif">3/5</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">64·63 / 35·5</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="meta-label" style="color:#5b8fd4;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sees the system nobody else sees. The CEO-type who works through others. Must wait for invitation — unsolicited advice creates friction. Thrives as co-founder or advisor.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Generator">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Wandering Butterfly 🦋</div>
+        <div class="card-sub">42y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚡ Generator</div>
+        <div class="role-label" style="color:#5a8f72">The Builder</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5a8f72">Wait to respond</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Sacral</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5a8f72;font-size:1.15rem;font-family:'Cormorant Garamond',serif">1/2</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">43·23 / 4·49</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="meta-label" style="color:#5a8f72;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sustainably deep work energy. The engine of any startup — happiest doing and mastering. Best co-founder: Projector (strategy) or Manifestor (spark).</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Manifesting Generator">
+  <div class="card-stripe" style="background:rgba(196,158,64,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Stone Lion 🦁</div>
+        <div class="card-sub">42y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28);color:#c49e40">🔥 Manifesting Generator</div>
+        <div class="role-label" style="color:#c49e40">The Catalyst</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#c49e40">Respond then inform</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#c49e40;font-size:1.15rem;font-family:'Cormorant Garamond',serif">4/6</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">44·24 / 33·19</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)">
+      <div class="meta-label" style="color:#c49e40;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Multi-passionate, moves fast, can pivot. High output founder who needs freedom to skip steps. Best asset: turning ideas into motion instantly. Risk: burning out the team.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#c49e40;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Generator">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Ann CH 🦋</div>
+        <div class="card-sub">31y ♀</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚡ Generator</div>
+        <div class="role-label" style="color:#5a8f72">The Builder</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5a8f72">Wait to respond</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Sacral</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5a8f72;font-size:1.15rem;font-family:'Cormorant Garamond',serif">6/1</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">7·13 / 23·43</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="meta-label" style="color:#5a8f72;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sustainably deep work energy. The engine of any startup — happiest doing and mastering. Best co-founder: Projector (strategy) or Manifestor (spark).</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Projector">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Always CH 🦋</div>
+        <div class="card-sub">34y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🎯 Projector</div>
+        <div class="role-label" style="color:#5b8fd4">The Strategist</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5b8fd4">Wait for invitation</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5b8fd4;font-size:1.15rem;font-family:'Cormorant Garamond',serif">2/3</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">46·25 / 15·10</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="meta-label" style="color:#5b8fd4;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sees the system nobody else sees. The CEO-type who works through others. Must wait for invitation — unsolicited advice creates friction. Thrives as co-founder or advisor.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Projector">
+  <div class="card-stripe" style="background:rgba(91,143,212,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">Bodhi CH 🐘</div>
+        <div class="card-sub">34y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28);color:#5b8fd4">🎯 Projector</div>
+        <div class="role-label" style="color:#5b8fd4">The Strategist</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5b8fd4">Wait for invitation</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Mental</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5b8fd4;font-size:1.15rem;font-family:'Cormorant Garamond',serif">4/5</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">64·63 / 35·5</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(91,143,212,0.09);border:1px solid rgba(91,143,212,0.28)">
+      <div class="meta-label" style="color:#5b8fd4;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sees the system nobody else sees. The CEO-type who works through others. Must wait for invitation — unsolicited advice creates friction. Thrives as co-founder or advisor.</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:#5b8fd4;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Generator">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Indigo Tiger 🐅</div>
+        <div class="card-sub">32y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚡ Generator</div>
+        <div class="role-label" style="color:#5a8f72">The Builder</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5a8f72">Wait to respond</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5a8f72;font-size:1.15rem;font-family:'Cormorant Garamond',serif">4/5</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">47·22 / 45·26</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="meta-label" style="color:#5a8f72;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sustainably deep work energy. The engine of any startup — happiest doing and mastering. Best co-founder: Projector (strategy) or Manifestor (spark).</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="card" data-type="Generator">
+  <div class="card-stripe" style="background:rgba(90,143,114,0.5)"></div>
+  <div class="card-body">
+    <div class="card-top">
+      <div>
+        <div class="card-name">The Watchful Fox 🦊</div>
+        <div class="card-sub">57y ♂</div>
+      </div>
+      <div style="text-align:right;flex-shrink:0">
+        <div class="type-badge" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28);color:#5a8f72">⚡ Generator</div>
+        <div class="role-label" style="color:#5a8f72">The Builder</div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">Strategy</div>
+        <div class="meta-val" style="color:#5a8f72">Wait to respond</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Authority</div>
+        <div class="meta-val">Emotional</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Profile</div>
+        <div class="meta-val" style="color:#5a8f72;font-size:1.15rem;font-family:'Cormorant Garamond',serif">3/5</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Cross</div>
+        <div class="meta-val" style="font-size:0.78rem">6·36 / 12·11</div>
+      </div>
+    </div>
+
+    <div class="founder-box" style="background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.28)">
+      <div class="meta-label" style="color:#5a8f72;margin-bottom:6px">As a Founder</div>
+      <p style="font-size:0.84rem;line-height:1.65;color:rgba(240,232,216,0.82)">Sustainably deep work energy. The engine of any startup — happiest doing and mastering. Best co-founder: Projector (strategy) or Manifestor (spark).</p>
+    </div>
+
+    <div style="margin-top:12px">
+      <div class="meta-label" style="margin-bottom:6px">Defined Centers</div>
+      <div><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Head</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ajna</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Throat</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Identity</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Ego</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Solar Plexus</span><span style="background:#5a8f72;color:#0b0b18;border-radius:4px;padding:2px 7px;font-size:0.7rem;font-weight:600;margin:2px 2px 2px 0;display:inline-block">Sacral</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Spleen</span><span style="background:rgba(255,255,255,0.05);color:rgba(240,232,216,0.3);border-radius:4px;padding:2px 7px;font-size:0.7rem;margin:2px 2px 2px 0;display:inline-block">Root</span></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="footer">Generated 08 July 2026 · Swiss Ephemeris · Tropical · Human Design I Ching Wheel</div>
+
+<script>
+function filterType(t) {
+  document.querySelectorAll('.tab').forEach(x => x.classList.remove('tab-active'));
+  event.target.closest('.tab').classList.add('tab-active');
+  document.querySelectorAll('.card').forEach(c => {
+    if (t === 'All' || c.dataset.type === t) c.classList.remove('hidden');
+    else c.classList.add('hidden');
+  });
+}
+</script>
+</body>
+</html>
