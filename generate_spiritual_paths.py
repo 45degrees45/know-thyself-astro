@@ -35,7 +35,7 @@ ANON = {
     "Always CH":      ("Always CH",             "🦋"),
     "Khayel CH":      ("Khayel CH",             "🦁"),
     "Kunal":          ("The Indigo Tiger",       "🐅"),
-    "Hari CH":        ("Hari CH",               "🦊"),
+    "Hari CH":        ("The Watchful Fox",        "🦊"),
 }
 
 PATH_KEYS = {
