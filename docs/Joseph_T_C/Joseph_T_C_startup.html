@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Joseph T C — Startup Founder Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ─── LAYOUT ─── */
+.layout { display: grid; grid-template-columns: 270px 1fr; min-height: 100vh; max-width: 1340px; margin: 0 auto; }
+
+/* ─── SIDEBAR ─── */
+.sidebar {
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding: 36px 18px 36px 24px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.92);
+  backdrop-filter: blur(12px);
+}
+.sidebar-logo { font-size: 2.4rem; margin-bottom: 4px; }
+.sidebar-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--cream); }
+.sidebar-sub  { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+
+.score-ring {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(196,158,64,0.08); border: 1px solid rgba(196,158,64,0.22);
+  border-radius: 14px; padding: 14px 16px; margin-bottom: 20px;
+}
+.score-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold2); line-height: 1; }
+.score-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.score-tier  { font-size: 0.78rem; color: var(--gold2); font-weight: 600; }
+
+.sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: 10px;
+  font-size: 0.82rem; color: var(--muted);
+  text-decoration: none; transition: background 0.18s, color 0.18s;
+}
+.nav-item:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+.nav-icon { width: 22px; text-align: center; font-size: 0.95rem; }
+.nav-divider { height: 1px; background: var(--border); margin: 10px 0; }
+
+.sidebar-domains { margin-top: 22px; }
+.domain-pill {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 12px; border-radius: 10px; margin-bottom: 6px;
+  font-size: 0.78rem; font-weight: 500;
+}
+.domain-pill.t1 { background: rgba(90,143,114,0.12); color: #80c4a0; border: 1px solid rgba(90,143,114,0.22); }
+.domain-pill.t2 { background: rgba(196,158,64,0.08); color: var(--gold2); border: 1px solid rgba(196,158,64,0.18); }
+.domain-pill.t3 { background: rgba(196,96,122,0.07); color: #e8909f; border: 1px solid rgba(196,96,122,0.15); }
+
+/* ─── MAIN ─── */
+.main { padding: 52px 56px 80px; max-width: 880px; }
+
+/* ─── HERO ─── */
+.hero {
+  position: relative; overflow: hidden;
+  border-radius: 28px; padding: 48px 44px 40px;
+  background: linear-gradient(140deg,
+    rgba(28,18,56,0.98) 0%,
+    rgba(44,24,72,0.96) 45%,
+    rgba(80,38,58,0.92) 100%);
+  border: 1px solid rgba(196,158,64,0.22);
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+}
+.hero-symbol { position:absolute; right:36px; top:24px; font-size:180px; line-height:1; color:rgba(196,158,64,0.07); font-family:'Cormorant Garamond',serif; pointer-events:none; }
+.hero-glow { position:absolute; right:-60px; bottom:-80px; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle,rgba(196,158,64,0.15),transparent 65%); pointer-events:none; }
+.eyebrow { font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,5vw,4.5rem); font-weight:300; color:#fff8f0; line-height:1.08; margin-bottom:8px; }
+.hero h1 span { color: var(--gold2); }
+.lagna-line { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-style:italic; color:rgba(196,158,64,0.85); margin-bottom:24px; }
+.hero-badges { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  padding: 6px 14px; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hb-ready  { background: rgba(90,143,114,0.22); color: #80c4a0; border: 1px solid rgba(90,143,114,0.4); }
+.hb-rank   { background: rgba(196,158,64,0.14); color: var(--gold2); border: 1px solid rgba(196,158,64,0.3); }
+.hb-peak   { background: rgba(91,143,212,0.14); color: #a0c4f0; border: 1px solid rgba(91,143,212,0.28); }
+
+.stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.stat { background:rgba(255,255,255,0.06); border:1px solid rgba(196,158,64,0.14); border-radius:16px; padding:16px 18px; }
+.stat-label { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.stat-value { font-size:0.92rem; color:#fff8f0; font-weight:500; }
+
+/* ─── CHAPTER ─── */
+.chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+.chapter-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.chapter-icon {
+  width:44px; height:44px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;
+}
+.ci-gold  { background: rgba(196,158,64,0.12); }
+.ci-sage  { background: rgba(90,143,114,0.14); }
+.ci-plum  { background: rgba(124,92,191,0.14); }
+.ci-rose  { background: rgba(196,96,122,0.12); }
+.ci-blue  { background: rgba(91,143,212,0.14); }
+.chapter h2 { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:300; color:var(--cream); }
+.chapter h2 small { display:block; font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-family:'DM Sans',sans-serif; margin-bottom:4px; }
+
+/* ─── SECTION ─── */
+.section { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:24px 28px; margin-bottom:14px; }
+.section-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; color:var(--cream); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.dot-gold { background:var(--gold); }
+.dot-sage { background:var(--sage); }
+.dot-plum { background:var(--plum); }
+.dot-rose { background:var(--rose); }
+.dot-blue { background:var(--blue); }
+p { color: rgba(240,232,216,0.82); font-size: 0.9rem; line-height: 1.75; margin-bottom: 10px; }
+p:last-child { margin-bottom: 0; }
+
+/* ─── DOMAIN CARD ─── */
+.domain-card {
+  border-radius: 18px; padding: 22px 26px; margin-bottom: 14px;
+  border: 1px solid;
+}
+.dc-t1 { background: rgba(90,143,114,0.07); border-color: rgba(90,143,114,0.25); }
+.dc-t2 { background: rgba(196,158,64,0.06); border-color: rgba(196,158,64,0.22); }
+.dc-t3 { background: rgba(196,96,122,0.06); border-color: rgba(196,96,122,0.18); }
+.domain-top { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.domain-num { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; line-height:1; }
+.dc-t1 .domain-num { color: #80c4a0; }
+.dc-t2 .domain-num { color: var(--gold2); }
+.dc-t3 .domain-num { color: #e8909f; }
+.domain-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--cream); }
+.domain-tag { font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; margin-left:auto; padding:4px 10px; border-radius:999px; }
+.dc-t1 .domain-tag { color:#80c4a0; background:rgba(90,143,114,0.15); }
+.dc-t2 .domain-tag { color:var(--gold2); background:rgba(196,158,64,0.12); }
+.dc-t3 .domain-tag { color:#e8909f; background:rgba(196,96,122,0.12); }
+.domain-indicators { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
+.ind-chip { font-size:0.75rem; padding:4px 11px; border-radius:999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--muted); }
+
+/* ─── SKILL BARS ─── */
+.skill-grid { display:flex; flex-direction:column; gap:14px; margin-top:4px; }
+.skill-row { display:grid; grid-template-columns:130px 1fr 44px; align-items:center; gap:14px; }
+.skill-name { font-size:0.8rem; font-weight:500; color:var(--cream); }
+.skill-track { height:8px; background:rgba(255,255,255,0.07); border-radius:99px; overflow:hidden; }
+.skill-fill  { height:100%; border-radius:99px; transition: width 0.5s ease; }
+.sf-gold { background: linear-gradient(90deg, #c49e40, #e8c96a); }
+.sf-sage { background: linear-gradient(90deg, #5a8f72, #80c4a0); }
+.sf-plum { background: linear-gradient(90deg, #7c5cbf, #b49edf); }
+.sf-blue { background: linear-gradient(90deg, #5b8fd4, #a0c4f0); }
+.sf-rose { background: linear-gradient(90deg, #c4607a, #e8909f); }
+.skill-pct { font-size:0.78rem; font-weight:600; color:var(--gold2); text-align:right; }
+.skill-drivers { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+/* ─── TIMING TABLE ─── */
+.timing-row {
+  display: grid; grid-template-columns: 110px 150px 1fr;
+  gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.86rem; align-items: start;
+}
+.timing-row:last-child { border-bottom: none; }
+.timing-period { font-weight: 600; color: var(--gold2); font-size: 0.8rem; }
+.timing-dasha  { color: rgba(196,158,64,0.65); font-size: 0.78rem; }
+.timing-theme  { color: rgba(240,232,216,0.78); line-height: 1.55; }
+
+/* ─── CALLOUT ─── */
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 14px; }
+.callout-gold { background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.28); }
+.callout-sage { background:rgba(90,143,114,0.09); border:1px solid rgba(90,143,114,0.3); }
+.callout-plum { background:rgba(124,92,191,0.09); border:1px solid rgba(124,92,191,0.28); }
+.callout-rose { background:rgba(196,96,122,0.09); border:1px solid rgba(196,96,122,0.28); }
+.callout-label { font-size:0.63rem; letter-spacing:0.25em; text-transform:uppercase; font-weight:600; margin-bottom:8px; }
+.cl-gold { color:var(--gold); } .cl-sage { color:#80c4a0; } .cl-plum { color:#b49edf; } .cl-rose { color:#e8909f; }
+
+/* ─── CO-FOUNDER GRID ─── */
+.cofound-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:4px; }
+.cofound-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:18px 20px; }
+.cofound-card h4 { font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.cofound-card p { font-size:0.84rem; color:rgba(240,232,216,0.75); line-height:1.6; margin:0; }
+
+/* ─── SHADOW CARDS ─── */
+.shadow-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px; }
+.shadow-card { background:rgba(196,96,122,0.06); border:1px solid rgba(196,96,122,0.15); border-radius:14px; padding:14px 16px; }
+.shadow-card strong { display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:#e8909f; margin-bottom:6px; }
+.shadow-card p { font-size:0.85rem; color:rgba(240,232,216,0.7); line-height:1.6; margin:0; }
+
+/* ─── YOGA CHIPS ─── */
+.yoga-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+.yoga-chip { padding:6px 14px; border-radius:999px; font-size:0.8rem; background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.2); color:var(--gold2); }
+.yoga-chip.sage { background:rgba(90,143,114,0.1); border-color:rgba(90,143,114,0.22); color:#80c4a0; }
+
+/* ─── PEAK SPOTLIGHT ─── */
+.peak-box {
+  background: linear-gradient(135deg, rgba(196,158,64,0.1), rgba(90,143,114,0.08));
+  border: 1px solid rgba(196,158,64,0.35);
+  border-radius: 18px; padding: 24px 28px; margin-bottom: 14px;
+  position: relative; overflow: hidden;
+}
+.peak-box::before { content:"★"; position:absolute; right:20px; top:10px; font-size:80px; color:rgba(196,158,64,0.06); line-height:1; }
+.peak-title { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:var(--gold2); margin-bottom:6px; }
+.peak-sub   { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+
+/* ─── DIVIDER ─── */
+.divider { display:flex; align-items:center; gap:16px; margin:32px 0; font-size:0.62rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(240,232,216,0.25); }
+.divider::before, .divider::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ─── AVOID LIST ─── */
+.avoid-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+.avoid-list li { padding:10px 14px; background:rgba(196,96,122,0.06); border-left:3px solid rgba(196,96,122,0.4); border-radius:0 10px 10px 0; font-size:0.86rem; color:rgba(240,232,216,0.72); }
+
+/* ─── FOOTER ─── */
+.footer { text-align:center; padding:20px 0; font-size:0.7rem; color:rgba(240,232,216,0.3); letter-spacing:0.08em; border-top:1px solid var(--border); margin-top:40px; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+  .main { padding: 32px 20px 60px; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .cofound-grid, .shadow-grid { grid-template-columns: 1fr; }
+  .timing-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ══════════════════════════════════════ SIDEBAR ══ -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">🦅</div>
+    <div class="sidebar-name">Joseph T C</div>
+    <div class="sidebar-sub">Startup Founder Profile</div>
+
+    <div class="score-ring">
+      <div>
+        <div class="score-num">73</div>
+      </div>
+      <div>
+        <div class="score-label">Startup Score</div>
+        <div class="score-tier">🚀 Startup-Ready</div>
+        <div style="font-size:0.7rem;color:var(--muted);margin-top:2px">#1 of 33 profiles</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#archetype" class="nav-item"><span class="nav-icon">🧭</span>Founder Archetype</a>
+      <a href="#domains" class="nav-item"><span class="nav-icon">🚀</span>Startup Domains</a>
+      <a href="#skills" class="nav-item"><span class="nav-icon">📊</span>Skill Profile</a>
+      <a href="#timing" class="nav-item"><span class="nav-icon">⏳</span>Career Timing</a>
+      <a href="#cofound" class="nav-item"><span class="nav-icon">🤝</span>Co-founder Blueprint</a>
+      <a href="#shadow" class="nav-item"><span class="nav-icon">🌑</span>Founder Shadow</a>
+    </nav>
+
+    <div class="nav-divider"></div>
+
+    <div style="font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Best Domains</div>
+    <div class="sidebar-domains">
+      <div class="domain-pill t1">📚 EdTech / Knowledge</div>
+      <div class="domain-pill t1">🧭 Advisory / Consulting</div>
+      <div class="domain-pill t1">✍️ Content / Publishing</div>
+      <div class="domain-pill t2">🧘 Wellness / Mindfulness</div>
+      <div class="domain-pill t2">💰 Wealth Advisory</div>
+      <div class="domain-pill t2">⚙️ B2B SaaS / Pro Tools</div>
+      <div class="domain-pill t3" style="opacity:0.65;">🏭 Hardware — Avoid</div>
+      <div class="domain-pill t3" style="opacity:0.65;">🏠 Real Estate — Avoid</div>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════ MAIN ══ -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-symbol">♐</div>
+      <div class="hero-glow"></div>
+      <div class="eyebrow">Vedic Startup Profile · Lahiri Ayanamsha</div>
+      <h1>Joseph T C<br><span>The Philosopher-Founder</span></h1>
+      <div class="lagna-line">Sagittarius Lagna 2.8° · Hamsa Yoga · Jupiter H1 Own Sign</div>
+      <div class="hero-badges">
+        <span class="hero-badge hb-ready">🚀 Startup-Ready</span>
+        <span class="hero-badge hb-rank">★ #1 of 33</span>
+        <span class="hero-badge hb-peak">⚡ Peak Window Active Jul 2026</span>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-label">Lagna</div>
+          <div class="stat-value">Sagittarius 2.8°</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Current Dasha</div>
+          <div class="stat-value">Venus / Venus / Mercury</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Founder Type</div>
+          <div class="stat-value">Visionary Advisor</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Born</div>
+          <div class="stat-value">05-Aug-1984 · Alwaye, Kerala</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── FOUNDER ARCHETYPE ─── -->
+    <div class="chapter" id="archetype">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-gold">🧭</div>
+        <h2><small>Chapter I</small>Founder Archetype</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>The Philosopher-Founder</div>
+        <p>Joseph's chart is the rarest founder configuration: <strong>Hamsa Yoga</strong> (Jupiter in own sign in the 1st house) paired with the <strong>10th lord Mercury in the 9th house</strong>. This means his career IS his philosophy. He doesn't just build products — he builds belief systems that products express. His strongest differentiation is always intellectual and moral, not operational or financial.</p>
+        <p>The Sagittarius Ascendant gives him the instinct to see the large-arc story where others see quarterly targets. Jupiter in Mula nakshatra (the root-cutter) adds a quality rare in founders: willingness to demolish what is working to reach what is true. Mula's shakti is "the power to ruin and to root."</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Founding Yogas</div>
+        <div class="yoga-list">
+          <span class="yoga-chip">Hamsa Yoga · Jupiter H1 Own</span>
+          <span class="yoga-chip sage">Chandra-Mangala · Wealth Drive</span>
+          <span class="yoga-chip sage">Viparita Raja · Rise Through Adversity</span>
+          <span class="yoga-chip">Neecha Bhanga Raja · Weakness → Strength</span>
+          <span class="yoga-chip">Vesi Yoga · Mercury+Venus in 2nd from Sun</span>
+          <span class="yoga-chip sage">Exalted Saturn H11 · Network Gains</span>
+        </div>
+        <p style="margin-top:14px;">The <strong>Chandra-Mangala Yoga</strong> (Moon + Mars conjunct in H12) is the hidden engine: enormous wealth-generating drive that operates beneath the surface. Most people see the philosopher; the founder knows the ambition running underneath. The <strong>Viparita Raja Yoga</strong> from this same placement means Joseph builds strongest under pressure, adversity, or when working from an unconventional angle.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label cl-gold">★ Archetype Signature</div>
+        Joseph's archetype is the <strong>Advisor who becomes the Founder</strong> — not the operator who becomes the CEO. His natural path is: build credibility through knowledge and wisdom first, then leverage that authority into a venture. Ventures built on Joseph's intellectual reputation will consistently outperform ventures built on hustle or capital.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── STARTUP DOMAINS ─── -->
+    <div class="chapter" id="domains">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-sage">🚀</div>
+        <h2><small>Chapter II</small>Startup Domains</h2>
+      </div>
+
+      <!-- TIER 1 -->
+      <div style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:#80c4a0;margin-bottom:10px;font-weight:600;">● Tier 1 — Chart-Perfect Fit</div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">01</div>
+          <div>
+            <div class="domain-name">EdTech / Knowledge Platforms</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Curriculum · Upskilling · Structured Learning</div>
+          </div>
+          <span class="domain-tag">Highest Fit</span>
+        </div>
+        <p>Mercury (10th lord) + Venus in H9 (dharma, higher learning) is the single strongest placement for education. H9 is the house of teachers, gurus, and universities — and Mercury rules curriculum, content, and structured transmission of knowledge. Venus adds aesthetics, desirability, and the ability to make learning feel beautiful rather than utilitarian.</p>
+        <p>Jupiter H1 embodies the teacher archetype at the identity level. Joseph doesn't just teach — he radiates a gravitational field that makes people want to learn from him. This is the domain where his Saturn H11 (exalted) supports long-term institutional partnerships, B2B licensing, and slow-burn network distribution.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Mercury H9 (10th lord)</span>
+          <span class="ind-chip">Venus H9 conjunct Mercury</span>
+          <span class="ind-chip">Jupiter H1 Hamsa Yoga</span>
+          <span class="ind-chip">Saturn H11 Exalted (institutional)</span>
+          <span class="ind-chip">Sagittarius Lagna (seeker)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">02</div>
+          <div>
+            <div class="domain-name">Advisory / Consulting</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Strategy · Philosophy · Boutique Consultancy</div>
+          </div>
+          <span class="domain-tag">Highest Fit</span>
+        </div>
+        <p>Hamsa Yoga in H1 (own sign) is the classical yoga for the counselor and advisor — wisdom that others seek out rather than wisdom that pushes itself forward. Sagittarius Lagna amplifies this: the Archer archetype positions himself at a distance, sees the full landscape, and advises from elevation. This is not generic consulting — Joseph's natural positioning is the philosopher-strategist who brings both analytical precision (Mercury) and moral clarity (Jupiter).</p>
+        <p>The key differentiation: a consultancy built around Joseph's intellectual framework or proprietary methodology (Jupiter's domain) will consistently command premium rates over execution-only consulting firms.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Hamsa Yoga (wisdom-seeker dynamic)</span>
+          <span class="ind-chip">Sagittarius = elevation + perspective</span>
+          <span class="ind-chip">Mercury+Venus H9 (communication + charm)</span>
+          <span class="ind-chip">Saturn H11 (long client relationships)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">03</div>
+          <div>
+            <div class="domain-name">Content / Publishing / Media</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Writing · Podcasting · Thought Leadership</div>
+          </div>
+          <span class="domain-tag">High Fit</span>
+        </div>
+        <p>Mercury as 10th lord means his career karma is expressed through words and ideas. H9 is the house of publishing, broadcasting, and philosophical content. Venus adds aesthetics, narrative beauty, and audience affinity. Any venture where ideas are the product — newsletters, books, media platforms, long-form content — channels this placement directly.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Mercury H9 (10th lord = writing/media)</span>
+          <span class="ind-chip">Venus H9 (beautiful expression)</span>
+          <span class="ind-chip">Jupiter H1 (authoritative voice)</span>
+        </div>
+      </div>
+
+      <!-- TIER 2 -->
+      <div class="divider">Secondary Domains</div>
+      <div style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;font-weight:600;">◆ Tier 2 — Strong Secondary Fit</div>
+
+      <div class="domain-card dc-t2">
+        <div class="domain-top">
+          <div class="domain-num">04</div>
+          <div>
+            <div class="domain-name">Spiritual / Wellness / Mindfulness</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Apps · Retreats · Integrative Health · Inner Work</div>
+          </div>
+          <span class="domain-tag">Strong Fit</span>
+        </div>
+        <p>The H12 stellium — Moon, Mars, Ketu in Scorpio — gives Joseph a genuine deep inner world and natural instinct for the shadow, the unconscious, and the mystical. Ketu in Anuradha (devotion, fellowship) makes this more than intellectual: he has lived experience of the inner path. Viparita Raja Yoga from H12 means unconventional niches (inner work, mindfulness, esoteric wellness) become breakthroughs rather than risks.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Moon+Mars+Ketu H12 Scorpio</span>
+          <span class="ind-chip">Viparita Raja (H12 = unconventional wins)</span>
+          <span class="ind-chip">Ketu H12 Anuradha (devotion)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t2">
+        <div class="domain-top">
+          <div class="domain-num">05</div>
+          <div>
+            <div class="domain-name">Wealth Advisory / Fintech</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Personal Finance · Investment Intelligence · UHNW</div>
+          </div>
+          <span class="domain-tag">Co-founder Role</span>
+        </div>
+        <p>Exalted Saturn H11 (long-term gains, institutional networks) + Chandra-Mangala Yoga (wealth-generating drive) + Vesi Yoga (financial good character) create a strong wealth-management signature. Works best with a co-founder who handles the operational side — Joseph's role is product vision, client trust, and framework design.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Saturn Exalted H11 (institutional gains)</span>
+          <span class="ind-chip">Chandra-Mangala (wealth drive)</span>
+          <span class="ind-chip">Vesi Yoga (financial integrity)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t2">
+        <div class="domain-top">
+          <div class="domain-num">06</div>
+          <div>
+            <div class="domain-name">B2B SaaS / Professional Tools</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Knowledge Work · Documentation · Team Learning</div>
+          </div>
+          <span class="domain-tag">Niche Fit</span>
+        </div>
+        <p>Mercury H9 in Leo = polished, authoritative software communication. Saturn H11 handles long B2B sales cycles with patience. Works well when the product itself is in the knowledge/communication category — project management, documentation, corporate learning, or advisory platforms.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Mercury H9 Leo (authoritative communication)</span>
+          <span class="ind-chip">Saturn H11 (long-cycle B2B patience)</span>
+        </div>
+      </div>
+
+      <!-- TIER 3 AVOID -->
+      <div class="divider">Domains to Avoid</div>
+      <div class="section" style="border-color:rgba(196,96,122,0.2);background:rgba(196,96,122,0.04);">
+        <div class="section-title"><span class="dot dot-rose"></span>Misaligned Domains</div>
+        <ul class="avoid-list">
+          <li><strong>Hardware / Manufacturing</strong> — No strong Mars in H10, no Capricorn/Taurus influence in career. Execution-heavy physical product domains exhaust his H12 Mars rather than channeling it.</li>
+          <li><strong>Pure Retail / FMCG / Consumer Brand</strong> — No Venus in H1 or H2 emphasis for consumer identity. His aesthetic sensitivity (Venus H9) expresses through ideas, not products on shelves.</li>
+          <li><strong>Real Estate</strong> — Moon H12 rather than H4 (real estate). Saturn H11 prefers networks over property. The illiquidity and physical-asset focus conflicts with his Mercury-led career karma.</li>
+          <li><strong>Founder as pure Operator / COO</strong> — Sagittarius Lagna + Jupiter H1 Hamsa Yoga is a founder/advisor archetype, not an execution archetype. Founding a company that demands pure operational grind will exhaust his chart rather than activate its gifts.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── SKILL PROFILE ─── -->
+    <div class="chapter" id="skills">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-blue">📊</div>
+        <h2><small>Chapter III</small>Founder Skill Profile</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-blue"></span>Domain Skill Scores</div>
+        <p style="margin-bottom:18px;">Scores derived from planetary dignity and house placements per the Startup Fitness model. Joseph's highest-dignity planets (Jupiter own H1, Saturn exalted H11, Mercury+Venus H9) drive a distinctly top-heavy profile: exceptionally strong in Product and Finance, solid in Operations and Marketing, moderate in Sales.</p>
+
+        <div class="skill-grid">
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Product</div>
+              <div class="skill-track"><div class="skill-fill sf-gold" style="width:82%"></div></div>
+              <div class="skill-pct">82</div>
+            </div>
+            <div class="skill-drivers">Jupiter H1 own · Venus H9 · Mercury H9 — vision, aesthetics, communication design</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Finance</div>
+              <div class="skill-track"><div class="skill-fill sf-sage" style="width:78%"></div></div>
+              <div class="skill-pct">78</div>
+            </div>
+            <div class="skill-drivers">Jupiter own H1 · Saturn exalted H11 · Venus H9 — long-term framing, institutional trust</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Operations</div>
+              <div class="skill-track"><div class="skill-fill sf-plum" style="width:72%"></div></div>
+              <div class="skill-pct">72</div>
+            </div>
+            <div class="skill-drivers">Saturn exalted H11 · Mercury H9 — structured, patient, systems-minded in networks</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Marketing</div>
+              <div class="skill-track"><div class="skill-fill sf-blue" style="width:68%"></div></div>
+              <div class="skill-pct">68</div>
+            </div>
+            <div class="skill-drivers">Venus H9 · Mercury H9 · Sun H8 — ideas-led marketing; personal brand is the strongest channel</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Sales</div>
+              <div class="skill-track"><div class="skill-fill sf-rose" style="width:58%"></div></div>
+              <div class="skill-pct">58</div>
+            </div>
+            <div class="skill-drivers">Venus H9 · Mercury H9 · Moon H12 — private orientation; better at inbound/warm sales than cold outreach</div>
+          </div>
+        </div>
+
+        <div class="callout callout-plum" style="margin-top:20px;">
+          <div class="callout-label cl-plum">★ Skill Gap Note</div>
+          Sales (58) is the key gap. Moon H12 creates a private orientation that resists self-promotion. The mitigation: Joseph's philosophical authority generates inbound pull naturally — his best "sales" is writing, speaking, or teaching that brings clients to him. A co-founder or early hire with strong sales/BD (Venus or Mars prominent in H7 or H10) closes this gap completely.
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── CAREER TIMING ─── -->
+    <div class="chapter" id="timing">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-plum">⏳</div>
+        <h2><small>Chapter IV</small>Career Timing Windows</h2>
+      </div>
+
+      <div class="peak-box">
+        <div class="peak-sub">Active Peak Window · Now Through October 2026</div>
+        <div class="peak-title">Venus / Venus / Mercury — The Contract Period</div>
+        <p>Mercury is Joseph's 10th lord and it activates as the sub-sub-lord during this period (May–Oct 2026). This is the highest-precision career window in his 2023–2027 cycle. Mercury in Leo H9 combined with Venus in H9 creates a moment when all three career levers — vision (Venus), intellect (Mercury), and network (Saturn H11 backdrop) — are simultaneously active.</p>
+        <p style="margin-top:10px;"><strong>Best actions in this window:</strong> sign contracts, make professional pivots, launch a product or service, publish thought leadership, start consulting engagements, or formalize partnerships. Decisions made now have outsized leverage on the next 3–5 years.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>2023–2043 Venus Mahadasha — Full Timeline</div>
+        <div style="margin-top:8px;">
+          <div class="timing-row">
+            <div class="timing-period">Sep 2023</div>
+            <div class="timing-dasha">Venus / Venus / Venus</div>
+            <div class="timing-theme">New chapter opens. Reset direction, values, and skills. Slow start — career opens gradually, not suddenly. Best for repositioning and personal brand building.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">Nov 2024</div>
+            <div class="timing-dasha">Venus / Venus / Rahu</div>
+            <div class="timing-theme">Unusual opportunity window — sudden career shifts, foreign links, technology connections, new directions. High potential but also confusion and overpromising risk.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">May 2025</div>
+            <div class="timing-dasha">Venus / Venus / Jupiter</div>
+            <div class="timing-theme">Very good. Jupiter strong in lagna supports guidance, growth, recognition, teaching, advisory roles, and clearer purpose. Relationships open important professional doors.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">Oct 2025</div>
+            <div class="timing-dasha">Venus / Venus / Saturn</div>
+            <div class="timing-theme">Career consolidation. Saturn exalted H11 brings gains, network support, institutional work, stable income, and long-term building through discipline. Slow but durable.</div>
+          </div>
+          <div class="timing-row" style="background:rgba(196,158,64,0.06);border-radius:10px;padding:13px 10px;">
+            <div class="timing-period" style="color:#e8c96a;font-weight:700;">May–Oct 2026 ★</div>
+            <div class="timing-dasha" style="color:#c49e40;font-weight:600;">Venus / Venus / Mercury</div>
+            <div class="timing-theme"><strong style="color:var(--gold2);">Peak sub-period.</strong> 10th lord Mercury activated as sub-lord. Contracts, launches, consulting, writing, professional moves — all carry 3–5× leverage during this window.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2033–2036</div>
+            <div class="timing-dasha">Venus / Jupiter</div>
+            <div class="timing-theme">Second major peak in the 20-year Venus mahadasha. Jupiter strong in lagna + Venus in H9 — expansion, reputation, and institutional recognition. Strong for scaling ventures established in the 2026 window.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2039–2042</div>
+            <div class="timing-dasha">Venus / Mercury</div>
+            <div class="timing-theme">Third peak. Mercury (10th lord) as sub-lord again, at greater maturity. Career summit period — well-suited for writing a definitive work, founding a mature institution, or peak advisory influence.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label cl-sage">Timing Strategy</div>
+        Joseph has three concentrated power peaks in a 20-year window: 2026, 2033–36, and 2039–42. Decisions made at each peak create compounding returns by the next. The venture started in 2026 should be positioned for institutional recognition in 2033, not immediate liquidity. Patience is built into his chart (Saturn exalted H11) — short-horizon thinking consistently underperforms his natural cadence.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── CO-FOUNDER BLUEPRINT ─── -->
+    <div class="chapter" id="cofound">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-sage">🤝</div>
+        <h2><small>Chapter V</small>Co-founder Blueprint</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>What Joseph Brings vs. What He Needs</div>
+        <div class="cofound-grid">
+          <div class="cofound-card">
+            <h4>Joseph Brings</h4>
+            <p>Philosophical vision, intellectual authority, product intuition, long-term network building, financial judgment, written and spoken communication, client trust (warm relationships), and the ability to attract followers through ideas rather than hype.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Joseph Needs</h4>
+            <p>Operational grounding, cold-sales energy, short-cycle execution, technical implementation speed, marketing distribution muscle, and someone who converts Joseph's vision into milestones and holds the team accountable to them.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Ideal Co-founder Chart Signature</div>
+        <div class="cofound-grid">
+          <div class="cofound-card">
+            <h4>Lagna Match</h4>
+            <p><strong>Cancer or Capricorn Lagna</strong> — operational discipline, detail orientation, and practical grounding to balance Joseph's philosophical elevation. Alternatively, an Aries or Scorpio Lagna for raw execution energy.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Mars Placement</h4>
+            <p><strong>Mars in H10 or H6</strong> (strong for execution, competition, implementation). Joseph's Mars is in H12 — private and internalized. A co-founder with public Mars energy closes the most critical execution gap.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Venus Placement</h4>
+            <p><strong>Venus in H7 or H10</strong> — a co-founder who sells and builds external relationships easily. Where Joseph creates pull through authority, the co-founder creates push through relationships and charm.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Mercury Placement</h4>
+            <p><strong>Mercury in H1, H3, or H10</strong> — strong communicator and quick executor who moves ideas into action fast. Complements Joseph's Mercury (H9 = deliberate, long-arc) with agile implementation thinking.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label cl-gold">★ Partnership Principle</div>
+        Joseph's chart favors one strong co-founder over a large founding team. The Hamsa Yoga (H1) + exalted Saturn H11 creates a binary dynamic: deep singular partnership amplified by institutional networks. A team of two (Joseph as visionary, co-founder as executor) with a strong advisory board is more natural to this chart than a 4–5 person founding team where roles blur.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── FOUNDER SHADOW ─── -->
+    <div class="chapter" id="shadow">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-rose">🌑</div>
+        <h2><small>Chapter VI</small>Founder Shadow</h2>
+      </div>
+
+      <div class="section" style="border-color:rgba(196,96,122,0.2);">
+        <div class="section-title"><span class="dot dot-rose"></span>Chart Challenges in Startup Context</div>
+        <div class="shadow-grid">
+          <div class="shadow-card">
+            <strong>Moon H12 — Private Orientation</strong>
+            <p>Emotional life is deeply private and internalized. In startup contexts, this creates resistance to self-promotion, public vulnerability, and "founder storytelling" that VCs and customers respond to. The antidote is writing — text channels this energy far better than public speaking or video.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Mars H12 — Scattered Execution</strong>
+            <p>Mars in H12 generates enormous private drive (Chandra-Mangala) but disperses it in internal projects, reflection, and spiritual impulse rather than outward delivery. Startups need Mars in H10 energy — sustained public push. Mitigated by a co-founder with Mars-H10 signature.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Sun H8 — Authority Ambivalence</strong>
+            <p>Sun in H8 (Ashlesha) creates complex relationship with authority — both craving recognition and resisting the vulnerability that visibility requires. May undercharge or underpromote himself. The antidote is positioning the product as the authority, not himself.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Ketu H12 — Detachment Drift</strong>
+            <p>Ketu in H12 in Anuradha can create sudden disinterest in a venture that is "working fine." Spiritual pull may conflict with the grinding commitment early startups require. Best mitigated by ensuring the work itself feels like dharma — not just a business.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Shadow Antidotes</div>
+        <div class="callout callout-sage">
+          <div class="callout-label cl-sage">Structural Fix</div>
+          Build the venture so that Joseph's deep private drive (H12) fuels the IP and product framework, while a co-founder or team handles outward-facing execution. The Viparita Raja Yoga from H12 is not a liability — it is the source of unconventional insight that makes the product genuinely different. Protect the H12 energy rather than fight it.
+        </div>
+        <div class="callout callout-plum" style="margin-top:10px;">
+          <div class="callout-label cl-plum">Timing Fix</div>
+          The peak windows (2026, 2033, 2039) are when the chart naturally overcomes its H12 diffusion. Outside these windows, sustained intensity is harder. Build venture architecture — systems, teams, partnerships — that can hold momentum between peaks without requiring Joseph to constantly carry it personally.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated Jul 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Startup Fitness Model v2
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
