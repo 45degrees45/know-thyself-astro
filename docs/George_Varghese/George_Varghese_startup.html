@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>George Varghese — Startup Founder Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ─── LAYOUT ─── */
+.layout { display: grid; grid-template-columns: 270px 1fr; min-height: 100vh; max-width: 1340px; margin: 0 auto; }
+
+/* ─── SIDEBAR ─── */
+.sidebar {
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding: 36px 18px 36px 24px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.92);
+  backdrop-filter: blur(12px);
+}
+.sidebar-logo { font-size: 2.4rem; margin-bottom: 4px; }
+.sidebar-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--cream); }
+.sidebar-sub  { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+
+.score-ring {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(196,158,64,0.08); border: 1px solid rgba(196,158,64,0.22);
+  border-radius: 14px; padding: 14px 16px; margin-bottom: 10px;
+}
+.score-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold2); line-height: 1; }
+.score-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.score-tier  { font-size: 0.78rem; color: var(--gold2); font-weight: 600; }
+
+.legacy-badge {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(124,92,191,0.1); border: 1px solid rgba(124,92,191,0.28);
+  border-radius: 10px; padding: 10px 14px; margin-bottom: 20px;
+  font-size: 0.78rem; color: #b49edf; font-weight: 600;
+}
+
+.sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: 10px;
+  font-size: 0.82rem; color: var(--muted);
+  text-decoration: none; transition: background 0.18s, color 0.18s;
+}
+.nav-item:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+.nav-icon { width: 22px; text-align: center; font-size: 0.95rem; }
+.nav-divider { height: 1px; background: var(--border); margin: 10px 0; }
+
+.sidebar-domains { margin-top: 22px; }
+.domain-pill {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 12px; border-radius: 10px; margin-bottom: 6px;
+  font-size: 0.78rem; font-weight: 500;
+}
+.domain-pill.t1 { background: rgba(90,143,114,0.12); color: #80c4a0; border: 1px solid rgba(90,143,114,0.22); }
+.domain-pill.t2 { background: rgba(196,158,64,0.08); color: var(--gold2); border: 1px solid rgba(196,158,64,0.18); }
+.domain-pill.t3 { background: rgba(196,96,122,0.07); color: #e8909f; border: 1px solid rgba(196,96,122,0.15); }
+
+/* ─── MAIN ─── */
+.main { padding: 52px 56px 80px; max-width: 880px; }
+
+/* ─── HERO ─── */
+.hero {
+  position: relative; overflow: hidden;
+  border-radius: 28px; padding: 48px 44px 40px;
+  background: linear-gradient(140deg,
+    rgba(28,18,56,0.98) 0%,
+    rgba(44,24,72,0.96) 45%,
+    rgba(80,38,58,0.92) 100%);
+  border: 1px solid rgba(196,158,64,0.22);
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+}
+.hero-symbol { position:absolute; right:36px; top:24px; font-size:180px; line-height:1; color:rgba(196,158,64,0.07); font-family:'Cormorant Garamond',serif; pointer-events:none; }
+.hero-glow { position:absolute; right:-60px; bottom:-80px; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle,rgba(196,158,64,0.15),transparent 65%); pointer-events:none; }
+.eyebrow { font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,5vw,4.5rem); font-weight:300; color:#fff8f0; line-height:1.08; margin-bottom:8px; }
+.hero h1 span { color: var(--gold2); }
+.lagna-line { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-style:italic; color:rgba(196,158,64,0.85); margin-bottom:24px; }
+.hero-badges { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  padding: 6px 14px; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hb-ready  { background: rgba(90,143,114,0.22); color: #80c4a0; border: 1px solid rgba(90,143,114,0.4); }
+.hb-legacy { background: rgba(124,92,191,0.22); color: #b49edf; border: 1px solid rgba(124,92,191,0.4); }
+.hb-rank   { background: rgba(196,158,64,0.14); color: var(--gold2); border: 1px solid rgba(196,158,64,0.3); }
+.hb-peak   { background: rgba(91,143,212,0.14); color: #a0c4f0; border: 1px solid rgba(91,143,212,0.28); }
+
+.stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.stat { background:rgba(255,255,255,0.06); border:1px solid rgba(196,158,64,0.14); border-radius:16px; padding:16px 18px; }
+.stat-label { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.stat-value { font-size:0.92rem; color:#fff8f0; font-weight:500; }
+
+/* ─── CHAPTER ─── */
+.chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+.chapter-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.chapter-icon {
+  width:44px; height:44px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;
+}
+.ci-gold  { background: rgba(196,158,64,0.12); }
+.ci-sage  { background: rgba(90,143,114,0.14); }
+.ci-plum  { background: rgba(124,92,191,0.14); }
+.ci-rose  { background: rgba(196,96,122,0.12); }
+.ci-blue  { background: rgba(91,143,212,0.14); }
+.chapter h2 { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:300; color:var(--cream); }
+.chapter h2 small { display:block; font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-family:'DM Sans',sans-serif; margin-bottom:4px; }
+
+/* ─── SECTION ─── */
+.section { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:24px 28px; margin-bottom:14px; }
+.section-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; color:var(--cream); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.dot-gold { background:var(--gold); }
+.dot-sage { background:var(--sage); }
+.dot-plum { background:var(--plum); }
+.dot-rose { background:var(--rose); }
+.dot-blue { background:var(--blue); }
+p { color: rgba(240,232,216,0.82); font-size: 0.9rem; line-height: 1.75; margin-bottom: 10px; }
+p:last-child { margin-bottom: 0; }
+
+/* ─── DOMAIN CARD ─── */
+.domain-card {
+  border-radius: 18px; padding: 22px 26px; margin-bottom: 14px;
+  border: 1px solid;
+}
+.dc-t1 { background: rgba(90,143,114,0.07); border-color: rgba(90,143,114,0.25); }
+.dc-t2 { background: rgba(196,158,64,0.06); border-color: rgba(196,158,64,0.22); }
+.dc-t3 { background: rgba(196,96,122,0.06); border-color: rgba(196,96,122,0.18); }
+.domain-top { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.domain-num { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; line-height:1; }
+.dc-t1 .domain-num { color: #80c4a0; }
+.dc-t2 .domain-num { color: var(--gold2); }
+.dc-t3 .domain-num { color: #e8909f; }
+.domain-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--cream); }
+.domain-tag { font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; margin-left:auto; padding:4px 10px; border-radius:999px; }
+.dc-t1 .domain-tag { color:#80c4a0; background:rgba(90,143,114,0.15); }
+.dc-t2 .domain-tag { color:var(--gold2); background:rgba(196,158,64,0.12); }
+.dc-t3 .domain-tag { color:#e8909f; background:rgba(196,96,122,0.12); }
+.domain-indicators { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
+.ind-chip { font-size:0.75rem; padding:4px 11px; border-radius:999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--muted); }
+
+/* ─── SKILL BARS ─── */
+.skill-grid { display:flex; flex-direction:column; gap:14px; margin-top:4px; }
+.skill-row { display:grid; grid-template-columns:130px 1fr 44px; align-items:center; gap:14px; }
+.skill-name { font-size:0.8rem; font-weight:500; color:var(--cream); }
+.skill-track { height:8px; background:rgba(255,255,255,0.07); border-radius:99px; overflow:hidden; }
+.skill-fill  { height:100%; border-radius:99px; transition: width 0.5s ease; }
+.sf-gold { background: linear-gradient(90deg, #c49e40, #e8c96a); }
+.sf-sage { background: linear-gradient(90deg, #5a8f72, #80c4a0); }
+.sf-plum { background: linear-gradient(90deg, #7c5cbf, #b49edf); }
+.sf-blue { background: linear-gradient(90deg, #5b8fd4, #a0c4f0); }
+.sf-rose { background: linear-gradient(90deg, #c4607a, #e8909f); }
+.skill-pct { font-size:0.78rem; font-weight:600; color:var(--gold2); text-align:right; }
+.skill-drivers { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+/* ─── TIMING TABLE ─── */
+.timing-row {
+  display: grid; grid-template-columns: 110px 150px 1fr;
+  gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.86rem; align-items: start;
+}
+.timing-row:last-child { border-bottom: none; }
+.timing-period { font-weight: 600; color: var(--gold2); font-size: 0.8rem; }
+.timing-dasha  { color: rgba(196,158,64,0.65); font-size: 0.78rem; }
+.timing-theme  { color: rgba(240,232,216,0.78); line-height: 1.55; }
+
+/* ─── CALLOUT ─── */
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 14px; }
+.callout-gold { background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.28); }
+.callout-sage { background:rgba(90,143,114,0.09); border:1px solid rgba(90,143,114,0.3); }
+.callout-plum { background:rgba(124,92,191,0.09); border:1px solid rgba(124,92,191,0.28); }
+.callout-rose { background:rgba(196,96,122,0.09); border:1px solid rgba(196,96,122,0.28); }
+.callout-label { font-size:0.63rem; letter-spacing:0.25em; text-transform:uppercase; font-weight:600; margin-bottom:8px; }
+.cl-gold { color:var(--gold); } .cl-sage { color:#80c4a0; } .cl-plum { color:#b49edf; } .cl-rose { color:#e8909f; }
+
+/* ─── LEGACY BLUEPRINT GRID ─── */
+.legacy-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:4px; }
+.legacy-card { background:rgba(124,92,191,0.05); border:1px solid rgba(124,92,191,0.18); border-radius:16px; padding:18px 20px; }
+.legacy-card h4 { font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:#b49edf; margin-bottom:8px; }
+.legacy-card p { font-size:0.84rem; color:rgba(240,232,216,0.75); line-height:1.6; margin:0; }
+
+/* ─── SHADOW CARDS ─── */
+.shadow-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px; }
+.shadow-card { background:rgba(196,96,122,0.06); border:1px solid rgba(196,96,122,0.15); border-radius:14px; padding:14px 16px; }
+.shadow-card strong { display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:#e8909f; margin-bottom:6px; }
+.shadow-card p { font-size:0.85rem; color:rgba(240,232,216,0.7); line-height:1.6; margin:0; }
+
+/* ─── YOGA CHIPS ─── */
+.yoga-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+.yoga-chip { padding:6px 14px; border-radius:999px; font-size:0.8rem; background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.2); color:var(--gold2); }
+.yoga-chip.sage { background:rgba(90,143,114,0.1); border-color:rgba(90,143,114,0.22); color:#80c4a0; }
+.yoga-chip.plum { background:rgba(124,92,191,0.1); border-color:rgba(124,92,191,0.22); color:#b49edf; }
+
+/* ─── PEAK SPOTLIGHT ─── */
+.peak-box {
+  background: linear-gradient(135deg, rgba(124,92,191,0.1), rgba(196,158,64,0.06));
+  border: 1px solid rgba(124,92,191,0.3);
+  border-radius: 18px; padding: 24px 28px; margin-bottom: 14px;
+  position: relative; overflow: hidden;
+}
+.peak-box::before { content:"★"; position:absolute; right:20px; top:10px; font-size:80px; color:rgba(124,92,191,0.08); line-height:1; }
+.peak-title { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:#b49edf; margin-bottom:6px; }
+.peak-sub   { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:#7c5cbf; margin-bottom:12px; }
+
+/* ─── PLANET TABLE ─── */
+.planet-table { width:100%; border-collapse:collapse; font-size:0.86rem; margin-top:10px; }
+.planet-table th { text-align:left; padding:9px 12px; background:rgba(196,158,64,0.08); color:var(--gold); font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; border-bottom:1px solid rgba(196,158,64,0.18); }
+.planet-table td { padding:9px 12px; color:rgba(240,232,216,0.82); border-bottom:1px solid rgba(255,255,255,0.04); vertical-align:top; line-height:1.55; }
+.planet-table tr:last-child td { border-bottom:none; }
+.planet-table tr:hover td { background:rgba(255,255,255,0.02); }
+
+/* ─── DIVIDER ─── */
+.divider { display:flex; align-items:center; gap:16px; margin:32px 0; font-size:0.62rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(240,232,216,0.25); }
+.divider::before, .divider::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ─── AVOID LIST ─── */
+.avoid-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+.avoid-list li { padding:10px 14px; background:rgba(196,96,122,0.06); border-left:3px solid rgba(196,96,122,0.4); border-radius:0 10px 10px 0; font-size:0.86rem; color:rgba(240,232,216,0.72); }
+
+/* ─── FOOTER ─── */
+.footer { text-align:center; padding:20px 0; font-size:0.7rem; color:rgba(240,232,216,0.3); letter-spacing:0.08em; border-top:1px solid var(--border); margin-top:40px; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+  .main { padding: 32px 20px 60px; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .legacy-grid, .shadow-grid { grid-template-columns: 1fr; }
+  .timing-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ══════════════════════════════════════ SIDEBAR ══ -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">🦁</div>
+    <div class="sidebar-name">George Varghese</div>
+    <div class="sidebar-sub">Startup Founder Profile</div>
+
+    <div class="score-ring">
+      <div>
+        <div class="score-num">66</div>
+      </div>
+      <div>
+        <div class="score-label">Startup Score</div>
+        <div class="score-tier">🌱 Founder-Track</div>
+        <div style="font-size:0.7rem;color:var(--muted);margin-top:2px">10 yogas · Age 64</div>
+      </div>
+    </div>
+
+    <div class="legacy-badge">
+      🏛️ Legacy Builder Mode
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#archetype" class="nav-item"><span class="nav-icon">🧭</span>Founder Archetype</a>
+      <a href="#domains" class="nav-item"><span class="nav-icon">🚀</span>Startup Domains</a>
+      <a href="#skills" class="nav-item"><span class="nav-icon">📊</span>Skill Profile</a>
+      <a href="#timing" class="nav-item"><span class="nav-icon">⏳</span>Career Timing</a>
+      <a href="#legacy" class="nav-item"><span class="nav-icon">🏛️</span>Legacy Blueprint</a>
+      <a href="#shadow" class="nav-item"><span class="nav-icon">🌑</span>Founder Shadow</a>
+    </nav>
+
+    <div class="nav-divider"></div>
+
+    <div style="font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Best Domains</div>
+    <div class="sidebar-domains">
+      <div class="domain-pill t1">💡 Angel Investing</div>
+      <div class="domain-pill t1">🔬 Research Institution</div>
+      <div class="domain-pill t1">🎓 Wisdom / Education</div>
+      <div class="domain-pill t2">🌿 Social Enterprise</div>
+      <div class="domain-pill t2">🏠 Property with Purpose</div>
+      <div class="domain-pill t2">🧘 Consciousness Sector</div>
+      <div class="domain-pill t3" style="opacity:0.65;">⚡ Fast Consumer Tech — Avoid</div>
+      <div class="domain-pill t3" style="opacity:0.65;">🏭 Solo Operator — Avoid</div>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════ MAIN ══ -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-symbol">♌</div>
+      <div class="hero-glow"></div>
+      <div class="eyebrow">Vedic Startup Profile · Lahiri Ayanamsha · Legacy Builder Edition</div>
+      <h1>George Varghese<br><span>The Ancient Lion</span></h1>
+      <div class="lagna-line">Leo Lagna 2.2° · Ruchaka Yoga · DKA Yoga · 10 Yogas · Age 64</div>
+      <div class="hero-badges">
+        <span class="hero-badge hb-legacy">🏛️ Legacy Builder</span>
+        <span class="hero-badge hb-rank">★ Founder-Track · 66/100</span>
+        <span class="hero-badge hb-peak">🌙 Moon Mahadasha · Consolidation Phase</span>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-label">Lagna</div>
+          <div class="stat-value">Leo 2.2°</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Current Dasha</div>
+          <div class="stat-value">Moon / Mercury / Saturn</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Founder Type</div>
+          <div class="stat-value">Legacy Architect</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Born</div>
+          <div class="stat-value">15-Dec-1961 · Aluva, Kerala</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── FOUNDER ARCHETYPE ─── -->
+    <div class="chapter" id="archetype">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-gold">🧭</div>
+        <h2><small>Chapter I</small>Founder Archetype</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>The Ancient Lion — The Legacy Architect</div>
+        <p>George Varghese is not an early-stage startup founder in the conventional sense. He is something rarer and more powerful: a <strong>64-year-old chart with 10 yogas</strong>, most of which have already activated through decades of living. The yogas have played out — through adversity risen over, power accumulated, deep investigative work done, and institutions built or shaped. The question now is not "how do I start?" but "what do I want to BUILD that will outlast me?"</p>
+        <p>The <strong>Leo Lagna</strong> gives this chart a regal, authoritative bearing — the natural instinct to lead from the front, to radiate gravity, to command rooms without needing to announce himself. At 64, this Leo authority is fully formed. It does not need to be proven; it needs to be directed. The spirit animal is the Ancient Lion — not the young lion chasing prey, but the elder of the pride whose presence alone shapes the landscape around him.</p>
+        <p>His signature as a founder is: <strong>investment, mentorship, institutionalizing wisdom, and building things meant to outlast him</strong>. The best ventures for this chart are those where George is the Vision, the Moral Compass, and the Institutional Authority — never the day-to-day operator.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>The H4 Scorpio Stellium — The Power Core</div>
+        <p>The most important feature of this chart is three planets concentrated in Scorpio in the 4th house: <strong>Mars + Mercury + Venus</strong>. Mars is in own sign here (Ruchaka Yoga); Venus and Mercury complete the stellium. This creates the chart's defining quality: <em>depth over breadth, root-level work ethic, and investigative precision that goes where others won't</em>.</p>
+        <p>H4 Scorpio energy is private, intense, and foundational. George's power was never in the spotlight — it was in the work done below the surface, the research completed when no one was watching, the roots dug deep into the earth. The Lion doesn't roar to prove strength; he just is. Any venture George builds must honour this root-level architecture — it needs to be built from the foundation up, not from the press release down.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Moon H8 — The Mystic Elder</div>
+        <p>Moon in Pisces 11.5°, Uttara Bhadrapada nakshatra, in the 8th house. The 8th house is the house of transformation, hidden resources, the unconscious, and the karmic reservoir accumulated across lifetimes. Uttara Bhadrapada's deity is <strong>Ahirbudhnya</strong> — the cosmic serpent of the deep, coiled at the foundation of the universe. Its shakti is the "power to bring the cosmic rain," to release what has been stored.</p>
+        <p>At 64, this placement means George's emotional and spiritual life is extraordinarily deep — far more layered than what he shows on the surface. The Moon Mahadasha he is now in activates this depth directly. This is a <em>mystical elder energy</em>, not startup-hustle energy. His inner world is rich with pattern recognition earned over decades, with the kind of wisdom that cannot be read in books but only lived.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>All 10 Founding Yogas</div>
+        <div class="yoga-list">
+          <span class="yoga-chip">Ruchaka Yoga · Mars own H4</span>
+          <span class="yoga-chip">DKA Yoga · Mars+Venus conjunct</span>
+          <span class="yoga-chip sage">Yoga Karaka Mars · H4+H9 lord</span>
+          <span class="yoga-chip sage">Raja Yoga · Venus+Mars H4</span>
+          <span class="yoga-chip sage">Raja Yoga · Saturn+Jupiter H6</span>
+          <span class="yoga-chip plum">Viparita Raja (Saturn) · H6 lord in H6</span>
+          <span class="yoga-chip plum">Viparita Raja (Jupiter) · H8 lord in H6</span>
+          <span class="yoga-chip plum">Viparita Raja (Moon) · H12 lord in H8</span>
+          <span class="yoga-chip">Kemadruma · Emotional Self-Reliance</span>
+          <span class="yoga-chip">Ubhayachari · Balanced Charismatic Personality</span>
+        </div>
+        <p style="margin-top:14px;">Three Viparita Raja Yogas in one chart is extremely rare. This specific combination — Saturn H6, Jupiter H8-in-H6, Moon H12-in-H8 — means that George has historically <em>risen through adversity</em>, through competition (H6), through hidden forces (H8), through loss and surrender (H12). The pattern: every time the outer world looked like it was collapsing around him, he emerged stronger. This is not luck — it is chart architecture playing out reliably over six decades.</p>
+      </div>
+
+      <div class="callout callout-plum">
+        <div class="callout-label cl-plum">★ Archetype Signature</div>
+        George's archetype is the <strong>Legacy Architect</strong> — the elder lion who has already crossed the great adversities (three Viparita Raja Yogas), accumulated deep investigative wisdom (H4 Scorpio stellium), and now enters the phase of planting what will outlast him. His mode is not sprinting. His mode is <em>choosing what is worth his authority</em>, and then lending that authority with full conviction. The ventures George endorses, funds, or chairs will be shaped by 64 years of accumulated pattern recognition. That is not a startup trait — it is a legacy-builder trait.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── STARTUP DOMAINS ─── -->
+    <div class="chapter" id="domains">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-sage">🚀</div>
+        <h2><small>Chapter II</small>Startup Domains</h2>
+      </div>
+
+      <!-- TIER 1 -->
+      <div style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:#80c4a0;margin-bottom:10px;font-weight:600;">● Tier 1 — Legacy-Appropriate Chart-Perfect Fit</div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">01</div>
+          <div>
+            <div class="domain-name">Angel Investing / Venture Building</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Mentor Investor · Studio Founder · Backing Younger Founders</div>
+          </div>
+          <span class="domain-tag">Highest Fit</span>
+        </div>
+        <p>With 10 yogas and 64 years of pattern recognition, George's most natural role in any startup ecosystem is the <strong>investor-mentor</strong>: the person who backs and shapes younger founders using accumulated domain wisdom and dharmic judgment. The DKA Yoga (Mars H9 lord — dharma, + Venus H10 lord — karma, conjunct) gives him an unusually precise moral compass about which ventures deserve backing and which don't. He doesn't just invest money; he invests discernment.</p>
+        <p>Moon H8 Uttara Bhadrapada gives him deep pattern recognition for cycles — he can see which businesses are operating on sound principles and which are built on sand. Saturn+Jupiter H6 creates the institutional judgment: long-duration thinking, ability to assess structural risk, capacity to coach teams through adversity. This is precisely the wisdom angel investors need and most lack.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">DKA Yoga (dharmic judgment of ventures)</span>
+          <span class="ind-chip">Moon H8 (deep pattern recognition)</span>
+          <span class="ind-chip">Saturn+Jupiter H6 (institutional assessment)</span>
+          <span class="ind-chip">Leo Lagna (gravitational authority)</span>
+          <span class="ind-chip">10 yogas (64 years accumulated insight)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">02</div>
+          <div>
+            <div class="domain-name">Research / Investigative Institution</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Research Lab · Think Tank · Investigative Journalism · Knowledge Institution</div>
+          </div>
+          <span class="domain-tag">Highest Fit</span>
+        </div>
+        <p>The H4 Scorpio stellium (Mars + Mercury + Venus) is the single most precise indicator for deep investigative work. Mercury in Jyeshtha pada 4 in Scorpio = sharp, penetrating intellect that goes beneath the surface. Venus in Jyeshtha pada 1 = the capacity to make depth beautiful, to present complex truths with aesthetic clarity. Mars own sign (Ruchaka Yoga) = the will and stamina to dig where others stop.</p>
+        <p>A research institution — think tank, policy research body, investigative journalism organization, or knowledge institute — that does deep, slow, rigorous work aligns perfectly with this energy. George as Founding Chairman or Lead Researcher would bring institutional gravitas plus the genuine investigative depth that the H4 stellium promises. This is not the domain for quick publications; it is the domain for definitive ones.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Mars+Mercury+Venus H4 Scorpio (investigative depth)</span>
+          <span class="ind-chip">Ruchaka Yoga (power to pursue truth)</span>
+          <span class="ind-chip">Mercury Jyeshtha (sharp, penetrating mind)</span>
+          <span class="ind-chip">Sun H5 Mula (exploration of origins)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">03</div>
+          <div>
+            <div class="domain-name">Legacy Education / Wisdom Transmission</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">School · Academy · Mentorship Institution · Elder Wisdom Platform</div>
+          </div>
+          <span class="domain-tag">High Fit</span>
+        </div>
+        <p><strong>Sun H5 in Sagittarius, Mula nakshatra pada 1</strong> — the Sun (Lagna lord for Leo) placed in the 5th house of wisdom transmission, in Mula nakshatra (the root-cutter, the one who explores the deepest origins of things). Mula's deity is Nirriti, the goddess of dissolution; its shakti is "the power to ruin and root." This placement gives George the capacity to demolish false knowledge structures and rebuild from first principles.</p>
+        <p>An educational institution or mentorship platform built on George's accumulated life wisdom is chart-aligned at the identity level (Sun as Lagna lord) + the wisdom-transmission house (H5). Leo Lagna adds natural authority — people learn from George not just because of what he knows, but because of the quality of presence he brings to the teaching relationship. 64 years of lived experience is the curriculum; the institution is the container for that curriculum.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Sun H5 Mula (wisdom from roots)</span>
+          <span class="ind-chip">Leo Lagna (natural authority)</span>
+          <span class="ind-chip">Ubhayachari (charismatic personality)</span>
+          <span class="ind-chip">Saturn H6 (disciplined institutional structure)</span>
+        </div>
+      </div>
+
+      <!-- TIER 2 -->
+      <div class="divider">Secondary Domains</div>
+      <div style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;font-weight:600;">◆ Tier 2 — Strong Secondary Fit</div>
+
+      <div class="domain-card dc-t2">
+        <div class="domain-top">
+          <div class="domain-num">04</div>
+          <div>
+            <div class="domain-name">Social Enterprise / Community Institution</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Service-Led · Community Transformation · Institutional Impact</div>
+          </div>
+          <span class="domain-tag">Strong Fit</span>
+        </div>
+        <p>Triple Viparita Raja Yoga means George's chart builds strength precisely <em>through adversity, for others</em>. The Saturn+Jupiter H6 conjunction specifically points to service institutions, non-profits, hospitals, education infrastructure, or community transformation initiatives. Jupiter H6 (though debilitated in Capricorn) gains Neecha Bhanga strength from Saturn's conjunction — together they create the capacity for systematic, long-duration institutional service.</p>
+        <p>A social enterprise where George's institutional authority and network open doors, while younger team members handle execution, is perfectly structured for his chart. The DKA Yoga (dharma + karma in conjunction) provides the moral spine that makes social enterprise work sustainable rather than performative.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Triple Viparita Raja (rise through adversity for others)</span>
+          <span class="ind-chip">Saturn+Jupiter H6 (service institution)</span>
+          <span class="ind-chip">DKA Yoga (dharmic leadership)</span>
+          <span class="ind-chip">Ubhayachari (charismatic community leadership)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t2">
+        <div class="domain-top">
+          <div class="domain-num">05</div>
+          <div>
+            <div class="domain-name">Real Estate / Property Development with Purpose</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Community Housing · Ashram · Purposeful Development · Land Projects</div>
+          </div>
+          <span class="domain-tag">Strong Fit</span>
+        </div>
+        <p><strong>Mars (Yoga Karaka) in own sign in H4</strong> — the 4th house governs home, property, land, and foundational infrastructure. When the Yoga Karaka planet is in own sign in its natural house, this is the chart literally saying: <em>the home and land domain is where your power lives</em>. Real estate in its conventional speculative form is too shallow for this chart; but property development with purpose — community housing, ashram construction, purposeful land stewardship, or architectural legacy projects — channels the Ruchaka Yoga (Mars own sign = physical manifestation power) directly.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Ruchaka Yoga Mars H4 own sign (property power)</span>
+          <span class="ind-chip">H4 = foundational infrastructure</span>
+          <span class="ind-chip">Mars Yoga Karaka (chart-level power planet)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t2">
+        <div class="domain-top">
+          <div class="domain-num">06</div>
+          <div>
+            <div class="domain-name">Spiritual / Consciousness Sector</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Consciousness Tech · Meditation Platforms · Retreat Institution</div>
+          </div>
+          <span class="domain-tag">Deep Alignment</span>
+        </div>
+        <p>Moon H8 Uttara Bhadrapada (deity: Ahirbudhnya, the cosmic serpent of the deep) + Rahu H12 (the house of spiritual dissolution and infinite) + triple Viparita Raja (adversity → transcendence) = a chart that has been on a deep spiritual arc across its entire lifespan. The consciousness sector — meditation apps, retreat institutions, contemplative technology, or spiritual education — is not a stretch for George; it is an expression of what his chart has been quietly building toward.</p>
+        <p>At 64, with Moon Mahadasha active (Moon H8 = depth, mystery, karmic reservoir), this is the period when spiritual authority is most naturally available. A contemplative institution or wisdom transmission vehicle built now will carry the full weight of the Uttara Bhadrapada Moon's "cosmic rain" — releasing what has been accumulated across a lifetime.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Moon H8 Uttara Bhadrapada (mystic elder)</span>
+          <span class="ind-chip">Rahu H12 (infinite, spiritual dissolution)</span>
+          <span class="ind-chip">Triple Viparita Raja (adversity → transcendence)</span>
+          <span class="ind-chip">H4 Scorpio (transformation, depth work)</span>
+        </div>
+      </div>
+
+      <!-- TIER 3 AVOID -->
+      <div class="divider">Domains to Avoid</div>
+      <div class="section" style="border-color:rgba(196,96,122,0.2);background:rgba(196,96,122,0.04);">
+        <div class="section-title"><span class="dot dot-rose"></span>Misaligned Domains</div>
+        <ul class="avoid-list">
+          <li><strong>Fast-moving consumer tech / Startup sprinting</strong> — H4 Scorpio stellium = depth over speed. The energy of this chart builds slowly, goes deep, and sustains long. Consumer tech cycles operate at the opposite cadence. George will exhaust himself trying to match a rhythm that isn't in his chart.</li>
+          <li><strong>Solo operational roles</strong> — At 64, with Moon Mahadasha creating a deeply inward energy, the operational grind of an early-stage company is a structural mismatch. The chart says vision and authority; the body and mahadasha say depth and consolidation. Delegate operations completely.</li>
+          <li><strong>Pure financial speculation / short-horizon trading</strong> — Jupiter H6 is debilitated in Capricorn; while Saturn's conjunction provides some Neecha Bhanga, this is not a chart built for short-cycle financial plays. The financial wisdom here is long-duration and institutional, not trading-oriented.</li>
+          <li><strong>Large consumer-facing brand building from scratch</strong> — Kemadruma Yoga (emotional self-reliance) creates a natural tension with the sustained outward performance that consumer brand building requires. George's authority functions best through depth and gravitas, not mass-market visibility campaigns.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── SKILL PROFILE ─── -->
+    <div class="chapter" id="skills">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-blue">📊</div>
+        <h2><small>Chapter III</small>Founder Skill Profile</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-blue"></span>Domain Skill Scores — Lifetime Lens</div>
+        <p style="margin-bottom:18px;">Scores are derived from planetary dignity and house placements filtered through a 64-year lifetime perspective. George's profile is top-heavy in Finance and Product — reflecting the accumulated depth of H4 Scorpio stellium and DKA Yoga — with a gap in Sales that is characteristic of the Kemadruma self-reliance pattern and Moon H8 private orientation.</p>
+
+        <div class="skill-grid">
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Finance</div>
+              <div class="skill-track"><div class="skill-fill sf-gold" style="width:72%"></div></div>
+              <div class="skill-pct">72</div>
+            </div>
+            <div class="skill-drivers">DKA Yoga (Mars+Venus) · Saturn+Jupiter H6 · 10 yogas — long-term judgment, institutional wisdom, pattern recognition</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Product</div>
+              <div class="skill-track"><div class="skill-fill sf-sage" style="width:70%"></div></div>
+              <div class="skill-pct">70</div>
+            </div>
+            <div class="skill-drivers">H4 Scorpio stellium (Mercury+Venus+Mars) — deep investigative product vision; transformative product architecture from depth-work</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Operations</div>
+              <div class="skill-track"><div class="skill-fill sf-plum" style="width:68%"></div></div>
+              <div class="skill-pct">68</div>
+            </div>
+            <div class="skill-drivers">Ruchaka Yoga Mars H4 own sign — structured, precise execution capacity built over 64 years; military precision (Jyeshtha pada)</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Marketing</div>
+              <div class="skill-track"><div class="skill-fill sf-blue" style="width:62%"></div></div>
+              <div class="skill-pct">62</div>
+            </div>
+            <div class="skill-drivers">Sun H5 Mula + Ubhayachari + Leo Lagna — personal authority IS the marketing; thought leadership approach; not mass-market advertising</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Sales</div>
+              <div class="skill-track"><div class="skill-fill sf-rose" style="width:55%"></div></div>
+              <div class="skill-pct">55</div>
+            </div>
+            <div class="skill-drivers">Moon H8 (private) + Kemadruma (self-reliant) — not a natural salesperson; strongest in institutional relationships and warm networks, not cold outreach</div>
+          </div>
+        </div>
+
+        <div class="callout callout-plum" style="margin-top:20px;">
+          <div class="callout-label cl-plum">★ Skill Gap Note</div>
+          Sales (55) is the gap — not a weakness unique to George, but a structural feature of Moon H8 + Kemadruma: the emotional depth is turned inward, not outward. The mitigation is architectural, not personal: George should never be in a sales role. His authority generates inbound pull. The institutional networks of Saturn+Jupiter H6 convert relationships over time, not in cold-call cycles. The right team structure fills this gap completely — George sets the vision, a co-founder or hire with Venus/Mars in H7 or H10 closes the deals.
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── CAREER TIMING ─── -->
+    <div class="chapter" id="timing">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-plum">⏳</div>
+        <h2><small>Chapter IV</small>Career Timing Windows</h2>
+      </div>
+
+      <div class="peak-box">
+        <div class="peak-sub">Current Phase · Moon Mahadasha · Consolidation &amp; Depth</div>
+        <div class="peak-title">Moon / Mercury / Saturn — Framework Building Period</div>
+        <p>The current sub-period activates Mercury (H4 — communication, research, the investigative stellium) with Saturn as the sub-sub-lord (discipline, long-duration structure). This is not the aggressive launch period — it is the period for <strong>systematic knowledge organization, documenting accumulated wisdom, building the framework of legacy work</strong>. The ideas, frameworks, and institutional architecture George designs now will become the scaffolding for the legacy institutions he plants in the next 5–10 years.</p>
+        <p style="margin-top:10px;"><strong>Best actions in this window:</strong> write down core frameworks and principles, identify which institutions or ventures deserve his backing and authority, establish the governance structures for legacy work, begin conversations with potential co-founders or team members who will carry the operational load.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Moon Mahadasha — Full Legacy Arc</div>
+        <div style="margin-top:8px;">
+          <div class="timing-row">
+            <div class="timing-period">Now (2026)</div>
+            <div class="timing-dasha">Moon / Mercury / Saturn</div>
+            <div class="timing-theme">Framework and knowledge organization. Mercury H4 stellium activated — best for research, writing, deep systematic thinking. Saturn sub-sub brings discipline. Design the legacy structure now.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">Late 2026</div>
+            <div class="timing-dasha">Moon / Mercury / Mercury</div>
+            <div class="timing-theme">Mercury doubled — peak period for communication, documentation, and intellectual output. Write, publish, articulate the framework. The H4 Scorpio Mercury-Venus conjunct makes this an unusually potent expression period.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2027</div>
+            <div class="timing-dasha">Moon / Ketu</div>
+            <div class="timing-theme">Ketu sub-period within Moon MD. Deeply spiritual, internally clarifying. A period for releasing attachments to how legacy used to look, and opening to what it actually wants to become. Retreat, contemplation, and non-attachment to outcomes.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2028–2029</div>
+            <div class="timing-dasha">Moon / Venus</div>
+            <div class="timing-theme">Venus sub-period — Venus is H3 lord (communication, networking) and H10 lord (career, legacy) from Leo Lagna. DKA partner to Mars. This is a period of expanded institutional connections, potential partnerships, and the most outward-facing window of the Moon Mahadasha. Plant the institutions here.</div>
+          </div>
+          <div class="timing-row" style="background:rgba(124,92,191,0.06);border-radius:10px;padding:13px 10px;">
+            <div class="timing-period" style="color:#b49edf;font-weight:700;">2030–2031 ★</div>
+            <div class="timing-dasha" style="color:#7c5cbf;font-weight:600;">Moon / Mars</div>
+            <div class="timing-theme"><strong style="color:#b49edf;">Most action-ready window in Moon Mahadasha.</strong> Mars as sub-lord activates Yoga Karaka Mars (Ruchaka Yoga, own sign H4). New initiatives launched here carry the full weight of the chart's power. The legacy institution seeded in 2026–2029 begins visible operation here.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2031–2033</div>
+            <div class="timing-dasha">Moon / Rahu</div>
+            <div class="timing-theme">Rahu H12 sub-period. Unexpected expansion, foreign connections, technology intersections. Can bring unusual opportunities or ventures from unexpected quarters. Navigate with Saturn H6's disciplined judgment.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2033–2034</div>
+            <div class="timing-dasha">Moon / Jupiter</div>
+            <div class="timing-theme">Jupiter sub-period in Moon MD. Jupiter H6 (service, wisdom through adversity) becomes sub-lord. Best for institutional teaching, mentorship at scale, and the wisdom-transmission domains. Saturn's conjunction brings Neecha Bhanga — Jupiter's debilitation resolves into disciplined institutional service.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label cl-sage">Timing Strategy</div>
+        George's Moon Mahadasha is not the aggressive launch phase — it is the <strong>consolidation and legacy-planting phase</strong>. The chart's logic: use 2026–2029 to design, document, and position. Use Moon/Mars (2030–2031) to launch the institutional legacy work with full Yoga Karaka force. Use Moon/Jupiter (2033–2034) for wisdom transmission at scale. The next Mahadasha (Mars Mahadasha, if applicable) would represent a final burst of Yoga Karaka power — but the foundations must be laid now. Patience is not a weakness in this chart; it is the strategy.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── LEGACY BLUEPRINT ─── -->
+    <div class="chapter" id="legacy">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-plum">🏛️</div>
+        <h2><small>Chapter V</small>Legacy Blueprint</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>George's Role — Investor / Patron / Founding Chair</div>
+        <p>The chart is unambiguous about role: George should be the <strong>Founding Chairman, Strategic Advisor, Lead Investor, or Institutional Patron</strong> — not the day-to-day operator. The Moon Mahadasha (H8, deeply inward) combined with age 64 means that operational grind would exhaust this chart rather than activate its gifts. The gifts are: institutional gravitas, pattern recognition, DKA moral compass, and the ability to attract aligned co-founders and team members through sheer Leo authority.</p>
+        <div class="legacy-grid">
+          <div class="legacy-card">
+            <h4>What George Provides</h4>
+            <p>Domain authority (Leo Lagna + 10 yogas of experience), institutional network (Saturn H6 → Jupiter H6 connections), 64 years of pattern recognition, deep credibility that opens doors, the moral compass of the DKA Yoga, and the Ruchaka Yoga's penetrating capacity to see through to what matters.</p>
+          </div>
+          <div class="legacy-card">
+            <h4>What George Delegates</h4>
+            <p>Day-to-day operations, sales and business development, marketing execution, product sprints, team management, and the sustained operational grind of early-stage company building. These roles need younger founders aged 25–40 with execution energy (Mars H10 or H6, strong Rahu, active Sun in H1 or H10).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Ideal Team Architecture</div>
+        <div class="legacy-grid">
+          <div class="legacy-card">
+            <h4>Co-founder Profile</h4>
+            <p>Age 30–45, Mars in H10 or H6 (public execution energy), strong Rahu (ambition and adaptability), Sun in H1 or H10 (visible authority). This person is the operational engine — they take George's vision and build the machine around it, day by day.</p>
+          </div>
+          <div class="legacy-card">
+            <h4>Team Depth</h4>
+            <p>H4 Scorpio stellium in George's chart values researchers, deep-work specialists, and investigative thinkers over generalists. The team should reflect this: hire for depth of domain expertise, not breadth of generalist skill. Quality over scale.</p>
+          </div>
+          <div class="legacy-card">
+            <h4>Advisory Network</h4>
+            <p>Saturn+Jupiter H6 creates institutional network access. George should leverage this to build a strong advisory board — institutional contacts, domain experts, and aligned wisdom-holders who amplify the venture's credibility without requiring ongoing operational involvement.</p>
+          </div>
+          <div class="legacy-card">
+            <h4>Sales / BD Hire</h4>
+            <p>Sales (55) is the skill gap. Early hire profile: Venus or Mercury prominent, H7 or H10 activated, natural relationship-builder. This person converts the inbound authority George generates into signed contracts and institutional partnerships.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>The Central Legacy Question</div>
+        <p>The Moon H8 Uttara Bhadrapada placement frames the essential question George should sit with before committing to any venture: <em>"What do I want to build that will outlast me?"</em></p>
+        <p>Ahirbudhnya — the deity of this nakshatra — is the cosmic serpent coiled at the foundation of reality, the keeper of what endures. The power of this placement at age 64, in Moon Mahadasha, is that it provides direct access to the question of <em>essence</em>: not "what is possible" or "what will be profitable," but "what has the deepest root?" The ventures that carry Ahirbudhnya energy are those that, once planted, need no one to tend them constantly — they have the cosmic serpent's deep rootedness built in.</p>
+
+        <div class="callout callout-plum">
+          <div class="callout-label cl-plum">Legacy Framing Principle</div>
+          George's three Viparita Raja Yogas mean he has historically risen through adversity precisely when others would have stopped. The pattern repeats: not through ease, but through the adversity itself becoming the strength. Any legacy institution he builds should be designed to withstand the adversity it will face — because the chart guarantees it will face adversity, and equally guarantees it will rise through it. Design for resilience, not comfort.
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label cl-gold">★ Blueprint Summary</div>
+        George's ideal startup engagement: <strong>Founding Chair or Lead Investor</strong> in one of the Tier 1 domains (Angel/Venture Building, Research Institution, or Wisdom/Education), with a co-founder aged 30–45 holding operational ownership, and a small high-depth team reflecting the H4 Scorpio stellium's investigative precision. Structure his involvement as wisdom contribution, network opening, and moral compass — not operational delivery. Seed this now (2026); launch with full force in Moon/Mars (2030). Build for 20 years, not 5.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── FOUNDER SHADOW ─── -->
+    <div class="chapter" id="shadow">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-rose">🌑</div>
+        <h2><small>Chapter VI</small>Founder Shadow</h2>
+      </div>
+
+      <div class="section" style="border-color:rgba(196,96,122,0.2);">
+        <div class="section-title"><span class="dot dot-rose"></span>Chart Challenges in Startup Context</div>
+        <div class="shadow-grid">
+          <div class="shadow-card">
+            <strong>Moon H8 — Hidden Depth</strong>
+            <p>The deep inner world created by Moon H8 Uttara Bhadrapada means George's emotional reality is largely invisible to those around him. In team contexts, this creates communication gaps — he may be processing enormous internal complexity while appearing composed. Team members who don't understand this depth may misread his silence for indifference or his stillness for absence of engagement.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Kemadruma — Self-Reliant to a Fault</strong>
+            <p>Kemadruma Yoga (no planets 2nd or 12th from Moon) creates emotional self-reliance born of necessity — he has had to navigate deep inner territory alone. In startup contexts, this can become resistance to asking for help, lonely decision-making, or the tendency to carry institutional weight that should be shared with a co-founder or team.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Age 64 — Energy Mismatch</strong>
+            <p>Physical energy at 64 may not match the ambition of 10 yogas. The chart has enormous power; the vehicle has limits. Ventures must be designed for wisdom contribution (not operational grind). Any structure that pulls George into daily operations will exhaust the vehicle faster than the chart is worth. Delegate ruthlessly.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>H4 Scorpio — Analysis Paralysis</strong>
+            <p>The H4 Scorpio stellium creates the capacity to go deeper than any situation actually requires. Over-research, over-investigation, excessive due diligence before action — the Scorpio energy can spiral inward, finding new layers of complexity at every turn. The antidote is a co-founder who forces decision points with temporal deadlines.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Triple Viparita Raja — Self-Sabotage Pattern</strong>
+            <p>Three Viparita Raja Yogas means George has historically risen through adversity. The shadow: he may unconsciously create challenges in order to trigger his own activation mechanism. In startup contexts, this can manifest as choosing unnecessarily difficult paths, picking battles that don't need to be fought, or undermining comfortable situations to find the adversity that makes him grow.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Moon Mahadasha — Inward Pull</strong>
+            <p>The Moon Mahadasha creates a natural pull toward depth, contemplation, and inner work rather than outward building. This is cosmically appropriate for age 64 — but it can conflict with the early-stage demands of any new venture. Ventures begun now must respect this inward pull: design for depth and rhythm, not speed and hustle.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Shadow Antidotes</div>
+        <div class="callout callout-sage">
+          <div class="callout-label cl-sage">Structural Fix</div>
+          Build the venture structure so that George's deep private drive (H4 Scorpio + Moon H8) fuels the intellectual framework and institutional vision, while a co-founder or team handles outward-facing execution. The Kemadruma self-reliance becomes a strength when it is by choice — when George has delegated operations and is genuinely free to bring his depth to the vision layer rather than being forced into it by loneliness or under-staffing.
+        </div>
+        <div class="callout callout-plum" style="margin-top:10px;">
+          <div class="callout-label cl-plum">Timing Fix</div>
+          Honour the Moon Mahadasha's inward rhythm. Design the venture's cadence around quarterly deep-work sessions (where George goes deep on vision, framework, and institutional direction) rather than weekly sprint reviews. The Uttara Bhadrapada Moon's "cosmic rain" — the accumulated wisdom released — comes in bursts of depth, not in daily drips. Build an institution that can receive those bursts and carry them between seasons.
+        </div>
+        <div class="callout callout-gold" style="margin-top:10px;">
+          <div class="callout-label cl-gold">The Lion's Advantage</div>
+          Despite all the shadow, the central truth of this chart is that George has already done something extraordinarily rare: he has lived 64 years through three Viparita Raja Yogas, a Ruchaka Yoga, and a DKA Yoga. The adversity has already been processed. The yoga energy has already proven itself. What remains is not the struggle — it is the <em>harvest</em>. The Ancient Lion does not need to hunt anymore. He needs to decide what he wants the pride to become, and then lend his full authority to that vision.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated Jul 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Startup Fitness Model v2 · Legacy Builder Edition
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

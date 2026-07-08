@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Ruhi CH — Startup Founder Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ─── LAYOUT ─── */
+.layout { display: grid; grid-template-columns: 270px 1fr; min-height: 100vh; max-width: 1340px; margin: 0 auto; }
+
+/* ─── SIDEBAR ─── */
+.sidebar {
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding: 36px 18px 36px 24px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.92);
+  backdrop-filter: blur(12px);
+}
+.sidebar-logo { font-size: 2.4rem; margin-bottom: 4px; }
+.sidebar-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--cream); }
+.sidebar-sub  { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+
+.score-ring {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(196,158,64,0.08); border: 1px solid rgba(196,158,64,0.22);
+  border-radius: 14px; padding: 14px 16px; margin-bottom: 20px;
+}
+.score-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold2); line-height: 1; }
+.score-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.score-tier  { font-size: 0.78rem; color: var(--gold2); font-weight: 600; }
+
+.sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: 10px;
+  font-size: 0.82rem; color: var(--muted);
+  text-decoration: none; transition: background 0.18s, color 0.18s;
+}
+.nav-item:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+.nav-icon { width: 22px; text-align: center; font-size: 0.95rem; }
+.nav-divider { height: 1px; background: var(--border); margin: 10px 0; }
+
+.sidebar-domains { margin-top: 22px; }
+.domain-pill {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 12px; border-radius: 10px; margin-bottom: 6px;
+  font-size: 0.78rem; font-weight: 500;
+}
+.domain-pill.t1 { background: rgba(90,143,114,0.12); color: #80c4a0; border: 1px solid rgba(90,143,114,0.22); }
+.domain-pill.t2 { background: rgba(196,158,64,0.08); color: var(--gold2); border: 1px solid rgba(196,158,64,0.18); }
+.domain-pill.t3 { background: rgba(196,96,122,0.07); color: #e8909f; border: 1px solid rgba(196,96,122,0.15); }
+
+/* ─── MAIN ─── */
+.main { padding: 52px 56px 80px; max-width: 880px; }
+
+/* ─── HERO ─── */
+.hero {
+  position: relative; overflow: hidden;
+  border-radius: 28px; padding: 48px 44px 40px;
+  background: linear-gradient(140deg,
+    rgba(28,18,56,0.98) 0%,
+    rgba(44,24,72,0.96) 45%,
+    rgba(80,38,58,0.92) 100%);
+  border: 1px solid rgba(196,158,64,0.22);
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+}
+.hero-symbol { position:absolute; right:36px; top:24px; font-size:180px; line-height:1; color:rgba(196,158,64,0.07); font-family:'Cormorant Garamond',serif; pointer-events:none; }
+.hero-glow { position:absolute; right:-60px; bottom:-80px; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle,rgba(196,158,64,0.15),transparent 65%); pointer-events:none; }
+.eyebrow { font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,5vw,4.5rem); font-weight:300; color:#fff8f0; line-height:1.08; margin-bottom:8px; }
+.hero h1 span { color: var(--gold2); }
+.lagna-line { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-style:italic; color:rgba(196,158,64,0.85); margin-bottom:24px; }
+.hero-badges { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  padding: 6px 14px; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hb-ready  { background: rgba(90,143,114,0.22); color: #80c4a0; border: 1px solid rgba(90,143,114,0.4); }
+.hb-rank   { background: rgba(196,158,64,0.14); color: var(--gold2); border: 1px solid rgba(196,158,64,0.3); }
+.hb-peak   { background: rgba(91,143,212,0.14); color: #a0c4f0; border: 1px solid rgba(91,143,212,0.28); }
+.hb-age    { background: rgba(124,92,191,0.18); color: #c0aef0; border: 1px solid rgba(124,92,191,0.35); }
+
+.stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.stat { background:rgba(255,255,255,0.06); border:1px solid rgba(196,158,64,0.14); border-radius:16px; padding:16px 18px; }
+.stat-label { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.stat-value { font-size:0.92rem; color:#fff8f0; font-weight:500; }
+
+/* ─── CHAPTER ─── */
+.chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+.chapter-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.chapter-icon {
+  width:44px; height:44px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;
+}
+.ci-gold  { background: rgba(196,158,64,0.12); }
+.ci-sage  { background: rgba(90,143,114,0.14); }
+.ci-plum  { background: rgba(124,92,191,0.14); }
+.ci-rose  { background: rgba(196,96,122,0.12); }
+.ci-blue  { background: rgba(91,143,212,0.14); }
+.chapter h2 { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:300; color:var(--cream); }
+.chapter h2 small { display:block; font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-family:'DM Sans',sans-serif; margin-bottom:4px; }
+
+/* ─── SECTION ─── */
+.section { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:24px 28px; margin-bottom:14px; }
+.section-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; color:var(--cream); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.dot-gold { background:var(--gold); }
+.dot-sage { background:var(--sage); }
+.dot-plum { background:var(--plum); }
+.dot-rose { background:var(--rose); }
+.dot-blue { background:var(--blue); }
+p { color: rgba(240,232,216,0.82); font-size: 0.9rem; line-height: 1.75; margin-bottom: 10px; }
+p:last-child { margin-bottom: 0; }
+
+/* ─── DOMAIN CARD ─── */
+.domain-card {
+  border-radius: 18px; padding: 22px 26px; margin-bottom: 14px;
+  border: 1px solid;
+}
+.dc-t1 { background: rgba(90,143,114,0.07); border-color: rgba(90,143,114,0.25); }
+.dc-t2 { background: rgba(196,158,64,0.06); border-color: rgba(196,158,64,0.22); }
+.dc-t3 { background: rgba(196,96,122,0.06); border-color: rgba(196,96,122,0.18); }
+.domain-top { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.domain-num { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; line-height:1; }
+.dc-t1 .domain-num { color: #80c4a0; }
+.dc-t2 .domain-num { color: var(--gold2); }
+.dc-t3 .domain-num { color: #e8909f; }
+.domain-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--cream); }
+.domain-tag { font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; margin-left:auto; padding:4px 10px; border-radius:999px; }
+.dc-t1 .domain-tag { color:#80c4a0; background:rgba(90,143,114,0.15); }
+.dc-t2 .domain-tag { color:var(--gold2); background:rgba(196,158,64,0.12); }
+.dc-t3 .domain-tag { color:#e8909f; background:rgba(196,96,122,0.12); }
+.domain-indicators { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
+.ind-chip { font-size:0.75rem; padding:4px 11px; border-radius:999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--muted); }
+
+/* ─── SKILL BARS ─── */
+.skill-grid { display:flex; flex-direction:column; gap:14px; margin-top:4px; }
+.skill-row { display:grid; grid-template-columns:130px 1fr 44px; align-items:center; gap:14px; }
+.skill-name { font-size:0.8rem; font-weight:500; color:var(--cream); }
+.skill-track { height:8px; background:rgba(255,255,255,0.07); border-radius:99px; overflow:hidden; }
+.skill-fill  { height:100%; border-radius:99px; transition: width 0.5s ease; }
+.sf-gold { background: linear-gradient(90deg, #c49e40, #e8c96a); }
+.sf-sage { background: linear-gradient(90deg, #5a8f72, #80c4a0); }
+.sf-plum { background: linear-gradient(90deg, #7c5cbf, #b49edf); }
+.sf-blue { background: linear-gradient(90deg, #5b8fd4, #a0c4f0); }
+.sf-rose { background: linear-gradient(90deg, #c4607a, #e8909f); }
+.skill-pct { font-size:0.78rem; font-weight:600; color:var(--gold2); text-align:right; }
+.skill-drivers { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+/* ─── TIMING TABLE ─── */
+.timing-row {
+  display: grid; grid-template-columns: 110px 150px 1fr;
+  gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.86rem; align-items: start;
+}
+.timing-row:last-child { border-bottom: none; }
+.timing-period { font-weight: 600; color: var(--gold2); font-size: 0.8rem; }
+.timing-dasha  { color: rgba(196,158,64,0.65); font-size: 0.78rem; }
+.timing-theme  { color: rgba(240,232,216,0.78); line-height: 1.55; }
+
+/* ─── CALLOUT ─── */
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 14px; }
+.callout-gold { background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.28); }
+.callout-sage { background:rgba(90,143,114,0.09); border:1px solid rgba(90,143,114,0.3); }
+.callout-plum { background:rgba(124,92,191,0.09); border:1px solid rgba(124,92,191,0.28); }
+.callout-rose { background:rgba(196,96,122,0.09); border:1px solid rgba(196,96,122,0.28); }
+.callout-label { font-size:0.63rem; letter-spacing:0.25em; text-transform:uppercase; font-weight:600; margin-bottom:8px; }
+.cl-gold { color:var(--gold); } .cl-sage { color:#80c4a0; } .cl-plum { color:#b49edf; } .cl-rose { color:#e8909f; }
+
+/* ─── CO-FOUNDER GRID ─── */
+.cofound-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:4px; }
+.cofound-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:18px 20px; }
+.cofound-card h4 { font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.cofound-card p { font-size:0.84rem; color:rgba(240,232,216,0.75); line-height:1.6; margin:0; }
+
+/* ─── SHADOW CARDS ─── */
+.shadow-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px; }
+.shadow-card { background:rgba(196,96,122,0.06); border:1px solid rgba(196,96,122,0.15); border-radius:14px; padding:14px 16px; }
+.shadow-card strong { display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:#e8909f; margin-bottom:6px; }
+.shadow-card p { font-size:0.85rem; color:rgba(240,232,216,0.7); line-height:1.6; margin:0; }
+
+/* ─── YOGA CHIPS ─── */
+.yoga-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+.yoga-chip { padding:6px 14px; border-radius:999px; font-size:0.8rem; background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.2); color:var(--gold2); }
+.yoga-chip.sage { background:rgba(90,143,114,0.1); border-color:rgba(90,143,114,0.22); color:#80c4a0; }
+.yoga-chip.plum { background:rgba(124,92,191,0.1); border-color:rgba(124,92,191,0.22); color:#b49edf; }
+
+/* ─── PEAK SPOTLIGHT ─── */
+.peak-box {
+  background: linear-gradient(135deg, rgba(196,158,64,0.1), rgba(90,143,114,0.08));
+  border: 1px solid rgba(196,158,64,0.35);
+  border-radius: 18px; padding: 24px 28px; margin-bottom: 14px;
+  position: relative; overflow: hidden;
+}
+.peak-box::before { content:"★"; position:absolute; right:20px; top:10px; font-size:80px; color:rgba(196,158,64,0.06); line-height:1; }
+.peak-title { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:var(--gold2); margin-bottom:6px; }
+.peak-sub   { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+
+/* ─── MARS SPOTLIGHT ─── */
+.mars-box {
+  background: linear-gradient(135deg, rgba(90,143,114,0.12), rgba(196,158,64,0.07));
+  border: 1px solid rgba(90,143,114,0.38);
+  border-radius: 18px; padding: 24px 28px; margin-bottom: 14px;
+  position: relative; overflow: hidden;
+}
+.mars-box::before { content:"♂"; position:absolute; right:24px; top:12px; font-size:72px; color:rgba(90,143,114,0.1); line-height:1; font-family:'Cormorant Garamond',serif; }
+.mars-title { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:#80c4a0; margin-bottom:6px; }
+.mars-sub   { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--sage); margin-bottom:10px; }
+
+/* ─── AGE CONTEXT BANNER ─── */
+.age-banner {
+  background: rgba(124,92,191,0.08);
+  border: 1px solid rgba(124,92,191,0.28);
+  border-radius: 14px; padding: 16px 20px; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 14px; font-size: 0.88rem;
+  color: rgba(240,232,216,0.82);
+}
+.age-banner-icon { font-size: 1.6rem; flex-shrink: 0; }
+.age-banner strong { color: #c0aef0; }
+
+/* ─── DIVIDER ─── */
+.divider { display:flex; align-items:center; gap:16px; margin:32px 0; font-size:0.62rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(240,232,216,0.25); }
+.divider::before, .divider::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ─── AVOID LIST ─── */
+.avoid-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+.avoid-list li { padding:10px 14px; background:rgba(196,96,122,0.06); border-left:3px solid rgba(196,96,122,0.4); border-radius:0 10px 10px 0; font-size:0.86rem; color:rgba(240,232,216,0.72); }
+
+/* ─── FOOTER ─── */
+.footer { text-align:center; padding:20px 0; font-size:0.7rem; color:rgba(240,232,216,0.3); letter-spacing:0.08em; border-top:1px solid var(--border); margin-top:40px; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+  .main { padding: 32px 20px 60px; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .cofound-grid, .shadow-grid { grid-template-columns: 1fr; }
+  .timing-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ══════════════════════════════════════ SIDEBAR ══ -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">🦌</div>
+    <div class="sidebar-name">Ruhi CH</div>
+    <div class="sidebar-sub">Startup Founder Profile</div>
+
+    <div class="score-ring">
+      <div>
+        <div class="score-num">58</div>
+      </div>
+      <div>
+        <div class="score-label">Startup Score</div>
+        <div class="score-tier">🌱 Founder-Track</div>
+        <div style="font-size:0.7rem;color:var(--muted);margin-top:2px;">Exceptional for age 24 — peak ahead</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#archetype" class="nav-item"><span class="nav-icon">🧭</span>Founder Archetype</a>
+      <a href="#domains" class="nav-item"><span class="nav-icon">🚀</span>Startup Domains</a>
+      <a href="#skills" class="nav-item"><span class="nav-icon">📊</span>Skill Profile</a>
+      <a href="#timing" class="nav-item"><span class="nav-icon">⏳</span>Career Timing</a>
+      <a href="#cofound" class="nav-item"><span class="nav-icon">🤝</span>Co-founder Blueprint</a>
+      <a href="#shadow" class="nav-item"><span class="nav-icon">🌑</span>Founder Shadow</a>
+    </nav>
+
+    <div class="nav-divider"></div>
+
+    <div style="font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Best Domains</div>
+    <div class="sidebar-domains">
+      <div class="domain-pill t1">🌍 Social Impact / Causes</div>
+      <div class="domain-pill t1">🎨 Creative Industries / Arts</div>
+      <div class="domain-pill t1">📚 EdTech / Youth Learning</div>
+      <div class="domain-pill t2">🏘️ Community Platforms</div>
+      <div class="domain-pill t2">🌿 Wellness for Young Professionals</div>
+      <div class="domain-pill t3" style="opacity:0.65;">🏢 Enterprise B2B — Avoid</div>
+      <div class="domain-pill t3" style="opacity:0.65;">💰 Finance / Investment — Avoid</div>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════ MAIN ══ -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-symbol">♐</div>
+      <div class="hero-glow"></div>
+      <div class="eyebrow">Vedic Startup Profile · Lahiri Ayanamsha</div>
+      <h1>Ruhi CH<br><span>The Exalted Initiator</span></h1>
+      <div class="lagna-line">Sagittarius Lagna 6.5° · Mars Exalted H5 · Jupiter H7 (Lagna Lord)</div>
+      <div class="hero-badges">
+        <span class="hero-badge hb-ready">🌱 Founder-Track</span>
+        <span class="hero-badge hb-age">🦌 Age 24 — Peak Ahead</span>
+        <span class="hero-badge hb-rank">★ Mars Exalted H5</span>
+        <span class="hero-badge hb-peak">⚡ Jupiter Mahadasha Active</span>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-label">Lagna</div>
+          <div class="stat-value">Sagittarius 6.5°</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Current Dasha</div>
+          <div class="stat-value">Jupiter / Mercury / Saturn</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Founder Type</div>
+          <div class="stat-value">The Catalyst Co-creator</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Born</div>
+          <div class="stat-value">03-Mar-2002 · Alleppey, Kerala</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── FOUNDER ARCHETYPE ─── -->
+    <div class="chapter" id="archetype">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-gold">🧭</div>
+        <h2><small>Chapter I</small>Founder Archetype</h2>
+      </div>
+
+      <div class="age-banner">
+        <div class="age-banner-icon">🦌</div>
+        <div><strong>Context: Extraordinary for 24.</strong> A startup score of 58 is Founder-Track at any age — at 24 it represents a chart with unusually strong initiative energy and a co-creative wiring that most founders take a decade to develop. The peak window for Ruhi is not now — it is coming. This profile documents both what she can do today and what she is being built toward.</div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>The Exalted Initiator</div>
+        <p>Ruhi's most defining placement is <strong>Mars exalted in Aries in the 5th house</strong> — the boldest initiative signature in the group. Aries is Mars's own sign; exaltation here is a double amplification. The 5th house rules creativity, courage, original thinking, and the spark that starts things. This combination means Ruhi does not wait for permission to begin. She conceives, ignites, and moves — often before others have understood what she is doing.</p>
+        <p>The Sagittarius Ascendant adds the seeker's impulse: she is drawn to purpose, vision, and causes larger than herself. Unlike a Capricorn or Scorpio founder who builds for structure or power, Ruhi builds for meaning. The question she asks — consciously or not — is not "can we win?" but "does this matter?" That question, paired with Mars exalted, creates a rare founder quality: she starts things that carry moral weight AND competitive fire.</p>
+        <p>Her Lagna lord Jupiter in the 7th house (Gemini) tells the structural truth of her chart: her identity and purpose are activated through the other. She is not a solo founder. She is a <strong>catalyst who co-creates</strong> — her vision needs a partner to become architecture, and a partner needs her fire to become movement.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Chart Strengths Beyond Formal Yogas</div>
+        <div class="yoga-list">
+          <span class="yoga-chip sage">Mars Exalted H5 · Boldest Initiative</span>
+          <span class="yoga-chip sage">Jupiter H7 · Co-creative Identity</span>
+          <span class="yoga-chip">Sun+Venus H3 Aquarius · Humanitarian Communicator</span>
+          <span class="yoga-chip">Moon H11 Swati · Network + Diplomacy Gains</span>
+          <span class="yoga-chip sage">Saturn H6 · Service Orientation</span>
+          <span class="yoga-chip plum">Vosi Yoga · Hidden Depth + Spiritual Undertow</span>
+          <span class="yoga-chip plum">Kemadruma Yoga · Depth Through Isolation</span>
+        </div>
+        <p style="margin-top:14px;"><strong>Mars exalted H5</strong> is a lifetime asset. It grows with maturity. At 24, it fires without always landing. At 30, it aims with precision. At 35, it leads movements. The trajectory of this placement is upward through experience — which is exactly why framing Ruhi's current moment as "peak ahead" is not consolation. It is a structural fact about how this chart matures.</p>
+        <p><strong>Moon in H11 Swati</strong> (the nakshatra of independence, diplomacy, and balance) positions her as a natural community architect. Swati's deity is Vayu — the wind, mobile and everywhere, connecting things without forcing them into fixed form. Her community and network instincts are not transactional; they are genuinely relational, which makes them durable.</p>
+      </div>
+
+      <div class="mars-box">
+        <div class="mars-sub">Lifetime Asset · House of Creativity &amp; Courage</div>
+        <div class="mars-title">Mars Exalted in Aries H5 — The Founding Fire</div>
+        <p>This single placement is the reason the chart scores Founder-Track at 24. An exalted Mars in its own sign in the house of creative courage compensates structurally for the limited formal yoga count. It means Ruhi has what most founders spend years trying to manufacture: the capacity to begin. To commit to an uncertain first move. To bet on an idea before it is proven. Exalted Mars does not hedge. It initiates.</p>
+        <p style="margin-top:10px;">The shadow of this placement is as important as the gift: Mars exalted H5 can over-commit before scoping is complete, fall in love with the spark rather than the build, and cycle through ideas before fully executing on any one. The antidote is the co-founder who turns fire into architecture.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label cl-gold">★ Archetype Signature</div>
+        Ruhi's archetype is the <strong>Catalyst who co-creates</strong> — not the solo CEO who builds alone. Her natural path is: ignite a cause, attract the right co-creator, and build a movement from that partnership. Ventures founded by Ruhi will consistently outperform when they serve a cause larger than revenue, and when her operational co-founder translates her fire into durable systems.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── STARTUP DOMAINS ─── -->
+    <div class="chapter" id="domains">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-sage">🚀</div>
+        <h2><small>Chapter II</small>Startup Domains</h2>
+      </div>
+
+      <!-- TIER 1 -->
+      <div style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:#80c4a0;margin-bottom:10px;font-weight:600;">● Tier 1 — Chart-Perfect Fit</div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">01</div>
+          <div>
+            <div class="domain-name">Social Impact / Cause-Driven Ventures</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Social Enterprise · NGO-Tech · Mission-Led Brands</div>
+          </div>
+          <span class="domain-tag">Highest Fit</span>
+        </div>
+        <p>Sun and Venus both in <strong>Aquarius H3</strong> — the sign of the humanitarian, the rebel, and the collective — is the foundational indicator for cause-led building. Aquarius does not build for one person or one brand; it builds for a tribe, a movement, a future that doesn't exist yet. Venus adds aesthetic and relational warmth to Aquarian vision: this is not cold activism, it is beautiful social design.</p>
+        <p>Moon in H11 (house of gains, networks, and groups) deepens the social impact signature. The 11th house is where community becomes outcome. With Swati nakshatra (balance, wind, independence), her networks don't need her to be at the center — they grow organically because she creates genuine connection rather than positioning herself as the hub. Saturn in H6 adds a real orientation toward service rather than self-promotion.</p>
+        <p>Mars exalted H5 gives these causes fire: she will not just care about the mission, she will compete for it. This is the combination that builds social enterprises with actual edge — purpose plus aggression, which most cause-driven ventures lack.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Sun+Venus H3 Aquarius (humanitarian voice)</span>
+          <span class="ind-chip">Moon H11 Swati (network gains through community)</span>
+          <span class="ind-chip">Mars Exalted H5 (competitive edge for causes)</span>
+          <span class="ind-chip">Saturn H6 (genuine service orientation)</span>
+          <span class="ind-chip">Sagittarius Lagna (purpose-seeker)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">02</div>
+          <div>
+            <div class="domain-name">Creative Industries / Content / Arts</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Content Brands · Arts Tech · Creative Platforms · Media</div>
+          </div>
+          <span class="domain-tag">Highest Fit</span>
+        </div>
+        <p>The 5th house is the house of creativity, artistic expression, and original impulse. Mars exalted here does not just mean initiative — it means <strong>creative initiative of extraordinary force</strong>. This placement makes Ruhi constitutionally suited to domains where the product itself is creative expression: content brands, media ventures, artistic platforms, design studios, or creative technology.</p>
+        <p>Venus in H3 Aquarius adds the aesthetic layer: she brings both progressive taste (Aquarius) and relational beauty (Venus) to creative work. Her creative voice is distinctive precisely because it carries Aquarian strangeness — she does not default to what is conventional or what sells easily. Combined with Sun H3, she has genuine communicative power and the charisma that makes creative brands feel alive rather than manufactured.</p>
+        <p>The 3rd house also rules media, communication, and short-form distribution — exactly the channels where creative ventures build audiences fastest in 2026. Her chart is wired for the platforms (Reels, newsletters, podcasts, visual storytelling) that amplify creative voices most efficiently today.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Mars Exalted H5 (creative force)</span>
+          <span class="ind-chip">Venus H3 Aquarius (progressive aesthetic)</span>
+          <span class="ind-chip">Sun H3 (communicative charisma)</span>
+          <span class="ind-chip">Moon H11 (community-building around creative work)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">03</div>
+          <div>
+            <div class="domain-name">EdTech / Youth Learning</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Learning Platforms · Youth Programs · Skill Accelerators</div>
+          </div>
+          <span class="domain-tag">High Fit</span>
+        </div>
+        <p>Jupiter in Gemini H7 — Ruhi's Lagna lord in the sign of dual knowledge, communication, and curiosity — creates a natural attractor for learning environments. Gemini Jupiter is the teacher who stays eternally curious alongside the student. The 7th house position means partnerships with learning institutions, co-creators in education, and teaching relationships are her structural growth axis.</p>
+        <p>Mars exalted H5 deepens the fit: the 5th house governs children, youth, students, and creative learning. An exalted Mars here means she does not just build for the demographic — she builds with the energy of the demographic. EdTech ventures built by Ruhi would feel less like coursework and more like a creative challenge or competitive game, which is exactly what youth engagement requires.</p>
+        <p>Sagittarius Lagna completes the triad: the Archer archetype sees the target, draws the bow, and aims for understanding as the goal. Her natural instinct to explain, inspire, and transmit is deeply supported by this combination.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Jupiter H7 Gemini (Lagna lord, curious teacher)</span>
+          <span class="ind-chip">Mars Exalted H5 (house of youth and students)</span>
+          <span class="ind-chip">Sagittarius Lagna (natural seeker and guide)</span>
+          <span class="ind-chip">Mercury H2 Capricorn (structured communication)</span>
+        </div>
+      </div>
+
+      <!-- TIER 2 -->
+      <div class="divider">Secondary Domains</div>
+      <div style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;font-weight:600;">◆ Tier 2 — Strong Secondary Fit</div>
+
+      <div class="domain-card dc-t2">
+        <div class="domain-top">
+          <div class="domain-num">04</div>
+          <div>
+            <div class="domain-name">Community Platforms / Social Networks</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Niche Communities · Co-ops · Shared Interest Networks</div>
+          </div>
+          <span class="domain-tag">Strong Fit</span>
+        </div>
+        <p>Moon in H11 Swati is the single strongest indicator for community architecture in a chart. The 11th house governs groups, friends, and collective gains; Swati nakshatra governs independence and balance within connected systems. Ruhi does not build communities by becoming the center — she builds them by creating the conditions where everyone feels seen and no one feels dominated. That quality is the scarcest resource in community building.</p>
+        <p>Jupiter H7 supports partnership-led community growth: she works best when she co-creates the infrastructure rather than controlling it. Her natural motion is more convener than administrator, more catalyst than manager — perfect for the role of community product founder who hands the keys to the community itself once it gains momentum.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Moon H11 Swati (community gains, balance)</span>
+          <span class="ind-chip">Jupiter H7 (partnership-led growth)</span>
+          <span class="ind-chip">Sun+Venus H3 Aquarius (collective orientation)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t2">
+        <div class="domain-top">
+          <div class="domain-num">05</div>
+          <div>
+            <div class="domain-name">Wellness for Young Professionals</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Mental Wellness · Youth Health · Progressive Wellness Tech</div>
+          </div>
+          <span class="domain-tag">Niche Fit</span>
+        </div>
+        <p>Saturn and Rahu in H6 (Taurus) create a resonance with the health and wellness domain. The 6th house governs service, daily practice, and physical care; Saturn here deepens the orientation toward structured health routines and discipline. Mars exalted adds physical vitality orientation — Ruhi is constitutionally oriented toward physical energy, movement, and aliveness, which creates authentic credibility in wellness contexts.</p>
+        <p>Venus in H3 Aquarius adds the progressive aesthetic layer: wellness ventures she builds would be visually distinct, digitally native, and less clinical. This is a secondary fit because wellness alone is too narrow for her chart — it works best when combined with community or cause (e.g., mental wellness for underserved youth, body-positive wellness tech, or collective health frameworks).</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Saturn+Rahu H6 (health domain resonance)</span>
+          <span class="ind-chip">Mars Exalted H5 (physical vitality drive)</span>
+          <span class="ind-chip">Venus H3 Aquarius (progressive wellness aesthetic)</span>
+        </div>
+      </div>
+
+      <!-- TIER 3 AVOID -->
+      <div class="divider">Domains to Avoid</div>
+      <div class="section" style="border-color:rgba(196,96,122,0.2);background:rgba(196,96,122,0.04);">
+        <div class="section-title"><span class="dot dot-rose"></span>Misaligned Domains</div>
+        <ul class="avoid-list">
+          <li><strong>Slow-Moving Enterprise B2B</strong> — Kemadruma Yoga combined with youth and Mars exalted creates a chart that needs pace, creative freedom, and visible impact. Long enterprise sales cycles, procurement committees, and 18-month implementation timelines work against Ruhi's natural cadence. Her fire extinguishes in slow-churn environments.</li>
+          <li><strong>Solo Founder Structures</strong> — Jupiter in H7 (Lagna lord) means the co-founder relationship is structurally built into her chart's success architecture. Attempting to build alone is not just hard for Ruhi — it is against the mathematical logic of her planetary positions. Solo founding exhausts her identity (Lagna lord in H7 = identity thrives through the other) rather than channeling it.</li>
+          <li><strong>Finance / Investment Ventures</strong> — No Jupiter in wealth houses, no strong H2/H11 planetary emphasis from a financial standpoint. Mercury in H2 provides some financial awareness, but this is not a finance-primary chart. Finance as a secondary skill in service of another domain (e.g., social impact fund) is viable; finance as the primary venture is a misalignment.</li>
+          <li><strong>Large-Scale Operations / Manufacturing</strong> — No Capricorn/Virgo emphasis in career houses, and Kemadruma Yoga creates a pull toward creative autonomy over operational systems. Physical-asset-heavy, process-dominant businesses work against the creative initiative that is Ruhi's true edge.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── SKILL PROFILE ─── -->
+    <div class="chapter" id="skills">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-blue">📊</div>
+        <h2><small>Chapter III</small>Founder Skill Profile</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-blue"></span>Domain Skill Scores</div>
+        <p style="margin-bottom:18px;">Scores derived from planetary dignity and house placements per the Startup Fitness model. Ruhi's chart produces a Marketing-first, Product-strong profile driven by Sun+Venus H3 Aquarius (communication and cause-marketing) and Mars exalted H5 (creative boldness). Finance is the structural weak point — the co-founder priority is clear.</p>
+
+        <div class="skill-grid">
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Marketing</div>
+              <div class="skill-track"><div class="skill-fill sf-gold" style="width:75%"></div></div>
+              <div class="skill-pct">75</div>
+            </div>
+            <div class="skill-drivers">Sun+Venus H3 Aquarius — cause-marketing resonance, progressive aesthetic, natural content creation</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Product</div>
+              <div class="skill-track"><div class="skill-fill sf-sage" style="width:72%"></div></div>
+              <div class="skill-pct">72</div>
+            </div>
+            <div class="skill-drivers">Mars Exalted H5 (bold creative vision) + Sun Aquarius (innovative thinking, future-forward design)</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Sales</div>
+              <div class="skill-track"><div class="skill-fill sf-blue" style="width:65%"></div></div>
+              <div class="skill-pct">65</div>
+            </div>
+            <div class="skill-drivers">Moon H11 Swati (diplomatic, relational, network-driven) · Venus H3 (charming, warm communicator)</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Operations</div>
+              <div class="skill-track"><div class="skill-fill sf-plum" style="width:58%"></div></div>
+              <div class="skill-pct">58</div>
+            </div>
+            <div class="skill-drivers">Saturn H6 (disciplined service orientation) · Mercury H2 Capricorn — still developing at 24; grows with experience</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Finance</div>
+              <div class="skill-track"><div class="skill-fill sf-rose" style="width:48%"></div></div>
+              <div class="skill-pct">48</div>
+            </div>
+            <div class="skill-drivers">Mercury H2 Capricorn (some financial awareness) · limited yogas in wealth houses · co-founder priority</div>
+          </div>
+        </div>
+
+        <div class="callout callout-plum" style="margin-top:20px;">
+          <div class="callout-label cl-plum">★ Skill Gap Note</div>
+          Finance (48) is the most critical co-founder gap. Jupiter H7 (Lagna lord) is Ruhi's Gemini-aspected vision and communication planet — excellent for marketing and product but not for P&amp;L architecture. She needs a co-founder who leads with financial discipline, not someone who defers to her on budget decisions. Operations (58) will grow naturally with age; Finance needs structural co-founder coverage now.
+        </div>
+
+        <div class="callout callout-sage" style="margin-top:10px;">
+          <div class="callout-label cl-sage">Marketing as Primary Edge</div>
+          At 24, Ruhi's clearest immediate competitive advantage is her marketing score. Sun+Venus H3 Aquarius means she is a natural cause-marketing voice: she speaks to generation-level concerns (climate, equity, mental health, meaning) with aesthetic clarity and emotional resonance. Ventures that hand her the narrative will outperform ventures that ask her to be the operator.
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── CAREER TIMING ─── -->
+    <div class="chapter" id="timing">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-plum">⏳</div>
+        <h2><small>Chapter IV</small>Career Timing Windows</h2>
+      </div>
+
+      <div class="peak-box">
+        <div class="peak-sub">Active Mahadasha · Age 21 to 37</div>
+        <div class="peak-title">Jupiter Mahadasha — The Partnership and Vision Era</div>
+        <p>Jupiter is Ruhi's Lagna lord, placed in H7 Gemini. This means the entire 16-year Jupiter Mahadasha (her ages 21–37) is a chapter defined by partnerships, collaborative building, and expanding through relationships. Every significant professional milestone in this window will have a co-creator at the center. This is not incidental — it is the mahadasha's structural signature.</p>
+        <p style="margin-top:10px;">Gemini Jupiter brings curiosity, dual tracks, and communication as growth vehicles. The best professional moves in this mahadasha involve learning, sharing knowledge, building in public, and exploring ideas rather than locking into fixed structures too early. Premature commitment to a rigid path will feel like a cage; staying exploratory while being productive will feel like flow.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Jupiter Mahadasha — Sub-Period Timeline</div>
+        <div style="margin-top:8px;">
+          <div class="timing-row">
+            <div class="timing-period">2023–2025</div>
+            <div class="timing-dasha">Jup / Jupiter</div>
+            <div class="timing-theme">Mahadasha launch phase. Identity reset, new direction-finding, relationship experiments. Not a build phase — a discovery phase. Best for education, exploration, and meeting future collaborators.</div>
+          </div>
+          <div class="timing-row" style="background:rgba(196,158,64,0.04);border-radius:10px;padding:13px 10px;">
+            <div class="timing-period" style="color:#e8c96a;">2025–2026 ★</div>
+            <div class="timing-dasha" style="color:#c49e40;">Jup / Mercury / Saturn</div>
+            <div class="timing-theme"><strong style="color:var(--gold2);">Current window.</strong> Mercury H2 (wealth, speech, values) as sub-lord. Good for clarifying professional direction, building early skills, accumulating formative experience, and defining the mission that will anchor the next chapter.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2026–2027</div>
+            <div class="timing-dasha">Jup / Ketu</div>
+            <div class="timing-theme">Spiritual clarity phase. Ketu H12 (solitude, past-life wisdom) becomes sub-lord. Good for defining mission from the inside out. Retreating to build depth rather than surface visibility. A creative/philosophical gestation period.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2027–2029</div>
+            <div class="timing-dasha">Jup / Venus</div>
+            <div class="timing-theme">Strong creative and social period. Venus H3 Aquarius as sub-lord — social cause breakthrough potential, aesthetic ventures, public recognition through creative work. Early venture launch timing. Excellent for social impact or creative industry entry.</div>
+          </div>
+          <div class="timing-row" style="background:rgba(90,143,114,0.07);border-radius:10px;padding:13px 10px;">
+            <div class="timing-period" style="color:#80c4a0;font-weight:700;">2029–2030 ★</div>
+            <div class="timing-dasha" style="color:#5a8f72;font-weight:600;">Jup / Sun</div>
+            <div class="timing-theme"><strong style="color:#80c4a0;">Visibility peak.</strong> Sun H3 Aquarius activates — personal authority, public recognition, leadership identity solidifies. Ventures started in the Venus sub-period gain institutional visibility here. Best period for leadership roles, speaking, and public movement-building.</div>
+          </div>
+          <div class="timing-row" style="background:rgba(90,143,114,0.1);border-radius:10px;padding:13px 10px;">
+            <div class="timing-period" style="color:#80c4a0;font-weight:700;">2031–2032 ★★</div>
+            <div class="timing-dasha" style="color:#5a8f72;font-weight:600;">Jup / Mars</div>
+            <div class="timing-theme"><strong style="color:#80c4a0;">Peak launch window.</strong> Jupiter activates Mars exalted H5 — the single most powerful initiation window in her chart. New venture launch, bold creative bets, competitive moves in creative or cause-driven domains. This is the timing that Mars H5 exaltation is pointing toward.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2032–2034</div>
+            <div class="timing-dasha">Jup / Rahu</div>
+            <div class="timing-theme">Unconventional expansion. Rahu H6 (Taurus) activates — foreign connections, technology, rapid scaling, ambitious targets. High momentum but also high risk of overextension. Best for scaling ventures already established rather than starting new ones.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2034–2037</div>
+            <div class="timing-dasha">Jup / Jupiter</div>
+            <div class="timing-theme">Mahadasha maturation. Jupiter returns to its own sub-period at full maturity. Institutional recognition, large-scale partnerships, the fruits of the decade's work become visible. Peak reputation and relationship capital.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label cl-sage">Timing Strategy</div>
+        Ruhi has two concentrated power peaks in her current Jupiter Mahadasha: <strong>Jupiter/Venus (2027–2029)</strong> for creative and social impact ventures, and <strong>Jupiter/Mars (2031–2032)</strong> for the boldest possible founding moves. The current period (2025–2026) is a skill and direction-building phase. The wisdom move is to invest in clarity of mission, formation of the right co-founder relationship, and development of craft — so that when Jupiter/Venus arrives, the foundation is already set.
+      </div>
+
+      <div class="callout callout-plum" style="margin-top:10px;">
+        <div class="callout-label cl-plum">The 24-Year-Old Advantage</div>
+        At 24, being in Jupiter Mahadasha with exalted Mars H5 available is an extraordinarily fortunate position. Most people reach this combination of dasha + natal strength much later. The "wait" is not passive — it is about building the co-creator relationship, the creative platform, and the mission clarity that Mars H5 will ignite in 2031. The Deer runs fastest when it knows the terrain.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── CO-FOUNDER BLUEPRINT ─── -->
+    <div class="chapter" id="cofound">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-sage">🤝</div>
+        <h2><small>Chapter V</small>Co-founder Blueprint</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>What Ruhi Brings vs. What She Needs</div>
+        <div class="cofound-grid">
+          <div class="cofound-card">
+            <h4>Ruhi Brings</h4>
+            <p>Bold creative initiative (Mars exalted H5), cause-driven vision (Sun+Venus Aquarius), community building and diplomacy (Moon H11 Swati), aesthetic sensibility and communication (Venus H3), and the capacity to start things that carry moral weight AND competitive fire.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Ruhi Needs</h4>
+            <p>Operational grounding and execution discipline (Saturn-strong co-founder), financial architecture and P&amp;L ownership, the patience to turn creative sparks into sustained systems, and someone who grounds Ruhi's Sagittarian fire into structured milestones without extinguishing it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Ideal Co-founder Chart Signature</div>
+        <div class="cofound-grid">
+          <div class="cofound-card">
+            <h4>Lagna Match</h4>
+            <p><strong>Capricorn or Virgo Lagna</strong> — disciplined, grounded, execution-oriented, comfortable with detail and operational complexity. The structural earth-sign stability that balances Ruhi's fire-sign initiation energy. Alternatively, a Saturn-strong Aquarius Lagna who brings both the Aquarian vision and the disciplined execution.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Saturn Placement</h4>
+            <p><strong>Saturn in H10, H1, or H6 with strong dignity</strong> — operational discipline, long-term building capacity, and the ability to create durable structures from Ruhi's creative output. This fills the most critical structural gap in her chart (Operations 58, Finance 48).</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Jupiter/Mercury</h4>
+            <p><strong>Mercury strong in H1, H3, or H10</strong> — quick thinker, versatile communicator, agile executor who translates Ruhi's big vision into implementable steps. Pairs naturally with her Jupiter H7 Gemini (Gemini = Mercury-ruled), creating a natural intellectual partnership dynamic.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Mars Placement</h4>
+            <p><strong>Mars in H10 or H7</strong> — complementary execution Mars that operates in the public/professional arena (H10) or through partnership (H7). Ruhi's Mars is in H5 (creative, internal fire); a co-founder with H10 Mars closes the "fire into delivery" gap that H5 Mars cannot fill alone.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label cl-gold">★ Partnership Principle</div>
+        Jupiter H7 (Lagna lord in the house of partnerships) is the most structurally significant placement in Ruhi's chart for startup context. The co-founder is not optional or situational for her — it is written into the chart's success architecture. The right co-founder does not slow her down; they multiply her. A grounded, Saturn-strong co-founder is precisely what transforms an exalted Mars H5 fire into a sustainable company rather than a brilliant sprint that burns out.
+      </div>
+
+      <div class="callout callout-plum" style="margin-top:10px;">
+        <div class="callout-label cl-plum">Identity &amp; Partnership Risk</div>
+        The shadow of Jupiter H7 (Lagna lord): identity can become too fused with the co-founder. If the partnership dissolves, it can feel like an identity crisis, not just a business restructuring. The antidote is to build her own intellectual and creative framework clearly before entering the partnership — so that what she brings is defined independently of who she builds with.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── FOUNDER SHADOW ─── -->
+    <div class="chapter" id="shadow">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-rose">🌑</div>
+        <h2><small>Chapter VI</small>Founder Shadow</h2>
+      </div>
+
+      <div class="section" style="border-color:rgba(196,96,122,0.2);">
+        <div class="section-title"><span class="dot dot-rose"></span>Chart Challenges in Startup Context</div>
+        <div class="shadow-grid">
+          <div class="shadow-card">
+            <strong>Kemadruma Yoga — Emotional Isolation</strong>
+            <p>No planets in the 2nd or 12th from Moon. This creates a recurring pattern of inner loneliness beneath the social surface — Ruhi can be deeply engaged with people while feeling fundamentally unseen. In startup contexts, this surfaces as: withdrawing suddenly under pressure, leaving teams confused about the shift, or emotionally disconnecting from a venture that was working fine on paper. The wound runs deeper than morale.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Vosi Yoga — Spiritual Undertow</strong>
+            <p>Planets in the 12th from Sun create a spiritual pull that can quietly undermine sustained worldly engagement. Ruhi can reach a moment of apparent success and feel strangely empty — a signal that the deeper self wants solitude, reflection, or inner work rather than more output. For startups requiring constant public energy and stakeholder management, this cycle can be disruptive without self-awareness.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Mars H5 Exalted — The Spark Before the Plan</strong>
+            <p>Exalted Mars in the house of creative impulse is extraordinary — but it fires before scoping is complete. At 24, this can manifest as: over-committing to ideas before due diligence, falling in love with the spark rather than the build, cycling through ventures before fully executing any one of them. The shadow of the greatest gift is the tendency to confuse initiation with completion.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Jupiter H7 — Co-founder Dependency</strong>
+            <p>Lagna lord in H7 means identity is structurally activated through the co-founder relationship. This creates a beautiful co-creative dynamic — and a potential vulnerability: Ruhi can lose herself in partnerships, become dependent on co-founder approval before acting, or find it difficult to make bold solo decisions. The antidote is building a strong independent creative voice before the partnership begins.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Ketu H12 — Solitude Pull</strong>
+            <p>Ketu in H12 (Scorpio, Jyeshtha nakshatra) carries a strong past-life signature of renunciation and inward retreat. Under sustained pressure or after a major creative peak, Ruhi may feel called to step back entirely — not from exhaustion, but from a genuine pull toward solitude and inner life. This is not weakness; it is a real psychic need that startups must accommodate rather than fight.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Youth Gap — 24 is Not Scarred Yet</strong>
+            <p>Exalted Mars has the initiative but not yet the scar tissue. At 24, Ruhi may over-commit to ambitious timelines, underestimate operational complexity, or trust the wrong co-creator too quickly. The chart is extraordinary — but extraordinary charts still need the education of real failure to reach their full expression. The wisdom of the Deer is not speed alone; it is knowing when to bolt and when to be still.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Shadow Antidotes</div>
+        <div class="callout callout-sage">
+          <div class="callout-label cl-sage">Structural Fix</div>
+          Build the venture architecture so that Ruhi's creative and social gifts drive the public face and mission narrative, while a co-founder holds the operational and financial backbone. The Kemadruma Yoga and Vosi Yoga are not liabilities to eliminate — they are signals that Ruhi needs protected creative solitude built into her work rhythm. A venture that demands 80-hour public weeks will exhaust her shadow; a venture with creative autonomy and built-in reflection space will sustain her through the long arc.
+        </div>
+        <div class="callout callout-plum" style="margin-top:10px;">
+          <div class="callout-label cl-plum">Timing Fix</div>
+          The peak launch windows (Jupiter/Venus 2027–2029 and Jupiter/Mars 2031–2032) are when the chart naturally overcomes its isolation and drift tendencies. In those windows, the momentum of the sub-period carries Ruhi past her Kemadruma withdrawal instinct. Outside those windows — especially during Jupiter/Ketu — the pull toward inner work is real and should be honored rather than forced through. A venture launched in the wrong sub-period with the right chart will still underperform.
+        </div>
+        <div class="callout callout-rose" style="margin-top:10px;">
+          <div class="callout-label cl-rose">The 24-Year-Old Honest Assessment</div>
+          The score is 58, not 75, because the chart needs time. Not because the gifts are small — they are large. But because Mars exalted teaches you how to start, and life teaches you how to finish. The gap between 58 and 75 is filled by the experience of 2026–2031. Ruhi's role in that period is to build deliberately, choose the right co-founder, and let the creative fire age into creative architecture. The Deer that bolts at 24 becomes the Stag that leads at 30.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated Jul 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Startup Fitness Model v2
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

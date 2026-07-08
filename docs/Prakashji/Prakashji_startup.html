@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Prakashji — Startup Founder Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* ─── LAYOUT ─── */
+.layout { display: grid; grid-template-columns: 270px 1fr; min-height: 100vh; max-width: 1340px; margin: 0 auto; }
+
+/* ─── SIDEBAR ─── */
+.sidebar {
+  position: sticky; top: 0; height: 100vh; overflow-y: auto;
+  padding: 36px 18px 36px 24px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.92);
+  backdrop-filter: blur(12px);
+}
+.sidebar-logo { font-size: 2.4rem; margin-bottom: 4px; }
+.sidebar-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--cream); }
+.sidebar-sub  { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+
+.score-ring {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(196,158,64,0.08); border: 1px solid rgba(196,158,64,0.22);
+  border-radius: 14px; padding: 14px 16px; margin-bottom: 20px;
+}
+.score-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold2); line-height: 1; }
+.score-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+.score-tier  { font-size: 0.78rem; color: var(--gold2); font-weight: 600; }
+
+.sidebar-nav { display: flex; flex-direction: column; gap: 4px; }
+.nav-item {
+  display: flex; align-items: center; gap: 10px;
+  padding: 9px 12px; border-radius: 10px;
+  font-size: 0.82rem; color: var(--muted);
+  text-decoration: none; transition: background 0.18s, color 0.18s;
+}
+.nav-item:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+.nav-icon { width: 22px; text-align: center; font-size: 0.95rem; }
+.nav-divider { height: 1px; background: var(--border); margin: 10px 0; }
+
+.sidebar-domains { margin-top: 22px; }
+.domain-pill {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 12px; border-radius: 10px; margin-bottom: 6px;
+  font-size: 0.78rem; font-weight: 500;
+}
+.domain-pill.t1 { background: rgba(90,143,114,0.12); color: #80c4a0; border: 1px solid rgba(90,143,114,0.22); }
+.domain-pill.t2 { background: rgba(196,158,64,0.08); color: var(--gold2); border: 1px solid rgba(196,158,64,0.18); }
+.domain-pill.t3 { background: rgba(196,96,122,0.07); color: #e8909f; border: 1px solid rgba(196,96,122,0.15); }
+
+/* ─── MAIN ─── */
+.main { padding: 52px 56px 80px; max-width: 880px; }
+
+/* ─── HERO ─── */
+.hero {
+  position: relative; overflow: hidden;
+  border-radius: 28px; padding: 48px 44px 40px;
+  background: linear-gradient(140deg,
+    rgba(28,18,56,0.98) 0%,
+    rgba(44,24,72,0.96) 45%,
+    rgba(80,38,58,0.92) 100%);
+  border: 1px solid rgba(196,158,64,0.22);
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+}
+.hero-symbol { position:absolute; right:36px; top:24px; font-size:180px; line-height:1; color:rgba(196,158,64,0.07); font-family:'Cormorant Garamond',serif; pointer-events:none; }
+.hero-glow { position:absolute; right:-60px; bottom:-80px; width:340px; height:340px; border-radius:50%; background:radial-gradient(circle,rgba(196,158,64,0.15),transparent 65%); pointer-events:none; }
+.eyebrow { font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+.hero h1 { font-family:'Cormorant Garamond',serif; font-size:clamp(2.6rem,5vw,4.5rem); font-weight:300; color:#fff8f0; line-height:1.08; margin-bottom:8px; }
+.hero h1 span { color: var(--gold2); }
+.lagna-line { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-style:italic; color:rgba(196,158,64,0.85); margin-bottom:24px; }
+.hero-badges { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:28px; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  padding: 6px 14px; border-radius: 999px; font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.hb-cond   { background: rgba(196,158,64,0.18); color: var(--gold2); border: 1px solid rgba(196,158,64,0.35); }
+.hb-rank   { background: rgba(91,143,212,0.14); color: #a0c4f0; border: 1px solid rgba(91,143,212,0.28); }
+.hb-dharma { background: rgba(124,92,191,0.15); color: #c8b4f0; border: 1px solid rgba(124,92,191,0.3); }
+
+.stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.stat { background:rgba(255,255,255,0.06); border:1px solid rgba(196,158,64,0.14); border-radius:16px; padding:16px 18px; }
+.stat-label { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+.stat-value { font-size:0.92rem; color:#fff8f0; font-weight:500; }
+
+/* ─── CHAPTER ─── */
+.chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+.chapter-header { display:flex; align-items:center; gap:14px; margin-bottom:24px; padding-bottom:14px; border-bottom:1px solid var(--border); }
+.chapter-icon {
+  width:44px; height:44px; border-radius:12px;
+  display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0;
+}
+.ci-gold  { background: rgba(196,158,64,0.12); }
+.ci-sage  { background: rgba(90,143,114,0.14); }
+.ci-plum  { background: rgba(124,92,191,0.14); }
+.ci-rose  { background: rgba(196,96,122,0.12); }
+.ci-blue  { background: rgba(91,143,212,0.14); }
+.chapter h2 { font-family:'Cormorant Garamond',serif; font-size:1.9rem; font-weight:300; color:var(--cream); }
+.chapter h2 small { display:block; font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); font-family:'DM Sans',sans-serif; margin-bottom:4px; }
+
+/* ─── SECTION ─── */
+.section { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:24px 28px; margin-bottom:14px; }
+.section-title { font-family:'Cormorant Garamond',serif; font-size:1.15rem; font-weight:400; color:var(--cream); margin-bottom:10px; display:flex; align-items:center; gap:8px; }
+.dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.dot-gold { background:var(--gold); }
+.dot-sage { background:var(--sage); }
+.dot-plum { background:var(--plum); }
+.dot-rose { background:var(--rose); }
+.dot-blue { background:var(--blue); }
+p { color: rgba(240,232,216,0.82); font-size: 0.9rem; line-height: 1.75; margin-bottom: 10px; }
+p:last-child { margin-bottom: 0; }
+
+/* ─── DOMAIN CARD ─── */
+.domain-card {
+  border-radius: 18px; padding: 22px 26px; margin-bottom: 14px;
+  border: 1px solid;
+}
+.dc-t1 { background: rgba(90,143,114,0.07); border-color: rgba(90,143,114,0.25); }
+.dc-t2 { background: rgba(196,158,64,0.06); border-color: rgba(196,158,64,0.22); }
+.dc-t3 { background: rgba(196,96,122,0.06); border-color: rgba(196,96,122,0.18); }
+.domain-top { display:flex; align-items:center; gap:12px; margin-bottom:10px; }
+.domain-num { font-family:'Cormorant Garamond',serif; font-size:2rem; font-weight:300; line-height:1; }
+.dc-t1 .domain-num { color: #80c4a0; }
+.dc-t2 .domain-num { color: var(--gold2); }
+.dc-t3 .domain-num { color: #e8909f; }
+.domain-name { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:400; color:var(--cream); }
+.domain-tag { font-size:0.65rem; letter-spacing:0.18em; text-transform:uppercase; margin-left:auto; padding:4px 10px; border-radius:999px; }
+.dc-t1 .domain-tag { color:#80c4a0; background:rgba(90,143,114,0.15); }
+.dc-t2 .domain-tag { color:var(--gold2); background:rgba(196,158,64,0.12); }
+.dc-t3 .domain-tag { color:#e8909f; background:rgba(196,96,122,0.12); }
+.domain-indicators { display:flex; flex-wrap:wrap; gap:7px; margin-top:12px; }
+.ind-chip { font-size:0.75rem; padding:4px 11px; border-radius:999px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--muted); }
+
+/* ─── SKILL BARS ─── */
+.skill-grid { display:flex; flex-direction:column; gap:14px; margin-top:4px; }
+.skill-row { display:grid; grid-template-columns:130px 1fr 44px; align-items:center; gap:14px; }
+.skill-name { font-size:0.8rem; font-weight:500; color:var(--cream); }
+.skill-track { height:8px; background:rgba(255,255,255,0.07); border-radius:99px; overflow:hidden; }
+.skill-fill  { height:100%; border-radius:99px; transition: width 0.5s ease; }
+.sf-gold { background: linear-gradient(90deg, #c49e40, #e8c96a); }
+.sf-sage { background: linear-gradient(90deg, #5a8f72, #80c4a0); }
+.sf-plum { background: linear-gradient(90deg, #7c5cbf, #b49edf); }
+.sf-blue { background: linear-gradient(90deg, #5b8fd4, #a0c4f0); }
+.sf-rose { background: linear-gradient(90deg, #c4607a, #e8909f); }
+.skill-pct { font-size:0.78rem; font-weight:600; color:var(--gold2); text-align:right; }
+.skill-drivers { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+/* ─── TIMING TABLE ─── */
+.timing-row {
+  display: grid; grid-template-columns: 110px 160px 1fr;
+  gap: 12px; padding: 13px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.86rem; align-items: start;
+}
+.timing-row:last-child { border-bottom: none; }
+.timing-period { font-weight: 600; color: var(--gold2); font-size: 0.8rem; }
+.timing-dasha  { color: rgba(196,158,64,0.65); font-size: 0.78rem; }
+.timing-theme  { color: rgba(240,232,216,0.78); line-height: 1.55; }
+
+/* ─── CALLOUT ─── */
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 14px; }
+.callout-gold { background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.28); }
+.callout-sage { background:rgba(90,143,114,0.09); border:1px solid rgba(90,143,114,0.3); }
+.callout-plum { background:rgba(124,92,191,0.09); border:1px solid rgba(124,92,191,0.28); }
+.callout-rose { background:rgba(196,96,122,0.09); border:1px solid rgba(196,96,122,0.28); }
+.callout-label { font-size:0.63rem; letter-spacing:0.25em; text-transform:uppercase; font-weight:600; margin-bottom:8px; }
+.cl-gold { color:var(--gold); } .cl-sage { color:#80c4a0; } .cl-plum { color:#b49edf; } .cl-rose { color:#e8909f; }
+
+/* ─── CO-FOUNDER GRID ─── */
+.cofound-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:4px; }
+.cofound-card { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:16px; padding:18px 20px; }
+.cofound-card h4 { font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.cofound-card p { font-size:0.84rem; color:rgba(240,232,216,0.75); line-height:1.6; margin:0; }
+
+/* ─── SHADOW CARDS ─── */
+.shadow-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:4px; }
+.shadow-card { background:rgba(196,96,122,0.06); border:1px solid rgba(196,96,122,0.15); border-radius:14px; padding:14px 16px; }
+.shadow-card strong { display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; color:#e8909f; margin-bottom:6px; }
+.shadow-card p { font-size:0.85rem; color:rgba(240,232,216,0.7); line-height:1.6; margin:0; }
+
+/* ─── YOGA CHIPS ─── */
+.yoga-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+.yoga-chip { padding:6px 14px; border-radius:999px; font-size:0.8rem; background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.2); color:var(--gold2); }
+.yoga-chip.sage { background:rgba(90,143,114,0.1); border-color:rgba(90,143,114,0.22); color:#80c4a0; }
+.yoga-chip.plum { background:rgba(124,92,191,0.1); border-color:rgba(124,92,191,0.22); color:#c8b4f0; }
+
+/* ─── PEAK SPOTLIGHT ─── */
+.peak-box {
+  background: linear-gradient(135deg, rgba(124,92,191,0.1), rgba(196,158,64,0.07));
+  border: 1px solid rgba(124,92,191,0.35);
+  border-radius: 18px; padding: 24px 28px; margin-bottom: 14px;
+  position: relative; overflow: hidden;
+}
+.peak-box::before { content:"☽"; position:absolute; right:20px; top:10px; font-size:80px; color:rgba(124,92,191,0.07); line-height:1; }
+.peak-title { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:#c8b4f0; margin-bottom:6px; }
+.peak-sub   { font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:#b49edf; margin-bottom:12px; }
+
+/* ─── DIVIDER ─── */
+.divider { display:flex; align-items:center; gap:16px; margin:32px 0; font-size:0.62rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(240,232,216,0.25); }
+.divider::before, .divider::after { content:''; flex:1; height:1px; background:var(--border); }
+
+/* ─── AVOID LIST ─── */
+.avoid-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:8px; margin-top:4px; }
+.avoid-list li { padding:10px 14px; background:rgba(196,96,122,0.06); border-left:3px solid rgba(196,96,122,0.4); border-radius:0 10px 10px 0; font-size:0.86rem; color:rgba(240,232,216,0.72); }
+
+/* ─── CONTEXT BOX ─── */
+.context-box {
+  background: linear-gradient(135deg, rgba(28,18,56,0.9), rgba(44,24,72,0.85));
+  border: 1px solid rgba(196,158,64,0.3);
+  border-radius: 18px; padding: 22px 26px; margin-bottom: 18px;
+  position: relative; overflow: hidden;
+}
+.context-box::before { content:"43"; position:absolute; right:24px; top:12px; font-family:'Cormorant Garamond',serif; font-size:100px; font-weight:300; color:rgba(196,158,64,0.05); line-height:1; }
+.context-box-title { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:400; color:var(--gold2); margin-bottom:6px; }
+.context-box-sub { font-size:0.7rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+
+/* ─── FOOTER ─── */
+.footer { text-align:center; padding:20px 0; font-size:0.7rem; color:rgba(240,232,216,0.3); letter-spacing:0.08em; border-top:1px solid var(--border); margin-top:40px; }
+
+/* ─── MOBILE ─── */
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+  .main { padding: 32px 20px 60px; }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .cofound-grid, .shadow-grid { grid-template-columns: 1fr; }
+  .timing-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ══════════════════════════════════════ SIDEBAR ══ -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">🦁</div>
+    <div class="sidebar-name">Prakashji</div>
+    <div class="sidebar-sub">Startup Founder Profile</div>
+
+    <div class="score-ring">
+      <div>
+        <div class="score-num">43</div>
+      </div>
+      <div>
+        <div class="score-label">Startup Score</div>
+        <div class="score-tier">🔄 Conditional</div>
+        <div style="font-size:0.7rem;color:var(--muted);margin-top:2px">Expert-Founder Mode</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a href="#archetype" class="nav-item"><span class="nav-icon">🧭</span>Founder Archetype</a>
+      <a href="#domains" class="nav-item"><span class="nav-icon">🌿</span>Startup Domains</a>
+      <a href="#skills" class="nav-item"><span class="nav-icon">📊</span>Skill Profile</a>
+      <a href="#timing" class="nav-item"><span class="nav-icon">⏳</span>Career Timing</a>
+      <a href="#cofound" class="nav-item"><span class="nav-icon">🤝</span>Co-founder Blueprint</a>
+      <a href="#shadow" class="nav-item"><span class="nav-icon">🌑</span>Founder Shadow</a>
+    </nav>
+
+    <div class="nav-divider"></div>
+
+    <div style="font-size:0.63rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Best Domains</div>
+    <div class="sidebar-domains">
+      <div class="domain-pill t1">🌿 Wellness / Health Consulting</div>
+      <div class="domain-pill t1">🕉️ Spiritual / Philosophical Ed</div>
+      <div class="domain-pill t1">🤲 Social Enterprise / NGO</div>
+      <div class="domain-pill t2">📖 Traditional Knowledge Platforms</div>
+      <div class="domain-pill t2">🎓 Expert Advisory / Consulting</div>
+      <div class="domain-pill t3" style="opacity:0.65;">⚡ Fast-Moving Tech — Avoid</div>
+      <div class="domain-pill t3" style="opacity:0.65;">🏭 Pure Product Startups — Avoid</div>
+    </div>
+  </aside>
+
+  <!-- ══════════════════════════════════════ MAIN ══ -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-symbol">♌</div>
+      <div class="hero-glow"></div>
+      <div class="eyebrow">Vedic Startup Profile · Lahiri Ayanamsha</div>
+      <h1>Prakashji<br><span>The Dharmic Expert</span></h1>
+      <div class="lagna-line">Leo Lagna 4.1° · Yoga Karaka Mars H9 · Gajakesari in H6</div>
+      <div class="hero-badges">
+        <span class="hero-badge hb-cond">🔄 Conditional (43)</span>
+        <span class="hero-badge hb-rank">Domain Expert Mode</span>
+        <span class="hero-badge hb-dharma">☿ Saturn / Moon / Mercury</span>
+      </div>
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-label">Lagna</div>
+          <div class="stat-value">Leo 4.1°</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Current Dasha</div>
+          <div class="stat-value">Saturn / Moon / Mercury</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Founder Type</div>
+          <div class="stat-value">Dharmic Specialist</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Born</div>
+          <div class="stat-value">04-Nov-1973 · Palakkad, Kerala</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── FOUNDER ARCHETYPE ─── -->
+    <div class="chapter" id="archetype">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-gold">🧭</div>
+        <h2><small>Chapter I</small>Founder Archetype</h2>
+      </div>
+
+      <div class="context-box">
+        <div class="context-box-sub">Honest Contextualisation · Score 43 / 100</div>
+        <div class="context-box-title">What the 43 Actually Means</div>
+        <p style="margin:0;font-size:0.88rem;color:rgba(240,232,216,0.8);line-height:1.75;">A score of 43 in the Startup Fitness model does not mean Prakashji cannot build something meaningful. It means the chart is not wired for the solo-CEO, rapid-execution, venture-funded founder path. It is wired for something more enduring and more honest: the <strong>Expert-Founder</strong> — a domain specialist who builds from deep wisdom, institutional trust, and dharmic conviction rather than execution speed or market hustle. This is a different archetype, and it is genuinely powerful in the right context.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>The Dharmic Expert</div>
+        <p>Prakashji's chart carries one of the clearest dharma signatures in the group: <strong>Yoga Karaka Mars in H9</strong> (Aries, own sign) as the retrograde ruler of both H4 (kendra) and H9 (trikona) from Leo Lagna. This is not a career indicator — it is an identity indicator. The 9th house rules philosophy, higher learning, teaching, pilgrimage, and dharmic mission. Mars here means he does not just study these domains; he champions them with energy, courage, and fire.</p>
+        <p>The <strong>Leo Lagna</strong> adds a quality that is rare and undervalued in startup culture: natural authority and gravitas. People listen to a Leo Lagna. They give weight to their words. In advisory, educational, or spiritual leadership contexts, this is worth more than any accelerator placement or Series A. Leo Lagna founders command trust before the pitch deck loads.</p>
+        <p>The <strong>Gajakesari Yoga</strong> (Jupiter + Moon both in H6, Capricorn) anchors his strength in the house of healing, service, and overcoming obstacles. His wisdom does not emerge from ease — it is forged through real-world adversity. This makes him uniquely credible to people navigating health challenges, systemic problems, or service-oriented missions. The wisdom he carries cannot be fabricated; it has been earned.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Founding Yogas</div>
+        <div class="yoga-list">
+          <span class="yoga-chip plum">Yoga Karaka Mars · H9 Own Sign</span>
+          <span class="yoga-chip">Gajakesari · Jupiter+Moon H6</span>
+          <span class="yoga-chip sage">Viparita Raja (Jupiter) · Rise Through Difficulty</span>
+          <span class="yoga-chip sage">Viparita Raja (Moon) · Resilience Through Adversity</span>
+          <span class="yoga-chip">Vesi Yoga · Mercury · Helpful, Communicative</span>
+          <span class="yoga-chip">Leo Lagna · Natural Authority</span>
+        </div>
+        <p style="margin-top:14px;">The two <strong>Viparita Raja Yogas</strong> (Jupiter and Moon both in H6) are among the most underappreciated formations in Jyotish. They guarantee that Prakashji's greatest triumphs emerge not from smooth sailing but from navigating difficulty — illness environments, adversarial systems, service-first contexts, underfunded institutions. Any venture he builds in service-oriented or healing-focused sectors will be energized precisely because the chart is designed to thrive in that terrain.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label cl-gold">★ Archetype Signature</div>
+        Prakashji's highest-leverage founder path is not CEO of a fast-growth startup. It is the <strong>Expert-Founder</strong> — a domain authority who builds a practice, institution, or platform around accumulated wisdom, Leo gravitas, and dharmic conviction. His ventures should grow like a banyan tree: slowly, deeply, and with roots that cannot be pulled up.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── STARTUP DOMAINS ─── -->
+    <div class="chapter" id="domains">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-sage">🌿</div>
+        <h2><small>Chapter II</small>Startup Domains</h2>
+      </div>
+
+      <!-- TIER 1 -->
+      <div style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:#80c4a0;margin-bottom:10px;font-weight:600;">● Tier 1 — Chart-Perfect Fit</div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">01</div>
+          <div>
+            <div class="domain-name">Wellness / Integrative Health Consulting</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Ayurveda · Integrative Medicine · Health Advisory Platforms</div>
+          </div>
+          <span class="domain-tag">Highest Fit</span>
+        </div>
+        <p>Jupiter and Moon together in H6 (the house of healing, health, and service) is the classical indicator of the healer-advisor. The <strong>Gajakesari Yoga</strong> formed here gives wisdom that operates specifically in environments of illness, adversity, and recovery — making Prakashji exceptionally well-suited to health advisory, integrative wellness platforms, or Ayurvedic consulting practices.</p>
+        <p><strong>Moon in Dhanishtha nakshatra</strong> (pada 1, Capricorn) carries the shakti of music, rhythm, and healing. Dhanishtha's deity is the Ashta Vasus — divine beings associated with material wellbeing and vitality. This nakshatra energy flows naturally into music therapy, sound healing, rhythmic health protocols, and holistic wellness brands that blend ancient knowledge with structured, disciplined outcomes (Saturn H11 provides institutional architecture).</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Jupiter+Moon H6 (Gajakesari)</span>
+          <span class="ind-chip">Moon Dhanishtha — healing rhythm</span>
+          <span class="ind-chip">Viparita Raja H6 (thrives in adversity)</span>
+          <span class="ind-chip">Mars H9 Yoga Karaka (dharmic mission)</span>
+          <span class="ind-chip">Saturn H11 (institutional partnerships)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">02</div>
+          <div>
+            <div class="domain-name">Philosophical / Spiritual Education</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Jyotish · Vedic Studies · Dharmic Leadership Programs</div>
+          </div>
+          <span class="domain-tag">Highest Fit</span>
+        </div>
+        <p><strong>Mars Yoga Karaka in H9</strong> (Ashwini pada 2) is the single strongest indicator for a teaching vocation in dharmic, philosophical, or spiritual domains. H9 rules the guru, the university, the pilgrimage, and the higher mind. Mars here does not study philosophy passively — it pioneers it, teaches it with authority, and defends dharmic truth with conviction. Ashwini's shakti is "the power to heal and quicken" — the healer-teacher who opens new understanding rapidly.</p>
+        <p><strong>Venus in H5 Sagittarius</strong> (Mula pada 2, conjunct Rahu) adds an adventurous, expansive, even transgressive quality to the teaching style. Venus in H5 from Leo Lagna means creative intelligence and joy in knowledge transmission. Rahu's conjunction amplifies reach and the capacity to engage with unconventional or international audiences. This is a gifted teacher who can draw diverse students into difficult material.</p>
+        <p><strong>Leo Lagna</strong> confers the natural lecturer's quality — the voice that fills the room, the presence that commands respect in a classroom or ashram setting. Where many struggle to establish authority as teachers, Prakashji's Leo Lagna radiates it effortlessly.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Mars Yoga Karaka H9 (dharmic authority)</span>
+          <span class="ind-chip">Ashwini — quickening, healing teacher</span>
+          <span class="ind-chip">Venus H5 Sagittarius (expansive teaching)</span>
+          <span class="ind-chip">Rahu H5 (international / unconventional reach)</span>
+          <span class="ind-chip">Leo Lagna (natural authority in teaching)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t1">
+        <div class="domain-top">
+          <div class="domain-num">03</div>
+          <div>
+            <div class="domain-name">Social Enterprise / NGO Leadership</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Community Wellbeing · Mission-Driven Institutions · Seva-First Ventures</div>
+          </div>
+          <span class="domain-tag">High Fit</span>
+        </div>
+        <p>Two Viparita Raja Yogas in H6 mean Prakashji's chart genuinely thrives in environments of service, scarcity, and systemic challenge — the native habitat of social enterprises and NGOs. While purely profit-driven ventures may feel energetically misaligned, mission-driven institutions that measure success in lives improved rather than margins expanded activate the chart completely.</p>
+        <p><strong>Saturn H11 Retrograde</strong> (Gemini, Ardra pada 2) is the classic indicator of long-term institutional networking and gains through community. Saturn retrograde here means the network was built in previous cycles — Prakashji likely has a deep web of institutional connections (hospitals, temples, community organizations, educational bodies) that he has not yet fully monetized or leveraged for venture purposes.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">H6 emphasis (service-first environment)</span>
+          <span class="ind-chip">Viparita Raja × 2 (strength from adversity)</span>
+          <span class="ind-chip">Saturn H11 Retro (institutional networks)</span>
+          <span class="ind-chip">Gajakesari (wisdom through overcoming)</span>
+        </div>
+      </div>
+
+      <!-- TIER 2 -->
+      <div class="divider">Secondary Domains</div>
+      <div style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;font-weight:600;">◆ Tier 2 — Strong Secondary Fit</div>
+
+      <div class="domain-card dc-t2">
+        <div class="domain-top">
+          <div class="domain-num">04</div>
+          <div>
+            <div class="domain-name">Traditional Knowledge Platforms</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Jyotish · Ayurveda · Classical Arts · Vedic Digitisation</div>
+          </div>
+          <span class="domain-tag">Strong Fit</span>
+        </div>
+        <p>Mars Yoga Karaka in H9 (the house of ancient wisdom and tradition) creates a deep, authoritative connection to traditional knowledge systems. Combined with Saturn H11 (patience for long-cycle institutional work) and Venus H5 Sagittarius (joy in expanding and sharing knowledge), there is a natural pull toward preserving and transmitting traditional knowledge — whether through digital platforms, classical education programs, or curated content channels.</p>
+        <p>Ventures that digitise Jyotish content, create structured Ayurveda learning paths, or build classical music education platforms align this chart exceptionally well. The H9 + H5 axis (wisdom + creativity) forms the backbone of any knowledge-preservation play.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Mars H9 (traditional wisdom + dharma)</span>
+          <span class="ind-chip">Venus H5 Sagittarius (expansive creativity)</span>
+          <span class="ind-chip">Saturn H11 (patient institution-builder)</span>
+          <span class="ind-chip">Ketu H11 (past-life mastery in networks)</span>
+        </div>
+      </div>
+
+      <div class="domain-card dc-t2">
+        <div class="domain-top">
+          <div class="domain-num">05</div>
+          <div>
+            <div class="domain-name">Expert Advisory / Senior Consulting</div>
+            <div style="font-size:0.75rem;color:rgba(240,232,216,0.55);">Strategic Counsel · Domain Expertise · Boutique Practice</div>
+          </div>
+          <span class="domain-tag">Co-founder Role</span>
+        </div>
+        <p>Leo Lagna's most natural professional mode is the trusted advisor — the authority figure whose opinion people seek and pay premium for. At age 52, Prakashji's decades of accumulated expertise in his domain make him uniquely positioned to operate as a senior expert consultant. This is not a diminished form of entrepreneurship; boutique expert consulting practices regularly generate higher per-hour returns than venture-backed startups.</p>
+        <p>The Gajakesari Yoga (H6 Jupiter+Moon) ensures the advisory work carries genuine depth — not surface-level recommendations but hard-won, adversity-tested insight that clients recognise as irreplaceable. Saturn H11 builds the referral network that makes a consulting practice self-sustaining over time.</p>
+        <div class="domain-indicators">
+          <span class="ind-chip">Leo Lagna (natural advisor archetype)</span>
+          <span class="ind-chip">Gajakesari H6 (depth of wisdom)</span>
+          <span class="ind-chip">Saturn H11 (long-cycle referral network)</span>
+          <span class="ind-chip">Mars H9 (domain authority + conviction)</span>
+        </div>
+      </div>
+
+      <!-- TIER 3 AVOID -->
+      <div class="divider">Domains to Avoid</div>
+      <div class="section" style="border-color:rgba(196,96,122,0.2);background:rgba(196,96,122,0.04);">
+        <div class="section-title"><span class="dot dot-rose"></span>Misaligned Domains</div>
+        <ul class="avoid-list">
+          <li><strong>Fast-Moving Tech Startups</strong> — Multiple retrograde planets (Mars R, Mercury R, Saturn R) create an internalized, revisionary energy pattern. Sprint-paced, pivot-heavy tech environments that demand sustained outward push conflict with this energetic signature. The retrograde quality is a strength in deliberate, reflective domains — not in agile sprints.</li>
+          <li><strong>Pure Product Companies (Consumer Apps / Hardware)</strong> — No strong Mercury or 10th house emphasis for product execution. Sun H3 (Lagna lord away from power positions) weakens the identity anchoring that consumer-facing product companies require. Without a strong product co-founder, these ventures will underperform his advisory capabilities.</li>
+          <li><strong>Consumer Brand Plays (FMCG / Retail)</strong> — Venus in H5 Sagittarius expresses through teaching and creative expansion, not consumer brand identity. The H6 emphasis draws energy toward healing and service rather than consumer desire cultivation. Retail brand contexts will feel energetically hollow to him.</li>
+          <li><strong>Solo CEO of a VC-Funded Startup</strong> — Saturn/Moon/Mercury dasha (2026) is a karmic, introspective, consolidation phase — not a sprint-and-scale phase. Aggressive funding rounds and board accountability structures during this dasha will compound pressure rather than unlock growth. The chart supports building slowly and wisely, not fast and loudly.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── SKILL PROFILE ─── -->
+    <div class="chapter" id="skills">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-blue">📊</div>
+        <h2><small>Chapter III</small>Founder Skill Profile</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-blue"></span>Domain Skill Scores</div>
+        <p style="margin-bottom:18px;">Scores derived from planetary dignity and house placements per the Startup Fitness model. Prakashji's profile is strongly weighted toward Operations and Finance (patience, institutional networks, long-cycle thinking) with moderate Product and Sales scores. The profile reflects a <strong>steady specialist</strong> rather than an all-domain generalist founder. Each score describes a real strength within its appropriate context.</p>
+
+        <div class="skill-grid">
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Operations</div>
+              <div class="skill-track"><div class="skill-fill sf-sage" style="width:62%"></div></div>
+              <div class="skill-pct">62</div>
+            </div>
+            <div class="skill-drivers">Saturn H11 Retro (institutional, network-first) · patient, systematic builder; thrives in structured environments</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Finance</div>
+              <div class="skill-track"><div class="skill-fill sf-gold" style="width:58%"></div></div>
+              <div class="skill-pct">58</div>
+            </div>
+            <div class="skill-drivers">Gajakesari wisdom + Saturn H11 = steady, conservative financial judgment; long-horizon planning, not short-cycle optimisation</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Product</div>
+              <div class="skill-track"><div class="skill-fill sf-plum" style="width:55%"></div></div>
+              <div class="skill-pct">55</div>
+            </div>
+            <div class="skill-drivers">Jupiter H6 + Mars H9 = service design, not consumer product; strongest when the product is a wisdom framework or healing protocol</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Sales</div>
+              <div class="skill-track"><div class="skill-fill sf-blue" style="width:52%"></div></div>
+              <div class="skill-pct">52</div>
+            </div>
+            <div class="skill-drivers">Sun H3 (Lagna lord away from kendra/trikona) = needs warm referrals and existing trust, not cold outreach; Leo Lagna creates pull naturally</div>
+          </div>
+          <div>
+            <div class="skill-row">
+              <div class="skill-name">Marketing</div>
+              <div class="skill-track"><div class="skill-fill sf-rose" style="width:48%"></div></div>
+              <div class="skill-pct">48</div>
+            </div>
+            <div class="skill-drivers">Venus H5 Sagittarius = creative but private; Leo Lagna generates organic authority-pull rather than outbound marketing; inbound-first model</div>
+          </div>
+        </div>
+
+        <div class="callout callout-plum" style="margin-top:20px;">
+          <div class="callout-label cl-plum">★ Skill Profile Insight</div>
+          Prakashji's skill stack is the <strong>wise steward</strong> pattern: high institutional patience (Saturn H11), deep domain wisdom (Gajakesari H6 + Mars H9), and natural gravitas (Leo Lagna) — but moderate outbound capability. The mitigation is structural: a co-founder or operations lead who handles sales and marketing frees Prakashji to focus on the activities where his chart is irreplaceable: building credibility, deepening the knowledge framework, and holding the institutional relationships.
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── CAREER TIMING ─── -->
+    <div class="chapter" id="timing">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-plum">⏳</div>
+        <h2><small>Chapter IV</small>Career Timing Windows</h2>
+      </div>
+
+      <div class="peak-box">
+        <div class="peak-sub">Current Phase · Saturn Mahadasha · Jul 2026</div>
+        <div class="peak-title">Saturn / Moon / Mercury — The Karmic Consolidation</div>
+        <p style="color:rgba(240,232,216,0.82);font-size:0.9rem;line-height:1.75;">The current triple-period is not a launch window — it is a consolidation and deepening window. <strong>Saturn Mahadasha</strong> (long, patient, karmic) + <strong>Moon Antardasha</strong> (H6, introspective, healing) + <strong>Mercury Pratyantardasha</strong> (H4 Retrograde, re-examining foundations). This is the universe asking Prakashji to organize his wisdom, deepen his practice, clear karmic debts, and lay structural groundwork — not to sprint into new ventures.</p>
+        <p style="margin-top:10px;color:rgba(240,232,216,0.82);font-size:0.9rem;line-height:1.75;"><strong>Best actions in this phase:</strong> write and document accumulated knowledge, consolidate existing networks, redesign the institutional framework for what comes next, clear any unfinished obligations, and build the knowledge platform or curriculum that will be the foundation of the next launch window.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Saturn Mahadasha — Timing Map</div>
+        <p style="margin-bottom:14px;">Saturn rules H6 and H7 from Leo Lagna (malefic houses) but is placed in H11 (gains, networks) in Gemini — a favorable location for Saturn. The mahadasha is slow, patient, and institutional. Best outcomes come through <strong>networks, long-term partnerships, and organizational building</strong>, not individual hustle.</p>
+        <div>
+          <div class="timing-row">
+            <div class="timing-period">2024–2026</div>
+            <div class="timing-dasha">Saturn / Moon</div>
+            <div class="timing-theme">Introspective phase. Moon H6 Dhanishtha activates healing, service, and emotional introspection. Consolidate wisdom, heal relationships, deepen practice. Not a launch window — a preparation window.</div>
+          </div>
+          <div class="timing-row" style="background:rgba(196,158,64,0.05);border-radius:10px;padding:13px 10px;">
+            <div class="timing-period" style="color:#e8c96a;font-weight:700;">2027–2029 ☽</div>
+            <div class="timing-dasha" style="color:#c49e40;font-weight:600;">Saturn / Mars</div>
+            <div class="timing-theme"><strong style="color:var(--gold2);">First action window.</strong> Mars is Yoga Karaka — when Saturn activates Mars as sub-lord, the dharmic mission gets energy and momentum. Good window to launch a wellness consulting practice, dharmic education initiative, or social enterprise.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2029–2032</div>
+            <div class="timing-dasha">Saturn / Rahu</div>
+            <div class="timing-theme">Expansion + disruption. Rahu H5 conjunct Venus = unconventional creative opportunities, possibly international reach. Risk of overextension — hold to dharmic core during this period.</div>
+          </div>
+          <div class="timing-row" style="background:rgba(90,143,114,0.06);border-radius:10px;padding:13px 10px;">
+            <div class="timing-period" style="color:#80c4a0;font-weight:700;">2032–2034 ★</div>
+            <div class="timing-dasha" style="color:#5a8f72;font-weight:600;">Saturn / Jupiter</div>
+            <div class="timing-theme"><strong style="color:#80c4a0;">Peak window.</strong> Jupiter is the Gajakesari partner and a strong benefic from Leo Lagna. Saturn/Jupiter sub-period in an H11 mahadasha = peak institutional recognition, network gains, expansion through wisdom, and the strongest period for scaling any established venture.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">2034–2036</div>
+            <div class="timing-dasha">Saturn / Saturn</div>
+            <div class="timing-theme">Double Saturn — consolidation of everything built. Institutional maturity, long-term relationship capital, and structured legacy-building. Not a sprint but a deepening of foundations already established.</div>
+          </div>
+          <div class="timing-row">
+            <div class="timing-period">Post 2040</div>
+            <div class="timing-dasha">Mercury Mahadasha</div>
+            <div class="timing-theme">Mercury rules H2 (wealth, speech) and H11 (gains) from Leo. Mercury mahadasha will be a strong communication, writing, and network monetization period — the harvest of everything built during Saturn mahadasha.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label cl-sage">Timing Strategy</div>
+        Prakashji is in the <strong>preparation and deepening phase</strong> now (2024–2027), with the first real action window opening in 2027 (Saturn/Mars) and the peak institutional recognition arriving in 2032–2034 (Saturn/Jupiter). The wisdom move is to spend the current period building the knowledge framework, institutional relationships, and co-founder structure so that when the action windows open, the infrastructure is already in place. His chart rewards preparation over opportunism.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── CO-FOUNDER BLUEPRINT ─── -->
+    <div class="chapter" id="cofound">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-sage">🤝</div>
+        <h2><small>Chapter V</small>Co-founder Blueprint</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>What Prakashji Brings vs. What He Needs</div>
+        <div class="cofound-grid">
+          <div class="cofound-card">
+            <h4>Prakashji Brings</h4>
+            <p>Domain authority and deep expertise, Leo gravitas and natural command of a room, dharmic conviction and philosophical depth (Mars H9 Yoga Karaka), long-term institutional relationships (Saturn H11), healing wisdom forged through real adversity (Gajakesari H6), and the ability to attract followers through genuine credibility rather than marketing.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Prakashji Needs</h4>
+            <p>A younger, operationally agile executor who handles sales outreach, daily operational management, marketing distribution, and technology implementation. Someone who can absorb Prakashji's vision and translate it into milestones, team accountability, and outbound growth — freeing Prakashji to focus on depth rather than breadth.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Ideal Co-founder Chart Signature</div>
+        <div class="cofound-grid">
+          <div class="cofound-card">
+            <h4>Lagna Match</h4>
+            <p><strong>Aries or Scorpio Lagna</strong> — Mars-ruled, action-oriented, execution-first. Provides the outward drive that Prakashji's retrograde Mars does not generate naturally. Alternatively, <strong>Capricorn Lagna</strong> for disciplined, systematic operational management that complements his wisdom framework.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Mars Placement</h4>
+            <p><strong>Mars in H10 or H1</strong> — strongly placed for public, outward-facing execution. Where Prakashji's Mars is in H9 (dharmic, philosophical, retrograde), the ideal co-founder's Mars faces outward and delivers. This closes the single biggest gap in the partnership.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Age & Experience</h4>
+            <p><strong>Younger (28–38)</strong> — enough energy and operational agility to handle sprint-phase building, while still young enough to absorb Prakashji's accumulated wisdom as mentorship. The Leo-guru / Mars-executor dynamic works best with a generational gap that is meaningful but not so wide as to create communication friction.</p>
+          </div>
+          <div class="cofound-card">
+            <h4>Mercury Placement</h4>
+            <p><strong>Mercury in H1, H3, or H10</strong> — a quick communicator and fast-execution thinker who moves ideas into action without the deliberative retrograde quality of Prakashji's H4 Mercury. Handles product-market communication, pitches, and content strategy with agility.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label cl-gold">★ Partnership Principle</div>
+        The most natural structure for Prakashji is <strong>Expert + Executor</strong>: Prakashji as the intellectual and institutional anchor who holds the vision, credibility, and domain authority; a younger, Mars-strong co-founder who handles operations and sales. This is not a hierarchy — it is a genuine symbiosis. The co-founder gets Prakashji's credibility and network to open doors; Prakashji gets the execution muscle to convert his wisdom into delivered products.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ─── FOUNDER SHADOW ─── -->
+    <div class="chapter" id="shadow">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-rose">🌑</div>
+        <h2><small>Chapter VI</small>Founder Shadow</h2>
+      </div>
+
+      <div class="section" style="border-color:rgba(196,96,122,0.2);">
+        <div class="section-title"><span class="dot dot-rose"></span>Chart Challenges in Startup Context</div>
+        <div class="shadow-grid">
+          <div class="shadow-card">
+            <strong>Sun H3 — Lagna Lord Away from Power</strong>
+            <p>Sun as Leo Lagna lord in H3 (Swati nakshatra, Libra) places the identity driver away from kendra or trikona. In practical terms: he can feel underconfident in CEO-level executive roles despite his genuine authority. H3 Sun is communication and siblings — not command. Antidote: build ventures where his advisory role is the command position, not a subordinate one.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Triple Retrograde — Internalized Energy</strong>
+            <p>Mars, Mercury, and Saturn are all retrograde. Retrograde planets direct their energy inward — toward revision, reflection, and re-doing. In startup contexts, this creates cycles of restarting projects, second-guessing decisions, and internal refinement that delays external execution. Structural mitigation: a co-founder who holds the forward momentum while Prakashji refines internally.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>H6 Heavy — Service Trap</strong>
+            <p>Jupiter + Moon in H6 is a powerful yoga, but H6 also carries the risk of over-immersion in service, problem-solving, and survival-mode thinking. Gajakesari in H6 means wisdom through difficulty — but the difficulty can become the identity. Ventures can stall in the "we're helping people in trouble" phase without ever scaling to systemic impact. Watch for staying too close to individual service when institutional leverage is available.</p>
+          </div>
+          <div class="shadow-card">
+            <strong>Moon H6 Capricorn — Emotional Heaviness</strong>
+            <p>Moon in Capricorn in H6 is Dhanishtha — a strong moon but in a sign of emotional constraint. In Capricorn, the Moon carries inherent heaviness, a tendency toward pessimism under pressure, and difficulty expressing emotional need. In team leadership, this can manifest as emotional unavailability or excessive seriousness. Antidote: regular contemplative practice (already part of his nature) and consciously creating joy and lightness in team culture.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Shadow Antidotes</div>
+        <div class="callout callout-sage">
+          <div class="callout-label cl-sage">Structural Fix</div>
+          Build the venture so that Prakashji's triple retrograde energy (Mars R, Mercury R, Saturn R) is an asset, not a liability. Retrograde planets are extraordinarily powerful in internal domains: deep research, framework revision, long-cycle institutional strategy, and wisdom curation. Let the co-founder hold the outward-facing momentum while Prakashji operates in the "engine room" — the place where real depth is created. His retrograde Mars builds dharmic mission from the inside out. Protect that space.
+        </div>
+        <div class="callout callout-plum" style="margin-top:10px;">
+          <div class="callout-label cl-plum">Timing Fix</div>
+          The current Saturn/Moon/Mercury dasha (2026) is a period for honoring the shadow — processing what has been difficult, deepening practice, clearing karmic weight. Forcing aggressive external action against this energy typically creates burnout or false starts. The 2027 (Saturn/Mars) and 2032 (Saturn/Jupiter) windows will provide genuine lift. Patience during this karmic consolidation phase is not passivity — it is strategic wisdom.
+        </div>
+        <div class="callout callout-gold" style="margin-top:10px;">
+          <div class="callout-label cl-gold">Age 52 Reframe</div>
+          Age 52 with Leo Lagna, five yogas, and decades of domain expertise is not a liability in startup context — it is <strong>founder-market fit of the highest order</strong> for wisdom-first, trust-first, impact-first ventures. The ecosystem has too many 25-year-old founders with no wisdom and too few 52-year-old experts with the courage to build. Prakashji's age is his differentiation, not his obstacle.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated Jul 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Startup Fitness Model v2
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
