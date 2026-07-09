@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Arun D — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 48px 28px 80px; }
+
+    /* HERO */
+    .hero {
+      position: relative; overflow: hidden;
+      border-radius: 28px; padding: 52px 48px 42px;
+      background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow); margin-bottom: 36px;
+    }
+    .hero-symbol { position:absolute; right:36px; top:24px; font-size:180px; color:rgba(196,158,64,0.07); line-height:1; }
+    .hero-glow { position:absolute; right:-60px; bottom:-80px; width:340px; height:340px; border-radius:50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%); pointer-events:none; }
+    .eyebrow { font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase; color:var(--gold); margin-bottom:10px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem,6vw,5rem); font-weight:300; color:#fff8f0; line-height:1.1; margin-bottom:8px; }
+    .lagna-line { font-family: 'Cormorant Garamond', serif; font-size:1.3rem; font-style:italic; color:rgba(196,158,64,0.85); margin-bottom:28px; }
+    .stat-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+    .stat { background:rgba(255,255,255,0.06); border:1px solid rgba(196,158,64,0.14); border-radius:16px; padding:16px 18px; }
+    .stat-label { font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:4px; }
+    .stat-value { font-size:0.95rem; color:#fff8f0; font-weight:400; }
+    .leap-badge { display:inline-block; background:rgba(124,92,191,0.2); border:1px solid rgba(124,92,191,0.35); border-radius:999px; padding:3px 10px; font-size:0.68rem; letter-spacing:0.1em; color:#b49edf; margin-left:8px; vertical-align:middle; }
+
+    /* PANELS */
+    .panel { background:var(--surface); border:1px solid var(--border); border-radius:var(--r); padding:28px; box-shadow:var(--shadow); margin-bottom:20px; }
+    .panel-header { display:flex; align-items:center; gap:10px; padding-bottom:14px; border-bottom:1px solid rgba(196,158,64,0.12); margin-bottom:18px; }
+    .panel-icon { width:36px; height:36px; border-radius:50%; background:rgba(196,158,64,0.1); display:flex; align-items:center; justify-content:center; font-size:1.1rem; color:var(--gold); flex-shrink:0; }
+    .panel h2 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:400; color:var(--cream); }
+    .dasha-panel { background:rgba(124,92,191,0.06); border-color:rgba(124,92,191,0.22); }
+    .dasha-panel .panel-icon { background:rgba(124,92,191,0.14); color:#b49edf; }
+    .dasha-panel .panel h2 { color:#d0c4f0; }
+    .shadow-panel { background:rgba(140,40,70,0.06); border-color:rgba(196,96,122,0.2); }
+    .shadow-panel .panel-icon { background:rgba(196,96,122,0.12); color:#e8909f; }
+    .shadow-panel .panel h2 { color:#f0c8d0; }
+
+    /* GRID */
+    .sym-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+
+    /* PLANET TABLE */
+    .planet-table { width:100%; border-collapse:collapse; font-size:0.85rem; margin-top:8px; }
+    .planet-table th { text-align:left; padding:8px 12px; background:rgba(196,158,64,0.08); color:var(--gold); font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; border-bottom:1px solid rgba(196,158,64,0.18); }
+    .planet-table td { padding:9px 12px; border-bottom:1px solid rgba(255,255,255,0.04); vertical-align:middle; }
+    .planet-table tr:last-child td { border-bottom:none; }
+    .planet-table tr:hover td { background:rgba(255,255,255,0.02); }
+    .pname { color:var(--gold2); font-weight:500; }
+    .retro { font-size:0.7rem; color:var(--rose); margin-left:4px; }
+    .spc { color:rgba(196,158,64,0.5); font-size:0.75rem; }
+    .exalted-tag { display:inline-block; background:rgba(90,143,114,0.15); border:1px solid rgba(90,143,114,0.3); border-radius:999px; padding:1px 8px; font-size:0.65rem; color:#80c4a0; margin-left:6px; }
+    .h-num { display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:50%; background:rgba(196,158,64,0.1); font-size:0.72rem; color:var(--gold); font-weight:600; }
+
+    /* YOGA CARDS */
+    .yoga-list { display:flex; flex-direction:column; gap:10px; }
+    .yoga-card { padding:14px 18px; background:rgba(255,255,255,0.03); border-left:3px solid var(--gold); border-radius:0 12px 12px 0; }
+    .yoga-card.sasa { border-left-color:#80c4a0; }
+    .yoga-name { font-size:0.8rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold2); margin-bottom:4px; }
+    .yoga-card.sasa .yoga-name { color:#80c4a0; }
+    .yoga-desc { font-size:0.87rem; color:rgba(240,232,216,0.75); line-height:1.6; }
+
+    /* CHIPS */
+    .chip { background:rgba(196,158,64,0.09); border:1px solid rgba(196,158,64,0.2); border-radius:999px; padding:6px 14px; font-size:0.82rem; color:var(--gold2); display:inline-block; margin:3px; }
+    .chip-neg { background:rgba(196,96,122,0.09); border-color:rgba(196,96,122,0.22); color:#e8909f; }
+    .chip-green { background:rgba(90,143,114,0.1); border-color:rgba(90,143,114,0.22); color:#80c4a0; }
+
+    /* CALLOUT */
+    .callout { border-radius:14px; padding:16px 20px; font-size:0.9rem; line-height:1.75; margin-top:14px; }
+    .callout-gold { background:rgba(196,158,64,0.08); border:1px solid rgba(196,158,64,0.25); color:#e8d89a; }
+    .callout-sage { background:rgba(90,143,114,0.08); border:1px solid rgba(90,143,114,0.2); color:#a0d4b8; }
+    .callout-plum { background:rgba(124,92,191,0.08); border:1px solid rgba(124,92,191,0.22); color:#c4b8f0; }
+    .callout-rose { background:rgba(196,96,122,0.08); border:1px solid rgba(196,96,122,0.22); color:#f0b8c8; }
+
+    /* DASHA */
+    .dasha-bar { display:flex; align-items:center; gap:12px; padding:12px 16px; background:rgba(124,92,191,0.08); border:1px solid rgba(124,92,191,0.2); border-radius:14px; margin-bottom:14px; flex-wrap:wrap; }
+    .dasha-planet { font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:400; color:#d0c4f0; }
+    .dasha-slash { color:rgba(124,92,191,0.4); }
+    .dasha-dates { font-size:0.75rem; color:rgba(196,164,240,0.65); }
+    .dasha-label { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#b49edf; margin-bottom:6px; }
+
+    /* PERIOD ROWS */
+    .period-row { display:grid; grid-template-columns:100px 160px 1fr; gap:10px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.05); font-size:0.87rem; }
+    .period-window { font-weight:600; color:var(--gold2); }
+    .period-dasha { color:rgba(196,158,64,0.6); font-size:0.8rem; }
+    .period-theme { color:rgba(240,232,216,0.75); line-height:1.55; }
+
+    /* SHADOW GRID */
+    .shadow-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px; }
+    .shadow-card { background:rgba(196,96,122,0.06); border:1px solid rgba(196,96,122,0.15); border-radius:14px; padding:14px 16px; }
+    .shadow-card strong { display:block; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:#e8909f; margin-bottom:6px; }
+    .shadow-card p { font-size:0.87rem; color:rgba(240,232,216,0.7); line-height:1.6; }
+
+    /* FUN FACTS */
+    .fun-list { list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; }
+    .fun-list li { padding:12px 16px; background:rgba(255,255,255,0.04); border-left:3px solid var(--gold); border-radius:0 12px 12px 0; font-size:0.9rem; line-height:1.6; color:rgba(240,232,216,0.82); }
+
+    /* SUB LABEL */
+    .sub-label { font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); margin-bottom:8px; margin-top:18px; }
+
+    /* DIVIDER */
+    .divider { display:flex; align-items:center; gap:16px; margin:32px 0; font-size:0.65rem; letter-spacing:0.3em; text-transform:uppercase; color:rgba(240,232,216,0.3); }
+    .divider::before, .divider::after { content:''; flex:1; height:1px; background:var(--border); }
+
+    /* SPIRIT ANIMAL */
+    .animal-panel {
+      border-radius:28px; padding:56px 40px; text-align:center; margin-bottom:20px;
+      background: linear-gradient(135deg, rgba(28,18,56,0.98), rgba(60,30,80,0.96));
+      border:1px solid rgba(196,158,64,0.2); box-shadow:var(--shadow);
+      position:relative; overflow:hidden;
+    }
+    .animal-glow { position:absolute; inset:0; background:radial-gradient(ellipse 60% 60% at 50% 50%, rgba(196,158,64,0.06), transparent); pointer-events:none; }
+    .animal-emoji { font-size:96px; line-height:1; margin-bottom:18px; display:block; }
+    .animal-title { font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:var(--cream); margin-bottom:8px; }
+    .animal-sub { font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:28px; }
+    .animal-body { max-width:680px; margin:0 auto; font-size:0.95rem; line-height:1.85; color:rgba(240,232,216,0.82); }
+    .animal-body p { margin-bottom:14px; }
+
+    /* DARAKARAKA */
+    .dk-card { display:flex; align-items:center; gap:16px; padding:14px 18px; background:rgba(91,143,212,0.06); border:1px solid rgba(91,143,212,0.18); border-radius:14px; }
+    .dk-planet { font-family:'Cormorant Garamond',serif; font-size:1.8rem; font-weight:300; color:#9ec4f0; }
+    .dk-body { flex:1; }
+    .dk-label { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:#5b8fd4; margin-bottom:4px; }
+    .dk-desc { font-size:0.87rem; color:rgba(240,232,216,0.75); line-height:1.6; }
+
+    /* REF CARDS */
+    .ref-card { padding:16px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+    .ref-card:last-child { border-bottom:none; }
+    .ref-meta { display:flex; justify-content:space-between; margin-bottom:6px; }
+    .ref-source { font-size:0.72rem; color:var(--gold); letter-spacing:0.1em; text-transform:uppercase; }
+    .ref-quote { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; color:var(--cream); margin-bottom:6px; }
+    .ref-application { font-size:0.85rem; color:rgba(240,232,216,0.7); line-height:1.6; padding-left:12px; border-left:2px solid rgba(196,158,64,0.3); }
+
+    /* PROMPT BOX */
+    .prompt-box { background:rgba(11,11,30,0.95); border:1px solid rgba(124,92,191,0.25); border-radius:14px; padding:18px 20px; font-family:monospace; font-size:0.8rem; color:rgba(196,164,240,0.9); line-height:1.7; white-space:pre-wrap; word-break:break-word; margin-top:12px; }
+
+    /* FOOTER */
+    .footer { text-align:center; padding:20px 0; font-size:0.72rem; color:rgba(240,232,216,0.3); letter-spacing:0.08em; border-top:1px solid var(--border); margin-top:40px; }
+
+    @media (max-width:768px) {
+      .sym-grid, .shadow-grid { grid-template-columns:1fr; }
+      .stat-grid { grid-template-columns:1fr 1fr; }
+      .period-row { grid-template-columns:1fr; gap:4px; }
+      .hero { padding:32px 24px 28px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-symbol">♈</div>
+    <div class="hero-glow"></div>
+    <div class="eyebrow">Vedic Natal Profile · Jyotish · Lahiri Ayanamsha</div>
+    <h1>Arun D</h1>
+    <div class="lagna-line">Aries Lagna 13.3° · The Visionary Warrior <span class="leap-badge">🗓 Leap Day Born</span></div>
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-label">Born</div>
+        <div class="stat-value">29 Feb 1984</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Time · Place</div>
+        <div class="stat-value">9:36 AM · Delhi</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Current Dasha</div>
+        <div class="stat-value">Rahu / Jupiter / Saturn</div>
+      </div>
+      <div class="stat">
+        <div class="stat-label">Yogas</div>
+        <div class="stat-value">Sasa · Budha-Aditya · Amala · Vosi</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLANETS + YOGAS -->
+  <div class="sym-grid">
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">☿</div>
+        <h2>Planetary Positions</h2>
+      </div>
+      <table class="planet-table">
+        <thead><tr><th>Planet</th><th>Sign · Degree</th><th>H</th><th>Nakshatra · Pada</th></tr></thead>
+        <tbody>
+          <tr><td class="pname">Sun</td><td>Aquarius 16.1°</td><td><span class="h-num">11</span></td><td class="spc">Shatabhisha p3</td></tr>
+          <tr><td class="pname">Moon</td><td>Capricorn 17.9°</td><td><span class="h-num">10</span></td><td class="spc">Shravana p3</td></tr>
+          <tr><td class="pname">Mars</td><td>Libra 28.0°</td><td><span class="h-num">7</span></td><td class="spc">Vishakha p3</td></tr>
+          <tr><td class="pname">Mercury</td><td>Aquarius 8.9°</td><td><span class="h-num">11</span></td><td class="spc">Shatabhisha p1</td></tr>
+          <tr><td class="pname">Jupiter</td><td>Sagittarius 14.1°</td><td><span class="h-num">9</span></td><td class="spc">Purva Ashadha p1</td></tr>
+          <tr><td class="pname">Venus</td><td>Capricorn 18.7°</td><td><span class="h-num">10</span></td><td class="spc">Shravana p3</td></tr>
+          <tr><td class="pname">Saturn <span class="retro">℞</span></td><td>Libra 22.7° <span class="exalted-tag">Exalted</span></td><td><span class="h-num">7</span></td><td class="spc">Vishakha p1</td></tr>
+          <tr><td class="pname">Rahu <span class="retro">℞</span></td><td>Taurus 18.1°</td><td><span class="h-num">2</span></td><td class="spc">Rohini p3</td></tr>
+          <tr><td class="pname">Ketu</td><td>Scorpio 18.1°</td><td><span class="h-num">8</span></td><td class="spc">Jyeshtha p1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">★</div>
+        <h2>Active Yogas</h2>
+      </div>
+      <div class="yoga-list">
+        <div class="yoga-card sasa">
+          <div class="yoga-name">★★★ Sasa Yoga — Pancha Mahapurusha</div>
+          <div class="yoga-desc">Saturn exalted in Libra H7 (a kendra). Grants Saturnine mastery — disciplined authority, strategic patience, organizational power — expressed through partnerships, law, and long-range planning.</div>
+        </div>
+        <div class="yoga-card">
+          <div class="yoga-name">★★★ Budha-Aditya — Intelligence Yoga</div>
+          <div class="yoga-desc">Sun + Mercury conjunct in Aquarius H11. Fused intellect and identity. Eloquence, gains through communication and networks. Recognition in writing, teaching, intellectual domains.</div>
+        </div>
+        <div class="yoga-card">
+          <div class="yoga-name">★★ Amala Yoga — Spotless Reputation</div>
+          <div class="yoga-desc">Venus (natural benefic) in H10. Career built on ethics, beauty, and fairness. Instinctive professional trust. Enduring reputation through integrity.</div>
+        </div>
+        <div class="yoga-card">
+          <div class="yoga-name">★ Vosi Yoga — Sun Yoga</div>
+          <div class="yoga-desc">Venus 12th from Sun. Subtle spiritual undercurrent beneath worldly ambition. Comfortable, aesthetically refined life.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">Core Nature</div>
+
+  <div class="sym-grid">
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♈</div>
+        <h2>Personality & Nature</h2>
+      </div>
+      <p style="font-size:0.92rem;line-height:1.8;color:rgba(240,232,216,0.82);margin-bottom:14px;">
+        Aries Lagna makes Arun a born initiator — Mars-ruled, fiery, built for forward motion. But this is no ordinary Aries: the Lagna lord Mars sits in Libra H7 conjunct exalted Saturn, channeling warrior energy into <em>strategic diplomacy</em>. He wins arguments with logic and patience, not volume.
+      </p>
+      <p style="font-size:0.92rem;line-height:1.8;color:rgba(240,232,216,0.82);margin-bottom:14px;">
+        Moon in Capricorn H10 (Shravana nakshatra) gives a deeply practical emotional nature — feelings are processed through work, achievement, and responsibility. Shravana's power is <em>connection</em>: this Moon listens before it speaks, absorbs everything, synthesizes. Combined with Sun+Mercury in Aquarius H11, genuine social intelligence: warmth toward groups, humanitarian instincts, an ability to read collective currents.
+      </p>
+      <p style="font-size:0.92rem;line-height:1.8;color:rgba(240,232,216,0.82);">
+        Jupiter in own sign Sagittarius H9 is the philosophical anchor — a deep thinker who needs meaning behind every action. Life is oriented around dharma, wisdom, and teaching what he has learned the hard way.
+      </p>
+      <div class="sub-label">Core Strengths</div>
+      <div>
+        <span class="chip">Strategic patience</span>
+        <span class="chip">Systems thinker</span>
+        <span class="chip">Natural diplomat</span>
+        <span class="chip">Ethical authority</span>
+        <span class="chip">Intellectual eloquence</span>
+        <span class="chip">Long-range planner</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">🔭</div>
+        <h2>Spiritual Style</h2>
+      </div>
+      <div class="callout callout-gold" style="margin-bottom:16px;"><strong>Path: Dharmic</strong> — Jupiter in own sign H9 (the dharma house itself), Aries fire Lagna, Purva Ashadha nakshatra's invincibility archetype. A soul oriented toward righteous action, teaching by example, and building systems that endure.</div>
+      <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.75);margin-bottom:12px;">
+        <strong style="color:var(--gold);">H9 Jupiter (Sagittarius):</strong> Jupiter at home in H9 is the <em>guru within</em>. Ideas arrive fully formed. He becomes a teacher, mentor, or guide even without seeking the role.
+      </p>
+      <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.75);margin-bottom:12px;">
+        <strong style="color:var(--gold);">Ketu in H8 Scorpio (Jyeshtha):</strong> Past-life immersion in hidden knowledge — occult, transformative, esoteric. This lifetime, the soul moves <em>toward</em> lived dharma and away from mystery. But the intuitive access remains.
+      </p>
+      <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.75);">
+        <strong style="color:var(--gold);">Shatabhisha Sun (H11):</strong> Nakshatra of the 100 healers, ruled by Rahu. A visionary who sees the long arc. Drawn to collective transformation and healing through knowledge.
+      </p>
+      <div class="sub-label">Practices</div>
+      <div>
+        <span class="chip-green chip">Philosophical study</span>
+        <span class="chip-green chip">Teaching &amp; mentoring</span>
+        <span class="chip-green chip">Morning solar practice (Surya Namaskar)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">Career &amp; Wealth</div>
+
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">🎯</div>
+      <h2>Career &amp; Professional Life</h2>
+    </div>
+    <div class="sym-grid">
+      <div>
+        <div class="sub-label">Core Indicators</div>
+        <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.78);margin-bottom:14px;">
+          <strong style="color:var(--gold);">10th lord Saturn exalted H7 (Sasa Yoga):</strong> The career planet is at maximum dignity — but its expression comes through partnerships, contracts, and other people. Arun excels in roles requiring negotiation, alliance-building, and sustained organizational effort over time.
+        </p>
+        <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.78);margin-bottom:14px;">
+          <strong style="color:var(--gold);">Moon + Venus in H10 Capricorn (Shravana):</strong> Career house has two planets — emotional investment in work runs deep. Venus brings aesthetic sensibility; Moon brings intuition for public mood. Advising, brand-building, finance, or people-centered fields are natural fits.
+        </p>
+        <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.78);">
+          <strong style="color:var(--gold);">Amala Yoga:</strong> Whatever field he enters, he is known for fairness and quality. This chart advances through trust, not aggression.
+        </p>
+        <div class="sub-label">Best Domains</div>
+        <div>
+          <span class="chip">Law &amp; arbitration</span>
+          <span class="chip">Finance</span>
+          <span class="chip">Organizational consulting</span>
+          <span class="chip">Diplomacy</span>
+          <span class="chip">HR &amp; people leadership</span>
+          <span class="chip">Education</span>
+          <span class="chip">Wealth management</span>
+        </div>
+      </div>
+      <div>
+        <div class="sub-label">Career Windows</div>
+        <div class="period-row" style="border-top:1px solid rgba(255,255,255,0.05);">
+          <div class="period-window">2026–2028</div>
+          <div class="period-dasha">Rahu/Jupiter</div>
+          <div class="period-theme">Expansion of influence, teaching, international connections, higher studies, consulting launches. Jupiter H9 activates dharma-driven work.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2028–2031</div>
+          <div class="period-dasha">Rahu/Saturn</div>
+          <div class="period-theme"><strong style="color:var(--gold2);">Peak career window.</strong> Sasa Yoga activates under Saturn's own bhukti. Organizational authority, leadership roles, structured long-range projects materialize.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2031–2033</div>
+          <div class="period-dasha">Rahu/Mercury</div>
+          <div class="period-theme">Communication, writing, analytical work. Budha-Aditya Yoga activates — strong for intellectual recognition, digital, media, and technology work.</div>
+        </div>
+        <div class="callout callout-sage" style="margin-top:14px;">
+          Rahu Mahadasha (Jun 2023–Jun 2041) is the engine of ambition. With Jupiter, Saturn, and Mercury all holding strong natal positions, the next 15 years are a sustained upward arc. Not smooth — Rahu disrupts — but the momentum is unmistakable.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">Relationships</div>
+
+  <div class="sym-grid">
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">⚖️</div>
+        <h2>Relationships &amp; Partnership</h2>
+      </div>
+      <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.78);margin-bottom:12px;">
+        <strong style="color:var(--gold);">H7 stellium (Mars + Saturn exalted):</strong> The 7th house is unusually loaded. Mars (lagna lord) is there — Arun's identity is deeply invested in partnership. Saturn exalted adds long-term commitment, duty, and seriousness. He doesn't do casual relationships; every bond is evaluated for long-term alignment.
+      </p>
+      <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.78);margin-bottom:12px;">
+        <strong style="color:var(--gold);">Venus in H10 (Amala Yoga):</strong> The significator of the wife is in the career house — the partner is likely connected to professional life, public standing, or shared mission. Not merely romantic; a life partner in the deepest sense.
+      </p>
+      <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.78);">
+        <strong style="color:var(--gold);">Jupiter aspects H1 and H5:</strong> Jupiter from H9 casts full aspect on H1 (self) and H5 (romance/creativity). One of the most auspicious configurations for dharmic, fulfilling love — the relationship carries a sense of destined purpose.
+      </p>
+      <div class="sub-label">Darakaraka — Soul Significator of Spouse</div>
+      <div class="dk-card">
+        <div class="dk-planet">☿</div>
+        <div class="dk-body">
+          <div class="dk-label">Mercury · 8.87° Aquarius · Lowest-degree planet</div>
+          <div class="dk-desc">The spouse's essential nature is Mercury — witty, analytical, communicative, intellectually curious. A quick mind that loves ideas. In H11 Shatabhisha (Rahu-ruled) — unconventional, humanitarian, reformist. They likely meet through networks, shared causes, or intellectual circles.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">💫</div>
+        <h2>Marriage Windows</h2>
+      </div>
+      <div class="period-row" style="border-top:1px solid rgba(255,255,255,0.05);">
+        <div class="period-window">2026–2028</div>
+        <div class="period-dasha">Rahu/Jupiter</div>
+        <div class="period-theme">Jupiter is the primary marriage significator for males. Jupiter bhukti activating H9 while Rahu expands possibilities — high probability window for committed partnership or marriage.</div>
+      </div>
+      <div class="period-row">
+        <div class="period-window">2028–2031</div>
+        <div class="period-dasha">Rahu/Saturn</div>
+        <div class="period-theme">Saturn exalted in H7 — Saturn's own bhukti directly activates the marriage house. Crystallizes long-term, structured commitment. If not in Jupiter bhukti, this is the window.</div>
+      </div>
+      <div class="callout callout-plum" style="margin-top:16px;">
+        The dual H7 presence of Mars and Saturn creates a partner profile: someone disciplined and driven (Saturn) who also has fire and initiative (Mars). A peer, not a follower. The native should seek someone who matches their intellectual pace and respects meaningful work.
+      </div>
+      <div class="callout callout-sage" style="margin-top:12px;">
+        <strong>Protective factor:</strong> Jupiter's 5th aspect on H5 (romance) and 9th aspect on H1 is a powerful shield. Relationships — despite complexity — ultimately align with dharma. No karma here that cannot be resolved with honesty and patience.
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">Dasha Timeline</div>
+
+  <div class="panel dasha-panel">
+    <div class="panel-header">
+      <div class="panel-icon" style="background:rgba(124,92,191,0.14);color:#b49edf;">⏳</div>
+      <h2>Current Dasha Period</h2>
+    </div>
+    <div class="dasha-label">Active Now — July 2026</div>
+    <div class="dasha-bar">
+      <div class="dasha-planet">Rahu</div>
+      <div class="dasha-slash">/</div>
+      <div class="dasha-planet">Jupiter</div>
+      <div class="dasha-slash">/</div>
+      <div class="dasha-planet">Saturn</div>
+      <div style="margin-left:auto;text-align:right;">
+        <div class="dasha-dates">Rahu MD: Jun 2023 – Jun 2041</div>
+        <div class="dasha-dates">Jupiter AD: Feb 2026 – Jul 2028</div>
+        <div class="dasha-dates">Saturn PD: Jun 2026 – Nov 2026</div>
+      </div>
+    </div>
+    <p style="font-size:0.92rem;line-height:1.8;color:rgba(240,232,216,0.78);margin-bottom:12px;">
+      Rahu Mahadasha (18 years) is the period of maximum ambition, disruption, and transformation. Rahu intensifies whatever it contacts — and here the bhukti lords are Jupiter (exalted wisdom, H9) and Saturn (exalted authority, H7), meaning the disruption channels into <em>genuine power</em> rather than chaos.
+    </p>
+    <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.72);">
+      The Saturn pratyantardasha (Jun–Nov 2026) is potent: Saturn in Vishakha H7 running a sub-period brings partnerships, contracts, and long-term commitments to the forefront. This is a period for making formal agreements and establishing structures built to last.
+    </p>
+    <div class="callout callout-plum" style="margin-top:14px;">
+      <strong>Leap Year Note:</strong> Born 29 Feb 1984 — Arun has had only ~10 "true" birthdays in 42 years. His chart shows a person who operates on longer cycles than most. The Rahu MD running to 2041 fits perfectly: the life arc is measured in decades, not seasons.
+    </div>
+  </div>
+
+  <div class="divider">Shadow Side</div>
+
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">🌑</div>
+      <h2>Shadow &amp; Challenges</h2>
+    </div>
+    <p style="font-size:0.9rem;color:rgba(240,232,216,0.65);margin-bottom:16px;">Honest assessment — placements to be conscious of.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card">
+        <strong>Ketu H8 — Intimacy Avoidance</strong>
+        <p>Ketu in the house of shared resources and vulnerability creates a tendency to withdraw from emotional depth. Past-life detachment. Can feel "safer" alone than fully merged with another.</p>
+      </div>
+      <div class="shadow-card">
+        <strong>Rahu H2 — Speech &amp; Materialism</strong>
+        <p>Rahu in the house of speech and wealth amplifies cravings — for security, material sufficiency, the right words. Can manifest as exaggeration, overcommitment, or financial anxiety.</p>
+      </div>
+      <div class="shadow-card">
+        <strong>Mars in H7 — Combativeness in Partnership</strong>
+        <p>The lagna lord in the partner's house makes conflicts personal. Arun can be overly direct or combative with those closest to him — projecting Aries warrior energy onto relationships.</p>
+      </div>
+      <div class="shadow-card">
+        <strong>Saturn ℞ H7 — Commitment Delays</strong>
+        <p>Retrograde Saturn in H7 manifests as hesitation before committing — or choosing partners who are unavailable or burdened. Requires conscious patience, not passive waiting.</p>
+      </div>
+    </div>
+    <div class="callout callout-rose" style="margin-top:18px;">
+      <strong>Antidote:</strong> The shadow is relational — Ketu's detachment + Saturn's delays + Mars's impulsiveness in H7 form a triad of partnership complexity. The remedy is Jupiter's wisdom (H9): slow down, choose consciously, and communicate with the depth that Shravana Moon is genuinely capable of.
+    </div>
+  </div>
+
+  <div class="divider">Fun Facts</div>
+
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">✨</div>
+      <h2>5 Surprising Chart Details</h2>
+    </div>
+    <ul class="fun-list">
+      <li>🗓 <strong>Born on Leap Day (Feb 29)</strong> — roughly 1 in 1,461 births. In 42 years, he has had only ~10 "real" birthdays. The chart itself is rare: Sasa Yoga in H7 (most Sasa Yogas land in H1 or H10).</li>
+      <li>⚖️ <strong>H7 holds both Mars and exalted Saturn</strong> — the warrior and the judge, the lagna lord and the career lord, all in the house of partnership. The most intense and most fair-minded person in the room simultaneously.</li>
+      <li>🪐 <strong>Jupiter in exact own sign in H9</strong> — triple resonance: Jupiter rules Sagittarius AND sits in Sagittarius AND in the 9th house (dharma). Wisdom as both home and mission.</li>
+      <li>🌙 <strong>Moon + Venus share exact same nakshatra pada (Shravana p3, Capricorn H10)</strong> — rare double-pada occupation. Career life is defined by deep listening (Shravana = "to hear"), aesthetic intelligence, and emotional investment in public reputation.</li>
+      <li>☿ <strong>Darakaraka Mercury is also in Budha-Aditya Yoga with the Sun</strong> — the soul-chosen spouse (Mercury, lowest degree) is the same planet forming the chart's intelligence yoga. Partnership is not separate from identity; it is its sharpest expression.</li>
+    </ul>
+  </div>
+
+  <div class="divider">Health</div>
+
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">❤️</div>
+      <h2>Health Constitution</h2>
+    </div>
+    <div class="sym-grid">
+      <div>
+        <div class="sub-label">Constitution Type</div>
+        <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.78);margin-bottom:12px;">
+          <strong style="color:var(--gold);">Aries Lagna → Pitta-dominant.</strong> Fire element: energetic, driven, prone to inflammation, acidity, and heat when out of balance. Needs cooling, grounding practices.
+        </p>
+        <p style="font-size:0.9rem;line-height:1.8;color:rgba(240,232,216,0.78);">
+          <strong style="color:var(--gold);">Moon in Shravana Capricorn:</strong> Capricorn rules knees, bones, joints. Emotional stress manifests in musculoskeletal tension. The nervous system works overtime when ambition is frustrated.
+        </p>
+        <div class="sub-label">Vulnerable Areas</div>
+        <div>
+          <span class="chip-neg chip">Kidneys (Saturn H7)</span>
+          <span class="chip-neg chip">Joints &amp; knees (Moon Capricorn)</span>
+          <span class="chip-neg chip">Inflammatory conditions (Aries)</span>
+        </div>
+      </div>
+      <div>
+        <div class="sub-label">Protective Practices</div>
+        <div>
+          <span class="chip-green chip">Cooling breath (Sitali pranayama)</span>
+          <span class="chip-green chip">Structured sleep routine</span>
+          <span class="chip-green chip">Knee &amp; joint mobility work</span>
+          <span class="chip-green chip">Vata-Pitta balancing diet</span>
+          <span class="chip-green chip">Nature walks / bird listening (Shravana)</span>
+        </div>
+        <div class="callout callout-sage" style="margin-top:14px;">
+          Saturn's exaltation is a health protector: disciplined habits and routine are built into this chart. The body responds well to systematic daily care — not crash programs, but sustained practice across years.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider">Spirit Animal</div>
+
+  <!-- SPIRIT ANIMAL -->
+  <div class="animal-panel">
+    <div class="animal-glow"></div>
+    <span class="animal-emoji">🐎</span>
+    <div class="animal-title">The Celestial Horse</div>
+    <div class="animal-sub">Shravana Nakshatra · Purva Ashadha Pada · Sagittarius-Aries Fire Line</div>
+    <div class="animal-body">
+      <p>The Horse emerges from three converging streams: Shravana nakshatra (whose symbol is Vishnu's three cosmic footprints — interpreted across traditions as the hoofprints of the divine horse traversing the three worlds), Jupiter in Sagittarius (the centaur archer, half-human half-horse, embodying the fusion of animal vitality with philosophical wisdom), and the Aries fire Lagna — a galloping charge that meets every horizon with curiosity and intent.</p>
+      <p>Like the horse, Arun holds dual natures in balance: Saturn exalted (the endurance of a long-distance horse, built for marathon not sprint) alongside Mars fire (the war-horse, responsive and decisive). This gives the rare ability to move with sustained speed — not impulsive bursts, but measured momentum that accumulates into something genuinely formidable.</p>
+      <p>The Celestial Horse is a <em>listener</em> first — Shravana means "to hear," and the horse's legendary sensitivity to vibration mirrors Arun's capacity to absorb what others miss, synthesize it quietly, and then act with precision when the terrain is right. This is not a chart that rushes. It gallops when the moment is real.</p>
+    </div>
+  </div>
+
+  <!-- META AI PROMPT -->
+  <div class="panel dasha-panel">
+    <div class="panel-header">
+      <div class="panel-icon" style="background:rgba(124,92,191,0.14);color:#b49edf;">🎨</div>
+      <h2>Meta AI Image Prompt</h2>
+    </div>
+    <p style="font-size:0.85rem;color:rgba(240,232,216,0.65);margin-bottom:10px;">Copy-paste ready for meta.ai spirit animal portrait:</p>
+    <div class="prompt-box">A magnificent celestial horse emerging from a cosmic nebula, Aries ram-horn symbols woven into its mane as glowing golden glyphs, deep indigo and amethyst space background with Saturn's rings arching overhead, Sagittarius archer constellation visible above, the horse's coat shimmering with Shravana nakshatra's three footprint stars, Capricorn sea-goat constellation reflected in its eyes, soft golden light radiating from its chest where an Aries fire symbol burns, mystical dark cosmic background with swirling stardust, painterly surrealist digital art, ultra detailed, cinematic lighting, --ar 3:4</div>
+  </div>
+
+  <div class="divider">Classical References</div>
+
+  <div class="panel" style="overflow-y:auto;max-height:480px;">
+    <div class="panel-header">
+      <div class="panel-icon">📜</div>
+      <h2>Classical Sources</h2>
+    </div>
+    <div class="ref-card">
+      <div class="ref-meta"><span class="ref-source">BPHS — Pancha Mahapurusha · Sasa Yoga</span></div>
+      <div class="ref-quote">"If at birth Saturn is in Libra, Capricorn or Aquarius and occupies a quadrant, the native born is called Sasa — he will be a leader, will subdue enemies, and govern with firm authority."</div>
+      <div class="ref-application">Saturn exalted in Libra (highest dignity) in H7, a kendra. Power expressed through partnerships, legal structures, and diplomatic channels rather than solo aggression.</div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-meta"><span class="ref-source">Saravali — Budha-Aditya Yoga</span></div>
+      <div class="ref-quote">"If the Sun and Mercury are conjunct, the native will be learned, enjoy pleasures, be endowed with excellent qualities, and be honoured by the learned."</div>
+      <div class="ref-application">Sun and Mercury conjunct in Aquarius H11. The intellectual gifts are humanitarian in orientation — knowledge deployed for collective benefit, gains through networks and communication.</div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-meta"><span class="ref-source">The Nakshatras — Harness · Shravana</span></div>
+      <div class="ref-quote">"Shravana means 'to hear' — its deity is Vishnu the Preserver, its power is connection (samhanana shakti). The symbol is three footprints — Vishnu's three cosmic strides across all existence."</div>
+      <div class="ref-application">Moon and Venus both in Shravana H10 — the career is defined by listening, connecting, and preserving. Vishnu's three strides (the horse-print symbol) links to the spirit animal and gives professional life a sacred, preserving quality.</div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-meta"><span class="ref-source">Brihat Jataka — Amala Yoga</span></div>
+      <div class="ref-quote">"If a benefic planet occupies the tenth house from Lagna without malefic association, the person will have a spotless reputation and achieve lasting fame."</div>
+      <div class="ref-application">Venus in H10 Capricorn gives Amala Yoga. Professional reputation is the chart's most consistent gift — built slowly (Saturn, 10th lord), maintained through ethics (Venus), and lasting (Capricorn's permanence).</div>
+    </div>
+  </div>
+
+  <div class="footer">Generated July 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Jyotish</div>
+
+</div>
+</body>
+</html>
