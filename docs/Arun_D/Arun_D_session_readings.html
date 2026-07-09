@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Arun D — Session Readings · July 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* LAYOUT */
+    .layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; max-width: 1300px; margin: 0 auto; }
+
+    /* SIDEBAR */
+    .sidebar {
+      position: sticky; top: 0; height: 100vh; overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92); backdrop-filter: blur(12px);
+    }
+    .sidebar-animals { display: flex; gap: 8px; font-size: 2rem; margin-bottom: 16px; }
+    .sidebar-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 400; color: var(--cream); margin-bottom: 4px; }
+    .sidebar-sub { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .sidebar-stat { padding: 10px 0; border-bottom: 1px solid rgba(196,158,64,0.08); }
+    .sidebar-stat:last-of-type { border-bottom: none; margin-bottom: 20px; }
+    .stat-k { font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+    .stat-v { font-size: 0.82rem; color: var(--cream); }
+    .nav-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; margin-top: 8px; }
+    .nav-link { display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 10px; text-decoration: none; color: rgba(240,232,216,0.65); font-size: 0.82rem; transition: background 0.15s; margin-bottom: 2px; }
+    .nav-link:hover { background: rgba(255,255,255,0.05); color: var(--cream); }
+    .nav-icon { width: 26px; height: 26px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; flex-shrink: 0; }
+    .nav-icon.gold  { background: rgba(196,158,64,0.15); }
+    .nav-icon.sage  { background: rgba(90,143,114,0.15); }
+    .nav-icon.plum  { background: rgba(124,92,191,0.15); }
+    .nav-icon.rose  { background: rgba(196,96,122,0.15); }
+    .nav-icon.blue  { background: rgba(91,143,212,0.15); }
+
+    /* MAIN */
+    .main { padding: 48px 52px 80px; max-width: 860px; }
+
+    /* HERO */
+    .hero {
+      border-radius: 28px; padding: 44px 44px 36px; margin-bottom: 52px;
+      background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22); box-shadow: var(--shadow);
+      position: relative; overflow: hidden;
+    }
+    .hero-glow { position: absolute; right: -60px; bottom: -80px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(196,158,64,0.12), transparent 65%); pointer-events: none; }
+    .hero-animals { font-size: 3rem; margin-bottom: 12px; letter-spacing: 4px; }
+    .eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 300; color: #fff8f0; line-height: 1.15; margin-bottom: 10px; }
+    .hero-sub { font-size: 0.88rem; color: rgba(240,232,216,0.6); max-width: 500px; line-height: 1.7; }
+
+    /* CHAPTER */
+    .chapter { margin-bottom: 64px; scroll-margin-top: 32px; }
+    .chapter-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .chapter-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .chapter-icon.gold { background: rgba(196,158,64,0.14); }
+    .chapter-icon.sage { background: rgba(90,143,114,0.14); }
+    .chapter-icon.plum { background: rgba(124,92,191,0.14); }
+    .chapter-icon.rose { background: rgba(196,96,122,0.14); }
+    .chapter-icon.blue { background: rgba(91,143,212,0.14); }
+    .chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--cream); }
+    .chapter h2 small { display: block; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+
+    /* SECTION CARD */
+    .section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 28px; margin-bottom: 14px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--cream); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-gold { background: var(--gold); }
+    .dot-sage { background: var(--sage); }
+    .dot-plum { background: var(--plum); }
+    .dot-rose { background: var(--rose); }
+    .dot-blue { background: var(--blue); }
+    .section p { font-size: 0.9rem; line-height: 1.8; color: rgba(240,232,216,0.8); margin-bottom: 10px; }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* CALLOUT */
+    .callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 14px; }
+    .callout-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+    .callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+    .callout-gold .callout-label { color: var(--gold); }
+    .callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+    .callout-sage .callout-label { color: #80c4a0; }
+    .callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+    .callout-plum .callout-label { color: #b49edf; }
+    .callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+    .callout-rose .callout-label { color: #e8909f; }
+
+    /* READING TABLE */
+    .reading-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-top: 14px; }
+    .reading-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+    .reading-table td { padding: 10px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* BADGE */
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+    /* SCORE BLOCK */
+    .score-hero { text-align: center; padding: 36px 24px; background: linear-gradient(135deg, rgba(124,92,191,0.1), rgba(196,158,64,0.06)); border: 1px solid rgba(196,158,64,0.2); border-radius: 20px; margin-bottom: 20px; }
+    .score-number { font-family: 'Cormorant Garamond', serif; font-size: 6rem; font-weight: 300; color: var(--gold2); line-height: 1; }
+    .score-denom { font-size: 2rem; color: rgba(196,158,64,0.45); }
+    .score-label { font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-top: 8px; }
+    .score-verdict { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-style: italic; color: rgba(240,232,216,0.75); margin-top: 12px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.6; }
+
+    /* COMPAT GRID */
+    .compat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+    .compat-card { border-radius: 14px; padding: 16px 18px; }
+    .compat-card.green { background: rgba(90,143,114,0.08); border: 1px solid rgba(90,143,114,0.22); }
+    .compat-card.rose  { background: rgba(196,96,122,0.08); border: 1px solid rgba(196,96,122,0.2); }
+    .compat-card strong { display: block; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+    .compat-card.green strong { color: #80c4a0; }
+    .compat-card.rose strong  { color: #e8909f; }
+    .compat-card p { font-size: 0.86rem; color: rgba(240,232,216,0.72); line-height: 1.65; }
+
+    /* PERIOD ROW */
+    .period-row { display: grid; grid-template-columns: 90px 150px 1fr; gap: 10px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.87rem; }
+    .period-window { font-weight: 600; color: var(--gold2); font-size: 0.82rem; }
+    .period-dasha  { color: rgba(196,158,64,0.65); font-size: 0.8rem; }
+    .period-theme  { color: rgba(240,232,216,0.75); line-height: 1.55; }
+
+    /* DIVIDER */
+    .divider { display: flex; align-items: center; gap: 16px; margin: 40px 0 32px; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(240,232,216,0.25); }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* CROSS CHART TABLE */
+    .cross-row { display: grid; grid-template-columns: 160px 100px 1fr; gap: 12px; padding: 10px 14px; border-radius: 10px; margin-bottom: 6px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04); font-size: 0.86rem; align-items: start; }
+    .cross-planet { color: var(--gold2); font-weight: 500; }
+    .cross-lands { font-size: 0.75rem; color: rgba(196,158,64,0.6); }
+    .cross-meaning { color: rgba(240,232,216,0.75); line-height: 1.55; }
+
+    /* FOOTER */
+    .footer { text-align: center; padding: 20px 0; font-size: 0.72rem; color: rgba(240,232,216,0.3); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 40px; }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px; display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; }
+      .main { padding: 32px 20px 60px; }
+      .compat-grid, .cross-row { grid-template-columns: 1fr; }
+      .period-row { grid-template-columns: 1fr; gap: 2px; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-animals">🐎 🦁</div>
+    <div class="sidebar-title">Arun D + Drish</div>
+    <div class="sidebar-sub">Session · July 2026</div>
+
+    <div class="sidebar-stat">
+      <div class="stat-k">Arun D</div>
+      <div class="stat-v">Aries Lagna 13.3° · Male · 42</div>
+    </div>
+    <div class="sidebar-stat">
+      <div class="stat-k">Arun Dasha</div>
+      <div class="stat-v">Rahu / Jupiter / Saturn</div>
+    </div>
+    <div class="sidebar-stat">
+      <div class="stat-k">Drish</div>
+      <div class="stat-v">Cancer Lagna 13.2° · Female · 36</div>
+    </div>
+    <div class="sidebar-stat">
+      <div class="stat-k">Drish Dasha</div>
+      <div class="stat-v">Moon / Venus / Mars</div>
+    </div>
+    <div class="sidebar-stat">
+      <div class="stat-k">Marriage Score</div>
+      <div class="stat-v">7 / 10</div>
+    </div>
+
+    <div class="nav-label">Chapters</div>
+
+    <a href="#career" class="nav-link">
+      <span class="nav-icon gold">💼</span> Career — Now
+    </a>
+    <a href="#jobs" class="nav-link">
+      <span class="nav-icon sage">📋</span> Job Applications
+    </a>
+    <a href="#compatibility" class="nav-link">
+      <span class="nav-icon plum">💫</span> Compatibility
+    </a>
+    <a href="#marriage" class="nav-link">
+      <span class="nav-icon rose">💍</span> Marriage Verdict
+    </a>
+    <a href="#expression" class="nav-link">
+      <span class="nav-icon blue">🗣️</span> On Expression
+    </a>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-animals">🐎 🦁</div>
+      <div class="eyebrow">Session Readings · Jyotish · July 2026</div>
+      <h1>Arun D — Career, Partnership<br>& Drish Compatibility</h1>
+      <p class="hero-sub">Deep reading session covering current career status, job application timing, and a full romantic compatibility analysis between Arun D (Aries Lagna, Sasa Yoga) and Drish (Cancer Lagna, dual Pancha Mahapurusha).</p>
+    </div>
+
+    <!-- CHAPTER 1: CAREER -->
+    <div class="chapter" id="career">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">💼</div>
+        <h2><small>Chapter 1 · Career</small>Current Job Status — July 2026</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>What the Dasha Says</div>
+        <p><strong style="color:var(--gold);">Rahu / Jupiter / Saturn (Jun–Nov 2026):</strong> Three layers active simultaneously. Rahu Mahadasha (18 years, to 2041) is the engine of ambition and disruption. Jupiter Antardasha (Feb 2026–Jul 2028) expands philosophical, advisory, and dharma-driven work. Saturn Pratyantardasha (Jun–Nov 2026) is the active sub-period right now.</p>
+        <p>Saturn is the 10th lord (career planet) for Aries Lagna — and it's currently transiting H12 (Pisces). The 10th lord in the 12th by transit = career effort happening <em>behind the scenes</em>. Work that isn't fully visible or credited yet. Overseas-connected roles, remote work, or projects that run below the public radar.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Natal Career Strengths</div>
+        <table class="reading-table">
+          <thead><tr><th>Placement</th><th>Yoga</th><th>Career Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Saturn exalted H7 (Libra)</td><td><span class="badge badge-protect">Sasa Yoga</span></td><td>10th lord at maximum dignity — career excellence through partnerships, contracts, negotiation. Built for long-range organizational roles.</td></tr>
+            <tr><td>Moon + Venus in H10 (Capricorn)</td><td><span class="badge badge-protect">Amala Yoga</span></td><td>Emotional investment in career. Venus = spotless reputation. Moon = intuition for public mood. Advising, finance, people leadership.</td></tr>
+            <tr><td>Sun + Mercury in H11 (Aquarius)</td><td><span class="badge badge-protect">Budha-Aditya</span></td><td>Gains through communication, intellect, and networks. Recognition in writing and analytical domains.</td></tr>
+            <tr><td>Jupiter own sign H9</td><td>—</td><td>Philosophical depth — performs best in roles with meaning, not just money. Consulting, education, law.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Bottom Line</div>
+        This is a <strong>foundation-laying phase</strong>, not a peak. Good work is happening but not yet fully visible or rewarded. The Rahu MD rewards builders who think in decades. The peak career window (Rahu/Saturn bhukti, 2028–2031) is when everything built quietly now becomes organizational authority. Competent but not yet in the right position — and the chart agrees.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- CHAPTER 2: JOB APPLICATIONS -->
+    <div class="chapter" id="jobs">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">📋</div>
+        <h2><small>Chapter 2 · Career Timing</small>Should He Apply for Jobs Now?</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Yes — With a Strategy</div>
+        <p><strong style="color:#80c4a0;">Rahu transiting H11 (Aquarius):</strong> H11 is the house of job offers, gains, and fulfillment of desires. Rahu amplifying H11 right now means unconventional channels outperform traditional ones — LinkedIn, referrals, warm introductions, not cold applications.</p>
+        <p><strong style="color:#80c4a0;">Saturn PD = formal structure time:</strong> Saturn's pratyantardasha is ideal for writing CVs, making formal applications, and initiating contracts. Saturn in H12 transit means things won't happen instantly — but the groundwork laid now is real and lasting.</p>
+        <p><strong style="color:#80c4a0;">Jupiter AD (ongoing):</strong> Supports roles involving advising, higher-order thinking, organizational strategy, or fields with philosophical/ethical dimensions — consulting, education, law, finance leadership.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>The Timing Pipeline</div>
+        <div class="period-row" style="border-top:1px solid rgba(255,255,255,0.05);">
+          <div class="period-window">Now → Oct 2026</div>
+          <div class="period-dasha">Saturn PD</div>
+          <div class="period-theme">Apply, network, build pipeline. Saturn time = formal action, structured outreach. Plant seeds through the right channels.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">Nov 2026 → mid-2027</div>
+          <div class="period-dasha">Mercury PD</div>
+          <div class="period-theme"><strong style="color:var(--gold2);">Conversion window.</strong> Budha-Aditya Yoga fires — Sun+Mercury H11 activated. Interviews, offers, and conversations crystallize. Applications placed now begin bearing fruit here.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2028–2031</div>
+          <div class="period-dasha">Rahu/Saturn</div>
+          <div class="period-theme"><strong style="color:var(--gold2);">Sasa Yoga peak.</strong> Be in the right role by now. Organizational authority, senior leadership. This is when the career arc reaches maximum height.</div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Best Targets</div>
+        <p>Given Sasa Yoga (Saturn H7) + Amala Yoga (Venus H10) + Budha-Aditya (H11), the strongest role fits are:</p>
+        <table class="reading-table">
+          <thead><tr><th>Domain</th><th>Why the Chart Supports It</th></tr></thead>
+          <tbody>
+            <tr><td>Law / Arbitration / Compliance</td><td>Saturn exalted H7 — justice, structure, contracts. Natural authority.</td></tr>
+            <tr><td>Finance / Wealth Management</td><td>Moon+Venus H10 Capricorn — disciplined aesthetic with people-focus.</td></tr>
+            <tr><td>Organizational Consulting / HR</td><td>Sasa Yoga = built for long-range systems and people management.</td></tr>
+            <tr><td>Education / Advisory roles</td><td>Jupiter H9 own sign — wisdom transmission is a core gift.</td></tr>
+            <tr><td>International / MNC roles</td><td>Saturn H12 transit favors overseas-connected employers right now.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Verdict</div>
+        Apply now through networks. Target structured, ethical organizations — especially those with international operations. Don't expect instant callbacks. The pipeline starts now; offers materialize Nov 2026–mid 2027 when Mercury PD activates Budha-Aditya Yoga.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- CHAPTER 3: COMPATIBILITY -->
+    <div class="chapter" id="compatibility">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">💫</div>
+        <h2><small>Chapter 3 · Drish × Arun D</small>Compatibility — Full Reading</h2>
+      </div>
+
+      <!-- DARAKARAKA MATCH -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Darakaraka Match — The Clearest Signal</div>
+        <p><strong style="color:#b49edf;">Drish's Darakaraka = Saturn (0.9°)</strong> — her soul is seeking a disciplined, mature, structured partner with Saturnine gravity.</p>
+        <p><strong style="color:#b49edf;">Arun D has Saturn exalted in H7 (Sasa Yoga)</strong> — he literally IS that. Saturn is his dominant partnership energy. The soul-level description of Drish's ideal partner matches Arun's actual chart signature.</p>
+        <p>This is a rare and significant alignment. The Darakaraka is the most precise soul-level indicator of spouse — not just what someone wants consciously, but what the soul has been oriented toward across lifetimes.</p>
+      </div>
+
+      <!-- CROSS-CHART ACTIVATIONS -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Cross-Chart House Activations</div>
+        <p style="font-size:0.82rem;color:var(--muted);margin-bottom:12px;">Where each person's planets land in the other's chart houses — a direct energetic activation.</p>
+
+        <p style="font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Arun's planets in Drish's houses</p>
+        <div class="cross-row">
+          <div><span class="cross-planet">Venus (Capricorn)</span></div>
+          <div class="cross-lands">→ Drish's H7</div>
+          <div class="cross-meaning">Arun's love nature lands directly in Drish's marriage house. He activates her partnership zone. <span class="badge badge-protect">Very strong</span></div>
+        </div>
+        <div class="cross-row">
+          <div><span class="cross-planet">Moon + Venus</span></div>
+          <div class="cross-lands">→ Drish's H7</div>
+          <div class="cross-meaning">Both his emotional planet AND love planet in her marriage house simultaneously.</div>
+        </div>
+        <div class="cross-row">
+          <div><span class="cross-planet">Sun + Mercury</span></div>
+          <div class="cross-lands">→ Drish's H8</div>
+          <div class="cross-meaning">Deep, transformative intellectual connection. His mind penetrates her mystery zone.</div>
+        </div>
+
+        <p style="font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin:14px 0 8px;">Drish's planets in Arun's houses</p>
+        <div class="cross-row">
+          <div><span class="cross-planet">Moon (Leo)</span></div>
+          <div class="cross-lands">→ Arun's H5</div>
+          <div class="cross-meaning">Drish's emotional nature activates Arun's house of romance and creativity. She is the romantic energy in his life. <span class="badge badge-protect">Very strong</span></div>
+        </div>
+        <div class="cross-row">
+          <div><span class="cross-planet">Mars + Saturn + Rahu</span></div>
+          <div class="cross-lands">→ Arun's H10</div>
+          <div class="cross-meaning">She significantly shapes his career trajectory. Powerful influence — can be deeply supportive or intensely challenging depending on alignment. <span class="badge badge-mixed">Double-edged</span></div>
+        </div>
+        <div class="cross-row">
+          <div><span class="cross-planet">Sun (Pisces)</span></div>
+          <div class="cross-lands">→ Arun's H12</div>
+          <div class="cross-meaning">Spiritual, hidden, soul-level connection. Her identity touches his house of liberation and past life.</div>
+        </div>
+      </div>
+
+      <!-- JUPITER CROSS ASPECTS -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Jupiter Cross-Aspects — Dharmic Protection</div>
+        <p><strong style="color:#b49edf;">Arun's Jupiter (Sagittarius H9)</strong> casts its 9th aspect on Leo (H5 from Aries) — directly aspecting <strong>Drish's Moon</strong>. He expands her emotional world and brings wisdom to her inner life. She feels genuinely <em>seen</em> when he is at his best.</p>
+        <p><strong style="color:#b49edf;">Drish's Jupiter (Gemini H12)</strong> aspects Libra (H7 from Cancer) — directly aspecting <strong>Arun's marriage house</strong>. Her wisdom blesses and protects his partnership life. She is a protective force in his relationship karma.</p>
+        <div class="callout callout-plum" style="margin-top:12px;">
+          <div class="callout-label">Significance</div>
+          When two people's Jupiters aspect each other's most sensitive romantic placements, classical Jyotish reads this as <em>dharmic connection</em> — a bond that carries grace across time. Not guaranteed ease, but genuine meaning.
+        </div>
+      </div>
+
+      <!-- FRICTION POINTS -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Real Friction Points</div>
+        <div class="compat-grid">
+          <div class="compat-card rose">
+            <strong>Moon Axis: Leo–Capricorn (6-8 Bhakoot)</strong>
+            <p>The most challenging classical signal. Leo Moon (Drish) needs to feel celebrated and seen. Capricorn Moon (Arun) processes emotions quietly and practically. These Moon signs sit in a 6-8 axis — classically creates the pattern of one person feeling perpetually unseen by the other.</p>
+          </div>
+          <div class="compat-card rose">
+            <strong>Graha Maitri: Sun vs Saturn (enemies)</strong>
+            <p>Drish's Moon lord = Sun (Leo). Arun's Moon lord = Saturn (Capricorn). Sun and Saturn are enemies in Jyotish. Different core rhythms, values around authority and emotional expression that occasionally clash at the personality level.</p>
+          </div>
+          <div class="compat-card rose">
+            <strong>Tara Asymmetry</strong>
+            <p>Drish→Arun = Kshema (4th, favorable) — she flows naturally toward him, nourishes the relationship. Arun→Drish = Naidhana (7th, challenging) — he can unconsciously create pressure for her. She will carry more of the emotional labor.</p>
+          </div>
+          <div class="compat-card rose">
+            <strong>Dasha Sync: Currently Misaligned</strong>
+            <p>Drish is in Moon/Venus (peak emotional flourishing, ready for relationship). Arun is in Rahu/Jupiter/Saturn (building, unsettled). Zero overlap of favorable dasha windows. Different inner clocks right now.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- STRENGTHS -->
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>What Works</div>
+        <div class="compat-grid">
+          <div class="compat-card green">
+            <strong>Darakaraka Match</strong>
+            <p>Drish's soul seeks Saturn. Arun IS exalted Saturn. The most direct soul-level alignment the chart can produce.</p>
+          </div>
+          <div class="compat-card green">
+            <strong>Venus in H7 Activation</strong>
+            <p>Arun's Venus lands in Drish's marriage house. He is a Venus-energy in her most intimate domain.</p>
+          </div>
+          <div class="compat-card green">
+            <strong>Jupiter Mutual Protection</strong>
+            <p>Each person's Jupiter aspects the other's most romantic placement. Dharmic grace in the connection.</p>
+          </div>
+          <div class="compat-card green">
+            <strong>Shared Saturn Language</strong>
+            <p>Both have Sasa Yoga. They speak the same Saturn dialect — discipline, long-term thinking, seriousness of purpose. They understand each other's reserve.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-plum">
+        <div class="callout-label">Engine Score</div>
+        Working Style 60 · Drive 75 · Vision 78 · Timing Sync 35 · <strong>Overall: 62 / 100 — "Good"</strong>. The engine flags the timing mismatch as the main drag. The soul-level signals (Darakaraka, cross-chart H7, Jupiter aspects) are genuinely strong.
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- CHAPTER 4: MARRIAGE VERDICT -->
+    <div class="chapter" id="marriage">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">💍</div>
+        <h2><small>Chapter 4 · Marriage Partnership</small>The Verdict</h2>
+      </div>
+
+      <div class="score-hero">
+        <div class="score-number">7<span class="score-denom">/10</span></div>
+        <div class="score-label">Marriage Compatibility</div>
+        <div class="score-verdict">"Strong enough to work — but only if Arun learns to express and Drish learns to receive reliability as love."</div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Why 7 and Not Higher</div>
+        <p>The Darakaraka match, Venus-in-H7, and Jupiter cross-aspects are exceptional — genuine rare signals. But the <strong>Leo–Capricorn Moon axis (6-8 bhakoot)</strong> is a real and recurring friction point that requires active management, not just awareness. The chart gives them the foundation; the rest is conscious effort.</p>
+        <p>The emotional language gap remains even after correcting the expression assessment (see Chapter 5). Drish's Leo Moon wants to <em>feel celebrated</em>. Arun CAN articulate beautifully — but his natural register may be more measured than theatrical. She'll get the words; the Leo-style grand gestures may need to be explicitly invited.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Best Marriage Timing</div>
+        <div class="period-row" style="border-top:1px solid rgba(255,255,255,0.05);">
+          <div class="period-window">2026–2028</div>
+          <div class="period-dasha">Rahu/Jupiter (Arun)</div>
+          <div class="period-theme">Jupiter as male marriage significator is active. High probability window for committed partnership deepening or formal commitment.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2028–2031</div>
+          <div class="period-dasha">Rahu/Saturn (Arun)</div>
+          <div class="period-theme"><strong style="color:var(--gold2);">Strongest window.</strong> Saturn exalted H7 (Sasa Yoga) in its own bhukti directly activates the marriage house. Drish simultaneously in Mars/Jupiter (Yoga Karaka peak). Both at maximum power — the natural crystallization point for this relationship.</div>
+        </div>
+
+        <div class="callout callout-rose" style="margin-top:14px;">
+          <div class="callout-label">Right Now</div>
+          Drish is ready (Moon/Venus dasha — emotionally open, flourishing). Arun is still building (Rahu MD — unsettled, ambitious, not yet settled). They are on different inner clocks. The relationship is real; the full commitment timing favors 2028 onwards.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>What Makes It Work Long-Term</div>
+        <table class="reading-table">
+          <thead><tr><th>Factor</th><th>Signal</th><th>Weight</th></tr></thead>
+          <tbody>
+            <tr><td>Darakaraka match</td><td><span class="badge badge-protect">Strong YES</span></td><td>Soul-level</td></tr>
+            <tr><td>Arun's Venus in Drish's H7</td><td><span class="badge badge-protect">Strong YES</span></td><td>Romantic activation</td></tr>
+            <tr><td>Jupiter cross-aspects</td><td><span class="badge badge-protect">Dharmic grace</span></td><td>Protective</td></tr>
+            <tr><td>Shared Sasa Yoga language</td><td><span class="badge badge-protect">Yes</span></td><td>Mutual respect</td></tr>
+            <tr><td>Moon 6-8 bhakoot</td><td><span class="badge badge-risk">Handle with care</span></td><td>Daily friction</td></tr>
+            <tr><td>Tara asymmetry</td><td><span class="badge badge-mixed">Unequal flow</span></td><td>Emotional labor</td></tr>
+            <tr><td>Dasha sync (now)</td><td><span class="badge badge-risk">Misaligned</span></td><td>Timing</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- CHAPTER 5: ON EXPRESSION -->
+    <div class="chapter" id="expression">
+      <div class="chapter-header">
+        <div class="chapter-icon blue">🗣️</div>
+        <h2><small>Chapter 5 · Correction</small>On Arun's Verbal Expression</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-blue"></span>Drish's Correction — and Why the Chart Agrees</div>
+        <p>The initial reading said Arun's Capricorn Moon makes him emotionally reserved and unexpressive. Drish corrected this: <em>he expresses well in words too.</em></p>
+        <p>She's right. The reading conflated two different things:</p>
+        <table class="reading-table">
+          <thead><tr><th>Planet</th><th>Governs</th><th>Arun's Placement</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Moon</strong></td><td>Emotional <em>processing style</em> — how feelings are experienced internally</td><td>Capricorn Shravana — quiet, inward, practical. Processes through structure and responsibility.</td></tr>
+            <tr><td><strong>Mercury + Sun</strong></td><td>Verbal <em>expression</em> — how thoughts and feelings are communicated outward</td><td><strong>Budha-Aditya Yoga in H11</strong> — one of the strongest eloquence indicators in Jyotish. Sharp, articulate, socially intelligent.</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:14px;">Capricorn Moon means he processes feelings quietly and inwardly — not that he can't put them into words. Budha-Aditya Yoga (Sun+Mercury conjunct) in H11 Aquarius gives genuine verbal intelligence and expressive clarity. The chart fully supports Drish's observation.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-blue"></span>What Capricorn Moon Actually Means Here</div>
+        <p>The real Moon-level pattern for Arun is not silence — it's:</p>
+        <table class="reading-table">
+          <thead><tr><th>Pattern</th><th>Implication for the Relationship</th></tr></thead>
+          <tbody>
+            <tr><td>He needs <em>stability</em> more than grand gestures</td><td>He won't express through theatrical romance — he'll express through showing up consistently.</td></tr>
+            <tr><td>When hurt or stressed, he goes <em>inward</em></td><td>Drish may need to explicitly invite him back out when he withdraws — he won't naturally reach out first when wounded.</td></tr>
+            <tr><td>Love expressed through <em>reliability and action</em></td><td>His care shows up as dependability, not performance. Both languages are present; neither replaces the other.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Revised Reading</div>
+        The emotional language gap between Leo Moon (Drish) and Capricorn Moon (Arun) is <strong>narrower than originally stated</strong>. Words are present — the chart confirms it. What remains is a difference in <em>register</em>: Drish's Leo Moon wants to feel celebrated in a Leo way (warmth, flair, public appreciation). Arun will articulate love well — but his natural pitch may be steadier and quieter than her inner register expects. That's a much smaller gap to bridge than "he doesn't express at all." Score revised from 6.5 → <strong>7/10</strong>.
+      </div>
+    </div>
+
+    <div class="footer">Session · July 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Jyotish</div>
+
+  </main>
+</div>
+</body>
+</html>
