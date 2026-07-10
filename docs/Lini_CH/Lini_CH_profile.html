@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Lini CH — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♍</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1>Lini CH</h1>
+    <p class="lagna-line">♍ Virgo Lagna 16.4°</p>
+    <p class="tagline">A creative and resilient individual with a profound connection to her emotional depths and a flair for artistic expression.</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value">1972-09-05</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value">08:05 AM · Kottayam, Kerala, India</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Moon / Saturn / Venus</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Emotional depth</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Leo H12</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Can H11</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Leo H12</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Leo H12</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Sag H4</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Can H11</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Tau H9</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Cap H5</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Can H11</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>Lini is a deeply emotional and empathetic person with a strong connection to her intuition, guided by the Moon in Cancer. Her dominant energy is rooted in her ability to nurture and care for others, as well as her own inner world. With Venus in Cancer, she has a natural flair for the arts and a love for beauty and harmony. Her life approach is characterized by a strong need for security and a tendency to cling to what she values, as indicated by the Moon's placement in Ashlesha nakshatra.</p>
+      <div class="trait-chips">
+        <span class="chip">Emotionally intelligent</span><span class="chip">Empathetic</span><span class="chip">Creative</span><span class="chip">Nurturing</span><span class="chip">Sentimental</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>Lini's relationship style is deeply rooted in her emotional nature, with a strong need for intimacy and closeness. As a Cancer Moon, she values long-term commitments and is fiercely loyal to her loved ones. With Venus in the 11th house, she may attract unconventional or artistic partners who appreciate her unique perspective. Her 7th house lord, Jupiter, is in Sagittarius, indicating a need for freedom and expansion in her relationships.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>Lini is best suited to partners who are emotionally intelligent, supportive, and appreciative of her creative nature. Her ideal partner would be someone who values depth and intimacy in their relationship and is not afraid to explore the complexities of human emotions.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">Loyal</span><span class="chip chip-green">Emotionally supportive</span><span class="chip chip-green">Creative spark</span><span class="chip chip-green">Intuitive</span>
+        <span class="chip chip-neg">Emotional clinginess</span><span class="chip chip-neg">Fear of abandonment</span><span class="chip chip-neg">Difficulty in letting go</span><span class="chip chip-neg">Over-sensitivity</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>Lini's career is likely to be a reflection of her creative and emotional nature, with a strong inclination towards the arts or fields that involve nurturing and caring for others. The presence of Budha-Aditya yoga in her chart indicates a sharp intellect and eloquence, which could serve her well in roles that require communication and public speaking. Her Hamsa yoga, with Jupiter in its own sign in the 4th house, suggests a strong connection to her inner self and a potential for spiritual or philosophical pursuits.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>The Budha-Aditya yoga gives her the power of eloquent communication and intellectual brilliance, making her a compelling speaker or writer.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">Arts and entertainment</span><span class="chip">Education</span><span class="chip">Healthcare</span><span class="chip">Spiritual or philosophical fields</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Inspiring and nurturing</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>Lini has a rare combination of Sun and Mercury in the same nakshatra, Purva Phalguni, indicating a potential for brilliant creative expression.</li><li>Her Venus is in the 11th house, which may bring her unconventional or artistic friends and relationships.</li><li>The presence of Viparita Raja Yoga in her chart, with Mars in the 12th house, suggests a potential for unexpected gains or recognition through her creative pursuits.</li><li>Lini's Moon is in Ashlesha nakshatra, which is associated with the serpent energy and the potential for spiritual awakening or intense emotional experiences.</li><li>Her Jupiter is in Mula nakshatra, which is associated with the power to ruin or destroy, indicating a potential for transformation or upheaval in her life.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>Lini's career is likely to unfold in a series of creative and emotional expressions, with a strong focus on nurturing and caring for others. The current Moon Mahadasha, which started in August 2021, is a period of emotional introspection and self-discovery, which may lead to new insights and perspectives in her career.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2021-2022</div>
+          <div class="period-dasha">Moon / Moon</div>
+          <div class="period-theme">Emotional introspection and self-discovery</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2022-2023</div>
+          <div class="period-dasha">Moon / Mars</div>
+          <div class="period-theme">Creative expression and action</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2025-2027</div>
+          <div class="period-dasha">Moon / Saturn</div>
+          <div class="period-theme">Discipline and responsibility in career pursuits</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>Lini should focus on developing her emotional intelligence and creative expression during the current Moon Mahadasha, as this will lay the foundation for her future career success.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>Lini's relationship timeline is characterized by a strong need for emotional intimacy and closeness, with a potential for deep and transformative connections. The current Moon Mahadasha is a period of emotional introspection, which may lead to a greater understanding of her own needs and desires in relationships.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2022-2023</div>
+          <div class="period-dasha">Moon / Mars</div>
+          <div class="period-theme">Passionate and intense relationships</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2025-2027</div>
+          <div class="period-dasha">Moon / Saturn</div>
+          <div class="period-theme">Disciplined and responsible partnerships</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2029-2031</div>
+          <div class="period-dasha">Moon / Venus</div>
+          <div class="period-theme">Romantic and creative connections</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>Lini's relationships are likely to be influenced by her past life karma, with a potential for intense emotional experiences and transformative connections.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>The current Moon Mahadasha is a period of emotional introspection and self-discovery for Lini, with a focus on developing her emotional intelligence and creative expression. With Ketu in the 11th house, she may experience a sense of detachment or disillusionment with her current relationships or pursuits, which can lead to a greater sense of freedom and independence.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Saturn Bhukti (Nov 2025 - Jun 2027)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">Lini may face challenges related to discipline and responsibility in her career pursuits during this period.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Mercury Bhukti (Jun 2027 - Nov 2028)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">This period may bring a mix of intellectual pursuits and creative expression, with a potential for recognition or success.</div></div><div class="dasha-issue"><div class="dasha-issue-period">Venus Bhukti (Jun 2029 - Feb 2031)</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">Lini can expect a period of romantic and creative connections, with a potential for new relationships or artistic pursuits.</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>The upcoming Rahu Mahadasha (starting in 2038) may bring a period of intense emotional turmoil and transformation, with a potential for sudden changes or upheavals in her relationships or career.</li><li>The Saturn Mahadasha (starting in 2072) may bring a period of discipline and responsibility, with a potential for challenges related to health or relationships.</li></ul>
+      <div class="golden-box">The Venus Bhukti (Jun 2029 - Feb 2031) is a golden period for Lini, with a potential for romantic and creative connections, and a greater sense of harmony and balance in her relationships and career.</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>The upcoming Mars Mahadasha (starting in 2031) will bring a period of action, energy, and creativity, with a potential for new pursuits or adventures. Lini should be prepared to take bold steps and assert herself in her career and relationships during this period.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Ashlesha nakshatra</span>
+          </div>
+          <div class="ref-quote">"The symbol for this intense nakshatra is the coiled serpent at the base of the spine reflecting the potent kundalini energy that resides here."</div>
+          <div class="ref-application">This quote applies to Lini's Moon placement in Ashlesha, indicating a potential for intense emotional experiences and spiritual awakening.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Purva Phalguni nakshatra</span>
+          </div>
+          <div class="ref-quote">"This creative nakshatra is ruled by the planet Venus denoting brilliant skills in the fine arts and a love of pleasure."</div>
+          <div class="ref-application">This quote applies to Lini's Sun and Mercury placement in Purva Phalguni, indicating a potential for creative expression and artistic pursuits.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Mula nakshatra</span>
+          </div>
+          <div class="ref-quote">"The shakti revealed here is the power to ruin, destroy, and break things apart."</div>
+          <div class="ref-application">This quote applies to Lini's Jupiter placement in Mula, indicating a potential for transformation or upheaval in her life, particularly in her relationships or career.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>Lini's shadow side is characterized by a deep-seated fear of abandonment and a tendency to cling to her emotional attachments. This can lead to emotional turmoil and a sense of desperation in her relationships. She may also struggle with feelings of inadequacy and self-doubt, particularly in her creative pursuits.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>Emotional clinginess</strong><p>Lini may become overly attached to her loved ones, leading to a loss of personal boundaries and autonomy.</p></div><div class="shadow-card"><strong>Fear of abandonment</strong><p>This fear can drive Lini's behavior in relationships, causing her to become overly dependent on her partners or to sabotage her relationships due to a deep-seated fear of being left behind.</p></div><div class="shadow-card"><strong>Self-doubt</strong><p>Lini may struggle with feelings of inadequacy and self-doubt, particularly in her creative pursuits, which can hold her back from realizing her full potential.</p></div><div class="shadow-card"><strong>Emotional reactivity</strong><p>Lini may react impulsively to emotional stimuli, leading to conflicts or misunderstandings in her relationships.</p></div>
+    </div>
+    <div class="antidote-box">To work with her shadow consciously, Lini should practice self-reflection, self-compassion, and develop her emotional intelligence, recognizing that her emotional needs are valid but must be balanced with rational discernment and healthy boundaries.</div>
+  </div>
+
+  <!-- YOGAS -->
+  <div class="divider">Yogas &amp; Chart Signatures</div>
+  <div class="panel">
+    <div class="panel-header">
+      <div class="panel-icon">★</div>
+      <h2>Yoga Formations</h2>
+    </div>
+    <p style="margin-bottom:18px;color:var(--muted);font-size:0.9rem;">Special planetary combinations active in this chart. Yogas are life-shaping configurations — they amplify, redirect, or accelerate certain themes across the entire lifetime.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div style="padding:14px 18px;background:rgba(196,158,64,0.07);border:1px solid rgba(196,158,64,0.22);border-radius:14px;">
+        <div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">★★ Hamsa Yoga · Pancha Mahapurusha</div>
+        <p style="font-size:0.9rem;line-height:1.7;color:var(--cream);">Jupiter in Sagittarius (own sign) in H4 — a kendra. One of the five great Pancha Mahapurusha yogas. Bestows wisdom, benevolence, philosophical depth, and a naturally sanctuary-like home life. Jupiter here acts as a teacher, guide, and protector of inner peace. Her 4th house becomes a place of genuine spiritual richness.</p>
+      </div>
+      <div style="padding:14px 18px;background:rgba(91,143,212,0.07);border:1px solid rgba(91,143,212,0.22);border-radius:14px;">
+        <div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:#5b8fd4;margin-bottom:6px;">★★★ Budha-Aditya Yoga · Intelligence</div>
+        <p style="font-size:0.9rem;line-height:1.7;color:var(--cream);">Sun and Mercury conjunct in Leo H12. Sharp intellect, eloquence, and recognition in intellectual fields — made deeper by the H12 placement, which channels this brilliance toward research, writing, spiritual teaching, and work done in relative seclusion or institutions. The lagna lord (Mercury) merging with the Sun here creates a mind that illuminates from within.</p>
+      </div>
+      <div style="padding:14px 18px;background:rgba(90,143,114,0.07);border:1px solid rgba(90,143,114,0.2);border-radius:14px;">
+        <div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin-bottom:6px;">★★ Viparita Raja Yoga (Mars) · Rise Through Adversity</div>
+        <p style="font-size:0.9rem;line-height:1.7;color:var(--cream);">8th lord Mars in dusthana H12. Classic Viparita — the lord of a harmful house placed in another harmful house neutralises the harm and converts it to power. Mars here is the 8th lord (transformation, hidden resources) in H12 (foreign lands, hospitals, moksha). Periods of apparent loss or crisis tend to become springboards for unexpected rise.</p>
+      </div>
+      <div style="padding:14px 18px;background:rgba(90,143,114,0.07);border:1px solid rgba(90,143,114,0.2);border-radius:14px;">
+        <div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--sage);margin-bottom:6px;">★★ Viparita Raja Yoga (Sun) · Hidden Sovereignty</div>
+        <p style="font-size:0.9rem;line-height:1.7;color:var(--cream);">12th lord Sun placed in H12 — the lord of isolation in its own house of isolation. This creates a self-contained power that operates outside conventional visibility. Authority and recognition come through retreat, spiritual work, foreign connections, or healing institutions. What looks like withdrawal is actually the cultivation of sovereign inner power.</p>
+      </div>
+      <div style="padding:14px 18px;background:rgba(124,92,191,0.07);border:1px solid rgba(124,92,191,0.2);border-radius:14px;">
+        <div style="font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--plum);margin-bottom:6px;">★ Vosi Yoga · Spiritual Comfort</div>
+        <p style="font-size:0.9rem;line-height:1.7;color:var(--cream);">Venus in the 12th from Sun. Grants spiritual inclination, a comfortable inner life, and a capacity for self-renewal through devotion and beauty. Venus (9th and 2nd lord) is the fortune and wealth significator in H11 (Cancer), softening the H12 stellium's more intense energies with an undercurrent of grace and ease.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPIRIT ANIMAL -->
+  <div class="panel" style="text-align:center;padding:48px 40px;background:linear-gradient(135deg,rgba(28,18,56,0.98),rgba(60,30,80,0.96));border-color:rgba(196,158,64,0.25);">
+    <div style="font-size:96px;line-height:1;margin-bottom:20px;">🐍</div>
+    <div class="eyebrow" style="margin-bottom:10px;">MOON IN ASHLESHA · VIRGO LAGNA · HAMSA YOGA</div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:#fff8f0;margin-bottom:28px;">The Sacred Naga</h2>
+    <div style="max-width:680px;margin:0 auto;text-align:left;display:flex;flex-direction:column;gap:16px;font-size:0.93rem;line-height:1.8;color:rgba(240,232,216,0.85);">
+      <p>The Serpent — <em>Ashlesha</em> is the Naga nakshatra, the ninth lunar mansion ruled by Mercury and presided over by the Sarpas (divine serpents). With her Moon in Ashlesha pada 1 (Cancer navamsa), Lini carries the coiled Kundalini at her core: a deep reservoir of intuitive knowledge, healing wisdom, and emotional penetration that most people never access. The serpent reads what is hidden beneath the surface, and so does she.</p>
+      <p>Virgo Lagna gives the serpent its precision — analytical, discerning, never wasting energy on what doesn't matter. The triple H12 stellium (Sun + Mars + Mercury in Leo) means her real power operates behind the visible world. Like the Naga that strikes only when necessary, Lini's full strength emerges most powerfully from periods of retreat, inner work, and apparently hidden effort — then transforms suddenly into recognition. Both Viparita Raja Yogas confirm this: apparent adversity is her literal upgrade mechanism.</p>
+      <p>Hamsa Yoga (Jupiter in Sagittarius H4, own sign) adds the philosopher's grace to the serpent's wisdom — this is not a striking cobra but a Naga guardian, a keeper of sacred knowledge. Her spirit carries the oldest kind of intelligence: embodied, patient, transformational. The serpent sheds its skin to grow; every crisis in her chart is followed by a more luminous version of herself emerging from the wreckage. This is the sacred Naga's way.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated 10 Jul 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>
