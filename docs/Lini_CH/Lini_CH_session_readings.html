@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Lini CH — Session Readings · Job Stability &amp; Health</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .sidebar-animal {
+      font-size: 52px;
+      text-align: center;
+      margin-bottom: 18px;
+      line-height: 1;
+    }
+
+    .sidebar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--cream);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-lagna {
+      font-size: 0.72rem;
+      text-align: center;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .sidebar-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 28px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .sidebar-stat {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.78rem;
+    }
+
+    .sidebar-stat-label {
+      color: var(--muted);
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-stat-val {
+      color: var(--cream);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .sidebar-nav-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: rgba(240,232,216,0.7);
+      font-size: 0.83rem;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-item:hover {
+      background: rgba(255,255,255,0.05);
+      color: var(--cream);
+    }
+
+    .nav-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .nav-icon.gold  { background: rgba(196,158,64,0.15); }
+    .nav-icon.sage  { background: rgba(90,143,114,0.15); }
+    .nav-icon.rose  { background: rgba(196,96,122,0.15); }
+    .nav-icon.plum  { background: rgba(124,92,191,0.15); }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 48px 52px 80px;
+      max-width: 860px;
+    }
+
+    /* ── HERO INTRO ── */
+    .hero-intro {
+      margin-bottom: 48px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-intro .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero-intro h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 300;
+      color: #fff8f0;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    .hero-intro p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    /* ── CHAPTER ── */
+    .chapter {
+      margin-bottom: 60px;
+      scroll-margin-top: 32px;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 28px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .chapter-icon.gold { background: rgba(196,158,64,0.14); }
+    .chapter-icon.sage { background: rgba(90,143,114,0.14); }
+    .chapter-icon.rose { background: rgba(196,96,122,0.14); }
+    .chapter-icon.plum { background: rgba(124,92,191,0.14); }
+
+    .chapter h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--cream);
+    }
+
+    .chapter h2 small {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 4px;
+    }
+
+    /* ── SECTION (card within chapter) ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px 28px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-gold  { background: var(--gold); }
+    .dot-sage  { background: var(--sage); }
+    .dot-rose  { background: var(--rose); }
+    .dot-plum  { background: var(--plum); }
+    .dot-blue  { background: var(--blue); }
+
+    .section p {
+      font-size: 0.9rem;
+      line-height: 1.78;
+      color: rgba(240,232,216,0.82);
+    }
+
+    .placement-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      color: var(--gold2);
+      background: rgba(196,158,64,0.1);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 6px;
+      padding: 2px 8px;
+      margin-right: 6px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* ── READING TABLE ── */
+    .reading-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin-top: 6px;
+    }
+
+    .reading-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(196,158,64,0.1);
+      color: var(--gold);
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+    }
+
+    .reading-table td {
+      padding: 10px 14px;
+      color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── CALLOUT ── */
+    .callout {
+      border-radius: 14px;
+      padding: 18px 22px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-top: 14px;
+    }
+
+    .callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+    .callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+    .callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+    .callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+
+    .callout-label {
+      font-size: 0.63rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .callout-gold .callout-label { color: var(--gold); }
+    .callout-plum .callout-label { color: #b49edf; }
+    .callout-rose .callout-label { color: #e8909f; }
+    .callout-sage .callout-label { color: #80c4a0; }
+
+    .callout p { color: rgba(240,232,216,0.88); }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-peak    { background: rgba(91,143,212,0.18); color: #9dc4f0; }
+
+    /* ── PERIOD ROW ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 100px 150px 1fr;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+      align-items: start;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window { font-weight: 600; color: var(--gold2); font-size: 0.82rem; }
+    .period-dasha  { color: rgba(196,158,64,0.65); font-size: 0.8rem; }
+    .period-theme  { color: rgba(240,232,216,0.75); line-height: 1.55; }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 36px 0 28px;
+      font-size: 0.63rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.3);
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── HEALTH RISK GRID ── */
+    .risk-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .risk-card {
+      padding: 14px 16px;
+      border-radius: 14px;
+      border: 1px solid;
+    }
+
+    .risk-card.high  { background: rgba(196,96,122,0.06);  border-color: rgba(196,96,122,0.2); }
+    .risk-card.mod   { background: rgba(196,158,64,0.06);  border-color: rgba(196,158,64,0.2); }
+    .risk-card.low   { background: rgba(90,143,114,0.06);  border-color: rgba(90,143,114,0.18); }
+
+    .risk-card-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .risk-card.high .risk-card-label { color: #e8909f; }
+    .risk-card.mod  .risk-card-label { color: #e8c96a; }
+    .risk-card.low  .risk-card-label { color: #80c4a0; }
+
+    .risk-card p {
+      font-size: 0.83rem;
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.72rem;
+      color: rgba(240,232,216,0.3);
+      letter-spacing: 0.08em;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 28px 20px; }
+      .main { padding: 32px 20px 60px; }
+      .period-row { grid-template-columns: 90px 1fr; }
+      .period-dasha { grid-column: 1 / -1; }
+      .risk-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ══════════════ SIDEBAR ══════════════ -->
+  <aside class="sidebar">
+    <div class="sidebar-animal">🐍</div>
+    <div class="sidebar-name">Lini CH</div>
+    <div class="sidebar-lagna">♍ Virgo Lagna 16.4°</div>
+
+    <div class="sidebar-stats">
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Dasha</span>
+        <span class="sidebar-stat-val">Moon / Saturn / Venus</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Yogas</span>
+        <span class="sidebar-stat-val">5 incl. Hamsa + 2× VRY</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Moon</span>
+        <span class="sidebar-stat-val">Ashlesha H11</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">10th Lord</span>
+        <span class="sidebar-stat-val">Mercury H12</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Darakaraka</span>
+        <span class="sidebar-stat-val">Venus — Pushya</span>
+      </div>
+    </div>
+
+    <div class="sidebar-nav-label">Chapters</div>
+    <nav class="sidebar-nav">
+      <a href="#job-stability" class="nav-item">
+        <div class="nav-icon gold">💼</div>
+        Job Stability
+      </a>
+      <a href="#job-dasha" class="nav-item">
+        <div class="nav-icon gold">⏳</div>
+        Career Windows
+      </a>
+      <a href="#health" class="nav-item">
+        <div class="nav-icon sage">🌿</div>
+        Health Constitution
+      </a>
+      <a href="#health-systems" class="nav-item">
+        <div class="nav-icon rose">⚕️</div>
+        Organ Systems
+      </a>
+      <a href="#health-saturn" class="nav-item">
+        <div class="nav-icon plum">🪐</div>
+        Saturn Bhukti Now
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ══════════════ MAIN ══════════════ -->
+  <main class="main">
+
+    <!-- HERO INTRO -->
+    <div class="hero-intro">
+      <p class="eyebrow">Session Readings · July 2026 · Jyotish</p>
+      <h1>Lini CH<br><span style="color:var(--gold);font-style:italic;">The Sacred Naga</span></h1>
+      <p>Deep readings on two central life questions — career durability and the body's health blueprint — anchored to specific placements in the Virgo Lagna chart. Every statement traces to a named house, planet, or nakshatra.</p>
+    </div>
+
+    <!-- ══════ CHAPTER 1: JOB STABILITY ══════ -->
+    <section class="chapter" id="job-stability">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">💼</div>
+        <h2><small>Career Reading</small>Job Stability</h2>
+      </div>
+
+      <!-- Natal signature -->
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-gold"></div>
+          Natal Career Signature — What the Chart Is Built For
+        </div>
+        <p>
+          <span class="placement-tag">Mercury 10th lord H12 Leo</span>
+          Career house lord in the house of retreat, institutions, and the unseen. Lini's career runs best <em>outside</em> conventional front-stage roles — research, healing, education, spiritual work, NGOs, hospitals, foreign-connected environments. Standard corporate ladder stability is not her design. Her career often looks unstable from the outside but carries an inner logic of depth and transformation.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-gold"></div>
+          Saturn 6th Lord — The Work Temperament
+        </div>
+        <p>
+          <span class="placement-tag">Saturn 6th lord H9 Taurus, Mrigashira pada 1</span>
+          Lord of daily employment in the dharma house. Work must carry meaning. Mrigashira is the "searching" nakshatra (Mars-ruled) — there is a restlessness in employment when the role lacks philosophical depth or purpose. She may change jobs more than average, but always toward work that feels <em>right</em>, not randomly. Taurus placement grounds this in tangible, structured environments when she honours the call.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-sage"></div>
+          Viparita Raja Yoga (×2) — The Resilience Engine
+        </div>
+        <p>
+          <span class="placement-tag">8th lord Mars H12</span>
+          <span class="placement-tag">12th lord Sun H12</span>
+          Both the 8th lord (transformation, crisis) and the 12th lord (loss, isolation) placed in dusthana H12. This double Viparita signature is the most important career stability indicator in the chart: every apparent disruption — sudden job loss, institutional change, forced transition — actually catalyses an upgrade. She should not fear career disruptions. They are the mechanism by which she rises.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-sage"></div>
+          Inner Stability — Hamsa Yoga H4
+        </div>
+        <p>
+          <span class="placement-tag">Jupiter own sign Sagittarius H4</span>
+          Jupiter in full strength fills the house of inner foundations and peace. Even when external job situations shift, she has a reservoir of philosophical grounding that prevents psychological collapse. The question of "job stability" is largely an external one — her <em>inner</em> stability is structurally excellent and largely untouchable by career turbulence.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-gold"></div>
+          Current Period — Moon / Saturn Bhukti
+        </div>
+        <p>
+          <span class="placement-tag">Saturn 5th+6th lord H9</span>
+          Saturn bhukti is a period of consolidation, not expansion. Responsibilities increase. Work may feel heavier or more demanding. Some colleagues, positions, or employers from the past may exit. Not a time to launch boldly — a time to build systematically and hold current position. Duration: approximately now through <strong>June 2027</strong>. Venus antara (active now) provides a grace note of financial ease within Saturn's restructuring.
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════ CHAPTER 2: CAREER WINDOWS ══════ -->
+    <section class="chapter" id="job-dasha">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">⏳</div>
+        <h2><small>Timing</small>Career Windows</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-gold"></div>
+          Upcoming Periods — Ranked
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">Now → Jun 2027</div>
+          <div class="period-dasha">Moon / Saturn</div>
+          <div class="period-theme"><span class="badge badge-mixed">consolidate</span> Heavy but foundation-setting. Hold current role, deepen expertise. Venus antara cushions the period.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">Jun 2027 → Nov 2028</div>
+          <div class="period-dasha">Moon / Mercury</div>
+          <div class="period-theme"><span class="badge badge-peak">peak</span> Mercury is the 10th lord activating — best career recognition window in this decade. Intellectual work, writing, teaching, consultancy come into their own.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">Nov 2028 → Apr 2029</div>
+          <div class="period-dasha">Moon / Ketu</div>
+          <div class="period-theme"><span class="badge badge-mixed">mixed</span> Ketu in H11 = spiritual detachment from career gains. Possible voluntary pause, role change, or inward pivot.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">Apr 2029 → Feb 2031</div>
+          <div class="period-dasha">Moon / Venus</div>
+          <div class="period-theme"><span class="badge badge-peak">excellent</span> Venus as 9th lord (fortune) and 2nd lord (wealth) in H11. Strong income, advancement, favourable professional partnerships. Second consecutive peak window.</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">After 2031</div>
+          <div class="period-dasha">Mars MD (7 yrs)</div>
+          <div class="period-theme"><span class="badge badge-protect">rising</span> Mars as Viparita Raja lord — career rises through apparently turbulent but ultimately elevating circumstances. Her most dynamic phase.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Bottom Line</div>
+        <p>She is not built for monotonous job security — she is built for <strong>meaningful work that transforms through challenge</strong>. The Viparita Raja double-signature means the right question is not "how stable is this job?" but "how quickly does she recover and rise after disruption?" — and the chart's answer is: <strong>always</strong>. The Moon/Mercury and Moon/Venus windows (2027–2031) are the strongest career periods in her near horizon.</p>
+      </div>
+    </section>
+
+    <div class="divider">Health</div>
+
+    <!-- ══════ CHAPTER 3: HEALTH CONSTITUTION ══════ -->
+    <section class="chapter" id="health">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">🌿</div>
+        <h2><small>Health Reading</small>Constitution &amp; Blueprint</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-sage"></div>
+          Body Type — Virgo Lagna, Hasta Nakshatra
+        </div>
+        <p>
+          <span class="placement-tag">Virgo Lagna 16.4° · Hasta · Moon-ruled</span>
+          Primarily Vata constitution (nervous, analytical, quick-processing) with Kapha secondary (Cancer Moon = fluid, emotional). Hasta governs the hands, intestines, and shoulders — fine motor skill is a body strength, and nervous overload expresses through these same channels: tension headaches, hand strain, shoulder tightness. Classic constitutional tendencies: digestive sensitivity, nervous tension that lodges in the gut, overthinking that disrupts sleep.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-gold"></div>
+          Lagna Lord in H12 — The Hidden Burden Pattern
+        </div>
+        <p>
+          <span class="placement-tag">Mercury 1st lord H12 Leo · Magha pada 2</span>
+          The first lord in the twelfth house: health energy "leaks" inward. Fatigue accumulates unnoticed until it becomes acute. Hidden or difficult-to-diagnose conditions are more likely than obvious, rapid-onset illnesses. Magha nakshatra (Ketu-ruled, deity Pitris) adds an ancestral layer — health patterns may mirror those of her mother's lineage. Early detection requires actively listening to the body, not waiting for symptoms to demand attention.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-sage"></div>
+          Jupiter H4 — The Protective Shield
+        </div>
+        <p>
+          <span class="placement-tag">Jupiter own sign Sagittarius H4 · aspects H12 by 9th</span>
+          Jupiter in full strength casts a protective gaze directly over the H12 stellium. This is the most important health-protective factor in the chart. Serious chronic disease is substantially buffered. Health disruptions tend to resolve more completely than expected. The Viparita Raja double-signature confirms: adversity in health becomes a reset, not a permanent condition. She should trust her recovery capacity — it is real and chart-confirmed.
+        </p>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">The Key Variable</div>
+        <p>When her emotional environment is stable and nourishing, her immune system is notably strong (Moon in own sign Cancer). When emotional stress rises, physical immunity drops directly. <strong>Emotional safety is her primary medicine.</strong> Chronic stress in relationships or workplace depresses her health more swiftly than dietary or lifestyle factors.</p>
+      </div>
+    </section>
+
+    <!-- ══════ CHAPTER 4: ORGAN SYSTEMS ══════ -->
+    <section class="chapter" id="health-systems">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">⚕️</div>
+        <h2><small>Primary Systems</small>Organ &amp; Risk Map</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-rose"></div>
+          Gut &amp; Digestive System — Central Axis
+        </div>
+        <p>
+          <span class="placement-tag">Moon Ashlesha pada 1 H11</span>
+          <span class="placement-tag">Rahu H5 Capricorn</span>
+          Ashlesha directly governs digestive enzymes, bile, and the body's toxin-clearance mechanisms — liver function, digestive fire (agni), lymphatic processing. Pada 1 falls in Aries navamsa (Mars energy) → inflammatory tendency in the gut: acid imbalance, sluggish bile clearance under stress. Rahu in H5 (stomach, liver) amplifies this with an undiagnosable quality — tests may return "borderline" results rather than clear diagnoses. <strong>The gut is the primary health axis in this chart.</strong>
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-rose"></div>
+          Nervous System &amp; Anxiety
+        </div>
+        <p>
+          <span class="placement-tag">Mercury H12 Leo · Virgo Lagna</span>
+          Mercury (nervous system ruler) as lagna lord in H12 creates a mind that processes inward rather than outward. Anxiety is not expressed dramatically — it accumulates silently in the body as tension, digestive upset, and sleep fragmentation. Virgo constitution amplifies this: the body's default response to unresolved mental load is gut dysregulation. Active nervous system regulation practices are not optional comforts — they are structural requirements for this chart.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-rose"></div>
+          Sleep &amp; Vitality Depletion
+        </div>
+        <p>
+          <span class="placement-tag">Sun + Mars + Mercury H12</span>
+          Three planets in H12 including the vitality planet (Sun) and the energy planet (Mars) creates a genuine biological need for more sleep than average. H12 is the house of rest and isolation — the body is asking for it structurally. Suppressing this requirement leads to immune suppression and compounding fatigue. The Viparita Raja from Sun as 12th lord in 12th means that honouring rest actually builds hidden strength — not weakness. Sleep is her power source, not a concession.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-rose"></div>
+          Reproductive &amp; Hormonal System
+        </div>
+        <p>
+          <span class="placement-tag">Sun + Mars H12 Leo · Purva Phalguni pada 2</span>
+          <span class="placement-tag">Mars as 8th lord</span>
+          Purva Phalguni is Venus-ruled; in Leo it governs the spine, back, and for women — the reproductive and hormonal system. Mars as 8th lord (hidden physiological processes, surgery risk) in H12 (hidden afflictions) creates a surgical risk indicator, particularly in reproductive or blood-related domains. At 53, hormonal transition monitoring and post-menopausal bone health are directly relevant. The Viparita Raja mitigates severe outcomes, but attentiveness is warranted.
+        </p>
+      </div>
+
+      <!-- Risk grid -->
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-gold"></div>
+          Summary Risk Map
+        </div>
+        <div class="risk-grid">
+          <div class="risk-card high">
+            <div class="risk-card-label">🔴 High — Gut / Digestive</div>
+            <p>Ashlesha Moon + Rahu H5. Central axis. Liver, enzymes, acid balance, lymphatics.</p>
+          </div>
+          <div class="risk-card high">
+            <div class="risk-card-label">🔴 High — Nervous / Anxiety</div>
+            <p>Mercury H12 + Virgo Lagna. Silent accumulation. Stress goes inward, not outward.</p>
+          </div>
+          <div class="risk-card mod">
+            <div class="risk-card-label">🟡 Moderate — Sleep / Fatigue</div>
+            <p>H12 triple stellium. Genuine need for more rest than average.</p>
+          </div>
+          <div class="risk-card mod">
+            <div class="risk-card-label">🟡 Moderate — Reproductive / Hormonal</div>
+            <p>Sun + Mars Purva Phalguni H12. Age-relevant; transitions need monitoring.</p>
+          </div>
+          <div class="risk-card mod">
+            <div class="risk-card-label">🟡 Moderate — Bones / Thyroid / Joints</div>
+            <p>Saturn 6th lord Taurus. Saturn bhukti makes this acute now specifically.</p>
+          </div>
+          <div class="risk-card low">
+            <div class="risk-card-label">🟢 Low-Mod — Heart / Spine</div>
+            <p>Sun + Mars Leo H12. Buffered strongly by Jupiter's direct protective aspect.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ CHAPTER 5: SATURN BHUKTI NOW ══════ -->
+    <section class="chapter" id="health-saturn">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">🪐</div>
+        <h2><small>Current Period</small>Saturn Bhukti — Health Now</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-plum"></div>
+          What Saturn Bhukti Surfaces (Now → June 2027)
+        </div>
+        <p>
+          <span class="placement-tag">Saturn 6th lord in Taurus H9</span>
+          Saturn as 6th lord activating is not a crisis period — it is a <strong>diagnostic window</strong>. The body flags what it has been carrying quietly. Taurus rules: throat, neck, thyroid, bones, joints. Saturn in Taurus during its own bhukti = the body asks for metabolic and structural attention. This is the optimal period to investigate and address chronic patterns before they compound.
+        </p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <div class="dot dot-plum"></div>
+          Specific Themes This Period
+        </div>
+        <table class="reading-table">
+          <thead>
+            <tr>
+              <th>System</th>
+              <th>Indicator</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Bones / Density</strong></td>
+              <td>Saturn in Taurus + post-menopausal age</td>
+              <td>Bone density check advisable; calcium + weight-bearing routines</td>
+            </tr>
+            <tr>
+              <td><strong>Thyroid / Metabolic</strong></td>
+              <td>Taurus rules thyroid; Saturn slows</td>
+              <td>Thyroid panel; metabolic slowdown may affect weight regulation</td>
+            </tr>
+            <tr>
+              <td><strong>Gut Protocol</strong></td>
+              <td>Saturn restructures 6th house domain</td>
+              <td>Digestive rhythm more erratic; disciplined diet protocol now pays dividends for years</td>
+            </tr>
+            <tr>
+              <td><strong>Sleep Architecture</strong></td>
+              <td>H12 stellium + Saturn's heaviness</td>
+              <td>Insomnia or non-restorative sleep is the #1 complaint in this period; treat it seriously, not casually</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-plum">
+        <div class="callout-label">Core Prescription from the Chart</div>
+        <p>The chart's health message is singular: <strong>her body asks for retreat, not endurance.</strong> Every health problem in this chart is worsened by overextension and improved by withdrawal, rest, and internal processing. Regular fasting or gut resets, sleep as non-negotiable, and emotionally safe environments are not lifestyle luxuries — they are the precise antidotes that this specific chart demands. The H12 stellium, Virgo gut-body connection, and Ashlesha Moon all point to the same prescription.</p>
+      </div>
+    </section>
+
+    <div class="footer">
+      Session · 10 Jul 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Lini CH
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
