@@ -49,6 +49,10 @@ PROFILES = [
     ("Kunal",        "1993-09-10", "18:50", 27.56, 76.61, "Asia/Kolkata",   "Pisces",      "Saturn/Saturn/Rahu",     "🐅", "M"),
     ("Hari CH",      "1968-09-16", "07:15",  8.52, 76.94, "Asia/Kolkata",   "Virgo",       "Mercury/Jupiter/Sun",    "🦊", "M"),
     ("George Varghese","1961-12-15","22:30", 10.11, 76.36, "Asia/Kolkata",  "Leo",         "Moon/Mercury/Saturn",    "🦁", "M"),
+    ("Drish",          "1990-04-06", "13:50",  9.59, 76.52, "Asia/Kolkata",   "Cancer",      "Moon/Venus/Mars",        "🦁", "F"),
+    ("Arun D",         "1984-02-29", "09:36", 28.66, 77.21, "Asia/Kolkata",   "Aries",       "Rahu/Jupiter/Saturn",    "🐎", "M"),
+    ("Lini CH",        "1972-09-05", "08:05",  9.59, 76.52, "Asia/Kolkata",   "Virgo",       "Moon/Saturn/Venus",      "🐍", "F"),
+    ("Tiby Thomas",    "1982-08-20", "06:30",  9.39, 76.78, "Asia/Kolkata",   "Leo",         "Rahu/Jupiter/Sun",       "🦁", "M"),
 ]
 
 # Known yogas and risk flags from deep readings (from memory/natal files)
@@ -87,6 +91,10 @@ KNOWN_CONTEXT = {
     "Kunal":         {"yogas": ["Saturn/Saturn (discipline building phase)", "Pisces Lagna = visionary"], "risks": ["Saturn/Rahu = heavy karma, delayed rewards", "Ops-dominant but vision scattered"]},
     "Hari CH":       {"yogas": ["Bhadra Yoga (Mercury exalted H1)", "Viparita Raja (Sun+Mars+Jupiter H12)", "Ketu H1 (past-life intelligence)"], "risks": ["Venus debilitated H1 (weak partnerships/aesthetics)", "Saturn debilitated H8 (hidden structural cracks)", "Finance score lowest (two debilitations drag it)"]},
     "George Varghese":{"yogas": ["Ruchaka (Mars own sign H4 — Pancha Mahapurusha)", "DKA Yoga (Mars+Venus)", "Triple Viparita Raja", "Yoga Karaka Mars", "Raja Yoga (Venus+Mars + Saturn+Jupiter)"], "risks": ["Age 64 — legacy builder, not startup sprinter", "Moon H8 (deep inner world, not outward)", "Kemadruma (self-reliant by necessity)"]},
+    "Drish":           {"yogas": ["Ruchaka+Sasa dual Pancha Mahapurusha H7", "Raja Yoga", "Viparita Raja", "Mars exalted+Saturn own sign H7"], "risks": ["Rahu in H7 (partner disruption energy)", "Cancer Lagna = emotionally driven, needs security", "Triple H7 stellium = relationship-first, startup-second"]},
+    "Arun D":          {"yogas": ["Sasa Yoga (Saturn exalted H7)", "Budha-Aditya", "Amala Yoga", "Jupiter own sign H9"], "risks": ["Rahu MD (adjustment phase, unconventional path)", "Aries Lagna = solo operator, struggles with teams", "Mars (Lagna lord) can be impulsive"]},
+    "Lini CH":         {"yogas": ["Hamsa Yoga (Jupiter exalted)", "Budha-Aditya", "2x Viparita Raja", "Vosi Yoga"], "risks": ["H12 stellium (Sun/Mars/Mercury — energy inward)", "Moon/Saturn bhukti (slow karmic phase)", "Virgo Lagna = perfectionist, over-analyses"]},
+    "Tiby Thomas":     {"yogas": ["Budha-Aditya (Sun own sign H1 — max strength)", "Raja Yoga (Mars+Jupiter H3)", "Yoga Karaka Mars (H4+H9)", "Ubhayachari Yoga"], "risks": ["Rahu MD (dasha quality 35 — unconventional, uncertain phase)", "Venus 10th lord H12 (career behind-scenes, not public)", "Saturn 6th+7th lord in H2 (maraka placement)"]},
 }
 
 # ---------------------------------------------------------------------------
