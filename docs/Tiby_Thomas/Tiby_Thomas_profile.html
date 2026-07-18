@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Tiby Thomas — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♌</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1>Tiby Thomas</h1>
+    <p class="lagna-line">♌ Leo Lagna 6.0°</p>
+    <p class="tagline">A charismatic leader with a creative spark, navigating life's challenges with courage and resilience.</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value">1982-08-20</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value">06:30 AM · Ranni, Kerala, India</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Rahu / Jupiter / Sun</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Solar confidence</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Leo H1</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Leo H1</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Lib H3</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Leo H1</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Lib H3</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Can H12</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Vir H2</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Gem H11</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Sag H5</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>Tiby Thomas is a naturally charismatic individual with a strong desire to lead and create. He has a dominant energy that is both confident and generous, with a warm heart and a quick wit. His emotional style is intense and passionate, with a tendency to wear his heart on his sleeve. He approaches life with a sense of adventure and a willingness to take risks, always seeking to learn and grow. As he navigates his journey, he is likely to inspire others with his creativity, enthusiasm, and generosity.</p>
+      <div class="trait-chips">
+        <span class="chip">charismatic</span><span class="chip">creative</span><span class="chip">confident</span><span class="chip">generous</span><span class="chip">passionate</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>Tiby Thomas has a romantic and passionate approach to relationships, with a strong desire for deep emotional connection and intimacy. His 7th house lord, Mars, in Libra suggests a need for harmony and balance in his partnerships, and his Venus in Cancer indicates a strong attachment to family and a desire for nurturing and care. He is likely to attract partners who are charming, social, and creative, and who can appreciate his sense of humor and adventure.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>The ideal partner for Tiby Thomas is someone who is charming, confident, and creative, with a strong sense of humor and a willingness to take risks. This person should be able to appreciate his emotional depth and intensity, and be able to provide a sense of stability and security in the relationship. A partner with a strong sense of family values and a desire for nurturing and care would be a good match for him.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">romantic</span><span class="chip chip-green">passionate</span><span class="chip chip-green">empathetic</span><span class="chip chip-green">charming</span><span class="chip chip-green">adventurous</span>
+        <span class="chip chip-neg">intense</span><span class="chip chip-neg">emotional</span><span class="chip chip-neg">possessive</span><span class="chip chip-neg">domineering</span><span class="chip chip-neg">self-centered</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>Tiby Thomas has a natural talent for leadership and creativity, with a strong desire to make a positive impact in the world. His Budha-Aditya yoga suggests a sharp intellect and a gift for communication, and his Raja Yoga indicates a potential for power and status. He is likely to excel in careers that involve creativity, innovation, and strategic thinking, such as entrepreneurship, consulting, or the arts.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>The Raja Yoga, which brings power and status through a combination of intellectual and creative abilities.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">entrepreneurship</span><span class="chip">consulting</span><span class="chip">arts</span><span class="chip">design</span><span class="chip">innovation</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Charismatic visionary</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>Tiby Thomas has a unique combination of planetary placements, with his Sun, Moon, and Mercury all in Leo, indicating a strong sense of confidence and creativity.</li><li>His Venus in Cancer suggests a strong attachment to family and a desire for nurturing and care, which could manifest in his personal or professional life.</li><li>His Mars in Libra indicates a strong desire for harmony and balance in his relationships, which could lead to a successful career in diplomacy or mediation.</li><li>His Jupiter in Libra suggests a strong sense of justice and a desire for fairness, which could lead to a career in law or social justice.</li><li>His Saturn in Virgo indicates a strong work ethic and a desire for perfection, which could lead to a successful career in a field that requires attention to detail and hard work.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>Tiby Thomas's career is likely to involve a series of creative and innovative pursuits, with a focus on leadership and strategic thinking. He may experience a series of challenges and setbacks, but his natural charisma and confidence will help him to overcome these obstacles and achieve his goals.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2022-2027</div>
+          <div class="period-dasha">Rahu / Jupiter</div>
+          <div class="period-theme">Exploring new opportunities and developing his creative skills</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2027-2030</div>
+          <div class="period-dasha">Rahu / Saturn</div>
+          <div class="period-theme">Building a strong foundation and establishing himself in his career</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2030-2037</div>
+          <div class="period-dasha">Rahu / Mercury</div>
+          <div class="period-theme">Developing his communication skills and networking abilities</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>Tiby Thomas should focus on developing his creative skills and exploring new opportunities during the current Rahu / Jupiter dasha.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>Tiby Thomas's relationship journey is likely to involve a series of intense and passionate connections, with a strong desire for deep emotional intimacy. He may experience a series of challenges and setbacks, but his natural charisma and confidence will help him to attract a partner who is charming, social, and creative.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2024-2027</div>
+          <div class="period-dasha">Rahu / Jupiter</div>
+          <div class="period-theme">Meeting new people and exploring new relationships</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2027-2030</div>
+          <div class="period-dasha">Rahu / Saturn</div>
+          <div class="period-theme">Building a strong foundation and establishing a long-term commitment</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2030-2037</div>
+          <div class="period-dasha">Rahu / Mercury</div>
+          <div class="period-theme">Developing his communication skills and deepening his emotional connection with his partner</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>Tiby Thomas's relationship karma suggests a strong desire for emotional intimacy and a need to work through issues related to attachment and possessiveness.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>The current Rahu / Jupiter dasha is a time of great opportunity and growth for Tiby Thomas, with a focus on developing his creative skills and exploring new relationships. However, he may also experience a series of challenges and setbacks, including feelings of restlessness and discontent.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Rahu / Jupiter (2024-2027)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">Feeling restless and discontent, with a desire for change and exploration</div></div><div class="dasha-issue"><div class="dasha-issue-period">Rahu / Saturn (2027-2030)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">Building a strong foundation, but also experiencing feelings of limitation and restriction</div></div><div class="dasha-issue"><div class="dasha-issue-period">Rahu / Mercury (2030-2037)</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">Developing his communication skills and deepening his emotional connections</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>The Rahu / Saturn dasha (2027-2030) may bring feelings of limitation and restriction, requiring Tiby Thomas to be patient and disciplined.</li><li>The Rahu / Ketu dasha (2032-2033) may bring a series of unexpected events and challenges, requiring him to be flexible and adaptable.</li></ul>
+      <div class="golden-box">The Rahu / Jupiter dasha (2024-2027) is a golden opportunity for Tiby Thomas to develop his creative skills and explore new relationships, with a focus on personal growth and self-expression.</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>The next Mahadasha, Jupiter, will bring a focus on expansion and growth, with opportunities for travel, education, and personal development.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Venus in Pushya</span>
+          </div>
+          <div class="ref-quote">"This creative nakshatra is ruled by the planet Venus, denoting brilliant skills in the fine arts and a love of pleasure."</div>
+          <div class="ref-application">Tiby Thomas's Venus in Pushya suggests a strong desire for creative expression and a love of beauty and luxury.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Mars in Swati</span>
+          </div>
+          <div class="ref-quote">"The shakti revealed here is the power to ruin, destroy, and break things apart."</div>
+          <div class="ref-application">Tiby Thomas's Mars in Swati suggests a strong desire for independence and a need to break free from restrictive patterns and relationships.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">BPHS Vol 2 (Parashara)</span>
+            <span class="ref-placement">Sun in Magha</span>
+          </div>
+          <div class="ref-quote">"The Sun - the soul, nature, physical strength, joy, and sorrows, and father."</div>
+          <div class="ref-application">Tiby Thomas's Sun in Magha suggests a strong sense of confidence and charisma, with a desire to lead and inspire others.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>Tiby Thomas's shadow side is characterized by a tendency to dominate and control others, with a fear of being vulnerable and open. This can manifest in a range of ways, including a need to be right, a fear of intimacy, and a tendency to manipulate others to get what he wants.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>dominating</strong><p>A need to control and dominate others, often stemming from a fear of being vulnerable and open.</p></div><div class="shadow-card"><strong>manipulative</strong><p>A tendency to manipulate others to get what he wants, often using charm and charisma to influence those around him.</p></div><div class="shadow-card"><strong>fearful</strong><p>A fear of being vulnerable and open, which can lead to a range of defensive behaviors and a tendency to push others away.</p></div><div class="shadow-card"><strong>self-centered</strong><p>A tendency to be self-centered and focused on his own needs and desires, often at the expense of others.</p></div>
+    </div>
+    <div class="antidote-box">The antidote to Tiby Thomas's shadow side is to cultivate a sense of empathy and understanding, and to learn to listen to and appreciate the perspectives of others.</div>
+  </div>
+
+  <!-- SPIRIT ANIMAL — full width -->
+  <div class="panel" style="text-align:center; padding:48px 40px; background:linear-gradient(135deg,rgba(28,18,56,0.98),rgba(60,30,80,0.96)); border-color:rgba(196,158,64,0.28);">
+    <div style="font-size:96px; line-height:1; margin-bottom:18px;">🦁</div>
+    <div class="eyebrow" style="justify-content:center; display:block; margin-bottom:10px;">Spirit Animal · Leo Lagna · Magha Nakshatra</div>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:var(--cream); margin-bottom:22px;">The Resting King</h2>
+    <div style="max-width:680px; margin:0 auto; color:rgba(240,232,216,0.82); line-height:1.8; font-size:0.95rem;">
+      <p style="margin-bottom:14px;">The Lion arrives not through Leo Lagna alone but through the royal throne of Magha nakshatra — where the Sun sits in its own sign, blessed by ancestral Pitrus, as the undisputed king of the first house. This is the lion who does not chase; he waits at the centre of his territory and everything comes to him.</p>
+      <p style="margin-bottom:14px;">The Moon in Purva Phalguni adds the lion's leisure: creative ease, pleasure in beauty, a warm and magnetic stillness that draws loyalty without demand. Tiby radiates authority the way the Sun radiates light — constantly, effortlessly, without intention.</p>
+      <p>The Yoga Karaka Mars in Swati (the lone blade of grass) reveals the lion's paradox: supreme power worn lightly, independence never sacrificed for status. The Raja Yoga of Mars and Jupiter gives the hunt its strategy — not brute force, but precision, philosophy, and a single decisive strike when the moment arrives.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated 18 Jul 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>
