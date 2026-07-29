@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Tiby Thomas — Health & Vitality Reading</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      line-height: 1.65;
+    }
+
+    /* ── Layout ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── Sidebar ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92);
+      backdrop-filter: blur(12px);
+    }
+    .sidebar-animal { font-size: 56px; text-align: center; margin-bottom: 10px; }
+    .sidebar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--cream);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .sidebar-sub { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 24px; }
+    .sidebar-stats { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+    .sidebar-stat { background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 10px; padding: 8px 12px; }
+    .sidebar-stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; }
+    .sidebar-stat-val { font-size: 0.82rem; color: var(--cream); }
+    .nav-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(240,232,216,0.35); margin-bottom: 10px; margin-top: 4px; }
+    .nav-list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .nav-list a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 10px; border-radius: 10px;
+      font-size: 0.8rem; color: var(--muted);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-list a:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+    .nav-list a .nav-icon { font-size: 1rem; width: 20px; text-align: center; }
+    .risk-tag { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; margin-left: auto; }
+    .risk-high { background: rgba(196,96,122,0.2); color: #e8909f; }
+    .risk-mod  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .risk-low  { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    /* ── Main ── */
+    .main { padding: 48px 52px 80px; max-width: 860px; }
+
+    /* ── Hero ── */
+    .hero {
+      border-radius: 28px;
+      padding: 44px 44px 36px;
+      background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 40px;
+    }
+    .hero-symbol { position: absolute; right: 30px; top: 16px; font-size: 160px; color: rgba(196,158,64,0.06); line-height: 1; user-select: none; }
+    .hero-glow { position: absolute; right: -60px; bottom: -80px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(196,158,64,0.12), transparent 65%); }
+    .eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem,5vw,4.2rem); font-weight: 300; color: #fff8f0; line-height: 1.1; margin-bottom: 6px; }
+    .lagna-line { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: rgba(196,158,64,0.85); margin-bottom: 22px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    .stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(196,158,64,0.14); border-radius: 14px; padding: 14px 16px; }
+    .stat-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 4px; }
+    .stat-value { font-size: 0.9rem; color: #fff8f0; }
+
+    /* ── Chapter ── */
+    .chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+    .chapter-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .chapter-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .chapter-icon.gold  { background: rgba(196,158,64,0.12); }
+    .chapter-icon.plum  { background: rgba(124,92,191,0.14); }
+    .chapter-icon.rose  { background: rgba(196,96,122,0.12); }
+    .chapter-icon.sage  { background: rgba(90,143,114,0.12); }
+    .chapter-icon.blue  { background: rgba(91,143,212,0.12); }
+    .chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--cream); }
+    .chapter h2 small { display: block; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+
+    /* ── Section ── */
+    .section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 28px; margin-bottom: 16px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--cream); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-gold  { background: var(--gold); }
+    .dot-plum  { background: var(--plum); }
+    .dot-rose  { background: var(--rose); }
+    .dot-sage  { background: var(--sage); }
+    .dot-blue  { background: var(--blue); }
+    p { font-size: 0.9rem; color: rgba(240,232,216,0.82); line-height: 1.75; margin-bottom: 10px; }
+    p:last-child { margin-bottom: 0; }
+    strong { color: var(--cream); font-weight: 600; }
+
+    /* ── Callout ── */
+    .callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 16px; }
+    .callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+    .callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+    .callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+    .callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+    .callout-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; display: block; }
+    .callout-gold .callout-label { color: var(--gold); }
+    .callout-plum .callout-label { color: #b49edf; }
+    .callout-rose .callout-label { color: #e8909f; }
+    .callout-sage .callout-label { color: #80c4a0; }
+
+    /* ── Badge ── */
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    /* ── Reading table ── */
+    .reading-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    .reading-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+    .reading-table td { padding: 10px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── Dasha rows ── */
+    .dasha-issues { display: flex; flex-direction: column; gap: 10px; margin-top: 14px; }
+    .dasha-issue { display: grid; grid-template-columns: 150px 80px 1fr; gap: 10px; align-items: center; padding: 12px 16px; border-radius: 12px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); }
+    .dasha-issue-period { font-weight: 600; color: #b49edf; font-size: 0.82rem; }
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; font-size: 0.86rem; }
+
+    /* ── Remedy calendar ── */
+    .calendar-table { width: 100%; border-collapse: collapse; margin-bottom: 28px; }
+    .calendar-table th { background: rgba(196,158,64,0.12); color: var(--gold); font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; padding: 10px 8px; text-align: center; border: 1px solid rgba(196,158,64,0.15); }
+    .calendar-table td { padding: 10px 8px; font-size: 0.8rem; text-align: center; vertical-align: top; border: 1px solid rgba(255,255,255,0.05); color: rgba(240,232,216,0.8); line-height: 1.5; }
+    .cal-practice { font-size: 0.75rem; color: rgba(240,232,216,0.75); }
+    .cal-planet   { font-size: 0.65rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 4px; }
+    .cal-highlight { background: rgba(196,158,64,0.06); }
+    .cal-rose     { background: rgba(196,96,122,0.06); }
+    .cal-sage     { background: rgba(90,143,114,0.06); }
+    .cal-blue     { background: rgba(91,143,212,0.06); }
+
+    /* ── Remedy tiers ── */
+    .remedy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    .tier-panel { border-radius: var(--r); padding: 24px; }
+    .tier-universal { background: rgba(90,143,114,0.07); border: 1px solid rgba(90,143,114,0.2); }
+    .tier-vedic     { background: rgba(196,158,64,0.07); border: 1px solid rgba(196,158,64,0.22); }
+    .tier-neuro     { background: rgba(91,143,212,0.07); border: 1px solid rgba(91,143,212,0.2); border-radius: var(--r); padding: 24px; }
+    .tier-title { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .tier-universal .tier-title { color: #80c4a0; }
+    .tier-vedic     .tier-title { color: var(--gold2); }
+    .tier-neuro     .tier-title { color: #8ab4f0; }
+    .tier-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .tier-universal .tier-dot { background: #5AC48A; }
+    .tier-vedic     .tier-dot { background: var(--gold); }
+    .tier-neuro     .tier-dot { background: var(--blue); }
+    .remedy-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .remedy-list li { font-size: 0.85rem; color: rgba(240,232,216,0.8); padding: 8px 12px; border-radius: 10px; line-height: 1.6; }
+    .tier-universal .remedy-list li { background: rgba(90,143,114,0.06); border-left: 3px solid rgba(90,143,114,0.4); }
+    .tier-vedic     .remedy-list li { background: rgba(196,158,64,0.06); border-left: 3px solid rgba(196,158,64,0.35); }
+    .tier-neuro     .remedy-list li { background: rgba(91,143,212,0.06); border-left: 3px solid rgba(91,143,212,0.35); }
+    .neuro-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .neuro-col-title { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); font-weight: 600; margin-bottom: 10px; display: block; }
+
+    /* ── Warning list ── */
+    .warning-list { list-style: none; display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+    .warning-list li { padding: 9px 14px; background: rgba(196,96,122,0.06); border-left: 3px solid rgba(196,96,122,0.4); border-radius: 0 10px 10px 0; font-size: 0.87rem; color: rgba(240,232,216,0.75); }
+
+    /* ── Fun/insight list ── */
+    .insight-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+    .insight-list li { padding: 12px 16px; background: rgba(255,255,255,0.04); border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0; font-size: 0.9rem; line-height: 1.6; color: rgba(240,232,216,0.82); }
+
+    /* ── Divider ── */
+    .divider { display: flex; align-items: center; gap: 16px; margin: 32px 0; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(240,232,216,0.3); }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* ── Sub-label ── */
+    .sub-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; margin-top: 18px; display: block; }
+
+    /* ── Footer ── */
+    .footer { text-align: center; padding: 20px 0; font-size: 0.72rem; color: rgba(240,232,216,0.3); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 40px; }
+
+    /* ── Mobile ── */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; }
+      .main { padding: 32px 20px 60px; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .remedy-grid { grid-template-columns: 1fr; }
+      .neuro-grid { grid-template-columns: 1fr; }
+      .dasha-issue { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- ══ SIDEBAR ══ -->
+  <aside class="sidebar">
+    <div class="sidebar-animal">🦁</div>
+    <div class="sidebar-name">Tiby Thomas</div>
+    <div class="sidebar-sub">Health &amp; Vitality</div>
+
+    <div class="sidebar-stats">
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Lagna</span>
+        <span class="sidebar-stat-val">♌ Leo 6.0°</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Dasha</span>
+        <span class="sidebar-stat-val">Rahu / Jupiter / Sun</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Constitution</span>
+        <span class="sidebar-stat-val">Pitta dominant</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="sidebar-stat-label">Transit Alert</span>
+        <span class="sidebar-stat-val">Saturn H8 (2025–27)</span>
+      </div>
+    </div>
+
+    <div class="nav-label">Chapters</div>
+    <ul class="nav-list">
+      <li><a href="#constitution"><span class="nav-icon">🔥</span>Constitution</a></li>
+      <li><a href="#heart"><span class="nav-icon">♥</span>Heart &amp; Spine<span class="risk-tag risk-high">High</span></a></li>
+      <li><a href="#digestion"><span class="nav-icon">🫁</span>Digestion<span class="risk-tag risk-high">High</span></a></li>
+      <li><a href="#kidneys"><span class="nav-icon">🔴</span>Kidneys &amp; Back<span class="risk-tag risk-mod">Mod</span></a></li>
+      <li><a href="#nervous"><span class="nav-icon">⚡</span>Nervous System<span class="risk-tag risk-mod">Mod</span></a></li>
+      <li><a href="#liver"><span class="nav-icon">🟡</span>Liver &amp; Hips<span class="risk-tag risk-mod">Mod</span></a></li>
+      <li><a href="#sleep"><span class="nav-icon">💤</span>Sleep &amp; Lymph<span class="risk-tag risk-low">Watch</span></a></li>
+      <li><a href="#dasha"><span class="nav-icon">🪐</span>Current Dasha</a></li>
+      <li><a href="#saturn"><span class="nav-icon">⚠️</span>Saturn H8 Transit</a></li>
+      <li><a href="#timeline"><span class="nav-icon">📅</span>Health Timeline</a></li>
+      <li><a href="#remedies"><span class="nav-icon">✦</span>Remedies</a></li>
+    </ul>
+  </aside>
+
+  <!-- ══ MAIN ══ -->
+  <main class="main">
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-symbol">♌</div>
+      <div class="hero-glow"></div>
+      <span class="eyebrow">Jyotish Health Reading · Leo Lagna · Jul 2026</span>
+      <h1>Tiby Thomas</h1>
+      <p class="lagna-line">The Lion's Body — Fire, Heart &amp; the Long Game</p>
+      <div class="stat-grid">
+        <div class="stat">
+          <span class="stat-label">Born</span>
+          <span class="stat-value">20 Aug 1982, 6:30 AM</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Place</span>
+          <span class="stat-value">Ranni, Kerala</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Dasha</span>
+          <span class="stat-value">Rahu / Jupiter / Sun</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Transit</span>
+          <span class="stat-value">Saturn in H8 ⚠</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Ch 1: Constitution ── -->
+    <div class="chapter" id="constitution">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🔥</div>
+        <h2><small>Chapter 1 — Foundation</small>Constitution &amp; Body Type</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>H1 Leo — Triple Stellium (Sun + Moon + Mercury)</div>
+        <p>Three planets in the first house is exceptional. <strong>Sun in Leo (own sign, Magha nakshatra)</strong> makes the Lagna lord sit in its throne — this is the chart of a constitutionally strong person. The Lion's body runs on solar fuel: high Pitta (fire), strong willpower, rapid recovery when balanced. This is not a fragile constitution.</p>
+        <p>But the same fire that gives Tiby his charisma and physical force must be actively managed. Pitta excess burns the system from within — the very strength becomes the liability when the furnace runs unchecked.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Magha Nakshatra — The Ancestral Body</div>
+        <p><strong>Magha</strong> (Sun's nakshatra here) is ruled by the Pitrus — ancestral guardians. This placement links Tiby's health directly to <em>inherited health patterns</em>. If cardiac disease, hypertension, or digestive issues run on the paternal side, those patterns are biologically live in this chart and should be proactively screened for.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Moon in Purva Phalguni — Body Listens to Emotions</div>
+        <p><strong>Moon in Purva Phalguni</strong> alongside Sun means emotional state and physical body are deeply coupled. When stress rises — work pressure, relationship friction, unresolved conflict — the body is the first to register it. Immunity dips, digestion disrupts, sleep fragments. This is not psychosomatic weakness; it is a Pitta-Moon signature that demands emotional regulation as a health practice.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <span class="callout-label">Constitution Summary</span>
+        Leo Lagna with Sun in own sign = genuinely robust constitution. High Pitta, solar energy, strong willpower. The challenge is not weakness — it is excess and overheating. This chart thrives with discipline; it suffers under neglect.
+      </div>
+    </div>
+
+    <div class="divider">Primary Vulnerabilities</div>
+
+    <!-- ── Ch 2: Heart ── -->
+    <div class="chapter" id="heart">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">♥</div>
+        <h2><small>Chapter 2 — High Priority</small>Heart &amp; Cardiovascular</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Sun in Leo H1 — The Heart Axis</div>
+        <p><strong>[Sun in Leo H1, Magha nakshatra]</strong> → Leo is the natural zodiacal ruler of the heart, upper back, and spine. Sun in own sign intensifies the Leo archetype fully: Tiby's heart is the central engine of his physical system — both in strength and in vulnerability.</p>
+        <p>With <strong>two luminaries (Sun + Moon)</strong> both occupying H1, the cardiac zone carries double the energetic load. This is a configuration that produces powerful physical vitality in youth but requires proactive cardiac care by the 40s.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Rahu Mahadasha (2025–2043) — Fire Amplified</div>
+        <p>Rahu amplifies whatever it touches. During an 18-year Rahu Mahadasha, the Leo stellium's fire qualities are intensified — the engine revs higher, but also runs hotter. Rahu's amplification effect on Pitta during this period makes cardiac health the #1 long-term priority for Tiby's 40s and 50s.</p>
+        <p>This does not predict disease — it indicates that the <strong>lifestyle choices made in this Rahu MD window</strong> (diet, exercise, stress levels) will directly determine cardiac health outcomes in the 50s and 60s.</p>
+      </div>
+
+      <table class="reading-table" style="margin-top:16px;">
+        <thead>
+          <tr><th>Factor</th><th>Placement</th><th>Implication</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Lagna lord</strong></td><td>Sun in Leo H1 (own sign)</td><td>Strong constitution; heart is primary strength AND primary risk zone</td></tr>
+          <tr><td><strong>Moon in H1</strong></td><td>Purva Phalguni, Leo</td><td>Dual luminaries in H1 = cardiac load; emotional stress → heart impact</td></tr>
+          <tr><td><strong>Leo rules</strong></td><td>Heart, spine, upper back</td><td>All three body areas need active maintenance</td></tr>
+          <tr><td><strong>Rahu MD</strong></td><td>2025–2043</td><td>18-year period of Pitta amplification; cardiac vigilance mandatory</td></tr>
+          <tr><td><strong>Magha nakshatra</strong></td><td>Ancestral link</td><td>Screen for paternal-side cardiac/BP history</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-rose">
+        <span class="callout-label">Watch For</span>
+        High blood pressure (hypertension), cardiac rhythm irregularities under stress, chest tightness, arrhythmia. Annual BP monitoring, lipid panel, and ECG are non-negotiable for this chart — not reactive, but as baseline tracking.
+      </div>
+    </div>
+
+    <!-- ── Ch 3: Digestion ── -->
+    <div class="chapter" id="digestion">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">🫁</div>
+        <h2><small>Chapter 3 — High Priority</small>Digestive System &amp; Gut</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Saturn in H2 Virgo — The Slow Gut</div>
+        <p><strong>[Saturn in H2 Virgo, Chitra nakshatra pada 1]</strong> → This is the single most structurally significant health placement in Tiby's chart. Saturn is lord of the 6th house (disease house = Capricorn) and is placed in H2 (the house of food intake and sustenance) in Virgo — the zodiac sign that directly rules the <em>intestines and digestive tract</em>.</p>
+        <p>This placement creates a <strong>chronic Vata-cold digestive signature</strong>: food moves sluggishly through the system. Nutrients aren't absorbed at full efficiency. Saturn's cold, slow, contracting energy applied to Virgo's intestinal domain = a gut that needs consistent, warm, easy-to-digest foods and a very regular meal schedule.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Chitra Nakshatra (Mars-ruled) — Inflammation Layer</div>
+        <p>Saturn occupies Chitra, a Mars-ruled nakshatra. This layered Mars energy within Saturn in H2 adds an <strong>inflammatory component</strong> alongside the sluggishness — presenting as episodes of gastric inflammation, acidity, or reflux alternating with constipation. The gut oscillates between too-slow and too-reactive rather than settling into smooth function.</p>
+      </div>
+
+      <table class="reading-table" style="margin-top:16px;">
+        <thead>
+          <tr><th>Condition</th><th>Evidence</th><th>Risk</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Chronic constipation / irregular bowel</td><td>Saturn (cold/slow) in H2 Virgo (intestines)</td><td><span class="badge badge-risk">High</span></td></tr>
+          <tr><td>IBS-type pattern</td><td>Saturn + Chitra (Mars) oscillation</td><td><span class="badge badge-risk">High</span></td></tr>
+          <tr><td>Gastric acidity / reflux</td><td>Pitta Lagna + Mars-ruled nakshatra in H2</td><td><span class="badge badge-mixed">Moderate</span></td></tr>
+          <tr><td>Nutritional gaps (B12, iron)</td><td>Saturn-slowed absorption in Virgo H2</td><td><span class="badge badge-mixed">Moderate</span></td></tr>
+          <tr><td>Dental / jaw issues</td><td>H2 = teeth, jaw; Saturn = hardening/delay</td><td><span class="badge badge-mixed">Moderate</span></td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout callout-rose">
+        <span class="callout-label">Chronic Pattern — Not a Transit Issue</span>
+        Unlike many health indicators that are dasha-specific, this gut signature is natal and permanent. The digestive system has likely been a consistent area of concern since childhood. Managing it requires a daily protocol — not crisis intervention.
+      </div>
+    </div>
+
+    <!-- ── Ch 4: Kidneys ── -->
+    <div class="chapter" id="kidneys">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🔴</div>
+        <h2><small>Chapter 4 — Moderate Watch</small>Kidneys &amp; Lower Back</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Mars + Jupiter in H3 Libra — The Kidney Zone</div>
+        <p><strong>[Mars in H3 Libra, Swati nakshatra]</strong> → Libra governs the kidneys, lumbar region, and the body's fluid balance. Mars in Libra is in an enemy sign — its fire energy is dysregulated here, prone to bursts of inflammation followed by depletion in the kidney zone.</p>
+        <p><strong>[Jupiter in H3 Libra, H8 lord]</strong> → Jupiter owns the 8th house (Pisces) — the house of chronic disease and surgery. Having the H8 lord sitting alongside Mars in the kidney-governing sign (Libra) creates a flag for: <strong>kidney stones</strong> (Mars = crystallizing heat; Libra = kidneys), <strong>lower back strain</strong> that may become chronic if unaddressed, and potential kidney involvement during Jupiter antara periods.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Swati Nakshatra — Vata in the Joints</div>
+        <p>Both Mars and Jupiter occupy Swati nakshatra — ruled by Rahu, associated with wind and air element (Vata). <strong>Vata settling in the lower back, sacrum, and hips</strong> is a classic Swati health manifestation. Joint mobility issues, sciatic tension, or unpredictable lower-back episodes can emerge, particularly under sustained sedentary work or stress.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <span class="callout-label">Watch For</span>
+        Annual kidney function test (creatinine, GFR). Ensure adequate hydration daily (Libra/kidney axis + Rahu MD = dehydration risk underestimated). Lower back mobility exercises are protective, not optional.
+      </div>
+    </div>
+
+    <!-- ── Ch 5: Nervous System ── -->
+    <div class="chapter" id="nervous">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">⚡</div>
+        <h2><small>Chapter 5 — Active Now</small>Nervous System &amp; Mental Health</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Mercury H1 + Rahu H11 Gemini — Wired and Amplified</div>
+        <p><strong>[Mercury in Leo H1]</strong> → Mercury governs the nervous system, neural pathways, and skin. Seated in H1 with Sun and Moon, Mercury's nervous wiring is constantly stimulated by two luminaries. The result: an exceptionally active mind that can tip into <strong>nervous exhaustion, chronic overthinking, and anxiety</strong> when the system runs without deliberate downtime.</p>
+        <p><strong>[Rahu in H11 Gemini]</strong> → Rahu in Gemini amplifies the Mercurial themes dramatically. Gemini rules lungs, upper respiratory tract, and the central nervous system. Rahu here = tendency toward shallow breathing patterns, racing thoughts, chronic sympathetic nervous system activation (fight-or-flight state as a baseline rather than a response).</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Rahu Mahadasha — Peak Nervous System Period</div>
+        <p>Rahu's 18-year mahadasha (2025–2043) runs through H11 Gemini. This is the period when the nervous system is most taxed. Anxiety disorders, burnout, chronic mental busyness, and sleep fragility are Rahu-Mercury-Gemini symptoms that can solidify into structural patterns if not actively countered.</p>
+        <p>The <strong>skin</strong> (Mercury's domain) may also respond to this period — eczema, dermatitis, or stress-triggered rashes as the body's nervous overflow finding an outlet.</p>
+      </div>
+
+      <div class="callout callout-plum">
+        <span class="callout-label">Spiritual Insight</span>
+        Ketu in H5 (Sagittarius) forms the axis with Rahu. This Rahu-Ketu axis (H11-H5) is a teachers-of-detachment axis in this chart. Spiritual practices — meditation, pranayama, contemplation — are not merely supplementary here; they are the primary nervous system regulator that the chart itself prescribes.
+      </div>
+    </div>
+
+    <!-- ── Ch 6: Liver ── -->
+    <div class="chapter" id="liver">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🟡</div>
+        <h2><small>Chapter 6 — Background Watch</small>Liver, Hips &amp; Blood Sugar</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Ketu in H5 Sagittarius — The Liver Blind Spot</div>
+        <p><strong>[Ketu in H5 Sagittarius, Purva Ashadha nakshatra]</strong> → H5 governs the liver, stomach, pancreas, and hips. Sagittarius rules the thighs and hips. Ketu creates a quality of <em>detachment and blind spotting</em> in H5 matters — Tiby may genuinely not notice liver or metabolic symptoms until they have been brewing quietly for some time.</p>
+        <p>Specifically: <strong>liver sensitivity</strong> (reacts strongly to alcohol, processed foods, medications with hepatic metabolism), <strong>blood sugar regulation</strong> (pancreatic/insulin sensitivity in later years), and <strong>hip tightness or sciatic tendency</strong> are Ketu-H5 expressions.</p>
+      </div>
+
+      <div class="callout callout-gold">
+        <span class="callout-label">Annual Checks</span>
+        Liver function tests (ALT, AST, GGT) annually. Fasting blood glucose and HbA1c every 2 years from age 43+. Keep alcohol consumption minimal — Ketu H5 + Pitta Lagna = the liver does not forgive excess quietly.
+      </div>
+    </div>
+
+    <!-- ── Ch 7: Sleep ── -->
+    <div class="chapter" id="sleep">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">💤</div>
+        <h2><small>Chapter 7 — Lifestyle Dependent</small>Sleep, Lymph &amp; Recovery</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Venus in H12 Cancer — The Restorative Well</div>
+        <p><strong>[Venus in H12 Cancer, Pushya nakshatra]</strong> → H12 governs sleep, immune dissolution, lymphatic health, and feet. Venus in Cancer is a nurturing, protective placement — and Pushya (Saturn-ruled) gives it structure and patience. This is a relatively protective Venus placement: <strong>when Tiby genuinely rests, he genuinely recovers</strong>. The body has real restorative capacity when given the conditions.</p>
+        <p>However, <strong>Moon + Sun in H1</strong> means emotional and ego activation can override H12's rest signal. When the mind is overstimulated, the body refuses to wind down despite fatigue. The result: a person who is tired but wired — an increasingly common pattern in the Rahu MD.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Lymphatic Health</div>
+        <p>Venus in H12 Cancer also governs the lymphatic system (Cancer = water, retention, lymph flow). During sedentary periods or sustained stress, lymph stagnation is possible — manifesting as puffiness, sluggish immune response, or swollen lymph nodes during illness. Regular movement (not intense exercise — gentle daily movement) is the primary remedy.</p>
+      </div>
+
+      <div class="callout callout-sage">
+        <span class="callout-label">Protective Factor</span>
+        Venus in Pushya nakshatra responds beautifully to water-based wind-down rituals — a warm bath before sleep, evening walks near water, cooling music at night. For Tiby, sleep hygiene is not about willpower; it's about creating the right environmental conditions for Venus H12 to activate its restorative function.
+      </div>
+    </div>
+
+    <div class="divider">Current Planetary Picture</div>
+
+    <!-- ── Ch 8: Dasha ── -->
+    <div class="chapter" id="dasha">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">🪐</div>
+        <h2><small>Chapter 8 — July 2026</small>Current Dasha Health Picture</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Rahu / Jupiter / Sun — Three-Layer Activation</div>
+        <p>The current triple-dasha period activates the most health-sensitive layers of the chart simultaneously. This is the window where patterns that have been latent become visible — and therefore addressable.</p>
+      </div>
+
+      <div class="dasha-issues">
+        <div class="dasha-issue">
+          <div class="dasha-issue-period">Rahu MD (2025–2043)</div>
+          <div><span class="badge badge-risk">Active</span></div>
+          <div class="dasha-issue-note">Rahu in H11 Gemini — amplifies nervous system, respiratory tract, Pitta excess. 18-year window where cardiac and nervous health habits are being set.</div>
+        </div>
+        <div class="dasha-issue">
+          <div class="dasha-issue-period">Jupiter Bhukti (now)</div>
+          <div><span class="badge badge-mixed">Key</span></div>
+          <div class="dasha-issue-note">Jupiter is H8 lord (chronic disease house). Jupiter Bhukti = the period when hidden health issues surface. This is the RIGHT time for thorough investigation — not to avoid it.</div>
+        </div>
+        <div class="dasha-issue">
+          <div class="dasha-issue-period">Sun Antara (Jun–Aug 2026)</div>
+          <div><span class="badge badge-mixed">Spotlight</span></div>
+          <div class="dasha-issue-note">Sun is Lagna lord in H1 — Sun antara shines spotlight on the physical body. High energy periods possible, but also high strain if overextended.</div>
+        </div>
+        <div class="dasha-issue">
+          <div class="dasha-issue-period">Rahu/Saturn (2027–2030)</div>
+          <div><span class="badge badge-risk">Ahead</span></div>
+          <div class="dasha-issue-note">Saturn Bhukti in Rahu MD will be the next major health-watch period. Bone density, joint health, cardiovascular monitoring critical. What's unaddressed now compounds here.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-plum">
+        <span class="callout-label">Core Message</span>
+        Jupiter as H8 lord running its bhukti means the chart is currently operating with maximum visibility on hidden health issues. This is wisdom's window — what a Jupiter period reveals, it also helps heal. The planet of wisdom and physicians is running. Use it.
+      </div>
+    </div>
+
+    <!-- ── Ch 9: Saturn Transit ── -->
+    <div class="chapter" id="saturn">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">⚠️</div>
+        <h2><small>Chapter 9 — Critical Transit</small>Ashtama Shani — Saturn in H8</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Saturn Transiting Pisces (H8) — March 2025 to May 2027</div>
+        <p>Saturn entered Pisces (8th house from Leo lagna) in March 2025 and remains there until May 2027. <strong>Ashtama Shani</strong> — Saturn's transit through H8 — is one of the most physically demanding 2.5-year windows in a person's life, universally in Vedic tradition.</p>
+        <p>H8 governs chronic disease, surgeries, immune reserves, and the body's capacity for deep repair. Saturn in H8 depletes vitality <em>slowly and steadily</em> — like a slow leak rather than a burst. It does not announce itself loudly; it accumulates quietly over months until the body's reserves are noticeably diminished.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>What Ashtama Shani Means in Practice</div>
+        <ul class="warning-list">
+          <li><strong>Immune pressure:</strong> Chronic conditions solidify — existing gut, cardiac, or musculoskeletal issues become harder to ignore or defer.</li>
+          <li><strong>Energy drain:</strong> Fatigue that doesn't fully resolve with sleep; the body needs more recovery time than usual between exertions.</li>
+          <li><strong>Surgery risk window:</strong> Ashtama Shani correlates with surgical interventions in some cases. Elective procedures should be timed carefully — avoid Saturn-Mars combined periods.</li>
+          <li><strong>Rest is non-negotiable:</strong> Saturn in H8 rewards those who pace themselves. It penalizes those who push through depleted states. The Leo constitution's tendency to "push harder" is the precise opposite of what this transit requires.</li>
+          <li><strong>Screen, don't ignore:</strong> Any physical symptoms that have been quietly present need medical attention now, not later. This transit will surface what's been latent.</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Protective Factor: Jupiter in H12 (Cancer)</div>
+        <p>Jupiter is simultaneously transiting Cancer (H12 from Leo) — the house of healing, hospitalization, and spiritual protection. Jupiter in H12 during Ashtama Shani is a classic protective configuration: <strong>the physician-planet in the healing house</strong>. This provides meaningful protection — but only if Tiby is actively pursuing health and healing, not passively hoping the transit passes. Jupiter's protection is conditional on effort.</p>
+      </div>
+
+      <div class="callout callout-rose">
+        <span class="callout-label">Timeline</span>
+        Saturn exits H8 (Pisces) and enters H9 (Aries) in May 2027. The next 10 months of this transit are the most important window. A full medical checkup — cardiac, digestive, kidney, liver — done before mid-2027 is the single highest-value health action available for this chart right now.
+      </div>
+    </div>
+
+    <!-- ── Ch 10: Timeline ── -->
+    <div class="chapter" id="timeline">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">📅</div>
+        <h2><small>Chapter 10 — Forward View</small>Health Timeline by Dasha</h2>
+      </div>
+
+      <table class="reading-table">
+        <thead>
+          <tr><th>Period</th><th>Dates</th><th>Health Theme</th><th>Priority</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Rahu / Jupiter</strong></td>
+            <td>2024–2027</td>
+            <td>Hidden issues surfacing (H8 lord active); Saturn H8 transit concurrent. Most diagnostically important window. Full checkup now.</td>
+            <td><span class="badge badge-risk">Critical</span></td>
+          </tr>
+          <tr>
+            <td><strong>Rahu / Saturn</strong></td>
+            <td>2027–2030</td>
+            <td>Second most demanding health sub-period. Bone density, joints, chronic fatigue, cardiovascular monitoring. What's unresolved now compounds here.</td>
+            <td><span class="badge badge-risk">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>Rahu / Mercury</strong></td>
+            <td>2030–2033</td>
+            <td>Nervous system and respiratory focus. Less cardiovascular danger; anxiety, skin, and lung health take centre stage. Mental health vigilance.</td>
+            <td><span class="badge badge-mixed">Moderate</span></td>
+          </tr>
+          <tr>
+            <td><strong>Rahu / Ketu</strong></td>
+            <td>2032–2033</td>
+            <td>Short (7 months) but high chaos — unexpected events, sudden onset. Avoid elective surgery in this window.</td>
+            <td><span class="badge badge-mixed">Caution</span></td>
+          </tr>
+          <tr>
+            <td><strong>Rahu / Venus</strong></td>
+            <td>2033–2036</td>
+            <td>Venus H12 activated — genuine healing and recovery possible. Lymphatic, reproductive, and sleep health improve. Rest-oriented period.</td>
+            <td><span class="badge badge-protect">Easier</span></td>
+          </tr>
+          <tr>
+            <td><strong>Rahu / Sun</strong></td>
+            <td>2036–2037</td>
+            <td>Lagna lord Sun under Rahu — cardiac spotlight returns. Pitta management essential at this age (54+).</td>
+            <td><span class="badge badge-mixed">Monitor</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="divider">Remedies &amp; Protocols</div>
+
+    <!-- ── Ch 11: Remedies ── -->
+    <div class="chapter" id="remedies">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">✦</div>
+        <h2><small>Chapter 11 — Practice Plan</small>Remedies &amp; Health Protocols</h2>
+      </div>
+
+      <!-- Weekly Calendar -->
+      <span class="sub-label">Weekly Practice Calendar</span>
+      <table class="calendar-table">
+        <thead>
+          <tr>
+            <th>🌙 Mon<br><small>Moon</small></th>
+            <th>🔴 Tue<br><small>Mars</small></th>
+            <th>🟢 Wed<br><small>Mercury</small></th>
+            <th>🟡 Thu<br><small>Jupiter</small></th>
+            <th>🟠 Fri<br><small>Venus</small></th>
+            <th>🪐 Sat<br><small>Saturn</small></th>
+            <th>🌞 Sun<br><small>Sun</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="cal-highlight">
+              <div class="cal-practice">Cold → warm shower</div>
+              <div class="cal-planet">Vagal tone reset</div>
+            </td>
+            <td class="cal-rose">
+              <div class="cal-practice">Hanuman Chalisa + lower back stretch 10 min</div>
+              <div class="cal-planet">Mars/Yoga Karaka</div>
+            </td>
+            <td class="cal-blue">
+              <div class="cal-practice">Nadi Shodhana 10 min + no screens 1hr before bed</div>
+              <div class="cal-planet">Mercury/Nerves</div>
+            </td>
+            <td class="cal-highlight">
+              <div class="cal-practice">Light fast until noon + HRV check</div>
+              <div class="cal-planet">Jupiter/Liver</div>
+            </td>
+            <td class="cal-sage">
+              <div class="cal-practice">Warm bath evening + early sleep</div>
+              <div class="cal-planet">Venus H12</div>
+            </td>
+            <td>
+              <div class="cal-practice">Warm ginger water AM + probiotic + gut awareness</div>
+              <div class="cal-planet">Saturn H2 Virgo</div>
+            </td>
+            <td class="cal-highlight">
+              <div class="cal-practice">20–30 min sunrise walk + Aditya Hridayam</div>
+              <div class="cal-planet">Sun/Lagna lord</div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="font-size:0.78rem; color:var(--muted); padding:8px 10px;">Fixed wake time daily — non-negotiable for Moon+Sun H1 regulation</td>
+            <td colspan="3" style="font-size:0.78rem; color:var(--muted); padding:8px 10px;">Avoid alcohol, very spicy food, and late meals — Pitta + Saturn H2 Virgo</td>
+            <td colspan="2" style="font-size:0.78rem; color:var(--muted); padding:8px 10px;">Cooling foods throughout: cucumber, fennel, coconut water</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Tier 1 + 2 -->
+      <div class="remedy-grid">
+        <div class="tier-panel tier-universal">
+          <div class="tier-title"><span class="tier-dot"></span>● Universal — For Everyone</div>
+          <ul class="remedy-list">
+            <li><strong>Morning sun exposure</strong> — 20–30 min before 9 AM. Sun in own sign H1 needs regular solar nourishment. Most natural Leo lagna remedy.</li>
+            <li><strong>Cooling diet daily</strong> — Cucumber, coriander, fennel, coconut water, amla. Reduce: red meat, alcohol, very spicy food, fried foods.</li>
+            <li><strong>Gut regularity protocol</strong> — Same meal times every day (Saturn in H2 Virgo responds to discipline). Warm water + ginger first thing AM. Probiotics.</li>
+            <li><strong>Lower back &amp; hip mobility</strong> — 10 min daily hip-flexor + spinal decompression. Mars in Libra H3 needs active lumbar maintenance.</li>
+            <li><strong>Annual cardiac baseline</strong> — BP, lipid panel, ECG. Non-negotiable for Leo H1 stellium. Not reactive — preventive tracking.</li>
+            <li><strong>Annual bloodwork</strong> — Kidney function (creatinine, GFR), liver (ALT, AST), fasting glucose. Start now during Jupiter Bhukti window.</li>
+            <li><strong>Hydration</strong> — 2.5–3L water daily. Rahu MD + Libra H3 = underestimated dehydration risk, especially kidney zone.</li>
+          </ul>
+        </div>
+
+        <div class="tier-panel tier-vedic">
+          <div class="tier-title"><span class="tier-dot"></span>◆ Vedic Tradition — For Believers</div>
+          <ul class="remedy-list">
+            <li><strong>Aditya Hridayam (daily, morning)</strong> — The solar heart scripture. Directly aligns with Sun in Magha H1. Honours the Pitr connection of Magha nakshatra. Most resonant mantra for this chart.</li>
+            <li><strong>Hanuman Chalisa (Tuesdays)</strong> — Mars is Yoga Karaka for Leo lagna. Hanuman = Mars strength. Protects physical resilience and body courage.</li>
+            <li><strong>Ganesha mantra (Wednesdays)</strong> — Mercury H1 — nervous system balancing. "Om Gam Ganapataye Namaha" before work or study.</li>
+            <li><strong>Mahamrityunjaya mantra (Saturdays)</strong> — Saturn H8 transit active. This mantra specifically addresses H8 themes — longevity, protection from illness. 108x on Saturdays during Ashtama Shani period.</li>
+            <li><strong>Ruby (Manik) gemstone</strong> — Sun is Lagna lord in own sign. Ruby can be worn on the ring finger, right hand, to strengthen the Lagna lord. Consult a Jyotishi for final confirmation before wearing.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tier 3 Neuroscience -->
+      <div class="tier-neuro">
+        <div class="tier-title"><span class="tier-dot"></span>◈ Neuroscience / CBT / NLP / Biohacking</div>
+        <div class="neuro-grid">
+          <div>
+            <span class="neuro-col-title">CBT / Mind</span>
+            <ul class="remedy-list">
+              <li><strong>Emotion-body journaling</strong> — Track what emotions precede gut or chest symptoms. Moon in H1 = body is the emotional ledger. Awareness interrupts the pattern.</li>
+              <li><strong>Stress-inoculation training</strong> — Deliberately expose to controlled mild stressors (cold water, fasting, difficult conversations) to build cortisol regulation. Rahu MD + Pitta = chronic low-grade cortisol elevation.</li>
+              <li><strong>Cognitive defusion</strong> — Mercury in H1 generates racing thoughts. CBT defusion techniques (thoughts as clouds, not commands) reduce Mercury's nervous overdrive.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="neuro-col-title">NLP / Reprogramming</span>
+            <ul class="remedy-list">
+              <li><strong>Nadi Shodhana pranayama</strong> — 10 min daily. Directly balances the Rahu-Gemini nervous system amplification. Activates parasympathetic (rest) mode from sympathetic (reactive) default.</li>
+              <li><strong>Sleep anchor ritual</strong> — Same 4–5 actions every night before bed (warm bath → dim light → no screens → cooling breath → same sleep time). Venus H12 needs an environmental cue to activate, not willpower.</li>
+              <li><strong>Identity anchoring</strong> — Rahu MD can cause identity diffusion. Daily affirmation of core self (Sun in Magha = ancestral pride) grounds the Rahu noise.</li>
+            </ul>
+          </div>
+          <div>
+            <span class="neuro-col-title">Biohacking</span>
+            <ul class="remedy-list">
+              <li><strong>HRV (Heart Rate Variability) tracking</strong> — Wearable-based daily HRV score. Three consecutive low-HRV days = early cardiac + stress warning. Gives Tiby's Leo-Sun mind data-driven feedback it will actually act on.</li>
+              <li><strong>Cold-to-warm contrast shower</strong> — Activates vagal tone, reduces Pitta, supports cardiac and immune resilience. 30s cold → 90s warm → 30s cold, 3 cycles.</li>
+              <li><strong>Time-restricted eating (16:8)</strong> — Supports Saturn H2 Virgo gut function. Eating window 10 AM–6 PM gives the digestive system 16 hours of repair time. Strongest tool for the Virgo gut signature.</li>
+              <li><strong>Magnesium glycinate before bed</strong> — Supports Saturn (bones, nervous system), reduces Pitta heat at night, improves sleep depth. 200–400mg nightly.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-sage" style="margin-top:20px;">
+        <span class="callout-label">Bottom Line</span>
+        The chart shows a powerfully vital person — Sun in own sign in H1 is not a weak constitution. But the combination of Rahu MD + Ashtama Shani (Saturn H8, 2025–27) + Jupiter Bhukti (H8 lord active) means right now is the exact window where hidden health patterns surface. This is not a crisis — it is the optimal time for a full diagnostic and lifestyle reset. What gets addressed now, under Jupiter's wisdom energy, resolves. What's ignored compounds into Rahu/Saturn (2027–2030).
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated July 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · For educational purposes
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
