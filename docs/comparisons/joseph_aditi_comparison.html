@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Joseph T C × Aditi — Chart Comparison</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 80px;
+    }
+
+    .shell {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 40px;
+      background: linear-gradient(140deg,
+        rgba(20,12,46,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(28,40,28,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-glow {
+      position: absolute; right: -60px; bottom: -80px;
+      width: 340px; height: 340px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.12), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+    }
+
+    .hero-names {
+      display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-bottom: 8px;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 4.2rem);
+      font-weight: 300; line-height: 0.95; color: #fff8f0;
+    }
+
+    .vs-orb {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(196,158,64,0.12);
+      border: 1px solid rgba(196,158,64,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; color: var(--gold); flex-shrink: 0;
+    }
+
+    .hero-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; font-style: italic;
+      color: rgba(196,158,64,0.75); margin-bottom: 28px;
+    }
+
+    /* ── DUAL STAT GRID ── */
+    .dual-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .dual-col {
+      display: flex; flex-direction: column; gap: 10px;
+    }
+
+    .dual-label {
+      font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 4px;
+    }
+
+    .dual-divider {
+      display: flex; flex-direction: column; align-items: center;
+      gap: 14px; padding-top: 4px;
+    }
+
+    .divider-line {
+      width: 1px; height: 100%;
+      background: linear-gradient(to bottom, transparent, rgba(196,158,64,0.3), transparent);
+      min-height: 120px;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 14px; padding: 12px 16px;
+    }
+
+    .stat-card .label {
+      font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--gold); display: block; margin-bottom: 4px;
+    }
+
+    .stat-card .value {
+      font-size: 0.95rem; color: #fff8f0; line-height: 1.4;
+    }
+
+    .stat-card .value.plum { color: #b49edf; }
+    .stat-card .value.sage { color: #80c4a0; }
+    .stat-card .value.rose { color: #e8909f; }
+    .stat-card .value.blue { color: #8ab8e8; }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .panel-header {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 20px; padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+
+    .panel-icon.gold   { background: rgba(196,158,64,0.1);  color: var(--gold); }
+    .panel-icon.plum   { background: rgba(124,92,191,0.14); color: #b49edf; }
+    .panel-icon.sage   { background: rgba(90,143,114,0.14); color: #80c4a0; }
+    .panel-icon.rose   { background: rgba(196,96,122,0.12); color: #e8909f; }
+    .panel-icon.blue   { background: rgba(91,143,212,0.14); color: #8ab8e8; }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 400; color: var(--cream);
+    }
+
+    .panel h2 small {
+      display: block; font-size: 0.65rem; letter-spacing: 0.25em;
+      text-transform: uppercase; color: var(--gold);
+      font-family: 'DM Sans', sans-serif; margin-bottom: 4px;
+    }
+
+    /* ── COMPARISON TABLE ── */
+    .cmp-table {
+      width: 100%; border-collapse: collapse; font-size: 0.88rem;
+    }
+
+    .cmp-table th {
+      text-align: left; padding: 10px 14px;
+      background: rgba(196,158,64,0.08);
+      color: var(--gold); font-size: 0.68rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+    }
+
+    .cmp-table th:nth-child(2),
+    .cmp-table th:nth-child(3) { text-align: center; }
+
+    .cmp-table td {
+      padding: 11px 14px; color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top; line-height: 1.6;
+    }
+
+    .cmp-table td:nth-child(2),
+    .cmp-table td:nth-child(3) { text-align: center; }
+
+    .cmp-table tr:last-child td { border-bottom: none; }
+    .cmp-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    .cmp-table .topic {
+      color: var(--gold); font-size: 0.72rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+    }
+
+    .cmp-table .joseph { color: #b49edf; font-weight: 500; }
+    .cmp-table .aditi  { color: #80c4a0; font-weight: 500; }
+
+    /* ── SPLIT PANEL ── */
+    .split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
+    }
+
+    .split-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r); padding: 24px;
+    }
+
+    .split-card.j { border-color: rgba(124,92,191,0.25); }
+    .split-card.a { border-color: rgba(90,143,114,0.25); }
+
+    .split-name {
+      font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .split-name.j { color: #b49edf; }
+    .split-name.a { color: #80c4a0; }
+
+    .split-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem; font-weight: 400; color: var(--cream);
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 0.93rem; line-height: 1.8;
+      color: rgba(240,232,216,0.8); margin-bottom: 12px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    /* ── SYNASTRY METER ── */
+    .meter-grid {
+      display: flex; flex-direction: column; gap: 14px; margin-top: 4px;
+    }
+
+    .meter-row { display: flex; flex-direction: column; gap: 6px; }
+
+    .meter-label {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.82rem; color: rgba(240,232,216,0.75);
+    }
+
+    .meter-score {
+      font-size: 0.72rem; font-weight: 600; color: var(--gold2);
+    }
+
+    .meter-bar {
+      height: 6px; border-radius: 3px;
+      background: rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+
+    .meter-fill {
+      height: 100%; border-radius: 3px;
+      background: linear-gradient(90deg, var(--plum), var(--gold));
+    }
+
+    /* ── CALLOUT ── */
+    .callout {
+      border-radius: 14px; padding: 18px 22px;
+      font-size: 0.91rem; line-height: 1.8;
+    }
+
+    .callout-gold {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.28);
+    }
+
+    .callout-plum {
+      background: rgba(124,92,191,0.09);
+      border: 1px solid rgba(124,92,191,0.28);
+    }
+
+    .callout-sage {
+      background: rgba(90,143,114,0.09);
+      border: 1px solid rgba(90,143,114,0.3);
+    }
+
+    .callout-rose {
+      background: rgba(196,96,122,0.09);
+      border: 1px solid rgba(196,96,122,0.28);
+    }
+
+    .callout-label {
+      font-size: 0.62rem; letter-spacing: 0.25em;
+      text-transform: uppercase; font-weight: 600; margin-bottom: 8px;
+    }
+
+    .callout-gold .callout-label { color: var(--gold); }
+    .callout-plum .callout-label { color: #b49edf; }
+    .callout-sage .callout-label { color: #80c4a0; }
+    .callout-rose .callout-label { color: #e8909f; }
+
+    /* ── BADGE ── */
+    .badge {
+      display: inline-block; padding: 3px 10px;
+      border-radius: 999px; font-size: 0.68rem;
+      font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    .badge-plum   { background: rgba(124,92,191,0.18); color: #b49edf; }
+    .badge-sage   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-gold   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-rose   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-blue   { background: rgba(91,143,212,0.15); color: #8ab8e8; }
+
+    /* ── YOGA LIST ── */
+    .yoga-row {
+      display: flex; align-items: flex-start; gap: 10px;
+      padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .yoga-row:last-child { border-bottom: none; }
+
+    .yoga-name {
+      font-weight: 600; color: var(--gold2); min-width: 170px;
+      font-size: 0.83rem;
+    }
+
+    .yoga-desc {
+      color: rgba(240,232,216,0.75); line-height: 1.6;
+    }
+
+    /* ── TIMING ROW ── */
+    .timing-row {
+      display: grid; grid-template-columns: 100px 1fr;
+      gap: 12px; padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .timing-row:last-child { border-bottom: none; }
+
+    .timing-person {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.12em;
+      text-transform: uppercase; padding-top: 3px;
+    }
+
+    .timing-person.j { color: #b49edf; }
+    .timing-person.a { color: #80c4a0; }
+
+    .timing-content p { font-size: 0.88rem; margin-bottom: 4px; }
+
+    .timing-dasha {
+      font-size: 0.75rem; color: rgba(196,158,64,0.65);
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      display: flex; align-items: center; gap: 16px;
+      font-size: 0.62rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: rgba(240,232,216,0.25);
+    }
+
+    .section-divider::before,
+    .section-divider::after {
+      content: ''; flex: 1; height: 1px;
+      background: var(--border);
+    }
+
+    /* ── HOUSE ROW ── */
+    .house-row {
+      display: grid;
+      grid-template-columns: 60px 1fr 1fr;
+      gap: 12px; padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.87rem; align-items: start;
+    }
+
+    .house-row:last-child { border-bottom: none; }
+
+    .house-num {
+      color: rgba(196,158,64,0.5); font-size: 0.75rem;
+      font-weight: 600; text-align: center; padding-top: 2px;
+    }
+
+    .house-j { color: rgba(180,158,223,0.85); line-height: 1.5; }
+    .house-a { color: rgba(128,196,160,0.85); line-height: 1.5; }
+
+    .strong { font-weight: 600; }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center; padding: 20px 0;
+      font-size: 0.72rem; color: rgba(240,232,216,0.28);
+      letter-spacing: 0.08em;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .split, .dual-grid { grid-template-columns: 1fr; }
+      .dual-divider { display: none; }
+      .hero { padding: 32px 24px 28px; }
+      .hero-names { gap: 14px; }
+      .house-row { grid-template-columns: 48px 1fr; }
+      .house-a { display: none; } /* show on scroll */
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+
+    <!-- ══════ HERO ══════ -->
+    <div class="hero">
+      <div class="hero-glow"></div>
+      <div class="eyebrow">Vedic Chart Comparison · Jyotish / Lahiri Ayanamsha</div>
+      <div class="hero-names">
+        <div class="hero-name">Joseph T C</div>
+        <div class="vs-orb">×</div>
+        <div class="hero-name">Aditi</div>
+      </div>
+      <div class="hero-subtitle">Sagittarius × Taurus — Jupiter &amp; Venus in dialogue</div>
+
+      <div class="dual-grid" style="margin-top: 28px;">
+        <!-- Joseph column -->
+        <div class="dual-col">
+          <div class="dual-label" style="color:#b49edf;">Joseph T C</div>
+          <div class="stat-card">
+            <span class="label">Lagna</span>
+            <span class="value">Sagittarius 2.8° ♐</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Lagna Lord</span>
+            <span class="value">Jupiter in H1 · own sign · Hamsa Yoga</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Moon</span>
+            <span class="value plum">Scorpio 6.1° · Anuradha · H12</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Sun</span>
+            <span class="value">Cancer 19.5° · Ashlesha · H8</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Current Dasha (Aug 2026)</span>
+            <span class="value sage">Venus / Venus / Mercury ★ PEAK</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Spirit Animal</span>
+            <span class="value">🐎 Horse (Jupiter wisdom + Mula nakshatra wanderer)</span>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="dual-divider">
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Aditi column -->
+        <div class="dual-col">
+          <div class="dual-label" style="color:#80c4a0;">Aditi</div>
+          <div class="stat-card">
+            <span class="label">Lagna</span>
+            <span class="value">Taurus 29.4° ♉ (Gandanta edge)</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Lagna Lord</span>
+            <span class="value">Venus in H10 Aquarius · Amala Yoga</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Moon</span>
+            <span class="value sage">Aquarius 9.7° · Shatabhisha · H10</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Sun</span>
+            <span class="value">Aquarius 2.4° · Dhanishtha · H10</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Current Dasha (Aug 2026)</span>
+            <span class="value">Saturn / Mercury / Saturn · structured climb</span>
+          </div>
+          <div class="stat-card">
+            <span class="label">Spirit Animal</span>
+            <span class="value">🦌 Deer (Shatabhisha Moon + Taurus grace)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ CHART-BY-CHART TABLE ══════ -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon gold">⚖️</div>
+        <h2><small>Planet by Planet</small>Full Chart Comparison</h2>
+      </div>
+
+      <table class="cmp-table">
+        <thead>
+          <tr>
+            <th>Factor</th>
+            <th style="color:#b49edf;">Joseph T C</th>
+            <th style="color:#80c4a0;">Aditi</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="topic">Lagna</td>
+            <td class="joseph">Sagittarius 2.8° — Fire, Mutable<br><span style="font-size:0.78rem;color:var(--muted);">expansive, philosophical, freedom-loving</span></td>
+            <td class="aditi">Taurus 29.4° — Earth, Fixed<br><span style="font-size:0.78rem;color:var(--muted);">stable, determined, sensory, gandanta edge</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Lagna Lord</td>
+            <td class="joseph">Jupiter in H1 · Mula nakshatra<br><span style="font-size:0.78rem;color:var(--muted);">Hamsa Yoga — noble, wise, self-contained</span></td>
+            <td class="aditi">Venus in H10 · Aquarius<br><span style="font-size:0.78rem;color:var(--muted);">Amala Yoga — career IS identity, public grace</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Moon Sign</td>
+            <td class="joseph">Scorpio · Anuradha (Saturn-ruled)<br><span style="font-size:0.78rem;color:var(--muted);">intense, private, loyal, H12 placement — inner world</span></td>
+            <td class="aditi">Aquarius · Shatabhisha (Rahu-ruled)<br><span style="font-size:0.78rem;color:var(--muted);">detached, humanitarian, moksha-driven, H10 — public</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Sun Sign</td>
+            <td class="joseph">Cancer · Ashlesha · H8<br><span style="font-size:0.78rem;color:var(--muted);">identity through transformation &amp; hidden depths</span></td>
+            <td class="aditi">Aquarius · Dhanishtha · H10<br><span style="font-size:0.78rem;color:var(--muted);">identity through public contribution &amp; innovation</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Mars</td>
+            <td class="joseph">Scorpio 0.2° · H12<br><span style="font-size:0.78rem;color:var(--muted);">hidden drive, emotionally charged, loss → strength</span></td>
+            <td class="aditi">Taurus 14.2° · Rohini · H1<br><span style="font-size:0.78rem;color:var(--muted);">7th lord in Lagna — self-reliant in love, embodied</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Venus</td>
+            <td class="joseph">Leo 3.4° · Magha · H9<br><span style="font-size:0.78rem;color:var(--muted);">love through philosophy, teaching, dharmic beauty</span></td>
+            <td class="aditi">Aquarius · Purva Bhadrapada · H10<br><span style="font-size:0.78rem;color:var(--muted);">Lagna lord — love through career, humanitarian vision</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Jupiter</td>
+            <td class="joseph">Sagittarius · Mula · H1 (own sign)<br><span style="font-size:0.78rem;color:var(--muted);">Hamsa Mahapurusha — exceptional wisdom, protection</span></td>
+            <td class="aditi">Cancer · Pushya · H3 (exalted, retrograde)<br><span style="font-size:0.78rem;color:var(--muted);">introspective expansion, deep wisdom inwardly digested</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Saturn</td>
+            <td class="joseph">Libra 16.5° · Swati · H11 (exalted)<br><span style="font-size:0.78rem;color:var(--muted);">gains through networks, discipline rewards greatly</span></td>
+            <td class="aditi">Capricorn 7.2° · Uttara Ashadha · H9<br><span style="font-size:0.78rem;color:var(--muted);">own sign, Raja Yoga with Mercury — mastery through dharma</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Mercury</td>
+            <td class="joseph">Leo 16.2° · Purva Phalguni · H9<br><span style="font-size:0.78rem;color:var(--muted);">10th lord in H9 — career through teaching, wisdom</span></td>
+            <td class="aditi">Capricorn 21.2° · Shravana · H9<br><span style="font-size:0.78rem;color:var(--muted);">Raja Yoga with Saturn — structured, precise intellect</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Rahu / Ketu axis</td>
+            <td class="joseph">Rahu H7 (Gemini) / Ketu H1<br><span style="font-size:0.78rem;color:var(--muted);">karmic pull toward unconventional partnerships; past-life wisdom in the self</span></td>
+            <td class="aditi">Rahu H9 (Capricorn) / Ketu H3 (Cancer)<br><span style="font-size:0.78rem;color:var(--muted);">karmic hunger for dharma &amp; recognition; past-life sibling/communication energy</span></td>
+          </tr>
+          <tr>
+            <td class="topic">7th House (Relationships)</td>
+            <td class="joseph">Gemini · Rahu placed in H7<br><span style="font-size:0.78rem;color:var(--muted);">7th lord Mercury in H9 — partner linked to dharma, travel, wisdom. Rahu = karmic, unusual, foreign partner energy</span></td>
+            <td class="aditi">Scorpio · Mars (7th lord) in H1<br><span style="font-size:0.78rem;color:var(--muted);">7th lord in Lagna — partner comes into her world; self-contained; seeks merger but on own terms</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Darakaraka (Soul Spouse)</td>
+            <td class="joseph">To be computed (likely Venus or Mercury at lowest degree)</td>
+            <td class="aditi">Sun (Darakaraka — lowest degree planet)<br><span style="font-size:0.78rem;color:var(--muted);">seeks a Sun-type partner — confident, dharmic, leader</span></td>
+          </tr>
+          <tr>
+            <td class="topic">Primary Yogas</td>
+            <td class="joseph">Hamsa (Jupiter H1), Chandra-Mangala (Moon+Mars), Viparita Raja ×2, Neecha Bhanga Raja, Vesi</td>
+            <td class="aditi">Raja Yoga (Saturn+Mercury H9), Yoga Karaka Saturn, Amala (Venus H10), Vosi</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ══════ CORE NATURE SPLIT ══════ -->
+    <div class="section-divider">Core Nature</div>
+
+    <div class="split">
+      <div class="split-card j">
+        <div class="split-name j">🐎 Joseph T C · Sagittarius Lagna</div>
+        <h3>The Philosopher-Warrior</h3>
+        <p>Jupiter in his own sign in H1 is rare and powerful — this is a man whose <em>personality itself</em> is a Hamsa Mahapurusha, radiating wisdom, generosity, and natural authority without effort. He walks into rooms and people instinctively trust him with their deeper questions.</p>
+        <p>But his Moon in Scorpio H12 (Anuradha) reveals the interior world is an ocean — intensely private, emotionally complex, and processing everything inwardly. What you see publicly (Jupiter's expansive light) is not what churns beneath (Scorpio's transformative depths with Moon+Mars+Ketu).</p>
+        <p>His Chandra-Mangala yoga in H12 makes him <strong>relentless in pursuit</strong>, particularly in hidden, behind-the-scenes ways. He can outlast almost anyone through adversity — the Viparita Raja yogas ensure he rises precisely when others assume he has fallen.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;">
+          <span class="badge badge-plum">Jupiter Archetype</span>
+          <span class="badge badge-gold">Mutable Fire</span>
+          <span class="badge badge-blue">H12 Inner World</span>
+        </div>
+      </div>
+
+      <div class="split-card a">
+        <div class="split-name a">🦌 Aditi · Taurus Lagna</div>
+        <h3>The Aquarian Architect</h3>
+        <p>Her triple H10 stellium (Sun + Moon + Venus all in Aquarius) is exceptional — this is someone whose <em>emotional center of gravity is her public life and career</em>. She doesn't separate who she is from what she builds. Her soul-satisfaction comes from visible contribution to the collective.</p>
+        <p>Taurus 29.4° Lagna at the gandanta edge (last degree before the sign boundary) marks a person at the cusp between material and immaterial, comfort-seeking and liberation-seeking. There's a subtle restlessness beneath the Taurean stability — she builds gorgeous structures that she then wants to outgrow.</p>
+        <p>Saturn + Mercury in H9 (own sign Capricorn) forming a Raja Yoga makes her one of those rare people who can translate <strong>philosophy into systems</strong>. She doesn't just think big — she builds the architecture that makes big ideas work at scale.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;">
+          <span class="badge badge-sage">Venus Archetype</span>
+          <span class="badge badge-gold">Fixed Earth</span>
+          <span class="badge badge-blue">H10 Public World</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ YOGAS COMPARISON ══════ -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon plum">✦</div>
+        <h2><small>Key Yogas</small>What Makes Each Chart Exceptional</h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div>
+          <div class="dual-label" style="color:#b49edf;margin-bottom:12px;">Joseph T C</div>
+
+          <div class="yoga-row">
+            <div class="yoga-name">Hamsa Yoga</div>
+            <div class="yoga-desc">Jupiter in own sign in Lagna kendra — purest form. Noble nature, wisdom, protection from major harm. His guru-like quality is intrinsic, not performed.</div>
+          </div>
+          <div class="yoga-row">
+            <div class="yoga-name">Chandra-Mangala</div>
+            <div class="yoga-desc">Moon + Mars together — emotional fire, earning power, and ambition that doesn't extinguish. In H12, this energy is channeled into hidden or spiritual domains.</div>
+          </div>
+          <div class="yoga-row">
+            <div class="yoga-name">Viparita Raja ×2</div>
+            <div class="yoga-desc">Rise through adversity. Losses become leverage. When situations appear worst, he is actually restructuring into something stronger.</div>
+          </div>
+          <div class="yoga-row">
+            <div class="yoga-name">Neecha Bhanga Raja</div>
+            <div class="yoga-desc">A debilitated planet is "cancelled" by a stronger configuration, transforming the weakness into unexpected strength.</div>
+          </div>
+          <div class="yoga-row">
+            <div class="yoga-name">Vesi (Mercury + Venus H9)</div>
+            <div class="yoga-desc">Both the 10th lord and Venus are in the 2nd house from the Sun — good character, wealth, eloquence.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="dual-label" style="color:#80c4a0;margin-bottom:12px;">Aditi</div>
+
+          <div class="yoga-row">
+            <div class="yoga-name">Raja Yoga (Sat + Merc H9)</div>
+            <div class="yoga-desc">Saturn in own sign Capricorn conjunct Mercury in H9 — one of the most durable Raja Yogas. Career authority through philosophy, structure, and systematic knowledge.</div>
+          </div>
+          <div class="yoga-row">
+            <div class="yoga-name">Yoga Karaka Saturn</div>
+            <div class="yoga-desc">For Taurus Lagna, Saturn rules both H9 (dharma) and H10 (karma) — making it doubly auspicious. Saturn MD (current) is her golden era.</div>
+          </div>
+          <div class="yoga-row">
+            <div class="yoga-name">Amala Yoga</div>
+            <div class="yoga-desc">Venus (lagna lord) in H10 — spotless reputation, ethical career, lasting recognition. What she builds carries her name with dignity.</div>
+          </div>
+          <div class="yoga-row">
+            <div class="yoga-name">H10 Triple Stellium</div>
+            <div class="yoga-desc">Sun + Moon + Venus all in Aquarius H10 — extremely rare. Her entire identity, emotional needs, and values orbit the 10th house. Career is not what she does; it's who she is.</div>
+          </div>
+          <div class="yoga-row">
+            <div class="yoga-name">Jupiter Exalted H3 (retro)</div>
+            <div class="yoga-desc">Jupiter in Cancer (exalted) retrograde — wisdom turned inward, brilliance that manifests after deep reflection. Not the loudest in the room, but the most precise.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ CAREER SPLIT ══════ -->
+    <div class="section-divider">Career Signatures</div>
+
+    <div class="split">
+      <div class="split-card j">
+        <div class="split-name j">Joseph T C — Career</div>
+        <h3>The Knowledge Channel</h3>
+        <p><strong>10th lord Mercury in Leo H9</strong> alongside Venus defines his career: communication, teaching, advisory work, writing, philosophical or dharmic leadership. He is best as a <em>knowledge channel</em> — the person others go to for guidance, frameworks, and perspective.</p>
+        <p><strong>Exalted Saturn in H11</strong> (Libra) ensures long-term gains through networks, institutions, and disciplined effort. His gains are earned through sustained contribution, not shortcuts — but they are durable.</p>
+        <p>Current peak: <strong>Venus/Venus/Mercury (May–Oct 2026)</strong> is his single strongest career sub-period in the 2023–2027 window. Contracts, consulting, training, teaching, interviews, communication-based business decisions — all strongly supported right now.</p>
+      </div>
+
+      <div class="split-card a">
+        <div class="split-name a">Aditi — Career</div>
+        <h3>The Aquarian Builder</h3>
+        <p><strong>Triple H10 stellium with Yoga Karaka Saturn as MD lord</strong> makes her career trajectory almost inexorable. She doesn't just work in a field — she shapes it. The Saturn + Mercury Raja Yoga in H9 gives her the philosophical architecture to make ideas scalable.</p>
+        <p><strong>Venus (lagna lord) in H10 (Amala Yoga)</strong> ensures she is known for integrity and aesthetic precision. She brings beauty to systems — whether that's design, strategy, or human systems.</p>
+        <p>Current: <strong>Saturn/Mercury/Saturn</strong> — the Yoga Karaka mahadasha activating her Saturn + Mercury H9 Raja Yoga. This period (2024–2042) is her primary career era, building toward recognition that compounds over time.</p>
+      </div>
+    </div>
+
+    <!-- ══════ HOUSE-BY-HOUSE KEY HOUSES ══════ -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon sage">🏛️</div>
+        <h2><small>House Analysis</small>Key Houses Side by Side</h2>
+      </div>
+
+      <div style="display:grid;grid-template-columns:60px 1fr 1fr;gap:0;margin-bottom:8px;">
+        <div style="font-size:0.62rem;color:rgba(196,158,64,0.4);text-transform:uppercase;letter-spacing:0.15em;text-align:center;">H#</div>
+        <div style="font-size:0.62rem;color:#b49edf;text-transform:uppercase;letter-spacing:0.15em;padding:0 8px;">Joseph</div>
+        <div style="font-size:0.62rem;color:#80c4a0;text-transform:uppercase;letter-spacing:0.15em;padding:0 8px;">Aditi</div>
+      </div>
+
+      <div class="house-row">
+        <div class="house-num">H1<br><span style="font-size:0.65rem;color:rgba(196,158,64,0.35);">Self</span></div>
+        <div class="house-j"><strong>Sagittarius</strong> — Jupiter ★ + Ketu<br><span style="font-size:0.8rem;color:var(--muted);">Hamsa Yoga, wisdom embodied in person</span></div>
+        <div class="house-a"><strong>Taurus</strong> — Mars (7th lord here)<br><span style="font-size:0.8rem;color:var(--muted);">Grounded, embodied, 7th lord in 1st = relationships come to her</span></div>
+      </div>
+
+      <div class="house-row">
+        <div class="house-num">H7<br><span style="font-size:0.65rem;color:rgba(196,158,64,0.35);">Partner</span></div>
+        <div class="house-j"><strong>Gemini</strong> — Rahu<br><span style="font-size:0.8rem;color:var(--muted);">Karmic, unconventional, possibly foreign partner. 7th lord Mercury in H9 = dharmic partnership</span></div>
+        <div class="house-a"><strong>Scorpio</strong> — empty<br><span style="font-size:0.8rem;color:var(--muted);">7th lord Mars in H1. She carries the partnership energy within herself. Seeks intense merger</span></div>
+      </div>
+
+      <div class="house-row">
+        <div class="house-num">H9<br><span style="font-size:0.65rem;color:rgba(196,158,64,0.35);">Dharma</span></div>
+        <div class="house-j"><strong>Leo</strong> — Mercury + Venus<br><span style="font-size:0.8rem;color:var(--muted);">10th lord + Venus in dharma house — career flows from higher purpose. Vesi yoga here</span></div>
+        <div class="house-a"><strong>Capricorn</strong> — Saturn + Mercury + Rahu<br><span style="font-size:0.8rem;color:var(--muted);">Raja Yoga epicenter. Dharma = structured mastery. Rahu adds ambition and scale</span></div>
+      </div>
+
+      <div class="house-row">
+        <div class="house-num">H10<br><span style="font-size:0.65rem;color:rgba(196,158,64,0.35);">Career</span></div>
+        <div class="house-j"><strong>Virgo</strong> — empty<br><span style="font-size:0.8rem;color:var(--muted);">10th lord Mercury is in H9 — career expressed through dharmic work, teaching, advisory</span></div>
+        <div class="house-a"><strong>Aquarius</strong> — Sun + Moon + Venus ★★★<br><span style="font-size:0.8rem;color:var(--muted);">Triple stellium — rare concentration of identity, emotion, and values in the career house</span></div>
+      </div>
+
+      <div class="house-row">
+        <div class="house-num">H11<br><span style="font-size:0.65rem;color:rgba(196,158,64,0.35);">Gains</span></div>
+        <div class="house-j"><strong>Libra</strong> — Saturn (exalted) ★<br><span style="font-size:0.8rem;color:var(--muted);">Exceptional gains through networks, long-term effort, institutions</span></div>
+        <div class="house-a"><strong>Pisces</strong> — empty<br><span style="font-size:0.8rem;color:var(--muted);">11th lord Jupiter exalted in H3 — gains through communication, siblings, short journeys, writing</span></div>
+      </div>
+
+      <div class="house-row">
+        <div class="house-num">H12<br><span style="font-size:0.65rem;color:rgba(196,158,64,0.35);">Liberation</span></div>
+        <div class="house-j"><strong>Scorpio</strong> — Moon + Mars + Ketu<br><span style="font-size:0.8rem;color:var(--muted);">Chandra-Mangala here — massive hidden drive, deep interior life, spiritual intensity</span></div>
+        <div class="house-a"><strong>Aries</strong> — empty<br><span style="font-size:0.8rem;color:var(--muted);">12th lord Mars is in H1 — liberation through embodiment &amp; self-assertion rather than withdrawal</span></div>
+      </div>
+    </div>
+
+    <!-- ══════ SYNASTRY ══════ -->
+    <div class="section-divider">Compatibility & Synastry</div>
+
+    <div class="panel" style="background:rgba(124,92,191,0.04);border-color:rgba(124,92,191,0.22);">
+      <div class="panel-header">
+        <div class="panel-icon plum">🌙</div>
+        <h2><small>Synastry Analysis</small>Chart Compatibility</h2>
+      </div>
+
+      <div class="split" style="margin-bottom:24px;">
+        <div>
+          <div class="meter-grid">
+            <div class="meter-row">
+              <div class="meter-label"><span>Moon Compatibility (Scorpio × Aquarius)</span><span class="meter-score">5.5 / 10</span></div>
+              <div class="meter-bar"><div class="meter-fill" style="width:55%;background:linear-gradient(90deg,var(--rose),var(--gold));"></div></div>
+              <div style="font-size:0.8rem;color:var(--muted);margin-top:4px;">Fixed–Fixed (square): deep tension that generates growth. Scorpio wants merger; Aquarius wants freedom. Powerful but not comfortable.</div>
+            </div>
+            <div class="meter-row">
+              <div class="meter-label"><span>Lagna Compatibility (Sagittarius × Taurus)</span><span class="meter-score">6.5 / 10</span></div>
+              <div class="meter-bar"><div class="meter-fill" style="width:65%;"></div></div>
+              <div style="font-size:0.8rem;color:var(--muted);margin-top:4px;">Fire + Earth: Joseph's expansive fire and Aditi's grounded earth are complementary if both are mature. He inspires; she stabilizes.</div>
+            </div>
+            <div class="meter-row">
+              <div class="meter-label"><span>Career / Professional Synergy</span><span class="meter-score">8.5 / 10</span></div>
+              <div class="meter-bar"><div class="meter-fill" style="width:85%;background:linear-gradient(90deg,var(--sage),var(--gold2));"></div></div>
+              <div style="font-size:0.8rem;color:var(--muted);margin-top:4px;">Excellent. Joseph's H9 Mercury+Venus (vision, communication) complements Aditi's H9 Saturn+Mercury (execution, structure). Together they cover the full knowledge → systems cycle.</div>
+            </div>
+            <div class="meter-row">
+              <div class="meter-label"><span>Intellectual / Philosophical Resonance</span><span class="meter-score">8 / 10</span></div>
+              <div class="meter-bar"><div class="meter-fill" style="width:80%;background:linear-gradient(90deg,var(--blue),var(--plum));"></div></div>
+              <div style="font-size:0.8rem;color:var(--muted);margin-top:4px;">Both have Mercury+Saturn energy in H9 — Joseph through Venus+Mercury placement, Aditi through Saturn+Mercury conjunction. H9 dialogues between them would be rich.</div>
+            </div>
+            <div class="meter-row">
+              <div class="meter-label"><span>Spiritual Path Alignment</span><span class="meter-score">6 / 10</span></div>
+              <div class="meter-bar"><div class="meter-fill" style="width:60%;"></div></div>
+              <div style="font-size:0.8rem;color:var(--muted);margin-top:4px;">Joseph: Bhakti/Dharmic path (H12 Moon, Ketu H1). Aditi: Karma/Jnana path (Saturn in H9 own sign, Shatabhisha Moon). Different modes — complementary rather than identical.</div>
+            </div>
+            <div class="meter-row">
+              <div class="meter-label"><span>Dasha Synchronization (Aug 2026)</span><span class="meter-score">7.5 / 10</span></div>
+              <div class="meter-bar"><div class="meter-fill" style="width:75%;background:linear-gradient(90deg,var(--gold),var(--gold2));"></div></div>
+              <div style="font-size:0.8rem;color:var(--muted);margin-top:4px;">Joseph in Venus/Venus/Mercury peak; Aditi in Saturn/Mercury/Saturn structured climb. Both professionally active — timing aligns for shared ventures or serious engagement.</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div class="callout callout-sage">
+            <div class="callout-label">Strongest Compatibility Point</div>
+            <strong>H9 Mercury resonance</strong>: Both have Mercury active in H9 — Joseph's 10th lord Mercury in Leo H9, Aditi's Mercury in Capricorn H9 Raja Yoga. They would immediately recognize each other's intellectual frameworks. Conversations between them would be unusually substantive.
+          </div>
+
+          <div class="callout callout-plum">
+            <div class="callout-label">Interesting Cross-Link</div>
+            <strong>Lagna lord exchange</strong>: Joseph's Lagna lord is Jupiter; Aditi's Jupiter is exalted in Cancer (H3). Joseph's Venus is in Leo H9; Aditi's Lagna lord Venus is in Aquarius H10. Their ruling planets are woven through each other's charts — a sign of karmic connection.
+          </div>
+
+          <div class="callout callout-rose">
+            <div class="callout-label">Tension Point</div>
+            <strong>Moon friction</strong>: Scorpio (Joseph) and Aquarius (Aditi) are in an inherently tense 4–10 relationship. Joseph's Moon craves depth, merger, emotional intensity. Aditi's Moon craves freedom, collective engagement, and detachment. Without conscious navigation, this can manifest as Joseph feeling emotionally neglected, and Aditi feeling emotionally crowded.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ CURRENT TIMING ══════ -->
+    <div class="panel" style="background:rgba(90,143,114,0.04);border-color:rgba(90,143,114,0.22);">
+      <div class="panel-header">
+        <div class="panel-icon sage">⏳</div>
+        <h2><small>August 2026</small>Current Timing — Where Each One Stands</h2>
+      </div>
+
+      <div class="timing-row">
+        <div class="timing-person j">Joseph</div>
+        <div class="timing-content">
+          <p><strong style="color:#b49edf;">Venus / Venus / Mercury</strong> — This is his peak career sub-period within the 2023–2043 Venus Mahadasha. Mercury is his 10th lord (career). Venus is his 9th lord (dharma). Both sitting together in Leo H9 in the natal, both activated now.</p>
+          <p>This is the window for: contracts, consulting agreements, teaching roles, writing, communication-based business, job changes, interviews. <strong>The best window in this run closes October 2026.</strong></p>
+          <div class="timing-dasha">Venus MD (2023–2043) · Venus Bhukti · Mercury Antara (May–Oct 2026)</div>
+        </div>
+      </div>
+
+      <div class="timing-row">
+        <div class="timing-person a">Aditi</div>
+        <div class="timing-content">
+          <p><strong style="color:#80c4a0;">Saturn / Mercury / Saturn</strong> — The Yoga Karaka Saturn Mahadasha (the most auspicious MD for Taurus Lagna) activated by Mercury Bhukti activating the natal Saturn+Mercury Raja Yoga in H9. This is a period of disciplined ascent — not fast, but cumulative and lasting.</p>
+          <p>Focus areas: career systems, recognition through structured expertise, education, dharmic work, public profile building. Results feel like compound interest — they build slowly, then dramatically.</p>
+          <div class="timing-dasha">Saturn MD (Yoga Karaka, 2024–2042) · Mercury Bhukti · Saturn Antara</div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px;">
+        <div class="callout callout-gold">
+          <div class="callout-label">Timing Verdict — August 2026</div>
+          Both are in the most productive professional phases of their adult lives — but through different mechanisms. Joseph is in a <strong>time-sensitive peak window</strong> (closes Oct 2026): he must move now or wait years for the next opportunity of this magnitude. Aditi is in a <strong>long slow compound-growth period</strong> (2024–2042): her results build over time, and the pressure to act "now or never" is lower — but consistent effort matters enormously. If they are collaborating, August–October 2026 is the optimal window to initiate any shared venture or agreement.
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════ SPIRITUAL PATHS ══════ -->
+    <div class="section-divider">Spiritual Signatures</div>
+
+    <div class="split">
+      <div class="split-card j" style="border-color:rgba(124,92,191,0.25);">
+        <div class="split-name j">Joseph — Spiritual Path</div>
+        <h3>Bhakti-Dharmic</h3>
+        <p><strong>Ketu in H1</strong> (Sagittarius, Mula nakshatra) is deeply spiritually significant. Ketu in Lagna marks someone who carries past-life spiritual attainment into this birth — the wisdom doesn't need to be earned, it needs to be remembered and expressed.</p>
+        <p><strong>Moon + Mars + Ketu in H12</strong> (Scorpio) creates a profound interior life. His emotional processing is spiritual processing. The Anuradha nakshatra of his Moon — deity Mitra, the god of friendship and covenant — suggests his path involves loyal devotion, alliance, and being a trustworthy guide for others.</p>
+        <p>He is not a renunciate — Jupiter in H1 loves life, expansion, and embodied wisdom. His path is <em>engaged spirituality</em>: bring the dharma into the marketplace, teach through living.</p>
+        <span class="badge badge-plum">Bhakti</span> <span class="badge badge-gold">Dharmic</span> <span class="badge badge-plum">H12 Mystic</span>
+      </div>
+
+      <div class="split-card a" style="border-color:rgba(90,143,114,0.25);">
+        <div class="split-name a">Aditi — Spiritual Path</div>
+        <h3>Karma-Jnana</h3>
+        <p><strong>Shatabhisha Moon</strong> (Aquarius, H10) — "the hundred physicians" — is one of the most spiritually potent nakshatras, associated with hidden healing, cosmic secrets, and moksha-orientation. Her emotional wellbeing is tied to her spiritual clarity. She heals by understanding.</p>
+        <p><strong>Ketu in H3</strong> (Cancer, Pushya nakshatra) — past-life mastery in communication, siblings, and short-range thinking. She may feel communication comes naturally but is also exhausted by it. Her spiritual growth moves toward deeper silence and inward knowing.</p>
+        <p><strong>Jupiter exalted retrograde in H3</strong> — wisdom that needs to be turned inward before it flowers outward. Meditation, writing, and contemplative practices unlock her deepest knowing. She is the scholar who finds God in the system.</p>
+        <span class="badge badge-sage">Karma</span> <span class="badge badge-blue">Jnana</span> <span class="badge badge-gold">Moksha-Driven</span>
+      </div>
+    </div>
+
+    <!-- ══════ SUMMARY CALLOUT ══════ -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon gold">🌟</div>
+        <h2><small>Summary</small>Who Are These Two, Together?</h2>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div class="callout callout-gold">
+          <div class="callout-label">Core Dynamic</div>
+          Joseph is the philosopher who carries wisdom in his body (Jupiter H1) and processes the world through emotional depths (Moon H12 Scorpio). Aditi is the architect who carries her ambition publicly (triple H10) and structures vision into reality (Saturn+Mercury Raja Yoga H9). He sees the <em>why</em>; she builds the <em>how</em>. Together, they cover the full spectrum from inspired philosophy to disciplined execution.
+        </div>
+
+        <div class="callout callout-sage">
+          <div class="callout-label">Professional Partnership Verdict</div>
+          <strong>Exceptional match for co-creation.</strong> Both have Mercury active in H9, creating an unusually rich shared intellectual language. Joseph's Hamsa Yoga gives natural wisdom and trust-building; Aditi's Amala Yoga gives public reputation for integrity. Joseph's Venus MD (20 years) brings abundance and relationship expansion; Aditi's Saturn MD (Yoga Karaka, 18 years) brings structured mastery. They have complementary timescales and complementary energies. A project started together in August–October 2026 (during Joseph's peak sub-period) would have the planetary blessing of both charts.
+        </div>
+
+        <div class="callout callout-plum">
+          <div class="callout-label">Romantic / Personal Compatibility</div>
+          The Moon square (Scorpio × Aquarius) is the central tension. Joseph's emotional world is oceanic, private, and craves depth of merger. Aditi's emotional world is humanitarian, detached, and craves freedom of perspective. This is not an easy pairing emotionally — both signs are Fixed, meaning neither changes easily. However, <strong>Rahu in Joseph's H7</strong> suggests he is karmically drawn precisely to unusual, independent, non-conformist partners — which Aditi (triple Aquarian H10) represents perfectly. And Aditi's <strong>7th lord Mars in H1</strong> suggests she finds her partner within herself first — someone who matches her self-contained strength. Joseph's Jupiter H1 (wisdom, nobility) could be exactly that. This is a compelling, karmic, and intellectually electric pairing — with real emotional work required.
+        </div>
+
+        <div class="callout callout-rose">
+          <div class="callout-label">Key Challenge</div>
+          <strong>Interior vs. Exterior orientation.</strong> Joseph's emotional center is H12 (hidden, withdrawn, interior). Aditi's emotional center is H10 (visible, public, exterior). Left unaddressed, he may feel emotionally unseen (she's always "on" publicly while his rich inner world stays invisible); she may feel emotionally pressured to give more of herself privately than she comfortably can. The antidote: Joseph needs to articulate his inner world explicitly — Aditi won't naturally look for it. Aditi needs to carve out private space for depth — Joseph can only feel close in that quiet register.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated August 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Jyotish Chart Comparison
+    </div>
+
+  </div>
+</body>
+</html>
