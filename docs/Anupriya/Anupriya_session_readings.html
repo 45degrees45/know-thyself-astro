@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Anupriya × Bangalore Guy — Compatibility &amp; Antidotes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background-color:#0b0b18;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,92,191,0.18),transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%,rgba(196,158,64,0.12),transparent);
+  background-attachment:fixed;
+  color:var(--cream);
+  line-height:1.7;
+  min-height:100vh;
+}
+.layout{display:grid;grid-template-columns:260px 1fr;min-height:100vh;max-width:1300px;margin:0 auto}
+
+/* SIDEBAR */
+.sidebar{
+  position:sticky;top:0;height:100vh;overflow-y:auto;
+  padding:36px 20px 36px 24px;
+  border-right:1px solid var(--border);
+  background:rgba(11,11,24,0.92);
+  backdrop-filter:blur(12px);
+}
+.sidebar-animal{font-size:52px;margin-bottom:4px;line-height:1}
+.sidebar-animal-b{font-size:36px;margin-bottom:16px;opacity:.7}
+.sidebar-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:#fff8f0;line-height:1.3;margin-bottom:4px}
+.sidebar-sub{font-size:0.7rem;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:20px}
+.stat-mini{background:rgba(255,255,255,0.05);border:1px solid rgba(196,158,64,0.12);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.stat-mini-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.stat-mini-val{font-size:0.82rem;color:var(--cream)}
+.nav-section{margin-top:20px;margin-bottom:6px;font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:rgba(240,232,216,0.3)}
+.nav-link{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;text-decoration:none;color:rgba(240,232,216,0.6);font-size:0.82rem;margin-bottom:2px;transition:all .15s}
+.nav-link:hover{background:rgba(255,255,255,0.06);color:var(--cream)}
+.nav-link .nav-icon{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.8rem;flex-shrink:0}
+.nav-icon.gold{background:rgba(196,158,64,0.15);color:var(--gold)}
+.nav-icon.plum{background:rgba(124,92,191,0.15);color:#b49edf}
+.nav-icon.rose{background:rgba(196,96,122,0.15);color:#e8909f}
+.nav-icon.sage{background:rgba(90,143,114,0.15);color:#80c4a0}
+.nav-icon.blue{background:rgba(91,143,212,0.15);color:#9bbfe8}
+.score-pill{display:inline-block;background:rgba(90,143,114,0.2);border:1px solid rgba(90,143,114,0.35);border-radius:999px;padding:4px 14px;font-size:0.78rem;color:#80c4a0;font-weight:600;margin-top:10px}
+
+/* MAIN */
+.main{padding:48px 52px 80px;max-width:860px}
+
+/* HERO */
+.session-hero{
+  border-radius:28px;padding:44px 44px 36px;margin-bottom:48px;
+  background:linear-gradient(140deg,rgba(28,18,56,0.98) 0%,rgba(44,24,72,0.96) 45%,rgba(80,38,58,0.92) 100%);
+  border:1px solid rgba(196,158,64,0.22);
+  box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+}
+.hero-glow{position:absolute;right:-60px;bottom:-80px;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(196,158,64,0.12),transparent 65%);pointer-events:none}
+.eyebrow{font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.session-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:#fff8f0;line-height:1.1;margin-bottom:8px}
+.session-hero .sub{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-style:italic;color:rgba(196,158,64,0.75);margin-bottom:24px}
+.hero-stat-row{display:flex;gap:16px;flex-wrap:wrap}
+.hstat{background:rgba(255,255,255,0.06);border:1px solid rgba(196,158,64,0.14);border-radius:12px;padding:12px 16px;flex:1;min-width:120px}
+.hstat-label{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
+.hstat-val{font-size:0.9rem;color:#fff8f0;font-weight:500}
+
+/* CHAPTERS */
+.chapter{margin-bottom:64px;scroll-margin-top:32px}
+.chapter-header{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.chapter-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0}
+.chapter-icon.gold{background:rgba(196,158,64,0.12)}
+.chapter-icon.plum{background:rgba(124,92,191,0.12)}
+.chapter-icon.rose{background:rgba(196,96,122,0.12)}
+.chapter-icon.sage{background:rgba(90,143,114,0.12)}
+.chapter-icon.blue{background:rgba(91,143,212,0.12)}
+.chapter h2{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:var(--cream)}
+.chapter h2 small{display:block;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-family:'DM Sans',sans-serif;margin-bottom:4px}
+
+/* SECTION CARDS */
+.section{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:24px 28px;margin-bottom:16px}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:1.18rem;font-weight:400;color:var(--cream);margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.dot-gold{background:var(--gold)}
+.dot-plum{background:var(--plum)}
+.dot-rose{background:var(--rose)}
+.dot-sage{background:var(--sage)}
+.dot-blue{background:var(--blue)}
+
+/* CALLOUTS */
+.callout{border-radius:14px;padding:18px 22px;font-size:0.9rem;line-height:1.8;margin-top:16px}
+.callout-gold{background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)}
+.callout-plum{background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)}
+.callout-rose{background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)}
+.callout-sage{background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.3)}
+.callout-label{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+
+/* TABLES */
+.reading-table{width:100%;border-collapse:collapse;font-size:0.86rem;margin-top:8px}
+.reading-table th{text-align:left;padding:10px 14px;background:rgba(196,158,64,0.1);color:var(--gold);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;border-bottom:1px solid rgba(196,158,64,0.2)}
+.reading-table td{padding:10px 14px;color:rgba(240,232,216,0.82);border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:top;line-height:1.6}
+.reading-table tr:last-child td{border-bottom:none}
+.reading-table tr:hover td{background:rgba(255,255,255,0.02)}
+.t-gold{color:var(--gold2);font-weight:500}
+.t-sage{color:#80c4a0}
+.t-rose{color:#e8909f}
+.t-plum{color:#b49edf}
+.t-blue{color:#9bbfe8}
+
+/* BADGES */
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+.badge-protect{background:rgba(90,143,114,0.18);color:#80c4a0}
+.badge-risk{background:rgba(196,96,122,0.18);color:#e8909f}
+.badge-mixed{background:rgba(196,158,64,0.15);color:#e8c96a}
+.badge-plum{background:rgba(124,92,191,0.18);color:#b49edf}
+
+/* SYNASTRY CARDS */
+.syn-card{background:rgba(255,255,255,0.03);border:1px solid rgba(196,158,64,0.12);border-radius:16px;padding:18px 20px;margin-bottom:12px;display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+.syn-badge{background:rgba(196,158,64,0.1);border:1px solid rgba(196,158,64,0.2);border-radius:10px;padding:8px 10px;text-align:center;font-size:0.72rem;color:var(--gold);min-width:80px;line-height:1.4}
+.syn-badge strong{display:block;font-size:1rem;color:var(--gold2);margin-bottom:2px}
+.syn-body p{font-size:0.87rem;color:rgba(240,232,216,0.8);line-height:1.7}
+.syn-body strong{color:var(--cream)}
+
+/* DASHA TIMELINE */
+.dasha-timeline{display:flex;flex-direction:column;gap:0}
+.dt-row{display:grid;grid-template-columns:110px 1fr;gap:0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.dt-row:last-child{border-bottom:none}
+.dt-period{padding:14px 16px;background:rgba(196,158,64,0.06);border-right:1px solid rgba(196,158,64,0.1);display:flex;flex-direction:column;justify-content:center}
+.dt-year{font-size:0.8rem;font-weight:600;color:var(--gold2)}
+.dt-bhukti{font-size:0.7rem;color:var(--muted);margin-top:2px}
+.dt-content{padding:14px 18px;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}
+.dt-her{font-size:0.83rem;color:rgba(240,232,216,0.8)}
+.dt-him{font-size:0.83rem;color:rgba(180,158,223,0.85)}
+.dt-label{font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:2px}
+.dt-match{grid-column:1/-1;font-size:0.8rem;color:rgba(240,232,216,0.55);font-style:italic;border-top:1px solid rgba(255,255,255,0.04);padding-top:8px;margin-top:4px}
+.dt-row.highlight .dt-period{background:rgba(90,143,114,0.12);border-color:rgba(90,143,114,0.2)}
+.dt-row.highlight .dt-year{color:#80c4a0}
+.dt-row.current .dt-period{background:rgba(196,158,64,0.1)}
+
+/* KUTA SCORE */
+.kuta-grid{display:grid;grid-template-columns:140px 1fr 1fr;gap:0}
+.kuta-header{padding:10px 14px;background:rgba(196,158,64,0.1);color:var(--gold);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;border-bottom:2px solid rgba(196,158,64,0.2)}
+.kuta-row{display:contents}
+.kuta-cell{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.85rem;color:rgba(240,232,216,0.82);vertical-align:top;line-height:1.6}
+.kuta-row:last-child .kuta-cell{border-bottom:none;font-weight:600;background:rgba(255,255,255,0.03)}
+.kuta-name{color:var(--gold2);font-weight:500}
+.kuta-good{color:#80c4a0}
+.kuta-bad{color:#e8909f}
+.kuta-mixed{color:#e8c96a}
+.score-big{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold2);line-height:1}
+.score-max{font-size:0.85rem;color:var(--muted)}
+
+/* ANTIDOTE TIERS */
+.tier-header{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:600;padding:6px 12px;border-radius:6px;display:inline-block;margin-bottom:16px}
+.tier-u{background:rgba(90,143,114,0.15);color:#80c4a0}
+.tier-v{background:rgba(196,158,64,0.12);color:var(--gold)}
+.tier-n{background:rgba(91,143,212,0.12);color:#9bbfe8}
+.remedy-item{padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.87rem;color:rgba(240,232,216,0.78);line-height:1.7}
+.remedy-item:last-child{border-bottom:none}
+.remedy-item strong{color:var(--cream);display:block;margin-bottom:3px;font-size:0.88rem}
+.neuro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+.neuro-col{background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.14);border-radius:14px;padding:16px}
+.neuro-col h4{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:#9bbfe8;margin-bottom:12px;font-weight:600}
+.sym-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+/* CALENDAR */
+.cal-table{width:100%;border-collapse:collapse;font-size:0.78rem;margin-bottom:28px}
+.cal-table th{background:rgba(196,158,64,0.12);color:var(--gold);padding:9px 6px;text-align:center;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;border-bottom:1px solid rgba(196,158,64,0.2)}
+.cal-table td{padding:9px 6px;text-align:center;color:rgba(240,232,216,0.75);border-bottom:1px solid rgba(255,255,255,0.04);vertical-align:top;line-height:1.5}
+.planet-label{display:block;font-size:0.6rem;color:var(--gold);margin-top:3px;letter-spacing:0.08em}
+
+/* FRICTION TABLE */
+.friction-grid{display:flex;flex-direction:column;gap:10px}
+.friction-row{display:grid;grid-template-columns:30px 180px 1fr;gap:12px;align-items:start;padding:12px 16px;background:rgba(255,255,255,0.03);border-radius:12px;border:1px solid rgba(255,255,255,0.05)}
+.friction-no{font-size:0.75rem;color:var(--muted);font-weight:600;padding-top:2px}
+.friction-name{font-size:0.85rem;color:var(--cream);font-weight:500}
+.friction-label{font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;margin-top:2px}
+.friction-desc{font-size:0.83rem;color:rgba(240,232,216,0.7);line-height:1.6}
+
+/* UTILITY */
+p{color:rgba(240,232,216,0.82);line-height:1.8;font-size:0.92rem;margin-bottom:12px}
+.sub-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;margin-top:18px}
+.divider{display:flex;align-items:center;gap:16px;margin:28px 0;font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,232,216,0.25)}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.footer{text-align:center;padding:20px 0;font-size:0.72rem;color:rgba(240,232,216,0.3);letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:48px}
+
+@media(max-width:768px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:relative;height:auto;border-right:none;border-bottom:1px solid var(--border)}
+  .main{padding:32px 20px 60px}
+  .neuro-grid,.sym-grid{grid-template-columns:1fr}
+  .dt-content{grid-template-columns:1fr}
+  .kuta-grid{grid-template-columns:120px 1fr 1fr}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-animal">🦚</div>
+  <div class="sidebar-animal-b">♃</div>
+  <div class="sidebar-title">Anupriya × Bangalore Guy</div>
+  <div class="sidebar-sub">Compatibility &amp; Antidotes</div>
+
+  <div class="stat-mini">
+    <div class="stat-mini-label">Her Lagna</div>
+    <div class="stat-mini-val">Gemini 3.7° · Mrigashira p4</div>
+  </div>
+  <div class="stat-mini">
+    <div class="stat-mini-label">His Lagna (noon est.)</div>
+    <div class="stat-mini-val">Aquarius 15.9° · Shatabhisha</div>
+  </div>
+  <div class="stat-mini">
+    <div class="stat-mini-label">Both Moons</div>
+    <div class="stat-mini-val">Virgo · Hasta / UP · H8⚠</div>
+  </div>
+  <div class="stat-mini">
+    <div class="stat-mini-label">Current Dashas</div>
+    <div class="stat-mini-val">Both Rahu / Mercury now</div>
+  </div>
+  <div class="stat-mini">
+    <div class="stat-mini-label">Peak Sync Window</div>
+    <div class="stat-mini-val">Sep 2028 – Mar 2031 ⭐</div>
+  </div>
+
+  <div class="score-pill">25–27.5 / 36 Kuta</div>
+
+  <div class="nav-section">Chapters</div>
+  <a href="#charts" class="nav-link"><span class="nav-icon gold">⊕</span>Both Charts</a>
+  <a href="#kuta" class="nav-link"><span class="nav-icon gold">✦</span>Kuta Score</a>
+  <a href="#synastry" class="nav-link"><span class="nav-icon plum">🪐</span>Deep Synastry</a>
+  <a href="#dasha" class="nav-link"><span class="nav-icon sage">◉</span>Dasha Sync</a>
+  <a href="#love" class="nav-link"><span class="nav-icon rose">♡</span>Love Windows</a>
+  <a href="#antidotes" class="nav-link"><span class="nav-icon sage">🌿</span>Antidotes</a>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- HERO -->
+<div class="session-hero">
+  <div class="hero-glow"></div>
+  <div class="eyebrow">Session Reading · Compatibility Analysis · August 2026</div>
+  <h1>Anupriya × Bangalore Guy</h1>
+  <div class="sub">Gemini 🦚 meets Aquarius ♃ — The Peacock &amp; the Philosopher</div>
+  <div class="hero-stat-row">
+    <div class="hstat"><div class="hstat-label">Kuta Score</div><div class="hstat-val">25–27.5 / 36</div></div>
+    <div class="hstat"><div class="hstat-label">Both Moons</div><div class="hstat-val">Virgo / Hasta*</div></div>
+    <div class="hstat"><div class="hstat-label">Peak Window</div><div class="hstat-val">2028–2031</div></div>
+    <div class="hstat"><div class="hstat-label">Karmic Pull</div><div class="hstat-val">His Rahu ≈ Her Lagna</div></div>
+  </div>
+</div>
+
+<!-- ═══ CHAPTER 1 — CHARTS ═══ -->
+<div class="chapter" id="charts">
+  <div class="chapter-header">
+    <div class="chapter-icon gold">⊕</div>
+    <h2><small>Foundation</small>Both Charts at a Glance</h2>
+  </div>
+
+  <div class="sym-grid" style="margin-bottom:16px">
+    <div class="section">
+      <div class="section-title"><span class="dot dot-gold"></span>Anupriya · 26F · Panjim</div>
+      <table class="reading-table">
+        <tr><td class="t-gold">Lagna</td><td>Gemini 3.7° · Mrigashira p4</td></tr>
+        <tr><td class="t-gold">Moon</td><td>Virgo 10.8° · Hasta p1 · H4</td></tr>
+        <tr><td class="t-gold">Sun</td><td>Aries 29.8° · H11 (exalted sign)</td></tr>
+        <tr><td class="t-gold">Mercury</td><td>Taurus 5.8° · H12 · Lagna lord</td></tr>
+        <tr><td class="t-gold">Venus</td><td>Aries 22.1° · H11 · Raja Yoga</td></tr>
+        <tr><td class="t-gold">Jupiter</td><td>Aries 25.4° · H11 · H7+H10 lord</td></tr>
+        <tr><td class="t-gold">Darakaraka</td><td>Mercury 5.8°</td></tr>
+        <tr><td class="t-gold">Dasha</td><td>Rahu / Mercury / Jupiter</td></tr>
+        <tr><td class="t-gold">Spirit Animal</td><td>Peacock 🦚</td></tr>
+      </table>
+    </div>
+    <div class="section">
+      <div class="section-title"><span class="dot dot-plum"></span>Bangalore Guy · 24M · Bangalore</div>
+      <table class="reading-table">
+        <tr><td class="t-plum">Lagna</td><td>Aquarius 15.9° (noon est.) ⚠</td></tr>
+        <tr><td class="t-plum">Moon</td><td>Virgo 12.3° · Hasta/UP* · H8</td></tr>
+        <tr><td class="t-plum">Sun</td><td>Scorpio 23.4° · H10 · Jyeshtha p3</td></tr>
+        <tr><td class="t-plum">Mercury</td><td>Scorpio 25.8° · H10 · Budha-Aditya</td></tr>
+        <tr><td class="t-plum">Venus</td><td>Scorpio 14.7° · H10 · Anuradha p4</td></tr>
+        <tr><td class="t-plum">Jupiter</td><td>Gemini 19.7° · H5 · Ardra p4 (R)</td></tr>
+        <tr><td class="t-plum">Darakaraka</td><td>Mars 6.4°</td></tr>
+        <tr><td class="t-plum">Dasha</td><td>Rahu / Mercury / Rahu</td></tr>
+        <tr><td class="t-plum">Yogas</td><td>10 incl. Gajakesari, Budha-Aditya, Yoga Karaka Venus, 3 Raja Yogas</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="callout callout-rose">
+    <div class="callout-label" style="color:#e8909f">⚠ Critical Note — Birth Time Unknown</div>
+    The Bangalore Guy's Lagna is estimated from noon and <strong>could be entirely different</strong>. More importantly: the Moon crossed from Uttara Phalguni into Hasta at exactly <strong>8:10 AM IST</strong> on December 9, 2001. If he was born before 8:10 AM → Moon in Uttara Phalguni pada 4 (no Nadi Dosha). If after 8:10 AM → Moon in Hasta pada 1, same as Anupriya (Nadi Dosha present). The entire Kuta calculation shifts on this single fact. His approximate birth time — even just "morning" or "afternoon" — resolves this.
+  </div>
+</div>
+
+<!-- ═══ CHAPTER 2 — KUTA ═══ -->
+<div class="chapter" id="kuta">
+  <div class="chapter-header">
+    <div class="chapter-icon gold">✦</div>
+    <h2><small>Ashtakoot Compatibility</small>Kuta Score — Both Scenarios</h2>
+  </div>
+
+  <p>Ashtakoot (8-factor) Kuta is the classical system for evaluating marriage compatibility from Moon nakshatra positions. Maximum 36 points. A score above 18 is acceptable; above 25 is considered good. Both scenarios for this chart cross the threshold comfortably.</p>
+
+  <div class="section">
+    <div class="section-title"><span class="dot dot-gold"></span>Anupriya · Hasta pada 1 · Deva Gana · Buffalo Yoni · Antya Nadi · Vaisya</div>
+    <div style="overflow-x:auto">
+    <div class="kuta-grid" style="border:1px solid rgba(196,158,64,0.15);border-radius:14px;overflow:hidden">
+      <div class="kuta-header">Kuta (Max)</div>
+      <div class="kuta-header">If Hasta p1 (born after 8:10 AM)</div>
+      <div class="kuta-header">If Uttara Phalguni p4 (before 8:10 AM)</div>
+
+      <div class="kuta-row">
+        <div class="kuta-cell"><span class="kuta-name">Varna (1)</span></div>
+        <div class="kuta-cell"><span class="kuta-good">1/1</span> — both Vaisya</div>
+        <div class="kuta-cell"><span class="kuta-good">1/1</span> — his Kshatriya &gt; her Vaisya ✓</div>
+      </div>
+      <div class="kuta-row">
+        <div class="kuta-cell"><span class="kuta-name">Vashya (2)</span></div>
+        <div class="kuta-cell"><span class="kuta-good">2/2</span> — both Virgo</div>
+        <div class="kuta-cell"><span class="kuta-good">2/2</span> — both Virgo</div>
+      </div>
+      <div class="kuta-row">
+        <div class="kuta-cell"><span class="kuta-name">Tara (3)</span></div>
+        <div class="kuta-cell"><span class="kuta-bad">0/3</span> — both Janma to each other</div>
+        <div class="kuta-cell"><span class="kuta-mixed">1.5/3</span> — Mitra / Janma (mixed)</div>
+      </div>
+      <div class="kuta-row">
+        <div class="kuta-cell"><span class="kuta-name">Yoni (4)</span></div>
+        <div class="kuta-cell"><span class="kuta-good">4/4</span> — same Buffalo yoni</div>
+        <div class="kuta-cell"><span class="kuta-mixed">2/4</span> — Buffalo + Cow (friendly)</div>
+      </div>
+      <div class="kuta-row">
+        <div class="kuta-cell"><span class="kuta-name">Graha Maitri (5)</span></div>
+        <div class="kuta-cell"><span class="kuta-good">5/5</span> — both Mercury-ruled (Virgo)</div>
+        <div class="kuta-cell"><span class="kuta-good">5/5</span> — both Mercury-ruled (Virgo)</div>
+      </div>
+      <div class="kuta-row">
+        <div class="kuta-cell"><span class="kuta-name">Gana (6)</span></div>
+        <div class="kuta-cell"><span class="kuta-good">6/6</span> — both Deva gana</div>
+        <div class="kuta-cell"><span class="kuta-bad">1/6</span> — Deva + Manushya (mismatch)</div>
+      </div>
+      <div class="kuta-row">
+        <div class="kuta-cell"><span class="kuta-name">Bhakoot (7)</span></div>
+        <div class="kuta-cell"><span class="kuta-good">7/7</span> — same Rashi</div>
+        <div class="kuta-cell"><span class="kuta-good">7/7</span> — same Rashi</div>
+      </div>
+      <div class="kuta-row">
+        <div class="kuta-cell"><span class="kuta-name">Nadi (8)</span></div>
+        <div class="kuta-cell"><span class="kuta-bad">0/8</span> — both Antya <strong>NADI DOSHA</strong></div>
+        <div class="kuta-cell"><span class="kuta-good">8/8</span> — Antya + Madhya, no dosha ✓</div>
+      </div>
+      <div class="kuta-row">
+        <div class="kuta-cell" style="background:rgba(255,255,255,0.04)"><span class="kuta-name" style="color:var(--gold2)">TOTAL (36)</span></div>
+        <div class="kuta-cell" style="background:rgba(255,255,255,0.04)"><span class="score-big">25</span> <span class="score-max">/ 36 · Nadi Dosha</span></div>
+        <div class="kuta-cell" style="background:rgba(255,255,255,0.04)"><span class="score-big" style="color:#80c4a0">27.5</span> <span class="score-max">/ 36 · No Dosha ✓</span></div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div class="callout callout-gold" style="margin-top:16px">
+    <div class="callout-label" style="color:var(--gold)">Nadi Dosha Context</div>
+    Nadi Dosha (same Antya Nadi when both in Hasta) is traditionally the most serious Kuta concern, associated with health friction and progeny challenges in marriage. However, three mitigating factors apply here: (1) both partners share the <em>complete</em> same nakshatra (not just same Nadi), which some classical texts treat differently; (2) the compensating strength — Graha Maitri, Gana, Bhakoot all max score; and (3) specific remedies exist. If the score is 27.5/36 (Uttara Phalguni, born before 8:10 AM) there is no Nadi Dosha at all and compatibility is considered very good.
+  </div>
+</div>
+
+<!-- ═══ CHAPTER 3 — SYNASTRY ═══ -->
+<div class="chapter" id="synastry">
+  <div class="chapter-header">
+    <div class="chapter-icon plum">🪐</div>
+    <h2><small>Planetary Connections</small>Deep Synastry</h2>
+  </div>
+
+  <p>Beyond the Kuta score, the real compatibility is written in how each person's planets land on the other's chart. Five connections stand out as exceptional — two of them rare enough to appear once in dozens of charts.</p>
+
+  <div class="syn-card">
+    <div class="syn-badge"><strong>0.4°</strong>Rahu ≈ Lagna</div>
+    <div class="syn-body">
+      <p><strong>His Rahu (Gemini 3.3°) conjunct her Lagna (Gemini 3.7°)</strong> — a 0.4° orb. His desire-archetype, his unconscious hunger, is placed almost exactly on her identity point. In synastry this is a karmic indicator of the highest order: he amplifies her sense of self in ways that feel both magnetic and slightly unsteady. She will feel he <em>sees</em> her when others don't. Past-life connection is strongly indicated. This conjunction creates irreversible familiarity — once met, difficult to forget.</p>
+    </div>
+  </div>
+
+  <div class="syn-card">
+    <div class="syn-badge"><strong>DK ↔ Aries</strong>Soul Match</div>
+    <div class="syn-body">
+      <p><strong>His Darakaraka = Mars. Mars rules Aries. Her entire H11 stellium is in Aries.</strong> His soul-level spouse significator's ruling sign contains her Sun, Jupiter, Venus, and Saturn — all four of her most powerful planets. His soul came looking for Aries energy; she is carrying four planets' worth of it in her wish-fulfillment house. This is the Darakaraka alignment that traditional astrologers consider one of the most confirming indicators of genuine compatibility.</p>
+    </div>
+  </div>
+
+  <div class="syn-card">
+    <div class="syn-badge"><strong>Mercury</strong>DK Match</div>
+    <div class="syn-body">
+      <p><strong>Her Darakaraka = Mercury. His chart has Budha-Aditya Yoga (Sun+Mercury conjunct in H10).</strong> She came looking for a Mercury-type partner — intellectual, communicative, versatile. He is precisely that: Sun and Mercury fused in the house of career and public recognition, earning status through intelligence. Her Darakaraka requirement is met with high precision. Not approximate — exact archetype alignment.</p>
+    </div>
+  </div>
+
+  <div class="syn-card">
+    <div class="syn-badge"><strong>Venus D9</strong>Exalted</div>
+    <div class="syn-body">
+      <p><strong>His Venus in Anuradha pada 4 = Pisces Navamsha = Venus exalted in D9.</strong> The Navamsha (D9) reveals the inner quality of a planet — what it becomes in intimate relationship. His Venus exalted in Pisces navamsha means his love nature at its deepest is devotional, self-giving, and genuinely capable of sacrifice. This is precisely what Anupriya's Kemadruma Moon needs: a love that doesn't withdraw when she does, that holds steady. His Venus in D9 can provide that.</p>
+    </div>
+  </div>
+
+  <div class="syn-card">
+    <div class="syn-badge"><strong>Jupiter</strong>Her Lagna</div>
+    <div class="syn-body">
+      <p><strong>His Jupiter (Gemini 19.7°) in her Lagna sign.</strong> His Jupiter expands into her Lagna — the field of her identity. In this relationship she will grow because of how he perceives her. Jupiter's philosophical optimism, placed on her Gemini identity, means he sees potential in her before she sees it herself. This is the placement that makes someone feel genuinely <em>larger</em> in the presence of another person. It's rare and valuable.</p>
+    </div>
+  </div>
+
+  <div class="callout callout-rose" style="margin-top:8px">
+    <div class="callout-label" style="color:#e8909f">The Challenge — H6 Friction</div>
+    His three most personal planets — Sun (identity), Mercury (intelligence), Venus (love) — all in Scorpio — land in Anupriya's H6 from her Gemini Lagna. H6 is the house of service, discipline, friction, and growth through resistance. His core self will challenge her, sharpen her, and occasionally feel like criticism even when it is engagement. This is not incompatibility; it is the growth-edge quality of this relationship. It requires reframing: his Scorpio directness is not attack — it is intimacy in a different language.
+  </div>
+</div>
+
+<!-- ═══ CHAPTER 4 — DASHA SYNC ═══ -->
+<div class="chapter" id="dasha">
+  <div class="chapter-header">
+    <div class="chapter-icon sage">◉</div>
+    <h2><small>Timing Intelligence</small>Dasha Synchronicity</h2>
+  </div>
+
+  <p>When two people's dasha periods run in parallel, their internal life-themes synchronize. This pairing has an extraordinary degree of dasha alignment — unusual enough that it deserves to be treated as a central compatibility indicator.</p>
+
+  <div class="section" style="margin-bottom:16px">
+    <div class="section-title"><span class="dot dot-sage"></span>Rahu Mahadasha Timeline — Both Charts</div>
+    <div class="dasha-timeline">
+      <div class="dt-row">
+        <div class="dt-period"><div class="dt-year">2016–17</div><div class="dt-bhukti">Rahu/Rahu</div></div>
+        <div class="dt-content">
+          <div><div class="dt-label" style="color:var(--gold)">Her</div><div class="dt-her">Rahu/Rahu: Sep 2016 – May 2019</div></div>
+          <div><div class="dt-label" style="color:#b49edf">Him</div><div class="dt-him">Rahu MD begins Mar 2017</div></div>
+          <div class="dt-match">Both enter Rahu Mahadasha within 6 months of each other. Same macro life-chapter beginning.</div>
+        </div>
+      </div>
+      <div class="dt-row current">
+        <div class="dt-period"><div class="dt-year">2025–27</div><div class="dt-bhukti">Rahu/Mercury ★</div></div>
+        <div class="dt-content">
+          <div><div class="dt-label" style="color:var(--gold)">Her</div><div class="dt-her">Aug 2024 – Mar 2027</div></div>
+          <div><div class="dt-label" style="color:#b49edf">Him</div><div class="dt-him">Feb 2025 – Aug 2027</div></div>
+          <div class="dt-match">⟵ Right now. Both in Mercury bhukti simultaneously. Minds are sharpest. Communication and intellectual resonance is at peak. The window to build foundations and have explicit conversations.</div>
+        </div>
+      </div>
+      <div class="dt-row">
+        <div class="dt-period"><div class="dt-year">2027–28</div><div class="dt-bhukti">Rahu/Ketu</div></div>
+        <div class="dt-content">
+          <div><div class="dt-label" style="color:var(--gold)">Her</div><div class="dt-her">Mar 2027 – Mar 2028</div></div>
+          <div><div class="dt-label" style="color:#b49edf">Him</div><div class="dt-him">Aug 2027 – Sep 2028</div></div>
+          <div class="dt-match">Both in Ketu bhukti simultaneously. Karmic clearing, inner work, release of old patterns. Not a push-forward period — a dissolution period. Let it be what it is.</div>
+        </div>
+      </div>
+      <div class="dt-row highlight">
+        <div class="dt-period"><div class="dt-year">2028–31</div><div class="dt-bhukti">Rahu/Venus ⭐</div></div>
+        <div class="dt-content">
+          <div><div class="dt-label" style="color:var(--gold)">Her</div><div class="dt-her">Mar 2028 – Mar 2031</div></div>
+          <div><div class="dt-label" style="color:#b49edf">Him</div><div class="dt-him">Sep 2028 – Sep 2031</div></div>
+          <div class="dt-match">⭐ PEAK SYNC WINDOW. Both in Rahu/Venus from Sep 2028 to Mar 2031 — 2.5 years of simultaneous Venus bhukti. Both oriented toward love, beauty, and union at the same time. This is the marriage window. Jupiter transits H5 (romance) in 2028–29, then enters H7 (marriage house) in 2030. The planetary and dasha alignment in 2029 is exceptional.</div>
+        </div>
+      </div>
+      <div class="dt-row">
+        <div class="dt-period"><div class="dt-year">2031–33</div><div class="dt-bhukti">Rahu/Sun, Moon</div></div>
+        <div class="dt-content">
+          <div><div class="dt-label" style="color:var(--gold)">Her</div><div class="dt-her">Mar 2031 – Aug 2033</div></div>
+          <div><div class="dt-label" style="color:#b49edf">Him</div><div class="dt-him">Sep 2031 – Feb 2034</div></div>
+          <div class="dt-match">Post-commitment deepening. If union has occurred, this period builds the home and tests the emotional foundation. Moon bhukti for her: domesticity, family formation, Kemadruma wound surfaces for healing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout callout-sage">
+    <div class="callout-label" style="color:#80c4a0">Why This Synchronicity Matters</div>
+    When two people are in the same bhukti period simultaneously, they are processing the same archetypal theme at the same time — the same hunger, the same growth edge, the same readiness. In a relationship, this means neither person is "ahead" or "behind." Rahu/Venus for both from Sep 2028 creates a shared orientation toward love and union that is self-reinforcing. Each person's desire for connection amplifies the other's. This degree of dasha synchrony in a compatible chart is rare.
+  </div>
+</div>
+
+<!-- ═══ CHAPTER 5 — LOVE WINDOWS ═══ -->
+<div class="chapter" id="love">
+  <div class="chapter-header">
+    <div class="chapter-icon rose">♡</div>
+    <h2><small>Timing</small>Love Life Windows</h2>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="dot dot-gold"></span>Now → Mar 2027 · Rahu / Mercury</div>
+    <p>Both in Mercury bhukti. Mercury is Anupriya's Lagna lord and Darakaraka — and his chart's dominant force (Budha-Aditya yoga). This is the period of intellectual recognition and foundation-building. If they have already met, this window is when the mental connection becomes undeniable. If not yet met, a Mercury-type encounter (through networks, digital space, intellectual community) is possible now.</p>
+    <p>The practical use of this window: <strong>have the real conversations</strong>. Mercury bhukti is not Venus bhukti — it is sharp, analytical, communicative. The time to be explicit about intentions, needs, and emotional patterns is now, while both minds are clearest.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="dot dot-plum"></span>2027 – Sep/Mar 2028 · Rahu / Ketu</div>
+    <p>Ketu in H8 (her chart) — one year of karmic clearing. Old relational patterns dissolve. This period can surface intense, fated-feeling encounters — but Ketu connections often complete something rather than begin it. If they are together during this period, it will be a testing phase: the relationship faces its first real adversity and either deepens through it or reveals a fundamental incompatibility. Neither outcome is failure.</p>
+    <p>Jupiter transits conjunct her Moon (Virgo/H4) during this period — an emotional opening. The heart may soften before the Venus bhukti begins.</p>
+  </div>
+
+  <div class="section" style="border-color:rgba(90,143,114,0.3);background:rgba(90,143,114,0.04)">
+    <div class="section-title"><span class="dot dot-sage"></span>Sep 2028 – Mar 2031 · Rahu / Venus ⭐ THE WINDOW</div>
+    <p>Venus rules her H5 (romance) and H12 (hidden unions, spiritual bonds) and sits in H11 with Raja Yoga. Venus bhukti is when romance becomes most activated. Simultaneously: Jupiter transits into <strong>Libra (her H5, the romance house)</strong> in mid-2028 as H7 lord (marriage karaka) — a classical marriage indicator.</p>
+    <p>The <strong>2029 peak</strong>: Jupiter as H7 lord in H5 + both in Rahu/Venus = the single most concentrated marriage-possibility window in both charts. The person encountered or committed to in this period will feel fated. The connection will have intensity (Rahu) and depth (Venus in Bharani). It will not be a light romance.</p>
+    <p>By 2030, Jupiter enters Sagittarius — her H7, his own sign. Jupiter in its own sign in the marriage house is a secondary marriage indicator if the 2028-29 window didn't crystallize.</p>
+    <div class="callout callout-rose" style="margin-top:12px">
+      <div class="callout-label" style="color:#e8909f">Rahu/Venus Caution</div>
+      Rahu idealizes. During this period she may project qualities onto him that are aspirational rather than actual. The antidote: don't rush legal/social formalization until the relationship has passed through one genuinely difficult season together. The feelings will be real; test the foundation before committing everything.
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CHAPTER 6 — ANTIDOTES ═══ -->
+<div class="chapter" id="antidotes">
+  <div class="chapter-header">
+    <div class="chapter-icon sage">🌿</div>
+    <h2><small>Making It Work</small>Antidotes to the Five Friction Points</h2>
+  </div>
+
+  <p style="margin-bottom:20px">Five specific friction points were identified in this compatibility analysis. Each has a targeted antidote — not generic advice, but remedies that address the exact planetary mechanics creating the challenge.</p>
+
+  <div class="friction-grid" style="margin-bottom:28px">
+    <div class="friction-row">
+      <div class="friction-no">1</div>
+      <div><div class="friction-name">Nadi Dosha</div><div class="friction-label" style="color:#e8909f">If both Hasta confirmed</div></div>
+      <div class="friction-desc">Same Antya Nadi — traditional concern for health and progeny harmony</div>
+    </div>
+    <div class="friction-row">
+      <div class="friction-no">2</div>
+      <div><div class="friction-name">Double Kemadruma</div><div class="friction-label" style="color:#e8909f">Both charts</div></div>
+      <div class="friction-desc">Both Moon isolated — two people who both withdraw when hurt</div>
+    </div>
+    <div class="friction-row">
+      <div class="friction-no">3</div>
+      <div><div class="friction-name">H6 Friction Dynamic</div><div class="friction-label" style="color:#e8c96a">His H10 → Her H6</div></div>
+      <div class="friction-desc">His Scorpio planets (Sun, Mercury, Venus) in her friction/service house</div>
+    </div>
+    <div class="friction-row">
+      <div class="friction-no">4</div>
+      <div><div class="friction-name">Double Mercury Mind</div><div class="friction-label" style="color:#e8c96a">Both charts</div></div>
+      <div class="friction-desc">Both analytical Virgo Moons — relationship lives too much in the head</div>
+    </div>
+    <div class="friction-row">
+      <div class="friction-no">5</div>
+      <div><div class="friction-name">Guru-Chandala on Lagna</div><div class="friction-label" style="color:#b49edf">His Jupiter+Rahu → Her identity</div></div>
+      <div class="friction-desc">His unconventional beliefs land directly on her Gemini identity point</div>
+    </div>
+  </div>
+
+  <!-- WEEKLY CALENDAR -->
+  <div class="sub-label">Weekly Couple's Practice Calendar</div>
+  <table class="cal-table">
+    <thead>
+      <tr>
+        <th>MON 🌙</th><th>TUE ♂</th><th>WED ☿</th><th>THU ♃</th><th>FRI ♀</th><th>SAT ♄</th><th>SUN ☀</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Moon water — both drink<span class="planet-label">Kemadruma</span></td>
+        <td>Physical activity together<span class="planet-label">Mars VRY</span></td>
+        <td>Letters / voice notes<span class="planet-label">Mercury DK</span></td>
+        <td>He teaches her something<span class="planet-label">Jupiter antidote</span></td>
+        <td>Date — no phones<span class="planet-label">Venus activation</span></td>
+        <td>Feed cows together<span class="planet-label">Nadi Dosha dana</span></td>
+        <td>Sunrise walk together<span class="planet-label">Sandhi Sun</span></td>
+      </tr>
+      <tr>
+        <td>5-min emotional inventory<span class="planet-label">Kemadruma protocol</span></td>
+        <td>Break silence pattern<span class="planet-label">90-min rule</span></td>
+        <td>Budha mantra together<span class="planet-label">Mercury shared</span></td>
+        <td>Gratitude audit<span class="planet-label">H6 reframe</span></td>
+        <td>Body-first time (cook/create)<span class="planet-label">Hasta Moon</span></td>
+        <td>Saturn dana individually<span class="planet-label">Both Saturn debil</span></td>
+        <td>6-sec touch protocol<span class="planet-label">Co-regulation</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- TIER 1 -->
+  <div class="tier-header tier-u">● Tier 1 — Universal Behavioral Antidotes</div>
+
+  <div class="section" style="margin-bottom:14px">
+    <div class="section-title"><span class="dot dot-rose"></span>The Kemadruma Protocol — Most Important</div>
+    <p>Both have Kemadruma Moon. Without an explicit agreement, when one partner goes cold the other's identical instinct is to also go cold — two people retreating into the same wound simultaneously. This is the relationship's single greatest structural risk. Agree on three things before the first difficult season:</p>
+    <div class="remedy-item"><strong>Signal Word</strong>One agreed word or gesture meaning "I am not leaving, I need 30 minutes." Directly addresses the Kemadruma's core fear (abandonment) without requiring a full conversation in the moment of emotional withdrawal.</div>
+    <div class="remedy-item"><strong>The 90-Minute Rule</strong>If either has been silent for more than 90 minutes in conflict, the other re-enters with <em>presence only</em> — no questions, no demands. Make tea. Sit nearby. The Virgo Moon in both responds to small acts of care more powerfully than to words.</div>
+    <div class="remedy-item"><strong>Weekly Emotional Inventory (Thursdays)</strong>Five minutes each, every Thursday: "One thing I needed this week that I didn't ask for." Prevents the accumulation of unspoken need that Kemadruma silently creates. Thursday = Jupiter's day, activating his H5 (her Lagna sign).</div>
+  </div>
+
+  <div class="section" style="margin-bottom:14px">
+    <div class="section-title"><span class="dot dot-gold"></span>H6 Friction Reframe</div>
+    <div class="remedy-item"><strong>For Her — Quarterly Growth Audit</strong>Once every three months, Anupriya asks herself: "Where has his challenge to me made me better?" If the answer is real and specific, the H6 dynamic is working correctly. If she cannot name one thing, it's worth examining whether the dynamic has become harmful rather than sharpening.</div>
+    <div class="remedy-item"><strong>For Him — Delivery Softening</strong>His Scorpio Sun communicates with surgical precision that can land as criticism. He needs to know: she hears his directness as attack even when it isn't. The explicit conversation about <em>how</em> he expresses criticism (tone, timing, phrasing) matters more than changing the substance of what he says.</div>
+  </div>
+
+  <div class="section" style="margin-bottom:14px">
+    <div class="section-title"><span class="dot dot-sage"></span>Body-First Time (Mercury Mind Antidote)</div>
+    <div class="remedy-item"><strong>Scheduled Non-Verbal Time</strong>Both Virgo Moons + Mercury-dominant charts = they will analyze the relationship more than inhabit it. Schedule weekly time that is explicitly non-analytical: cooking together, walking without destination, physical exercise, making something with hands. Hasta nakshatra = healing through hands. When words are stuck, making something together unlocks what talking cannot.</div>
+    <div class="remedy-item"><strong>Cow / Buffalo Dana (Nadi Antidote)</strong>If both confirmed Hasta: every Saturday, both feed cows or donate to a cow shelter — individually, not just one. Hasta's Yoni animal is the buffalo; the accessible antidote is the cow. This specific dana is the traditional first remedy for Nadi Dosha. Requires sustained practice across months, not a single event.</div>
+  </div>
+
+  <!-- TIER 2 -->
+  <div class="divider">✦</div>
+  <div class="tier-header tier-v">◆ Tier 2 — Vedic Tradition</div>
+
+  <div class="sym-grid">
+    <div>
+      <div class="remedy-item"><strong>Mrityunjaya Homa (Nadi Dosha)</strong>If both confirmed Hasta: before any formal marriage commitment, a Mrityunjaya Homa performed together addresses the health-axis concern of same-Nadi marriage. A simple, single-priest ceremony — not elaborate. This is the primary traditional remedy for Nadi Dosha.</div>
+      <div class="remedy-item"><strong>Marriage Nakshatra Selection</strong>If/when they marry: do not hold the ceremony under Hasta nakshatra. Choose Rohini, Uttara Phalguni, Uttara Ashadha, or Anuradha. Avoiding the shared nakshatra during the wedding muhurta is the practical scheduling antidote to Nadi Dosha — requires no ritual belief, only calendar planning.</div>
+      <div class="remedy-item"><strong>Budha Mantra — Together, Wednesdays</strong>"Om Budhaya Namah" — 108 times, together, on Wednesday mornings. Her Lagna lord + Darakaraka, his Budha-Aditya yoga — shared Mercury strengthening builds the exact channel where both charts need it most. When done together it becomes a communication ritual.</div>
+    </div>
+    <div>
+      <div class="remedy-item"><strong>Venus Puja — Fridays (Her)</strong>Anupriya begins a Venus Friday practice now, in 2026 — not in 2028. Venus rules her H5 (romance) and H12 (private unions). The Rahu/Venus bhukti that opens in 2028 will be exponentially more potent if Venus has been honored for two years beforehand. White flowers, white sweets, Lakshmi mantra or Shukra stotra.</div>
+      <div class="remedy-item"><strong>Jupiter Offering — Thursdays (Him)</strong>His Guru-Chandala Yoga (Jupiter+Rahu in Gemini) partially obscures Jupiter's wisdom — and his Jupiter sits on her Lagna, meaning when his Jupiter is confused, her sense of identity feels destabilized. Weekly Thursday offering (banana, yellow flowers, turmeric) purifies the Guru-Chandala and keeps his philosophical influence on her clean.</div>
+      <div class="remedy-item"><strong>Chandra Yantra (Both)</strong>Both Kemadruma Moons benefit from a Chandra Yantra — draws emotionally supportive people into the orbit and reduces the sense of isolation. When both partners carry or display this yantra in their shared space, it creates a field of emotional receptivity that counteracts the mutual withdrawal pattern.</div>
+    </div>
+  </div>
+
+  <!-- TIER 3 -->
+  <div class="divider">✦</div>
+  <div class="tier-header tier-n">◈ Tier 3 — Neuroscience / CBT / NLP / Biohacking</div>
+
+  <div class="neuro-grid">
+    <div class="neuro-col">
+      <h4>CBT — Cognitive</h4>
+      <div class="remedy-item"><strong>Kemadruma Journaling</strong>Both separately, weekly: "What did I need emotionally this week and why didn't I ask?" Then share the answer. The Kemadruma pattern is pre-verbal — it operates before the decision to withdraw. This journaling makes it visible before it becomes silence. Over 60 days it retrains the default from "go silent" to "ask."</div>
+      <div class="remedy-item"><strong>H6 Attack-or-Engagement Test</strong>When Anupriya feels criticized by him, her cognitive intervention: write down "Is this an attack or an engagement?" His Scorpio Sun doesn't criticize to wound — it penetrates to truth. The reframe, repeated, eventually becomes automatic before the emotional reaction cements.</div>
+      <div class="remedy-item"><strong>Satiety Check (H11 excess)</strong>Both charts run Rahu — both can over-want. Monthly check: "What do we already have that is enough?" Prevents the desire-amplification of Rahu from eroding appreciation for what the relationship actually gives.</div>
+    </div>
+    <div class="neuro-col">
+      <h4>NLP — Pattern</h4>
+      <div class="remedy-item"><strong>Two-Movement Protocol (Kemadruma freeze)</strong>When both are in emotional silence simultaneously — the agreed pattern: the one who notices first physically moves. Changes rooms. Opens a window. Makes tea. Movement breaks the Kemadruma freeze at the physiological level before any words are possible. The body leads the thaw.</div>
+      <div class="remedy-item"><strong>Guru-Chandala Boundary (Her)</strong>Anupriya creates a mental category: "his philosophical experiments" — a container for his unconventional beliefs she can engage with curiously without integrating. Her Gemini Lagna is impressionable to ideas; his Rahu+Jupiter land directly on it. The NLP pattern: <em>appreciate without adopting.</em> "That's interesting" as a complete response, not a gateway.</div>
+      <div class="remedy-item"><strong>Anchoring the Window (Now)</strong>Both are in Mercury bhukti right now — the clearest minds of the Rahu period. Anchor three explicit agreements NOW before Ketu bhukti dissolves clarity in 2027: (1) What emotional support looks like for each. (2) What the other's silence means. (3) Where they want to be by 2029.</div>
+    </div>
+    <div class="neuro-col">
+      <h4>Biohacking — Body</h4>
+      <div class="remedy-item"><strong>Synchronized Breathing (Pre-conversation)</strong>Before any difficult conversation: 4 counts in, 6 counts out, together, for 3 minutes. Not meditation — physiology. Matching breath activates co-regulation of the vagal nervous system, which is precisely what the Kemadruma Moon physically needs: another nervous system to attune to. Changes the emotional substrate before words begin.</div>
+      <div class="remedy-item"><strong>Six-Second Touch Protocol</strong>Virgo Moon's love language is precision and intention, not warmth. Overwhelming touch backfires. Six seconds of sustained contact (hand on back, held hand) before and after any difficult conversation. Six seconds is the minimum for oxytocin activation in the receiving nervous system. Hasta = the hand — this is the specific body-organ of their shared nakshatra. Not romance; nervous system medicine.</div>
+      <div class="remedy-item"><strong>Circadian Sync</strong>Both Virgo Moons benefit from shared sleep-timing regularity. If living together: same wake time. If not: same morning protocol (both walk in sunlight before 9 AM on the days they can — even separately, texting the other when done). Shared circadian anchors build neurological attunement across distance.</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM LINE -->
+  <div class="callout callout-sage" style="margin-top:28px">
+    <div class="callout-label" style="color:#80c4a0">Bottom Line — What Makes This Work</div>
+    This pairing has rare structural alignment: matched emotional patterning (both Virgo Moon), complementary Darakaraka archetypes, extraordinary dasha synchronicity, and one of the most potent karmic indicators (his Rahu on her exact Lagna degree). The Nadi Dosha is the traditional concern — resolvable with specific remedies if confirmed. The psychological work — the Kemadruma Protocol — is the non-negotiable foundation. Two people who both go quiet when hurt cannot sustain a relationship on love alone. The six-second touch, the signal word, the Thursday inventory: these are not romantic gestures. They are the infrastructure that keeps the roof up when the storm comes. Build the infrastructure now, during Mercury bhukti, while both minds are sharpest. The love will arrive in 2028–2029. The foundation needs to be in place before then.
+  </div>
+</div>
+
+<div class="footer">
+  Generated August 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Astrowise<br>
+  Anupriya Nambiar × Bangalore Guy · Compatibility Session
+</div>
+
+</main>
+</div>
+</body>
+</html>
