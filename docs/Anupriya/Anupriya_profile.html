@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Anupriya Nambiar — Jyotish Profile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  background-color:#0b0b18;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%,rgba(124,92,191,0.18),transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%,rgba(196,158,64,0.12),transparent);
+  background-attachment:fixed;
+  color:var(--cream);
+  line-height:1.7;
+  min-height:100vh;
+}
+.page{max-width:1080px;margin:0 auto;padding:48px 32px 80px}
+
+/* HERO */
+.hero{
+  position:relative;overflow:hidden;
+  border-radius:28px;padding:48px 44px 38px;
+  background:linear-gradient(140deg,rgba(28,18,56,0.98) 0%,rgba(44,24,72,0.96) 45%,rgba(80,38,58,0.92) 100%);
+  border:1px solid rgba(196,158,64,0.22);
+  box-shadow:var(--shadow);
+  margin-bottom:32px;
+}
+.hero-symbol{position:absolute;right:36px;top:24px;font-size:180px;color:rgba(196,158,64,0.07);line-height:1;pointer-events:none}
+.hero-glow{position:absolute;right:-60px;bottom:-80px;width:340px;height:340px;border-radius:50%;
+  background:radial-gradient(circle,rgba(196,158,64,0.15),transparent 65%);pointer-events:none}
+.eyebrow{font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;color:#fff8f0;line-height:1.05;margin-bottom:6px}
+.lagna-line{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;color:rgba(196,158,64,0.85);margin-bottom:28px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:8px}
+.stat{background:rgba(255,255,255,0.06);border:1px solid rgba(196,158,64,0.14);border-radius:16px;padding:16px 18px}
+.stat-label{font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.stat-value{font-size:1rem;color:#fff8f0;font-weight:500}
+
+/* PANELS */
+.panel{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:28px;box-shadow:var(--shadow);margin-bottom:20px}
+.panel-header{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid rgba(196,158,64,0.12);margin-bottom:20px}
+.panel-icon{width:36px;height:36px;border-radius:50%;background:rgba(196,158,64,0.1);display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--gold);flex-shrink:0}
+.panel h2{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;color:var(--cream)}
+.dasha-panel{background:rgba(124,92,191,0.06);border-color:rgba(124,92,191,0.22)}
+.dasha-panel .panel-icon{background:rgba(124,92,191,0.14);color:#b49edf}
+.dasha-panel .panel h2{color:#d0c4f0}
+.shadow-panel{background:rgba(140,40,70,0.06);border-color:rgba(196,96,122,0.2)}
+.shadow-panel .panel-icon{background:rgba(196,96,122,0.12);color:#e8909f}
+.shadow-panel .panel h2{color:#f0c8d0}
+.sage-panel{background:rgba(90,143,114,0.06);border-color:rgba(90,143,114,0.22)}
+.sage-panel .panel-icon{background:rgba(90,143,114,0.14);color:#80c4a0}
+.sage-panel .panel h2{color:#b0d8c4}
+
+.sym-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+
+/* PLANET TABLE */
+.planet-table{width:100%;border-collapse:collapse;font-size:0.85rem;margin-top:4px}
+.planet-table th{text-align:left;padding:8px 12px;background:rgba(196,158,64,0.08);color:var(--gold);font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;border-bottom:1px solid rgba(196,158,64,0.15)}
+.planet-table td{padding:9px 12px;color:rgba(240,232,216,0.82);border-bottom:1px solid rgba(255,255,255,0.05);vertical-align:middle}
+.planet-table tr:last-child td{border-bottom:none}
+.planet-table tr:hover td{background:rgba(255,255,255,0.02)}
+.pname{color:var(--gold2);font-weight:500}
+.dig-ex{color:#80c4a0;font-size:0.78rem}
+.dig-db{color:#e8909f;font-size:0.78rem}
+.dig-ok{color:rgba(240,232,216,0.55);font-size:0.78rem}
+
+/* CHIPS */
+.chip-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.2);border-radius:999px;padding:6px 14px;font-size:0.82rem;color:var(--gold2)}
+.chip-neg{background:rgba(196,96,122,0.09);border-color:rgba(196,96,122,0.22);color:#e8909f}
+.chip-green{background:rgba(90,143,114,0.1);border-color:rgba(90,143,114,0.22);color:#80c4a0}
+.chip-blue{background:rgba(91,143,212,0.1);border-color:rgba(91,143,212,0.22);color:#9bbfe8}
+
+/* BADGES */
+.badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:0.7rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em}
+.badge-good,.badge-protect{background:rgba(90,143,114,0.18);color:#80c4a0}
+.badge-risk{background:rgba(196,96,122,0.18);color:#e8909f}
+.badge-mixed{background:rgba(196,158,64,0.15);color:#e8c96a}
+
+/* CALLOUTS */
+.callout{border-radius:14px;padding:18px 22px;font-size:0.9rem;line-height:1.8;margin-top:16px}
+.callout-gold{background:rgba(196,158,64,0.09);border:1px solid rgba(196,158,64,0.28)}
+.callout-plum{background:rgba(124,92,191,0.09);border:1px solid rgba(124,92,191,0.28)}
+.callout-rose{background:rgba(196,96,122,0.09);border:1px solid rgba(196,96,122,0.28)}
+.callout-sage{background:rgba(90,143,114,0.09);border:1px solid rgba(90,143,114,0.3)}
+.callout-label{font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+
+/* GOLDEN / ANTIDOTE BOXES */
+.golden-box{background:rgba(196,158,64,0.08);border:1px solid rgba(196,158,64,0.25);color:#e8d89a;border-radius:14px;padding:14px 18px;font-size:0.9rem;line-height:1.65;margin-top:14px}
+.golden-box::before{content:"★ Golden Window — ";font-weight:600;color:var(--gold)}
+.antidote-box{background:rgba(90,143,114,0.08);border:1px solid rgba(90,143,114,0.2);color:#a0d4b8;border-radius:14px;padding:14px 18px;font-size:0.9rem;line-height:1.65;margin-top:14px}
+.antidote-box::before{content:"Antidote — ";font-weight:600;color:#80c4a0}
+
+/* FUN FACTS */
+.fun-list{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px}
+.fun-list li{padding:12px 16px;background:rgba(255,255,255,0.04);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;font-size:0.9rem;line-height:1.6;color:rgba(240,232,216,0.82)}
+
+/* SHADOW GRID */
+.shadow-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.shadow-card{background:rgba(196,96,122,0.06);border:1px solid rgba(196,96,122,0.15);border-radius:14px;padding:14px 16px}
+.shadow-card strong{display:block;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;color:#e8909f;margin-bottom:6px}
+.shadow-card p{font-size:0.88rem;color:rgba(240,232,216,0.7);line-height:1.6}
+
+/* PERIOD ROWS */
+.period-row{display:grid;grid-template-columns:100px 150px 1fr;gap:10px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.88rem;align-items:start}
+.period-row:last-child{border-bottom:none}
+.period-window{font-weight:600;color:var(--gold2);font-size:0.82rem}
+.period-dasha{color:rgba(196,158,64,0.65);font-size:0.8rem}
+.period-theme{color:rgba(240,232,216,0.75);line-height:1.55}
+
+/* YOGA ROWS */
+.yoga-row{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.88rem}
+.yoga-row:last-child{border-bottom:none}
+.yoga-name{min-width:220px;color:var(--gold2);font-weight:500;font-size:0.85rem}
+.yoga-desc{color:rgba(240,232,216,0.75);line-height:1.6;font-size:0.85rem}
+
+/* REMEDY TIERS */
+.remedy-calendar{width:100%;border-collapse:collapse;margin-bottom:28px;font-size:0.82rem}
+.remedy-calendar th{background:rgba(196,158,64,0.12);color:var(--gold);padding:10px 8px;text-align:center;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;border-bottom:1px solid rgba(196,158,64,0.2)}
+.remedy-calendar td{padding:10px 8px;text-align:center;color:rgba(240,232,216,0.75);border-bottom:1px solid rgba(255,255,255,0.04);font-size:0.8rem;vertical-align:top;line-height:1.5}
+.remedy-calendar .planet-label{display:block;font-size:0.65rem;color:var(--gold);margin-top:4px;letter-spacing:0.08em}
+.tier-header{font-size:0.68rem;letter-spacing:0.25em;text-transform:uppercase;font-weight:600;margin-bottom:14px;padding:6px 12px;border-radius:6px;display:inline-block}
+.tier-universal{background:rgba(90,143,114,0.15);color:#80c4a0}
+.tier-vedic{background:rgba(196,158,64,0.12);color:var(--gold)}
+.tier-neuro{background:rgba(91,143,212,0.12);color:#9bbfe8}
+.remedy-item{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.87rem;color:rgba(240,232,216,0.78);line-height:1.6}
+.remedy-item:last-child{border-bottom:none}
+.remedy-item strong{color:var(--cream);display:block;margin-bottom:3px}
+.neuro-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:8px}
+.neuro-col{background:rgba(91,143,212,0.06);border:1px solid rgba(91,143,212,0.15);border-radius:14px;padding:16px}
+.neuro-col h4{font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:#9bbfe8;margin-bottom:12px}
+
+/* ANIMAL SECTION */
+.animal-section{text-align:center;padding:56px 40px;border-radius:28px;
+  background:linear-gradient(135deg,rgba(28,18,56,0.98),rgba(60,30,80,0.96));
+  border:1px solid rgba(196,158,64,0.22);box-shadow:var(--shadow);margin-bottom:20px}
+.animal-emoji{font-size:96px;display:block;margin-bottom:20px;line-height:1}
+.animal-section h3{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:#fff8f0;margin-bottom:8px}
+.animal-sub{font-size:0.7rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+.animal-body{max-width:680px;margin:0 auto;text-align:left}
+.animal-body p{color:rgba(240,232,216,0.8);font-size:0.95rem;line-height:1.8;margin-bottom:14px}
+
+/* DIVIDER */
+.divider{display:flex;align-items:center;gap:16px;margin:32px 0;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,232,216,0.3)}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* SUB LABEL */
+.sub-label{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;margin-top:18px}
+
+/* FOOTER */
+.footer{text-align:center;padding:20px 0;font-size:0.72rem;color:rgba(240,232,216,0.3);letter-spacing:0.08em;border-top:1px solid var(--border);margin-top:40px}
+
+p{color:rgba(240,232,216,0.82);line-height:1.8;font-size:0.92rem;margin-bottom:12px}
+h3{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--cream);margin:16px 0 8px}
+strong{color:var(--cream)}
+
+@media(max-width:768px){
+  .sym-grid,.stat-grid,.shadow-grid,.neuro-grid{grid-template-columns:1fr}
+  .hero{padding:32px 24px 28px}
+  .period-row{grid-template-columns:1fr}
+  .yoga-name{min-width:auto}
+  .page{padding:24px 16px 60px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-symbol">♊</div>
+  <div class="hero-glow"></div>
+  <div class="eyebrow">Vedic Natal Profile · Jyotish</div>
+  <h1>Anupriya Nambiar</h1>
+  <div class="lagna-line">Gemini Lagna · The Four-Star Sky</div>
+  <div class="stat-grid">
+    <div class="stat"><div class="stat-label">Born</div><div class="stat-value">14 May 2000</div></div>
+    <div class="stat"><div class="stat-label">Time &amp; Place</div><div class="stat-value">8:28 AM · Panjim, Goa</div></div>
+    <div class="stat"><div class="stat-label">Lagna Nakshatra</div><div class="stat-value">Mrigashira p4</div></div>
+    <div class="stat"><div class="stat-label">Current Dasha</div><div class="stat-value">Rahu / Mercury</div></div>
+  </div>
+</div>
+
+<!-- PLANET TABLE -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">☿</div>
+    <h2>Planetary Positions</h2>
+  </div>
+  <table class="planet-table">
+    <thead><tr><th>Planet</th><th>Sign</th><th>Deg</th><th>House</th><th>Nakshatra</th><th>Dignity</th></tr></thead>
+    <tbody>
+      <tr><td class="pname">☀ Sun</td><td>Aries</td><td>29.8°</td><td>H11</td><td>Krittika p1</td><td><span class="dig-ex">Exaltation sign ★</span></td></tr>
+      <tr><td class="pname">☽ Moon</td><td>Virgo</td><td>10.8°</td><td>H4</td><td>Hasta p1</td><td><span class="dig-ok">Swakshetra nakshatra</span></td></tr>
+      <tr><td class="pname">♂ Mars</td><td>Taurus</td><td>13.3°</td><td>H12</td><td>Rohini p2</td><td><span class="dig-ok">Neutral</span></td></tr>
+      <tr><td class="pname">☿ Mercury</td><td>Taurus</td><td>5.8°</td><td>H12</td><td>Krittika p3</td><td><span class="dig-ok">Lagna Lord · H12</span></td></tr>
+      <tr><td class="pname">♃ Jupiter</td><td>Aries</td><td>25.4°</td><td>H11</td><td>Bharani p4</td><td><span class="dig-ok">Neutral · H7+H10 lord</span></td></tr>
+      <tr><td class="pname">♀ Venus</td><td>Aries</td><td>22.1°</td><td>H11</td><td>Bharani p3</td><td><span class="dig-ok">Neutral · H5+H12 lord</span></td></tr>
+      <tr><td class="pname">♄ Saturn</td><td>Aries</td><td>27.0°</td><td>H11</td><td>Krittika p1</td><td><span class="dig-db">Debilitated · partial NBY</span></td></tr>
+      <tr><td class="pname">☊ Rahu</td><td>Cancer</td><td>3.0°</td><td>H2</td><td>Punarvasu p4</td><td><span class="dig-ok">H2 · renewal drive</span></td></tr>
+      <tr><td class="pname">☋ Ketu</td><td>Capricorn</td><td>3.0°</td><td>H8</td><td>Uttara Ashadha p2</td><td><span class="dig-ok">H8 · past-life warrior</span></td></tr>
+    </tbody>
+  </table>
+  <div class="callout callout-gold" style="margin-top:18px">
+    <div class="callout-label" style="color:var(--gold)">Chart Signature</div>
+    Four planets in H11 (Aries) — Sun in exaltation sign + Jupiter + Venus + Saturn — an extraordinary stellium creating 2 Raja Yogas + Dharma Karma Adhipati Yoga simultaneously in the house of gains, networks, and wish-fulfillment. The defining feature of this chart.
+  </div>
+</div>
+
+<!-- YOGAS -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">✦</div>
+    <h2>8 Yogas Detected</h2>
+  </div>
+  <div class="yoga-row">
+    <div class="yoga-name"><span class="badge badge-good">★ Raja</span>&nbsp; Jupiter + Venus</div>
+    <div class="yoga-desc">Jupiter (H7+H10 lord, kendra+kona) with Venus (H5 lord, trikona) in H11. Classic Raja Yoga: power, leadership, recognition rise through networks and creative intelligence.</div>
+  </div>
+  <div class="yoga-row">
+    <div class="yoga-name"><span class="badge badge-good">★ Raja</span>&nbsp; Jupiter + Saturn</div>
+    <div class="yoga-desc">Jupiter (H10 lord, karma) with Saturn (H9 lord, dharma) — a second independent Raja Yoga giving authority earned through sustained ethical action.</div>
+  </div>
+  <div class="yoga-row">
+    <div class="yoga-name"><span class="badge badge-good">DKA Yoga</span>&nbsp; Saturn + Jupiter</div>
+    <div class="yoga-desc">Dharma Karma Adhipati Yoga — H9 and H10 lords conjunct. The rarest combination for a life lived with purpose: livelihood aligned with dharma. Purpose-driven career becomes the wealth path.</div>
+  </div>
+  <div class="yoga-row">
+    <div class="yoga-name"><span class="badge badge-good">Adhi Yoga</span>&nbsp; H8 from Moon</div>
+    <div class="yoga-desc">Jupiter and Venus in H8 from Moon (Aries, H11 from Lagna). Adhi Yoga gives ministerial quality, advisorial influence, and the ability to counsel and elevate others.</div>
+  </div>
+  <div class="yoga-row">
+    <div class="yoga-name"><span class="badge badge-good">Viparita Raja</span>&nbsp; Mars</div>
+    <div class="yoga-desc">Mars rules H6 and H11 and sits in H12 — a dusthana lord in dusthana creating Viparita Raja Yoga. Rise through adversity, overcoming hidden enemies, strength revealed under pressure.</div>
+  </div>
+  <div class="yoga-row">
+    <div class="yoga-name"><span class="badge badge-good">Vesi Yoga</span>&nbsp; Mars + Mercury</div>
+    <div class="yoga-desc">Mars and Mercury in Taurus (2nd house from Sun in Aries). Vesi Yoga: eloquence, persuasive speech, steady financial growth, excellent memory and communication talent.</div>
+  </div>
+  <div class="yoga-row">
+    <div class="yoga-name"><span class="badge badge-risk">Kemadruma</span>&nbsp; Moon</div>
+    <div class="yoga-desc">No planets in H3 or H5 from Moon (adjacent houses). Moon stands alone, creating periods of emotional isolation, self-reliance pushed to a breaking point. Partially offset by the Raja Yogas.</div>
+  </div>
+  <div class="yoga-row">
+    <div class="yoga-name"><span class="badge badge-risk">Papa Kartari</span>&nbsp; Lagna</div>
+    <div class="yoga-desc">Mars in H12 and Rahu in H2 flank the Lagna — hemming H1 with malefics. Can create a sense of constriction in self-expression, difficulty asserting identity freely.</div>
+  </div>
+</div>
+
+<div class="divider">Core Nature &amp; Personality</div>
+
+<!-- CORE NATURE -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">♊</div>
+    <h2>Core Nature</h2>
+  </div>
+  <p>Anupriya carries a Gemini Ascendant at 3.7° (Mrigashira pada 4) — the chart of the eternal seeker, the mind that moves between worlds. Mrigashira means "the deer's head" — forever searching, curious, graceful in motion, never quite arriving. She is restless in the best possible way: her intelligence roams freely, her perspective shifts like light through prisms, and she absorbs experiences as raw material for understanding.</p>
+
+  <p>What makes this chart extraordinary is the <strong>four-planet Aries stellium in the 11th house</strong> (Sun, Jupiter, Venus, Saturn) — an event that happens perhaps once every century in its precise configuration. Her wish-fulfillment house carries the archetypes of ego, wisdom, beauty, and discipline simultaneously. This creates a personality of enormous range: she can be visionary (Jupiter), warm and charming (Venus), driven and identity-forward (Sun), and grimly determined (Saturn) — often within the same hour.</p>
+
+  <p>The <strong>Moon in Virgo at 10.8° (Hasta pada 1)</strong> shows her emotional intelligence: highly analytical, detail-noticing, quietly service-oriented. Hasta means "the hand" — she processes the world through doing, making, organizing. She feels most settled when she has craft or purpose in her hands. The Moon in H4 (home) deepens her need for inner sanctuary — she is far more private than her chart's public brightness suggests.</p>
+
+  <p><strong>Mercury in H12 (Taurus)</strong> reveals the Lagna lord's true position: behind the curtain. Her sharpest thinking happens in solitude. She may appear outgoing but her real intellectual life is private, contemplative, even secretive. She writes or thinks best alone, before the world sees what she's made.</p>
+
+  <div class="chip-row">
+    <span class="chip">Gemini Mind</span>
+    <span class="chip">H11 Stellium</span>
+    <span class="chip">Hasta Craftsperson</span>
+    <span class="chip">Mrigashira Seeker</span>
+    <span class="chip">Private Intellectual</span>
+    <span class="chip">Network Builder</span>
+  </div>
+</div>
+
+<!-- CAREER -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">🏆</div>
+    <h2>Career &amp; Strengths</h2>
+  </div>
+  <p>The 10th house (Pisces) is lorded by <strong>Jupiter in H11</strong> — career wealth arrives through networks, social reach, community, and advisorial roles. Jupiter in H11 says: the more people she genuinely helps or teaches, the more the universe multiplies her resources. This is not a chart for solitary excellence — it rewards visibility and connection.</p>
+
+  <p>The <strong>H11 stellium creates a unique career fingerprint</strong>: income through knowledge (Jupiter), through creative and relational work (Venus), through disciplined long-term effort (Saturn), through personal brand and leadership (Sun). She could excel in any field that asks for all four simultaneously: education, content creation, coaching, consulting, or creative entrepreneurship.</p>
+
+  <p><strong>Mercury in H12 (Taurus)</strong> gives exceptional capacity for research, behind-the-scenes writing, private consulting, or work in foreign markets. The H12 placement of the Lagna lord often produces people who do their best work when the audience is deferred — the author who writes alone, the consultant who advises privately before the public sees results.</p>
+
+  <div class="sub-label">Best Domains</div>
+  <div class="chip-row">
+    <span class="chip-green">Education &amp; Teaching</span>
+    <span class="chip-green">Content Creation</span>
+    <span class="chip-green">Healing Arts</span>
+    <span class="chip-green">Social Entrepreneurship</span>
+    <span class="chip-green">Research &amp; Writing</span>
+    <span class="chip-green">Creative Direction</span>
+    <span class="chip-green">Consulting / Advisory</span>
+    <span class="chip-green">Spiritual Facilitation</span>
+  </div>
+
+  <div class="sub-label" style="margin-top:20px">Career Windows</div>
+  <div class="period-row">
+    <div class="period-window">2025–2027</div>
+    <div class="period-dasha">Rahu / Mercury</div>
+    <div class="period-theme">Active right now — Mercury bhukti activates the Lagna lord and Darakaraka. Sharp growth in communication, writing, media, or business networks. Build the infrastructure while the mind is quickest.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2027–2030</div>
+    <div class="period-dasha">Rahu / Venus</div>
+    <div class="period-theme"><strong>Peak abundance window.</strong> Venus rules H5 (creativity, speculation) and H12 (private enterprise) and sits in H11 with Raja Yoga. This is the most financially and creatively abundant stretch of the entire Rahu Mahadasha. Relationships and creative output monetize most powerfully here.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2034–2040</div>
+    <div class="period-dasha">Jupiter MD begins</div>
+    <div class="period-theme"><strong>Defining career decade.</strong> Jupiter MD — the most auspicious planet in the chart (H7+H10 lord, in H11) — begins in 2034. This 16-year mahadasha is the fullest expression of the Raja Yogas. Recognition, authority, and long-term institutional impact crystallize here.</div>
+  </div>
+  <div class="golden-box">Rahu/Venus (2027–2030) is the single most important career and financial window of her 20s. Launch the platform, creative enterprise, or brand during this period — Venus is in H11 with Raja Yoga and rules both creativity (H5) and the domain of private/international business (H12).</div>
+</div>
+
+<!-- RELATIONSHIPS -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">♀</div>
+    <h2>Relationships</h2>
+  </div>
+  <p>The <strong>7th house (Sagittarius)</strong> is ruled by <strong>Jupiter in H11</strong> — her husband/partner archetype is philosophical, wise, connected, community-oriented. She gravitates toward people who have a vision larger than themselves. Jupiter in H11 also means the spouse may arrive through a network or community (not a chance meeting — she meets him in a context of shared purpose).</p>
+
+  <p><strong>Darakaraka = Mercury at 5.8°</strong> (lowest-degree planet, excluding nodes). Mercury is also her Lagna lord — a rare "self-as-spouse" signature. She is drawn to partners who reflect her own intellectual nature: communicative, versatile, perhaps in writing, technology, or teaching. In choosing a partner, she is partly choosing a version of her own mind. This is deeply good when the right person mirrors her best self — and disorienting when the reflection is distorted.</p>
+
+  <p><strong>Venus in Bharani (H11)</strong> — love arrives through social spaces, shared missions, and creative networks. She is unlikely to fall in love in ordinary settings. Romance is inseparable from intellectual or creative resonance; she must admire someone's work or mind before the heart opens.</p>
+
+  <p>The <strong>Kemadruma Moon</strong> creates emotional vulnerability in close relationships — a tendency to feel unsupported even when support is present, to withdraw before allowing help. This is the shadow work: learning to receive as fluently as she gives.</p>
+
+  <div class="sub-label">Marriage Windows</div>
+  <div class="period-row">
+    <div class="period-window">2027–2030</div>
+    <div class="period-dasha">Rahu / Venus</div>
+    <div class="period-theme">Venus bhukti is the primary marriage-activation window. Venus rules H5 (romance) and H12 (hidden unions, spiritual bonds). This window carries both encounter and commitment potential.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2034+</div>
+    <div class="period-dasha">Jupiter MD</div>
+    <div class="period-theme">If marriage hasn't occurred, Jupiter MD (ruler of H7) brings deep partnership energy — potentially a more mature, purposeful union.</div>
+  </div>
+  <div class="callout callout-plum">
+    <div class="callout-label" style="color:#b49edf">Darakaraka Note</div>
+    Mercury at 5.8° is Darakaraka — the soul-significator of spouse. The partner will be Mercury-flavored: younger in spirit if not in years, communicative, intelligent, multi-talented. And since Mercury rules her Lagna, this person will feel immediately familiar — like someone she's known in a past life, a mind completing her own.
+  </div>
+</div>
+
+<!-- FUN FACTS -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">⚡</div>
+    <h2>Five Surprising Placements</h2>
+  </div>
+  <ul class="fun-list">
+    <li><strong>The Four-Star House:</strong> Having Sun + Jupiter + Venus + Saturn all in a single house (H11, Aries) is extraordinarily rare. Each planet brings a full archetype — the ego, the philosopher, the lover, the disciplinarian — all channeled simultaneously into the house of gains and networks. Her social world is never simple: it's a four-way chessboard.</li>
+    <li><strong>Sun at 29.8° Aries — the Sandhi Sun:</strong> At the final degree before Taurus, the Sun stands at the zodiac's threshold — a "burning point" (Gandanta-adjacent) where fire meets earth. She was born in a liminal solar moment, giving her a personality that is always partly between worlds: visionary but grounded, bold but aware of impermanence. Leaders born at this degree often carry a sense of urgency — as if time matters more than others know.</li>
+    <li><strong>Darakaraka = Lagna Lord:</strong> Mercury rules her Lagna AND is the Darakaraka. The planet that defines her identity is the same planet that defines her spouse. In Jyotish, this is called "self-reflected in partner" — a rare and intense quality. She will not separate who she is from who she loves.</li>
+    <li><strong>Moon in Hasta Pada 1 (own nakshatra):</strong> Hasta is ruled by the Moon, and Anupriya's Moon falls in Hasta — the Moon in its own nakshatra. Hasta Sthapaniya Shakti: "the power to place what is sought in one's hand." This is the nakshatra of the skilled artisan, the healer, the one whose hands accomplish what words cannot. Whatever she makes with her hands carries an unusual charge.</li>
+    <li><strong>Ketu in Uttara Ashadha H8 — the Past-Life Conqueror:</strong> Uttara Ashadha means "the later victor" — the nakshatra of those who win after long struggle. With Ketu here (past-life indicator), she has already, in a prior life, earned mastery through sustained effort. She may find that she inherits abilities in disciplines she's never formally studied — a knowing that arrives before learning.</li>
+  </ul>
+</div>
+
+<div class="divider">Spiritual Nature</div>
+
+<!-- SPIRITUAL -->
+<div class="panel dasha-panel">
+  <div class="panel-header">
+    <div class="panel-icon">🔮</div>
+    <h2>Spiritual Path — Jnana</h2>
+  </div>
+  <p>Anupriya's spiritual path is <strong>Jnana</strong> — the path of knowledge, discernment, and intellectual penetration into truth. Gemini Lagna (Mercury rules) places the mind at the center of all spiritual experience. Mercury in H12 (Taurus) — the Lagna lord behind the veil — creates the classic Jnana configuration: the mind that turns inward to find the divine, that uses logic and inquiry as sacred tools.</p>
+
+  <p><strong>Ketu in H8 (Uttara Ashadha, Capricorn)</strong> is the deepest spiritual indicator: past-life knowledge in the house of hidden mysteries, occult, death, and transformation. She has likely practiced serious spiritual disciplines in prior lifetimes — meditation, fasting, deep inquiry. Ketu in H8 gives an instinctive ease with the occult, astrology, psychology, or mystical traditions that others find inaccessible.</p>
+
+  <p><strong>The DKA Yoga (Saturn+Jupiter)</strong> creates spiritual duty — she is not meant to pursue enlightenment as a private escape but as a public service. Her dharma (Saturn, H9) and her karma (Jupiter, H10) are yoked together. The Jnana path here is not silent hermitage but engaged wisdom: the teacher, the writer, the guide who makes subtle knowledge accessible.</p>
+
+  <p><strong>Moon in Hasta H4</strong> gives a quiet devotional undercurrent beneath the intellectual exterior. Savitar (the deity of Hasta) is the Sun of Creation — her inner life is oriented toward beauty, sacred craft, and the divine present in ordinary things made well.</p>
+
+  <div class="callout callout-plum">
+    <div class="callout-label" style="color:#b49edf">Practices That Fit</div>
+    Journaling as inquiry · Contemplative reading (philosophy, mythology, sacred texts) · Conscious craftsmanship (cooking, art, music as meditation) · Astrology and depth psychology · Silent retreats during Saturn-heavy transits · Study circles and Satsang (knowledge through community)
+  </div>
+</div>
+
+<!-- DASHA -->
+<div class="panel dasha-panel">
+  <div class="panel-header">
+    <div class="panel-icon">◉</div>
+    <h2>Current Dasha · Rahu / Mercury / Jupiter</h2>
+  </div>
+  <p>Rahu Mahadasha runs approximately <strong>2016–2034</strong> (18 years). At 26, Anupriya is mid-flight in this ambitious, unconventional, expansive major period. Rahu amplifies desire, accelerates experience, and draws her toward unfamiliar terrain — new cities, new social worlds, new identities that feel slightly too large and then slowly fit.</p>
+  <p>The current <strong>Mercury bhukti</strong> (2025–2027) activates the Lagna lord and Darakaraka simultaneously — a sharp, intelligent window for communication, writing, networking, and business foundations. The mind is quickest now. The <strong>Jupiter antara</strong> adds philosophical depth and opportunity for growth in teaching or advisory roles.</p>
+  <div class="period-row" style="margin-top:18px">
+    <div class="period-window">2025–27</div>
+    <div class="period-dasha">Rahu / Mercury</div>
+    <div class="period-theme">Build, write, network, launch. Lagna lord activated — identity clarity arrives. Mercury = the mind and the spouse significator: mental clarity may coincide with a meaningful encounter.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2027–30</div>
+    <div class="period-dasha">Rahu / Venus</div>
+    <div class="period-theme">Peak abundance. Love, creative work, and financial gains align. Launch platforms, invest in relationships and creative ventures. Do not play small in this window.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2030–32</div>
+    <div class="period-dasha">Rahu / Moon</div>
+    <div class="period-theme">Emotional deepening. Kemadruma Moon requires care — this period may surface old wounds around belonging and support. Use it for inner work and grounding.</div>
+  </div>
+  <div class="period-row">
+    <div class="period-window">2034+</div>
+    <div class="period-dasha">Jupiter MD</div>
+    <div class="period-theme">The defining chapter begins. Jupiter in H11 as H10 lord means career recognition, institutional authority, and lasting public impact. The Raja Yogas mature fully.</div>
+  </div>
+</div>
+
+<div class="divider">Shadow &amp; Challenges</div>
+
+<!-- SHADOW -->
+<div class="panel shadow-panel">
+  <div class="panel-header">
+    <div class="panel-icon">🌑</div>
+    <h2>Shadow Side</h2>
+  </div>
+  <p>This is a chart of extraordinary brightness — and extraordinary shadow. The same concentration that makes the H11 stellium so powerful also creates blind spots and pressure points that must be understood honestly.</p>
+  <div class="shadow-grid">
+    <div class="shadow-card">
+      <strong>Kemadruma — The Isolated Moon</strong>
+      <p>Moon in H4 with no planets in adjacent H3 or H5 creates emotional isolation. She may feel perpetually unsupported, even surrounded by people. This produces fierce self-reliance — but also the inability to ask for help when it is desperately needed.</p>
+    </div>
+    <div class="shadow-card">
+      <strong>Saturn Debilitated — Income Anxiety</strong>
+      <p>Saturn at 27° Aries is debilitated. In H11 (income and gains), this creates a persistent anxiety about financial stability, inconsistency in earnings, and fear that abundance will be taken away. Discipline without reward is Saturn's debilitation wound.</p>
+    </div>
+    <div class="shadow-card">
+      <strong>Papa Kartari — Constricted Self</strong>
+      <p>Mars in H12 and Rahu in H2 hem the Lagna — the self is flanked by forces of expenditure (H12) and material hunger (Rahu/H2). She may feel her authentic identity is perpetually squeezed between the demands of the hidden world and the appetite for more.</p>
+    </div>
+    <div class="shadow-card">
+      <strong>Mercury in H12 — Overthinking in Private</strong>
+      <p>The Lagna lord in H12 creates a rich inner world that can become a trap: over-analysis, mental rumination, difficulty bringing the inner life into the world. She may plan extensively but hesitate at the threshold of action.</p>
+    </div>
+    <div class="shadow-card">
+      <strong>H11 Excess — Perpetual Wanting</strong>
+      <p>Four planets in the house of desires creates an insatiable quality — she may always feel the next goal is the real goal, that what she has is never quite enough. The yogas give, but the stellium keeps wanting.</p>
+    </div>
+    <div class="shadow-card">
+      <strong>Sun at Sandhi — Identity in Flux</strong>
+      <p>Sun at 29.8° Aries is at the sign boundary — a sandhi degree. Identity can feel unstable, liminal, never fully arrived. She may struggle to claim the authority the chart grants her, always feeling slightly not-yet-ready.</p>
+    </div>
+  </div>
+  <div class="antidote-box">Kemadruma Moon's deepest antidote is deliberate belonging: a regular practice of choosing to receive. One trusted relationship in which she asks for help weekly, not only gives it. Saturn debilitation heals through consistent financial discipline (not abundance-chasing) — automatic savings, regular planetary charity, and recognizing that structure IS abundance.</div>
+</div>
+
+<div class="divider">Remedies</div>
+
+<!-- REMEDIES -->
+<div class="panel sage-panel">
+  <div class="panel-header">
+    <div class="panel-icon">🌿</div>
+    <h2>Remedies &amp; Practices</h2>
+  </div>
+
+  <div class="tier-header tier-universal" style="margin-bottom:18px">Weekly Practice Calendar</div>
+  <table class="remedy-calendar">
+    <thead>
+      <tr>
+        <th>MON 🌙</th><th>TUE ♂</th><th>WED ☿</th><th>THU ♃</th><th>FRI ♀</th><th>SAT ♄</th><th>SUN ☀</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Moon water meditation<span class="planet-label">Moon</span></td>
+        <td>Physical exercise<span class="planet-label">Mars H12</span></td>
+        <td>Journaling / writing<span class="planet-label">Mercury</span></td>
+        <td>Gratitude practice<span class="planet-label">Jupiter</span></td>
+        <td>Creative work or art<span class="planet-label">Venus</span></td>
+        <td>Fasting or service<span class="planet-label">Saturn</span></td>
+        <td>Sun salutations<span class="planet-label">Sun</span></td>
+      </tr>
+      <tr>
+        <td>White foods, silver<span class="planet-label">Kemadruma</span></td>
+        <td>No hidden anger<span class="planet-label">VRY Mars</span></td>
+        <td>No screens 9–10pm<span class="planet-label">Mercury H12</span></td>
+        <td>Teach or guide one person<span class="planet-label">DKA Yoga</span></td>
+        <td>Wear green or pink<span class="planet-label">H5+H12</span></td>
+        <td>Charity: iron, oil, seeds<span class="planet-label">Saturn debilitated</span></td>
+        <td>Walk in sunlight before 9am<span class="planet-label">Sandhi Sun</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="sym-grid">
+    <div>
+      <div class="tier-header tier-universal">● Tier 1 — Universal</div>
+      <div class="remedy-item"><strong>Moon Water Practice (Mondays)</strong>Leave a glass of water in moonlight overnight; drink in the morning. Strengthens Kemadruma Moon and the emotional body. Hasta Moon responds to ritual involving hands and water.</div>
+      <div class="remedy-item"><strong>Hasta Craft</strong>Any daily practice involving skilled hands — cooking, pottery, music, drawing, knitting. Activates the Hasta Moon's Shakti and grounds the chart's abundant energy into physical form.</div>
+      <div class="remedy-item"><strong>Saturn Dana (Saturdays)</strong>Give iron, sesame oil, black seeds, or dark lentils to those in need every Saturday. Propitiates the debilitated Saturn in H11 and gradually builds consistent financial flow.</div>
+      <div class="remedy-item"><strong>Green Tourmaline / Emerald</strong>Mercury (Lagna lord) strengthener — small emerald or green tourmaline worn on right hand middle finger (Wednesday). Sharpens the H12 Mercury's mental clarity and reduces overthinking.</div>
+      <div class="remedy-item"><strong>Physical Discipline (Mars)</strong>Mars in H12 (Viparita Raja Yoga) gains strength through consistent physical practice — yoga, swimming, martial arts. Move the body to clear the hidden energy of H12.</div>
+    </div>
+    <div>
+      <div class="tier-header tier-vedic">◆ Tier 2 — Vedic Tradition</div>
+      <div class="remedy-item"><strong>Budha Mantra (Wednesdays)</strong>"Om Budhaya Namah" — 108 times on Wednesday mornings. Mercury is Lagna lord, Darakaraka, and placed in H12; this mantra activates Mercury's intelligence and draws the spouse-significator.</div>
+      <div class="remedy-item"><strong>Saraswati Puja (Thursdays)</strong>Jupiter is DKA lord and the most auspicious planet — offering white flowers, turmeric, and studying or teaching on Thursdays honors Jupiter's H10+H7 lordship and activates the Raja Yogas.</div>
+      <div class="remedy-item"><strong>Chandra Yantra</strong>Wear or keep a Chandra (Moon) Yantra to address Kemadruma — draws supportive people into the emotional orbit and reduces the feeling of isolation that the Moon in H4 alone creates.</div>
+      <div class="remedy-item"><strong>Surya Namaskar at Sunrise (Sundays)</strong>Sun at sandhi 29.8° Aries strengthened by daily sunrise salutations — 12 rounds, eyes toward the east. Stabilizes identity and gathers the solar force at its most liminal point.</div>
+    </div>
+  </div>
+
+  <div style="margin-top:24px">
+    <div class="tier-header tier-neuro">◈ Tier 3 — Neuroscience / CBT / NLP / Biohacking</div>
+    <div class="neuro-grid">
+      <div class="neuro-col">
+        <h4>CBT — Cognitive</h4>
+        <div class="remedy-item"><strong>Kemadruma Reframe</strong>When the "no one supports me" narrative appears, write 3 specific recent examples of support received. The Kemadruma distortion is real — but the evidence-based log overrides it over time.</div>
+        <div class="remedy-item"><strong>Satiety Journal</strong>For H11 excess (perpetual wanting): daily prompt — "What is already enough today?" Trains the gains-house mind to recognize arrival rather than only approach.</div>
+      </div>
+      <div class="neuro-col">
+        <h4>NLP — Pattern</h4>
+        <div class="remedy-item"><strong>Mercury H12 Action Gate</strong>For analysis-paralysis: set a rule — any plan that's been in Mercury's notebook for 7+ days gets a launch date or gets deleted. The H12 mind hoards ideas; the gate forces commitment.</div>
+        <div class="remedy-item"><strong>Identity Anchoring (Sandhi Sun)</strong>Write one sentence that begins "I am the person who…" and complete it with an achieved fact, not an aspiration. Repeat as a morning anchor to stabilize the liminal Sun.</div>
+      </div>
+      <div class="neuro-col">
+        <h4>Biohacking — Body</h4>
+        <div class="remedy-item"><strong>Circadian Reset</strong>Sun at sandhi and Moon in Virgo (nervous system) both benefit from strict sleep timing — same wake time daily (preferably at sunrise). This is the simplest nervous system regulation for Virgo Moon anxiety.</div>
+        <div class="remedy-item"><strong>Cold Water Immersion (Hasta)</strong>Brief cold water immersion (30–60 sec, hands and face minimum) stimulates Hasta Moon's water sensitivity and regulates the Vata-Pitta constitution's emotional volatility.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider">Spirit Animal</div>
+
+<!-- ANIMAL -->
+<div class="animal-section">
+  <span class="animal-emoji">🦚</span>
+  <h3>The Peacock — Mayura</h3>
+  <div class="animal-sub">Venus in Bharani · H11 Stellium · Gemini Lagna · Goa Native</div>
+  <div class="animal-body">
+    <p>The peacock arrives as Anupriya's spirit animal not by coincidence but by constellation. Her four-planet H11 stellium — Sun, Jupiter, Venus, Saturn all in Aries — fans out exactly like a peacock's tail: many brilliant feathers, each carrying a different "eye," the iridescent display of a creature that cannot help but be seen. Venus in Bharani (nakshatra of Yama, the transformer) gives the peacock's fearlessness in facing what others find dark, while dancing in full color regardless of season.</p>
+    <p>The Gemini Lagna is the peacock's adaptability — it moves between ecosystems, shifts its color in different light, communicates through display rather than sound alone. Mercury in H12 gives the peacock's private nature: the most spectacular plumage unfurls in moments of true safety, not performance. And the Viparita Raja Yoga (Mars) echoes the peacock's ability to thrive in monsoon — the rain that drives others to shelter is exactly when the peacock dances. Goa, where she was born, is peacock territory — the Western Ghats know this bird as their own.</p>
+    <p>The shadow of the peacock: it cannot fly far. The tail is spectacular but heavy. This is the Kemadruma Moon's message — the peacock that stops dancing for others and learns to rest in its own radiance, even unseen, even alone in the rain.</p>
+  </div>
+</div>
+
+<!-- META AI PROMPT -->
+<div class="panel">
+  <div class="panel-header">
+    <div class="panel-icon">🎨</div>
+    <h2>Meta AI Spirit Animal Portrait Prompt</h2>
+  </div>
+  <p style="margin-bottom:16px;color:var(--muted);font-size:0.85rem">Copy-paste ready for meta.ai or any AI image generator:</p>
+  <pre style="background:rgba(255,255,255,0.04);border:1px solid rgba(196,158,64,0.15);border-radius:14px;padding:20px;font-size:0.8rem;color:rgba(240,232,216,0.82);white-space:pre-wrap;line-height:1.7;font-family:monospace">A majestic Indian peacock standing in cosmic darkness, its iridescent tail fanned fully open like a galaxy of stars. Each tail feather contains a glowing astrological glyph — ♊ Gemini at center, ♃ Jupiter and ♀ Venus shimmering in gold, ♄ Saturn in violet. The peacock's crown feathers form a constellation. Deep monsoon clouds in indigo and plum swirl behind it, with golden light radiating from its chest. Its feet stand on water, reflecting the Aries fire above. Mystical dark cosmic background, ultra detailed, painterly surreal digital art, sacred geometry woven into the feathers, Goa botanical flora at the edges — jasmine and wild orchid — glowing faintly. Spirit animal portrait, --ar 3:4</pre>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Generated August 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Astrowise
+</div>
+
+</div><!-- .page -->
+</body>
+</html>
