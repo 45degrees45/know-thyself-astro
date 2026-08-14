@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Electric Lioness, 27 — Vedic Natal Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      background-color: #0b0b18;
+    }
+
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+      padding: 32px 16px 64px;
+    }
+
+    .shell {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border-radius: 28px;
+      padding: 48px 44px 38px;
+      background: linear-gradient(140deg,
+        rgba(28,18,56,0.98) 0%,
+        rgba(44,24,72,0.96) 45%,
+        rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-symbol {
+      position: absolute;
+      right: 36px; top: 24px;
+      font-size: 180px;
+      line-height: 1;
+      color: rgba(196,158,64,0.07);
+      font-family: 'Cormorant Garamond', serif;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-glow {
+      position: absolute;
+      right: -60px; bottom: -80px;
+      width: 340px; height: 340px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196,158,64,0.15), transparent 65%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300;
+      line-height: 0.9;
+      color: #fff8f0;
+      margin-bottom: 6px;
+    }
+
+    .lagna-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      color: rgba(196,158,64,0.85);
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 16px;
+      padding: 16px 18px;
+    }
+
+    .stat-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      color: #fff8f0;
+      line-height: 1.4;
+    }
+
+    .planet-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .pchip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(196,158,64,0.12);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.78rem;
+    }
+
+    .pchip-name {
+      color: var(--gold);
+      font-weight: 500;
+      font-size: 0.72rem;
+    }
+
+    .pchip-val {
+      color: rgba(240,232,216,0.75);
+    }
+
+    /* ── SYMMETRIC GRID ── */
+    .sym-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ── PANEL ── */
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(6px);
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(196,158,64,0.12);
+    }
+
+    .panel-icon {
+      font-size: 1.1rem;
+      color: var(--gold);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(196,158,64,0.1);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .panel h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--cream);
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: rgba(240,232,216,0.82);
+      margin-bottom: 14px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .trait-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .chip {
+      background: rgba(196,158,64,0.09);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      color: var(--gold2);
+    }
+
+    .chip-neg {
+      background: rgba(196,96,122,0.09);
+      border-color: rgba(196,96,122,0.22);
+      color: #e8909f;
+    }
+
+    .chip-green {
+      background: rgba(90,143,114,0.1);
+      border-color: rgba(90,143,114,0.22);
+      color: #80c4a0;
+    }
+
+    /* ── Lists ── */
+    ul {
+      padding-left: 18px;
+      margin-top: 10px;
+    }
+
+    li {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: rgba(240,232,216,0.8);
+      margin-bottom: 6px;
+    }
+
+    /* ── Sub-label ── */
+    .sub-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 18px;
+    }
+
+    /* ── Period rows ── */
+    .period-row {
+      display: grid;
+      grid-template-columns: 90px 140px 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.88rem;
+    }
+
+    .period-row:last-child { border-bottom: none; }
+
+    .period-window {
+      font-weight: 600;
+      color: var(--gold2);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+    }
+
+    .period-dasha {
+      color: var(--plum);
+      font-size: 0.8rem;
+      color: rgba(196,158,64,0.65);
+    }
+
+    .period-theme {
+      color: rgba(240,232,216,0.75);
+      line-height: 1.55;
+    }
+
+    /* ── Fun Facts ── */
+    .fun-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .fun-list li {
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 12px 12px 0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      line-height: 1.6;
+      color: rgba(240,232,216,0.82);
+    }
+
+    /* ── Shadow Section ── */
+    .shadow-panel {
+      background: rgba(140,40,70,0.06);
+      border-color: rgba(196,96,122,0.2);
+    }
+
+    .shadow-panel .panel-icon {
+      background: rgba(196,96,122,0.12);
+      color: #e8909f;
+    }
+
+    .shadow-panel .panel h2 {
+      color: #f0c8d0;
+    }
+
+    .shadow-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .shadow-card {
+      background: rgba(196,96,122,0.06);
+      border: 1px solid rgba(196,96,122,0.15);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+
+    .shadow-card strong {
+      display: block;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8909f;
+      margin-bottom: 6px;
+    }
+
+    .shadow-card p {
+      font-size: 0.88rem;
+      color: rgba(240,232,216,0.7);
+      margin-bottom: 0;
+      line-height: 1.6;
+    }
+
+    .antidote-box {
+      margin-top: 16px;
+      padding: 14px 18px;
+      background: rgba(90,143,114,0.08);
+      border: 1px solid rgba(90,143,114,0.2);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #a0d4b8;
+      line-height: 1.65;
+    }
+
+    .antidote-box::before {
+      content: "Antidote — ";
+      font-weight: 600;
+      color: #80c4a0;
+    }
+
+    /* ── Dasha analysis ── */
+    .dasha-panel {
+      background: rgba(124,92,191,0.06);
+      border-color: rgba(124,92,191,0.22);
+    }
+
+    .dasha-panel .panel-icon {
+      background: rgba(124,92,191,0.14);
+      color: #b49edf;
+    }
+
+    .dasha-panel .panel h2 { color: #d0c4f0; }
+
+    .dasha-issues {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .dasha-issue {
+      display: grid;
+      grid-template-columns: 130px 80px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.86rem;
+    }
+
+    .dasha-issue-period {
+      font-weight: 600;
+      color: #b49edf;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-align: center;
+    }
+
+    .badge-hard   { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-mixed  { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-good   { background: rgba(90,143,114,0.18); color: #80c4a0; }
+
+    .dasha-issue-note { color: rgba(240,232,216,0.72); line-height: 1.5; }
+
+    .golden-box {
+      margin-top: 14px;
+      padding: 14px 18px;
+      background: rgba(196,158,64,0.08);
+      border: 1px solid rgba(196,158,64,0.25);
+      border-radius: 14px;
+      font-size: 0.9rem;
+      color: #e8d89a;
+      line-height: 1.65;
+    }
+
+    .golden-box::before {
+      content: "★ Golden Window — ";
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .warning-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .warning-list li {
+      padding: 8px 14px;
+      background: rgba(196,96,122,0.07);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.86rem;
+      color: rgba(240,200,210,0.82);
+      margin-bottom: 0;
+    }
+
+    /* ── Classical References ── */
+    .ref-panel {
+      background: rgba(70,50,30,0.15);
+      border-color: rgba(196,158,64,0.25);
+    }
+
+    .ref-panel .panel-icon {
+      background: rgba(196,158,64,0.12);
+      color: var(--gold);
+    }
+
+    .ref-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 4px;
+    }
+
+    .ref-card {
+      padding: 16px 18px;
+      background: rgba(196,158,64,0.04);
+      border: 1px solid rgba(196,158,64,0.14);
+      border-radius: 14px;
+    }
+
+    .ref-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .ref-source {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .ref-placement {
+      font-size: 0.75rem;
+      color: rgba(196,158,64,0.65);
+      font-style: italic;
+    }
+
+    .ref-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: rgba(240,232,216,0.88);
+      border-left: 2px solid rgba(196,158,64,0.3);
+      padding-left: 14px;
+      margin-bottom: 10px;
+    }
+
+    .ref-application {
+      font-size: 0.84rem;
+      color: rgba(240,232,216,0.6);
+      line-height: 1.6;
+    }
+
+    .ref-application::before {
+      content: "↳ ";
+      color: var(--gold);
+    }
+
+    /* ── Divider label ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: rgba(196,158,64,0.4);
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: rgba(196,158,64,0.15);
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(196,158,64,0.35);
+      letter-spacing: 0.1em;
+      padding-top: 8px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 760px) {
+      .sym-grid,
+      .stat-grid,
+      .shadow-grid { grid-template-columns: 1fr; }
+      .hero { padding: 32px 24px 28px; }
+      .panel { padding: 22px 20px; }
+      .period-row { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+<div class="shell">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-symbol">♒</div>
+    <div class="hero-glow"></div>
+    <p class="eyebrow">Vedic Natal Profile · Jyotish</p>
+    <h1>The Electric Lioness, 27</h1>
+    <p class="lagna-line">♒ Aquarius Lagna 7.6°</p>
+    <p class="tagline">A dynamic and creative individual with a flair for intellectual pursuits and a deep emotional reservoir.</p>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <span class="stat-label">Born</span>
+        <div class="stat-value">◦◦◦◦–◦◦–◦◦</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Time · Place</span>
+        <div class="stat-value">[time withheld] · [city withheld]</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Current Dasha</span>
+        <div class="stat-value">Mars / Venus / Mercury</div>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Dominant Energy</span>
+        <div class="stat-value">Creative Communicator</div>
+      </div>
+    </div>
+
+    <div class="planet-row">
+      <span class="pchip"><span class="pchip-name">Sun</span><span class="pchip-val">Can H6</span></span><span class="pchip"><span class="pchip-name">Moon</span><span class="pchip-val">Leo H7</span></span><span class="pchip"><span class="pchip-name">Mars</span><span class="pchip-val">Lib H9</span></span><span class="pchip"><span class="pchip-name">Mercury</span><span class="pchip-val">Can H6</span></span><span class="pchip"><span class="pchip-name">Jupiter</span><span class="pchip-val">Ari H3</span></span><span class="pchip"><span class="pchip-name">Venus</span><span class="pchip-val">Leo H7</span></span><span class="pchip"><span class="pchip-name">Saturn</span><span class="pchip-val">Ari H3</span></span><span class="pchip"><span class="pchip-name">Rahu</span><span class="pchip-val">Can H6</span></span><span class="pchip"><span class="pchip-name">Ketu</span><span class="pchip-val">Cap H12</span></span>
+    </div>
+  </section>
+
+  <!-- ROW 1: Core Nature | Relationships -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✦</div>
+        <h2>Core Nature</h2>
+      </div>
+      <p>the native is a complex and multifaceted individual with a natural flair for intellectual pursuits and a deep emotional reservoir. She has a sharp intellect and eloquence, as indicated by the Budha-Aditya yoga, which also suggests recognition in intellectual fields. Her dominant energy is creative and communicative, with a strong desire for self-expression and a need for mental stimulation. She approaches life with a sense of curiosity and a willingness to learn, as reflected in her Jupiter in Aries placement.</p>
+      <div class="trait-chips">
+        <span class="chip">intelligent</span><span class="chip">creative</span><span class="chip">emotional</span><span class="chip"> communicative</span><span class="chip">independent</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">♡</div>
+        <h2>Relationships</h2>
+      </div>
+      <p>the native's relationship style is passionate and intense, with a strong desire for deep emotional connection and intellectual stimulation. Her 7th house lord, Venus, is in Leo, which suggests a need for drama, romance, and creativity in her relationships. She values honesty, loyalty, and mutual respect in her partnerships, as indicated by her Moon in Purva Phalguni placement.</p>
+      <div class="sub-label">Ideal Partner</div>
+      <p>the native is drawn to partners who are charismatic, confident, and intellectually stimulating. She values partners who can match her emotional intensity and provide a sense of security and stability.</p>
+      <div class="trait-chips">
+        <span class="chip chip-green">passionate</span><span class="chip chip-green">loyal</span><span class="chip chip-green">communicative</span><span class="chip chip-green">intelligent</span>
+        <span class="chip chip-neg">intense</span><span class="chip chip-neg">emotional</span><span class="chip chip-neg">dramatic</span><span class="chip chip-neg">possessive</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ROW 2: Career | Fun Facts -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◈</div>
+        <h2>Career</h2>
+      </div>
+      <p>the native's career nature is creative, intellectual, and communicative, with a natural flair for writing, teaching, or public speaking. The Budha-Aditya yoga and Raja Yoga suggest a high level of recognition and success in her chosen field. She excels in environments that value innovation, creativity, and intellectual curiosity, as reflected in her Jupiter in Aries placement.</p>
+      <div class="sub-label">Power Factor</div>
+      <p>The Budha-Aditya yoga, which brings sharp intellect and eloquence, is the most potent career yoga in the native's chart.</p>
+      <div class="sub-label">Best Domains</div>
+      <div class="trait-chips">
+        <span class="chip">writing</span><span class="chip">teaching</span><span class="chip">public speaking</span><span class="chip">creative fields</span>
+      </div>
+      <div class="sub-label">Leadership Style</div>
+      <p style="margin-top:6px">Inspiring and Communicative</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">✧</div>
+        <h2>Fun Facts</h2>
+      </div>
+      <ul class="fun-list">
+        <li>the native's Sun in Ashlesha nakshatra suggests a strong connection to her emotional reservoir and a potential for intense emotional experiences.</li><li>Her Moon in Purva Phalguni placement indicates a strong desire for luxury, comfort, and beauty in her emotional life.</li><li>The presence of Rahu in Cancer in her 6th house suggests a strong desire for nurturing and caring for others, as well as a potential for emotional turmoil.</li><li>the native's Venus in Leo placement indicates a strong desire for drama, romance, and creativity in her relationships.</li><li>The Yoga Karaka Venus suggests a high level of success and recognition in her chosen field, particularly in areas related to relationships, beauty, and creativity.</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="divider">Timing Windows</div>
+
+  <!-- ROW 3: Career Window | Marriage Window -->
+  <div class="sym-grid">
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◉</div>
+        <h2>Career Window</h2>
+      </div>
+      <p>the native's career arc is marked by a series of intellectual and creative pursuits, with a focus on recognition and success in her chosen field. The current Mars Mahadasha is a period of action, energy, and drive, which can help her achieve her career goals.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2020–2027</div>
+          <div class="period-dasha">Mars Mahadasha</div>
+          <div class="period-theme">Action, energy, and drive in career pursuits</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2027–2045</div>
+          <div class="period-dasha">Rahu Mahadasha</div>
+          <div class="period-theme">Unconventional and innovative approaches to career</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2045–2061</div>
+          <div class="period-dasha">Jupiter Mahadasha</div>
+          <div class="period-theme">Expansion, growth, and recognition in career</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Right Now</div>
+      <p>the native should focus on taking bold action and pursuing her career goals with energy and drive during the current Mars Mahadasha.</p>
+    </div>
+
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-icon">◇</div>
+        <h2>Marriage Window</h2>
+      </div>
+      <p>the native's relationship timing is marked by a series of intense and passionate connections, with a focus on deep emotional intimacy and intellectual stimulation. The current Venus Bhukti is a period of romance, creativity, and beauty in her relationships.</p>
+      
+        <div class="period-row">
+          <div class="period-window">2025–2026</div>
+          <div class="period-dasha">Mars/Venus Bhukti</div>
+          <div class="period-theme">Romance, creativity, and beauty in relationships</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2027–2030</div>
+          <div class="period-dasha">Rahu/Sun Bhukti</div>
+          <div class="period-theme">Unconventional and intense relationships</div>
+        </div>
+
+        <div class="period-row">
+          <div class="period-window">2030–2035</div>
+          <div class="period-dasha">Rahu/Moon Bhukti</div>
+          <div class="period-theme">Emotional intensity and deep connection in relationships</div>
+        </div>
+      <div class="sub-label" style="margin-top:16px">Karmic Note</div>
+      <p>the native's relationships are marked by a deep sense of karma and a need for emotional intimacy, which can sometimes manifest as intense emotional experiences.</p>
+    </div>
+
+  </div>
+
+  <div class="divider">Dasha &amp; Classical</div>
+
+  <!-- ROW 4: Dasha Analysis | Classical References -->
+  <div class="sym-grid">
+
+    <div class="panel dasha-panel">
+      <div class="panel-header">
+        <div class="panel-icon">◑</div>
+        <h2>Dasha Journey</h2>
+      </div>
+      <p>The current Mars Mahadasha is a period of action, energy, and drive for the native, which can help her achieve her career goals and pursue her passions. However, it also suggests a potential for conflict, tension, and emotional turmoil, particularly in her relationships.</p>
+      <div class="sub-label">Current Sub-Period Breakdown</div>
+      <div class="dasha-issues">
+        <div class="dasha-issue"><div class="dasha-issue-period">Venus Bhukti (2025–2026)</div><div><span class="badge badge-hard">challenging</span></div><div class="dasha-issue-note">the native may experience emotional turmoil and relationship conflicts during this period</div></div><div class="dasha-issue"><div class="dasha-issue-period">Sun Bhukti (2026–2027)</div><div><span class="badge badge-mixed">mixed</span></div><div class="dasha-issue-note">the native may experience a mix of success and challenges in her career and relationships during this period</div></div><div class="dasha-issue"><div class="dasha-issue-period">Moon Bhukti (2027–2028)</div><div><span class="badge badge-good">positive</span></div><div class="dasha-issue-note">the native may experience emotional healing and deep connection in her relationships during this period</div></div>
+      </div>
+      <div class="sub-label" style="margin-top:16px">Watch Out For</div>
+      <ul class="warning-list"><li>The Rahu Mahadasha starting in 2027 may bring unconventional and intense relationships</li><li>The Saturn Bhukti in 2033 may bring challenges and limitations in the native's career</li></ul>
+      <div class="golden-box">The Jupiter Mahadasha starting in 2045 is a highly auspicious period for the native's career and relationships, marked by expansion, growth, and recognition.</div>
+      <div class="sub-label" style="margin-top:16px">Next Chapter</div>
+      <p>The Rahu Mahadasha starting in 2027 will bring a period of unconventional and intense relationships, as well as a potential for spiritual growth and self-discovery.</p>
+    </div>
+
+    <div class="panel ref-panel">
+      <div class="panel-header">
+        <div class="panel-icon">📜</div>
+        <h2>Classical References</h2>
+      </div>
+      <div class="ref-list">
+        
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Ashlesha nakshatra</span>
+          </div>
+          <div class="ref-quote">"Ashlesha means 'the entwiner' and denotes the challenge of our 4 addictions to sensory attachments"</div>
+          <div class="ref-application">the native's Sun in Ashlesha nakshatra suggests a strong connection to her emotional reservoir and a potential for intense emotional experiences.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">BPHS Vol 2 (Parashara)</span>
+            <span class="ref-placement">Venus in Leo</span>
+          </div>
+          <div class="ref-quote">"Venus-Marriage, enjoyments, sexual intercourse with women"</div>
+          <div class="ref-application">the native's Venus in Leo placement indicates a strong desire for drama, romance, and creativity in her relationships.</div>
+        </div>
+        <div class="ref-card">
+          <div class="ref-meta">
+            <span class="ref-source">The Nakshatras (Harness)</span>
+            <span class="ref-placement">Punarvasu nakshatra</span>
+          </div>
+          <div class="ref-quote">"Punarvasu means 'the return of the light' and has the divine ability to bring spiritual light into darkness"</div>
+          <div class="ref-application">the native's Jupiter in Aries placement suggests a potential for spiritual growth and self-discovery, particularly in areas related to intellectual pursuits and personal freedom.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SHADOW (full width) -->
+  <div class="panel shadow-panel">
+    <div class="panel-header">
+      <div class="panel-icon">◬</div>
+      <h2>Shadow Side</h2>
+    </div>
+    <p>the native's core shadow pattern is related to her intense emotional nature and her tendency to become overly attached to her relationships and emotional experiences. This can sometimes manifest as possessiveness, jealousy, or emotional turmoil.</p>
+    <div class="shadow-grid">
+      <div class="shadow-card"><strong>possessiveness</strong><p>the native may become overly attached to her partners and experience intense emotional jealousy</p></div><div class="shadow-card"><strong>emotional turmoil</strong><p>the native may experience intense emotional ups and downs, particularly in her relationships</p></div><div class="shadow-card"><strong>dramatic tendencies</strong><p>the native may have a tendency to dramatize her emotional experiences and create intense emotional scenes</p></div><div class="shadow-card"><strong>fear of abandonment</strong><p>the native may have a deep-seated fear of abandonment and rejection, which can manifest as clinginess or possessiveness in her relationships</p></div>
+    </div>
+    <div class="antidote-box">the native can work with her shadow by cultivating self-awareness, emotional intelligence, and a sense of detachment in her relationships, allowing her to navigate her emotional experiences with more balance and clarity.</div>
+  </div>
+
+  <!-- SPIRIT ANIMAL (full width) -->
+  <div class="panel" style="text-align:center; padding:48px 40px; background:linear-gradient(135deg,rgba(28,18,56,0.98),rgba(60,30,80,0.96)); border-color:rgba(196,158,64,0.28);">
+    <div style="font-size:96px; line-height:1; margin-bottom:16px;">🦁</div>
+    <p class="eyebrow" style="margin-bottom:10px;">Moon in Purva Phalguni Leo · Venus (Yoga Karaka) in Magha Leo · Aquarius Lagna</p>
+    <h2 style="font-family:'Cormorant Garamond',serif; font-size:2.2rem; font-weight:300; color:#fff8f0; margin-bottom:18px;">The Lioness Who Walks Alone</h2>
+    <div style="max-width:680px; margin:0 auto; text-align:left;">
+      <p style="color:rgba(240,232,216,0.85); line-height:1.8; margin-bottom:14px;">the native's Moon sits in Purva Phalguni, the nakshatra of Venus in Leo — creative fire, regal warmth, and a magnetism that draws without effort. Venus herself, the most powerful planet in this chart as Yoga Karaka (ruling both H4 and H9), also occupies Leo in Magha nakshatra — the ancestral throne. Both the heart and the highest grace are seated in the Lion's sign, in the house of relationship. She doesn't roar to prove herself. She simply enters the room and the energy shifts.</p>
+      <p style="color:rgba(240,232,216,0.85); line-height:1.8; margin-bottom:14px;">The Aquarius Lagna adds the distinguishing mark: this is a Lioness who does not follow the pride. Shatabhisha nakshatra (Lagna, Rahu-ruled) carries Varuna's quality — cosmic law, hidden healing, solitary knowing. She moves by her own compass. When she chooses connection, it is absolute. When she withdraws, she is unreachable. This paradox — magnetic yet untouchable — is not a flaw but the precise design of her nature.</p>
+      <p style="color:rgba(240,232,216,0.85); line-height:1.8;">Ketu in H12 (Shravana nakshatra) gives her an inner listening that most people never access. She hears what is unsaid. The Lioness who hunts in stillness — that is the native. Her protection is not ferocity but clarity: she sees the landscape completely before she moves.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    Generated 14 Aug 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+  </div>
+
+</div>
+</body>
+</html>
