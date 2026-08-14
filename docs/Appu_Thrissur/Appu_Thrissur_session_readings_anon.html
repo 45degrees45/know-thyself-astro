@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>The Electric Lioness, 27 — Session Readings · Aug 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.94);
+      backdrop-filter: blur(14px);
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(196,158,64,0.2); border-radius: 2px; }
+
+    .sb-animal { font-size: 52px; text-align: center; margin-bottom: 10px; }
+    .sb-name { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--cream); text-align: center; margin-bottom: 2px; }
+    .sb-sub { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 20px; }
+    .sb-divider { height: 1px; background: var(--border); margin: 14px 0; }
+
+    .sb-stat { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; font-size: 0.8rem; }
+    .sb-stat-label { color: var(--muted); }
+    .sb-stat-value { color: var(--cream); font-weight: 500; font-size: 0.78rem; text-align: right; max-width: 130px; }
+
+    .sb-nav-label { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin: 18px 0 8px; }
+    .sb-nav a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 7px 10px; border-radius: 10px;
+      font-size: 0.8rem; color: rgba(240,232,216,0.7);
+      text-decoration: none; transition: all 0.15s;
+      margin-bottom: 2px;
+    }
+    .sb-nav a:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+    .sb-nav .nav-icon {
+      width: 22px; height: 22px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem; flex-shrink: 0;
+    }
+    .ni-gold  { background: rgba(196,158,64,0.15); }
+    .ni-plum  { background: rgba(124,92,191,0.18); }
+    .ni-sage  { background: rgba(90,143,114,0.18); }
+    .ni-blue  { background: rgba(91,143,212,0.18); }
+    .ni-rose  { background: rgba(196,96,122,0.18); }
+
+    /* ── MAIN ── */
+    .main { padding: 52px 56px 80px; max-width: 860px; }
+
+    /* hero strip */
+    .session-hero {
+      margin-bottom: 48px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .session-hero .eyebrow { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+    .session-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem,5vw,3.4rem); font-weight: 300; color: var(--cream); margin-bottom: 6px; }
+    .session-hero p { color: var(--muted); font-size: 0.9rem; max-width: 540px; }
+
+    /* ── CHAPTER ── */
+    .chapter { margin-bottom: 60px; scroll-margin-top: 32px; }
+    .chapter-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .chapter-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+    .ci-gold  { background: rgba(196,158,64,0.12); }
+    .ci-plum  { background: rgba(124,92,191,0.14); }
+    .ci-sage  { background: rgba(90,143,114,0.14); }
+    .ci-blue  { background: rgba(91,143,212,0.14); }
+    .ci-rose  { background: rgba(196,96,122,0.14); }
+    .chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; font-weight: 300; color: var(--cream); }
+    .chapter h2 small { display: block; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+
+    /* ── SECTION CARD ── */
+    .section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 26px; margin-bottom: 14px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 400; color: var(--cream); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-gold { background: var(--gold); }
+    .dot-plum { background: var(--plum); }
+    .dot-sage { background: var(--sage); }
+    .dot-blue { background: var(--blue); }
+    .dot-rose { background: var(--rose); }
+
+    /* ── TABLES ── */
+    .reading-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: 12px 0; }
+    .reading-table th { text-align: left; padding: 9px 13px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+    .reading-table td { padding: 9px 13px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── CALLOUTS ── */
+    .callout { border-radius: 14px; padding: 16px 20px; font-size: 0.88rem; line-height: 1.8; margin: 14px 0; }
+    .callout-label { font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 7px; }
+    .callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+    .callout-gold .callout-label { color: var(--gold2); }
+    .callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+    .callout-plum .callout-label { color: #b49edf; }
+    .callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+    .callout-rose .callout-label { color: #e8909f; }
+    .callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+    .callout-sage .callout-label { color: #80c4a0; }
+
+    /* ── BADGES ── */
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; }
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+    .badge-plum    { background: rgba(124,92,191,0.18); color: #b49edf; }
+
+    /* ── STARS ── */
+    .stars { color: var(--gold2); font-size: 0.85rem; letter-spacing: 1px; }
+
+    /* ── TIER LABEL ── */
+    .tier-label { display: inline-flex; align-items: center; gap: 6px; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 10px; border-radius: 999px; margin-bottom: 10px; }
+    .tier-gold  { background: rgba(196,158,64,0.12); color: var(--gold2); border: 1px solid rgba(196,158,64,0.25); }
+    .tier-sage  { background: rgba(90,143,114,0.12); color: #80c4a0; border: 1px solid rgba(90,143,114,0.25); }
+    .tier-rose  { background: rgba(196,96,122,0.12); color: #e8909f; border: 1px solid rgba(196,96,122,0.25); }
+    .tier-plum  { background: rgba(124,92,191,0.12); color: #b49edf; border: 1px solid rgba(124,92,191,0.25); }
+
+    /* ── PLANET CHIPS ── */
+    .pchip { display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.05); border: 1px solid rgba(196,158,64,0.12); border-radius: 999px; padding: 4px 11px 4px 7px; font-size: 0.75rem; margin: 3px 3px 3px 0; }
+    .pchip-name { color: var(--gold); font-weight: 500; font-size: 0.7rem; }
+    .pchip-val  { color: rgba(240,232,216,0.72); }
+
+    /* ── DIVIDER ── */
+    .divider { display: flex; align-items: center; gap: 14px; margin: 36px 0; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(240,232,216,0.25); }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* ── PERIOD ROW ── */
+    .period-row { display: grid; grid-template-columns: 100px 140px 1fr; gap: 10px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.86rem; align-items: start; }
+    .period-row:last-child { border-bottom: none; }
+    .period-window { font-weight: 600; color: var(--gold2); font-size: 0.8rem; }
+    .period-dasha  { color: rgba(196,158,64,0.65); font-size: 0.78rem; }
+    .period-theme  { color: rgba(240,232,216,0.75); line-height: 1.55; }
+
+    /* ── PROFILE CARD (co-founder) ── */
+    .profile-card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 20px 22px; margin-bottom: 14px; }
+    .profile-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .profile-card-rank { width: 32px; height: 32px; border-radius: 50%; background: rgba(196,158,64,0.12); border: 1px solid rgba(196,158,64,0.25); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; color: var(--gold2); flex-shrink: 0; }
+    .profile-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--cream); }
+    .profile-card-sub { font-size: 0.72rem; color: var(--muted); }
+    .profile-card-body { font-size: 0.86rem; color: rgba(240,232,216,0.8); line-height: 1.7; }
+    .profile-card-body p + p { margin-top: 8px; }
+
+    .profile-card-sage { border-color: rgba(90,143,114,0.28); background: rgba(90,143,114,0.04); }
+    .profile-card-sage .profile-card-rank { background: rgba(90,143,114,0.14); border-color: rgba(90,143,114,0.3); color: #80c4a0; }
+
+    /* ── FOOTER ── */
+    .footer { text-align: center; padding: 24px 0 0; font-size: 0.7rem; color: rgba(240,232,216,0.28); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 40px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+      .main { padding: 32px 20px 60px; max-width: 100%; }
+      .period-row { grid-template-columns: 1fr; gap: 3px; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ════════════ SIDEBAR ════════════ -->
+  <aside class="sidebar">
+    <div class="sb-animal">🦁</div>
+    <div class="sb-name">The Electric Lioness, 27</div>
+    <div class="sb-sub">Session Readings · Aug 2026</div>
+
+    <div class="sb-divider"></div>
+
+    <div class="sb-stat"><span class="sb-stat-label">Lagna</span><span class="sb-stat-value">♒ Aquarius 7.6°</span></div>
+    <div class="sb-stat"><span class="sb-stat-label">Nakshatra</span><span class="sb-stat-value">Shatabhisha</span></div>
+    <div class="sb-stat"><span class="sb-stat-label">Moon</span><span class="sb-stat-value">Leo H7 · Purva Phalguni</span></div>
+    <div class="sb-stat"><span class="sb-stat-label">Dasha</span><span class="sb-stat-value">Mars / Venus / Mercury</span></div>
+    <div class="sb-stat"><span class="sb-stat-label">Yogas</span><span class="sb-stat-value">5 incl. Yoga Karaka Venus</span></div>
+    <div class="sb-stat"><span class="sb-stat-label">Spirit Animal</span><span class="sb-stat-value">The Electric Lioness 🦁</span></div>
+
+    <div class="sb-divider"></div>
+
+    <div class="sb-nav-label">Chapters</div>
+    <nav class="sb-nav">
+      <a href="#chart"><span class="nav-icon ni-gold">♒</span> Chart Overview</a>
+      <a href="#career"><span class="nav-icon ni-gold">🏛</span> Career Analysis</a>
+      <a href="#startup"><span class="nav-icon ni-sage">🎁</span> Startup — Gift Hampers</a>
+      <a href="#competencies"><span class="nav-icon ni-gold">⚡</span> Startup Competencies</a>
+      <a href="#cofounder-gen"><span class="nav-icon ni-plum">🤝</span> Co-Founder Blueprint</a>
+      <a href="#cofounder-pool"><span class="nav-icon ni-sage">👥</span> Co-Founder — Pool Match</a>
+      <a href="#launch"><span class="nav-icon ni-blue">🚀</span> 30-Day Launch</a>
+    </nav>
+  </aside>
+
+  <!-- ════════════ MAIN ════════════ -->
+  <main class="main">
+
+    <div class="session-hero">
+      <p class="eyebrow">Vedic Natal Session · Jyotish · Kerala, India</p>
+      <h1>The Electric Lioness, 27 — Deep Dive</h1>
+      <p>Career, startup timing, co-founder matching, and 30-day launch strategy — session of 14 August 2026. Aquarius Lagna 7.6° · Mars MD · Yoga Karaka Venus.</p>
+    </div>
+
+    <!-- ══════════ CHAPTER 1 — CHART OVERVIEW ══════════ -->
+    <section class="chapter" id="chart">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-gold">♒</div>
+        <h2><small>The Foundation</small>Chart Overview</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Planet Positions</div>
+        <table class="reading-table">
+          <thead><tr><th>Planet</th><th>Sign</th><th>House</th><th>Nakshatra</th><th>Key Note</th></tr></thead>
+          <tbody>
+            <tr><td><strong style="color:var(--gold2)">Lagna</strong></td><td>Aquarius 7.6°</td><td>H1</td><td>Shatabhisha pd1</td><td>Rahu-ruled · "The Hundred Healers"</td></tr>
+            <tr><td>Sun</td><td>Cancer 26.5°</td><td>H6</td><td>Ashlesha pd3</td><td>H7 lord · serpent wisdom</td></tr>
+            <tr><td>Moon</td><td>Leo 23.3°</td><td>H7</td><td>Purva Phalguni pd3</td><td>Venus-ruled · creative queen</td></tr>
+            <tr><td>Mars</td><td>Libra 24.2°</td><td>H9</td><td>Vishakha pd2</td><td>H10+H3 lord · dharmic career</td></tr>
+            <tr><td>Mercury</td><td>Cancer 7.8°</td><td>H6</td><td>Pushya pd2</td><td>Budha-Aditya · H5+H8 lord</td></tr>
+            <tr><td><strong style="color:#80c4a0">Venus (R)</strong></td><td>Leo 7.3°</td><td>H7</td><td>Magha pd3</td><td><strong>Yoga Karaka + Darakaraka</strong> · 7.3° lowest</td></tr>
+            <tr><td>Jupiter</td><td>Aries 10.9°</td><td>H3</td><td>Ashwini pd4</td><td>H2+H11 lord · wealth + gains</td></tr>
+            <tr><td>Saturn</td><td>Aries 23.1°</td><td>H3</td><td>Bharani pd3</td><td>Lagna lord · debilitated in Aries</td></tr>
+            <tr><td>Rahu</td><td>Cancer 19.1°</td><td>H6</td><td>Ashlesha pd1</td><td>Competition obsession + strategic edge</td></tr>
+            <tr><td>Ketu</td><td>Capricorn 19.1°</td><td>H12</td><td>Shravana pd3</td><td>"The Listener" · spiritual detachment</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>5 Yogas</div>
+        <table class="reading-table">
+          <thead><tr><th>Yoga</th><th>Planets / Logic</th><th>Strength</th><th>Manifestation</th></tr></thead>
+          <tbody>
+            <tr><td>Budha-Aditya</td><td>Sun + Mercury conjunct Cancer H6</td><td><span class="stars">★★★★</span></td><td>Sharp intellect, eloquence, recognition through service</td></tr>
+            <tr><td>Raja Yoga</td><td>Sun + Mercury H6</td><td><span class="stars">★★★</span></td><td>Leadership through intellectual mastery</td></tr>
+            <tr><td><strong>Yoga Karaka Venus</strong></td><td>Venus rules H4 + H9 (kendra + trikona)</td><td><span class="stars">★★★★★</span></td><td>Most powerful planet in chart — aesthetics, relationships, career grace</td></tr>
+            <tr><td>Viparita Raja Yoga</td><td>Mercury (H8 lord) in H6</td><td><span class="stars">★★★</span></td><td>Gains through adversity; the darkest moment becomes the pivot</td></tr>
+            <tr><td>Vesi Yoga</td><td>Moon + Venus in H2 from Sun (Leo)</td><td><span class="stars">★★</span></td><td>Eloquence, grace, magnetic public presence</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Dasha Timeline</div>
+        <div class="period-row">
+          <div class="period-window">Oct 2020 – Oct 2027</div>
+          <div class="period-dasha">Mars MD</div>
+          <div class="period-theme">Career activation — Mars rules H10 (Scorpio) + H3 (Aries). Career built through dharmic action. H10 lord in H9 = purpose-led profession.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">Jul 2025 – Sep 2026</div>
+          <div class="period-dasha">Mars / Venus AD</div>
+          <div class="period-theme"><strong>NOW — Yoga Karaka bhukti.</strong> Peak window for relationships, creative ventures, and partnership formation. Most auspicious sub-period of the Mars MD.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">Sep 2026 – Jun 2027</div>
+          <div class="period-dasha">Mars / Sun AD</div>
+          <div class="period-theme">H7 lord (Sun, Leo) sub-period — business visibility, public recognition, first major professional push.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">Oct 2027 – Oct 2045</div>
+          <div class="period-dasha">Rahu MD</div>
+          <div class="period-theme">Rahu in H6 — unconventional expansion, disruption, international reach. Whatever is built during Mars MD gets amplified through Rahu's 18-year lens.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Chart Signature</div>
+        <strong>H6 stellium (Sun + Mercury + Rahu in Cancer)</strong> wired to an <strong>H7 Leo double (Moon + Venus in Magha/Purva Phalguni)</strong> — the intellectual engine fires in pressure and service (H6), and the magnetic, relational energy blooms in encounter (H7). She is sharpest when the stakes are real and warmest in direct, personal connection. Shatabhisha Lagna (Rahu-ruled, "The Hundred Healers") adds the quiet knowing: she sees what isn't said.
+      </div>
+    </section>
+
+    <div class="divider">Career</div>
+
+    <!-- ══════════ CHAPTER 2 — CAREER ══════════ -->
+    <section class="chapter" id="career">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-gold">🏛</div>
+        <h2><small>Vocational Analysis</small>Career — Best Domains</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Primary Career Indicators</div>
+        <table class="reading-table">
+          <thead><tr><th>Indicator</th><th>Placement</th><th>Signal</th></tr></thead>
+          <tbody>
+            <tr><td>H10 sign</td><td>Scorpio</td><td>Depth, hidden knowledge, research, psychological intensity</td></tr>
+            <tr><td>H10 lord Mars</td><td>Libra H9, Vishakha pd2</td><td>H10 lord in dharma house = career inseparable from values. Vishakha = archer who doesn't stop until the goal is hit.</td></tr>
+            <tr><td>Yoga Karaka Venus</td><td>Leo H7 (R)</td><td>Career peaks through one-on-one partnerships and client relationships (H7). Retrograde = delayed recognition then acceleration.</td></tr>
+            <tr><td>Budha-Aditya H6</td><td>Sun+Mercury Cancer</td><td>Razor-sharp intellect deployed in service, health, high-pressure work</td></tr>
+            <tr><td>Jupiter + Saturn</td><td>Aries H3</td><td>Both expander and discipliner in the communication house — philosophical depth + structural precision in writing and teaching</td></tr>
+            <tr><td>Darakaraka = Venus</td><td>H7 (7.3°, lowest degree)</td><td>The soul-level partner indicator is the same as the Yoga Karaka, sitting in the house of partnership — career and love converge on one planet</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Tier 1 — Highest Alignment</div>
+
+        <div style="margin-bottom:18px;">
+          <span class="tier-label tier-sage">● Tier 1 — Strongest Fit</span>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7; margin-bottom:10px;"><strong style="color:var(--cream)">Psychology / Counseling / Psychotherapy</strong> — Shatabhisha Lagna ("The Hundred Healers"), Scorpio H10 (depth, unconscious), Ketu in Shravana H12 (hears what's unspoken), H6 triple stellium (healing house + emotional Cancer), Viparita Raja Yoga (turns her own difficult experiences into the map for helping others). Particularly: trauma therapy, psychiatric social work, grief counseling.</p>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7; margin-bottom:10px;"><strong style="color:var(--cream)">Medicine / Healthcare</strong> — H6 triple stellium (disease + healing + intellect), Budha-Aditya yoga (diagnostic mind), Shatabhisha (literally "medicine"), Rahu H6 (cutting-edge, integrative approaches). Best sub-domains: psychiatry, Ayurveda, pediatrics, neurology.</p>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7;"><strong style="color:var(--cream)">Research / Investigation</strong> — Scorpio H10 (goes into dark rooms and returns with answers), Ashlesha Sun (accumulates information covertly), Viparita Raja Yoga (gains by penetrating where others won't), Ketu H12 (hidden/non-obvious information access).</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Tier 2 — Strong Fit</div>
+        <table class="reading-table">
+          <thead><tr><th>Domain</th><th>Key Placements</th><th>Best Format</th></tr></thead>
+          <tbody>
+            <tr><td>Writing / Journalism</td><td>Jupiter+Saturn H3, Budha-Aditya, Moon Purva Phalguni</td><td>Long-form, research-backed, literary non-fiction</td></tr>
+            <tr><td>Teaching / Academia</td><td>Mars (H10 lord) in H9, Jupiter H3, Venus YK H7</td><td>University, workshop, private mentoring — 1:1 or small cohort</td></tr>
+            <tr><td>Law / Human Rights</td><td>Mars in Libra H9 (justice), Scorpio H10 (strategy), Budha-Aditya (argumentation)</td><td>Social justice, human rights, not corporate M&amp;A</td></tr>
+            <tr><td>Design / Aesthetics</td><td>Venus YK Magha, Moon Purva Phalguni, H7 client space</td><td>Interior, brand identity, art direction — small batch not mass</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Career Windows</div>
+        <div class="period-row">
+          <div class="period-window">2024–Sep 2026</div>
+          <div class="period-dasha">Mars / Venus</div>
+          <div class="period-theme">Yoga Karaka bhukti — breakthrough recognition in creative or therapeutic work. Launch window.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">Sep 2026 – Jun 2027</div>
+          <div class="period-dasha">Mars / Sun</div>
+          <div class="period-theme">H7 lord sub-period — visibility, partnerships, first public recognition push.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">2028–2031</div>
+          <div class="period-dasha">Rahu / Rahu–Jupiter</div>
+          <div class="period-theme">Unconventional expansion. International reach. Non-traditional field entry or global scaling of what was built during Mars MD.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-label">What to Avoid</div>
+        Routine 9-to-5 with no autonomy (Saturn H3 Bharani needs to own her process) · Surface-level work with no depth (Scorpio H10 + Budha-Aditya need complexity) · Purely solo work with zero human contact (Venus YK H7 — she peaks in encounter) · Career misaligned with values (Mars H10 lord in H9 — dharma misalignment breaks the engine over time)
+      </div>
+    </section>
+
+    <div class="divider">Startup</div>
+
+    <!-- ══════════ CHAPTER 3 — STARTUP GIFT HAMPERS ══════════ -->
+    <section class="chapter" id="startup">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-sage">🎁</div>
+        <h2><small>Startup Analysis</small>Gift Hamper Domain</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Does the Domain Fit?</div>
+        <table class="reading-table">
+          <thead><tr><th>Planet</th><th>Placement</th><th>Relevance to Gift Hampers</th></tr></thead>
+          <tbody>
+            <tr><td><strong style="color:#80c4a0">Venus YK</strong></td><td>Leo H7, Magha (R)</td><td>Aesthetics, luxury, gifting, sensory curation — she IS the brand. H7 = marketplace. Strongest planet in chart.</td></tr>
+            <tr><td>Moon</td><td>Leo H7, Purva Phalguni</td><td>Instinctive feel for what delights; pleasure and celebratory energy is her emotional baseline</td></tr>
+            <tr><td>Sun + Mercury + Rahu</td><td>Cancer H6</td><td>Cancer = nurturing, home, emotional care — the intelligence behind what people want to give and receive</td></tr>
+            <tr><td>Jupiter (H2+H11 lord)</td><td>Aries H3</td><td>Income flows through self-initiated ventures — Jupiter ruling both money houses sits in the entrepreneurship house</td></tr>
+          </tbody>
+        </table>
+        <div class="callout callout-sage" style="margin-top:12px;">
+          <div class="callout-label">Domain Verdict</div>
+          <strong>Yes — the domain fits.</strong> The chart's strongest planet (Venus Yoga Karaka) is in the house of marketplace dealings. Moon in Purva Phalguni gives instinctive read on what people want to give and receive. Cancer H6 stellium means she understands the emotional architecture of gifting better than most.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>The Niche Question</div>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7; margin-bottom:12px;">The chart signals relentlessly upward: <strong>premium, emotionally curated, small batch</strong>. Magha nakshatra (Venus) carries the ancestral throne — everything she curates has an old-world quality and gravitas. Scorpio H10 rewards depth over volume.</p>
+        <table class="reading-table">
+          <thead><tr><th>Tier</th><th>Assessment</th></tr></thead>
+          <tbody>
+            <tr><td><span class="badge badge-protect">Premium / Luxury</span></td><td>Magha Venus + Scorpio H10 = 100 perfect clients beats 10,000 mediocre ones. Her lane.</td></tr>
+            <tr><td><span class="badge badge-protect">Wellness-infused</span></td><td>Shatabhisha Lagna (healer) + Ketu H12 (natural / spiritual products) = Ayurveda + artisanal + curated.</td></tr>
+            <tr><td><span class="badge badge-risk">Mass Market</span></td><td>H6 Rahu (fierce competition from volume players) will destroy her on price. Do not compete here.</td></tr>
+            <tr><td><span class="badge badge-risk">Generic / Cheap</span></td><td>Purva Phalguni Moon physically cannot produce ugly or mediocre things. Wrong lane entirely.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>H6 Rahu — Competition Warning</div>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7;">Rahu in Cancer H6 (Ashlesha) in the house of competition creates obsessive competitive awareness. Gift hampers in India are extremely crowded. Rahu H6 has two faces: it can destroy competitors through differentiation and intensity, OR it can trap her in reactive price-war anxiety. The prescription: <strong>ignore the market, obsess over the product.</strong> Rahu in Ashlesha (the coiled serpent) says the power is in concentrated, patient focus.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Timing — Launch Windows</div>
+        <div class="period-row">
+          <div class="period-window">Now – Sep 2026</div>
+          <div class="period-dasha">Mars / Venus AD</div>
+          <div class="period-theme"><strong>Venus AD = the gift hamper planet's own period.</strong> Launching an aesthetics-domain business during Yoga Karaka Venus bhukti is textbook timing. Soft launch, build first 20–50 clients, refine product line.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">Sep 2026 – Jun 2027</div>
+          <div class="period-dasha">Mars / Sun AD</div>
+          <div class="period-theme">H7 lord (Sun, Leo) = marketplace visibility. First major public push. Brand recognition moment.</div>
+        </div>
+        <div class="period-row">
+          <div class="period-window">Oct 2027+</div>
+          <div class="period-dasha">Rahu MD</div>
+          <div class="period-theme">Scaling phase. Rahu amplifies what was built during Mars MD. Tech-integrated gifting, D2C platforms, possibly international markets.</div>
+        </div>
+      </div>
+
+      <div class="callout callout-plum">
+        <div class="callout-label">Viparita Raja Yoga — Secret Weapon</div>
+        Mercury (H8 lord in H6) = gains through adversity. In a startup context: the business will face a genuine crisis or setback early (supply chain, bad client, failed product line). <strong>The response to that difficulty will be what actually builds the brand's reputation.</strong> The darkest moment becomes the pivot point. Do not fear the first big problem — the Viparita Raja Yoga is waiting to fire.
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-label">Saturn Risk — Cash Flow</div>
+        Saturn (lagna lord) in Aries H3 is debilitated — the lagna lord is weakened. This creates one specific risk: slow initial returns and cash flow anxiety in the first 12–18 months. Don't over-invest upfront. Keep Phase 1 lean: 10 SKUs, not 100. Comfortable economics arrive around 2027–2028.
+      </div>
+    </section>
+
+    <div class="divider">Competencies</div>
+
+    <!-- ══════════ CHAPTER 4 — STARTUP COMPETENCIES ══════════ -->
+    <section class="chapter" id="competencies">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-gold">⚡</div>
+        <h2><small>Founder Profile</small>Startup Competencies</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Domain Scores</div>
+        <table class="reading-table">
+          <thead><tr><th>Domain</th><th>Planets</th><th>Score</th><th>Verdict</th></tr></thead>
+          <tbody>
+            <tr><td>Product / Curation</td><td>Venus YK + Moon Purva Phalguni + Mercury Pushya</td><td><span class="stars">★★★★★</span></td><td>She IS the product — irreplaceable</td></tr>
+            <tr><td>Marketing / Brand</td><td>Venus YK + Budha-Aditya + Sun</td><td><span class="stars">★★★★½</span></td><td>Can own this entirely — no outsourcing needed</td></tr>
+            <tr><td>Sales / Relationships</td><td>Venus H7 + Mercury + Moon</td><td><span class="stars">★★★★</span></td><td>Converts through depth and care; high repeat + referral</td></tr>
+            <tr><td>Strategy / Competitive</td><td>Scorpio H10 + Rahu H6 + Ashlesha Sun</td><td><span class="stars">★★★★</span></td><td>Sees around corners; contrarian instinct</td></tr>
+            <tr><td>Operations / Execution</td><td>Saturn debilitated + Mars H9 + Mercury</td><td><span class="stars">★★★</span></td><td>Gap — needs a system or a person</td></tr>
+            <tr><td>Finance / Numbers</td><td>Jupiter H3 + Saturn debilitated + Venus</td><td><span class="stars">★★★</span></td><td>Biggest risk — must be structured out of her hands early</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Core Strengths</div>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7; margin-bottom:10px;"><strong style="color:var(--cream)">Product Instinct.</strong> Venus Yoga Karaka + Moon Purva Phalguni (Venus's nakshatra in Leo) = two layers of aesthetic intelligence stacked in H7. She doesn't analyse what's beautiful — she knows it in the body. In a gift hamper business, product selection IS the product. She is irreplaceable here.</p>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7; margin-bottom:10px;"><strong style="color:var(--cream)">Brand Voice + Storytelling.</strong> Budha-Aditya in Cancer H6 + Jupiter+Saturn H3 = philosophical depth with structural precision. She writes copy that feels personal even at scale. The Cancer H6 Sun gives warmth to the intellectual voice — not cold or corporate.</p>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7; margin-bottom:10px;"><strong style="color:var(--cream)">Client Relationships.</strong> Venus YK in H7 = her natural mode of operating is through deep personal connection. Moon in Purva Phalguni adds generosity — she gives more than she charges, which creates fierce loyalty and near-zero churn.</p>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7;"><strong style="color:var(--cream)">Competitive Awareness.</strong> Scorpio H10 + Rahu H6 + Ashlesha Sun = reads the competitive landscape with unusual clarity. She can see threats before they arrive and is instinctively contrarian — spots what the market is missing.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Natural Gaps — Hire or Structure Around</div>
+        <table class="reading-table">
+          <thead><tr><th>Gap</th><th>Root Cause</th><th>Prescription</th></tr></thead>
+          <tbody>
+            <tr><td><strong style="color:#e8909f">Financial Management</strong></td><td>Saturn debilitated in Aries — lagna lord weakened. Difficulty translating intuitive success into organized financial tracking.</td><td>Hire part-time accountant/CFO by month 3, not month 12. Build margin tracking from Day 1.</td></tr>
+            <tr><td><strong style="color:#e8909f">Operational Scaling</strong></td><td>Saturn H3 + Venus retrograde = execution infrastructure feels heavier than it should; tendency to resist systematizing what she does intuitively.</td><td>Set a "good enough to ship" standard. Hire ops person before 500 orders/month, not after.</td></tr>
+            <tr><td><strong style="color:#e8909f">Team Delegation</strong></td><td>Aquarius Lagna (independent) + Venus retrograde (inner critic) + Saturn H3 Bharani (carries load alone) = she finds it faster to do it herself.</td><td>Transfer taste through training and documentation, not personal oversight of every order.</td></tr>
+            <tr><td><strong style="color:#e8909f">Focus Discipline</strong></td><td>Jupiter in Ashwini H3 (fast-starting, expansive) — more ideas than she can execute; risk of diluting the premium brand before any line is profitable.</td><td>One product, one tier, one customer type for 18 months. Scorpio H10 rewards depth of focus.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Leadership Style</div>
+        <strong>Internal:</strong> Shatabhisha Lagna = authority felt, not announced. High standards; finds mediocrity genuinely painful. Teams experience her as demanding but fair.<br><br>
+        <strong>External:</strong> Venus+Moon in Leo H7 = warm, generous, magnanimous with people she trusts. Clients feel deeply seen — this is the brand's primary differentiator.<br><br>
+        <strong>Under pressure:</strong> Viparita Raja Yoga + Budha-Aditya in H6 = she thinks best when the stakes are real. The hardest chapter (month 12–18) is when she performs best.
+      </div>
+    </section>
+
+    <div class="divider">Co-Founder</div>
+
+    <!-- ══════════ CHAPTER 5 — CO-FOUNDER BLUEPRINT ══════════ -->
+    <section class="chapter" id="cofounder-gen">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-plum">🤝</div>
+        <h2><small>Partnership Blueprint</small>Co-Founder Blueprint</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>What the Chart Says About Her Co-Founder</div>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7; margin-bottom:12px;"><strong>H7 lord = Sun</strong> sitting in Cancer H6 (Ashlesha). The co-founder <strong>comes from the work/daily life context</strong> (H6) — an existing professional relationship, not a cold introduction. Sun-type personality: purposeful, structured, comfortable with authority and clear ownership. Ashlesha quality: strategic patience, coils before committing but completely reliable once they do.</p>
+        <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7;"><strong>Darakaraka = Venus H7.</strong> The professional partnership has an almost karmic, "recognition" quality — the right co-founder will feel less like a hire and more like a destined encounter. Saturn (Lagna lord) in Bharani (Yama's nakshatra = irreversibility) means she will not pivot co-founders easily. The match must be right from the start.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Ideal Lagna Types</div>
+        <table class="reading-table">
+          <thead><tr><th>Lagna</th><th>Why It Fits</th><th>Watch For</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong style="color:#80c4a0">#1 Virgo</strong></td>
+              <td>Saturn Yoga Karaka (rules H5+H6) — systems, precision, operations are the native language. Mercury-ruled = analytical financial tracking. H10 = Gemini (communication/commerce). Their Saturn strength covers this chart's Saturn gap exactly.</td>
+              <td>Retrograde Saturn = perfectionism becomes paralysis. Check Saturn is clean (no Rahu/Ketu conjunct).</td>
+            </tr>
+            <tr>
+              <td><strong style="color:#80c4a0">#2 Capricorn</strong></td>
+              <td>Saturn own sign = maximum Saturn strength. Excellent operations, discipline, team management. H10 = Libra (Venus-ruled) = their career house harmonizes with this chart's Venus-led product.</td>
+              <td>Conservative — may slow creative pivots. Check Jupiter isn't badly placed (entrepreneurial imagination needed).</td>
+            </tr>
+            <tr>
+              <td><strong style="color:#80c4a0">#3 Taurus</strong></td>
+              <td>Venus-ruled but Earth Venus (practical, commercial) vs this chart's Fire Venus (regal, visionary) — complementary, not duplicate. Saturn Yoga Karaka (H9+H10). H2 = Gemini = financial communication instinct.</td>
+              <td>Two Venus-led people may drift from commercial reality. Finance must be owned structurally regardless.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Lagnas to Avoid</div>
+        <table class="reading-table">
+          <thead><tr><th>Lagna</th><th>Why It Fails</th></tr></thead>
+          <tbody>
+            <tr><td>Aquarius</td><td>Duplicates independence — two captains, no one runs ops or finance</td></tr>
+            <tr><td>Leo</td><td>Ego clash with her Leo H7 (Moon + Venus) — both want to own the brand face</td></tr>
+            <tr><td>Scorpio</td><td>Her H10 IS Scorpio — subtle authority competition over who drives company vision</td></tr>
+            <tr><td>Sagittarius / Pisces (Jupiter-ruled)</td><td>Expansive and visionary but will not cover her Saturn gap; adds enthusiasm without grounding</td></tr>
+            <tr><td>Aries (without strong Saturn)</td><td>Doubles the rashness and "start fast, finish slow" pattern</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-plum">
+        <div class="callout-label">Partnership Timing</div>
+        <strong>Venus AD (now – September 2026)</strong> is the peak window for co-founder formation. Venus occupying H7 during its own sub-period activates the partnership house directly. The human relationship forms during Venus AD; the formal structure (legal, equity) is signed during <strong>Sun AD (Sep 2026 – Jun 2027)</strong>, when H7 lord's own period brings official partnership visibility. The co-founder conversation should be initiated <em>now</em>, not after September.
+      </div>
+    </section>
+
+    <div class="divider">Pool Match</div>
+
+    <!-- ══════════ CHAPTER 6 — CO-FOUNDER POOL ══════════ -->
+    <section class="chapter" id="cofounder-pool">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-sage">👥</div>
+        <h2><small>From the Network</small>Co-Founder — Pool Match</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Eliminated from Pool</div>
+        <p style="font-size:0.83rem; color:var(--muted); margin-bottom:10px;">Screened out before shortlisting — key reason noted.</p>
+        <table class="reading-table">
+          <thead><tr><th>Profile</th><th>Lagna</th><th>Reason Eliminated</th></tr></thead>
+          <tbody>
+            <tr><td>Gemini profile · 26F · The Radiant Peacock</td><td>Gemini</td><td>Saturn <strong>debilitated</strong> in Aries — double debilitated Saturn = catastrophic for ops/finance</td></tr>
+            <tr><td>Leo Lagna group (5 profiles)</td><td>Leo</td><td>Ego clash with this chart's Leo H7 (Moon+Venus) — both want to own the brand face</td></tr>
+            <tr><td>Aquarius profile · 41M</td><td>Aquarius</td><td>Duplicates independence — two captains, no one runs ops</td></tr>
+            <tr><td>Scorpio Lagna group (4 profiles)</td><td>Scorpio</td><td>Her H10 is Scorpio — authority competition over company vision</td></tr>
+            <tr><td>Sagittarius Lagna group (6 profiles)</td><td>Sagittarius</td><td>Jupiter-ruled — expansive but won't discipline finance or operations</td></tr>
+            <tr><td>Pisces Lagna group (2 profiles)</td><td>Pisces</td><td>Vision + vision; no one runs ops</td></tr>
+            <tr><td>Cancer Lagna group (2 profiles)</td><td>Cancer</td><td>Moon-ruled emotional energy, not systems-builder</td></tr>
+            <tr><td>Aries profile · 42M · The Cosmic Stallion</td><td>Aries</td><td>Mars energy + Rahu/Jupiter dasha — adds rashness, doesn't ground Saturn gap</td></tr>
+            <tr><td>Gemini profile · 39F · The Quicksilver Dolphin</td><td>Gemini</td><td>Brilliant communicator; excellent for marketing co-founder NOT ops/finance</td></tr>
+            <tr><td>Virgo profile · 53F · The Sacred Naga</td><td>Virgo</td><td>53 years old — mentor profile, not co-founder peer</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Shortlist — Top 5</div>
+
+        <div class="profile-card profile-card-sage">
+          <div class="profile-card-header">
+            <div class="profile-card-rank">#1</div>
+            <div>
+              <div class="profile-card-name">🦌 The Starlit Doe — Taurus Lagna 29.4°</div>
+              <div class="profile-card-sub">Female · 35 · Saturn / Mercury / Saturn dasha <span class="stars">★★★★★</span></div>
+            </div>
+          </div>
+          <div class="profile-card-body">
+            <p><strong style="color:#80c4a0">Saturn Yoga Karaka</strong> (rules H9+H10 for Taurus), Saturn in Capricorn H9 — own sign. Maximum Saturn strength possible. Currently in Saturn MD / Mercury AD / Saturn antara = <strong>triple Saturn emphasis</strong> = peak operational discipline right now.</p>
+            <p><strong>Dasha synchronization:</strong> The Electric Lioness is in Mars/Venus/<em>Mercury antara</em>. The Starlit Doe is in Saturn/Mercury/<em>Saturn antara</em> under Mercury AD. Both in Mercury-flavored periods simultaneously — identical decision tempo and communication-building energy. Co-founders in the same dasha rhythm build in synchrony.</p>
+            <p><strong>Triple Aquarius H10 stellium</strong> (Sun+Moon+Venus in H10) — her career calling IS Aquarius. The Electric Lioness IS Aquarius Lagna. What the Starlit Doe strives toward professionally, the Electric Lioness embodies as identity. The rarest alignment possible. Jupiter exalted H3 (H11 lord) = financial gain through initiative.</p>
+            <p><em>Flag:</em> Taurus Lagna at 29.4° is anaretic — a cusp quality; confirm the gift domain genuinely excites her. Currently based remotely (different city).</p>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-card-header">
+            <div class="profile-card-rank">#2</div>
+            <div>
+              <div class="profile-card-name">🦅 The Golden Eagle — Capricorn Lagna 8.7°</div>
+              <div class="profile-card-sub">Female · 35 · Kerala · Saturn / Saturn / Rahu dasha <span class="stars">★★★★½</span></div>
+            </div>
+          </div>
+          <div class="profile-card-body">
+            <p><strong style="color:#80c4a0">Sasa Yoga</strong> — Saturn in own sign H1. One of the five Pancha Mahapurusha yogas. <strong>The absolute strongest Saturn placement possible in all 12 Lagnas.</strong> Currently in Saturn/Saturn dasha = double Saturn = maximum operational discipline.</p>
+            <p><strong>Yoga Karaka Venus exalted</strong> in Pisces H3 — triply powerful (YK + exalted + H3). Her Venus is career/dharma-oriented (H5+H10 lord), not marketplace/H7 — no conflict with this chart's Venus in H7. She appreciates the aesthetic vision without competing for it.</p>
+            <p>Kerala-based (same state, several hours away). Practical advantage for a physical product business. Age 35 — brings business maturity.</p>
+            <p><em>Flag:</em> Sasa Yoga founders can be intensely self-sufficient — she may resist delegating, creating a parallel bottleneck. Define operational domains explicitly from Day 1.</p>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-card-header">
+            <div class="profile-card-rank">#3</div>
+            <div>
+              <div class="profile-card-name">🦁 The Velvet Lioness — Virgo Lagna 11.8°</div>
+              <div class="profile-card-sub">Female · 25 · Saturn / Mars / Jupiter dasha <span class="stars">★★★★</span></div>
+            </div>
+          </div>
+          <div class="profile-card-body">
+            <p><strong style="color:#80c4a0">Virgo Lagna — ideal type.</strong> Saturn Yoga Karaka (rules H5+H6) = systems, precision, operations are the native language. Mercury-ruled Lagna = analytical financial tracking. Currently in Saturn MD = operational strength fully activated.</p>
+            <p><strong>Career peak incoming:</strong> Saturn/Rahu starts July 2026 — three years of maximum ambition (age 25–28). If the co-founder conversation happens now, she enters the partnership at full momentum, not wind-down.</p>
+            <p>Age 25 = flat, equal peer dynamic (both late 20s). Neither feels junior. <span class="badge badge-mixed">Raja Yoga (Jup+Sat)</span> in H9 — philosophical leadership quality.</p>
+            <p><em>Flag:</em> Saturn is retrograde in Taurus H9 — discipline turns inward; may struggle to externalize systems into SOPs. Currently based outside Kerala — a genuine operational challenge for a physical product business.</p>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-card-header">
+            <div class="profile-card-rank">#4</div>
+            <div>
+              <div class="profile-card-name">🦚 The Celestial Peacock — Libra Lagna 25.1°</div>
+              <div class="profile-card-sub">Female · 42 · Moon / Saturn / Venus dasha <span class="stars">★★★½</span></div>
+            </div>
+          </div>
+          <div class="profile-card-body">
+            <p>Saturn <strong>exalted in Libra H1</strong> + Yoga Karaka (H4+H5 lord) + Sasa Yoga = exceptional Saturn strength. Moon/Saturn bhukti = Saturn currently activated. 8 yogas including Adhi Yoga (natural leadership).</p>
+            <p><em>Why she doesn't top the list:</em> Adhi Yoga people are natural founders themselves — she'll want to lead her own venture, not co-found someone else's. The age gap creates a mentor-mentee dynamic rather than equal partnership. H8 four-planet stellium adds internal complexity. Better positioned as <strong>advisor or angel investor</strong> than day-to-day co-founder.</p>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="profile-card-header">
+            <div class="profile-card-rank">#5</div>
+            <div>
+              <div class="profile-card-name">🐅 The Cosmic Tiger — Aries Lagna 27.0°</div>
+              <div class="profile-card-sub">Female · 36 · Kerala · Saturn / Saturn / Ketu dasha <span class="stars">★★★½</span></div>
+            </div>
+          </div>
+          <div class="profile-card-body">
+            <p><span class="badge badge-protect">Same city, Kerala</span> — the only pool member who shares the native's city. For a physical product business, proximity to packing, vendors, and logistics matters more than chart theory suggests.</p>
+            <p>Saturn/Saturn dasha = Saturn rules H10+H11 for Aries Lagna (career + gains). Double Saturn = operational discipline phase. Malavya yoga (Venus in H7 Libra own sign) + 2x Viparita Raja Yoga. Age 36, female, experienced.</p>
+            <p><em>Flag:</em> Aries Lagna adds Mars energy (fast, impulsive) rather than grounding the Saturn gap. Both can move too fast and skip systems-building. But the shared city proximity is a practical wildcard worth a conversation.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">Final Recommendation</div>
+        <strong>Approach the Starlit Doe first</strong> — the triple Aquarius H10 and Mercury antara synchronization is rare enough to be meaningful beyond chart theory. Her career calling points toward Aquarius; this chart IS Aquarius. <strong>If she is inaccessible, approach the Golden Eagle</strong> — Sasa Yoga Saturn in double Saturn dasha is the most operationally powerful combination in the pool. <strong>The Cosmic Tiger is the wildcard</strong> — shared geography alone makes the conversation worth having even if the chart isn't the strongest complement.
+      </div>
+    </section>
+
+    <div class="divider">30-Day Launch</div>
+
+    <!-- ══════════ CHAPTER 7 — 30-DAY LAUNCH ══════════ -->
+    <section class="chapter" id="launch">
+      <div class="chapter-header">
+        <div class="chapter-icon ci-blue">🚀</div>
+        <h2><small>Fast-Start Strategy</small>30-Day Launch Domains</h2>
+      </div>
+
+      <div class="callout callout-plum" style="margin-bottom:20px;">
+        <div class="callout-label">Mercury Antara Signal</div>
+        Mercury rules H5 (creativity) and H8 (research/transformation) for Aquarius Lagna, sitting in Pushya nakshatra (deity: Brihaspati/Jupiter — teacher, nourisher). The current Mercury antara period is built for <strong>knowledge-to-income conversion</strong> — services, digital products, and consulting that require no inventory. The 30-day constraint and Mercury's fast-moving antara are perfectly aligned. Venus AD ends September 2026 — act now.
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Ranked Domains</div>
+
+        <div style="margin-bottom:20px;">
+          <span class="tier-label tier-sage">● #1 — Corporate Gifting Strategy Consultant</span>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7; margin-bottom:8px;">Companies pay for advice on what to gift employees, clients, and partners. Pure intellectual service. No inventory. Revenue possible by Day 7.</p>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7;"><strong>Chart:</strong> Scorpio H10 (strategic depth on what works and why) + Venus YK + Moon Purva Phalguni (instinct for delight) + Budha-Aditya (sharp, service-oriented intellect). <strong>Strategic value:</strong> this is Phase 0 of the hamper business — every corporate client she consults becomes a potential hamper buyer. She learns the B2B buyer's psychology from the inside before she has product.</p>
+        </div>
+
+        <div style="margin-bottom:20px;">
+          <span class="tier-label tier-sage">● #2 — Copywriting + Brand Storytelling</span>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7; margin-bottom:8px;">Brand narrative, website copy, Instagram captions for lifestyle, wellness, gifting, and home brands. Zero investment. Revenue by Day 10.</p>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7;"><strong>Chart:</strong> Budha-Aditya yoga (eloquence yoga, textbook for writing) + Jupiter+Saturn H3 (philosophical depth + structural precision) + Venus YK (aesthetic intelligence in the written voice) + Mercury antara (peak communication window). <strong>Strategic value:</strong> every brand she writes for is a masterclass in what works in her target category.</p>
+        </div>
+
+        <div style="margin-bottom:20px;">
+          <span class="tier-label tier-gold">◆ #3 — Curation Consulting (1:1 Sessions)</span>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7; margin-bottom:8px;">Personal styling, home aesthetics, gift shortlists, brand mood boards. Charged per session. Revenue by Day 5.</p>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7;"><strong>Chart:</strong> Venus YK Magha (instinctive sense of quality) + Moon Purva Phalguni (pleasure and beauty instinct) + H7 = one-on-one house (she peaks in direct individual encounter) + Shatabhisha (the healer who diagnoses the gap). <strong>Strategic value:</strong> builds the brand persona that anchors the hamper business.</p>
+        </div>
+
+        <div style="margin-bottom:20px;">
+          <span class="tier-label tier-plum">◈ #4 — Digital Products</span>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7;">Gifting occasion planners, corporate gifting trackers, "How to Build a Premium Gift Hamper" PDF guide. One-time creation, recurring sales on Gumroad/Etsy. Live by Day 14. Mercury (H5 = creativity + H8 = research) rules both creation and depth — she can build a guide that's genuinely better than what's out there.</p>
+        </div>
+
+        <div>
+          <span class="tier-label tier-gold">◆ #5 — Social Media (Aesthetic Brands Only)</span>
+          <p style="font-size:0.88rem; color:rgba(240,232,216,0.82); line-height:1.7;">Instagram + Pinterest management for premium home, food, gifting, wellness brands. Venus YK = visual curation; Mercury antara = digital output. First client within 2 weeks. Good income but lower strategic leverage for the hamper path — better as a complement than standalone.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-blue"></span>Decision Matrix</div>
+        <table class="reading-table">
+          <thead><tr><th>Domain</th><th>Speed to Revenue</th><th>Chart Fit</th><th>Hamper Synergy</th><th>Capital</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Gifting Consultant</strong></td><td><span class="badge badge-protect">Week 1</span></td><td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★★</span></td><td>Zero</td></tr>
+            <tr><td><strong>Copywriting / Brand Voice</strong></td><td><span class="badge badge-protect">Week 1–2</span></td><td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★</span></td><td>Zero</td></tr>
+            <tr><td>Curation Consulting</td><td><span class="badge badge-protect">Day 5</span></td><td><span class="stars">★★★★★</span></td><td><span class="stars">★★★★</span></td><td>Zero</td></tr>
+            <tr><td>Digital Products</td><td><span class="badge badge-mixed">Day 14</span></td><td><span class="stars">★★★★</span></td><td><span class="stars">★★★</span></td><td>Zero</td></tr>
+            <tr><td>Social Media Mgmt</td><td><span class="badge badge-mixed">Week 2</span></td><td><span class="stars">★★★★</span></td><td><span class="stars">★★★</span></td><td>Zero</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">The Actual Recommendation</div>
+        <strong>Start #1 and #2 simultaneously.</strong> Same effort, zero capital, completely complementary: corporate gifting consulting builds B2B relationships and market intelligence; brand copywriting builds the creative portfolio and the lifestyle brand network. Neither competes with the hamper business — both feed it.<br><br>
+        <strong>Day 1–7:</strong> Two sample copy pieces (mocked for a gift brand) + one-page "Gifting Strategy Consultation" service menu.<br>
+        <strong>Day 8–14:</strong> Reach out to five people — two SME founders (gifting advice), two lifestyle brand owners (copy), one warm introduction.<br>
+        <strong>Day 15–30:</strong> First paid session or project delivered. Collect testimonials immediately.<br><br>
+        Mars (action) / Venus (aesthetics) / Mercury (communication, commerce) — the current triple dasha combination is specifically designed for fast-start, communication-based, relationship-driven work. <strong>The 30-day launch is not just possible — it is the dasha's prescription.</strong>
+      </div>
+    </section>
+
+    <div class="footer">
+      Session · Aug 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Aquarius Lagna 7.6° · Kerala, India
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
