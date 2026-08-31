@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Jordan — Session Readings · Scorpio Lagna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:      #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border:  rgba(196,158,64,0.18);
+  --gold:    #c49e40;
+  --gold2:   #e8c96a;
+  --cream:   #f0e8d8;
+  --muted:   rgba(240,232,216,0.55);
+  --plum:    #7c5cbf;
+  --rose:    #c4607a;
+  --sage:    #5a8f72;
+  --blue:    #5b8fd4;
+  --shadow:  0 20px 60px rgba(0,0,0,0.45);
+  --r:       22px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-weight: 400;
+  color: var(--cream);
+  background-color: #0b0b18;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  line-height: 1.7;
+}
+
+/* ─── Layout ─────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ─── Sidebar ─────────────────────────────────── */
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 36px 20px 36px 24px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.92);
+  backdrop-filter: blur(12px);
+}
+.sidebar::-webkit-scrollbar { width: 4px; }
+.sidebar::-webkit-scrollbar-thumb { background: rgba(196,158,64,0.2); border-radius: 2px; }
+
+.sb-animal { font-size: 52px; margin-bottom: 12px; }
+.sb-name { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400; color: var(--cream); }
+.sb-lagna { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.sb-dasha { font-size: 0.78rem; color: var(--muted); margin-bottom: 20px; }
+
+.sb-stats { display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px; }
+.sb-stat { display: flex; justify-content: space-between; font-size: 0.75rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.sb-stat-label { color: var(--muted); }
+.sb-stat-val { color: var(--cream); font-weight: 500; }
+
+.sb-nav { display: flex; flex-direction: column; gap: 2px; }
+.sb-nav a {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 10px; border-radius: 10px;
+  font-size: 0.8rem; color: var(--muted);
+  text-decoration: none; transition: all 0.2s;
+}
+.sb-nav a:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+.sb-nav a span.icon { font-size: 0.95rem; width: 18px; text-align: center; }
+
+/* ─── Main ────────────────────────────────────── */
+.main { padding: 48px 52px 80px; max-width: 860px; }
+
+/* ─── Chapter ─────────────────────────────────── */
+.chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+.chapter-header {
+  display: flex; align-items: center; gap: 14px;
+  margin-bottom: 24px; padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.chapter-icon {
+  width: 44px; height: 44px; border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; flex-shrink: 0;
+}
+.chapter-icon.gold  { background: rgba(196,158,64,0.12); }
+.chapter-icon.plum  { background: rgba(124,92,191,0.14); }
+.chapter-icon.rose  { background: rgba(196,96,122,0.12); }
+.chapter-icon.sage  { background: rgba(90,143,114,0.12); }
+.chapter-icon.blue  { background: rgba(91,143,212,0.12); }
+.chapter h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.9rem; font-weight: 300; color: var(--cream);
+}
+.chapter h2 small {
+  display: block; font-size: 0.68rem; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--gold);
+  font-family: 'DM Sans', sans-serif; margin-bottom: 4px;
+}
+
+/* ─── Section card ────────────────────────────── */
+.section {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 24px 28px; margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem; font-weight: 400; color: var(--cream);
+  margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+}
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-gold  { background: var(--gold); }
+.dot-plum  { background: var(--plum); }
+.dot-rose  { background: var(--rose); }
+.dot-sage  { background: var(--sage); }
+.dot-blue  { background: var(--blue); }
+
+/* ─── Callout boxes ───────────────────────────── */
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 14px; }
+.callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+.callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+.callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+.callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+.callout-label {
+  font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+  font-weight: 600; margin-bottom: 8px;
+}
+.callout-gold .callout-label { color: var(--gold); }
+.callout-plum .callout-label { color: #b49edf; }
+.callout-rose .callout-label { color: #e8909f; }
+.callout-sage .callout-label { color: #80c4a0; }
+
+/* ─── Badges ──────────────────────────────────── */
+.badge {
+  display: inline-block; padding: 3px 10px; border-radius: 999px;
+  font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em;
+}
+.badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+.badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+.badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+/* ─── Reading table ───────────────────────────── */
+.reading-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+.reading-table th {
+  text-align: left; padding: 10px 14px;
+  background: rgba(196,158,64,0.1); color: var(--gold);
+  font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase;
+  border-bottom: 1px solid rgba(196,158,64,0.2);
+}
+.reading-table td {
+  padding: 10px 14px; color: rgba(240,232,216,0.82);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  vertical-align: top; line-height: 1.6;
+}
+.reading-table tr:last-child td { border-bottom: none; }
+.reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+/* ─── Chips ───────────────────────────────────── */
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.chip { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.2); border-radius: 999px; padding: 6px 14px; font-size: 0.82rem; color: var(--gold2); }
+.chip-neg { background: rgba(196,96,122,0.09); border-color: rgba(196,96,122,0.22); color: #e8909f; }
+.chip-green { background: rgba(90,143,114,0.1); border-color: rgba(90,143,114,0.22); color: #80c4a0; }
+
+/* ─── Fun list ────────────────────────────────── */
+.fun-list { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.fun-list li {
+  padding: 12px 16px; background: rgba(255,255,255,0.04);
+  border-left: 3px solid var(--gold); border-radius: 0 12px 12px 0;
+  font-size: 0.9rem; line-height: 1.6; color: rgba(240,232,216,0.82);
+}
+
+/* ─── Period rows ─────────────────────────────── */
+.period-row {
+  display: grid; grid-template-columns: 100px 160px 1fr; gap: 10px;
+  padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.88rem;
+}
+.period-window { font-weight: 600; color: var(--gold2); font-size: 0.82rem; }
+.period-dasha  { color: rgba(196,158,64,0.65); font-size: 0.8rem; }
+.period-theme  { color: rgba(240,232,216,0.75); line-height: 1.55; }
+
+/* ─── Month comparison grid ───────────────────── */
+.month-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.month-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 20px 22px;
+}
+.month-card h3 {
+  font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+  font-weight: 400; color: var(--cream); margin-bottom: 14px;
+  padding-bottom: 10px; border-bottom: 1px solid rgba(196,158,64,0.12);
+}
+.month-row { font-size: 0.84rem; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); display: flex; flex-direction: column; gap: 2px; }
+.month-row:last-child { border-bottom: none; }
+.month-row .label { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+.month-row .value { color: rgba(240,232,216,0.8); line-height: 1.5; }
+
+/* ─── Hero intro ──────────────────────────────── */
+.hero-strip {
+  border-radius: 28px; padding: 44px 44px 36px;
+  background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(80,38,58,0.92) 100%);
+  border: 1px solid rgba(196,158,64,0.22); box-shadow: var(--shadow);
+  margin-bottom: 48px; position: relative; overflow: hidden;
+}
+.hero-strip .watermark { position: absolute; right: 36px; top: 16px; font-size: 160px; color: rgba(196,158,64,0.06); line-height: 1; pointer-events: none; }
+.hero-strip h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem,5vw,4.5rem); font-weight: 300; color: #fff8f0; margin-bottom: 6px; }
+.hero-strip .eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.hero-strip .sub { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: rgba(196,158,64,0.82); margin-bottom: 24px; }
+.stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+.stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(196,158,64,0.14); border-radius: 14px; padding: 14px 16px; }
+.stat-label { font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.stat-value { font-size: 0.95rem; color: #fff8f0; }
+
+/* ─── Divider ─────────────────────────────────── */
+.divider {
+  display: flex; align-items: center; gap: 16px; margin: 32px 0;
+  font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(240,232,216,0.3);
+}
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* ─── Spirit animal panel ─────────────────────── */
+.animal-panel {
+  border-radius: var(--r); padding: 44px 40px; text-align: center;
+  background: linear-gradient(135deg, rgba(28,18,56,0.98), rgba(60,30,80,0.96));
+  border: 1px solid rgba(124,92,191,0.22); box-shadow: var(--shadow);
+}
+.animal-emoji { font-size: 88px; margin-bottom: 16px; }
+.animal-title { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 300; color: var(--cream); margin-bottom: 6px; }
+.animal-sub { font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 22px; }
+.animal-body { max-width: 660px; margin: 0 auto; font-size: 0.95rem; line-height: 1.85; color: rgba(240,232,216,0.82); }
+.animal-body p + p { margin-top: 14px; }
+
+/* ─── Footer ──────────────────────────────────── */
+.footer {
+  text-align: center; padding: 20px 0; font-size: 0.72rem;
+  color: rgba(240,232,216,0.3); letter-spacing: 0.08em;
+  border-top: 1px solid var(--border); margin-top: 40px;
+}
+
+/* ─── Mobile ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+  .main { padding: 32px 20px 60px; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .month-grid { grid-template-columns: 1fr; }
+  .period-row { grid-template-columns: 1fr; gap: 4px; }
+  .hero-strip { padding: 30px 24px 26px; }
+  .hero-strip .watermark { display: none; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ═══ SIDEBAR ═══════════════════════════════════ -->
+<aside class="sidebar">
+  <div class="sb-animal">🦅</div>
+  <div class="sb-lagna">Scorpio Lagna 23.1°</div>
+  <div class="sb-name">Jordan</div>
+  <div class="sb-dasha">Rahu / Saturn / Sun · Aug 2026</div>
+
+  <div class="sb-stats">
+    <div class="sb-stat"><span class="sb-stat-label">Born</span><span class="sb-stat-val">10 Jul 1996</span></div>
+    <div class="sb-stat"><span class="sb-stat-label">Time</span><span class="sb-stat-val">4:25 PM</span></div>
+    <div class="sb-stat"><span class="sb-stat-label">Place</span><span class="sb-stat-val">Trivandrum</span></div>
+    <div class="sb-stat"><span class="sb-stat-label">Moon</span><span class="sb-stat-val">Bharani · Aries H6</span></div>
+    <div class="sb-stat"><span class="sb-stat-label">Yogas</span><span class="sb-stat-val">4 · Malavya ★★</span></div>
+    <div class="sb-stat"><span class="sb-stat-label">Darakaraka</span><span class="sb-stat-val">Saturn 13.5°</span></div>
+  </div>
+
+  <nav class="sb-nav">
+    <a href="#nature"><span class="icon">🌑</span> Core Nature</a>
+    <a href="#career"><span class="icon">💼</span> Career</a>
+    <a href="#relationships"><span class="icon">💞</span> Relationships</a>
+    <a href="#facts"><span class="icon">✨</span> Fun Facts</a>
+    <a href="#windows"><span class="icon">🗓️</span> Life Windows</a>
+    <a href="#shadow"><span class="icon">🌒</span> Shadow Side</a>
+    <a href="#animal"><span class="icon">🦅</span> Spirit Animal</a>
+    <a href="#forecast"><span class="icon">📅</span> Aug–Sep 2026</a>
+    <a href="#breakup"><span class="icon">💔</span> Breakup Reading</a>
+  </nav>
+</aside>
+
+<!-- ═══ MAIN ═══════════════════════════════════════ -->
+<main class="main">
+
+  <!-- Hero -->
+  <div class="hero-strip">
+    <div class="watermark">♏</div>
+    <div class="eyebrow">Vedic Natal Session · Lahiri Ayanamsha</div>
+    <h1>Jordan</h1>
+    <div class="sub">The Phoenix Rising — Scorpio Ascendant</div>
+    <div class="stat-grid">
+      <div class="stat"><div class="stat-label">Lagna</div><div class="stat-value">Scorpio 23.1°</div></div>
+      <div class="stat"><div class="stat-label">Dasha</div><div class="stat-value">Rahu/Saturn/Sun</div></div>
+      <div class="stat"><div class="stat-label">Yogas</div><div class="stat-value">4 Detected</div></div>
+      <div class="stat"><div class="stat-label">Moon</div><div class="stat-value">Bharani · H6</div></div>
+    </div>
+  </div>
+
+  <!-- ─── 1. Core Nature ─────────────────────────── -->
+  <section class="chapter" id="nature">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">🌑</div>
+      <h2><small>Chapter One</small>Core Nature & Personality</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Scorpio Lagna — The Transformer</div>
+      <p>Scorpio Ascendant gives Jordan a penetrating, all-or-nothing personality. The surface is composed; underneath is a constant, precise analysis of everyone in the room. This is not a person who dabbles — every commitment is total, every interest goes to the root.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Mars in Taurus H7 (Mrigashira) — Identity Through Partnership</div>
+      <p>The Lagna lord Mars sits in the 7th house in Taurus — a kendra in its own sign's mutual relationship. Jordan's identity is forged in the arena of partnerships and public dealings. The self is expressed most clearly when engaged with another. There is a protectiveness, even fierceness, toward people Jordan allies with.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>H8 Stellium — Sun + Mercury in Gemini (Punarvasu)</div>
+      <p>Sun and Mercury conjunct in the 8th house creates the <strong>Budha-Aditya Yoga</strong> — exceptional investigative intelligence — in the house of hidden knowledge, transformation, and depth. Jordan thinks in layers where others think in surfaces. This placement also forms a <strong>Viparita Raja Yoga</strong>: the 8th lord Mercury in the 8th house classically promises <em>rise through reversal</em> — career leaps often follow apparent setbacks.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Moon in Aries H6 — Bharani pada 4</div>
+      <p>The emotional core is fierce and action-oriented. Bharani's deity is Yama — the one who bears heavy things without complaint. Jordan processes emotions through doing, fixing, and solving, not through talking about them. The 6th house placement means the mind is always primed for crisis management — a powerful quality, but one that makes genuine rest elusive.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Venus in Taurus H7 — Rohini — Malavya Yoga ★★</div>
+      <p>Venus in its own sign creating a Pancha Mahapurusha Yoga in the 7th house gifts magnetic, graceful public presence. People are drawn to Jordan's quiet charm. There is an artist — or at least a deeply aesthetic sensibility — inside the strategist. Venus in Rohini brings fertility, beauty, and the power to make things grow.</p>
+    </div>
+
+    <div class="callout callout-gold">
+      <div class="callout-label">Core Signature</div>
+      Jordan's chart is built for depth, not breadth. Two strong planets in H7 (Mars + Venus) and a potent H8 stellium create someone who takes relationships and knowledge with equal seriousness — forming few alliances, but those formed are unshakeable.
+    </div>
+  </section>
+
+  <div class="divider">✦</div>
+
+  <!-- ─── 2. Career ──────────────────────────────── -->
+  <section class="chapter" id="career">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">💼</div>
+      <h2><small>Chapter Two</small>Career & Purpose</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Best Domains</div>
+      <div class="chip-row">
+        <span class="chip">Research & Intelligence</span>
+        <span class="chip">Psychology / Forensics</span>
+        <span class="chip">Strategic Finance</span>
+        <span class="chip">Negotiation & Deals</span>
+        <span class="chip">Technology with Depth</span>
+        <span class="chip">Investigative Journalism</span>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Career Architecture</div>
+      <table class="reading-table">
+        <tr><th>Factor</th><th>Placement</th><th>Meaning</th></tr>
+        <tr><td>10th house</td><td>Leo (Sun-ruled)</td><td>Career identity is noble, unconventional — not status-hungry</td></tr>
+        <tr><td>10th lord Sun</td><td>H8 Gemini</td><td>Career built in behind-the-scenes excellence, hidden domains, transformative work</td></tr>
+        <tr><td>Budha-Aditya Yoga</td><td>H8 Gemini</td><td>Recognized for sharp intellect; excels in environments that reward analytical depth</td></tr>
+        <tr><td>Viparita Raja Yoga</td><td>Mercury H8</td><td>Rise through adversity — unconventional path, breakthrough after apparent setback</td></tr>
+        <tr><td>Rahu in H11 Virgo</td><td>Hasta nakshatra</td><td>Amplified gains through networks; career accelerates via systematic professional circles</td></tr>
+        <tr><td>Mars in H7</td><td>Taurus (own kendra)</td><td>Leadership through partnership; excellent in roles requiring negotiation or client-facing depth</td></tr>
+      </table>
+    </div>
+
+    <div class="callout callout-gold">
+      <div class="callout-label">Career Signature</div>
+      Jordan shines in roles where others would crack under complexity. The 8th house Sun + Viparita Raja Yoga means this chart was built to turn crisis into mastery. Boardrooms, research labs, intelligence work — anywhere depth is the premium.
+    </div>
+  </section>
+
+  <div class="divider">✦</div>
+
+  <!-- ─── 3. Relationships ────────────────────────── -->
+  <section class="chapter" id="relationships">
+    <div class="chapter-header">
+      <div class="chapter-icon rose">💞</div>
+      <h2><small>Chapter Three</small>Relationships & Love</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>7th House — Powerfully Loaded</div>
+      <p>Both Mars (Lagna lord) and Venus (Malavya Yoga) sit in the 7th house in Taurus — their own sign. This rare double planetary dignity in H7 creates deep magnetic pull in all partnerships. Jordan does not form casual bonds. When someone is allowed in, the connection is total. This also creates intensity and possessiveness as the shadow.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>Darakaraka — Saturn at 13.5° (Uttara Bhadrapada · H5 Pisces)</div>
+      <p>The soul-level significator of the spouse is Saturn — serious, spiritually oriented, quietly disciplined. Placed in H5 Pisces with Ketu, the partner has an instinctual wisdom, possibly from prior-life spiritual practice. This is not a flashy partner — someone whose depth is only visible to those who get close. The partner is likely met through creative, spiritual, or studious contexts, not through conventional socializing.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-gold"></div>Relationship Dynamics</div>
+      <table class="reading-table">
+        <tr><th>Factor</th><th>Placement</th><th>Reading</th></tr>
+        <tr><td>7th lord (Mars)</td><td>H7 Taurus, own sign</td><td><span class="badge badge-protect">Protective</span> Very strong — relationship lord in its own house</td></tr>
+        <tr><td>Venus (Malavya)</td><td>H7 Taurus, Rohini</td><td><span class="badge badge-protect">Protective</span> Grace, longevity, beauty in all significant partnerships</td></tr>
+        <tr><td>Jupiter (R)</td><td>H2 Sagittarius</td><td><span class="badge badge-protect">Protective</span> Aspects H8 — wisdom protects hidden/transformation matters</td></tr>
+        <tr><td>Darakaraka Saturn</td><td>H5 Pisces + Ketu</td><td><span class="badge badge-mixed">Mixed</span> Spiritual, deep partner — but delay and solemnity in love</td></tr>
+        <tr><td>Moon in H6 Aries</td><td>Bharani — Yama</td><td><span class="badge badge-risk">Watch</span> Emotional volatility under stress; mind processes love through action</td></tr>
+      </table>
+    </div>
+
+    <div class="callout callout-sage">
+      <div class="callout-label">Partner Profile</div>
+      Spiritually inclined, emotionally contained, highly principled. Not easily found in crowds — more likely in a library, a meditation space, or a serious intellectual setting. When the right person arrives, the connection is recognized immediately and on both sides.
+    </div>
+  </section>
+
+  <div class="divider">✦</div>
+
+  <!-- ─── 4. Fun Facts ────────────────────────────── -->
+  <section class="chapter" id="facts">
+    <div class="chapter-header">
+      <div class="chapter-icon gold">✨</div>
+      <h2><small>Chapter Four</small>Fun Facts & Hidden Gems</h2>
+    </div>
+
+    <ul class="fun-list">
+      <li><strong>Venus + Mars together in H7, both in own sign.</strong> This is a rare double dignity in the relationship house. Jordan is simultaneously the magnetic pull (Venus/Rohini) and the protective warrior (Mars/Mrigashira) in every partnership — a self-contained love archetype.</li>
+      <li><strong>Ketu in Revati nakshatra (H5).</strong> Revati is the very last nakshatra — the nakshatra of completion and cosmic endings. Ketu here suggests a soul that has "been here before" — past-life mastery in mystical arts, music, divination, or spiritual knowledge bleeding into this life as raw instinctive knowing.</li>
+      <li><strong>Viparita Raja Yoga (Mercury H8).</strong> Classically: rise through reversal, resilience, and unexpected gains after adversity. The setbacks in Jordan's career are not obstacles — they are the mechanism. Every apparent failure reorganizes into a stronger position.</li>
+      <li><strong>Saturn + Ketu both in H5 Pisces.</strong> Two profoundly spiritual planets in the house of creativity and intelligence. Ideas take years to crystallize but are built to last decades. Jordan's best creative work will come slowly and be impossible to replicate.</li>
+      <li><strong>Jupiter retrograde in Sagittarius H2 (own sign).</strong> Jupiter in its highest dignity but retrograde — wisdom is deeply internal, almost private. Jordan's philosophical framework is more sophisticated than it appears outwardly. The teaching often comes through silence, not proclamation.</li>
+    </ul>
+  </section>
+
+  <div class="divider">✦</div>
+
+  <!-- ─── 5. Life Windows ─────────────────────────── -->
+  <section class="chapter" id="windows">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🗓️</div>
+      <h2><small>Chapter Five</small>Life Windows</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>Career Breakthrough Windows</div>
+      <div class="period-row" style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="period-window">Now–Nov 2027</div>
+        <div class="period-dasha">Rahu / Saturn</div>
+        <div class="period-theme">Restructuring and discipline. Not the launch period — the foundation-setting period. Steady work now pays in 2028+.</div>
+      </div>
+      <div class="period-row">
+        <div class="period-window">Nov 2027–Sep 2030</div>
+        <div class="period-dasha">Rahu / Mercury</div>
+        <div class="period-theme">H8 stellium activates fully. Sharp strategic breakthroughs — intelligence, research, finance, analytical roles peak. Strongest career window of the decade.</div>
+      </div>
+      <div class="period-row">
+        <div class="period-window">Oct 2031–Oct 2034</div>
+        <div class="period-dasha">Rahu / Venus</div>
+        <div class="period-theme">Malavya Yoga Venus fires. Creative, partnership-based ventures, luxury, beauty, media, or co-founder alliances reach maximum potential.</div>
+      </div>
+      <div class="period-row">
+        <div class="period-window">2038 onward</div>
+        <div class="period-dasha">Jupiter MD</div>
+        <div class="period-theme">Jupiter in own sign Sagittarius H2. Wealth accumulation, philosophical leadership, teaching, and legacy recognition begin.</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-rose"></div>Marriage & Partnership Windows</div>
+      <div class="period-row" style="border-top: 1px solid rgba(255,255,255,0.05);">
+        <div class="period-window">Nov 2027–Sep 2030</div>
+        <div class="period-dasha">Rahu / Mercury</div>
+        <div class="period-theme">Mercury activates Darakaraka Saturn's house energy. A significant relationship encounter — could be meeting, deepening, or formalizing a bond.</div>
+      </div>
+      <div class="period-row">
+        <div class="period-window">Oct 2031–Oct 2034</div>
+        <div class="period-dasha">Rahu / Venus</div>
+        <div class="period-theme">Strongest window. Venus Malavya Yoga fires directly in the partnership house. If a marriage or serious commitment is to happen, this is the most powerfully supported period.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider">✦</div>
+
+  <!-- ─── 6. Shadow Side ─────────────────────────── -->
+  <section class="chapter" id="shadow">
+    <div class="chapter-header">
+      <div class="chapter-icon rose">🌒</div>
+      <h2><small>Chapter Six</small>Shadow Side</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-rose"></div>Honest Assessment</div>
+      <table class="reading-table">
+        <tr><th>Pattern</th><th>Source</th><th>How It Shows</th></tr>
+        <tr><td><strong>Possessiveness</strong></td><td>Mars + Venus in H7 Taurus (fixed sign)</td><td>Fierce attachment in love; can become quietly controlling under stress without realizing it</td></tr>
+        <tr><td><strong>Hyper-vigilance</strong></td><td>Moon in Aries H6 (Bharani)</td><td>The mind is always scanning for threats — even in safe environments. Hard to fully exhale.</td></tr>
+        <tr><td><strong>Secrecy</strong></td><td>H8 Sun + Mercury</td><td>Withholds information instinctively, even when transparency would serve. Partners may feel shut out.</td></tr>
+        <tr><td><strong>Stubbornness</strong></td><td>Fixed Taurus stellium (Mars + Venus)</td><td>Course-corrections come slowly and reluctantly. Pride is attached to original positions.</td></tr>
+        <tr><td><strong>Burnout cycles</strong></td><td>Bharani Moon + H8 depth + Saturn/Ketu H5</td><td>Quietly carries enormous weight until collapse. Does not ask for help early enough.</td></tr>
+      </table>
+    </div>
+
+    <div class="callout callout-rose">
+      <div class="callout-label">The Root Pattern</div>
+      Almost all of Jordan's shadow traits trace to the same source: the belief that showing the inner process is dangerous. The H8 placement teaches through repeated experience that the deepest wounds come from premature revelation. The antidote is selective — not total — transparency. The wall is not the problem. Where it goes up is.
+    </div>
+  </section>
+
+  <div class="divider">✦</div>
+
+  <!-- ─── 7. Spirit Animal ────────────────────────── -->
+  <section class="chapter" id="animal">
+    <div class="chapter-header">
+      <div class="chapter-icon plum">🦅</div>
+      <h2><small>Chapter Seven</small>Spirit Animal</h2>
+    </div>
+
+    <div class="animal-panel">
+      <div class="animal-emoji">🦅</div>
+      <div class="animal-title">The Phoenix — Black Eagle</div>
+      <div class="animal-sub">Scorpio Lagna · Bharani Moon · Viparita Raja Yoga</div>
+      <div class="animal-body">
+        <p>The Phoenix is born from ash and flies like an eagle — and Jordan's chart is structured precisely this way. <strong>Scorpio Lagna</strong> (the death-and-rebirth sign) + <strong>Moon in Bharani</strong> (Yama's nakshatra, the one who carries weight across the threshold) + <strong>Viparita Raja Yoga</strong> (literally: rise through reversal) — this is the Phoenix pattern. Jordan doesn't merely survive difficulty; the difficulty is the fuel.</p>
+        <p>The <strong>H8 Sun and Mercury stellium</strong> deepens this: the ego and the mind both live in the house of transformation, occult depth, and radical change. This is the eagle's piercing sight — not looking at surfaces but through them, scanning what lies beneath with uncanny precision.</p>
+        <p>The <strong>Venus-Malavya Yoga in H7 Rohini</strong> adds the Phoenix's fire-gold plumage: this is not the grasping, reactive Scorpio. It's the bird that soars, sees everything clearly, and descends with grace. The deepest breakthroughs in Jordan's life will always follow periods that looked like endings.</p>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top:16px;">
+      <div class="section-title"><div class="dot dot-plum"></div>Meta AI Image Prompt</div>
+      <pre style="background:rgba(0,0,0,0.3);border:1px solid rgba(196,158,64,0.15);border-radius:12px;padding:16px;font-size:0.78rem;color:rgba(240,232,216,0.75);white-space:pre-wrap;line-height:1.7;">A powerful dark phoenix rising from cosmic embers, its wings spanning a deep indigo sky. The bird's feathers glow with deep crimson and gold, laced with the glyph of Scorpio ♏ on its chest, the symbol of Gemini ♊ glowing in its third eye, and the Mars sigil ♂ embedded at the crown. Planets float in the dark background — Taurus ♉ glowing amber near H7, the Moon in Aries ♈ rising through mist below, Saturn and Ketu as twin blue stars at the base. Ancient Sanskrit mantra characters curl into the smoke beneath the wings. Mystical dark cosmic background, painterly surreal digital art, ultra detailed. --ar 3:4</pre>
+    </div>
+  </section>
+
+  <div class="divider">✦</div>
+
+  <!-- ─── 8. Aug–Sep Forecast ────────────────────── -->
+  <section class="chapter" id="forecast">
+    <div class="chapter-header">
+      <div class="chapter-icon blue">📅</div>
+      <h2><small>Chapter Eight</small>Relationship Forecast — Aug & Sep 2026</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-blue"></div>Dasha Context</div>
+      <p>Running: <strong>Rahu/Saturn/Sun</strong>. Saturn bhukti runs Jan 2025–Nov 2027 — Saturn sits natally in H5 Pisces (romance house) with Ketu. This entire bhukti is designed to cool and restructure romantic connections. The antardasha of Sun (H8) adds transformation and intensity to career and hidden matters.</p>
+    </div>
+
+    <div class="month-grid">
+      <div class="month-card">
+        <h3>🌑 August 2026</h3>
+        <div class="month-row">
+          <div class="label">7th lord Mars transit</div>
+          <div class="value">H8 Gemini — guarded, intense, emotionally opaque</div>
+        </div>
+        <div class="month-row">
+          <div class="label">Venus transit</div>
+          <div class="value">H11 Virgo (debilitated) — social expansion but shallow</div>
+        </div>
+        <div class="month-row">
+          <div class="label">Jupiter transit</div>
+          <div class="value">Exalted Cancer H9 — protective aspect on Lagna</div>
+        </div>
+        <div class="month-row">
+          <div class="label">Best days</div>
+          <div class="value">Aug 26–28: Moon + Jupiter in Cancer H9 — clarity, meaningful conversation</div>
+        </div>
+        <div class="month-row">
+          <div class="label">Watch days</div>
+          <div class="value">Aug 14–16: Moon activates Mars H8 — tension spike</div>
+        </div>
+        <div class="month-row">
+          <div class="label">Rating</div>
+          <div class="value"><span class="badge badge-risk">5.5 / 10</span> Friction in the air; guarded emotional communication</div>
+        </div>
+      </div>
+
+      <div class="month-card">
+        <h3>🌕 September 2026</h3>
+        <div class="month-row">
+          <div class="label">7th lord Mars transit</div>
+          <div class="value">H8 Gemini — continues, friction pattern persists</div>
+        </div>
+        <div class="month-row">
+          <div class="label">Venus transit</div>
+          <div class="value">H12 Libra (own sign) — private intimacy, deep one-on-one</div>
+        </div>
+        <div class="month-row">
+          <div class="label">Jupiter transit</div>
+          <div class="value">Exalted Cancer H9 — continues, aspect on Lagna</div>
+        </div>
+        <div class="month-row">
+          <div class="label">Best days</div>
+          <div class="value">Sep 18–20: Moon in Scorpio Lagna — personal magnetism peak</div>
+        </div>
+        <div class="month-row">
+          <div class="label">Watch days</div>
+          <div class="value">Sep 1–3: Moon in Libra H12 — fatigue, low energy</div>
+        </div>
+        <div class="month-row">
+          <div class="label">Rating</div>
+          <div class="value"><span class="badge badge-mixed">7 / 10</span> Better if channeled privately — retreat, quiet bonding</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout callout-plum">
+      <div class="callout-label">August vs. September</div>
+      August opens socially but lacks depth — Venus debilitated in H11, 7th lord in H8. September closes socially but deepens privately — Venus in own sign in H12. August for expanding circles. September for going deeper with one person in quiet.
+    </div>
+  </section>
+
+  <div class="divider">✦</div>
+
+  <!-- ─── 9. Breakup Reading ─────────────────────── -->
+  <section class="chapter" id="breakup">
+    <div class="chapter-header">
+      <div class="chapter-icon rose">💔</div>
+      <h2><small>Chapter Nine</small>Breakup Reading — Patch Up or Friendship?</h2>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-sage"></div>Natal H7 Gravity — The Foundation</div>
+      <p><strong>[Mars in Taurus H7, own-sign kendra]</strong> — The 7th lord sitting in its own house in a kendra is one of the strongest placements for relationship permanence in Jyotish. <strong>[Venus in Taurus H7, Malavya Yoga]</strong> — A Pancha Mahapurusha Yoga right in the partnership house. Jordan's chart was built for depth, not disposability. Important relationships have a gravitational pull that keeps people in orbit — even after rupture.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-rose"></div>Why the Breakup is Happening Now</div>
+      <p><strong>Saturn bhukti (Jan 2025 – Nov 2027)</strong>: Saturn sits in H5 Pisces with Ketu. H5 is the house of romance and courtship — the <em>falling in love</em> house. Saturn + Ketu in H5 during their own bhukti = a structured cooling and spiritual detachment from romance. <em>This dasha was designed to create separation.</em> The breakup is a dasha event, not the natal chart's verdict on this person.</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>Full Picture Assessment</div>
+      <table class="reading-table">
+        <tr><th>Question</th><th>Chart Signal</th><th>Verdict</th></tr>
+        <tr>
+          <td><strong>Permanent ending?</strong></td>
+          <td>Natal H7 too strong — two planets in own sign</td>
+          <td><span class="badge badge-protect">Unlikely</span> This person doesn't fully leave Jordan's orbit</td>
+        </tr>
+        <tr>
+          <td><strong>Patch up now (2026–27)?</strong></td>
+          <td>Saturn bhukti actively cooling romance until Nov 2027</td>
+          <td><span class="badge badge-risk">Not favored</span> Forcing reunion before Nov 2027 likely fails</td>
+        </tr>
+        <tr>
+          <td><strong>Patch up later?</strong></td>
+          <td>Rahu/Venus bhukti (Oct 2031 – Oct 2034)</td>
+          <td><span class="badge badge-mixed">Possible</span> Venus Malavya fires — strongest reunion window</td>
+        </tr>
+        <tr>
+          <td><strong>Stay friends?</strong></td>
+          <td>Rahu in H11 (friendships/gains) + Scorpio emotional memory</td>
+          <td><span class="badge badge-protect">Most likely</span> Romantic bond transmutes; friendship endures</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section">
+      <div class="section-title"><div class="dot dot-plum"></div>Why Friendship is the Natural Outcome</div>
+      <p><strong>[Rahu in H11 Virgo, Hasta nakshatra]</strong> — Rahu's placement in the 11th house during its 18-year Mahadasha means Jordan's social gains and meaningful connections are amplified through this house. H11 is friendships, networks, and gains. A person who was a romantic partner has a natural place to land here — as a trusted friend or enduring presence in the network.</p>
+      <p style="margin-top:10px;"><strong>[Moon in Bharani · Scorpio nature]</strong> — Bharani's deity Yama holds things after death. Jordan's emotional style does not fully release people who mattered. The bond doesn't dissolve — it transforms into a different container. Scorpio natures almost never turn significant former partners into strangers.</p>
+    </div>
+
+    <div class="callout callout-rose">
+      <div class="callout-label">Bottom Line</div>
+      The breakup is written in the dasha — not in the heart of the relationship. Saturn bhukti creates the cooling; it doesn't erase the natal gravity. <strong>Friendship is the most probable sustained outcome.</strong> If reconciliation happens, it belongs to 2031–2034. Trying to force it before then adds pain without changing the outcome.
+    </div>
+
+    <div class="callout callout-plum" style="margin-top:14px;">
+      <div class="callout-label">Rahu/Venus Window (Oct 2031 – Oct 2034)</div>
+      Venus is the Malavya Yoga lord sitting in H7 in its own sign. When Venus bhukti activates within Rahu MD, the 7th house's full gravitational power is switched on. If this person is still within orbit — and Rahu H11 suggests they will be, as a friend — this window brings either reconciliation or a new partnership of equal or greater depth.
+    </div>
+  </section>
+
+  <div class="footer">Generated 31 Aug 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Trivandrum, Kerala</div>
+
+</main>
+</div>
+</body>
+</html>
