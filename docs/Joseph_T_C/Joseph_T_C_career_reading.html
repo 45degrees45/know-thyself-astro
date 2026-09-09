@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Joseph T C — Career Path Reading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border: rgba(196,158,64,0.18);
+  --gold: #c49e40;
+  --gold2: #e8c96a;
+  --cream: #f0e8d8;
+  --muted: rgba(240,232,216,0.55);
+  --plum: #7c5cbf;
+  --rose: #c4607a;
+  --sage: #5a8f72;
+  --blue: #5b8fd4;
+  --shadow: 0 20px 60px rgba(0,0,0,0.45);
+  --r: 22px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  min-height: 100vh;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 36px 20px 36px 24px;
+  border-right: 1px solid var(--border);
+  background: rgba(11,11,24,0.92);
+  backdrop-filter: blur(12px);
+}
+.sidebar-animal { font-size: 56px; text-align: center; margin-bottom: 16px; }
+.sidebar h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--cream); margin-bottom: 4px; }
+.sidebar-lagna { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.sidebar-stat { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid rgba(196,158,64,0.08); font-size: 0.8rem; }
+.sidebar-stat-label { color: var(--muted); }
+.sidebar-stat-value { color: var(--cream); font-weight: 500; }
+.sidebar-nav { margin-top: 28px; }
+.sidebar-nav-label { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.nav-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 10px; font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: all 0.2s; margin-bottom: 4px; }
+.nav-link:hover { background: rgba(196,158,64,0.07); color: var(--cream); }
+.nav-icon { font-size: 1rem; width: 22px; text-align: center; }
+.verdict-badge { display: inline-block; padding: 5px 14px; border-radius: 999px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(196,96,122,0.2); color: #e8909f; border: 1px solid rgba(196,96,122,0.35); margin-top: 14px; }
+.main { padding: 48px 52px 80px; max-width: 860px; }
+.page-hero { margin-bottom: 48px; }
+.eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3.2rem); font-weight: 300; color: #fff8f0; line-height: 1.15; }
+.page-hero p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-top: 14px; max-width: 600px; }
+.chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+.chapter-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.chapter-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.chapter-icon.rose { background: rgba(196,96,122,0.15); }
+.chapter-icon.gold { background: rgba(196,158,64,0.12); }
+.chapter-icon.sage { background: rgba(90,143,114,0.14); }
+.chapter-icon.plum { background: rgba(124,92,191,0.14); }
+.chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--cream); }
+.chapter h2 small { display: block; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+.section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 28px; margin-bottom: 16px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--cream); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-gold { background: var(--gold); }
+.dot-rose { background: var(--rose); }
+.dot-sage { background: var(--sage); }
+.dot-plum { background: var(--plum); }
+.section p { font-size: 0.9rem; color: rgba(240,232,216,0.8); line-height: 1.75; }
+.section p + p { margin-top: 10px; }
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 16px; }
+.callout-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+.callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+.callout-rose .callout-label { color: var(--rose); }
+.callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+.callout-gold .callout-label { color: var(--gold); }
+.callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+.callout-sage .callout-label { color: var(--sage); }
+.callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+.callout-plum .callout-label { color: #b49edf; }
+.reading-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-top: 16px; }
+.reading-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+.reading-table td { padding: 10px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+.reading-table tr:last-child td { border-bottom: none; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.badge-risk { background: rgba(196,96,122,0.18); color: #e8909f; }
+.badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+.badge-mixed { background: rgba(196,158,64,0.15); color: #e8c96a; }
+.path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.path-card { background: rgba(90,143,114,0.06); border: 1px solid rgba(90,143,114,0.18); border-radius: 14px; padding: 18px 20px; }
+.path-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #80c4a0; margin-bottom: 6px; }
+.path-card p { font-size: 0.82rem; color: rgba(240,232,216,0.7); line-height: 1.6; }
+.divider { display: flex; align-items: center; gap: 16px; margin: 32px 0; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(240,232,216,0.3); }
+.divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.footer { text-align: center; padding: 20px 0; font-size: 0.72rem; color: rgba(240,232,216,0.3); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 40px; }
+.timing-box { background: rgba(196,158,64,0.07); border: 1px solid rgba(196,158,64,0.22); border-radius: 16px; padding: 22px 26px; margin-top: 16px; }
+.timing-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold2); margin-bottom: 8px; }
+.timing-box p { font-size: 0.88rem; color: rgba(240,232,216,0.78); line-height: 1.7; }
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; }
+  .main { padding: 32px 20px 60px; }
+  .path-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-animal">🦢</div>
+    <h2>Joseph T C</h2>
+    <div class="sidebar-lagna">Sagittarius Lagna · 2.8°</div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Born</span><span class="sidebar-stat-value">05 Aug 1984</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Place</span><span class="sidebar-stat-value">Aluva, Kerala</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Age</span><span class="sidebar-stat-value">42</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Dasha</span><span class="sidebar-stat-value">Venus / Venus / Mercury</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Spirit Animal</span><span class="sidebar-stat-value">Hamsa Swan 🦢</span></div>
+    <div class="verdict-badge">⚠ Wrong Fit for MNC</div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Chapters</div>
+      <a href="#verdict" class="nav-link"><span class="nav-icon">⚖️</span>The Verdict</a>
+      <a href="#architecture" class="nav-link"><span class="nav-icon">🔭</span>Career Architecture</a>
+      <a href="#paths" class="nav-link"><span class="nav-icon">🗺️</span>Right Paths</a>
+      <a href="#timing" class="nav-link"><span class="nav-icon">⏳</span>Timing</a>
+    </nav>
+  </aside>
+  <main class="main">
+    <div class="page-hero">
+      <div class="eyebrow">Vedic Career Reading · Lahiri Ayanamsha</div>
+      <h1>Is This a 9-5 MNC Chart?</h1>
+      <p>A placement-by-placement career analysis using Jyotish — examining lagna temperament, 10th lord nakshatra, yoga signatures, and dasha timing to determine the right career path.</p>
+    </div>
+
+    <div class="chapter" id="verdict">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">⚖️</div>
+        <h2><small>The Verdict</small>Strongly Contra-Indicated</h2>
+      </div>
+      <div class="callout callout-rose">
+        <div class="callout-label">Bottom Line</div>
+        A 9-5 MNC job for this chart is like putting a swan in a hen-house. Technically possible — but the animal is wrong for the environment. And the animal knows it. Every key indicator in this chart points away from conventional employment toward independent, wisdom-based work.
+      </div>
+      <table class="reading-table" style="margin-top:20px;">
+        <tr><th>Placement</th><th>Signal</th><th>Verdict</th></tr>
+        <tr><td>Sagittarius Lagna</td><td>Philosophical, freedom-loving, needs meaning over security</td><td><span class="badge badge-risk">Wrong Fit</span></td></tr>
+        <tr><td>Jupiter H1 Mula (Hamsa Yoga)</td><td>Wisdom-guide archetype, not corporate subordinate</td><td><span class="badge badge-risk">Wrong Fit</span></td></tr>
+        <tr><td>Mercury + Venus H9 (10th lord in dharma house)</td><td>Career lives in teaching/advisory, not office execution</td><td><span class="badge badge-risk">Wrong Fit</span></td></tr>
+        <tr><td>Sun H8 Ashlesha</td><td>Corporate hierarchies become a wound — disruption and tension</td><td><span class="badge badge-risk">Wrong Fit</span></td></tr>
+        <tr><td>Moon + Mars + Ketu H12 (Viparita Raja Yoga)</td><td>Rises precisely by operating OUTSIDE conventional structures</td><td><span class="badge badge-risk">Wrong Fit</span></td></tr>
+        <tr><td>Saturn exalted H11</td><td>Income builds through networks and disciplined output, not salary</td><td><span class="badge badge-mixed">Independent</span></td></tr>
+      </table>
+    </div>
+
+    <div class="chapter" id="architecture">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🔭</div>
+        <h2><small>Career Architecture</small>How the Chart Is Wired</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Layer 1 — The 10th Lord's Nakshatra</div>
+        <p><strong>Mercury at 16.2° Leo = Purva Phalguni nakshatra (pada 1, Venus sub-lord)</strong></p>
+        <p>Deity: Bhaga — god of prosperity, enjoyment, and creative generosity. Shakti: power of creation. The career involves <em>bringing things into existence</em> — content, ideas, frameworks, teachings. Mercury in Leo adds performance and stage: someone who communicates in front of people, not behind a desk. Venus conjunct Mercury (Magha nakshatra, Ketu-ruled) adds ancestral authority — the teacher who speaks with depth, not just information.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Layer 2 — H10 Lord Sits in H9</div>
+        <p>When the 10th lord (Mercury) lives in H9 (dharma, higher knowledge, teaching, philosophy, foreign), the career doesn't just <em>support</em> dharma — it <em>is</em> dharma. The work and the calling are the same thing. The Sun (H9 lord) in H8 deepens this: the dharma has transformative, hidden, unconventional dimensions. Wisdom earned through going through things — not from a university chair.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Layer 3 — H11 Lord and Income Source</div>
+        <p><strong>Venus (H11 lord) in H9 with Mercury.</strong> Income comes from teaching, advisory work, knowledge content, one-to-many influence. Not time-for-money employment. <strong>Saturn exalted H11 (Swati nakshatra)</strong> — Swati is the young sapling bending in the wind: independent, self-reliant, survives by flexibility. Income builds slowly and durably through networks. Not a salary spike — a deep readership and clientele built over years.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Layer 4 — Viparita Raja Yoga (H12 Stellium)</div>
+        <p><strong>Moon + Mars + Ketu all in Scorpio H12.</strong> The classical rise-through-apparent-loss yoga. The chart wins precisely by operating from edges, isolation, and unconventional positions. The moment this person enters a conventional corporate track, they cut off the energy source that makes them rise. The Ketu MD (2016–2023) — those 7 years that looked like career loss — were the chart accumulating the depth that Saturn H11 will monetize across the Venus MD (2023–2043).</p>
+      </div>
+    </div>
+
+    <div class="chapter" id="paths">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">🗺️</div>
+        <h2><small>Career Paths</small>What This Chart Is Built For</h2>
+      </div>
+      <div class="callout callout-sage">
+        <div class="callout-label">Core Formula</div>
+        Jupiter in Mula nakshatra (Ketu-ruled, deity = Nirriti, goddess of dissolution) = work that involves uprooting false beliefs and getting to the root. Not life-optimization content. Transformation work. The Hamsa Swan separates milk from water — discernment is the profession.
+      </div>
+      <div class="path-grid">
+        <div class="path-card">
+          <h4>Executive / Life Coach</h4>
+          <p>Jupiter Hamsa H1, Moon+Mars H12 (emotional depth from lived experience), Viparita Raja (risen through adversity). Ideal: 1-on-1 or group programs for leaders and founders.</p>
+        </div>
+        <div class="path-card">
+          <h4>Teacher / Knowledge Entrepreneur</h4>
+          <p>Mercury 10th lord Purva Phalguni Leo (creative output), Saturn H11 (slow steady audience build). Courses, workshops, seminars in philosophy, career, or inner work.</p>
+        </div>
+        <div class="path-card">
+          <h4>Writer / Author</h4>
+          <p>Mercury Purva Phalguni (creative output), Venus Magha (ancestral authority of voice), Saturn H11 (builds over decades). Books, essays, newsletter — works that compound.</p>
+        </div>
+        <div class="path-card">
+          <h4>Speaker / Podcast / Long-form Content</h4>
+          <p>Mercury+Venus Leo (stage, performance), Jupiter H1 (commanding presence), Rahu H6 Ardra (digital platforms). The voice is the product.</p>
+        </div>
+        <div class="path-card">
+          <h4>Strategic Advisor / Consultant</h4>
+          <p>Mercury 10th lord in H9 (advisory dharma), Saturn exalted H11 (institutional networks), Rahu H6 (competitive edge). B2B consulting, retainer clients in knowledge-intensive fields.</p>
+        </div>
+        <div class="path-card">
+          <h4>Spiritual Direction / Transformation Work</h4>
+          <p>Jupiter Mula (get to the root, dissolve illusion), Ketu H12 + Sun H8 (esoteric depth), Moon Anuradha H12 (Scorpionic emotional intelligence). Most dharmic expression.</p>
+        </div>
+      </div>
+      <div class="callout callout-plum" style="margin-top:24px;">
+        <div class="callout-label">Ideal Domain Overlap</div>
+        Career + life transitions coaching (lived it during Ketu MD) · Philosophy / meaning-making (Sagittarius lagna) · Psychology / inner work (Ashlesha Sun + Moon H12) · Business advisory for purpose-driven founders (Mercury+Venus H9 + Saturn H11 networks)
+      </div>
+    </div>
+
+    <div class="chapter" id="timing">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">⏳</div>
+        <h2><small>Timing</small>The Window That Is Open Now</h2>
+      </div>
+      <div class="timing-box">
+        <h4>Venus / Venus / Mercury — ends October 22, 2026</h4>
+        <p>This is the single best career sub-period of the entire 2023–2027 window. Mercury is the 10th lord, activated at the antara level, conjunct Venus in H9. Best for: consulting offer, course launch, book proposal, coaching practice, contracts, communication work, professional decisions. After Oct 22 comes Venus/Venus/Ketu = detachment, endings — not a launch window.</p>
+      </div>
+      <table class="reading-table" style="margin-top:20px;">
+        <tr><th>Period</th><th>Dates</th><th>Theme</th></tr>
+        <tr><td>Venus/Venus/Mercury</td><td>May – Oct 2026</td><td><span class="badge badge-protect">Best now</span> Contracts, consulting, writing, teaching decisions</td></tr>
+        <tr><td>Venus/Venus/Ketu</td><td>Oct 2026 – Jan 2027</td><td><span class="badge badge-mixed">Simplify</span> Close loose ends, not for expansion</td></tr>
+        <tr><td>Venus/Sun</td><td>2027 – 2028</td><td><span class="badge badge-mixed">Transform</span> Role change, restructuring, pressure</td></tr>
+        <tr><td>Venus/Jupiter</td><td>2033 – 2036</td><td><span class="badge badge-protect">Peak</span> Wisdom, reputation, advisory, leadership</td></tr>
+        <tr><td>Venus/Mercury</td><td>2039 – 2042</td><td><span class="badge badge-protect">Peak</span> Best career period overall — 10th lord activated</td></tr>
+      </table>
+    </div>
+
+    <div class="footer">Career Reading · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Generated Sep 2026</div>
+  </main>
+</div>
+</body>
+</html>

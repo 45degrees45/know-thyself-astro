@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Sai — Career Path Reading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border: rgba(196,158,64,0.18);
+  --gold: #c49e40;
+  --gold2: #e8c96a;
+  --cream: #f0e8d8;
+  --muted: rgba(240,232,216,0.55);
+  --plum: #7c5cbf;
+  --rose: #c4607a;
+  --sage: #5a8f72;
+  --blue: #5b8fd4;
+  --shadow: 0 20px 60px rgba(0,0,0,0.45);
+  --r: 22px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  min-height: 100vh;
+}
+.layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; max-width: 1300px; margin: 0 auto; }
+.sidebar { position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 36px 20px 36px 24px; border-right: 1px solid var(--border); background: rgba(11,11,24,0.92); backdrop-filter: blur(12px); }
+.sidebar-animal { font-size: 56px; text-align: center; margin-bottom: 16px; }
+.sidebar h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--cream); margin-bottom: 4px; }
+.sidebar-lagna { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.sidebar-stat { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid rgba(196,158,64,0.08); font-size: 0.8rem; }
+.sidebar-stat-label { color: var(--muted); }
+.sidebar-stat-value { color: var(--cream); font-weight: 500; }
+.sidebar-nav { margin-top: 28px; }
+.sidebar-nav-label { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.nav-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 10px; font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: all 0.2s; margin-bottom: 4px; }
+.nav-link:hover { background: rgba(196,158,64,0.07); color: var(--cream); }
+.nav-icon { font-size: 1rem; width: 22px; text-align: center; }
+.verdict-badge { display: inline-block; padding: 5px 14px; border-radius: 999px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(90,143,114,0.18); color: #80c4a0; border: 1px solid rgba(90,143,114,0.3); margin-top: 14px; }
+.main { padding: 48px 52px 80px; max-width: 860px; }
+.page-hero { margin-bottom: 48px; }
+.eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3.2rem); font-weight: 300; color: #fff8f0; line-height: 1.15; }
+.page-hero p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-top: 14px; max-width: 600px; }
+.chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+.chapter-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.chapter-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.chapter-icon.rose { background: rgba(196,96,122,0.15); }
+.chapter-icon.gold { background: rgba(196,158,64,0.12); }
+.chapter-icon.sage { background: rgba(90,143,114,0.14); }
+.chapter-icon.plum { background: rgba(124,92,191,0.14); }
+.chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--cream); }
+.chapter h2 small { display: block; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+.section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 28px; margin-bottom: 16px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--cream); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-gold { background: var(--gold); }
+.dot-rose { background: var(--rose); }
+.dot-sage { background: var(--sage); }
+.dot-plum { background: var(--plum); }
+.section p { font-size: 0.9rem; color: rgba(240,232,216,0.8); line-height: 1.75; }
+.section p + p { margin-top: 10px; }
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 16px; }
+.callout-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+.callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+.callout-rose .callout-label { color: var(--rose); }
+.callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+.callout-gold .callout-label { color: var(--gold); }
+.callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+.callout-sage .callout-label { color: var(--sage); }
+.callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+.callout-plum .callout-label { color: #b49edf; }
+.reading-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-top: 16px; }
+.reading-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+.reading-table td { padding: 10px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+.reading-table tr:last-child td { border-bottom: none; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.badge-risk { background: rgba(196,96,122,0.18); color: #e8909f; }
+.badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+.badge-mixed { background: rgba(196,158,64,0.15); color: #e8c96a; }
+.path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.path-card { background: rgba(90,143,114,0.06); border: 1px solid rgba(90,143,114,0.18); border-radius: 14px; padding: 18px 20px; }
+.path-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #80c4a0; margin-bottom: 6px; }
+.path-card p { font-size: 0.82rem; color: rgba(240,232,216,0.7); line-height: 1.6; }
+.yoga-pill { display: inline-block; background: rgba(196,158,64,0.1); border: 1px solid rgba(196,158,64,0.22); border-radius: 999px; padding: 4px 12px; font-size: 0.75rem; color: var(--gold2); margin: 3px; }
+.timing-box { background: rgba(196,158,64,0.07); border: 1px solid rgba(196,158,64,0.22); border-radius: 16px; padding: 22px 26px; margin-top: 16px; }
+.timing-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold2); margin-bottom: 8px; }
+.timing-box p { font-size: 0.88rem; color: rgba(240,232,216,0.78); line-height: 1.7; }
+.footer { text-align: center; padding: 20px 0; font-size: 0.72rem; color: rgba(240,232,216,0.3); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 40px; }
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; }
+  .main { padding: 32px 20px 60px; }
+  .path-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-animal">🦅</div>
+    <h2>Sai</h2>
+    <div class="sidebar-lagna">Capricorn Lagna · 8.7°</div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Born</span><span class="sidebar-stat-value">24 Feb 1991</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Place</span><span class="sidebar-stat-value">Trivandrum, Kerala</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Age</span><span class="sidebar-stat-value">35</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Dasha</span><span class="sidebar-stat-value">Saturn / Saturn / Rahu</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Yoga Karaka</span><span class="sidebar-stat-value">Venus (exalted H3)</span></div>
+    <div class="verdict-badge">✓ Yes — But Only as Leader</div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Chapters</div>
+      <a href="#verdict" class="nav-link"><span class="nav-icon">⚖️</span>The Verdict</a>
+      <a href="#architecture" class="nav-link"><span class="nav-icon">🔭</span>Career Architecture</a>
+      <a href="#paths" class="nav-link"><span class="nav-icon">🗺️</span>Right Paths</a>
+      <a href="#timing" class="nav-link"><span class="nav-icon">⏳</span>Timing — Age 35</a>
+    </nav>
+  </aside>
+  <main class="main">
+    <div class="page-hero">
+      <div class="eyebrow">Vedic Career Reading · Lahiri Ayanamsha</div>
+      <h1>Is This a 9-5 MNC Chart?</h1>
+      <p>A placement-by-placement career analysis using Jyotish — examining Sasa Yoga, Yoga Karaka Venus, Hamsa Yoga, and the Saturn Mahadasha window to determine the right career trajectory at age 35.</p>
+    </div>
+
+    <div class="chapter" id="verdict">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">⚖️</div>
+        <h2><small>The Verdict</small>Conditional Yes — But Only at the Top</h2>
+      </div>
+      <div class="callout callout-sage">
+        <div class="callout-label">Bottom Line</div>
+        This is the most MNC-compatible chart of the group — but with a crucial catch. The Sasa Yoga (Saturn in own sign H1) creates organizational leaders and executives, not employees. Sai can thrive in structured institutional environments, but only when moving toward authority, not when sitting beneath it. The chart will feel increasingly claustrophobic in mid-level corporate roles. The trajectory must point toward the top — or toward founding something.
+      </div>
+      <table class="reading-table" style="margin-top:20px;">
+        <tr><th>Placement</th><th>Signal</th><th>Verdict</th></tr>
+        <tr><td>Saturn H1 Capricorn — Sasa Yoga</td><td>Pancha Mahapurusha: creates leaders, directors, organizational authority figures</td><td><span class="badge badge-protect">Yes — as Leader</span></td></tr>
+        <tr><td>Venus Yoga Karaka exalted H3 Pisces</td><td>10th lord exalted = strong career; H3 = initiative and self-driven effort, not waiting for promotion</td><td><span class="badge badge-protect">Self-Directed</span></td></tr>
+        <tr><td>Jupiter exalted H7 — Hamsa Yoga</td><td>Works in institutional settings only if partnerships are meaningful and wisdom-based</td><td><span class="badge badge-mixed">Conditional Fit</span></td></tr>
+        <tr><td>Moon H6 Gemini (Ardra nakshatra)</td><td>Emotional investment goes into work; can handle routine and complexity</td><td><span class="badge badge-protect">Work-Compatible</span></td></tr>
+        <tr><td>Budha-Aditya Yoga (Sun+Mercury H2)</td><td>Exceptional intelligence; strong for corporate strategy, analysis, financial acumen</td><td><span class="badge badge-protect">Corporate Strength</span></td></tr>
+        <tr><td>Rahu H1</td><td>Unconventional ambition; not content staying in a fixed box; bends rules to rise</td><td><span class="badge badge-mixed">Disruptive Driver</span></td></tr>
+      </table>
+      <div class="callout callout-rose" style="margin-top:16px;">
+        <div class="callout-label">The Trap to Avoid</div>
+        Sai settling into a "good stable corporate job" and staying there because it's comfortable. The Sasa Yoga + Yoga Karaka Venus exalted + Jupiter exalted is too much fire for that outcome to be fulfilling. The chart has the architecture of a founder or senior executive — using it as a mid-level analyst wastes the yogas.
+      </div>
+    </div>
+
+    <div class="chapter" id="architecture">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🔭</div>
+        <h2><small>Career Architecture</small>How the Chart Is Wired</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Layer 1 — Sasa Yoga (Saturn H1 Own Sign)</div>
+        <p><strong>Saturn in Capricorn H1 at 8.7° — Sasa Yoga, one of the five Pancha Mahapurusha yogas.</strong></p>
+        <p>In classical Jyotish, Sasa Yoga creates: a person of authority in organizational structures, a leader with strong administrative ability, someone who commands respect through discipline and responsibility. They often rise to prominent positions — executives, directors, army generals, CEOs. The common thread is <em>structural authority</em>. They don't thrive beneath hierarchy; they become the hierarchy.</p>
+        <p>Rahu also in H1 adds unconventional ambition and an unusual personal presence — the authority figure who doesn't look like the conventional boss.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Layer 2 — Yoga Karaka Venus Exalted H3</div>
+        <p><strong>Venus in Pisces H3 (8.2°, Uttara Bhadrapada nakshatra) — exalted Yoga Karaka.</strong></p>
+        <p>For Capricorn lagna, Venus rules both H5 (creativity, intelligence) and H10 (career, authority) — making it the most powerful planet in the chart. Venus in Pisces approaches exaltation point (27°) and is very strong. H3 = courage, initiative, self-directed effort, skills, and short ventures. An exalted Yoga Karaka in H3 means: career flourishes through <em>taking initiative</em>, building skills from the ground up, and self-driven effort — not through waiting for a promotion from above.</p>
+        <p>Uttara Bhadrapada nakshatra (Saturn-ruled, deity = Ahir Budhyana, the serpent of the deep): deep healing wisdom, the power to bring relief after storms. This is the placement of the advisor, healer, and counselor who operates with grace and depth.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Layer 3 — Jupiter Exalted H7 (Hamsa Yoga)</div>
+        <p><strong>Jupiter exalted in Cancer H7 (11.7°) — Hamsa Yoga, another Pancha Mahapurusha yoga.</strong></p>
+        <p>Hamsa creates wisdom, noble character, and deep emotional intelligence — especially in partnership and one-on-one domains. Jupiter exalted H7 = partnerships are a source of profound wisdom and growth. Combined with Ketu H7 = some detachment or unusual quality in partnerships, suggesting Sai may work with people going through deep psychological or spiritual challenges.</p>
+        <p>In a career context: the most fulfilling work involves guiding, advising, or treating individuals — not managing processes or products.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Layer 4 — Moon H6 Ardra and Budha-Aditya H2</div>
+        <p><strong>Moon in Gemini H6 (Ardra nakshatra, Rahu-ruled)</strong> = emotional energy is invested in work. Ardra = the storm, the one who thrives in complexity, disruption, research, and technology-adjacent environments. Moon H6 = can handle daily demands and service routine without emotional collapse — unusual for an independent-path chart.</p>
+        <p><strong>Budha-Aditya Yoga (Sun + Mercury H2 Aquarius)</strong> = exceptional intelligence, eloquent communication, financial acumen. H2 = wealth. This combination produces someone who earns well through intellectual work and has strong financial strategic instincts.</p>
+      </div>
+
+      <div style="margin-top:16px; padding:16px 0;">
+        <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;">Key Yogas</div>
+        <span class="yoga-pill">Sasa Yoga</span>
+        <span class="yoga-pill">Hamsa Yoga</span>
+        <span class="yoga-pill">Yoga Karaka Venus</span>
+        <span class="yoga-pill">Budha-Aditya Yoga</span>
+        <span class="yoga-pill">Jupiter Exalted H7</span>
+        <span class="yoga-pill">Venus Exalted H3</span>
+      </div>
+    </div>
+
+    <div class="chapter" id="paths">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">🗺️</div>
+        <h2><small>Career Paths</small>What This Chart Is Built For</h2>
+      </div>
+      <div class="callout callout-sage">
+        <div class="callout-label">Core Formula</div>
+        Venus Yoga Karaka exalted in Uttara Bhadrapada (deep healing, bringing relief after storms) + Jupiter Hamsa exalted H7 (wisdom in partnerships) + Sasa Yoga (organizational authority) = a person designed to lead healing, counseling, educational, or institutional structures. Not to execute within them — to run them.
+      </div>
+      <div class="path-grid">
+        <div class="path-card">
+          <h4>Healthcare Leadership</h4>
+          <p>Moon H6 (service/health domain), Jupiter exalted H7 (wisdom-medicine), Yoga Karaka Venus Uttara Bhadrapada (healing after storms), Sasa Yoga (administrator authority). Hospital director, clinical lead, or health entrepreneur.</p>
+        </div>
+        <div class="path-card">
+          <h4>Yoga / Wellness / Counseling Practice</h4>
+          <p>Venus exalted Uttara Bhadrapada (deep healing), Jupiter Hamsa exalted (wisdom guide), Ketu H7 (spiritual dimension in relationships). Own practice — not an employee of someone else's clinic.</p>
+        </div>
+        <div class="path-card">
+          <h4>Corporate Leadership → CXO</h4>
+          <p>Sasa Yoga + Budha-Aditya + Rahu H1 (unconventional driver). If corporate, the path leads to C-suite or VP-level — not permanent mid-management. The chart needs a leadership horizon in view.</p>
+        </div>
+        <div class="path-card">
+          <h4>Technology / Research Leadership</h4>
+          <p>Moon Ardra H6 (Rahu-flavored, complex systems, research), Budha-Aditya Aquarius H2 (innovative intelligence), Saturn H1 (disciplined structure). Tech lead, research director, data science leadership.</p>
+        </div>
+        <div class="path-card">
+          <h4>Finance / Banking — Senior Track</h4>
+          <p>Budha-Aditya H2 (financial intelligence + wealth), Saturn H1 Capricorn (conservative institutional authority), Yoga Karaka Venus (income-career alignment). CFO track or financial advisor practice.</p>
+        </div>
+        <div class="path-card">
+          <h4>Educational Institution Leadership</h4>
+          <p>Jupiter Hamsa exalted H7 (wisdom and teaching), Sasa Yoga (authority), Venus Yoga Karaka (H5 lord = knowledge and children). Academic director, school founder, curriculum leadership.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter" id="timing">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">⏳</div>
+        <h2><small>Timing — Age 35</small>Saturn Mahadasha Is the Building Period</h2>
+      </div>
+      <div class="timing-box">
+        <h4>Saturn / Saturn / Rahu (current)</h4>
+        <p>Saturn MD for Capricorn lagna = the mahadasha of the lagna lord itself. This is a period of <em>building identity and authority</em> — disciplined effort, establishing one's mark, and consolidating the structural foundation that will bear fruit in Venus MD (after Saturn MD ends). Rahu antara = unexpected, ambitious, fast-moving moves. Not a time to play it safe or stay in a comfortable holding pattern. The chart is being forged right now.</p>
+      </div>
+      <div class="callout callout-gold" style="margin-top:16px;">
+        <div class="callout-label">Ideal Trajectory</div>
+        Structured institutional environment (hospital, tech company, educational institution) in early career → found own practice or take leadership/C-suite role by age 40–42. The Sasa Yoga rewards patience followed by decisive authority. The critical mistake is accepting a ceiling when the chart has none.
+      </div>
+      <table class="reading-table" style="margin-top:20px;">
+        <tr><th>Dasha Period</th><th>Theme</th><th>Action</th></tr>
+        <tr><td>Saturn / Saturn / Rahu (current)</td><td>Identity building, ambitious moves, fast-changing opportunities</td><td><span class="badge badge-protect">Act boldly</span></td></tr>
+        <tr><td>Saturn / Saturn / Jupiter</td><td>Wisdom, expansion, institutional recognition</td><td><span class="badge badge-protect">Expand role</span></td></tr>
+        <tr><td>Saturn / Mercury</td><td>Communication, contracts, analytical work</td><td><span class="badge badge-protect">Consolidate</span></td></tr>
+        <tr><td>Saturn / Venus</td><td>Yoga Karaka activated — peak career period in Saturn MD</td><td><span class="badge badge-protect">Career peak</span></td></tr>
+        <tr><td>Mercury MD (future)</td><td>Communication, business, leadership recognition</td><td><span class="badge badge-protect">Harvest</span></td></tr>
+      </table>
+    </div>
+
+    <div class="footer">Career Reading · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Generated Sep 2026</div>
+  </main>
+</div>
+</body>
+</html>

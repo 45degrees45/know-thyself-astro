@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Ruhi CH — Career Path Reading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0b0b18;
+  --surface: rgba(255,255,255,0.035);
+  --border: rgba(196,158,64,0.18);
+  --gold: #c49e40;
+  --gold2: #e8c96a;
+  --cream: #f0e8d8;
+  --muted: rgba(240,232,216,0.55);
+  --plum: #7c5cbf;
+  --rose: #c4607a;
+  --sage: #5a8f72;
+  --blue: #5b8fd4;
+  --shadow: 0 20px 60px rgba(0,0,0,0.45);
+  --r: 22px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+  background-attachment: fixed;
+  color: var(--cream);
+  min-height: 100vh;
+}
+.layout { display: grid; grid-template-columns: 260px 1fr; min-height: 100vh; max-width: 1300px; margin: 0 auto; }
+.sidebar { position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 36px 20px 36px 24px; border-right: 1px solid var(--border); background: rgba(11,11,24,0.92); backdrop-filter: blur(12px); }
+.sidebar-animal { font-size: 56px; text-align: center; margin-bottom: 16px; }
+.sidebar h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--cream); margin-bottom: 4px; }
+.sidebar-lagna { font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+.sidebar-stat { display: flex; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid rgba(196,158,64,0.08); font-size: 0.8rem; }
+.sidebar-stat-label { color: var(--muted); }
+.sidebar-stat-value { color: var(--cream); font-weight: 500; }
+.sidebar-nav { margin-top: 28px; }
+.sidebar-nav-label { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.nav-link { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 10px; font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: all 0.2s; margin-bottom: 4px; }
+.nav-link:hover { background: rgba(196,158,64,0.07); color: var(--cream); }
+.nav-icon { font-size: 1rem; width: 22px; text-align: center; }
+.verdict-badge { display: inline-block; padding: 5px 14px; border-radius: 999px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(196,158,64,0.15); color: #e8c96a; border: 1px solid rgba(196,158,64,0.3); margin-top: 14px; }
+.main { padding: 48px 52px 80px; max-width: 860px; }
+.page-hero { margin-bottom: 48px; }
+.eyebrow { font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.page-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,4vw,3.2rem); font-weight: 300; color: #fff8f0; line-height: 1.15; }
+.page-hero p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin-top: 14px; max-width: 600px; }
+.chapter { margin-bottom: 56px; scroll-margin-top: 32px; }
+.chapter-header { display: flex; align-items: center; gap: 14px; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+.chapter-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.chapter-icon.rose { background: rgba(196,96,122,0.15); }
+.chapter-icon.gold { background: rgba(196,158,64,0.12); }
+.chapter-icon.sage { background: rgba(90,143,114,0.14); }
+.chapter-icon.plum { background: rgba(124,92,191,0.14); }
+.chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 300; color: var(--cream); }
+.chapter h2 small { display: block; font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+.section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 24px 28px; margin-bottom: 16px; }
+.section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--cream); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+.dot-gold { background: var(--gold); }
+.dot-rose { background: var(--rose); }
+.dot-sage { background: var(--sage); }
+.dot-plum { background: var(--plum); }
+.section p { font-size: 0.9rem; color: rgba(240,232,216,0.8); line-height: 1.75; }
+.section p + p { margin-top: 10px; }
+.callout { border-radius: 14px; padding: 18px 22px; font-size: 0.9rem; line-height: 1.8; margin-top: 16px; }
+.callout-label { font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; }
+.callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+.callout-rose .callout-label { color: var(--rose); }
+.callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+.callout-gold .callout-label { color: var(--gold); }
+.callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+.callout-sage .callout-label { color: var(--sage); }
+.callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+.callout-plum .callout-label { color: #b49edf; }
+.reading-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-top: 16px; }
+.reading-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+.reading-table td { padding: 10px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+.reading-table tr:last-child td { border-bottom: none; }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+.badge-risk { background: rgba(196,96,122,0.18); color: #e8909f; }
+.badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+.badge-mixed { background: rgba(196,158,64,0.15); color: #e8c96a; }
+.path-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+.path-card { background: rgba(90,143,114,0.06); border: 1px solid rgba(90,143,114,0.18); border-radius: 14px; padding: 18px 20px; }
+.path-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: #80c4a0; margin-bottom: 6px; }
+.path-card p { font-size: 0.82rem; color: rgba(240,232,216,0.7); line-height: 1.6; }
+.timing-box { background: rgba(196,158,64,0.07); border: 1px solid rgba(196,158,64,0.22); border-radius: 16px; padding: 22px 26px; margin-top: 16px; }
+.timing-box h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold2); margin-bottom: 8px; }
+.timing-box p { font-size: 0.88rem; color: rgba(240,232,216,0.78); line-height: 1.7; }
+.footer { text-align: center; padding: 20px 0; font-size: 0.72rem; color: rgba(240,232,216,0.3); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 40px; }
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: relative; height: auto; }
+  .main { padding: 32px 20px 60px; }
+  .path-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-animal">🌙</div>
+    <h2>Ruhi CH</h2>
+    <div class="sidebar-lagna">Sagittarius Lagna · 6.5°</div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Born</span><span class="sidebar-stat-value">03 Mar 2002</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Place</span><span class="sidebar-stat-value">Alleppey, Kerala</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Age</span><span class="sidebar-stat-value">24</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">Dasha</span><span class="sidebar-stat-value">Jupiter / Mercury / Saturn</span></div>
+    <div class="sidebar-stat"><span class="sidebar-stat-label">10th Lord</span><span class="sidebar-stat-value">Mercury</span></div>
+    <div class="verdict-badge">~ Partial No — Wrong Fit</div>
+    <nav class="sidebar-nav">
+      <div class="sidebar-nav-label">Chapters</div>
+      <a href="#verdict" class="nav-link"><span class="nav-icon">⚖️</span>The Verdict</a>
+      <a href="#architecture" class="nav-link"><span class="nav-icon">🔭</span>Career Architecture</a>
+      <a href="#paths" class="nav-link"><span class="nav-icon">🗺️</span>Right Paths</a>
+      <a href="#timing" class="nav-link"><span class="nav-icon">⏳</span>Timing — Age 24</a>
+    </nav>
+  </aside>
+  <main class="main">
+    <div class="page-hero">
+      <div class="eyebrow">Vedic Career Reading · Lahiri Ayanamsha</div>
+      <h1>Is This a 9-5 MNC Chart?</h1>
+      <p>A placement-by-placement career analysis using Jyotish — examining lagna temperament, 10th lord, yoga signatures, and Jupiter Mahadasha timing to determine the right career path for age 24.</p>
+    </div>
+
+    <div class="chapter" id="verdict">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">⚖️</div>
+        <h2><small>The Verdict</small>Partial No — Better Tolerance, Still Wrong Fit</h2>
+      </div>
+      <div class="callout callout-gold">
+        <div class="callout-label">Bottom Line</div>
+        Ruhi's chart can tolerate structured environments more than a pure H12-stellium chart — Saturn in H6 provides some capacity for disciplined service. But Sagittarius lagna will eventually chafe, Rahu in H6 creates restlessness in employment, and Ketu H12 pulls toward depth rather than routine. The right environment is one with intellectual freedom, collaboration, and purpose — not metrics and cubicles.
+      </div>
+      <table class="reading-table" style="margin-top:20px;">
+        <tr><th>Placement</th><th>Signal</th><th>Verdict</th></tr>
+        <tr><td>Sagittarius Lagna</td><td>Needs philosophical freedom, meaning, exploration</td><td><span class="badge badge-risk">Wrong Fit</span></td></tr>
+        <tr><td>Jupiter H7 Gemini (lagna lord)</td><td>Career happens through partnerships and collaboration, not employment</td><td><span class="badge badge-risk">Wrong Fit</span></td></tr>
+        <tr><td>Saturn + Rahu H6 Taurus</td><td>Can handle structure temporarily; Rahu makes it eventually restless/disruptive</td><td><span class="badge badge-mixed">Partial Fit</span></td></tr>
+        <tr><td>Ketu H12 (Jyeshtha nakshatra)</td><td>Pull toward spiritual depth; routine work feels hollow over time</td><td><span class="badge badge-risk">Wrong Fit</span></td></tr>
+        <tr><td>Moon H11 Libra (Swati nakshatra)</td><td>Income through social networks and diplomacy — NOT salary</td><td><span class="badge badge-mixed">Independent</span></td></tr>
+        <tr><td>Mars H5 Aries (own sign)</td><td>Raw creative and competitive fire — needs expression, not compliance</td><td><span class="badge badge-mixed">Creative Outlet</span></td></tr>
+      </table>
+    </div>
+
+    <div class="chapter" id="architecture">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">🔭</div>
+        <h2><small>Career Architecture</small>How the Chart Is Wired</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Layer 1 — Lagna Lord in H7</div>
+        <p><strong>Jupiter (lagna lord) in Gemini H7.</strong> When the lagna lord sits in H7, the person's energy and identity flows toward others — partnerships, collaborations, public interaction, and one-on-one work. Jupiter in Gemini adds intellectual curiosity, communication agility, and a love of ideas and exploration. This is the archetype of someone who creates value through <em>working with people and ideas</em>, not executing within a hierarchy.</p>
+        <p>Jupiter in Gemini is comfortable with multiplicity — many interests, many connections, many threads. The career is unlikely to be a single straight-line corporate trajectory. It's woven from relationships.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Layer 2 — Saturn + Rahu in H6</div>
+        <p><strong>Saturn in H6 Taurus (Rohini nakshatra)</strong> is the one factor that gives Ruhi more tolerance for structured environments than a pure Sagittarius chart. Saturn is comfortable in H6 (the service house) and can operate within discipline. Rohini nakshatra (ruled by Moon) adds a desire for growth, beauty, and creation in the work environment.</p>
+        <p><strong>But Rahu beside Saturn</strong> introduces the disruptor. Rahu in H6 = unconventional, ambitious, restless in service environments. The employment track will feel increasingly wrong as Rahu amplifies the search for something more — foreign, unusual, or boundary-breaking. Rahu+Saturn H6 can bring competitive success in jobs but also sudden disruptions, dissatisfaction, or unconventional circumstances around employment.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-sage"></span>Layer 3 — Moon in Swati H11</div>
+        <p><strong>Moon at 7.1° Libra H11, Swati nakshatra (Rahu-ruled).</strong> Swati is the independent sapling bending in the wind — its power is in resilience and self-reliance. The deity is Vayu (wind god): freedom, movement, expansion. The shakti is "pradhvamsa" — scattering and reconverging like seeds in the wind.</p>
+        <p>Moon in Swati H11 means the emotional and income life is built through <em>networks, diplomacy, and independence</em>. Not corporate salary, but relationships that generate income organically over time. This is the influencer's placement — not the employee's.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Layer 4 — Ketu H12 and Depth Pull</div>
+        <p><strong>Ketu at 29.6° Scorpio H12 (Jyeshtha nakshatra).</strong> Jyeshtha = "the eldest," ruled by Mercury, deity = Indra (king of the gods, wielder of lightning). Shakti: "arohana shakti" — power to rise. But Ketu here in H12 = the moksha house. This is a person with past-life depth and a natural pull toward wisdom, inner work, and letting go of surface ambitions. Any career that doesn't engage this depth will feel eventually hollow — no matter how prestigious the title.</p>
+      </div>
+    </div>
+
+    <div class="chapter" id="paths">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">🗺️</div>
+        <h2><small>Career Paths</small>What This Chart Is Built For</h2>
+      </div>
+      <div class="callout callout-sage">
+        <div class="callout-label">Core Signal</div>
+        Mercury (10th lord for Sagittarius) governs analysis, communication, precision, and teaching. Combined with Jupiter H7 Gemini (partnerships + ideas), Moon Swati H11 (networks), and Mars own-sign H5 (creative fire) — the career flourishes through knowledge work, creative collaboration, and building an audience or clientele over time.
+      </div>
+      <div class="path-grid">
+        <div class="path-card">
+          <h4>Education / Teaching</h4>
+          <p>Jupiter H7 (teaching through relationships), Mercury 10th lord (precision + communication), Sagittarius lagna (natural philosopher). Works as educator, curriculum designer, or knowledge facilitator.</p>
+        </div>
+        <div class="path-card">
+          <h4>Communication / Media / Writing</h4>
+          <p>Mercury 10th lord, Sun H3 Aquarius Shatabhisha (futuristic, humanitarian ideas). Journalism, content creation, long-form writing — especially in human interest or social domains.</p>
+        </div>
+        <div class="path-card">
+          <h4>Counseling / Coaching</h4>
+          <p>Jupiter H7 (wisdom in one-on-one relationships), Moon Swati H11 (emotional diplomacy and balance), Ketu H12 (spiritual depth). Counselor, therapist, or life/career coach.</p>
+        </div>
+        <div class="path-card">
+          <h4>Creative Direction / Design</h4>
+          <p>Mars own sign H5 (creative fire and competitive energy), Moon Libra Swati (aesthetic balance), Jupiter Gemini (ideas and exploration). Creative lead, art director, or independent designer.</p>
+        </div>
+        <div class="path-card">
+          <h4>Knowledge Entrepreneurship</h4>
+          <p>Rahu H6 (disrupts conventional service mold), Jupiter H7 (builds through partnerships), Saturn H6 (disciplined output). Online courses, workshops, subscription content — own platform over time.</p>
+        </div>
+        <div class="path-card">
+          <h4>Social / Non-profit / Advocacy</h4>
+          <p>Sun H3 Aquarius Shatabhisha (humanitarian, futuristic, reform-minded), Moon Libra H11 (social harmony and networks), Sagittarius lagna (philosophical idealism). Causes-based leadership.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chapter" id="timing">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">⏳</div>
+        <h2><small>Timing — Age 24</small>The Jupiter Mahadasha Window</h2>
+      </div>
+      <div class="timing-box">
+        <h4>Jupiter / Mercury / Saturn — The Skill-Building Imperative</h4>
+        <p>Jupiter MD is the single best period in a lifetime for learning, expanding wisdom, building genuine expertise, and forming the key partnerships that will define the future. Mercury antara = career direction and communication skills are being activated. At age 24, inside Jupiter MD, the single most valuable investment is going deep into a skill that compounds — teaching, writing, a specific domain of knowledge. This is NOT the time to settle into a stable corporate job just because it's available.</p>
+      </div>
+      <div class="callout callout-gold" style="margin-top:16px;">
+        <div class="callout-label">Key Insight for This Age</div>
+        The Jupiter MD window of deep learning and relationship-building is rare and limited. Every year spent in an unfulfilling corporate job during Jupiter MD is a year of compounding lost. The people and skills built during this period become the foundation of the Saturn MD (later career) where income actually scales.
+      </div>
+      <table class="reading-table" style="margin-top:20px;">
+        <tr><th>Dasha Period</th><th>Theme</th><th>Action</th></tr>
+        <tr><td>Jupiter / Mercury (current)</td><td>Career direction + communication skills activation</td><td><span class="badge badge-protect">Build expertise</span></td></tr>
+        <tr><td>Jupiter / Ketu</td><td>Spiritual detachment, simplify, go deeper</td><td><span class="badge badge-mixed">Inner work</span></td></tr>
+        <tr><td>Jupiter / Venus</td><td>Relationships, creativity, abundance expansion</td><td><span class="badge badge-protect">Flourish</span></td></tr>
+        <tr><td>Saturn MD (future)</td><td>Long-term income, networks, institutional recognition</td><td><span class="badge badge-protect">Harvest</span></td></tr>
+      </table>
+    </div>
+
+    <div class="footer">Career Reading · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · Generated Sep 2026</div>
+  </main>
+</div>
+</body>
+</html>
