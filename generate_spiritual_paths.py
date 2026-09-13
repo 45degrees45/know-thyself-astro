@@ -37,6 +37,7 @@ ANON = {
     "Kunal":          ("The Indigo Tiger",       "🐅"),
     "Hari CH":        ("The Watchful Fox",        "🦊"),
     "George Varghese":("The Ancient Lion",         "🦁"),
+    "Ester Grace CH": ("The Silent Flamingo",      "🦩"),
 }
 
 PATH_KEYS = {
@@ -345,6 +346,15 @@ SPIRITUAL = {
         "shadow":"Leo Lagna wants to be seen; Uttara Bhadrapada H8 is content to stay hidden. The shadow is the unresolved war between the performer and the mystic — and the exhaustion of trying to be both",
         "practices":["Deep meditation, dream work, and hypnagogic exploration (Uttara Bhadrapada terrain)","Water immersion — ocean or river — as ritual purification","Ancestor and lineage healing (the Dragon of the Deep carries ancestral memory)"],
     },
+    "Ester Grace CH": {
+        "path":"Mystic",
+        "archetype":"The Listening Flamingo",
+        "indicators":["Moon H12 Capricorn in Shravana — the nakshatra of divine listening","Ketu H12 in Uttara Ashadha — past-life mastery of solitary contemplation","Viparita Raja Yoga (Moon as 6th lord in 12th) — strength through dissolution","Venus Yoga Karaka in Cancer H6 — grace through service and devotion"],
+        "description":"Shravana means 'to hear' — and her Moon placed in this nakshatra in the 12th house gives Ester Grace an almost supernatural capacity to receive what is unspoken. She hears the divine in silence, in music, in the space between words. Ketu alongside in the 12th confirms a soul who has walked contemplative paths before and arrives in this life already familiar with inner solitude. The Viparita Raja Yoga transforms 12th house themes — isolation, dissolution, surrender — into ultimate sources of resilience. Venus as Yoga Karaka brings a devotional grace to this path: the mystical is accessed not through austerity but through beauty, service, and loving attention.",
+        "strengths":["Rare depth of inner listening — perceives what others cannot articulate","Resilience through surrender — turns loss and solitude into quiet power","Graceful spiritual authority that attracts without trying"],
+        "shadow":"The Kemadruma Yoga can intensify into spiritual bypassing — using inner retreat as avoidance of real-world difficulty rather than genuine contemplation",
+        "practices":["Nada yoga — sacred listening, mantra, or binaural sound practice (Shravana terrain)","Journaling inner monologue — externalizing the rich 12th house Moon for integration","Service rituals — acts of quiet care that honor Venus Yoga Karaka in Cancer"],
+    },
 }
 
 PROFILES = [
@@ -381,6 +391,7 @@ PROFILES = [
     ("Kunal",         "1993-09-10","18:50", "Pisces",     "Saturn/Saturn/Rahu",     "🐅","M","Alwar, Rajasthan"),
     ("Hari CH",       "1968-09-16","07:15", "Virgo",      "Mercury/Jupiter/Sun",    "🦊","M","Trivandrum, Kerala"),
     ("George Varghese","1961-12-15","22:30","Leo",        "Moon/Mercury/Saturn",    "🦁","M","Aluva, Kerala"),
+    ("Ester Grace CH","2000-07-17","21:15","Aquarius",   "Rahu/Venus/Venus",       "🦩","F","Thrissur, Kerala"),
 ]
 
 LAGNA_ICON = {
