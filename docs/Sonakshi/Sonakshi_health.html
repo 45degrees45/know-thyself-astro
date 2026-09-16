@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Sonakshi — Health & Remedies</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { background-color: #0b0b18; }
+    body {
+      background-color: #0b0b18;
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: #f0e8d8;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92);
+      backdrop-filter: blur(12px);
+    }
+    .main { padding: 48px 52px 80px; max-width: 860px; }
+
+    /* ── SIDEBAR ── */
+    .sb-animal { font-size: 52px; text-align: center; margin-bottom: 16px; }
+    .sb-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; color: var(--cream); text-align: center; margin-bottom: 4px; }
+    .sb-sub  { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); text-align: center; margin-bottom: 24px; }
+    .sb-stat { margin-bottom: 8px; padding: 10px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; }
+    .sb-stat-label { font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 3px; }
+    .sb-stat-val { font-size: 0.82rem; color: var(--cream); }
+    .sb-divider { height: 1px; background: var(--border); margin: 20px 0; }
+    .sb-nav-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; display: block; }
+    .sb-nav a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 10px; border-radius: 10px;
+      font-size: 0.82rem; color: var(--muted);
+      text-decoration: none; margin-bottom: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .sb-nav a:hover { background: rgba(196,158,64,0.08); color: var(--cream); }
+    .sb-nav .nav-icon { font-size: 0.9rem; width: 20px; text-align: center; }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; overflow: hidden; border-radius: 28px;
+      padding: 44px 44px 36px;
+      background: linear-gradient(140deg, rgba(28,18,56,0.98) 0%, rgba(44,24,72,0.96) 45%, rgba(80,38,58,0.92) 100%);
+      border: 1px solid rgba(196,158,64,0.22);
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+    }
+    .hero-symbol { position: absolute; right: 36px; top: 24px; font-size: 160px; line-height: 1; color: rgba(196,158,64,0.07); font-family: 'Cormorant Garamond', serif; pointer-events: none; }
+    .hero-glow   { position: absolute; right: -60px; bottom: -80px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(196,158,64,0.12), transparent 65%); pointer-events: none; }
+    .eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; display: block; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem,5vw,4rem); font-weight: 300; color: #fff8f0; margin-bottom: 4px; }
+    .hero-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: rgba(196,158,64,0.85); margin-bottom: 20px; }
+    .stat-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; }
+    .stat { background: rgba(255,255,255,0.06); border: 1px solid rgba(196,158,64,0.14); border-radius: 14px; padding: 14px 16px; }
+    .stat-label { font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 4px; }
+    .stat-value { font-size: 0.88rem; color: #fff8f0; line-height: 1.4; }
+
+    /* ── CHAPTERS ── */
+    .chapter { margin-bottom: 52px; scroll-margin-top: 32px; }
+    .chapter-header { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+    .chapter-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; }
+    .chapter-icon.rose   { background: rgba(196,96,122,0.15); }
+    .chapter-icon.sage   { background: rgba(90,143,114,0.15); }
+    .chapter-icon.gold   { background: rgba(196,158,64,0.12); }
+    .chapter-icon.plum   { background: rgba(124,92,191,0.15); }
+    .chapter-icon.blue   { background: rgba(91,143,212,0.15); }
+    .chapter h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.85rem; font-weight: 300; color: var(--cream); }
+    .chapter h2 small { display: block; font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); font-family: 'DM Sans', sans-serif; margin-bottom: 4px; }
+
+    /* ── SECTION CARDS ── */
+    .section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 22px 26px; margin-bottom: 14px; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-weight: 400; color: var(--cream); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+    .dot-rose { background: var(--rose); }
+    .dot-sage { background: var(--sage); }
+    .dot-gold { background: var(--gold); }
+    .dot-plum { background: var(--plum); }
+    .dot-blue { background: var(--blue); }
+    p { font-size: 0.93rem; line-height: 1.8; color: rgba(240,232,216,0.82); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── READING TABLE ── */
+    .reading-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-top: 12px; }
+    .reading-table th { text-align: left; padding: 10px 14px; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.65rem; letter-spacing: 0.18em; text-transform: uppercase; border-bottom: 1px solid rgba(196,158,64,0.2); }
+    .reading-table td { padding: 10px 14px; color: rgba(240,232,216,0.82); border-bottom: 1px solid rgba(255,255,255,0.05); vertical-align: top; line-height: 1.6; }
+    .reading-table tr:last-child td { border-bottom: none; }
+    .reading-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+    /* ── CALLOUTS ── */
+    .callout { border-radius: 14px; padding: 16px 20px; font-size: 0.9rem; line-height: 1.8; margin-top: 14px; }
+    .callout-label { font-size: 0.62rem; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600; margin-bottom: 8px; display: block; }
+    .callout-gold { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+    .callout-gold .callout-label { color: var(--gold); }
+    .callout-plum { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+    .callout-plum .callout-label { color: #b49edf; }
+    .callout-rose { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+    .callout-rose .callout-label { color: #e8909f; }
+    .callout-sage { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+    .callout-sage .callout-label { color: #80c4a0; }
+
+    /* ── BADGES ── */
+    .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+    /* ── REMEDY TIERS ── */
+    .tier-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+    .tier-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+    .tier-title { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 600; }
+    .tier-universal .tier-dot  { background: var(--sage); }
+    .tier-universal .tier-title { color: #80c4a0; }
+    .tier-vedic .tier-dot       { background: var(--gold); }
+    .tier-vedic .tier-title     { color: var(--gold2); }
+    .tier-neuro .tier-dot       { background: var(--blue); }
+    .tier-neuro .tier-title     { color: #8ab4e8; }
+
+    .remedy-item { padding: 12px 16px; background: rgba(255,255,255,0.03); border-radius: 12px; margin-bottom: 8px; font-size: 0.88rem; color: rgba(240,232,216,0.8); line-height: 1.65; border-left: 3px solid transparent; }
+    .remedy-item.sage { border-left-color: rgba(90,143,114,0.5); }
+    .remedy-item.gold { border-left-color: rgba(196,158,64,0.4); }
+    .remedy-item.blue { border-left-color: rgba(91,143,212,0.4); }
+    .remedy-item strong { display: block; font-size: 0.78rem; font-weight: 600; margin-bottom: 3px; }
+    .remedy-item.sage strong { color: #80c4a0; }
+    .remedy-item.gold strong { color: var(--gold2); }
+    .remedy-item.blue strong { color: #8ab4e8; }
+
+    /* ── WEEKLY CALENDAR ── */
+    .cal-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-bottom: 24px; }
+    .cal-table th { padding: 10px 8px; text-align: center; background: rgba(196,158,64,0.1); color: var(--gold); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid rgba(196,158,64,0.15); }
+    .cal-table td { padding: 10px 8px; text-align: center; border: 1px solid rgba(255,255,255,0.05); color: rgba(240,232,216,0.78); vertical-align: top; font-size: 0.8rem; line-height: 1.5; }
+    .cal-planet { font-size: 0.65rem; color: var(--gold); display: block; margin-bottom: 4px; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* ── TEMPLE CARDS ── */
+    .temple-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+    .temple-card { background: rgba(196,158,64,0.05); border: 1px solid rgba(196,158,64,0.18); border-radius: 16px; padding: 16px 18px; }
+    .temple-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 4px; }
+    .temple-deity { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; display: block; }
+    .temple-why { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── MANTRA BLOCK ── */
+    .mantra-block { background: rgba(124,92,191,0.07); border: 1px solid rgba(124,92,191,0.25); border-radius: 16px; padding: 20px 22px; margin-bottom: 12px; }
+    .mantra-name { font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: #b49edf; margin-bottom: 8px; display: block; }
+    .mantra-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--cream); line-height: 1.7; margin-bottom: 10px; }
+    .mantra-meaning { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+    .mantra-instruction { font-size: 0.78rem; color: rgba(180,158,223,0.7); margin-top: 8px; padding-top: 8px; border-top: 1px solid rgba(124,92,191,0.15); }
+
+    /* ── NEURO GRID ── */
+    .neuro-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+    .neuro-card { background: rgba(91,143,212,0.06); border: 1px solid rgba(91,143,212,0.2); border-radius: 14px; padding: 16px; }
+    .neuro-label { font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: #8ab4e8; margin-bottom: 10px; display: block; font-weight: 600; }
+    .neuro-item { font-size: 0.82rem; color: rgba(240,232,216,0.75); line-height: 1.65; padding: 6px 0; border-bottom: 1px solid rgba(91,143,212,0.1); }
+    .neuro-item:last-child { border-bottom: none; }
+    .neuro-item strong { color: #8ab4e8; font-size: 0.78rem; display: block; }
+
+    /* ── DIVIDER ── */
+    .divider { display: flex; align-items: center; gap: 16px; margin: 36px 0; font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(240,232,216,0.3); }
+    .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    /* ── SYM GRID ── */
+    .sym-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+    /* ── FOOTER ── */
+    .footer { text-align: center; padding: 20px 0; font-size: 0.7rem; color: rgba(240,232,216,0.3); letter-spacing: 0.08em; border-top: 1px solid var(--border); margin-top: 40px; }
+
+    @media (max-width: 900px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); }
+      .main { padding: 32px 20px 60px; }
+      .temple-grid, .neuro-grid, .sym-grid, .stat-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sb-animal">🐆</div>
+    <div class="sb-name">Sonakshi</div>
+    <div class="sb-sub">Health & Sacred Remedies</div>
+
+    <div class="sb-stat">
+      <span class="sb-stat-label">Lagna</span>
+      <span class="sb-stat-val">♏ Scorpio 8.5°</span>
+    </div>
+    <div class="sb-stat">
+      <span class="sb-stat-label">Moon</span>
+      <span class="sb-stat-val">♌ Leo · Purva Phalguni</span>
+    </div>
+    <div class="sb-stat">
+      <span class="sb-stat-label">Lagna Lord</span>
+      <span class="sb-stat-val">Mars · Gemini H8</span>
+    </div>
+    <div class="sb-stat">
+      <span class="sb-stat-label">Current Dasha</span>
+      <span class="sb-stat-val">Mars / Saturn / Moon</span>
+    </div>
+
+    <div class="sb-divider"></div>
+    <span class="sb-nav-label">Chapters</span>
+    <nav class="sb-nav">
+      <a href="#vulnerabilities"><span class="nav-icon">🔴</span> Health Vulnerabilities</a>
+      <a href="#dasha"><span class="nav-icon">⚡</span> Dasha Health Impact</a>
+      <a href="#diet"><span class="nav-icon">🌿</span> Diet & Lifestyle</a>
+      <a href="#calendar"><span class="nav-icon">📅</span> Weekly Practice</a>
+      <a href="#deities"><span class="nav-icon">🙏</span> Deities & Mantras</a>
+      <a href="#temples"><span class="nav-icon">⛩️</span> Temples</a>
+      <a href="#neuro"><span class="nav-icon">🧠</span> Neuroscience Tier</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-symbol">♏</div>
+      <div class="hero-glow"></div>
+      <span class="eyebrow">Health Reading · Jyotish · Vedic Ayurveda</span>
+      <h1>Sonakshi</h1>
+      <p class="hero-sub">Scorpio Lagna · Pitta-Vata Constitution · Mars / Saturn / Moon Dasha</p>
+      <div class="stat-grid">
+        <div class="stat">
+          <span class="stat-label">Constitution</span>
+          <div class="stat-value">Pitta-Vata</div>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Primary Weakness</span>
+          <div class="stat-value">Reproductive · Hormonal</div>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Key Protection</span>
+          <div class="stat-value">Ketu H6 — disease suppressor</div>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Dasha Phase</span>
+          <div class="stat-value">Pressure-forging · Manage stress</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHAPTER 1: VULNERABILITIES -->
+    <div class="chapter" id="vulnerabilities">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">🔴</div>
+        <h2><small>Health · Placements</small>Health Vulnerabilities</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Reproductive & Hormonal System <span class="badge badge-risk" style="margin-left:auto">Primary Risk</span></div>
+        <p><strong>Scorpio Lagna</strong> → the physical body is governed by the pelvic region, reproductive organs, and excretory system. Scorpio rules these zones constitutionally — this is where vitality concentrates and where vulnerability sits.</p>
+        <p><strong>Venus debilitated in Virgo H11 (8°)</strong> — Venus is at near-exact debilitation (deepest at 15° Virgo). Venus governs female hormones, menstrual regularity, reproductive fluids, ovarian health, and kidneys. A debilitated 7th lord in Virgo (sign of critical perfectionism) without Neecha Bhanga relief signals ongoing hormonal sensitivity: cycle irregularities, estrogen-progesterone imbalance, possible thyroid involvement, and kidney function sensitivity.</p>
+        <div class="callout callout-rose">
+          <span class="callout-label">⚠ Watch</span>
+          Hormonal panel (TSH, estrogen, progesterone), kidney function markers, and reproductive health checks — especially during Venus sub-periods (Mars/Venus bhukti: Jul 2028 onward). Do not ignore irregular cycles.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Respiratory & Nervous System <span class="badge badge-risk" style="margin-left:auto">Active Risk</span></div>
+        <p><strong>Mars (Lagna lord) in Gemini H8 — Mrigashira nakshatra</strong> → Gemini rules the lungs, bronchial pathways, shoulders, arms, and the entire nervous circuitry. Mars here = inflammatory respiratory tendency: bronchitis-prone, shoulder tension that stores unprocessed emotion, and a nervous system that runs "hot." Mrigashira's restless, seeking energy means the nervous system rarely fully powers down.</p>
+        <p>Mars also rules H6 (Aries) — so the 6th lord of disease sits in H8 (chronic illness/surgery house). This is the Viparita Raja formation which ultimately grants resilience, but the price is that diseases tend to incubate quietly in the 8th before surfacing suddenly.</p>
+        <div class="callout callout-rose">
+          <span class="callout-label">⚠ Watch</span>
+          Respiratory health during monsoon and seasonal changes. Anxiety that manifests as chest tightness or breathing shallowness. Shoulder and upper back as physical stress storage sites.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-rose"></span>Chest, Heart & Circulation <span class="badge badge-mixed" style="margin-left:auto">Chronic / Gradual</span></div>
+        <p><strong>Saturn retrograde in Aquarius H4 (Shatabhisha nakshatra, Rahu-ruled)</strong> → H4 is the chest cavity: heart muscle, lungs, and lymphatic system. Saturn's cold, constricting quality in this house creates a gradual tendency toward poor circulation, lymphatic stagnation, and emotional tension held physically in the chest. The retrograde quality means Saturn's energy turns inward — suppressed emotional grief, unresolved sadness, or prolonged stress physically tightens the chest area over years.</p>
+        <p>Shatabhisha ("hundred healers") is associated with circulatory disorders and the circulatory system generally — both vulnerability and the capacity to heal through appropriate practices.</p>
+        <div class="callout callout-gold">
+          <span class="callout-label">Note</span>
+          Sasa Yoga (Saturn own sign H4) also grants strong structural resilience — this is not a weak heart, but one that needs conscious maintenance through movement and emotional expression.
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Digestive-Emotional Link <span class="badge badge-mixed" style="margin-left:auto">Mixed</span></div>
+        <p><strong>Sun + Mercury in Cancer H9 (Ashlesha nakshatra)</strong> → Ashlesha is the "coiled serpent" — its symbol is the serpent wrapping around the stomach. Emotionally-triggered digestive flares are characteristic: acid reflux, IBS-type sensitivity, nervous stomach before high-stakes situations. Cancer amplifies the emotional-digestive connection: stress goes directly to the gut. The Budha-Aditya Yoga here makes the mind sharp but also relentlessly active, adding to the Pitta load on the digestive fire (agni).</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-gold"></span>Liver & Immune System <span class="badge badge-mixed" style="margin-left:auto">Mixed</span></div>
+        <p><strong>Jupiter + Rahu in Libra H12 (Guru-Chandala Yoga)</strong> → Jupiter is the natural health protector, governing liver function, immune response, fat metabolism, and the body's self-repair systems. Rahu contaminating Jupiter in H12 (house of hospitalization and hidden expenditure) compromises this protective layer: sluggish liver, weight management challenges (particularly around the abdomen), immune dysregulation, and a risk of misdiagnosis or overmedication if healthcare is sought without discernment. Libra's H12 placement also points to kidney-adrenal axis involvement.</p>
+      </div>
+
+      <table class="reading-table">
+        <thead>
+          <tr><th>System</th><th>Placement</th><th>Risk Level</th><th>Key Watch</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Reproductive / Hormonal</td><td>Scorpio Lagna + Venus debilitated H11</td><td><span class="badge badge-risk">High</span></td><td>Cycles, thyroid, kidneys</td></tr>
+          <tr><td>Respiratory / Nervous</td><td>Mars (Lagna lord) Gemini H8</td><td><span class="badge badge-risk">High</span></td><td>Lungs, anxiety, shoulders</td></tr>
+          <tr><td>Chest / Circulation</td><td>Saturn retrograde H4 Shatabhisha</td><td><span class="badge badge-mixed">Medium</span></td><td>Lymphatic flow, heart stress</td></tr>
+          <tr><td>Digestive-Emotional</td><td>Sun+Mercury Ashlesha Cancer H9</td><td><span class="badge badge-mixed">Medium</span></td><td>Stress-triggered gut flares</td></tr>
+          <tr><td>Liver / Immunity</td><td>Jupiter+Rahu H12 Libra</td><td><span class="badge badge-mixed">Medium</span></td><td>Liver sluggishness, immunity</td></tr>
+          <tr><td>Disease Resistance</td><td>Ketu in Aries H6</td><td><span class="badge badge-protect">Protective</span></td><td>Ketu dissolves H6 — strong recovery</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CHAPTER 2: DASHA -->
+    <div class="chapter" id="dasha">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">⚡</div>
+        <h2><small>Current Period · 2026</small>Dasha Health Impact</h2>
+      </div>
+
+      <div class="section">
+        <div class="section-title"><span class="dot dot-plum"></span>Mars / Saturn / Moon — The Triple Pressure</div>
+        <p>The current sequence is the physically most demanding combination in the chart. <strong>Mars</strong> (Lagna lord in H8) activates the Scorpio body's transformative, crisis-processing mode — the body is in a low-level intensive state. <strong>Saturn bhukti</strong> (Jan 2026–Feb 2027) adds cold, constricting energy onto the Sasa Yoga's chest/H4 stability — emotional suppression physically tightens. <strong>Moon antara</strong> (Aug–Oct 2026) runs the emotional body through Leo's public-facing H10, creating psychosomatic load when career stress is high.</p>
+
+        <table class="reading-table" style="margin-top:12px">
+          <thead><tr><th>Sub-Period</th><th>Health Theme</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Mars / Saturn<br><small>Jan 2026 – Feb 2027</small></td><td>Chest tightness, inflammation vs. cold restriction alternating. Physical overexertion risk.</td><td>Structured rest, no skipping meals, anti-inflammatory diet</td></tr>
+            <tr><td>Mars / Mercury<br><small>Feb 2027 – Feb 2028</small></td><td>Nervous system overstimulation. Digestive sensitivity heightened. Budha-Aditya fires the mind past safe limits.</td><td>Digital detox periods, Nadi Shodhana pranayama daily</td></tr>
+            <tr><td>Mars / Ketu<br><small>Feb 2028 – Jul 2028</small></td><td>Sudden energy drops, unexpected health events. Ketu creates unpredictability in H6 (usually protective but erratic now).</td><td>Extra caution; avoid elective procedures in this window</td></tr>
+            <tr><td>Mars / Venus<br><small>Jul 2028 – Sep 2029</small></td><td>Venus sub-period activates the debilitated 7th lord — hormonal + reproductive topics come to forefront. Window for healing.</td><td>Fertility or hormonal assessment; Venus-strengthening practices</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-sage">
+        <span class="callout-label">✦ Protective Factor</span>
+        <strong>Ketu in Aries H6</strong> (Bharani nakshatra) is the chart's disease-suppressor. Ketu in the 6th house dissolves the disease house's power — she has remarkable capacity to recover from illness faster than expected. Diseases that look serious often resolve quickly. This is genuine chart protection.
+      </div>
+    </div>
+
+    <div class="divider">Diet & Lifestyle</div>
+
+    <!-- CHAPTER 3: DIET -->
+    <div class="chapter" id="diet">
+      <div class="chapter-header">
+        <div class="chapter-icon sage">🌿</div>
+        <h2><small>Ayurveda · Constitution</small>Diet & Lifestyle</h2>
+      </div>
+
+      <div class="sym-grid">
+        <div class="section">
+          <div class="section-title"><span class="dot dot-sage"></span>Pitta-Pacifying Diet</div>
+          <p>Primary constitution is <strong>Pitta-Vata</strong>. Mars H8 generates metabolic heat; Gemini adds Vata (dryness, mobility). Cooling and grounding foods take priority.</p>
+          <ul style="padding-left:18px; margin-top:8px;">
+            <li style="font-size:0.88rem; line-height:1.8; color:rgba(240,232,216,0.8);">Coconut water, cucumber, sweet fruits (mango, pomegranate)</li>
+            <li style="font-size:0.88rem; line-height:1.8; color:rgba(240,232,216,0.8);">Ghee daily — lubricates nervous system, cools Pitta</li>
+            <li style="font-size:0.88rem; line-height:1.8; color:rgba(240,232,216,0.8);">Coriander, fennel, cardamom — cooling spices for digestion</li>
+            <li style="font-size:0.88rem; line-height:1.8; color:rgba(240,232,216,0.8);">Warm milk with turmeric at night — Saturn H4 chest support</li>
+            <li style="font-size:0.88rem; line-height:1.8; color:rgba(240,232,216,0.8);">Avoid: excess chilli, fermented foods, alcohol — inflame Mars H8</li>
+          </ul>
+        </div>
+        <div class="section">
+          <div class="section-title"><span class="dot dot-sage"></span>Movement & Rest</div>
+          <p>The body needs fluid, cyclical movement — not competitive or high-impact. Saturn H4 needs the chest opened regularly; Mars H8 needs the nervous system discharged.</p>
+          <ul style="padding-left:18px; margin-top:8px;">
+            <li style="font-size:0.88rem; line-height:1.8; color:rgba(240,232,216,0.8);">Swimming — ideal; water balances Scorpio + cools Mars</li>
+            <li style="font-size:0.88rem; line-height:1.8; color:rgba(240,232,216,0.8);">Yoga with backbends — opens chest, counters Saturn H4 tightening</li>
+            <li style="font-size:0.88rem; line-height:1.8; color:rgba(240,232,216,0.8);">Evening walks — ground the anxious Gemini Mars energy</li>
+            <li style="font-size:0.88rem; line-height:1.8; color:rgba(240,232,216,0.8);">Fixed sleep schedule before 11pm — Moon H10 needs routine</li>
+            <li style="font-size:0.88rem; line-height:1.8; color:rgba(240,232,216,0.8);">Avoid fasting — debilitated Venus + Mars H8 = body needs nourishment</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section" style="margin-top:14px">
+        <div class="section-title"><span class="dot dot-blue"></span>Pranayama — Two Essential Practices</div>
+        <div class="sym-grid" style="margin-top:10px">
+          <div style="padding:14px; background:rgba(91,143,212,0.06); border:1px solid rgba(91,143,212,0.18); border-radius:14px;">
+            <strong style="font-size:0.78rem; color:#8ab4e8; display:block; margin-bottom:6px;">NADI SHODHANA — Daily</strong>
+            <p style="margin:0; font-size:0.85rem;">Alternate nostril breathing. Balances hot Mars energy with cool lunar channel. Directly addresses the Pitta-Vata imbalance. 10 minutes morning, before work.</p>
+          </div>
+          <div style="padding:14px; background:rgba(91,143,212,0.06); border:1px solid rgba(91,143,212,0.18); border-radius:14px;">
+            <strong style="font-size:0.78rem; color:#8ab4e8; display:block; margin-bottom:6px;">SITALI — Summer / Stress</strong>
+            <p style="margin:0; font-size:0.85rem;">Cooling breath (tongue rolled or teeth parted). Drops internal heat immediately. Use whenever feeling anxious, inflamed, or before confrontational situations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">Sacred Remedies</div>
+
+    <!-- CHAPTER 4: WEEKLY CALENDAR -->
+    <div class="chapter" id="calendar">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">📅</div>
+        <h2><small>Remedy Schedule</small>Weekly Practice Calendar</h2>
+      </div>
+      <p style="margin-bottom:16px">Each day is ruled by a planet. Practices aligned to the ruling planet carry maximum potency.</p>
+
+      <table class="cal-table">
+        <thead>
+          <tr>
+            <th>🌙 Monday<br><small>Moon</small></th>
+            <th>🔴 Tuesday<br><small>Mars</small></th>
+            <th>🟢 Wednesday<br><small>Mercury</small></th>
+            <th>🟡 Thursday<br><small>Jupiter</small></th>
+            <th>🟠 Friday<br><small>Venus</small></th>
+            <th>🪐 Saturday<br><small>Saturn</small></th>
+            <th>🌞 Sunday<br><small>Sun</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cal-planet">Moon · H10</span>Moon fast (optional) or white foods. Chandra mantra 108x. Emotional journaling.</td>
+            <td><span class="cal-planet">Mars · Lagna Lord</span>Hanuman Chalisa. Red flowers to Shiva/Hanuman. Physical exercise. Muladhara meditation.</td>
+            <td><span class="cal-planet">Mercury · H9</span>Nadi Shodhana. Green foods. Journaling or study. Budh mantra for digestive calm.</td>
+            <td><span class="cal-planet">Jupiter · H12</span>Liver-cleanse drink (lemon water, turmeric). Vishnu Sahasranama. Yellow foods.</td>
+            <td><span class="cal-planet">Venus · H11 (debilitated)</span>Lakshmi puja. White flowers. Lalitha Sahasranama. Hormonal-supporting herbs (Shatavari).</td>
+            <td><span class="cal-planet">Saturn · H4 (Sasa)</span>Sesame oil pulling. Shani mantra. Black sesame with honey. Chest-opening yoga.</td>
+            <td><span class="cal-planet">Sun · H9</span>Sun salutations at sunrise. Aditya Hrudayam. Vitamin D. Ashlesha solar activation.</td>
+          </tr>
+          <tr>
+            <td>Swimming or gentle yoga</td>
+            <td>Avoid confrontations. No alcohol.</td>
+            <td>Light easily digestible meal</td>
+            <td>Fast from meat/heavy foods</td>
+            <td>Shatavari ghee (1 tsp)</td>
+            <td>No oil massage (instead give to others — Saturn dana)</td>
+            <td>Morning copper vessel water</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CHAPTER 5: DEITIES & MANTRAS -->
+    <div class="chapter" id="deities">
+      <div class="chapter-header">
+        <div class="chapter-icon plum">🙏</div>
+        <h2><small>Vedic Tradition · Deity Connection</small>Deities & Mantras</h2>
+      </div>
+      <p style="margin-bottom:20px">Based on Scorpio Lagna (Shiva's sign), debilitated Venus (Goddess activation critical), and Saturn H4 (Shani + Varuna). These are the most relevant deities for this specific chart.</p>
+
+      <div class="mantra-block">
+        <span class="mantra-name">Primary — For Health Protection · Lord Shiva (Mrityunjaya)</span>
+        <div class="mantra-text">Om Tryambakam Yajamahe Sugandhim Pushtivardhanam<br>Urvarukamiva Bandhanan Mrityor Mukshiya Maamritat</div>
+        <div class="mantra-meaning">The Mahamrityunjaya Mantra — "We worship the three-eyed Lord who permeates and nourishes all. May we be liberated from death for the sake of immortality, as the cucumber is severed from its vine." This is the primary health protection mantra in the Vedic tradition. Shiva is the presiding deity of Scorpio Lagna.</div>
+        <div class="mantra-instruction">108 times on Tuesday and Saturday mornings. Use a Rudraksha mala. Most powerful during Mars/Saturn dasha period (2026–2027). Can be chanted during illness for others too.</div>
+      </div>
+
+      <div class="mantra-block">
+        <span class="mantra-name">For Lagna Lord · Hanuman (Mars Deity)</span>
+        <div class="mantra-text">Om Hanumate Namah<br>— or full Hanuman Chalisa on Tuesdays</div>
+        <div class="mantra-meaning">Hanuman is the deity of Mars. Strengthening the Lagna lord (Mars in H8) through Hanuman worship brings physical vitality, fearlessness, and the ability to overcome hidden enemies — including disease. Hanuman in H8 grants survival instinct at its highest.</div>
+        <div class="mantra-instruction">Every Tuesday, light a red or orange oil lamp. Offer red flowers. Hanuman Chalisa — ideally at sunrise.</div>
+      </div>
+
+      <div class="mantra-block">
+        <span class="mantra-name">For Venus (Debilitated · Reproductive Health) · Goddess Lalitha / Parvati</span>
+        <div class="mantra-text">Om Shum Shukraya Namah<br>— or Lalitha Sahasranama (1000 names of the Goddess)</div>
+        <div class="mantra-meaning">Debilitated Venus in Virgo weakens reproductive health, hormonal balance, and feminine vitality. Lalitha Sahasranama is the most powerful remedy for Venus — it invokes all aspects of the Goddess in her complete form, directly strengthening the divine feminine principle that Venus represents. Parvati puja specifically supports female reproductive health.</div>
+        <div class="mantra-instruction">Every Friday. White or pink flowers. Offer sweet rice or white sweets. Lalitha Sahasranama takes ~45 min — even once a week creates significant shift over months.</div>
+      </div>
+
+      <div class="mantra-block">
+        <span class="mantra-name">For Saturn H4 (Sasa Yoga · Circulation) · Shani + Varuna</span>
+        <div class="mantra-text">Om Sham Shanaishcharaya Namah</div>
+        <div class="mantra-meaning">Saturn in Aquarius H4 forms Sasa Yoga — a blessing in disguise. Saturn here grants structural resilience but needs to be kept warm and flowing. Shani mantra prevents Saturn's cold energy from constricting the chest. Varuna (the Vedic deity of Shatabhisha nakshatra) governs cosmic order and the waters of the body — relevant for circulatory health.</div>
+        <div class="mantra-instruction">Every Saturday. Sesame oil lamp with black wick. Offer black sesame seeds. Shani mantra 19 times or 108 times. Donate sesame or dark lentils to someone in need.</div>
+      </div>
+
+      <div class="callout callout-plum" style="margin-top:8px">
+        <span class="callout-label">Guru-Chandala Note</span>
+        Jupiter + Rahu in H12 creates Guru-Chandala Yoga — orthodox, single-tradition worship may feel hollow or forced for this chart. The remedy is <strong>not to force a tradition</strong> but to find one that resonates genuinely. The Goddess (Shakti) path — Lalitha, Kali, Durga — aligns most naturally with Scorpio Lagna's energy and doesn't require institutional orthodoxy.
+      </div>
+    </div>
+
+    <!-- CHAPTER 6: TEMPLES -->
+    <div class="chapter" id="temples">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">⛩️</div>
+        <h2><small>Sacred Locations · Kerala & Beyond</small>Temples</h2>
+      </div>
+      <p style="margin-bottom:18px">Proximity to birthplace (Tripunithura, Kerala) noted. Goddess temples carry highest priority for this chart.</p>
+
+      <div class="temple-grid">
+        <div class="temple-card">
+          <div class="temple-name">Chottanikkara Bhagavathy Temple</div>
+          <span class="temple-deity">Goddess Bhagavathy · Near Tripunithura</span>
+          <div class="temple-why">The most relevant temple for this chart. Chottanikkara Bhagavathy is the fierce-compassionate Goddess — exactly the Scorpio Lagna energy. Famous for healing mental health and emotional disorders. 15 km from Tripunithura. The Friday abhishekam is especially significant for debilitated Venus.</div>
+        </div>
+        <div class="temple-card">
+          <div class="temple-name">Tripunithura Purna Thrissur Temple (Poornathrayeesa)</div>
+          <span class="temple-deity">Lord Vishnu (Poornathrayeesa) · Birthplace</span>
+          <div class="temple-why">The primary temple of Tripunithura itself. Vishnu worship strengthens Jupiter (health protector) and counters the Guru-Chandala contamination in H12. Thursday puja here carries extra chart resonance since it's the birthplace deity.</div>
+        </div>
+        <div class="temple-card">
+          <div class="temple-name">Kodungallur Bhagavathy Temple</div>
+          <span class="temple-deity">Goddess Bhadrakali · North Kerala</span>
+          <div class="temple-why">Kali / Bhadrakali is the fierce form of the Goddess aligned with Scorpio's transformative energy. This temple is one of Kerala's most powerful Shakti peethas. Particularly relevant for Mars/Saturn dasha — the fierce Goddess cuts through Saturn's obstacles.</div>
+        </div>
+        <div class="temple-card">
+          <div class="temple-name">Attukal Bhagavathy Temple</div>
+          <span class="temple-deity">Goddess Attukal Amma · Thiruvananthapuram</span>
+          <div class="temple-why">Renowned specifically for female devotees and women's health prayers. Debilitated Venus in a female chart makes this temple especially significant — the Attukal Pongala (world's largest women's ritual gathering) is a powerful collective Goddess activation.</div>
+        </div>
+        <div class="temple-card">
+          <div class="temple-name">Vaikom Mahadeva Temple</div>
+          <span class="temple-deity">Lord Shiva · Central Kerala</span>
+          <div class="temple-why">Shiva temple for Mahamrityunjaya worship. Scorpio Lagna's primary deity. Tuesday Abhishekam with bilva leaves. Strong connection for Lagna lord Mars strengthening and general health protection during this Mars dasha period.</div>
+        </div>
+        <div class="temple-card">
+          <div class="temple-name">Trimbakeshwar (if long pilgrimage)</div>
+          <span class="temple-deity">Jyotirlinga · Nashik, Maharashtra</span>
+          <div class="temple-why">One of the 12 Jyotirlingas — the most powerful Shiva pilgrimage for serious health prayers. Mrityunjaya homa performed here carries exceptional potency. Worth visiting once during the Mars Mahadasha, especially before any major health concerns arise.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider">Neuroscience Tier</div>
+
+    <!-- CHAPTER 7: NEURO -->
+    <div class="chapter" id="neuro">
+      <div class="chapter-header">
+        <div class="chapter-icon blue">🧠</div>
+        <h2><small>CBT · NLP · Biohacking</small>Neuroscience Antidotes</h2>
+      </div>
+
+      <div class="neuro-grid">
+        <div class="neuro-card">
+          <span class="neuro-label">◈ CBT</span>
+          <div class="neuro-item"><strong>Somatic Body Scan</strong>Daily 10-min scan: locate where in the body tension lives. Scorpio internalizes; this externalizes it before it becomes physical illness.</div>
+          <div class="neuro-item"><strong>Cognitive Defusion</strong>Ashlesha + Mars H8 = obsessive thought spirals. ACT-based defusion: "I notice I'm having the thought that..." — creates distance from catastrophizing.</div>
+          <div class="neuro-item"><strong>Behavioural Activation</strong>Moon H10 Leo: when career is blocked, depression follows. Schedule pleasurable activities independent of career outcome to prevent Pitta burnout.</div>
+        </div>
+        <div class="neuro-card">
+          <span class="neuro-label">◈ NLP</span>
+          <div class="neuro-item"><strong>Anchoring for Calm</strong>Create a kinesthetic anchor (press thumb + ring finger) while in a deep calm state. Use to interrupt anxiety spirals from Mars H8 — the nervous system can be re-anchored in seconds.</div>
+          <div class="neuro-item"><strong>Submodality Shift</strong>For painful emotional memories (Saturn H4 retention): visualize the memory in black and white, shrink it, push it far away. Reduces the somatic charge that locks into the chest.</div>
+          <div class="neuro-item"><strong>Timeline Therapy</strong>Venus debilitated = past relationship patterns replay. Timeline work releases the emotional charge from the timeline rather than re-processing the story repeatedly.</div>
+        </div>
+        <div class="neuro-card">
+          <span class="neuro-label">◈ Biohacking</span>
+          <div class="neuro-item"><strong>Magnesium Glycinate</strong>Saturn H4 cold constriction + anxiety = magnesium deficiency signature. 300–400mg before bed. Relaxes chest, improves sleep, reduces Vata nervous tension.</div>
+          <div class="neuro-item"><strong>Shatavari (Asparagus racemosus)</strong>Primary Ayurvedic herb for debilitated Venus in female charts. Balances female hormones, supports reproductive health, calms Pitta. 1 tsp in warm milk at night.</div>
+          <div class="neuro-item"><strong>Cold Exposure (brief)</strong>Mars in H8 Gemini = respiratory fortification. 30-second cold water at end of shower — strengthens respiratory immunity, stimulates lymphatic circulation, counters Saturn H4 cold stagnation.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated 16 Sep 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris · For personal guidance only
+    </div>
+
+  </main>
+</div>
+</body>
+</html>
