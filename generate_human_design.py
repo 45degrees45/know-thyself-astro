@@ -43,6 +43,7 @@ PROFILES = [
     ("Hari CH",       "1968-09-16","07:15",  8.52, 76.94,"Asia/Kolkata",  "🦊","M"),
     ("George Varghese","1961-12-15","22:30",10.11, 76.36,"Asia/Kolkata",  "🦁","M"),
     ("Ester Grace CH","2000-07-17","21:15",10.53, 76.21,"Asia/Kolkata",  "🦩","F"),
+    ("Sonakshi",      "1994-08-09","13:30", 9.9150,76.3430,"Asia/Kolkata","🐆","F"),
 ]
 
 ANON = {
@@ -68,6 +69,7 @@ ANON = {
     "Biju Jacob":     "The Wandering Butterfly",
     "Kiran":          "The Stone Lion",
     "Ann CH":         "Ann CH",
+    "Sonakshi":       "Sonakshi",
     "Athens CH":      "Athens CH",
     "Ruhi CH":        "Ruhi CH",
     "Vi CH":          "Vi CH",

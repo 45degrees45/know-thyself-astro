@@ -54,6 +54,7 @@ PROFILES = [
     ("Lini CH",        "1972-09-05", "08:05",  9.59, 76.52, "Asia/Kolkata",   "Virgo",       "Moon/Saturn/Venus",      "🐍", "F"),
     ("Tiby Thomas",    "1982-08-20", "06:30",  9.39, 76.78, "Asia/Kolkata",   "Leo",         "Rahu/Jupiter/Sun",       "🦁", "M"),
     ("Ester Grace CH", "2000-07-17", "21:15", 10.53, 76.21, "Asia/Kolkata",   "Aquarius",    "Rahu/Venus/Venus",       "🦩", "F"),
+    ("Sonakshi",       "1994-08-09", "13:30",  9.9150, 76.3430, "Asia/Kolkata", "Scorpio",   "Mars/Saturn/Moon",       "🐆", "F"),
 ]
 
 # Known yogas and risk flags from deep readings (from memory/natal files)
@@ -97,6 +98,7 @@ KNOWN_CONTEXT = {
     "Lini CH":         {"yogas": ["Hamsa Yoga (Jupiter exalted)", "Budha-Aditya", "2x Viparita Raja", "Vosi Yoga"], "risks": ["H12 stellium (Sun/Mars/Mercury — energy inward)", "Moon/Saturn bhukti (slow karmic phase)", "Virgo Lagna = perfectionist, over-analyses"]},
     "Tiby Thomas":     {"yogas": ["Budha-Aditya (Sun own sign H1 — max strength)", "Raja Yoga (Mars+Jupiter H3)", "Yoga Karaka Mars (H4+H9)", "Ubhayachari Yoga"], "risks": ["Rahu MD (dasha quality 35 — unconventional, uncertain phase)", "Venus 10th lord H12 (career behind-scenes, not public)", "Saturn 6th+7th lord in H2 (maraka placement)"]},
     "Ester Grace CH":  {"yogas": ["Yoga Karaka Venus (H4+H9)", "Raja Yoga (Mars+Mercury H5)", "Viparita Raja (Moon H12)", "Adhi Yoga"], "risks": ["Kemadruma Yoga (emotional isolation tendency)", "Moon H12 (inner-world orientation, not outward)", "Rahu/Venus golden window only from Sep 2026"]},
+    "Sonakshi":        {"yogas": ["Sasa Yoga (Saturn H4 Aquarius — Pancha Mahapurusha)", "Budha-Aditya (Sun+Mercury H9)", "Parivartana Raja Yoga (Sun↔Moon, 9th↔10th)", "Viparita Raja (Mars H8)", "6 yogas total"], "risks": ["Venus debilitated H11 (relationship idealization)", "Guru-Chandala H12 (unconventional, anti-orthodox beliefs)", "Mars/Saturn dasha (challenging activation, pressure-forging phase)"]},
 }
 
 # ---------------------------------------------------------------------------

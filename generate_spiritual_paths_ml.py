@@ -27,6 +27,7 @@ ANON = {
     "Biju Jacob":      ("The Wandering Butterfly", "🦋"),
     "Kiran":           ("The Stone Lion",          "🦁"),
     "Ann CH":          ("Ann CH",                  "🦋"),
+    "Sonakshi":        ("Sonakshi",                "🐆"),
     "Athens CH":       ("Athens CH",               "🦅"),
     "Ruhi CH":         ("Ruhi CH",                 "🦌"),
     "Vi CH":           ("Vi CH",                   "🦅"),
@@ -912,6 +913,36 @@ SPIRITUAL_ML = {
         ],
     },
 
+    "Sonakshi": {
+        "path": "Mystic",
+        "archetype": "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+        "indicators": [
+            "ദ-ദ്ദ H8 ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+            "ദ-ദ്ദ/ദ-ദ്ദ H12 — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+            "ദ-ദ്ദ-ദ-ദ്ദ H10 — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+        ],
+        "description": (
+            "ദ-ദ്ദ-H8-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — "
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. "
+            "ദ-ദ്ദ/ദ-ദ്ദ H10-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ. "
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ."
+        ),
+        "strengths": [
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+        ],
+        "shadow": (
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ — "
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ"
+        ),
+        "practices": [
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+            "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
+        ],
+    },
     "Ann CH": {
         "path": "Mystic",
         "archetype": "ദ-ദ്ദ-ദ-ദ്ദ-ദ-ദ്ദ",
@@ -1090,6 +1121,7 @@ PROFILES = [
     ("Biju Jacob",    "1983-11-10","05:30", "Libra",      "Rahu/Moon/Sun",          "🦋","M","Muscat, Oman"),
     ("Kiran",         "1983-11-02","12:58", "Capricorn",  "Jupiter/Venus/Sun",      "🦁","M","Ottapalam, Kerala"),
     ("Ann CH",        "1994-08-09","13:30", "Scorpio",    "Mars/Saturn/Ketu",       "🦋","F","Tripunithura, Kerala"),
+    ("Sonakshi",      "1994-08-09","13:30", "Scorpio",    "Mars/Saturn/Moon",       "🐆","F","Tripunithura, Kerala"),
     ("Always CH",     "1991-09-21","08:45", "Libra",      "Jupiter/Mercury/Sun",    "🦋","M","Delhi, India"),
     ("Bodhi CH",      "1991-09-05","21:50", "Taurus",     "Jupiter/Mercury/Jupiter","🐘","M","Cherthala, Kerala"),
     ("Kunal",         "1993-09-10","18:50", "Pisces",     "Saturn/Saturn/Rahu",     "🐅","M","Alwar, Rajasthan"),
