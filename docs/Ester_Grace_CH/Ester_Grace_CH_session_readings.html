@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Ester Grace CH — Session Readings</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #0b0b18;
+      --surface: rgba(255,255,255,0.035);
+      --border:  rgba(196,158,64,0.18);
+      --gold:    #c49e40;
+      --gold2:   #e8c96a;
+      --cream:   #f0e8d8;
+      --muted:   rgba(240,232,216,0.55);
+      --plum:    #7c5cbf;
+      --rose:    #c4607a;
+      --sage:    #5a8f72;
+      --blue:    #5b8fd4;
+      --shadow:  0 20px 60px rgba(0,0,0,0.45);
+      --r:       22px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(124,92,191,0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(196,158,64,0.12), transparent);
+      background-attachment: fixed;
+      color: var(--cream);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── LAYOUT ── */
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 100vh;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 36px 20px 36px 24px;
+      border-right: 1px solid var(--border);
+      background: rgba(11,11,24,0.92);
+      backdrop-filter: blur(12px);
+    }
+
+    .sidebar-animal {
+      font-size: 64px;
+      text-align: center;
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+
+    .sidebar-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--cream);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-lagna {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .sidebar-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 0.78rem;
+    }
+
+    .stat-row span:first-child {
+      color: var(--muted);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .stat-row span:last-child {
+      color: var(--cream);
+      font-weight: 500;
+      text-align: right;
+      max-width: 140px;
+    }
+
+    .sidebar-nav-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.82rem;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    .nav-link:hover {
+      background: rgba(196,158,64,0.08);
+      color: var(--cream);
+    }
+
+    .nav-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .nav-icon.gold  { background: rgba(196,158,64,0.14); }
+    .nav-icon.rose  { background: rgba(196,96,122,0.14); }
+    .nav-icon.sage  { background: rgba(90,143,114,0.14); }
+    .nav-icon.plum  { background: rgba(124,92,191,0.14); }
+
+    /* ── MAIN ── */
+    .main {
+      padding: 48px 52px 80px;
+      max-width: 860px;
+    }
+
+    /* ── HERO ── */
+    .session-hero {
+      margin-bottom: 48px;
+    }
+
+    .session-hero .eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .session-hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 300;
+      color: #fff8f0;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .session-hero p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .dasha-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(124,92,191,0.12);
+      border: 1px solid rgba(124,92,191,0.28);
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 0.75rem;
+      color: #b49edf;
+      letter-spacing: 0.06em;
+      margin-top: 14px;
+    }
+
+    /* ── CHAPTERS ── */
+    .chapter {
+      margin-bottom: 60px;
+      scroll-margin-top: 32px;
+    }
+
+    .chapter-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .chapter-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .chapter-icon.gold { background: rgba(196,158,64,0.12); }
+    .chapter-icon.rose { background: rgba(196,96,122,0.12); }
+    .chapter-icon.sage { background: rgba(90,143,114,0.12); }
+    .chapter-icon.plum { background: rgba(124,92,191,0.12); }
+
+    .chapter h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.9rem;
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.15;
+    }
+
+    .chapter h2 small {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    /* ── SECTION CARDS ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 24px 28px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-gold  { background: var(--gold); }
+    .dot-rose  { background: var(--rose); }
+    .dot-sage  { background: var(--sage); }
+    .dot-plum  { background: var(--plum); }
+    .dot-blue  { background: var(--blue); }
+
+    .section p {
+      font-size: 0.9rem;
+      color: rgba(240,232,216,0.8);
+      line-height: 1.75;
+    }
+
+    .section p + p {
+      margin-top: 10px;
+    }
+
+    .placement-tag {
+      display: inline-block;
+      background: rgba(196,158,64,0.1);
+      border: 1px solid rgba(196,158,64,0.2);
+      border-radius: 6px;
+      padding: 2px 8px;
+      font-size: 0.72rem;
+      color: var(--gold);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-right: 4px;
+    }
+
+    /* ── READING TABLE ── */
+    .reading-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      margin: 20px 0;
+    }
+
+    .reading-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: rgba(196,158,64,0.1);
+      color: var(--gold);
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(196,158,64,0.2);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .reading-table td {
+      padding: 10px 14px;
+      color: rgba(240,232,216,0.82);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .reading-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .reading-table tr:hover td {
+      background: rgba(255,255,255,0.02);
+    }
+
+    /* ── CALLOUTS ── */
+    .callout {
+      border-radius: 14px;
+      padding: 18px 22px;
+      font-size: 0.9rem;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+
+    .callout-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .callout-gold  { background: rgba(196,158,64,0.09); border: 1px solid rgba(196,158,64,0.28); }
+    .callout-gold .callout-label  { color: var(--gold); }
+    .callout-gold p { color: #e8d89a; }
+
+    .callout-plum  { background: rgba(124,92,191,0.09); border: 1px solid rgba(124,92,191,0.28); }
+    .callout-plum .callout-label  { color: #b49edf; }
+    .callout-plum p { color: #d0c4f0; }
+
+    .callout-rose  { background: rgba(196,96,122,0.09); border: 1px solid rgba(196,96,122,0.28); }
+    .callout-rose .callout-label  { color: #e8909f; }
+    .callout-rose p { color: rgba(240,216,220,0.85); }
+
+    .callout-sage  { background: rgba(90,143,114,0.09); border: 1px solid rgba(90,143,114,0.3); }
+    .callout-sage .callout-label  { color: #80c4a0; }
+    .callout-sage p { color: rgba(200,232,212,0.85); }
+
+    /* ── BADGES ── */
+    .badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .badge-risk    { background: rgba(196,96,122,0.18); color: #e8909f; }
+    .badge-protect { background: rgba(90,143,114,0.18); color: #80c4a0; }
+    .badge-mixed   { background: rgba(196,158,64,0.15); color: #e8c96a; }
+
+    /* ── DATE ROWS ── */
+    .date-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .date-row {
+      display: grid;
+      grid-template-columns: 130px 60px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      font-size: 0.85rem;
+    }
+
+    .date-window { font-weight: 600; color: var(--gold2); font-size: 0.8rem; }
+    .date-note   { color: rgba(240,232,216,0.75); line-height: 1.5; font-size: 0.85rem; }
+
+    /* ── PATTERN LIST ── */
+    .pattern-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pattern-list li {
+      padding: 11px 16px;
+      background: rgba(196,96,122,0.06);
+      border-left: 3px solid rgba(196,96,122,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.87rem;
+      color: rgba(240,232,216,0.78);
+      line-height: 1.6;
+    }
+
+    .protect-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .protect-list li {
+      padding: 11px 16px;
+      background: rgba(90,143,114,0.06);
+      border-left: 3px solid rgba(90,143,114,0.4);
+      border-radius: 0 10px 10px 0;
+      font-size: 0.87rem;
+      color: rgba(200,232,212,0.82);
+      line-height: 1.6;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 36px 0;
+      font-size: 0.62rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(240,232,216,0.25);
+    }
+
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      padding: 20px 0;
+      font-size: 0.7rem;
+      color: rgba(240,232,216,0.28);
+      letter-spacing: 0.08em;
+      border-top: 1px solid var(--border);
+      margin-top: 40px;
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--border); padding: 24px 20px; }
+      .main { padding: 32px 20px 60px; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="sidebar-animal">🦩</div>
+    <div class="sidebar-name">Ester Grace CH</div>
+    <div class="sidebar-lagna">Aquarius Lagna · Flamingo</div>
+
+    <div class="sidebar-stats">
+      <div class="stat-row">
+        <span>Lagna</span>
+        <span>Aquarius 10.7°</span>
+      </div>
+      <div class="stat-row">
+        <span>Moon</span>
+        <span>Capricorn H12, Shravana</span>
+      </div>
+      <div class="stat-row">
+        <span>Dasha</span>
+        <span>Rahu / Venus / Venus</span>
+      </div>
+      <div class="stat-row">
+        <span>Yoga Karaka</span>
+        <span>Venus (H4 + H9)</span>
+      </div>
+      <div class="stat-row">
+        <span>Darakaraka</span>
+        <span>Sun · H6 Cancer</span>
+      </div>
+      <div class="stat-row">
+        <span>7th Lord</span>
+        <span>Sun in H6 (dusthana)</span>
+      </div>
+      <div class="stat-row">
+        <span>Session</span>
+        <span>Sep 2026</span>
+      </div>
+    </div>
+
+    <div class="sidebar-nav-label">Chapters</div>
+    <nav class="nav-links">
+      <a class="nav-link" href="#july2026">
+        <span class="nav-icon gold">💫</span>
+        July 2026 Relationships
+      </a>
+      <a class="nav-link" href="#breakups">
+        <span class="nav-icon rose">🔴</span>
+        Issues &amp; Breakups
+      </a>
+    </nav>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main">
+
+    <!-- HERO -->
+    <div class="session-hero">
+      <div class="eyebrow">Session Readings · Sep 2026</div>
+      <h1>Relationships &amp;<br>The Breakup Pattern</h1>
+      <p>A deep reading on partnership energy in July 2026 and the natal structural patterns that shape how Ester Grace connects — and disconnects.</p>
+      <div class="dasha-pill">⬡ Rahu / Venus / Venus — entering Sep 2026</div>
+    </div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- CHAPTER 1: JULY 2026 RELATIONSHIPS       -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="chapter" id="july2026">
+      <div class="chapter-header">
+        <div class="chapter-icon gold">💫</div>
+        <h2>
+          <small>July 2026 · Transit Reading</small>
+          Relationships This Month
+        </h2>
+      </div>
+
+      <!-- Transit activations -->
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-gold"></span>
+          Venus transiting H7 Leo
+        </div>
+        <p><span class="placement-tag">Transit Venus → H7</span> Venus as Yoga Karaka — ruler of both H4 and H9 — enters the 7th house of partnerships directly. This is the strongest possible relationship transit for her chart: her most powerful planet lands exactly where relationships live. Warmth, beauty, magnetic presence. She is more attractive to others this month and more open to being seen.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-plum"></span>
+          Ketu conjunct Venus in H7 — the fated quality
+        </div>
+        <p><span class="placement-tag">Transit Ketu → H7</span> Ketu spiritualises the 7th house. Connections formed or deepened this month feel fated — karmic, past-life flavoured. She won't be interested in surface-level interaction; she'll be drawn to someone who feels <em>already known</em>. Ketu also introduces a layer of detachment: a partner may feel slightly out of reach, or she may hold back from full surrender even when the feeling is real.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-rose"></span>
+          Rahu in H1 opposing H7 — the independence tension
+        </div>
+        <p><span class="placement-tag">Transit Rahu → H1</span> The 1–7 axis is live. Rahu in the lagna pushes personal reinvention, identity experimentation, ambition. This creates a real tension: she is changing faster than any current relationship can keep up with. For committed relationships, the risk is her partner feeling left behind. For single — she is magnetic but also unpredictable.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-sage"></span>
+          Jupiter exalted in H6 — clearing karmic debts
+        </div>
+        <p><span class="placement-tag">Transit Jupiter exalted → H6</span> Exalted Jupiter joins her natal Venus/Sun/Rahu cluster in Cancer. This clears karmic debts in relationships. Old wounds, old patterns from past connections begin to lose their hold. Conflicts from before Sep 2025 dissolve. This is an active grace-period transit — it does not just protect, it actively heals.</p>
+      </div>
+
+      <!-- Summary table -->
+      <table class="reading-table">
+        <thead>
+          <tr>
+            <th>Transit</th>
+            <th>House</th>
+            <th>Effect on Relationships</th>
+            <th>Signal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Venus (Yoga Karaka)</td>
+            <td>H7 Leo</td>
+            <td>Peak magnetism, warmth, partnership energy</td>
+            <td><span class="badge badge-protect">Strongly positive</span></td>
+          </tr>
+          <tr>
+            <td>Ketu</td>
+            <td>H7 Leo</td>
+            <td>Spiritualises connections; fated, past-life quality</td>
+            <td><span class="badge badge-mixed">Mixed</span></td>
+          </tr>
+          <tr>
+            <td>Rahu</td>
+            <td>H1 Aquarius</td>
+            <td>Independence push; tension with partnership needs</td>
+            <td><span class="badge badge-mixed">Watch</span></td>
+          </tr>
+          <tr>
+            <td>Jupiter (exalted)</td>
+            <td>H6 Cancer</td>
+            <td>Clears old wounds; active healing of past patterns</td>
+            <td><span class="badge badge-protect">Protective</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Key dates -->
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-gold"></span>
+          Key Dates — July 2026
+        </div>
+        <div class="date-grid">
+          <div class="date-row">
+            <span class="date-window">July 3–5</span>
+            <span class="badge badge-protect">Open</span>
+            <span class="date-note">Moon in Aries (H3) — confidence, communication, decisive action. Good for initiating connection.</span>
+          </div>
+          <div class="date-row">
+            <span class="date-window">July 11–13</span>
+            <span class="badge badge-protect">Open</span>
+            <span class="date-note">Moon in Cancer (H6) with exalted Jupiter — excellent for resolving tension and honest conversation.</span>
+          </div>
+          <div class="date-row">
+            <span class="date-window">July 24–26</span>
+            <span class="badge badge-protect">Open</span>
+            <span class="date-note">Moon in Sagittarius (H11) — desire fulfilment, networking, warmth. High social and romantic energy.</span>
+          </div>
+          <div class="date-row">
+            <span class="date-window">July 27–29</span>
+            <span class="badge badge-risk">Withdraw</span>
+            <span class="date-note">Moon in Capricorn (H12), activating natal Moon/Ketu — emotional fatigue, inner withdrawal. Don't push or force connection.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-gold">
+        <div class="callout-label">Bottom Line — July 2026</div>
+        <p>July 2026 is a high-signal month for relationships — one of the better windows in her entire Rahu mahadasha. Venus in H7 is doing real work. If single, a significant connection is possible, especially through work or service contexts — it will feel fated, not forced. If committed, the relationship gets spiritualised but also tested by her growing independence. The path through: let the partner into the reinvention, don't disappear into it alone. The real relationship chapter is Rahu/Venus starting Sep 2026 — July is the prologue.</p>
+      </div>
+    </div>
+
+    <div class="divider">✦</div>
+
+    <!-- ════════════════════════════════════════ -->
+    <!-- CHAPTER 2: ISSUES & BREAKUPS             -->
+    <!-- ════════════════════════════════════════ -->
+    <div class="chapter" id="breakups">
+      <div class="chapter-header">
+        <div class="chapter-icon rose">🔴</div>
+        <h2>
+          <small>Natal Reading · Deep Dive</small>
+          Issues &amp; Breakup Patterns
+        </h2>
+      </div>
+
+      <!-- Structural factors -->
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-rose"></span>
+          7th lord Sun in H6 — the foundational challenge
+        </div>
+        <p><span class="placement-tag">Sun · H6 Cancer · Punarvasu pada 4</span> The house that governs partnerships is ruled by a planet sitting in the house of enemies, obstacles, and service. Her relationships consistently carry a transactional or sacrificial undertone — either she is serving the partner, or the partner expects caretaking. Love arrives through work, duty, or health contexts. The relationship itself becomes another arena to "solve." Sun in H6 also means ego clashes are a recurring trigger: her partner or she tends to get their identity too wrapped up in being right.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-rose"></span>
+          Rahu conjunct Sun + Venus in H6 — intensity and reversal
+        </div>
+        <p><span class="placement-tag">Rahu · Venus · Sun · H6 Cancer</span> Rahu amplifies and distorts whatever it touches. On the Sun-Venus conjunction in H6: Rahu on Venus brings attraction to unconventional, intense, or foreign-element partners — connections that feel electric but destabilising. Rahu on Sun creates ego inflation in relationships and power-struggle loops. Rahu in H6 itself manifests as hidden opposition: external sabotage, third-party interference, covert competition for the relationship.</p>
+        <p>The classic Rahu pattern: <em>sudden attraction → obsessive involvement → abrupt reversal</em>. She may experience relationships that feel like destiny in the beginning and collapse without clear cause later.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-plum"></span>
+          Moon H12 + Ketu — endings live in the inner world first
+        </div>
+        <p><span class="placement-tag">Moon · H12 Capricorn · Shravana</span> <span class="placement-tag">Ketu · H12 · Uttara Ashadha</span> H12 is the house of endings, dissolution, and emotional withdrawal. Her emotional Moon lives here with Ketu (detachment). The pattern: when stress enters a relationship, she goes inward rather than reaching out. Partners feel emotionally abandoned before the actual breakup happens. The relationship dies in her inner world 3–6 months before it ends externally. She processes grief in solitude (Shravana — the listening star) and rarely gives the partner a chance to fix what's wrong, because she has already internally let go.</p>
+      </div>
+
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-rose"></span>
+          Kemadruma Yoga — disappearing under pressure
+        </div>
+        <p><span class="placement-tag">Kemadruma · Moon H12</span> No planets in the 2nd or 12th from Moon (H12). This yoga creates emotional self-sufficiency as a survival strategy. She does not naturally lean on a partner during her hardest periods. She appears composed and self-contained. Partners misread this as indifference or emotional distance. The more difficult her inner life, the more she disappears — which reads as rejection. This is the mechanism behind many of her relationship fractures: not lack of love, but inability to invite the partner into the difficulty.</p>
+      </div>
+
+      <!-- Trigger table -->
+      <table class="reading-table">
+        <thead>
+          <tr>
+            <th>Trigger</th>
+            <th>Placement</th>
+            <th>Mechanism</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Power struggle</td>
+            <td>Sun (7th lord) H6</td>
+            <td>Ego conflicts; need to win arguments over connection</td>
+          </tr>
+          <tr>
+            <td>Emotional shutdown</td>
+            <td>Moon H12 + Ketu</td>
+            <td>Goes silent under stress; partner feels cut off</td>
+          </tr>
+          <tr>
+            <td>Rahu-type reversals</td>
+            <td>Rahu conjunct Venus H6</td>
+            <td>Sudden change of feeling; obsession → indifference</td>
+          </tr>
+          <tr>
+            <td>External interference</td>
+            <td>Rahu H6</td>
+            <td>Third parties, family opposition, hidden sabotage</td>
+          </tr>
+          <tr>
+            <td>Service imbalance</td>
+            <td>Venus H6</td>
+            <td>Relationship tilts — one person carries all the weight</td>
+          </tr>
+          <tr>
+            <td>Isolation under stress</td>
+            <td>Kemadruma Yoga</td>
+            <td>Doesn't ask for help; partner reads it as not caring</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Protective factors -->
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-sage"></span>
+          Protective Factors — What Holds Relationships Together
+        </div>
+        <ul class="protect-list">
+          <li><strong>Venus as Yoga Karaka</strong> — Her most powerful planet rules both H4 (home/heart) and H9 (dharma). At her best, her love life has a dharmic quality — she partners with purpose, not just impulse. Lasting relationships are possible and actually karmic assignments, not accidents.</li>
+          <li><strong>Raja Yoga: Sun + Venus in H6</strong> — Even in the house of difficulty, Sun + Venus form a Raja Yoga. The relationships that challenge her most also carry her highest growth. She doesn't break from difficulty — she breaks when the relationship no longer serves the growth.</li>
+          <li><strong>Jupiter H4 Taurus, aspects H12</strong> — Jupiter's 9th aspect reaches her Moon/Ketu in H12, providing divine grace to her inner emotional world. It keeps the emotional floor from collapsing entirely, even during breakups.</li>
+          <li><strong>Viparita Raja Yoga (Moon H12)</strong> — Every relationship ending ultimately strengthens her. She tends to become more capable, more clear, more herself after difficult relationships end. The ending is not a failure — it is the mechanism of her evolution.</li>
+        </ul>
+      </div>
+
+      <!-- Dasha timing -->
+      <div class="section">
+        <div class="section-title">
+          <span class="dot dot-plum"></span>
+          Dasha Timing — When Is She Most Vulnerable?
+        </div>
+        <div class="date-grid">
+          <div class="date-row">
+            <span class="date-window">Jun 2025–Jun 2026</span>
+            <span class="badge badge-risk">High Risk</span>
+            <span class="date-note">Rahu / Ketu AD — highest-risk window for emotional withdrawal, spiritual confusion, and sudden endings. If something broke in this period, this was the planetary cause.</span>
+          </div>
+          <div class="date-row">
+            <span class="date-window">Jul 2026–Jun 2029</span>
+            <span class="badge badge-protect">Stabilising</span>
+            <span class="date-note">Rahu / Venus AD — Venus as YK entering is stabilising. Not a breakup period. One of the better relationship windows of her life. Rebuilding and deepening are supported.</span>
+          </div>
+          <div class="date-row">
+            <span class="date-window">2030s — Rahu/Sun, Rahu/Saturn</span>
+            <span class="badge badge-mixed">Watch Later</span>
+            <span class="date-note">Sun as 7th lord in H6, and Saturn as lagna lord — both carry more friction when they become antardasha lords. Monitor when those periods arrive.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-rose">
+        <div class="callout-label">The Pattern in Plain Language</div>
+        <p>She falls hard and fast (Rahu-Venus). She serves too much and speaks too little about her own needs (H6 stellium). When pain comes, she disappears inward (H12 Moon + Ketu). Her partner, feeling shut out, either leaves or forces a confrontation. She experiences the breakup as sudden even though she unconsciously prepared for it months earlier.</p>
+      </div>
+
+      <div class="callout callout-sage">
+        <div class="callout-label">The Antidote</div>
+        <p>Shravana's shakti is <em>listening</em> — but she only uses it outward. Turning that listening inward, then sharing what she hears with the partner, is what her relationships actually need. The Kemadruma pattern breaks the moment she reaches out during difficulty instead of going silent. One honest sentence under pressure is worth more than three months of quiet suffering.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      Generated Sep 2026 · Vedic / Lahiri Ayanamsha · Swiss Ephemeris
+    </div>
+  </main>
+</div>
+</body>
+</html>
